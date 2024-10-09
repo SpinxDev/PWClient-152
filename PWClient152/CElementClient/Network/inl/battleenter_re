@@ -1,0 +1,35 @@
+	public:
+		unsigned short retcode;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_BATTLEENTER_RE };
+	public:
+		BattleEnter_Re() { type = PROTOCOL_BATTLEENTER_RE; }
+		BattleEnter_Re(void*) : Protocol(PROTOCOL_BATTLEENTER_RE) { }
+		BattleEnter_Re (unsigned short l_retcode,unsigned int l_localsid = 0)
+			 : retcode(l_retcode),localsid(l_localsid)
+		{
+			type = PROTOCOL_BATTLEENTER_RE;
+		}
+
+		BattleEnter_Re(const BattleEnter_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new BattleEnter_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

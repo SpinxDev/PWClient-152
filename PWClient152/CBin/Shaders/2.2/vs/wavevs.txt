@@ -1,0 +1,59 @@
+; DESCRIPTION:
+; Vertex shader used to render waves with distance fade
+; this shader does below works:
+; # vertex transform
+; # output texture coordinates
+
+vs.1.1
+
+;------------------------------------------------------------------------------
+; v0 	  = position in world space
+; v1	  = diffuse color precalculated using world lights 
+; v2 	  = texture coordinates
+;------------------------------------------------------------------------------
+
+dcl_position v0
+dcl_color v1
+dcl_texcoord v2
+
+;------------------------------------------------------------------------------
+; Constants specified by the app;
+; c0      = (1.0, 0.0, 0.0, 1.0f/vSightRange*vSightRange)
+; c1-c4	  = view matrix * projection matrix
+; c5-c8   = tex 0 coord transform matrix
+; c9-c12  = tex 1 coord transform matrix
+; c13-c16 = tex 2 coord transform matrix
+; c17-c20 = world matrix
+; c21	  = camera's position in world space
+;------------------------------------------------------------------------------
+
+;------------------------------------------------------------------------------
+; oPos	  = Output position
+; oD0	  = Diffuse
+; oT0	  = layer 0's wave texture coord.
+; oT1	  = layer 1's wave texture coord.
+; oT2	  = layer 2's wave texture coord.
+; oFog    = fog value
+;------------------------------------------------------------------------------
+
+; Transfrom position from world space to cuboid space and output it
+m4x4 r0, v0, c17
+m4x4 oPos, r0, c1
+mov oD0, v1
+
+m4x4 oT0, v2, c5
+m4x4 oT1, v2, c9
+m4x4 oT2, v2, c13
+
+; now calculate the alpha value according to the distance to camera
+sub r1, v0, c21		;to camera vector
+mov r1.y, c0.y		;height diff ignored
+dp3 r0, r1, r1		;distance square to camera
+mul r1.w, r0.w, c0.w;   ;0~1 from camera to sight range
+sub r1.w, c0.x, r1.w    ;1~0 from camera to sight range
+max r0.w, r1.w, c0.y   ;clamp if < 0
+
+mul oD0.w, v1.w, r0.w
+
+; set no fog
+mov oFog, c0.x

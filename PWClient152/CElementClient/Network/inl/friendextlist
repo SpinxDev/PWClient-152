@@ -1,0 +1,44 @@
+	public:
+		int roleid;
+		GFriendExtInfoVector extra_info;
+		GSendAUMailRecordVector send_info;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_FRIENDEXTLIST };
+	public:
+		FriendExtList() { type = PROTOCOL_FRIENDEXTLIST; }
+		FriendExtList(void*) : Protocol(PROTOCOL_FRIENDEXTLIST) { }
+		FriendExtList (int l_roleid,GFriendExtInfoVector l_extra_info,GSendAUMailRecordVector l_send_info,
+			unsigned int l_localsid)
+			 : roleid(l_roleid),extra_info(l_extra_info),send_info(l_send_info)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_FRIENDEXTLIST;
+		}
+
+		FriendExtList(const FriendExtList &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),extra_info(rhs.extra_info),send_info(rhs.send_info)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new FriendExtList(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << extra_info;
+			os << send_info;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> extra_info;
+			os >> send_info;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32768; }

@@ -1,0 +1,47 @@
+	public:
+		unsigned int tid;
+		int roleid;
+		unsigned int localsid;
+		GRoleInventory goods;
+		unsigned int money;
+		enum { PROTOCOL_TYPE = PROTOCOL_TRADEREMOVEGOODS };
+	public:
+		TradeRemoveGoods() { type = PROTOCOL_TRADEREMOVEGOODS; }
+		TradeRemoveGoods(void*) : Protocol(PROTOCOL_TRADEREMOVEGOODS) { }
+		TradeRemoveGoods (unsigned int l_tid,int l_roleid,unsigned int l_localsid,
+			GRoleInventory l_goods,unsigned int l_money)
+			 : tid(l_tid),roleid(l_roleid),localsid(l_localsid),
+			goods(l_goods),money(l_money)
+		{
+			type = PROTOCOL_TRADEREMOVEGOODS;
+		}
+
+		TradeRemoveGoods(const TradeRemoveGoods &rhs)
+			: Protocol(rhs),tid(rhs.tid),roleid(rhs.roleid),localsid(rhs.localsid),
+			goods(rhs.goods),money(rhs.money) { }
+
+		GNET::Protocol *Clone() const { return new TradeRemoveGoods(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << tid;
+			os << roleid;
+			os << localsid;
+			os << goods;
+			os << money;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> tid;
+			os >> roleid;
+			os >> localsid;
+			os >> goods;
+			os >> money;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

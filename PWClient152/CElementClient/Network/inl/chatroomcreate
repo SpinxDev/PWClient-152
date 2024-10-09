@@ -1,0 +1,47 @@
+	public:
+		int roleid;
+		Octets subject;
+		unsigned short capacity;
+		Octets password;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_CHATROOMCREATE };
+	public:
+		ChatRoomCreate() { type = PROTOCOL_CHATROOMCREATE; }
+		ChatRoomCreate(void*) : Protocol(PROTOCOL_CHATROOMCREATE) { }
+		ChatRoomCreate (int l_roleid,const Octets& l_subject,unsigned short l_capacity,
+			const Octets& l_password,unsigned int l_localsid)
+			 : roleid(l_roleid),subject(l_subject),capacity(l_capacity),
+			password(l_password),localsid(l_localsid)
+		{
+			type = PROTOCOL_CHATROOMCREATE;
+		}
+
+		ChatRoomCreate(const ChatRoomCreate &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),subject(rhs.subject),capacity(rhs.capacity),
+			password(rhs.password),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new ChatRoomCreate(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << subject;
+			os << capacity;
+			os << password;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> subject;
+			os >> capacity;
+			os >> password;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 48; }

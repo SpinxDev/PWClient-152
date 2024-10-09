@@ -1,0 +1,14 @@
+ps_2_0
+
+dcl_2d s0
+dcl t0.xy
+dcl v0
+
+def c0, 0.001, 0, 0, 0
+
+texld r0, t0, s0
+mul r0, r0, v0
+dp3 r1.rgb, r0, r0.a
+sub r1.rgb, r1, c0.r
+texkill r1
+mov oC0, r0

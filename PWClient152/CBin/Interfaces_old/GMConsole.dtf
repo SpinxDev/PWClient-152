@@ -1,0 +1,13 @@
+DIALOG "Win_GMConsole" 0 0 471 452 0 1 10 "Window\对话框_标准边框.dds" "" "Window\对话框_透明色.bmp" 0 12 -1 -1 "" 28 6 255 255 128 255 1
+LIST "lbxPlayerMsg" "select_playermsg" "" 17 52 429 141 2 10 255 255 255 255 "Editbox\文本框_4e.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LABEL "Control_173156789" "" "" 17 32 100 18 3 10 4 255 255 255 255
+LABEL "Control_392485596" "" "" 240 241 40 18 5 10 6 255 255 255 255
+LIST "lbxCommand" "select_command" "" 240 260 208 128 7 10 255 255 255 255 "Editbox\文本框_4e.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+STILLIMAGEBUTTON "btnFinish" "finish" "" 239 199 103 28 0 0 0 0 8 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 9 1
+STILLIMAGEBUTTON "btnClose" "close" "" 349 402 99 28 0 0 0 0 10 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 11 1
+LABEL "Control_26199334" "" "" 17 241 100 18 12 10 13 255 255 255 255
+LIST "lbxPlayerNearby" "select_player_nearby" "" 17 261 208 128 14 10 255 255 255 255 "Editbox\文本框_4e.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LABEL "Control_278808047" "" "" 14 409 120 18 15 10 16 255 255 255 255
+EDIT "ebxPlayerID" "" "" 133 405 89 25 "Editbox\文本框_4e.dds" 17 10 255 255 255 "TEXT" 1 0 20
+STILLIMAGEBUTTON "btnRefresh" "refresh" "" 240 402 108 28 0 0 0 0 18 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 19 1
+STILLIMAGEBUTTON "btnIgnore" "ignore" "" 343 199 103 28 0 0 0 0 20 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 21 1

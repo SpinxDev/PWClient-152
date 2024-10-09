@@ -1,0 +1,39 @@
+
+#ifndef __GNET_FRIENDDEL_HPP
+#define __GNET_FRIENDDEL_HPP
+
+#include "rpcdefs.h"
+#include "callid.hxx"
+#include "state.hxx"
+
+#include "frienddelarg"
+#include "frienddelres"
+
+namespace GNET
+{
+
+class FriendDel : public Rpc
+{
+#define	RPC_BASECLASS	Rpc
+	#include "frienddel"
+#undef	RPC_BASECLASS
+
+	void Server(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+		// FriendDelArg *arg = (FriendDelArg *)argument;
+		// FriendDelRes *res = (FriendDelRes *)result;
+	}
+
+	void Client(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+	}
+
+	void OnTimeout()
+	{
+		// TODO Client Only
+	}
+
+};
+
+};
+#endif

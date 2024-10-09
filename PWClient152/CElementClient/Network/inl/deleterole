@@ -1,0 +1,35 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_DELETEROLE };
+	public:
+		DeleteRole() { type = PROTOCOL_DELETEROLE; }
+		DeleteRole(void*) : Protocol(PROTOCOL_DELETEROLE) { }
+		DeleteRole (int l_roleid,unsigned int l_localsid)
+			 : roleid(l_roleid),localsid(l_localsid)
+		{
+			type = PROTOCOL_DELETEROLE;
+		}
+
+		DeleteRole(const DeleteRole &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new DeleteRole(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 101; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

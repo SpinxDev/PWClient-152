@@ -1,0 +1,47 @@
+	public:
+		unsigned short roomid;
+		int invitee;
+		int inviter;
+		short retcode;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_CHATROOMINVITE_RE };
+	public:
+		ChatRoomInvite_Re() { type = PROTOCOL_CHATROOMINVITE_RE; }
+		ChatRoomInvite_Re(void*) : Protocol(PROTOCOL_CHATROOMINVITE_RE) { }
+		ChatRoomInvite_Re (unsigned short l_roomid,int l_invitee,int l_inviter,
+			short l_retcode,unsigned int l_localsid)
+			 : roomid(l_roomid),invitee(l_invitee),inviter(l_inviter),
+			retcode(l_retcode),localsid(l_localsid)
+		{
+			type = PROTOCOL_CHATROOMINVITE_RE;
+		}
+
+		ChatRoomInvite_Re(const ChatRoomInvite_Re &rhs)
+			: Protocol(rhs),roomid(rhs.roomid),invitee(rhs.invitee),inviter(rhs.inviter),
+			retcode(rhs.retcode),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new ChatRoomInvite_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roomid;
+			os << invitee;
+			os << inviter;
+			os << retcode;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roomid;
+			os >> invitee;
+			os >> inviter;
+			os >> retcode;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

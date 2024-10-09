@@ -1,0 +1,6 @@
+DIALOG "Dlg_AllRes" 0 0 217 400 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "" 27 6 96 96 96 255 1
+LABEL "title" "" "" 64 4 90 22 2 16 3 255 203 74 255
+TREE "TreeView_AllRes" "OutdoorRes" "" 8 32 200 325 4 15 255 255 255 255 "Editbox\文本框_4b.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" "Extra\TreePlus.bmp" "Extra\TreeMinus.bmp" "Extra\TreeLeaf.bmp"
+STILLIMAGEBUTTON "BTN_B_MODIFY" "ModifyRes" "" 11 364 50 24 0 0 0 0 5 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 6 1
+STILLIMAGEBUTTON "BTN_B_DEL" "DelRes" "" 156 364 50 24 0 0 0 0 7 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 8 1
+STILLIMAGEBUTTON "BTN_B_CANCEL" "CancelRes" "" 68 364 80 25 0 0 0 0 9 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 10 1

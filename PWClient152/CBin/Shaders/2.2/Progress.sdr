@@ -1,0 +1,44 @@
+//  ************* Angelica 3D shader ***************
+
+version 7
+
+"Progress"
+{
+	//  General properties
+	blend            BLEND_SRCALPHA  BLEND_INVSRCALPHA
+	alphatexflag     0
+
+	//  Stage 0
+	{
+		texture          TEX_NORMAL  0  "hp.tga"
+		colorop          TOP_SELECTARG2
+		colorarg1        TA_TEXTURE
+		colorarg2        TA_CURRENT
+		alphaop          TOP_SELECTARG1
+		alphaarg1        TA_TEXTURE
+		alphaarg2        TA_CURRENT
+	}
+
+	//  Stage 1
+	{
+		texture          TEX_NORMAL  0  "barpos.dds"
+		colorop          TOP_SELECTARG2
+		colorarg1        TA_TEXTURE
+		colorarg2        TA_CURRENT
+		alphaop          TOP_MODULATE
+		alphaarg1        TA_TEXTURE
+		alphaarg2        TA_CURRENT
+	}
+
+	//  Stage 2
+	{
+		texture          TEX_NORMAL  0  "barpos.dds"
+		colorop          TOP_BLENDCURRENTALPHA
+		colorarg1        TA_TEXTURE
+		colorarg2        TA_CURRENT
+		alphaop          TOP_SELECTARG2
+		alphaarg1        TA_TEXTURE
+		alphaarg2        TA_CURRENT
+	}
+
+}

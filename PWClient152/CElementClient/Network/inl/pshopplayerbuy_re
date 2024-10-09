@@ -1,0 +1,56 @@
+	public:
+		int retcode;
+		int localsid;
+		int master;
+		int item_id;
+		int item_pos;
+		int item_count;
+		PShopItem itemchange;
+		enum { PROTOCOL_TYPE = PROTOCOL_PSHOPPLAYERBUY_RE };
+	public:
+		PShopPlayerBuy_Re() { type = PROTOCOL_PSHOPPLAYERBUY_RE; }
+		PShopPlayerBuy_Re(void*) : Protocol(PROTOCOL_PSHOPPLAYERBUY_RE) { }
+		PShopPlayerBuy_Re (int l_retcode,int l_localsid,int l_master,
+			int l_item_id = 0,int l_item_pos = -1,int l_item_count = 0,
+			const PShopItem& l_itemchange = PShopItem())
+			 : retcode(l_retcode),localsid(l_localsid),master(l_master)
+			,item_id(l_item_id),item_pos(l_item_pos),item_count(l_item_count)
+			,itemchange(l_itemchange)
+		{
+			type = PROTOCOL_PSHOPPLAYERBUY_RE;
+		}
+
+		PShopPlayerBuy_Re(const PShopPlayerBuy_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),localsid(rhs.localsid),master(rhs.master)
+			,item_id(rhs.item_id),item_pos(rhs.item_pos),item_count(rhs.item_count)
+			,itemchange(rhs.itemchange) { }
+
+		GNET::Protocol *Clone() const { return new PShopPlayerBuy_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << localsid;
+			os << master;
+			os << item_id;
+			os << item_pos;
+			os << item_count;
+			os << itemchange;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> localsid;
+			os >> master;
+			os >> item_id;
+			os >> item_pos;
+			os >> item_count;
+			os >> itemchange;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 131072; }

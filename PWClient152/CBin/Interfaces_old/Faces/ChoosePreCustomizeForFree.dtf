@@ -1,0 +1,4 @@
+DIALOG "Win_ChoosePreCustomizeForFree" 0 0 220 360 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "Window\对话框_标准关闭.tga" 30 10 96 96 96 255 1
+IMAGEPICTURE "Control_118274141" "" "" 10 36 200 3 1 0 "Window\分隔线.tga"
+LABEL "Control_237554411" "" "" 68 10 90 25 2 16 3 255 203 74 255
+LIST "ListBox_PreCustomize" "" "" 10 49 200 300 4 10 255 255 255 255 "Editbox\文本框_4.tga" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"

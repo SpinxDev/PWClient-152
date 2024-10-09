@@ -1,0 +1,79 @@
+#ifndef __GNET_PSHOPITEM_RPCDATA
+#define __GNET_PSHOPITEM_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "groleinventory"
+
+namespace GNET
+{
+	class PShopItem : public GNET::Rpc::Data
+	{
+	public:
+		GRoleInventory item;
+		unsigned int price;
+		int reserved1;
+		int reserved2;
+
+	public:
+		PShopItem (const GRoleInventory& l_item = GRoleInventory(),unsigned int l_price = 0,int l_reserved1 = 0
+			,int l_reserved2 = 0)
+			: item(l_item),price(l_price),reserved1(l_reserved1)
+			,reserved2(l_reserved2)
+		{
+		}
+
+		PShopItem(const PShopItem &rhs)
+			: item(rhs.item),price(rhs.price),reserved1(rhs.reserved1),
+			reserved2(rhs.reserved2) { }
+
+		Rpc::Data *Clone() const { return new PShopItem(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const PShopItem *r = dynamic_cast<const PShopItem *>(&rhs);
+			if (r && r != this)
+			{
+				item = r->item;
+				price = r->price;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+			}
+			return *this;
+		}
+
+		PShopItem& operator = (const PShopItem &rhs)
+		{
+			const PShopItem *r = &rhs;
+			if (r && r != this)
+			{
+				item = r->item;
+				price = r->price;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << item;
+			os << price;
+			os << reserved1;
+			os << reserved2;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> item;
+			os >> price;
+			os >> reserved1;
+			os >> reserved2;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<PShopItem>	PShopItemVector;
+};
+#endif

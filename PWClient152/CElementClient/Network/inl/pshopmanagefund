@@ -1,0 +1,47 @@
+	public:
+		int roleid;
+		int optype;
+		unsigned int money;
+		unsigned int yinpiao;
+		Octets syncdata;
+		enum { PROTOCOL_TYPE = PROTOCOL_PSHOPMANAGEFUND };
+	public:
+		PShopManageFund() { type = PROTOCOL_PSHOPMANAGEFUND; }
+		PShopManageFund(void*) : Protocol(PROTOCOL_PSHOPMANAGEFUND) { }
+		PShopManageFund (int l_roleid,int l_optype,unsigned int l_money = 0,
+			unsigned int l_yinpiao = 0,const Octets& l_syncdata = Octets())
+			 : roleid(l_roleid),optype(l_optype),money(l_money)
+			,yinpiao(l_yinpiao),syncdata(l_syncdata)
+		{
+			type = PROTOCOL_PSHOPMANAGEFUND;
+		}
+
+		PShopManageFund(const PShopManageFund &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),optype(rhs.optype),money(rhs.money)
+			,yinpiao(rhs.yinpiao),syncdata(rhs.syncdata) { }
+
+		GNET::Protocol *Clone() const { return new PShopManageFund(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << optype;
+			os << money;
+			os << yinpiao;
+			os << syncdata;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> optype;
+			os >> money;
+			os >> yinpiao;
+			os >> syncdata;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 131072; }

@@ -1,0 +1,38 @@
+	public:
+		int retcode;
+		unsigned int localsid;
+		int dstroleid;
+		enum { PROTOCOL_TYPE = PROTOCOL_GMSETTIMELESSAUTOLOCK_RE };
+	public:
+		GMSetTimelessAutoLock_Re() { type = PROTOCOL_GMSETTIMELESSAUTOLOCK_RE; }
+		GMSetTimelessAutoLock_Re(void*) : Protocol(PROTOCOL_GMSETTIMELESSAUTOLOCK_RE) { }
+		GMSetTimelessAutoLock_Re (int l_retcode,unsigned int l_localsid,int l_dstroleid)
+			 : retcode(l_retcode),localsid(l_localsid),dstroleid(l_dstroleid)
+		{
+			type = PROTOCOL_GMSETTIMELESSAUTOLOCK_RE;
+		}
+
+		GMSetTimelessAutoLock_Re(const GMSetTimelessAutoLock_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),localsid(rhs.localsid),dstroleid(rhs.dstroleid) { }
+
+		GNET::Protocol *Clone() const { return new GMSetTimelessAutoLock_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << localsid;
+			os << dstroleid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> localsid;
+			os >> dstroleid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

@@ -1,0 +1,42 @@
+
+#ifndef __GNET_GROUPGETINFO_HPP
+#define __GNET_GROUPGETINFO_HPP
+
+#include "rpcdefs.h"
+#include "callid.hxx"
+#include "state.hxx"
+
+#include "groupgetinfoarg"
+#include "groupgetinfores"
+
+namespace GNET
+{
+
+class GroupGetInfo : public Rpc
+{
+#define	RPC_BASECLASS	Rpc
+	#include "groupgetinfo"
+#undef	RPC_BASECLASS
+
+	void Server(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+		// GroupGetInfoArg *arg = (GroupGetInfoArg *)argument;
+		// GroupGetInfoRes *res = (GroupGetInfoRes *)result;
+	}
+
+	void Client(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+		// TODO
+		// GroupGetInfoArg *arg = (GroupGetInfoArg *)argument;
+		// GroupGetInfoRes *res = (GroupGetInfoRes *)result;
+	}
+
+	void OnTimeout()
+	{
+		// TODO Client Only
+	}
+
+};
+
+};
+#endif

@@ -1,0 +1,47 @@
+	public:
+		int retcode;
+		int remain_coupon;
+		int today_exchange_coupon;
+		int today_remain_coupon;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_USERCOUPONEXCHANGE_RE };
+	public:
+		UserCouponExchange_Re() { type = PROTOCOL_USERCOUPONEXCHANGE_RE; }
+		UserCouponExchange_Re(void*) : Protocol(PROTOCOL_USERCOUPONEXCHANGE_RE) { }
+		UserCouponExchange_Re (int l_retcode,int l_remain_coupon,int l_today_exchange_coupon,
+			int l_today_remain_coupon,unsigned int l_localsid)
+			 : retcode(l_retcode),remain_coupon(l_remain_coupon),today_exchange_coupon(l_today_exchange_coupon)
+			,today_remain_coupon(l_today_remain_coupon),localsid(l_localsid)
+		{
+			type = PROTOCOL_USERCOUPONEXCHANGE_RE;
+		}
+
+		UserCouponExchange_Re(const UserCouponExchange_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),remain_coupon(rhs.remain_coupon),today_exchange_coupon(rhs.today_exchange_coupon)
+			,today_remain_coupon(rhs.today_remain_coupon),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new UserCouponExchange_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << remain_coupon;
+			os << today_exchange_coupon;
+			os << today_remain_coupon;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> remain_coupon;
+			os >> today_exchange_coupon;
+			os >> today_remain_coupon;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

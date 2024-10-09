@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		Octets help_states;
+		enum { PROTOCOL_TYPE = PROTOCOL_SETHELPSTATES };
+	public:
+		SetHelpStates() { type = PROTOCOL_SETHELPSTATES; }
+		SetHelpStates(void*) : Protocol(PROTOCOL_SETHELPSTATES) { }
+		SetHelpStates (int l_roleid,unsigned int l_localsid,const Octets& l_help_states)
+			 : roleid(l_roleid),localsid(l_localsid),help_states(l_help_states)
+		{
+			type = PROTOCOL_SETHELPSTATES;
+		}
+
+		SetHelpStates(const SetHelpStates &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid),help_states(rhs.help_states) { }
+
+		GNET::Protocol *Clone() const { return new SetHelpStates(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << help_states;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> help_states;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 4096; }

@@ -1,0 +1,42 @@
+
+#ifndef __GNET_ADDFRIENDRQST_HPP
+#define __GNET_ADDFRIENDRQST_HPP
+
+#include "rpcdefs.h"
+#include "callid.hxx"
+#include "state.hxx"
+
+#include "addfriendrqstarg"
+#include "addfriendrqstres"
+
+namespace GNET
+{
+
+class AddFriendRqst : public Rpc
+{
+#define	RPC_BASECLASS	Rpc
+	#include "addfriendrqst"
+#undef	RPC_BASECLASS
+
+	void Server(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+		// AddFriendRqstArg *arg = (AddFriendRqstArg *)argument;
+		// AddFriendRqstRes *res = (AddFriendRqstRes *)result;
+	}
+
+	void Client(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+		// TODO
+		// AddFriendRqstArg *arg = (AddFriendRqstArg *)argument;
+		// AddFriendRqstRes *res = (AddFriendRqstRes *)result;
+	}
+
+	void OnTimeout()
+	{
+		// TODO Client Only
+	}
+
+};
+
+};
+#endif

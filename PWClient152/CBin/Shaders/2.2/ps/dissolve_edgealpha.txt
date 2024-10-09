@@ -1,0 +1,36 @@
+ps_2_0
+
+// c0.r dissolve threshold
+// c1.r 边缘范围
+
+dcl_2d s0
+dcl_2d s1
+
+dcl t0.xy
+
+dcl v0
+
+def c3, 1.0, 0, 0, 0
+// c8 tex trans
+
+texld r0, t0, s0
+
+mad r1.xy, c8, t0, c8.wzyx
+texld r1, r1, s1
+
+mul r0, r0, v0
+
+// delta值的负数
+sub r2.r, c0, r1
+
+rcp r1.g, c1.r
+
+// delta值乘以系数
+mul_sat r1.r, -r2.r, r1.g
+
+// 乘以原色a
+mul r1.r, r1, r0.a
+
+cmp r0.a, r2.r, c3, r1.r
+
+mov oC0, r0

@@ -1,0 +1,48 @@
+DIALOG "Win_ELFRetrain" 0 0 551 467 0 1 10 "Window\对话框_标准边框1.dds" "" "" 0 0 214 27 "人鱼传说新界面\面板关闭按钮.tga" 32 6 96 96 96 255 1
+IMAGEPICTURE "Img_ELF" "" "" 12 59 32 32 1 0 "Window\图标_精灵.dds"
+LABEL "TITEL" "" "" 156 5 0 0 2 16 3 255 203 74 255
+LABEL "Control_30062900" "" "" 10 39 0 0 4 10 5 255 203 74 255
+IMAGEPICTURE "Control_11396040" "" "" 23 32 387 3 1 0 "Window\分隔线.tga"
+STILLIMAGEBUTTON "Btn_Confirm" "confirm" "SFX\Interface\ClickB.wav" 304 397 48 24 0 0 0 0 6 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 7 1
+STILLIMAGEBUTTON "Btn_Cancel" "IDCANCEL" "SFX\Interface\ClickB.wav" 432 397 48 24 0 0 0 0 8 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 9 1
+LABEL "Control_292553758" "" "" 10 97 223 17 10 10 11 255 203 74 255
+LABEL "Txt_ELFName" "" "" 59 74 0 0 12 10 13 255 255 255 255
+LABEL "Txt_ELFLevel" "" "" 92 58 0 0 14 10 15 255 255 255 255
+LABEL "Control_176364900" "" "" 58 57 0 0 16 10 17 255 203 74 255
+IMAGEPICTURE "Img_Skill1" "petskill" "" 12 119 32 32 1 0 "Window\图标_物品栏.dds"
+LABEL "Txt_Skill1" "" "" 50 115 90 45 18 10 19 255 255 255 255
+IMAGEPICTURE "Img_Skill2" "petskill2" "" 136 119 32 32 1 0 "Window\图标_物品栏.dds"
+LABEL "Txt_Skill2" "" "" 170 115 90 45 20 10 21 255 255 255 255
+IMAGEPICTURE "Img_Skill3" "petskill3" "" 12 160 32 32 1 0 "Window\图标_物品栏.dds"
+LABEL "Txt_Skill3" "" "" 50 160 90 45 22 10 23 255 255 255 255
+IMAGEPICTURE "Img_Skill4" "petskill4" "" 136 162 32 32 1 0 "Window\图标_物品栏.dds"
+LABEL "Txt_Skill4" "" "" 170 160 90 45 24 10 25 255 255 255 255
+IMAGEPICTURE "Control_783680232" "" "" 12 312 223 3 1 0 "Window\分隔线.tga"
+IMAGEPICTURE "PIC_ELF" "" "" 254 60 280 280 1 0 "小精灵新加tga\板子panel\五行术原型五角星1.tga"
+IMAGEPICTURE "Img_Skill5" "" "" 12 204 32 32 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Img_Skill6" "" "" 136 206 32 32 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Img_Skill7" "" "" 11 251 32 32 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Img_Skill8" "" "" 135 251 32 32 1 0 "Window\图标_物品栏.dds"
+LABEL "Control_219614415" "" "" 21 417 211 50 26 15 27 255 0 0 255
+LABEL "Txt_Skill5" "" "" 50 205 90 45 28 15 29 255 255 255 255
+LABEL "Txt_Skill6" "" "" 170 205 90 45 30 15 31 255 255 255 255
+LABEL "Txt_Skill7" "" "" 50 250 90 45 32 15 33 255 255 255 255
+LABEL "Txt_Skill8" "" "" 170 250 90 45 34 15 35 255 255 255 255
+LABEL "Txt_SkillDesc" "" "" 15 320 216 86 36 15 37 255 255 255 255
+LABEL "Control_50094460" "" "" 296 343 196 21 38 15 39 255 255 255 255
+EDIT "Txt_Number" "" "" 395 362 46 22 "/Editbox/文本框_4.dds" 40 15 255 255 255 "TEXT" 0 0 20
+LABEL "Txt_SkillName" "" "" 295 362 67 21 41 15 42 255 255 255 255
+LABEL "Control_274230194" "" "" 362 363 37 21 43 15 44 255 128 0 255
+LABEL "Control_73332505" "" "" 441 363 21 19 45 15 46 255 128 0 255
+IMAGEPICTURE "Control_18485080" "" "" 377 92 32 32 1 0 "小精灵新加tga\按钮button\5五行按钮金-1高亮.tga"
+IMAGEPICTURE "Control_79373000" "" "" 460 152 32 32 1 0 "小精灵新加tga\按钮button\5五行按钮木-1高亮.tga"
+IMAGEPICTURE "Control_236231100" "" "" 428 251 32 32 1 0 "小精灵新加tga\按钮button\5五行按钮土-1高亮.tga"
+IMAGEPICTURE "Control_225068520" "" "" 326 252 32 32 1 0 "小精灵新加tga\按钮button\5五行按钮水-1高亮.tga"
+IMAGEPICTURE "Control_575693882" "" "" 294 153 32 32 1 0 "小精灵新加tga\按钮button\5五行按钮火-1高亮.tga"
+IMAGEPICTURE "Img_0" "" "" 374 124 35 41 9 0 "小精灵新加tga\五角星tag\金.tga"
+IMAGEPICTURE "Img_1" "" "" 420 175 42 24 9 0 "小精灵新加tga\五角星tag\木.tga"
+IMAGEPICTURE "Img_4" "" "" 403 217 35 40 9 0 "小精灵新加tga\五角星tag\土.tga"
+IMAGEPICTURE "Img_2" "" "" 346 218 35 40 9 0 "小精灵新加tga\五角星tag\水.tga"
+IMAGEPICTURE "Img_3" "" "" 326 175 42 24 9 0 "小精灵新加tga\五角星tag\火.tga"
+LABEL "Control_291404358" "" "" 12 292 83 19 47 15 48 255 255 255 255
+LABEL "Control_556683582" "" "" 342 47 136 32 49 12 50 254 203 74 255

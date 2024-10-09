@@ -1,0 +1,44 @@
+	public:
+		int retcode;
+		unsigned int localsid;
+		int sellid;
+		int seller;
+		enum { PROTOCOL_TYPE = PROTOCOL_BUYPOINT_RE };
+	public:
+		BuyPoint_Re() { type = PROTOCOL_BUYPOINT_RE; }
+		BuyPoint_Re(void*) : Protocol(PROTOCOL_BUYPOINT_RE) { }
+		BuyPoint_Re (int l_retcode,unsigned int l_localsid,int l_sellid,
+			int l_seller)
+			 : retcode(l_retcode),localsid(l_localsid),sellid(l_sellid),
+			seller(l_seller)
+		{
+			type = PROTOCOL_BUYPOINT_RE;
+		}
+
+		BuyPoint_Re(const BuyPoint_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),localsid(rhs.localsid),sellid(rhs.sellid),
+			seller(rhs.seller) { }
+
+		GNET::Protocol *Clone() const { return new BuyPoint_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << localsid;
+			os << sellid;
+			os << seller;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> localsid;
+			os >> sellid;
+			os >> seller;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

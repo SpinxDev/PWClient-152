@@ -1,0 +1,47 @@
+	public:
+		int domain_id;
+		int single_battle_total_score;
+		int player_single_battle_score;
+		int player_rank;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_COUNTRYBATTLESINGLEBATTLERESULT };
+	public:
+		CountryBattleSingleBattleResult() { type = PROTOCOL_COUNTRYBATTLESINGLEBATTLERESULT; }
+		CountryBattleSingleBattleResult(void*) : Protocol(PROTOCOL_COUNTRYBATTLESINGLEBATTLERESULT) { }
+		CountryBattleSingleBattleResult (int l_domain_id,int l_single_battle_total_score,int l_player_single_battle_score,
+			int l_player_rank,unsigned int l_localsid)
+			 : domain_id(l_domain_id),single_battle_total_score(l_single_battle_total_score),player_single_battle_score(l_player_single_battle_score)
+			,player_rank(l_player_rank),localsid(l_localsid)
+		{
+			type = PROTOCOL_COUNTRYBATTLESINGLEBATTLERESULT;
+		}
+
+		CountryBattleSingleBattleResult(const CountryBattleSingleBattleResult &rhs)
+			: Protocol(rhs),domain_id(rhs.domain_id),single_battle_total_score(rhs.single_battle_total_score),player_single_battle_score(rhs.player_single_battle_score)
+			,player_rank(rhs.player_rank),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new CountryBattleSingleBattleResult(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << domain_id;
+			os << single_battle_total_score;
+			os << player_single_battle_score;
+			os << player_rank;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> domain_id;
+			os >> single_battle_total_score;
+			os >> player_single_battle_score;
+			os >> player_rank;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 512; }

@@ -1,0 +1,50 @@
+	public:
+		int roleid;
+		unsigned int item_id;
+		int item_pos;
+		int item_num;
+		int candidate_roleid;
+		Octets syncdata;
+		enum { PROTOCOL_TYPE = PROTOCOL_KEVOTING };
+	public:
+		KEVoting() { type = PROTOCOL_KEVOTING; }
+		KEVoting(void*) : Protocol(PROTOCOL_KEVOTING) { }
+		KEVoting (int l_roleid,unsigned int l_item_id,int l_item_pos,
+			int l_item_num,int l_candidate_roleid,const Octets& l_syncdata = Octets())
+			 : roleid(l_roleid),item_id(l_item_id),item_pos(l_item_pos)
+			,item_num(l_item_num),candidate_roleid(l_candidate_roleid),syncdata(l_syncdata)
+		{
+			type = PROTOCOL_KEVOTING;
+		}
+
+		KEVoting(const KEVoting &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),item_id(rhs.item_id),item_pos(rhs.item_pos)
+			,item_num(rhs.item_num),candidate_roleid(rhs.candidate_roleid),syncdata(rhs.syncdata) { }
+
+		GNET::Protocol *Clone() const { return new KEVoting(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << item_id;
+			os << item_pos;
+			os << item_num;
+			os << candidate_roleid;
+			os << syncdata;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> item_id;
+			os >> item_pos;
+			os >> item_num;
+			os >> candidate_roleid;
+			os >> syncdata;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 131072; }

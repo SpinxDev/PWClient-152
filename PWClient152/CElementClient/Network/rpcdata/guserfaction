@@ -1,0 +1,100 @@
+#ifndef __GNET_GUSERFACTION_RPCDATA
+#define __GNET_GUSERFACTION_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GUserFaction : public GNET::Rpc::Data
+	{
+	public:
+		unsigned int rid;
+		Octets name;
+		unsigned int fid;
+		char cls;
+		char role;
+		Octets delayexpel;
+		Octets extend;
+		Octets nickname;
+
+	public:
+		GUserFaction (unsigned int l_rid = 0,const Octets& l_name = Octets(0),unsigned int l_fid = 0
+			,char l_cls = 0,char l_role = 0,Octets l_delayexpel = Octets(0)
+			,const Octets& l_extend = Octets(0),const Octets& l_nickname = Octets(0))
+			: rid(l_rid),name(l_name),fid(l_fid)
+			,cls(l_cls),role(l_role),delayexpel(l_delayexpel)
+			,extend(l_extend),nickname(l_nickname)
+		{
+		}
+
+		GUserFaction(const GUserFaction &rhs)
+			: rid(rhs.rid),name(rhs.name),fid(rhs.fid),
+			cls(rhs.cls),role(rhs.role),delayexpel(rhs.delayexpel),
+			extend(rhs.extend),nickname(rhs.nickname) { }
+
+		Rpc::Data *Clone() const { return new GUserFaction(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GUserFaction *r = dynamic_cast<const GUserFaction *>(&rhs);
+			if (r && r != this)
+			{
+				rid = r->rid;
+				name = r->name;
+				fid = r->fid;
+				cls = r->cls;
+				role = r->role;
+				delayexpel = r->delayexpel;
+				extend = r->extend;
+				nickname = r->nickname;
+			}
+			return *this;
+		}
+
+		GUserFaction& operator = (const GUserFaction &rhs)
+		{
+			const GUserFaction *r = &rhs;
+			if (r && r != this)
+			{
+				rid = r->rid;
+				name = r->name;
+				fid = r->fid;
+				cls = r->cls;
+				role = r->role;
+				delayexpel = r->delayexpel;
+				extend = r->extend;
+				nickname = r->nickname;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << rid;
+			os << name;
+			os << fid;
+			os << cls;
+			os << role;
+			os << delayexpel;
+			os << extend;
+			os << nickname;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> rid;
+			os >> name;
+			os >> fid;
+			os >> cls;
+			os >> role;
+			os >> delayexpel;
+			os >> extend;
+			os >> nickname;
+			return os;
+		}
+
+	};
+};
+#endif

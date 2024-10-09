@@ -1,0 +1,87 @@
+#ifndef __GNET_PLAYERPROFILEDATA_RPCDATA
+#define __GNET_PLAYERPROFILEDATA_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class PlayerProfileData : public GNET::Rpc::Data
+	{
+	public:
+		unsigned short game_time_mask;
+		unsigned short game_interest_mask;
+		unsigned short personal_interest_mask;
+		unsigned char age;
+		unsigned char zodiac;
+		unsigned short match_option_mask;
+
+	public:
+		PlayerProfileData (unsigned short l_game_time_mask = 0,unsigned short l_game_interest_mask = 0,unsigned short l_personal_interest_mask = 0
+			,unsigned char l_age = 0,unsigned char l_zodiac = 0,unsigned short l_match_option_mask = 0)
+			: game_time_mask(l_game_time_mask),game_interest_mask(l_game_interest_mask),personal_interest_mask(l_personal_interest_mask)
+			,age(l_age),zodiac(l_zodiac),match_option_mask(l_match_option_mask)
+		{
+		}
+
+		PlayerProfileData(const PlayerProfileData &rhs)
+			: game_time_mask(rhs.game_time_mask),game_interest_mask(rhs.game_interest_mask),personal_interest_mask(rhs.personal_interest_mask),
+			age(rhs.age),zodiac(rhs.zodiac),match_option_mask(rhs.match_option_mask) { }
+
+		Rpc::Data *Clone() const { return new PlayerProfileData(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const PlayerProfileData *r = dynamic_cast<const PlayerProfileData *>(&rhs);
+			if (r && r != this)
+			{
+				game_time_mask = r->game_time_mask;
+				game_interest_mask = r->game_interest_mask;
+				personal_interest_mask = r->personal_interest_mask;
+				age = r->age;
+				zodiac = r->zodiac;
+				match_option_mask = r->match_option_mask;
+			}
+			return *this;
+		}
+
+		PlayerProfileData& operator = (const PlayerProfileData &rhs)
+		{
+			const PlayerProfileData *r = &rhs;
+			if (r && r != this)
+			{
+				game_time_mask = r->game_time_mask;
+				game_interest_mask = r->game_interest_mask;
+				personal_interest_mask = r->personal_interest_mask;
+				age = r->age;
+				zodiac = r->zodiac;
+				match_option_mask = r->match_option_mask;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << game_time_mask;
+			os << game_interest_mask;
+			os << personal_interest_mask;
+			os << age;
+			os << zodiac;
+			os << match_option_mask;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> game_time_mask;
+			os >> game_interest_mask;
+			os >> personal_interest_mask;
+			os >> age;
+			os >> zodiac;
+			os >> match_option_mask;
+			return os;
+		}
+
+	};
+};
+#endif

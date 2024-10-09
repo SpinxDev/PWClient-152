@@ -1,0 +1,28 @@
+DIALOG "Win_Popface02" 0 0 340 195 0 1 10 "Window\对话框_标准边框3b.dds" "" "" 0 0 -1 -1 "人鱼传说新界面\面板关闭按钮.tga" 30 3 96 96 96 127 1
+LABEL "Lab_Popface02" "" "" 3 0 0 0 2 16 3 255 203 74 255
+IMAGEPICTURE "ImagePicture_ColorPic" "" "" 6 25 129 128 1 0 "faces\color.bmp"
+LABEL "Lab_Colorlab" "" "" 30 154 87 25 4 16 5 255 255 255 255
+RADIO "Rdo_0" "select" "SFX\Interface\ClickA.wav" 140 25 21 21 "Extra\单选框_标准.tga" 1 1
+LABEL "Lab_0" "" "" 165 27 61 18 6 12 7 255 255 255 255
+LABEL "Lab_1" "" "" 163 48 61 18 8 12 9 255 255 255 255
+RADIO "Rdo_1" "select" "SFX\Interface\ClickA.wav" 140 45 21 21 "Extra\单选框_标准.tga" 2 1
+LABEL "Lab_3" "" "" 163 69 61 18 10 12 11 255 255 255 255
+RADIO "Rdo_3" "select" "SFX\Interface\ClickA.wav" 140 66 21 21 "Extra\单选框_标准.tga" 4 1
+LABEL "Lab_5" "" "" 163 89 61 18 12 12 13 255 255 255 255
+RADIO "Rdo_5" "select" "SFX\Interface\ClickA.wav" 140 86 21 21 "Extra\单选框_标准.tga" 6 1
+LABEL "Lab_7" "" "" 163 107 61 18 14 12 15 255 255 255 255
+RADIO "Rdo_7" "select" "SFX\Interface\ClickA.wav" 140 105 21 21 "Extra\单选框_标准.tga" 8 1
+LABEL "Lab_9" "" "" 164 128 61 18 16 12 17 255 255 255 255
+RADIO "Rdo_9" "select" "SFX\Interface\ClickA.wav" 140 125 21 21 "Extra\单选框_标准.tga" 10 1
+LABEL "Lab_2" "" "" 262 48 61 18 18 12 19 255 255 255 255
+RADIO "Rdo_2" "select" "SFX\Interface\ClickA.wav" 239 45 21 21 "Extra\单选框_标准.tga" 3 1
+LABEL "Lab_4" "" "" 262 69 61 18 20 12 21 255 255 255 255
+RADIO "Rdo_4" "select" "SFX\Interface\ClickA.wav" 239 66 21 21 "Extra\单选框_标准.tga" 5 1
+LABEL "Lab_6" "" "" 263 91 61 18 22 12 23 255 255 255 255
+RADIO "Rdo_6" "select" "SFX\Interface\ClickA.wav" 239 88 21 21 "Extra\单选框_标准.tga" 7 1
+LABEL "Lab_8" "" "" 263 111 61 18 24 12 25 255 255 255 255
+RADIO "Rdo_8" "select" "SFX\Interface\ClickA.wav" 239 108 21 21 "Extra\单选框_标准.tga" 9 1
+LABEL "Lab_10" "" "" 263 129 61 18 26 12 27 255 255 255 255
+RADIO "Rdo_10" "select" "SFX\Interface\ClickA.wav" 239 127 21 21 "Extra\单选框_标准.tga" 11 1
+IMAGEPICTURE "Pic_ColorPos" "" "" 2 17 5 5 1 0 "faces\frame1.TGA"
+STILLIMAGEBUTTON "Btn_Popface" "popface01" "SFX\Interface\ClickB.wav" 222 3 80 24 0 0 0 0 28 10 255 204 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 29 1

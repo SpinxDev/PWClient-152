@@ -1,0 +1,42 @@
+
+#ifndef __GNET_FINDROLE_HPP
+#define __GNET_FINDROLE_HPP
+
+#include "rpcdefs.h"
+#include "callid.hxx"
+#include "state.hxx"
+
+#include "findrolearg"
+#include "findroleres"
+
+namespace GNET
+{
+
+class FindRole : public Rpc
+{
+#define	RPC_BASECLASS	Rpc
+	#include "findrole"
+#undef	RPC_BASECLASS
+
+	void Server(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+		// FindRoleArg *arg = (FindRoleArg *)argument;
+		// FindRoleRes *res = (FindRoleRes *)result;
+	}
+
+	void Client(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+		// TODO
+		// FindRoleArg *arg = (FindRoleArg *)argument;
+		// FindRoleRes *res = (FindRoleRes *)result;
+	}
+
+	void OnTimeout()
+	{
+		// TODO Client Only
+	}
+
+};
+
+};
+#endif

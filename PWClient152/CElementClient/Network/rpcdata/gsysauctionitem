@@ -1,0 +1,123 @@
+#ifndef __GNET_GSYSAUCTIONITEM_RPCDATA
+#define __GNET_GSYSAUCTIONITEM_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GSysAuctionItem : public GNET::Rpc::Data
+	{
+	public:
+		unsigned int sa_id;
+		unsigned int item_id;
+		int item_count;
+		unsigned int base_price;
+		int state;
+		int auction_starttime;
+		int auction_endtime;
+		unsigned int bid_price;
+		int bid_time;
+		int bid_freezetime;
+		int bidder_roleid;
+		int bidder_userid;
+
+	public:
+		GSysAuctionItem (unsigned int l_sa_id = 0,unsigned int l_item_id = 0,int l_item_count = 0
+			,unsigned int l_base_price = 0,int l_state = 0,int l_auction_starttime = 0
+			,int l_auction_endtime = 0,unsigned int l_bid_price = 0,int l_bid_time = 0
+			,int l_bid_freezetime = 0,int l_bidder_roleid = 0,int l_bidder_userid = 0)
+			: sa_id(l_sa_id),item_id(l_item_id),item_count(l_item_count)
+			,base_price(l_base_price),state(l_state),auction_starttime(l_auction_starttime)
+			,auction_endtime(l_auction_endtime),bid_price(l_bid_price),bid_time(l_bid_time)
+			,bid_freezetime(l_bid_freezetime),bidder_roleid(l_bidder_roleid),bidder_userid(l_bidder_userid)
+		{
+		}
+
+		GSysAuctionItem(const GSysAuctionItem &rhs)
+			: sa_id(rhs.sa_id),item_id(rhs.item_id),item_count(rhs.item_count),
+			base_price(rhs.base_price),state(rhs.state),auction_starttime(rhs.auction_starttime),
+			auction_endtime(rhs.auction_endtime),bid_price(rhs.bid_price),bid_time(rhs.bid_time),
+			bid_freezetime(rhs.bid_freezetime),bidder_roleid(rhs.bidder_roleid),bidder_userid(rhs.bidder_userid) { }
+
+		Rpc::Data *Clone() const { return new GSysAuctionItem(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GSysAuctionItem *r = dynamic_cast<const GSysAuctionItem *>(&rhs);
+			if (r && r != this)
+			{
+				sa_id = r->sa_id;
+				item_id = r->item_id;
+				item_count = r->item_count;
+				base_price = r->base_price;
+				state = r->state;
+				auction_starttime = r->auction_starttime;
+				auction_endtime = r->auction_endtime;
+				bid_price = r->bid_price;
+				bid_time = r->bid_time;
+				bid_freezetime = r->bid_freezetime;
+				bidder_roleid = r->bidder_roleid;
+				bidder_userid = r->bidder_userid;
+			}
+			return *this;
+		}
+
+		GSysAuctionItem& operator = (const GSysAuctionItem &rhs)
+		{
+			const GSysAuctionItem *r = &rhs;
+			if (r && r != this)
+			{
+				sa_id = r->sa_id;
+				item_id = r->item_id;
+				item_count = r->item_count;
+				base_price = r->base_price;
+				state = r->state;
+				auction_starttime = r->auction_starttime;
+				auction_endtime = r->auction_endtime;
+				bid_price = r->bid_price;
+				bid_time = r->bid_time;
+				bid_freezetime = r->bid_freezetime;
+				bidder_roleid = r->bidder_roleid;
+				bidder_userid = r->bidder_userid;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << sa_id;
+			os << item_id;
+			os << item_count;
+			os << base_price;
+			os << state;
+			os << auction_starttime;
+			os << auction_endtime;
+			os << bid_price;
+			os << bid_time;
+			os << bid_freezetime;
+			os << bidder_roleid;
+			os << bidder_userid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> sa_id;
+			os >> item_id;
+			os >> item_count;
+			os >> base_price;
+			os >> state;
+			os >> auction_starttime;
+			os >> auction_endtime;
+			os >> bid_price;
+			os >> bid_time;
+			os >> bid_freezetime;
+			os >> bidder_roleid;
+			os >> bidder_userid;
+			return os;
+		}
+
+	};
+};
+#endif

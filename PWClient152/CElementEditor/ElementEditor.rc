@@ -1,0 +1,3397 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\ElementEditor.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\ElementEditor.ico"
+IDI_NEWLAYER            ICON    DISCARDABLE     "res\\NewLayer.ico"
+IDI_DELETE              ICON    DISCARDABLE     "res\\delete.ico"
+IDI_MOVEUP              ICON    DISCARDABLE     "res\\moveup.ico"
+IDI_MOVEDOWN            ICON    DISCARDABLE     "res\\movedown.ico"
+IDI_OPEN                ICON    DISCARDABLE     "res\\Open.ico"
+IDI_SAVE                ICON    DISCARDABLE     "res\\save.ico"
+IDI_PLANT_ADD_SORT      ICON    DISCARDABLE     "res\\plant_ad.ico"
+IDI_DELETE_FROM_TERRAIN ICON    DISCARDABLE     "res\\icon1.ico"
+IDI_ICON1               ICON    DISCARDABLE     "res\\ico00001.ico"
+IDI_ICON2               ICON    DISCARDABLE     "res\\icon2.ico"
+IDI_ICON3               ICON    DISCARDABLE     "res\\icon3.ico"
+IDI_ICON4               ICON    DISCARDABLE     "res\\icon4.ico"
+IDI_ICON5               ICON    DISCARDABLE     "res\\icon5.ico"
+IDI_ICON6               ICON    DISCARDABLE     "res\\icon6.ico"
+IDI_ICON7               ICON    DISCARDABLE     "res\\icon7.ico"
+IDI_ICON8               ICON    DISCARDABLE     "res\\icon8.ico"
+IDI_WRITEABLE           ICON    DISCARDABLE     "res\\writeable.ico"
+IDI_READONLY            ICON    DISCARDABLE     "res\\readonly.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_HEIGHTMAP           BITMAP  MOVEABLE PURE   "res\\hmToolBar.bmp"
+IDR_BRUSH               BITMAP  MOVEABLE PURE   "res\\toolbar1.bmp"
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDB_QUAD_1              BITMAP  MOVEABLE PURE   "res\\bitmap1.bmp"
+IDB_QUAD_2              BITMAP  MOVEABLE PURE   "res\\bmp00001.bmp"
+IDB_QUAD_3              BITMAP  MOVEABLE PURE   "res\\bmp00002.bmp"
+IDB_QUAD_4              BITMAP  MOVEABLE PURE   "res\\bmp00003.bmp"
+IDB_BITMAP_FLAGS        BITMAP  MOVEABLE PURE   "res\\listtag.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_HEIGHTMAP TOOLBAR MOVEABLE PURE  16, 16
+BEGIN
+    BUTTON      ID_HM_HM_LOAD
+    BUTTON      ID_HM_HM_SAVE
+    SEPARATOR
+    BUTTON      ID_HM_VIEW_VIEWALL
+END
+
+IDR_BRUSH TOOLBAR MOVEABLE PURE  16, 15
+BEGIN
+    BUTTON      ID_BRUSH_RADIUS_ADD
+    BUTTON      ID_BRUSH_RADIUS_SUB
+    SEPARATOR
+    BUTTON      ID_BRUSH_RADIUS_1
+    BUTTON      ID_BRUSH_RADIUS_2
+    BUTTON      ID_BRUSH_RADIUS_3
+    SEPARATOR
+    BUTTON      ID_BRUSH_RECT
+    BUTTON      ID_BRUSH_CIRCLE
+END
+
+IDR_MAINFRAME TOOLBAR MOVEABLE PURE  16, 15
+BEGIN
+    BUTTON      ID_EDIT_OBJECT_COPY
+    SEPARATOR
+    BUTTON      ID_OPERATION_UNDO
+    BUTTON      ID_OPERATION_REDO
+    SEPARATOR
+    BUTTON      ID_OPERATION_SELECT
+    BUTTON      ID_OPERATION_MOVE
+    BUTTON      ID_OPERATION_ROTATE
+    BUTTON      ID_OPERATION_ROTATE2
+    BUTTON      ID_OPERATION_SCALE
+    BUTTON      ID_OPERATION_SELECTMULTI
+    BUTTON      ID_OPERATION_DELETE
+    SEPARATOR
+    BUTTON      ID_OPERATION_OBSTRUCT
+    BUTTON      ID_BEZIER_DRAG
+    BUTTON      ID_BEZIER_ADDPOINT
+    BUTTON      ID_BEZIER_SUBPOINT
+    BUTTON      ID_BEZIER_CUT
+    BUTTON      ID_BEZIER_SMOOTH
+    BUTTON      ID_BEZIER_MERGE
+    BUTTON      ID_BEZIER_TEST
+    SEPARATOR
+    BUTTON      ID_BUTTON_SHOW_VERNIER
+    BUTTON      ID_BUTTON_NOSPEAK
+    SEPARATOR
+    BUTTON      ID_DAY_NIGHT
+    BUTTON      ID_BUTTON_RAIN
+    BUTTON      ID_BUTTON_SNOW
+    SEPARATOR
+    BUTTON      ID_OPERATION_TEST_BEIZER_INTERSECT
+    BUTTON      ID_SHOW_MODEL_PLANE
+    SEPARATOR
+    BUTTON      ID_ROTATE_X
+    BUTTON      ID_ROTATE_Y
+    BUTTON      ID_ROTATE_Z
+    SEPARATOR
+    BUTTON      ID_SHOW_SEL_ONLY
+    BUTTON      ID_SHOW_TERRAIN_LIGHT
+    BUTTON      ID_STATUS_TRIANGLE_SEL
+    BUTTON      ID_SHOW_DISTANCE
+    BUTTON      ID_OBJECT_DROP
+    BUTTON      ID_SELECT_BY_ID
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "设置工作空间",                ID_SET_WORKSPACE
+        MENUITEM SEPARATOR
+        MENUITEM "新建(&N) ...\tCtrl+N",        ID_FILE_NEW
+        MENUITEM "打开(&O)...\tCtrl+O",         ID_FILE_OPEN
+        MENUITEM "关闭",                        ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "保存(&S)\tCtrl+S",            ID_FILE_SAVE
+        MENUITEM "另存为...",                   ID_FILE_SAVEAS
+        MENUITEM SEPARATOR
+        MENUITEM "导出游戏数据...",             ID_FILE_EXPORTGAMEDATA
+        MENUITEM "导出游戏资源...",             ID_EXPORT_GAME_RES
+        MENUITEM "输出顶视图...",               ID_EXP_TOPVIEW_MAP
+        MENUITEM SEPARATOR
+        MENUITEM "调整所有场景对象高度...",     ID_MOVE_ALL_SCENE_OBJECT
+        MENUITEM "自动切分高度图...",           ID_FILE_AUTOPARTHM
+        MENUITEM "重新排列地图...",             ID_FILE_SORT_MAP
+        MENUITEM SEPARATOR
+        MENUITEM "设置工作路径...",             ID_FILE_SETWORKDIR
+        MENUITEM SEPARATOR
+        MENUITEM "测试项目管辖区域覆盖情况",    ID_TEST_PRECINCT_ERROR
+        MENUITEM SEPARATOR
+        MENUITEM "导出AI数据",                  ID_EXP_AI_DATA
+        MENUITEM "输入AI数据",                  ID_IMP_AI_DATA
+        MENUITEM SEPARATOR
+        MENUITEM "输出项目中用到过的天空纹理",  ID_EXPORT_SKY_INFOR
+        MENUITEM "输出当前项目灯光列表",        ID_EXP_LIGHT_INFOR_LIST
+        MENUITEM SEPARATOR
+        MENUITEM "转换地图到老完美世界",        ID_TRANLATE_MAP_TO_PW
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+        MENUITEM SEPARATOR
+        MENUITEM "分块导出服务器凸包",          ID_FILE_EXPORT_SERVER_BHT_BY_PROJECT
+
+        MENUITEM "导出路径统计信息",            ID_FILE_EXPORT_PATH_INFO
+        MENUITEM "设置随机地图信息",            ID_FILE_RANDOM_MAP_INFO
+    END
+    POPUP "查看(&V)"
+    BEGIN
+        MENUITEM "工具栏(&T)",                  ID_VIEW_TOOLBAR
+        MENUITEM "状态栏(&S)",                  ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "重置摄像机位置",              ID_VIEW_RESETCAMERA
+        MENUITEM "重新加载所有纹理",            ID_RELOAD_ALL_TEXTURES
+    END
+    POPUP "编辑(&E)"
+    BEGIN
+        MENUITEM "撤消(&U)\tCtrl+Z",            ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "剪切(&T)\tCtrl+X",            ID_EDIT_CUT
+        MENUITEM "复制(&C)\tCtrl+C",            ID_EDIT_COPY
+        MENUITEM "粘贴(&P)\tCtrl+V",            ID_EDIT_PASTE
+    END
+    POPUP "地形"
+    BEGIN
+        MENUITEM "高度图...",                   ID_TERRAIN_HEIGHTMAP
+        MENUITEM "贴图层...",                   ID_TERRAIN_SURACES
+        MENUITEM "光照...",                     ID_TERRAIN_LIGHTING
+        MENUITEM SEPARATOR
+        MENUITEM "更新地形渲染数据",            ID_TERRAIN_CREATESURFS
+        MENUITEM SEPARATOR
+        MENUITEM "修改地形障碍图...",           ID_TERRAIN_MODIFIED_PROFILE
+        MENUITEM SEPARATOR
+        MENUITEM "地图自动拼接\tCtrl+L",        ID_MAP_AUTO_MERGE
+        MENUITEM "显示地形纹理分布状态\tCtrl+B", ID_TERRAIN_BLOCK_VIEW
+    END
+    POPUP "工具"
+    BEGIN
+        MENUITEM "资源管理器",                  ID_MENU_RES_MAN
+        MENUITEM SEPARATOR
+        MENUITEM "测试区域是否完全覆盖",        ID_TEST_PRECINCT
+        MENUITEM "对场景中树优化处理",          ID_MERGE_TREE_TYPE
+        MENUITEM SEPARATOR
+        MENUITEM "把列表中的怪物插入到地图",    ID_INSERT_MOUNSTER_TO_MAP
+        MENUITEM "统计地图中怪物数",            ID_MOUNSTER_STAT
+        MENUITEM SEPARATOR
+        MENUITEM "统计项目中模型更改情况",      ID_MODEL_CHANGED
+        MENUITEM SEPARATOR
+        MENUITEM "动态物品编辑",                ID_DYNAMIC_OBJECT_EDITOR
+        MENUITEM "怪物控制器编辑",              ID_MONSTER_CONTROLLER_EDITOR
+        MENUITEM "输出NPC信息到文本文件",       ID_EXPORT_STAT_NPCS
+        MENUITEM "统计场景三角形数",            ID_STAT_ALL_TRIANGLE
+        MENUITEM "输出Coord_data.txt(当前图)",  ID_EXPORT_COORD_DATA
+    END
+    POPUP "VSS"
+    BEGIN
+        MENUITEM "配置VSS",                     ID_SET_VSS
+        MENUITEM SEPARATOR
+        MENUITEM "取最新静态模型资源",          ID_GET_VSS_ALL
+        MENUITEM "取得最新全部地图数据",        ID_GET_ALL_MAP_DATA
+        MENUITEM "取得当前工作空间所有地图",    ID_GET_CURRENT_PROJ_WORKSPACE_MAPS
+
+        MENUITEM SEPARATOR
+        MENUITEM "把地图放回服务器(CHECK IN)",  VSS_TEST_MAP_CHECKIN
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于 ElementEditor(&A)...",   ID_APP_ABOUT
+    END
+END
+
+IDR_VIEWFRAME MENU DISCARDABLE 
+BEGIN
+    POPUP "Popup"
+    BEGIN
+        MENUITEM "线框",                        ID_VF_WIREFRAME
+        MENUITEM SEPARATOR
+        MENUITEM "Front",                       ID_VF_VIEWXY
+        MENUITEM "Top",                         ID_VF_VIEWXZ
+        MENUITEM "Left",                        ID_VF_VIEWYZ
+        MENUITEM "Perspective",                 ID_VF_VIEWPERSPECTIVE
+    END
+END
+
+IDR_HEIGHTMAP MENU DISCARDABLE 
+BEGIN
+    POPUP "高度图"
+    BEGIN
+        MENUITEM "导入...",                     ID_HM_HM_LOAD
+        MENUITEM "导出...",                     ID_HM_HM_SAVE
+        MENUITEM SEPARATOR
+        MENUITEM "临时保存",                    ID_HM_HM_HOLD
+        MENUITEM "恢复保存",                    ID_HM_HM_FETCH
+        MENUITEM SEPARATOR
+    END
+    POPUP "编辑"
+    BEGIN
+        MENUITEM "清空高度图",                  ID_HM_EDIT_ERASE
+        MENUITEM SEPARATOR
+        MENUITEM "修改地形属性...",             ID_HM_EDIT_MAPPROP
+    END
+    POPUP "查看"
+    BEGIN
+        MENUITEM "全图",                        ID_HM_VIEW_VIEWALL
+    END
+END
+
+IDR_LIGHTING MENU DISCARDABLE 
+BEGIN
+    POPUP "文件"
+    BEGIN
+        MENUITEM "导入光照设置...",             ID_LT_FILE_LOAD
+        MENUITEM "导出光照设置...",             ID_LT_FILE_SAVE
+    END
+END
+
+IDR_SURFACES MENU DISCARDABLE 
+BEGIN
+    POPUP "文件"
+    BEGIN
+        MENUITEM "导入...",                     ID_SUF_FILE_LOAD
+        MENUITEM "导出...",                     ID_SUF_FILE_SAVE
+    END
+END
+
+IDR_MENU_TREE_SET MENU DISCARDABLE 
+BEGIN
+    POPUP "&"
+    BEGIN
+        MENUITEM "设置模型为树",                ID_SET_TO_TREE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "B",            ID_TERRAIN_BLOCK_VIEW,  VIRTKEY, CONTROL, NOINVERT
+    "C",            ID_EDIT_OBJECT_COPY,    VIRTKEY, CONTROL, NOINVERT
+    "L",            ID_MAP_AUTO_MERGE,      VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_OPERATION_DELETE,    VIRTKEY, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Y",            ID_OPERATION_REDO,      VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_OPERATION_UNDO,      VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 77
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 ElementEditor"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,21,21
+    LTEXT           "ElementEditor 1.0 版",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2004 ",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,89,56,50,14,WS_GROUP
+END
+
+IDD_NEWMAP DIALOG DISCARDABLE  0, 0, 214, 137
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "新建项目"
+FONT 9, "宋体"
+BEGIN
+    EDITTEXT        IDC_EDIT_PROJNAME,38,21,162,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_TILESIZE,83,64,36,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "确定",IDOK,104,116,50,14,BS_FLAT
+    PUSHBUTTON      "放弃",IDCANCEL,157,116,50,14,BS_FLAT
+    GROUPBOX        "地形",IDC_STATIC,7,51,200,55,BS_FLAT
+    LTEXT           "地形每格宽度(米)",IDC_STATIC,16,67,65,8
+    GROUPBOX        "项目",IDC_STATIC,7,7,200,36,BS_FLAT
+    LTEXT           "名称",IDC_STATIC,16,24,17,8
+    LTEXT           "最低高度(米)",IDC_STATIC,16,87,49,8
+    LTEXT           "最高高度(米)",IDC_STATIC,111,87,49,8
+    EDITTEXT        IDC_EDIT_MINHEIGHT,68,84,36,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MAXHEIGHT,163,84,36,14,ES_AUTOHSCROLL
+END
+
+IDD_HEIGHTMAP DIALOG DISCARDABLE  0, 0, 381, 407
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "高度图"
+MENU IDR_HEIGHTMAP
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "关闭",IDCANCEL,324,386,50,14,BS_FLAT
+    GROUPBOX        "高度图",IDC_STATIC_TITLE,7,7,367,373
+    CONTROL         "",IDC_STATIC_HEIGHTMAPVIEW,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,15,21,36,36
+END
+
+IDD_NEWHEIGHTMAP DIALOG DISCARDABLE  0, 0, 257, 125
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "高度图"
+FONT 9, "宋体"
+BEGIN
+    COMBOBOX        IDC_COMBO_SIZE,42,22,121,161,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "8-bit",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,181,22,36,10
+    CONTROL         "16-bit",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,181,35,
+                    40,10
+    CONTROL         "float",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,181,48,36,
+                    10
+    LTEXT           "高度图文件",IDC_STATIC,15,63,41,8
+    EDITTEXT        IDC_EDIT_FILENAME,15,74,205,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BTN_BROWSE,224,74,18,14,BS_FLAT
+    DEFPUSHBUTTON   "确定",IDOK,146,104,50,14,BS_FLAT
+    PUSHBUTTON      "放弃",IDCANCEL,200,104,50,14,BS_FLAT
+    GROUPBOX        "高度图信息",IDC_STATIC,7,7,243,89
+    LTEXT           "",IDC_STATIC_SCALE,16,42,145,8
+    LTEXT           "尺寸：",IDC_STATIC,16,25,25,8
+END
+
+IDD_OPTIONS DIALOG DISCARDABLE  0, 0, 166, 370
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    EDITTEXT        IDC_EDIT_CAMERAMOVE,73,20,49,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_CAMERAMOVE,"msctls_updown32",
+                    UDS_ARROWKEYS,123,20,11,14
+    EDITTEXT        IDC_EDIT_CAMERAROT,73,37,49,14,ES_RIGHT | ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_CAMERAROT,"msctls_updown32",
+                    UDS_ARROWKEYS,123,37,11,14
+    LTEXT           "移动(米/秒)",IDC_STATIC,16,23,45,8
+    LTEXT           "旋转(度/像素)",IDC_STATIC,16,40,53,8
+    CONTROL         "地面碰撞检测",IDC_CHECK_ALONGGROUND,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,100,64,10
+    GROUPBOX        "摄像机",IDC_STATIC,5,7,150,53
+    CONTROL         "连续放入对象",IDC_CHECK_OBJECT_ADD_CONTINUE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,85,64,10
+    CONTROL         "拾取静态模型",IDC_CHECK_PICK_STATICOBJECT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,166,64,10
+    GROUPBOX        "拾取选择",IDC_STATIC,7,149,153,172
+    CONTROL         "拾取灯光",IDC_CHECK_PICK_LIGHT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,181,48,10
+    CONTROL         "拾取声音",IDC_CHECK_PICK_AUDIO,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,196,48,10
+    CONTROL         "拾取区域",IDC_CHECK_PICK_BOXAREA,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,211,48,10
+    GROUPBOX        "一般设置",IDC_STATIC,5,70,150,74
+    CONTROL         "拾取哑元",IDC_CHECK_PICK_DUMMY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,226,48,10
+    CONTROL         "拾取特效",IDC_CHECK_PICK_SPECIALLY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,90,166,48,10
+    CONTROL         "拾取水面",IDC_CHECK_PICK_WATER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,90,182,48,10
+    CONTROL         "拾取AI区域",IDC_CHECK_PICK_AIAREA,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,90,196,56,10
+    CONTROL         "拾取NPC路径",IDC_CHECK_PICK_NPC_PATH,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,90,210,60,10
+    CONTROL         "拾取生物群",IDC_CHECK_PICK_CRITTER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,90,225,56,10
+    CONTROL         "拾取动画模型",IDC_CHECK_PICK_SKIN_MODEL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,90,240,64,10
+    CONTROL         "拾取NPC",IDC_CHECK_PICK_FIXEDNPC,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,241,44,10
+    CONTROL         "显示静态模型凸包",IDC_CHECK_SHOW_HULL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,115,80,10
+    CONTROL         "拾取管辖区域",IDC_CHECK_PICK_PRECINCT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,256,64,10
+    CONTROL         "拾取可采集对象",IDC_CHECK_PICK_GATHER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,90,255,72,10
+    CONTROL         "路径点吸引",IDC_CHECK_BEZIER_PT_SNAP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,90,85,56,10
+    CONTROL         "拾取范围",IDC_CHECK_PICK_RANGE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,271,48,10
+    CONTROL         "拾取云层盒子",IDC_CHECK_PICK_CLOUD_BOX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,90,270,64,10
+    CONTROL         "拾取副本盒子",IDC_CHECK_PICK_INSTANCE_BOX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,287,64,10
+    CONTROL         "Slider1",IDC_SLIDER_SFX,"msctls_trackbar32",TBS_TOP | 
+                    TBS_NOTICKS | WS_TABSTOP,80,324,79,15
+    LTEXT           "环境音效音量",IDC_STATIC,7,328,49,8
+    CONTROL         "Slider1",IDC_SLIDER_MUSIC,"msctls_trackbar32",TBS_TOP | 
+                    TBS_NOTICKS | WS_TABSTOP,80,345,79,15
+    LTEXT           "背景音乐音量",IDC_STATIC,7,349,49,8
+    CONTROL         "拾取动态物品",IDC_CHECK_PICK_DYNAMIC,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,90,288,64,10
+    CONTROL         "显示动态物品凸包",IDC_CHECK_SHOW_HULL2,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,129,80,10
+    PUSHBUTTON      "全选/全不选",IDC_BUTTON_SWITCH_PICK_ALL,93,303,59,14
+    CONTROL         "拾取场景范围路径",IDC_CHECK_PICK_NON_NPC_PATH,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,305,77,10
+END
+
+IDD_RENDEROPT DIALOG DISCARDABLE  0, 0, 167, 392
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "立刻显示地形掩膜画刷更新结果",IDC_CHECK_IMMEMASKPAINT,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,82,128,10
+    LTEXT           "渲染半径(米)",IDC_STATIC,24,24,49,8
+    EDITTEXT        IDC_EDIT_VIEWRADIUS,92,21,46,14,ES_AUTOHSCROLL
+    CONTROL         "渲染天空",IDC_CHECK_RENDER_SKY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,24,96,48,10
+    LTEXT           "地形层最大重要度",IDC_STATIC,24,44,65,8
+    COMBOBOX        IDC_COMBO_WEIGHT,92,41,46,92,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "显示对象名字",IDC_CHECK_RENDER_SHOW_NAME,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,86,214,62,10
+    GROUPBOX        "",IDC_STATIC,7,7,153,378
+    CONTROL         "显示静态模型",IDC_CHECK_SHOW_STATICOBJECT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,154,64,10
+    CONTROL         "显示灯光",IDC_CHECK_SHOW_LIGHT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,20,169,48,10
+    CONTROL         "显示声音",IDC_CHECK_SHOW_AUDIO,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,20,184,48,10
+    CONTROL         "显示区域",IDC_CHECK_SHOW_BOXAREA,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,199,48,10
+    CONTROL         "显示哑元",IDC_CHECK_SHOW_DUMMY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,20,214,48,10
+    CONTROL         "显示特效",IDC_CHECK_SHOW_SPECIALLY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,86,154,48,10
+    CONTROL         "显示水面",IDC_CHECK_SHOW_WATER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,86,169,48,10
+    CONTROL         "显示AI区域",IDC_CHECK_SHOW_AIAREA,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,86,184,56,10
+    CONTROL         "显示NPC路径",IDC_CHECK_SHOW_NPC_PATH,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,86,199,60,10
+    GROUPBOX        "附加显示设置",IDC_STATIC,13,142,139,233
+    CONTROL         "显示生物群",IDC_CHECK_SHOW_CRITTER_GROUP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,229,56,10
+    CONTROL         "显示动画模型",IDC_CHECK_SHOW_SKINMODEL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,86,229,64,10
+    CONTROL         "打开雾",DC_CHECK_RENDER_ENABLE_FOG,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,24,109,40,10
+    CONTROL         "显示NPC",IDC_CHECK_SHOW_FIXED_NPC,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,244,44,10
+    CONTROL         "显示选中地形块",IDC_CHECK_SHOW_TERRAIN_BLOCK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,86,244,72,10
+    CONTROL         "显示树",IDC_CHECK_SHOW_TREE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,20,259,40,10
+    CONTROL         "显示草",IDC_CHECK_SHOW_GRASS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,86,259,40,10
+    CONTROL         "显示可采集区域",IDC_CHECK_SHOW_GATHER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,304,72,10
+    CONTROL         "显示地形",IDC_CHECK_SHOW_TERRAIN,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,274,48,10
+    CONTROL         "显示范围",IDC_CHECK_SHOW_RANGE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,86,274,48,10
+    CONTROL         "显示云层",IDC_CHECK_SHOW_CLOUD,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,20,289,48,10
+    CONTROL         "显示云块组线",IDC_CHECK_SHOW_CLOUD_LINE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,86,289,64,10
+    CONTROL         "关闭水面效果",DC_CHECK_RENDER_SAMPLE_WATER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,24,121,64,10
+    CONTROL         "显示副本盒子",IDC_CHECK_SHOW_INSTANCE_BOX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,319,64,10
+    LTEXT           "显示第几套数据",IDC_STATIC,23,64,57,8
+    COMBOBOX        IDC_COMBO_COPY,91,61,46,92,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "显示动态物品",IDC_CHECK_SHOW_DYNAMIC,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,333,64,10
+    CONTROL         "显示怪物视野",IDC_CHECK_SHOW_MONSTER_VIEW,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,348,64,10
+    PUSHBUTTON      "全选/全不选",IDC_BUTTON_SWITCH_SHOW_ALL,101,358,50,17
+    CONTROL         "显示场景范围路径",IDC_CHECK_SHOW_NON_NPC_PATH,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,362,78,10
+END
+
+IDD_SURFACES DIALOGEX 0, 0, 370, 479
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "地形贴图"
+MENU IDR_SURFACES
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_BTN_ADDLAYER,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    59,16,15,15
+    CONTROL         "",IDC_BTN_DELLAYER,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    75,16,15,15
+    CONTROL         "",IDC_BTN_MOVEUPLAYER,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,91,16,15,15
+    CONTROL         "",IDC_BTN_MOVEDNLAYER,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,107,16,15,15
+    LISTBOX         IDC_LIST_LAYERS,12,33,111,189,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP,WS_EX_DLGMODALFRAME | 
+                    WS_EX_CLIENTEDGE
+    CONTROL         "使用该层",IDC_CHECK_ENABLE,"Button",BS_AUTOCHECKBOX | 
+                    BS_FLAT | WS_TABSTOP,141,27,48,10
+    EDITTEXT        IDC_EDIT_USCALE,170,64,36,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_WANTRETURN
+    CONTROL         "Spin1",IDC_SPIN_USCALE,"msctls_updown32",UDS_ARROWKEYS,
+                    206,64,11,14
+    EDITTEXT        IDC_EDIT_VSCALE,170,82,36,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_WANTRETURN
+    CONTROL         "Spin1",IDC_SPIN_VSCALE,"msctls_updown32",UDS_ARROWKEYS,
+                    206,82,11,14
+    COMBOBOX        IDC_COMBO_PROJAXIS,170,101,48,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "加载贴图",IDC_BTN_LOADTEXTURE,225,100,54,14,BS_FLAT
+    CONTROL         "自动生成掩膜",IDC_CHECK_AUTOGENMASK,"Button",
+                    BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,142,144,64,10
+    CONTROL         "平滑",IDC_CHECK_SMOOTH,"Button",BS_AUTOCHECKBOX | 
+                    BS_FLAT | WS_TABSTOP,210,144,32,10
+    COMBOBOX        IDC_COMBO_AUTOMASKSIZE,273,142,75,139,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_ALTISTART,196,181,32,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_ALTIEND,245,181,32,14,ES_RIGHT | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SLOPESTART,196,202,32,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SLOPEEND,245,202,32,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "导入掩膜",IDC_BTN_IMPORTMASK,47,432,50,14,BS_FLAT
+    PUSHBUTTON      "导出掩膜",IDC_BTN_EXPORTMASK,102,432,50,14,BS_FLAT
+    DEFPUSHBUTTON   "确定",IDOK,313,458,50,14,BS_FLAT
+    GROUPBOX        "层",IDC_STATIC,7,7,121,220,BS_FLAT
+    GROUPBOX        "普通属性",IDC_STATIC,134,7,229,114,BS_FLAT
+    LTEXT           "U 比例",IDC_STATIC,142,66,25,8
+    LTEXT           "V 比例",IDC_STATIC,142,85,25,8
+    LTEXT           "投影轴",IDC_STATIC,142,104,25,8
+    GROUPBOX        "自动生成掩膜",IDC_STATIC,134,128,229,99,BS_FLAT
+    LTEXT           "高度范围：",IDC_STATIC,142,185,41,8
+    LTEXT           "坡度范围：",IDC_STATIC,142,205,41,8
+    LTEXT           "从",IDC_STATIC,185,185,9,8
+    LTEXT           "从",IDC_STATIC,185,205,9,8
+    LTEXT           "到",IDC_STATIC,234,185,9,8
+    LTEXT           "到",IDC_STATIC,234,205,9,8
+    GROUPBOX        "预览",IDC_STATIC,7,234,356,218,BS_CENTER | BS_FLAT
+    LTEXT           "掩膜",IDC_STATIC_MASKTITLE,16,246,149,8
+    LTEXT           "最终地形",IDC_STATIC,259,245,33,8
+    CONTROL         "",IDC_STATIC_AUTOMASK,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,15,257,166,165
+    CONTROL         "",IDC_STATIC_TERRAINVIEW,"Static",SS_BLACKFRAME,190,257,
+                    166,165
+    CONTROL         "",IDC_STATIC_TEXTURE,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,225,43,54,55
+    LTEXT           "尺寸",IDC_STATIC,253,145,17,8
+    CONTROL         "X",IDC_CHECK_MASKAXIS_X,"Button",BS_AUTOCHECKBOX | 
+                    BS_FLAT | WS_TABSTOP,184,161,20,10
+    CONTROL         "Y",IDC_CHECK_MASKAXIS_Y,"Button",BS_AUTOCHECKBOX | 
+                    BS_FLAT | WS_TABSTOP,204,161,20,10
+    CONTROL         "Z",IDC_CHECK_MASKAXIS_Z,"Button",BS_AUTOCHECKBOX | 
+                    BS_FLAT | WS_TABSTOP,224,161,20,10
+    LTEXT           "地形朝向：",IDC_STATIC,142,162,41,8
+    PUSHBUTTON      "加载高光图",IDC_BTN_LOADSPECUMAP,286,100,54,14,BS_FLAT
+    CONTROL         "",IDC_STATIC_SPECUMAP,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,286,43,54,55
+    CONTROL         "",IDC_BTN_DELSPECUMAP,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,341,99,15,15
+    LTEXT           "重要度",IDC_STATIC,141,46,25,8
+    COMBOBOX        IDC_COMBO_WEIGHT,170,43,48,81,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_TEXTURE_PATH1,245,13,110,13,ES_AUTOHSCROLL | 
+                    ES_READONLY,WS_EX_RIGHT
+    EDITTEXT        IDC_EDIT_TEXTURE_PATH2,245,28,110,13,ES_AUTOHSCROLL | 
+                    ES_READONLY,WS_EX_RIGHT
+    LTEXT           "贴图",IDC_STATIC,225,17,17,8
+    LTEXT           "高光",IDC_STATIC,224,30,17,8
+END
+
+IDD_SELECTFILE DIALOGEX 0, 0, 445, 317
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择文件"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tree1",IDC_TREE_DIRECTORY,"SysTreeView32",
+                    TVS_HASBUTTONS | TVS_HASLINES | TVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,7,7,243,282,WS_EX_DLGMODALFRAME | 
+                    WS_EX_CLIENTEDGE
+    CONTROL         "List1",IDC_LIST_FILE,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_SORTASCENDING | 
+                    LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,253,7,185,
+                    282,WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE
+    DEFPUSHBUTTON   "确定",IDOK,275,295,75,15,BS_FLAT
+    PUSHBUTTON      "放弃",IDCANCEL,355,295,80,15,BS_FLAT
+    LTEXT           "",IDC_STATIC_PROMPT,7,299,123,8
+    PUSHBUTTON      "取出地图(Checkout)",IDC_BUTTON_CHECK_OUT,180,295,85,15,
+                    BS_FLAT
+END
+
+IDD_SAVEAS DIALOG DISCARDABLE  0, 0, 192, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "另存为"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,80,58,50,14,BS_FLAT
+    PUSHBUTTON      "放弃",IDCANCEL,133,58,50,14,BS_FLAT
+    GROUPBOX        "项目名称",IDC_STATIC,7,7,178,38,BS_FLAT
+    EDITTEXT        IDC_EDIT_PROJNAME,15,23,163,14,ES_AUTOHSCROLL
+END
+
+IDD_EXPGAMEDATA DIALOGEX 0, 0, 404, 279
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "更新地图排列"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "关闭",IDCANCEL,347,258,50,14,BS_FLAT
+    GROUPBOX        "设置",IDC_STATIC,7,7,144,241,BS_FLAT
+    CONTROL         "",IDC_STATIC_MAPPIECE,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,158,7,239,241
+    CONTROL         "List1",IDC_LIST_PROJECT,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | 
+                    WS_BORDER | WS_TABSTOP,12,63,133,180,WS_EX_DLGMODALFRAME | 
+                    WS_EX_CLIENTEDGE
+    CONTROL         "",IDC_BTN_LOADPROJLIST,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,81,37,15,15
+    LTEXT           "列数",IDC_STATIC,15,25,17,8
+    EDITTEXT        IDC_EDIT_COLUMN,15,37,40,14,ES_AUTOHSCROLL | 
+                    ES_WANTRETURN
+    CONTROL         "",IDC_BTN_SAVEPROJLIST,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,97,37,15,15
+    CONTROL         "",IDC_BTN_MOVEUPPROJ,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    113,37,15,15
+    CONTROL         "",IDC_BTN_MOVEDNPROJ,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    129,37,15,15
+    DEFPUSHBUTTON   "确定",IDOK,293,258,50,14,BS_FLAT
+    PUSHBUTTON      "按当前排列自动拼接所有地图",IDC_BUTTON_TERRAIN_LINK,7,
+                    257,144,14
+END
+
+IDD_LIGHTING DIALOG DISCARDABLE  0, 0, 380, 217
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "光照"
+FONT 9, "宋体"
+BEGIN
+    COMBOBOX        IDC_COMBO_MAPSIZE,233,23,94,147,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider1",IDC_SLIDER_SUNDIR,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,229,44,103,12
+    CONTROL         "Slider1",IDC_SLIDER_SUNHEIGHT,"msctls_trackbar32",
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,229,60,103,12
+    DEFPUSHBUTTON   "确定",IDOK,270,196,50,14,BS_FLAT
+    PUSHBUTTON      "放弃",IDCANCEL,323,196,50,14,BS_FLAT
+    CONTROL         "",IDC_STATIC_LIGHTINGVIEW,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,7,7,156,178
+    GROUPBOX        "设置",IDC_STATIC,170,7,203,178,BS_FLAT
+    LTEXT           "太阳方向",IDC_STATIC,182,45,33,8
+    LTEXT           "太阳高度",IDC_STATIC,182,62,33,8
+    LTEXT           "光照图大小",IDC_STATIC,182,26,41,8
+    LTEXT           "环境颜色",IDC_STATIC,182,130,33,8
+    LTEXT           "阳光颜色",IDC_STATIC,182,148,33,8
+    LTEXT           "",IDC_STATIC_AMBIENT,233,127,22,13,SS_NOTIFY | 
+                    WS_BORDER
+    LTEXT           "",IDC_STATIC_SUNCOLOR,233,145,22,13,SS_NOTIFY | 
+                    WS_BORDER
+    LTEXT           "太阳方向(x)",IDC_STATIC,183,79,45,8
+    EDITTEXT        IDC_EDIT_SUNDIRX,233,77,75,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "太阳方向(y)",IDC_STATIC,183,96,45,8
+    EDITTEXT        IDC_EDIT_SUNDIRY,233,94,75,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "太阳方向(z)",IDC_STATIC,184,111,45,8
+    EDITTEXT        IDC_EDIT_SUNDIRZ,233,109,75,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_AMBIENT,258,127,50,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_SUNCOLOR,258,146,50,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_SUNDIRPOS,334,42,31,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SUNHEIPOS,334,60,31,12,ES_AUTOHSCROLL
+    LTEXT           "亮度",IDC_STATIC,313,148,17,8
+    EDITTEXT        IDC_EDIT_SUNPOWER,334,146,31,12,ES_AUTOHSCROLL
+    CONTROL         "白天",IDC_RADIO_DAY,"Button",BS_AUTORADIOBUTTON,7,200,
+                    32,10
+    CONTROL         "晚上",IDC_RADIO_NIGHT,"Button",BS_AUTORADIOBUTTON,86,
+                    200,32,10
+    LTEXT           "地形阴影增益因子(1.0-2.0)",IDC_STATIC,181,165,101,8,NOT 
+                    WS_VISIBLE
+    EDITTEXT        IDC_EDIT_SUNPOWER2,306,164,31,12,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+END
+
+IDD_TERRAIN_MODIFY DIALOG DISCARDABLE  0, 0, 160, 360
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "地形拉伸",IDC_TERRAIN_MODIFY_STRETCH,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,10,19,67,13
+    CONTROL         "设置为空",IDC_TERRAIN_MODIFY_EMPTY,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,83,19,67,13
+    CONTROL         "地形平滑",IDC_TERRAIN_MODIFY_SMOOTH,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,10,39,67,13
+    CONTROL         "加噪波",IDC_TERRAIN_MODIFY_NOISE,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,83,39,67,13
+    GROUPBOX        "高度修改",IDC_STATIC,7,7,146,50
+    GROUPBOX        "纹理层修改",IDC_STATIC,7,67,146,32
+    CONTROL         "刷掩模",IDC_TERRAIN_MODIFY_LAYMASK,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,10,80,67,13
+    CONTROL         "柔化掩模",IDC_TERRAIN_MODIFY_LAYMASK_SOFT,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,83,80,67,13
+    GROUPBOX        "植被修改",IDC_STATIC,7,108,146,32
+    CONTROL         "添加植被",IDC_TERRAIN_MODIFY_PLANT,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,10,120,67,13
+    GROUPBOX        "NPC可达区域编辑",IDC_STATIC,7,151,146,92
+    CONTROL         "设置成不可达点",IDC_TERRAIN_OBSTRUCT_RED,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,79,165,67,13
+    CONTROL         "设置成可达点",IDC_TERRAIN_OBSTRUCT_GREEN,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,9,165,67,13
+    CONTROL         "设置不可达凸包",IDC_TERRAIN_OBSTRUCT_CONVEX,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,79,183,67,13
+    CONTROL         "计算可达图",IDC_TERRAIN_OBSTRUCT_MAP_TRANS,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,9,183,67,13
+    CONTROL         "设置可达图种子",IDC_TERRAIN_OBSTRUCT_MAP_SETSEED,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,9,201,67,13
+    CONTROL         "设置成建筑可达点",IDC_TERRAIN_OBSTRUCT_MAP_YELLOW,
+                    "Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,79,
+                    201,67,13
+    CONTROL         "生成空间通过图",IDC_TERRAIN_OBSTRUCT_MAP_SPACE_CREATE,
+                    "Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,9,
+                    219,67,13
+    CONTROL         "保存所有通过图",IDC_TERRAIN_OBSTRUCT_SAVE_ALL_MAP,
+                    "Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,79,
+                    219,67,13
+    GROUPBOX        "角色寻径",IDC_STATIC,7,253,146,95
+    CONTROL         "设置成不可达点",IDC_TERRAIN_OBSTRUCT2_RED,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,79,306,67,13
+    CONTROL         "设置成可达点",IDC_TERRAIN_OBSTRUCT2_GREEN,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,9,306,67,13
+    CONTROL         "计算可达图",IDC_TERRAIN_OBSTRUCT2_MAP_TRANS,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,9,287,67,13
+    CONTROL         "设置可达图种子",IDC_TERRAIN_OBSTRUCT2_MAP_SETSEED,
+                    "Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,79,
+                    287,67,13
+    CONTROL         "设置成建筑可达点",IDC_TERRAIN_OBSTRUCT2_YELLOW,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,9,325,67,13
+    CONTROL         "保存当前通过图",IDC_TERRAIN_OBSTRUCT2_SAVE_ALL_MAP,
+                    "Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,79,
+                    325,67,13
+    COMBOBOX        IDC_COMBO_SEL_PPASSMAP_LAYER,9,266,67,42,
+                    CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "合并多张寻径图",IDC_TERRAIN_OBSTRUCT2_MERGE,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,79,267,67,13
+END
+
+IDD_BRUSH_SET DIALOGEX 0, 0, 160, 105
+STYLE WS_CHILD
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "Slider1",IDC_SLIDER_BRUSHRADIUS,"msctls_trackbar32",
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,15,45,123,15,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "半径：",IDC_STATIC,16,27,27,9
+    GROUPBOX        "",IDC_STATIC,6,7,147,83
+    EDITTEXT        IDC_EDIT_BRUSHRADIUS,78,24,49,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_BRUSHRADIUS,"msctls_updown32",
+                    UDS_ARROWKEYS,128,23,11,14
+    CONTROL         "圆形画刷",IDC_RADIO_BRUSHCIRCLE,"Button",
+                    BS_AUTORADIOBUTTON,15,71,48,10
+    CONTROL         "方形画刷",IDC_RADIO_BRUSHRECT,"Button",
+                    BS_AUTORADIOBUTTON,96,71,48,10
+END
+
+IDD_TERRAIN_MODIFY_STRETCH DIALOGEX 0, 0, 160, 558
+STYLE WS_CHILD
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "Slider1",IDC_SLIDER_BRUSHHEIGHT,"msctls_trackbar32",
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,14,123,123,15,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "高度：",IDC_STATIC_HEIGHT,15,105,27,9
+    EDITTEXT        IDC_EDIT_BRUSHHEIGHT,77,102,49,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_BRUSHHEIGHT,"msctls_updown32",
+                    UDS_ARROWKEYS,127,102,11,14
+    CONTROL         "Slider1",IDC_SLIDER_BRUSHHARD,"msctls_trackbar32",
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,15,166,123,15,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "变化系数：",IDC_STATIC_HARD,16,148,41,8
+    EDITTEXT        IDC_EDIT_BRUSHHARD,78,145,49,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_BRUSHHARD,"msctls_updown32",
+                    UDS_ARROWKEYS,128,145,11,14
+    GROUPBOX        "",IDC_STATIC,7,71,146,124
+    CONTROL         "",IDC_TERRAIN_FILTER_DLG,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,7,215,146,146
+    CONTROL         "平坦的刷子",IDC_RADIO_BRUSHFLAT,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,14,46,56,10
+    CONTROL         "光滑的刷子",IDC_RADIO_BRUSHSMOOTH,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,82,46,56,10
+    GROUPBOX        "",IDC_STATIC,7,7,146,60
+    COMBOBOX        IDC_COMBO_STRETCH_TYPE,66,20,71,42,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "拉伸方法：",IDC_STATIC,17,23,41,8
+    LTEXT           "刷子形状调整：",IDC_STATIC_SOFTBRUSH,15,203,57,8
+    GROUPBOX        "固定高度采样",IDC_STATIC,7,367,146,60
+    EDITTEXT        IDC_EDIT_STRETCH_NOISE_RADIUS,77,396,49,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_STRETCH_NOISE_RADIUS,"msctls_updown32",
+                    UDS_ARROWKEYS,127,396,11,14
+    EDITTEXT        IDC_EDIT_STRETCH_NOISE_PERSISTENCE,77,443,49,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CONTROL         "Spin2",IDC_SPIN_STRETCH_NOISE_PERSISTENCE,
+                    "msctls_updown32",UDS_ARROWKEYS | NOT WS_VISIBLE,127,443,
+                    11,14
+    LTEXT           "采样时间：",IDC_STATIC_RADIUS,16,400,41,8
+    LTEXT           "粗糙程度：",IDC_STATIC_PERSISTENCE,16,446,41,8,NOT 
+                    WS_VISIBLE
+    CONTROL         "高度加",IDC_RADIO_HEIGHTADD,"Button",BS_AUTORADIOBUTTON,
+                    14,45,40,10
+    CONTROL         "高度减",IDC_RADIO_HEIGHTSUB,"Button",BS_AUTORADIOBUTTON,
+                    82,45,40,10
+    GROUPBOX        "",IDC_STATIC,7,36,146,23
+    LTEXT           "刷子当前高度：",IDC_STATIC,14,84,57,8
+    LTEXT           "N/A",IDC_STATIC_BRUSHHEIGHT,77,81,60,12,0,
+                    WS_EX_STATICEDGE
+    CONTROL         "打开噪音",IDC_CHECK_ENABLENOISE,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,18,387,75,
+                    9
+    CONTROL         "锁定高度图边界",IDC_CHECK_LOCK_MAP_EDGE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,16,464,72,10
+    GROUPBOX        "自定义刷子选择",IDC_STATIC,7,487,146,65
+    PUSHBUTTON      "刷子文件选择",IDC_BUTTON_SEL_BRUSH,15,502,132,12
+    LTEXT           "当前刷子:",IDC_STATIC,17,525,37,8
+    EDITTEXT        IDC_EDIT_BURSH_NAME,55,523,92,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+END
+
+IDD_TERRAIN_MODIFY_NOISE DIALOG DISCARDABLE  0, 0, 160, 131
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "起伏幅度：",IDC_STATIC,22,45,41,8
+    EDITTEXT        IDC_EDIT_NOISERADIUS,92,43,37,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_NOISERADIUS,"msctls_updown32",
+                    UDS_ARROWKEYS,130,43,11,11
+    LTEXT           "粗糙程度：",IDC_STATIC,22,67,41,8
+    EDITTEXT        IDC_EDIT_NOISEPERSISTENCE,92,65,37,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_NOISEPERSISTENCE,"msctls_updown32",
+                    UDS_ARROWKEYS,130,65,11,11
+    LTEXT           "变化系数：",IDC_STATIC,22,22,41,8
+    EDITTEXT        IDC_EDIT_NOISEDELTA,92,20,37,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin2",IDC_SPIN_NOISEDELTA,"msctls_updown32",
+                    UDS_ARROWKEYS,130,20,11,11
+    CONTROL         "锁定高度图边界",IDC_CHECK_LOCK_MAP_EDGE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,19,99,72,10
+END
+
+IDD_TERRAIN_MODIFY_LAYMASK DIALOGEX 0, 0, 160, 359
+STYLE WS_CHILD | WS_VISIBLE
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "Slider1",IDC_SLIDER_BRUSHHGRAY,"msctls_trackbar32",
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,19,78,123,15,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "灰度值：",IDC_STATIC,17,60,33,8
+    EDITTEXT        IDC_EDIT_BRUSHHGRAY,81,57,49,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_BRUSHHGRAY,"msctls_updown32",
+                    UDS_ARROWKEYS,131,56,11,14
+    CONTROL         "Slider1",IDC_SLIDER_BRUSHLAYHARD,"msctls_trackbar32",
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,19,121,123,15,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "硬度：",IDC_STATIC_HARD,19,103,27,9
+    EDITTEXT        IDC_EDIT_BRUSHLAYHARD,81,100,49,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_BRUSHLAYHARD,"msctls_updown32",
+                    UDS_ARROWKEYS,131,99,11,14
+    GROUPBOX        "",IDC_STATIC,7,43,146,102
+    GROUPBOX        "选择层",IDC_STATIC,7,149,146,122
+    LISTBOX         IDC_TERRAIN_MODIFY_LAYLIST,16,168,122,83,
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "刷新",IDC_FRESH_LAYER_LIST,112,254,26,13,BS_VCENTER | 
+                    BS_MULTILINE | BS_FLAT | NOT WS_TABSTOP
+    GROUPBOX        "",IDC_STATIC,7,7,146,33
+    CONTROL         "颜色加",IDC_RADIO_MASKPAINT_CLRADD,"Button",
+                    BS_AUTORADIOBUTTON,20,21,40,10
+    CONTROL         "颜色减",IDC_RADIO_MASKPAINT_CLRSUB,"Button",
+                    BS_AUTORADIOBUTTON,88,21,40,10
+    EDITTEXT        IDC_EDIT_USER_BRUSH_NAME,57,317,86,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "当前刷子:",IDC_STATIC,16,320,37,8
+    GROUPBOX        "自定义刷子",IDC_STATIC,7,281,146,67
+    PUSHBUTTON      "选择刷子文件",IDC_LOAD_BRUSH_RAW,13,295,130,14
+END
+
+IDD_TERRAIN_MODIFY_SMOOTH DIALOGEX 0, 0, 160, 102
+STYLE WS_CHILD
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "Slider1",IDC_SLIDER_BRUSHSMOOTH,"msctls_trackbar32",
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,18,44,123,15,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "平滑速度：",IDC_STATIC,19,26,41,8
+    EDITTEXT        IDC_EDIT_BRUSHSMOOTH,81,23,49,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_BRUSHSMOOTH,"msctls_updown32",
+                    UDS_ARROWKEYS,131,22,11,14
+    GROUPBOX        "",IDC_STATIC,7,7,146,88
+    CONTROL         "锁定高度图边界",IDC_CHECK_LOCK_MAP_EDGE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,21,75,72,10
+END
+
+IDD_SCENE_OBJECT DIALOG DISCARDABLE  0, 0, 160, 207
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "加路径",IDC_SCENE_OBJECT_PATH,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,7,12,70,13
+    CONTROL         "加灯光",IDC_SCENE_OBJECT_LIGHT,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,83,12,70,13
+    CONTROL         "加声音",IDC_SCENE_OBJECT_AUDIO,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,7,26,70,13
+    CONTROL         "加静态模型",IDC_SCENE_OBJECT_MODEL,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,83,54,70,13
+    CONTROL         "加区域",IDC_SCENE_OBJECT_AREA,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,7,40,70,13
+    CONTROL         "加怪物产生区域",IDC_SCENE_OBJECT_AI,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,83,26,70,13
+    CONTROL         "加特效",IDC_SCENE_OBJECT_SKYBOX,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,7,54,70,13
+    CONTROL         "加水面",IDC_SCENE_OBJECT_WATER,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,83,68,70,13
+    CONTROL         "坐标指示",IDC_SCENE_OBJECT_VERNIER,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,7,160,70,13
+    GROUPBOX        "添加",IDC_STATIC,7,0,146,143
+    GROUPBOX        "修改",IDC_STATIC,7,146,146,53
+    CONTROL         "加哑元",IDC_SCENE_OBJECT_DUMMY,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,7,68,70,13
+    PUSHBUTTON      "重新加载模型",SCENE_OBJECT_MODEL_RELOAD,83,160,70,13
+    CONTROL         "加动画模型",IDC_SCENE_OBJECT_SKINMODEL,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,83,82,70,13
+    CONTROL         "加生物群",IDC_SCENE_OBJECT_CRITTER,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,7,82,70,13
+    CONTROL         "加NPC",IDC_SCENE_OBJECT_FIXNPC,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,83,40,70,13
+    CONTROL         "加管辖区域",IDC_SCENE_OBJECT_PRECINCT,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,7,96,70,13
+    CONTROL         "加可采集对象",IDC_SCENE_OBJECT_GATHER,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,83,96,70,13
+    CONTROL         "加范围对象",IDC_SCENE_OBJECT_RANGE,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,7,110,70,13
+    CONTROL         "云层修改",IDC_SCENE_OBJECT_CLOUD_SET,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,7,180,70,13
+    CONTROL         "加云块",IDC_SCENE_OBJECT_CLOUD_BOX,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,83,110,70,13
+    CONTROL         "加副本区域",IDC_SCENE_OBJECT_BOX_INSTANCE,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,7,124,70,13
+    CONTROL         "加动态物品",IDC_SCENE_OBJECT_DYNAMIC_ADD,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,83,124,70,13
+END
+
+IDD_TERRAIN_MODIFY_LAYMASKSMOOTH DIALOGEX 0, 0, 160, 167
+STYLE WS_CHILD
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "",IDC_STATIC,7,0,146,160
+    LISTBOX         IDC_TERRAIN_MODIFY_LAYLISTSMOOTH,20,68,122,83,
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider1",IDC_SLIDER_LAYMASKSMOOTH,"msctls_trackbar32",
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,19,43,123,15,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "平滑因子：",IDC_STATIC,17,25,41,8
+    EDITTEXT        IDC_EDIT_LAYMASKSMOOTH,81,23,49,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_LAYMASKSMOOTH,"msctls_updown32",
+                    UDS_ARROWKEYS,131,21,11,14
+END
+
+IDD_PROPERTY_DIALOG DIALOG DISCARDABLE  0, 0, 231, 216
+STYLE DS_MODALFRAME | WS_CHILD | WS_CAPTION | WS_SYSMENU
+CAPTION "属性"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,49,196,50,14
+    PUSHBUTTON      "取消",IDCANCEL,132,196,50,14
+    CONTROL         "",IDC_RECT_PROPERIES,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,4,5,223,182
+END
+
+IDD_PATH_DIALOG DIALOG DISCARDABLE  0, 0, 345, 249
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "请选择文件"
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "文件名：",IDC_STATIC,7,7,33,8
+    LTEXT           "Static",IDC_FILENAME,41,7,297,8
+    CONTROL         "Tree1",IDC_TREE1,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_TABSTOP,
+                    7,22,331,194
+    DEFPUSHBUTTON   "确定",IDOK,205,227,50,15
+    PUSHBUTTON      "取消",IDCANCEL,288,227,50,15
+END
+
+IDD_MEMOEDIT_DIALOG DIALOG DISCARDABLE  0, 0, 298, 163
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Memo编辑对话框"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,156,142,50,14
+    PUSHBUTTON      "取消",IDCANCEL,241,142,50,14
+    EDITTEXT        IDC_EDITMEMO,7,7,284,127,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+END
+
+IDD_CUSTOM_VECTOR_DLG DIALOG DISCARDABLE  0, 0, 159, 125
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "向量属性"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,21,94,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,88,94,50,14
+    EDITTEXT        IDC_EDIT_VECOTR_X,49,17,78,12,ES_AUTOHSCROLL
+    LTEXT           "X:",IDC_STATIC,31,19,9,8
+    LTEXT           "Y:",IDC_STATIC,31,43,9,8
+    LTEXT           "Z:",IDC_STATIC,31,67,9,8
+    EDITTEXT        IDC_EDIT_VECOTR_Y,49,41,78,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_VECOTR_Z,49,65,78,12,ES_AUTOHSCROLL
+END
+
+IDD_COMMONFILE_DIALOG DIALOGEX 0, 0, 388, 319
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "CommonFileDlg"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Open",IDOK,348,167,33,12
+    PUSHBUTTON      "Cancel",IDCANCEL,348,187,33,12
+    CONTROL         "List1",IDC_DIRLIST,"SysListView32",WS_BORDER | 
+                    WS_TABSTOP,7,3,54,309,WS_EX_CLIENTEDGE
+    LTEXT           "History:",IDC_STATIC,71,12,33,8
+    LTEXT           "LookIn:",IDC_STATIC,71,27,29,8
+    COMBOBOX        IDC_COMBO_HIST,109,12,253,40,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_COMBOBOXEX_LOOKIN,"ComboBoxEx32",CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP,109,27,204,40
+    PUSHBUTTON      "",IDC_BACKWARD,325,29,16,11,BS_BITMAP
+    PUSHBUTTON      "Button2",IDC_UP,347,29,16,11,BS_BITMAP
+    CONTROL         "List2",IDC_FILELIST,"SysListView32",LVS_LIST | 
+                    WS_BORDER | WS_TABSTOP,69,44,312,118,WS_EX_CLIENTEDGE
+    LTEXT           "File Name:",IDC_STATIC,71,167,41,8
+    EDITTEXT        IDC_FILENAME,133,167,199,13,ES_AUTOHSCROLL
+    LTEXT           "Files of Type:",IDC_STATIC,71,185,57,8
+    COMBOBOX        IDC_COMBO_FILETYPE,133,185,200,37,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Preview",IDC_CHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,93,203,42,10
+    CONTROL         "",IDC_STATIC_PREV,"Static",SS_GRAYFRAME,170,210,110,96
+    LTEXT           "",IDC_STATIC_FILEINFO,281,211,89,12
+    LTEXT           "",IDC_STATIC_IMAGEINFO,281,223,89,13
+END
+
+IDC_CHOOSECOLOR_DIALOG DIALOG DISCARDABLE  2, 0, 336, 202
+STYLE DS_MODALFRAME | DS_3DLOOK | DS_CONTEXTHELP | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "颜色"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    LTEXT           "基本颜色(&B):",IDC_STATIC,5,4,140,9
+    CONTROL         "",COLOR_BOX1,"Static",SS_SIMPLE | WS_GROUP | WS_TABSTOP,
+                    5,14,139,86
+    LTEXT           "自定义颜色(&C):",IDC_STATIC,5,106,140,9
+    CONTROL         "",COLOR_CUSTOM1,"Static",SS_SIMPLE | WS_GROUP | 
+                    WS_TABSTOP,5,116,139,28
+    PUSHBUTTON      "规定自定义颜色(&D) >>",COLOR_MIX,5,150,133,14,WS_GROUP
+    DEFPUSHBUTTON   "确定",IDOK,5,183,42,14,WS_GROUP
+    PUSHBUTTON      "取消",IDCANCEL,50,183,42,14,WS_GROUP
+    PUSHBUTTON      "帮助",1038,96,183,42,14,NOT WS_VISIBLE | WS_GROUP
+    CONTROL         "",COLOR_RAINBOW,"Static",SS_SIMPLE | SS_SUNKEN,148,4,
+                    168,116
+    CONTROL         "",COLOR_LUMSCROLL,"Static",SS_SIMPLE | SS_SUNKEN,320,4,
+                    8,116
+    CONTROL         "",COLOR_CURRENT,"Static",SS_SIMPLE | SS_SUNKEN,148,124,
+                    46,26
+    PUSHBUTTON      "&O",COLOR_SOLID,5,166,31,14,NOT WS_VISIBLE | WS_GROUP
+    RTEXT           "颜色",COLOR_SOLID_LEFT,148,152,18,9
+    LTEXT           "| 纯色(&O)",COLOR_SOLID_RIGHT,166,152,41,9
+    RTEXT           "色调(&E):",COLOR_HUEACCEL,214,126,41,9
+    EDITTEXT        COLOR_HUE,258,124,18,12,WS_GROUP
+    RTEXT           "饱和度(&S):",COLOR_SATACCEL,214,140,41,9
+    EDITTEXT        COLOR_SAT,258,138,18,12,WS_GROUP
+    RTEXT           "亮度(&L):",COLOR_LUMACCEL,214,154,41,9
+    EDITTEXT        COLOR_LUM,258,152,18,12,WS_GROUP
+    RTEXT           "红(&R):",COLOR_REDACCEL,284,126,24,9
+    EDITTEXT        COLOR_RED,310,124,18,12,WS_GROUP
+    RTEXT           "绿(&G):",COLOR_GREENACCEL,284,140,24,9
+    EDITTEXT        COLOR_GREEN,310,138,18,12,WS_GROUP
+    RTEXT           "蓝(&B):",COLOR_BLUEACCEL,284,154,24,9
+    EDITTEXT        COLOR_BLUE,310,152,18,12,WS_GROUP
+    RTEXT           "透明度(&A):",IDC_STATIC,272,168,36,8
+    EDITTEXT        COLOR_ALPHA,310,166,18,12,ES_NUMBER | WS_GROUP
+    PUSHBUTTON      "添加自定义颜色",COLOR_ADD,145,183,186,14,WS_GROUP
+END
+
+IDD_SCENE_OBJECT_LIGHT DIALOG DISCARDABLE  0, 0, 160, 200
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+END
+
+IDD_SCENE_OBJECT_PROPERTY DIALOG DISCARDABLE  0, 0, 160, 143
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "",IDC_SCENE_OBJECT_PROPERTY_LIST,"Static",SS_BLACKFRAME,
+                    7,7,146,111
+    PUSHBUTTON      "放弃",IDC_BUTTON_OBJECT_RESET,7,122,60,14
+    PUSHBUTTON      "更新",IDC_BUTTON_OBJECT_UPDATE,90,122,63,14
+END
+
+IDD_SCENE_OBJECT_MODEL_LIST DIALOG DISCARDABLE  0, 0, 160, 294
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "Tree1",IDC_SCENE_MODEL_TREE,"SysTreeView32",
+                    TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | 
+                    TVS_FULLROWSELECT | WS_BORDER | WS_TABSTOP,7,7,146,280
+END
+
+IDD_SCENE_OBJECTS_LIST DIALOG DISCARDABLE  0, 0, 160, 194
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "Tree1",IDC_SCENE_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_NOTOOLTIPS | 
+                    WS_BORDER | WS_TABSTOP,7,7,146,163
+    PUSHBUTTON      "刷新",IDC_BUTTON_FRESH_SCENE_LIST,114,176,39,11
+    PUSHBUTTON      "删除",IDC_BUTTON_FRESH_DEL_SCENE_OBJECT,72,176,39,11
+END
+
+IDD_SCENE_OBJECT_SKY DIALOG DISCARDABLE  0, 0, 161, 171
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "顶图(右)：",IDC_STATIC,3,21,49,8
+    LTEXT           "侧图1(左)：",IDC_STATIC,4,38,45,8
+    LTEXT           "侧图2(顶)：",IDC_STATIC,4,55,45,8
+    PUSHBUTTON      "...",IDC_BUTTON_SKY1,124,17,35,13
+    PUSHBUTTON      "...",IDC_BUTTON_SKY2,124,35,35,13
+    PUSHBUTTON      "...",IDC_BUTTON_SKY3,124,53,35,13
+    EDITTEXT        IDC_EDIT_SKY_TEX1,54,17,67,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_SKY_TEX2,53,35,67,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_SKY_TEX3,53,53,67,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "应用",IDC_CREATE_SKYBOX,110,147,45,14
+    CONTROL         "半球体",IDC_RADIO_SKY_SPHERE,"Button",
+                    BS_AUTORADIOBUTTON,5,150,48,10
+    CONTROL         "立方体",IDC_RADIO_SKY_BOX,"Button",BS_AUTORADIOBUTTON,
+                    55,150,48,10
+    LTEXT           "下底图：",IDC_STATIC_SKY_TEX4,4,81,37,9
+    LTEXT           "前贴图：",IDC_STATIC_SKY_TEX5,4,98,37,9
+    LTEXT           "后贴图：",IDC_STATIC_SKY_TEX6,4,115,37,9
+    PUSHBUTTON      "...",IDC_BUTTON_SKY4,124,77,35,13
+    PUSHBUTTON      "...",IDC_BUTTON_SKY5,124,95,35,13
+    PUSHBUTTON      "...",IDC_BUTTON_SKY6,124,113,35,13
+    EDITTEXT        IDC_EDIT_SKY_TEX4,53,77,67,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_SKY_TEX5,53,95,67,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_SKY_TEX6,53,113,67,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    GROUPBOX        "球体或立方体贴图",IDC_STATIC,0,5,160,125
+END
+
+IDD_TERRAIN_MODIFY_PLANTS DIALOG DISCARDABLE  0, 0, 160, 453
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "新加草",IDC_PLANT_ADD_SORT,10,13,40,14
+    PUSHBUTTON      "删除类型",IDC_PLANT_DELETE,104,13,40,14
+    CONTROL         "Tree1",IDC_TREE_PLANT_LIST,"SysTreeView32",
+                    TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | 
+                    TVS_SHOWSELALWAYS | TVS_TRACKSELECT | WS_BORDER | 
+                    WS_TABSTOP,11,51,134,113
+    GROUPBOX        "植被列表",IDC_STATIC,5,40,146,153
+    GROUPBOX        "植被操作",IDC_STATIC,5,0,146,33
+    CONTROL         "删除",IDC_PLANT_DELETE_FROM_TERRAIN,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,87,178,30,14
+    CONTROL         "添加",IDC_PLANT_ADD_TO_TERRAIN,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,118,178,30,14
+    GROUPBOX        "草设置",IDC_STATIC,5,304,146,142
+    CONTROL         "移动(Y)",IDC_PLANT_MOVE_Y,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,8,178,35,14
+    CONTROL         "移动(XZ)",IDC_PLANT_MOVE_XZ,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,44,178,35,14
+    LTEXT           "Alpha参考值：",IDC_STATIC,9,318,53,8
+    EDITTEXT        IDC_EDIT_GRASS_ALPHAREF,85,316,37,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_GRASS_ALPHAREF,"msctls_updown32",
+                    UDS_ARROWKEYS,123,316,11,11
+    LTEXT           "视野范围：",IDC_STATIC,9,336,41,8
+    EDITTEXT        IDC_EDIT_GRASS_SIGHTRANGE,85,333,37,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_GRASS_SIGHTRANGE,"msctls_updown32",
+                    UDS_ARROWKEYS,123,333,11,11
+    LTEXT           "草平均尺寸(倍数)：",IDC_STATIC,9,357,73,8
+    EDITTEXT        IDC_EDIT_GRASS_SIZE,85,353,37,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_GRASS_SIZE,"msctls_updown32",
+                    UDS_ARROWKEYS,124,353,11,11
+    LTEXT           "尺寸变动系数：",IDC_STATIC,9,377,57,8
+    EDITTEXT        IDC_EDIT_GRASS_SIZEVAR,85,373,37,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_GRASS_SIZEVAR,"msctls_updown32",
+                    UDS_ARROWKEYS,123,374,11,11
+    LTEXT           "柔软度：",IDC_STATIC,9,393,33,8
+    EDITTEXT        IDC_EDIT_GRASS_SOFT,85,391,37,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_GRASS_SOFT,"msctls_updown32",
+                    UDS_ARROWKEYS,123,392,11,11
+    CONTROL         "打开Alpha混合",IDC_CHECK_GRASS_ENABLEALPHA,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,429,68,10
+    LTEXT           "名字：",IDC_STATIC,15,210,25,8
+    EDITTEXT        IDC_EDIT_PLANT_NAME,42,210,104,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL
+    LTEXT           "密度：",IDC_STATIC,15,269,25,8
+    EDITTEXT        IDC_EDIT_PLANTS_DENSITY,86,267,37,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin2",IDC_SPIN_PLANTS_DENSITY,"msctls_updown32",
+                    UDS_ARROWKEYS,124,267,11,11
+    CONTROL         "显示该层植被",IDC_CHECK_PLANTS_SHOW,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,15,281,64,
+                    10
+    GROUPBOX        "",IDC_STATIC,5,200,145,98
+    PUSHBUTTON      "新加树",IDC_TREE_TYPES_ADD,57,13,40,14
+    LTEXT           "草最大数目：",IDC_STATIC,9,413,49,8,WS_DISABLED
+    EDITTEXT        IDC_EDIT_GRASS_MAX_NUM,85,411,37,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_NUMBER | WS_DISABLED
+    CONTROL         "Spin2",IDC_SPIN_GRASS_MAXNUM,"msctls_updown32",
+                    UDS_ARROWKEYS | WS_DISABLED,123,412,11,11
+    LTEXT           "资源：",IDC_STATIC,15,227,25,8
+    EDITTEXT        IDC_EDIT_PLANT_RES,42,225,104,37,ES_RIGHT | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY | ES_WANTRETURN
+    PUSHBUTTON      "...",IDC_BUTTON_CHANGE_RES,14,250,22,12
+END
+
+IDD_PLANTS_IN_SORT_NAME DIALOG DISCARDABLE  0, 0, 152, 67
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "输入植被归类名"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "加入",IDOK,95,46,50,14
+    PUSHBUTTON      "放弃",IDCANCEL,7,46,50,14
+    EDITTEXT        IDC_EDIT_PLANTS_NAME,7,15,138,12,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_VERNIER_SET DIALOG DISCARDABLE  0, 0, 160, 196
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "坐标(X)",IDC_STATIC,30,23,29,8
+    LTEXT           "坐标(Y)",IDC_STATIC,30,42,29,8
+    LTEXT           "坐标(Z)",IDC_STATIC,30,61,29,8
+    EDITTEXT        IDC_EDIT_POSX,65,20,60,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_POSY,65,39,60,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_POSZ,65,58,60,13,ES_AUTOHSCROLL
+    LTEXT           "宽度",IDC_STATIC,10,168,17,8
+    EDITTEXT        IDC_EDIT_VERNIER_WIDTH,45,165,60,13,ES_AUTOHSCROLL
+    CONTROL         "显示XZ平面",IDC_RADIO_XZ,"Button",BS_AUTORADIOBUTTON,10,
+                    131,56,10
+    CONTROL         "显示XY平面",IDC_RADIO_XY,"Button",BS_AUTORADIOBUTTON,75,
+                    131,56,10
+    CONTROL         "显示ZY平面",IDC_RADIO_ZY,"Button",BS_AUTORADIOBUTTON,10,
+                    146,56,10
+    GROUPBOX        "平面",IDC_STATIC,5,115,145,75
+    GROUPBOX        "坐标",IDC_STATIC,5,5,145,100
+    CONTROL         "取鼠标单击位置",IDC_CHECK_GETPOS,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,30,80,95,15
+END
+
+IDD_TREE_TYPE_ADD DIALOG DISCARDABLE  0, 0, 187, 127
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择文件"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确认",IDOK,130,106,50,14
+    PUSHBUTTON      "取消",IDCANCEL,7,106,50,14
+    EDITTEXT        IDC_EDIT_SPEED_TREE_NAME,49,19,80,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "...",IDC_BUTTON_SPEEDTREE,133,19,33,14
+    LTEXT           "SPD文件",IDC_STATIC,9,22,29,8
+    EDITTEXT        IDC_EDIT_DDS_NAME,49,45,80,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "...",IDC_BUTTON_DDS,133,45,33,14
+    LTEXT           "纹理文件",IDC_STATIC,9,48,33,8
+    EDITTEXT        IDC_EDIT_TREE_NAME,49,73,116,14,ES_AUTOHSCROLL
+    LTEXT           "树名字",IDC_STATIC,9,77,29,8
+END
+
+IDD_AUTOPARTHM DIALOG DISCARDABLE  0, 0, 245, 141
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "自动切分高度图"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "开始切分",IDOK,134,120,50,14,BS_FLAT
+    PUSHBUTTON      "放弃",IDCANCEL,188,120,50,14,BS_FLAT
+    GROUPBOX        "待切分高度图",IDC_STATIC,7,7,231,56,BS_FLAT
+    PUSHBUTTON      "选择高度图文件...",IDC_BROWSE,16,22,98,14,BS_FLAT
+    EDITTEXT        IDC_EDIT_FILENAME,15,41,215,14,ES_AUTOHSCROLL
+    LTEXT           "宽",IDC_STATIC,123,25,9,8
+    LTEXT           "高",IDC_STATIC,179,25,9,8
+    EDITTEXT        IDC_EDIT_WIDTH,133,22,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_HEIGHT,190,22,40,14,ES_AUTOHSCROLL
+    LTEXT           "行",IDC_STATIC,17,88,9,8
+    LTEXT           "列",IDC_STATIC,76,88,9,8
+    EDITTEXT        IDC_EDIT_ROW,28,85,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_COL,89,85,40,14,ES_AUTOHSCROLL
+    GROUPBOX        "切分设置",IDC_STATIC,7,69,231,40,BS_FLAT
+END
+
+IDD_AI_AREA DIALOG DISCARDABLE  0, 0, 210, 155
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "向AI产生器中加入NPC"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "退出",IDOK,155,130,50,15
+    LISTBOX         IDC_LIST_AI,7,7,196,110,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "新加",IDC_NEW_AI,7,127,42,18
+    PUSHBUTTON      "删除",IDC_DELETE_AI,97,127,40,18
+    PUSHBUTTON      "修改",IDC_MODIFY_AI,53,127,40,18
+END
+
+IDD_AI_PROPERTY DIALOG DISCARDABLE  0, 0, 187, 417
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "AI属性"
+FONT 10, "宋体"
+BEGIN
+    COMBOBOX        IDC_COMBO_NPC,91,28,89,64,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_NPC_ID,91,48,89,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_NPC_NUM,91,67,89,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_NPC_FRESH,91,86,89,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_NPC_OFFSET_T,91,134,89,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_NPC_OFFSET_W,91,157,89,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_NPC_DIE_NUM,91,175,89,12,ES_AUTOHSCROLL
+    CONTROL         "是",IDC_RADIO_HELP_NEED,"Button",BS_AUTORADIOBUTTON | 
+                    NOT WS_VISIBLE,99,284,23,10
+    CONTROL         "否",IDC_RADIO_HELP_NO,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,148,284,23,10
+    CONTROL         "默认",IDC_MONSTER_DEFAULT_1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,100,298,31,10
+    PUSHBUTTON      "选择...",IDC_MONSTER_TYPE,138,295,40,13
+    CONTROL         "默认",IDC_MONSTER_DEFAULT_2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,100,314,31,10
+    PUSHBUTTON      "选择...",IDC_MONSTER_HELP,138,311,40,13
+    CONTROL         "默认",IDC_MONSTER_DEFAULT_3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,100,329,31,10
+    PUSHBUTTON      "选择...",IDC_MONSTER_FREND,138,327,40,13
+    CONTROL         "怪物默认性向",IDC_RADIO_NORMAL,"Button",
+                    BS_AUTORADIOBUTTON,20,358,61,10
+    CONTROL         "主动",IDC_RADIO_INITIACTIVE,"Button",BS_AUTORADIOBUTTON,
+                    85,358,41,9
+    CONTROL         "被动",IDC_RADIO_NOACTIVE,"Button",BS_AUTORADIOBUTTON,
+                    134,358,36,9
+    DEFPUSHBUTTON   "确定",IDOK,7,395,50,14
+    PUSHBUTTON      "取消",IDCANCEL,130,395,50,14
+    LTEXT           "怪物名字",IDC_STATIC,14,30,35,8
+    LTEXT           "怪物总数",IDC_STATIC,14,70,41,8
+    LTEXT           "刷新速度",IDC_STATIC,14,89,31,8
+    LTEXT           "相对地面的高度",IDC_STATIC,14,136,53,8
+    LTEXT           "相对水面的高度",IDC_STATIC,14,158,63,8
+    LTEXT           "产生新属性被杀次数",IDC_STATIC,14,178,68,8
+    GROUPBOX        "属性",IDC_STATIC,7,7,173,381
+    LTEXT           "怪物ID",IDC_STATIC,14,50,29,8
+    GROUPBOX        "性向",IDC_STATIC,13,345,165,26
+    LTEXT           "自己的类别号：",IDC_STATIC,13,300,53,8
+    LTEXT           "是否求救：",IDC_STATIC,13,285,38,8,NOT WS_VISIBLE
+    LTEXT           "求救怪物类别：",IDC_STATIC,14,315,53,8
+    LTEXT           "接受求救怪物类别：",IDC_STATIC,14,330,68,8
+    PUSHBUTTON      "查找",IDC_MONSTER_FIND,64,28,23,12
+    EDITTEXT        IDC_EDIT_PATH_ID,91,222,45,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "路径ID",IDC_STATIC,14,225,24,8
+    LTEXT           "循环类型",IDC_STATIC,14,243,31,8
+    COMBOBOX        IDC_COMBO_PATH_LOOP_TYPE,91,240,89,64,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "选择...",IDC_SEL_PATH_BROWSE,140,222,40,13
+    LTEXT           "速度类型",IDC_STATIC,14,262,31,8
+    COMBOBOX        IDC_COMBO_PATH_SPEED_TYPE,91,259,89,64,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_NPC_DIE_DISAPEAR_TIME,91,195,89,12,
+                    ES_AUTOHSCROLL
+    LTEXT           "死亡后消失时间（s）",IDC_STATIC,14,198,72,8
+    EDITTEXT        IDC_EDIT_NPC_FRESHMIN,91,110,89,12,ES_AUTOHSCROLL
+    LTEXT           "刷新速度最小",IDC_STATIC,14,113,46,8
+END
+
+IDD_FIXED_NPC_SEL DIALOG DISCARDABLE  0, 0, 171, 105
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "请选择你的NPC"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,84,50,14
+    PUSHBUTTON      "取消",IDCANCEL,114,84,50,14
+    COMBOBOX        IDC_COMBO_SEL,7,53,117,85,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "NPC",IDC_RADIO_NPC,"Button",BS_AUTORADIOBUTTON,30,21,54,
+                    12
+    CONTROL         "怪物",IDC_RADIO_MONSTER,"Button",BS_AUTORADIOBUTTON,110,
+                    21,54,12
+    GROUPBOX        "类型选择",IDC_STATIC,7,7,157,34
+    PUSHBUTTON      "查找",IDC_BUTTON_FIND,133,53,21,14
+END
+
+IDD_EXP_GAME_DATA DIALOGEX 0, 0, 346, 293
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "输出地图数据"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "导出场景",IDOK,281,272,58,14
+    PUSHBUTTON      "取消",IDCANCEL,7,272,50,14
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",PBS_SMOOTH | 
+                    WS_BORDER,7,251,332,14,WS_EX_CLIENTEDGE
+    GROUPBOX        "导出日志",IDC_STATIC,7,71,332,174,BS_FLAT
+    EDITTEXT        IDC_EDIT_LOG,13,83,320,156,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_READONLY | WS_VSCROLL
+    LTEXT           "掩膜切分（地形格）",IDC_STATIC,7,14,73,8
+    COMBOBOX        IDC_COMBO_MASKTILE,91,12,76,140,CBS_DROPDOWNLIST | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "合并光照图",IDC_CHECK_LIGHTING,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,177,23,56,10
+    PUSHBUTTON      "导出区域数据",IDC_BTN_EXPAIGEN,203,272,74,14
+    CONTROL         "计算光照图间过渡",IDC_CHECK_LIGHTING_TRANS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,242,22,80,10
+    CONTROL         "输出地形",IDC_CHECK_EXP_TERRAIN,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,177,39,58,10
+    CONTROL         "输出场景对象",IDC_CHECK_EXP_OBJECT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,242,39,72,10
+    CONTROL         "仅仅计算卫星图光照",IDC_CHECK_EXPORT_MINI_MAP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,32,88,10
+    GROUPBOX        "",IDC_STATIC,173,7,166,54
+    LTEXT           "输出第几套数据(服)",IDC_STATIC,8,53,76,8
+    EDITTEXT        IDC_EDIT_COPYS,86,51,56,13,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_BUTTON_SEL_COPY,145,51,24,12
+END
+
+IDD_MODIFIED_TERRAIN_PROFILE DIALOG DISCARDABLE  0, 0, 502, 409
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "地形障碍图修改"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,31,388,50,14
+    PUSHBUTTON      "取消",IDCANCEL,419,388,50,14
+    CONTROL         "",IDC_STATIC_HEIGHTMAPVIEW2,"Static",SS_BLACKFRAME | 
+                    NOT WS_VISIBLE,15,19,215,215
+    GROUPBOX        "原始图",IDC_STATIC,7,7,234,248
+    CONTROL         "",IDC_STATIC_HEIGHTMAPVIEW3,"Static",SS_BLACKFRAME | 
+                    NOT WS_VISIBLE,259,19,215,215
+    GROUPBOX        "预览",IDC_STATIC,251,7,234,248
+    GROUPBOX        "参数调整",IDC_STATIC,7,275,478,108
+    LTEXT           "象素灰度差分阈值",IDC_STATIC,33,291,73,8
+    EDITTEXT        IDC_EDIT_PATH_MAP1,111,287,92,13,ES_AUTOHSCROLL
+    LTEXT           "边界象素计数阈值",IDC_STATIC,33,309,73,8
+    EDITTEXT        IDC_EDIT_PATH_MAP2,111,305,92,13,ES_AUTOHSCROLL
+    LTEXT           "廓线距离阈值",IDC_STATIC,33,345,73,8
+    EDITTEXT        IDC_EDIT_PATH_MAP4,111,341,92,13,ES_AUTOHSCROLL
+    CONTROL         "采用中值滤波",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,312,285,64,10
+    CONTROL         "像素图预览",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON,321,
+                    327,48,10
+    CONTROL         "轮廓线预览",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,321,
+                    347,56,10
+    GROUPBOX        "预览选择",IDC_STATIC,312,307,153,62
+    LTEXT           "廓线象素最小数量",IDC_STATIC,33,327,73,8
+    EDITTEXT        IDC_EDIT_PATH_MAP3,111,323,92,13,ES_AUTOHSCROLL
+    LTEXT           "拟合误差阈值",IDC_STATIC,33,362,73,8
+    EDITTEXT        IDC_EDIT_PATH_MAP5,111,358,92,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "预览",IDC_BUTTON_PREVIEW,408,333,44,15
+END
+
+IDD_TERRAIN_CONNECT DIALOG DISCARDABLE  0, 0, 200, 263
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "地图拼接"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "确定",IDOK,7,242,50,14
+    DEFPUSHBUTTON   "取消",IDCANCEL,143,242,50,14
+    CONTROL         "左上角对齐",IDC_RADIO_2,"Button",BS_AUTORADIOBUTTON,29,
+                    165,56,10
+    CONTROL         "右上角对齐",IDC_RADIO_1,"Button",BS_AUTORADIOBUTTON,109,
+                    165,56,10
+    GROUPBOX        "对齐方式",IDC_STATIC,7,145,186,62
+    CONTROL         "左下角对齐",IDC_RADIO_3,"Button",BS_AUTORADIOBUTTON,29,
+                    188,56,10
+    CONTROL         "右下角对齐",IDC_RADIO_4,"Button",BS_AUTORADIOBUTTON,109,
+                    188,56,10
+    GROUPBOX        "预览",IDC_STATIC,7,7,186,131
+    CONTROL         "",IDC_STATIC_BITMAP,"Static",SS_BLACKFRAME,26,17,140,
+                    114
+    CONTROL         "Progress1",IDC_PROGRESS_LINK,"msctls_progress32",
+                    PBS_SMOOTH | WS_BORDER,7,217,186,16
+END
+
+IDD_BEZIER_MERGE DIALOG DISCARDABLE  0, 0, 117, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "合并曲线"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "合并",IDOK,0,75,50,14
+    PUSHBUTTON      "取消",IDCANCEL,60,75,51,14
+    LTEXT           "曲线a",IDC_STATIC,0,2,21,8
+    LTEXT           "曲线b",IDC_STATIC,0,18,21,8
+    EDITTEXT        IDC_EDIT_BEZIERA,25,0,90,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_BEZIERB,25,15,90,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    CONTROL         "a首b尾",IDC_RADIO_LINK1,"Button",BS_AUTORADIOBUTTON,0,
+                    40,40,10
+    CONTROL         "a首b首",IDC_RADIO_LINK2,"Button",BS_AUTORADIOBUTTON,0,
+                    55,40,10
+    CONTROL         "a尾b尾",IDC_RADIO_LINK3,"Button",BS_AUTORADIOBUTTON,65,
+                    40,40,10
+    CONTROL         "a尾b首",IDC_RADIO_LINK4,"Button",BS_AUTORADIOBUTTON,65,
+                    55,40,10
+END
+
+IDD_MONSTER_FACTIONS DIALOG DISCARDABLE  0, 0, 241, 163
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "怪物派系"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,54,146,50,14
+    PUSHBUTTON      "取消",IDCANCEL,137,146,50,14
+    CONTROL         "Check1",1020,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,4,
+                    54,10
+    CONTROL         "Check2",1021,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,22,
+                    54,10
+    CONTROL         "Check3",1022,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,40,
+                    54,10
+    CONTROL         "Check4",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,58,54,10
+    CONTROL         "Check5",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,76,54,10
+    CONTROL         "Check6",IDC_CHECK6,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,94,54,10
+    CONTROL         "Check7",IDC_CHECK7,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,112,54,10
+    CONTROL         "Check8",IDC_CHECK8,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,130,54,10
+    CONTROL         "Check9",IDC_CHECK9,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,4,54,10
+    CONTROL         "Check10",IDC_CHECK10,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,22,54,10
+    CONTROL         "Check11",IDC_CHECK11,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,40,54,10
+    CONTROL         "Check12",IDC_CHECK12,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,58,54,10
+    CONTROL         "Check13",IDC_CHECK13,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,76,54,10
+    CONTROL         "Check14",IDC_CHECK14,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,94,54,10
+    CONTROL         "Check15",IDC_CHECK15,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,112,54,10
+    CONTROL         "Check16",IDC_CHECK16,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,130,54,10
+    CONTROL         "Check17",IDC_CHECK17,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,4,54,10
+    CONTROL         "Check18",IDC_CHECK18,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,22,54,10
+    CONTROL         "Check19",IDC_CHECK19,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,40,54,10
+    CONTROL         "Check20",IDC_CHECK20,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,58,54,10
+    CONTROL         "Check21",IDC_CHECK21,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,76,54,10
+    CONTROL         "Check22",IDC_CHECK22,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,94,54,10
+    CONTROL         "Check23",IDC_CHECK23,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,112,54,10
+    CONTROL         "Check24",IDC_CHECK24,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,130,54,10
+    CONTROL         "Check25",IDC_CHECK25,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,4,54,10
+    CONTROL         "Check26",IDC_CHECK26,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,22,54,10
+    CONTROL         "Check27",IDC_CHECK27,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,40,54,10
+    CONTROL         "Check28",IDC_CHECK28,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,58,54,10
+    CONTROL         "Check29",IDC_CHECK29,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,76,54,10
+    CONTROL         "Check30",IDC_CHECK30,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,94,54,10
+    CONTROL         "Check31",IDC_CHECK31,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,112,54,10
+    CONTROL         "Check32",IDC_CHECK32,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,130,54,10
+END
+
+IDD_MONSTER_FINDER DIALOG DISCARDABLE  0, 0, 220, 173
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "查找.."
+FONT 9, "宋体"
+BEGIN
+    EDITTEXT        IDC_MONSTER_KEY,71,8,108,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "查找",IDC_BUTTON_FIND,182,8,31,13
+    LISTBOX         IDC_LIST_MONSTER,7,41,206,103,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "确定",IDOK,7,152,50,14
+    PUSHBUTTON      "取消",IDCANCEL,163,152,50,14
+    LTEXT           "输入查找关键字:",IDC_STATIC,7,11,61,8
+    LTEXT           "查找结果:",IDC_STATIC,7,30,37,8
+    CONTROL         "精确查找",IDC_CHECK_EXA,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,165,27,48,10
+END
+
+IDD_TERRAIN_BLOCK_VIEW_DLG DIALOG DISCARDABLE  0, 0, 469, 467
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "地形块纹理分布状态查看"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "定位到选择块",IDOK,405,446,57,14
+    CONTROL         "",IDC_BLOCK_VIEW,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,7,0,454,442
+    PUSHBUTTON      "改变查看方式",IDC_BUTTON_CHANGE_VIEW_TYPE,7,445,65,15
+    COMBOBOX        IDC_COMBO_LAY,150,446,129,167,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "地形块纹理层:",IDC_STATIC,95,449,53,8
+    PUSHBUTTON      "删除这一层",IDC_BUTTON_BLOCK_BLACK,291,446,70,14
+END
+
+IDD_LOG_DLG DIALOG DISCARDABLE  0, 0, 406, 315
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "错误日志"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,178,300,50,14
+    EDITTEXT        IDC_EDIT_LOG,0,0,405,295,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_WANTRETURN
+END
+
+IDD_BEZIER_ID_SEL DIALOG DISCARDABLE  0, 0, 182, 167
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择场景对象"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,146,50,14
+    PUSHBUTTON      "取消",IDCANCEL,125,146,50,14
+    LISTBOX         IDC_LIST_BEZIER,7,7,168,131,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "设置为空",IDC_BUTTON_NULL,66,146,47,14
+END
+
+IDD_DIALOG_NATRUE DIALOG DISCARDABLE  0, 0, 156, 141
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "雨雪天气数据设置"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",ID_UPDATEDATA,7,120,50,14
+    PUSHBUTTON      "取消",IDCANCEL,99,120,50,14
+    CONTROL         "雨",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON,29,7,24,10
+    CONTROL         "雪",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,99,7,24,10
+    LTEXT           "下降速度",IDC_STATIC,15,46,33,8
+    LTEXT           "尺寸",IDC_STATIC,15,68,33,8
+    LTEXT           "颜色",IDC_STATIC,15,90,33,8
+    EDITTEXT        IDC_EDIT_SPEED,51,43,80,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SIZE,51,64,80,12,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_STATIC,7,26,142,87
+    LTEXT           "",IDC_SELCOLOR,51,85,43,12,SS_NOTIFY | WS_BORDER
+END
+
+IDD_DIALOG_RES_MAN DIALOGEX 0, 0, 629, 465
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "资源管理器"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "退出",IDOK,562,424,60,15
+    CONTROL         "List1",IDC_LIST_RES,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_AUTOARRANGE | WS_BORDER | 
+                    WS_TABSTOP,7,45,422,339,WS_EX_RIGHT
+    PUSHBUTTON      "加入新资源",IDC_BUTTON_ADD_RES,221,424,64,15
+    PUSHBUTTON      "删除资源",IDC_BUTTON_DEL_RES,289,424,64,15
+    PUSHBUTTON      "替换资源",IDC_BUTTON_REPLACE_RES,357,424,64,15
+    COMBOBOX        IDC_COMBO_RES_TYPE,47,412,64,64,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_RES_REF_TYPE,153,412,61,44,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "选择类型",IDC_STATIC,7,414,33,8
+    LTEXT           "引用过滤",IDC_STATIC,115,415,33,8
+    GROUPBOX        "资源列表",IDC_STATIC,7,34,615,358
+    GROUPBOX        "",IDC_STATIC,7,396,615,62
+    CONTROL         "List3",IDC_LIST_REF,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,431,45,191,339,WS_EX_RIGHT
+    PUSHBUTTON      "刷新资源表",IDC_BUTTON_UPDATE_RES,425,424,64,15
+    PUSHBUTTON      "自动解析地图",IDC_BUTTON_TRANS_OLD_MAP,493,424,64,15
+    LTEXT           "注意：分类资源要在加入资源管理器前创建Auto_Sorts文件夹，然后把按文件夹分类好的资源放到Auto_Sorts下.",
+                    IDC_STATIC,7,7,397,8
+    LTEXT           "在做“删除资源”“替换资源”时必须确保没有任何人Check out 地图文件！！",
+                    IDC_STATIC,7,21,397,8
+    PUSHBUTTON      "查找",IDC_BUTTON_RES_FIND,80,433,64,15
+    GROUPBOX        "",IDC_STATIC,7,398,212,57
+END
+
+IDD_DIALOG_VSS_OPTION DIALOG DISCARDABLE  0, 0, 187, 97
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "配置VSS登陆信息"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,76,50,14
+    PUSHBUTTON      "取消",IDCANCEL,130,76,50,14
+    LTEXT           "用户名:",IDC_STATIC,7,5,29,8
+    LTEXT           "密码:",IDC_STATIC,7,29,29,8
+    LTEXT           "服务器路径:",IDC_STATIC,7,53,45,8
+    EDITTEXT        IDC_EDIT_USER_NAME,65,5,115,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PASSWORD,65,29,115,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SERVER_PATH,65,53,115,12,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_EXP_RES DIALOG DISCARDABLE  0, 0, 274, 121
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "输出对话框"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "Progress1",IDC_PROGRESS_RES_EXP,"msctls_progress32",
+                    WS_BORDER,7,45,260,14
+    EDITTEXT        IDC_EDIT_PATH,46,13,171,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "输出路径",IDC_STATIC,7,15,33,8
+    PUSHBUTTON      "...",IDC_PATH_SELECT,222,13,37,13
+    PUSHBUTTON      "开始",IDOK,230,99,37,15
+    PUSHBUTTON      "取消",IDCANCEL,7,99,37,15
+    CONTROL         "输出作为纹理",IDC_CHECK_TEXTURE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,33,76,62,11
+    CONTROL         "512x512",IDC_RADIO_SIZE512,"Button",BS_AUTORADIOBUTTON,
+                    157,76,45,10
+    CONTROL         "1024x1024",IDC_RADIO_SIZE1024,"Button",
+                    BS_AUTORADIOBUTTON,206,77,61,8
+    GROUPBOX        "",IDC_STATIC,7,65,260,27
+    CONTROL         "256x256",IDC_RADIO_SIZE256,"Button",BS_AUTORADIOBUTTON,
+                    109,76,45,10
+END
+
+IDD_PRICIENT_NPC_SEL DIALOG DISCARDABLE  0, 0, 177, 185
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "区域中的关联位置"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "退出",IDOK,135,155,40,14
+    LISTBOX         IDC_LIST_PRECINCT_NPC,11,25,153,106,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "该管辖区域中的位置",IDC_STATIC,7,7,163,135
+    PUSHBUTTON      "删除位置",ID_DEL_POS,85,155,35,14
+    PUSHBUTTON      "更改位置",ID_DEL_POS2,45,155,35,14
+    PUSHBUTTON      "加位置",IDC_PRECINCT_ADD_POS,7,155,36,14
+END
+
+IDD_PRECINCT_NPC_IMPORT DIALOG DISCARDABLE  0, 0, 187, 157
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "区域"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,130,136,50,14
+    PUSHBUTTON      "取消",IDCANCEL,7,136,50,14
+    EDITTEXT        IDC_EDIT_NAME,47,22,133,12,ES_AUTOHSCROLL
+    LTEXT           "位置名字",IDC_STATIC,7,24,33,8
+    EDITTEXT        IDC_EDIT_X,47,66,97,12,ES_AUTOHSCROLL
+    LTEXT           "x",IDC_STATIC,22,67,8,8
+    EDITTEXT        IDC_EDIT_Y,47,86,97,12,ES_AUTOHSCROLL
+    LTEXT           "y",IDC_STATIC,21,88,8,8
+    EDITTEXT        IDC_EDIT_Z,47,104,97,12,ES_AUTOHSCROLL
+    LTEXT           "z",IDC_STATIC,21,106,8,8
+    GROUPBOX        "位置",IDC_STATIC,7,54,173,70
+END
+
+IDD_MOVE_ALL_OBJ_HEIGHT DIALOG DISCARDABLE  0, 0, 187, 101
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "转换所有地图对象高度"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,80,50,14
+    PUSHBUTTON      "取消",IDCANCEL,130,80,50,14
+    CONTROL         "Progress1",IDC_PROGRESS_MOVE,"msctls_progress32",
+                    WS_BORDER,7,51,173,16
+    EDITTEXT        IDC_EDIT_DELTA,88,15,84,14,ES_AUTOHSCROLL
+    LTEXT           "移动距离(float)",IDC_STATIC,7,19,61,8
+END
+
+IDD_DIALOG_MUSIC_SEL DIALOG DISCARDABLE  0, 0, 187, 187
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "背景音乐"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "添加",ID_MUSIC_ADD,14,165,50,14
+    PUSHBUTTON      "退出",IDCANCEL,119,165,50,14
+    LISTBOX         IDC_MUSIC_LIST,7,7,173,143,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "删除",ID_MUSIC_DEL,69,165,45,14
+END
+
+IDD_GATER_AREA DIALOG DISCARDABLE  0, 0, 187, 159
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "可采集对象列表"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "退出",IDCANCEL,135,135,50,14
+    LISTBOX         IDC_GATHER_LIST,7,7,173,118,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "添加",ID_GATHER_ADD,5,135,35,14
+    PUSHBUTTON      "修改",ID_GATHER_MODIFY,45,135,35,14
+    PUSHBUTTON      "删除",ID_GATHER_DEL,85,135,30,14
+END
+
+IDD_GATHER_PROPERTY_DLG DIALOG DISCARDABLE  0, 0, 187, 215
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "采集对象属性"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,194,50,14
+    PUSHBUTTON      "取消",IDCANCEL,130,194,50,14
+    COMBOBOX        IDC_COMBO_GATHER_TYPE,7,20,173,61,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "类型选择",IDC_STATIC,7,7,108,11
+    LISTBOX         IDC_LIST_GATHER_OBJECT,7,56,173,65,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "选择对象",IDC_STATIC,7,37,108,11
+    EDITTEXT        IDC_EDIT_NUM,71,131,92,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_FRESH,71,150,92,12,ES_AUTOHSCROLL
+    LTEXT           "对象个数",IDC_STATIC,13,133,38,8
+    LTEXT           "刷新速度(s)",IDC_STATIC,13,153,45,8
+    EDITTEXT        IDC_EDIT_OFFSET_Y,71,169,92,12,ES_AUTOHSCROLL
+    LTEXT           "离地高度(m)",IDC_STATIC,13,172,38,8
+    PUSHBUTTON      "查找",IDC_BUTTON_FINDER,122,39,58,12
+END
+
+IDD_DIALOG_RES_FINDER DIALOG DISCARDABLE  0, 0, 300, 197
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "资源查找"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,176,50,14
+    PUSHBUTTON      "取消",IDCANCEL,243,176,50,14
+    LISTBOX         IDC_LIST_SERTCH_RESULT,7,49,286,114,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_EDIT_KEYWORD,53,15,190,12,ES_AUTOHSCROLL
+    LTEXT           "查找关键字",IDC_STATIC,7,17,41,8
+    PUSHBUTTON      "查找",IDC_BUTTON_FIND,254,15,39,12
+    LTEXT           "查找结果",IDC_STATIC,7,38,93,12
+END
+
+IDD_CLOUD_SET_DLG DIALOG DISCARDABLE  0, 0, 160, 511
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "全部重新生成",IDC_BUTTON_RECREATE_CLOUD,7,487,146,17
+    LTEXT           "面片数(250-1000):",IDC_STATIC,7,27,69,8
+    GROUPBOX        "总设置",IDC_STATIC,7,7,146,310
+    EDITTEXT        IDC_EDIT_SPRITE_NUM,94,25,36,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_SPRITE_NUM,"msctls_updown32",
+                    UDS_ARROWKEYS,136,25,10,11
+    LTEXT           "面片大小(20-110):",IDC_STATIC,7,52,69,8
+    EDITTEXT        IDC_EDIT_SPRITE_SIZE,93,50,37,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_SPRITE_SIZE,"msctls_updown32",
+                    UDS_ARROWKEYS,136,50,9,11
+    LTEXT           "面片间最小距离(5-30):",IDC_STATIC,7,75,85,8
+    EDITTEXT        IDC_EDIT_SPRITE_DIST,93,73,37,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_SPRITE_DIST,"msctls_updown32",
+                    UDS_ARROWKEYS,136,73,9,11
+    GROUPBOX        "颜色设置",IDC_STATIC,7,93,146,98
+    LTEXT           "颜色1：",IDC_STATIC,18,108,29,8
+    LTEXT           "颜色2：",IDC_STATIC,18,125,29,8
+    LTEXT           "颜色3：",IDC_STATIC,18,142,29,8
+    LTEXT           "颜色4：",IDC_STATIC,18,159,29,8
+    LTEXT           "颜色5：",IDC_STATIC,18,176,29,8
+    GROUPBOX        "高度设置",IDC_STATIC,7,195,146,128
+    LTEXT           "高度1(0-100)：",IDC_STATIC,18,211,57,8
+    EDITTEXT        IDC_EDIT_HEIGHT1,89,208,53,13,ES_AUTOHSCROLL
+    LTEXT           "高度2(0-100)：",IDC_STATIC,18,231,57,8
+    EDITTEXT        IDC_EDIT_HEIGHT2,89,228,53,13,ES_AUTOHSCROLL
+    LTEXT           "高度3(0-100)：",IDC_STATIC,18,251,57,8
+    EDITTEXT        IDC_EDIT_HEIGHT3,89,248,53,13,ES_AUTOHSCROLL
+    LTEXT           "高度4(0-100)：",IDC_STATIC,18,272,57,8
+    EDITTEXT        IDC_EDIT_HEIGHT4,89,268,53,13,ES_AUTOHSCROLL
+    LTEXT           "高度5(0-100)：",IDC_STATIC,18,292,57,8
+    EDITTEXT        IDC_EDIT_HEIGHT5,89,288,53,13,ES_AUTOHSCROLL
+    LTEXT           "",IDC_STATIC_COLOR1,89,102,54,13,SS_NOTIFY | WS_BORDER
+    LTEXT           "",IDC_STATIC_COLOR2,89,120,54,13,SS_NOTIFY | WS_BORDER
+    LTEXT           "",IDC_STATIC_COLOR3,89,138,54,13,SS_NOTIFY | WS_BORDER
+    LTEXT           "",IDC_STATIC_COLOR4,89,156,54,13,SS_NOTIFY | WS_BORDER
+    LTEXT           "",IDC_STATIC_COLOR5,89,174,54,13,SS_NOTIFY | WS_BORDER
+    PUSHBUTTON      "重新生成当前组",IDC_BUTTON_RECREATE_GROUP,7,423,146,17
+    LTEXT           "所有组：",IDC_STATIC,15,347,33,8
+    COMBOBOX        IDC_COMBO_CLOUD_GROUP,53,344,100,88,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "组设置",IDC_STATIC,7,329,146,117
+    LTEXT           "当前组的面片数(1-200)：",IDC_STATIC,15,367,93,8
+    EDITTEXT        IDC_EDIT_GROUP_SPRITE_NUM,115,364,32,13,ES_AUTOHSCROLL
+    LTEXT           "组面片尺寸(20-110)：",IDC_STATIC,15,387,81,8
+    EDITTEXT        IDC_EDIT_GROUP_SPRITE_SIZE,115,384,32,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "重新生成所有组",IDC_BUTTON_RECREATE_ALLGROUP,7,455,146,
+                    17
+END
+
+IDD_DIALOG_DEL_LIST DIALOG DISCARDABLE  0, 0, 187, 165
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "你确定要删除下面所有对象吗？"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "删除",IDOK,7,144,50,14
+    PUSHBUTTON      "取消",IDCANCEL,130,144,50,14
+    LISTBOX         IDC_LIST_OBJECT_LIST,7,7,173,123,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DIALOG_DAY_NIGHT DIALOGEX 0, 0, 232, 15
+STYLE WS_CHILD
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "白天",IDC_BUTTON_DAY,0,0,21,14,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "黑夜",IDC_BUTTON_NIGHT,91,0,21,14,0,WS_EX_STATICEDGE
+    CONTROL         "Slider1",IDC_SLIDER_TIME,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,22,0,67,14,WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "X对齐",IDC_BUTTON_RANGE_X,118,0,25,14,0,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "Y对齐",IDC_BUTTON_RANGE_Y,143,0,25,14,0,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "Z对齐",IDC_BUTTON_RANGE_Z,169,0,25,14,0,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "方向对齐",IDC_BUTTON_RANGE_DIR,197,0,33,14,0,
+                    WS_EX_STATICEDGE
+END
+
+IDD_DIALOG_SET_WORKSPACE DIALOG DISCARDABLE  0, 0, 230, 141
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "请选择当前工作空间文件"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "设置空间为当前",IDOK,160,114,61,14
+    PUSHBUTTON      "创建新的工作空间",IDC_BUTTON_NEW_WORKSPACE,10,114,69,14
+    PUSHBUTTON      "删除工作空间",IDC_BUTTON_DEL_WORKSPACE,85,114,69,14
+    LISTBOX         IDC_LIST_WORKSPACE,14,20,205,85,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "工作空间列表",IDC_STATIC,7,7,219,104
+END
+
+IDD_DIALOG_CREATE_WORKSPACE DIALOG DISCARDABLE  0, 0, 187, 100
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "创建新的工作空间"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "创建",IDOK,130,79,50,14
+    PUSHBUTTON      "取消",IDCANCEL,7,79,50,14
+    LTEXT           "名字：",IDC_STATIC,7,7,91,9
+    EDITTEXT        IDC_EDIT_WORKSPACE_NAME,7,21,173,16,ES_AUTOHSCROLL
+    CONTROL         "是否是随机地图的工作区",IDC_CHK_RANDOM_MAP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,52,104,10
+END
+
+IDD_DIALOG_EXP_PATH_SEL DIALOG DISCARDABLE  0, 0, 192, 59
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "输出"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,28,38,50,14
+    PUSHBUTTON      "取消",IDCANCEL,115,38,50,14
+    LTEXT           "输出路径",IDC_STATIC,7,15,33,8
+    EDITTEXT        IDC_EDIT_PATH,44,13,96,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_BROWSE,144,13,38,13
+END
+
+IDD_VSS_LOG DIALOGEX 0, 0, 63, 15
+STYLE WS_CHILD
+EXSTYLE WS_EX_STATICEDGE
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_VSS_LOG,1,0,60,14,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_WANTRETURN | WS_VSCROLL
+END
+
+IDD_DIALOG_HULL_PROPERTY DIALOG DISCARDABLE  0, 0, 187, 89
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "凸包属性"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,68,50,14
+    PUSHBUTTON      "取消",IDCANCEL,130,68,50,14
+    GROUPBOX        "属性",IDC_STATIC,7,7,173,52
+    CONTROL         "跳过碰撞",IDC_RADIO_SKIP_CO,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,31,32,48,10
+    CONTROL         "跳过光线跟踪",IDC_RADIO_SKIP_TA,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,94,32,64,10
+END
+
+IDD_DIALOG_STAT DIALOG DISCARDABLE  0, 0, 315, 290
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "统计"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "退出",IDCANCEL,258,269,50,14
+    CONTROL         "List1",IDC_LIST_REPORT,"SysListView32",LVS_REPORT | 
+                    LVS_SORTASCENDING | WS_BORDER | WS_TABSTOP,7,7,301,232
+    CONTROL         "Tab1",IDC_TAB_SORT,"SysTabControl32",TCS_BOTTOM,7,239,
+                    301,21
+END
+
+IDD_DIALOG_MODEL_CHANGED DIALOG DISCARDABLE  0, 0, 179, 103
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "统计项目中模型更改情况"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "开始统计",IDOK,122,82,50,14
+    PUSHBUTTON      "退出",IDCANCEL,7,82,50,14
+    CONTROL         "Progress1",IDC_PROGRESS_TOTAL,"msctls_progress32",
+                    WS_BORDER,7,54,165,15
+    EDITTEXT        IDC_EDIT_YEAR,21,14,22,13,ES_AUTOHSCROLL
+    LTEXT           "年",IDC_STATIC,7,14,9,8
+    EDITTEXT        IDC_EDIT_MOUTH,61,14,22,13,ES_AUTOHSCROLL
+    LTEXT           "月",IDC_STATIC,47,14,9,8
+    EDITTEXT        IDC_EDIT_DATE,103,14,22,13,ES_AUTOHSCROLL
+    LTEXT           "日",IDC_STATIC,89,14,9,8
+END
+
+IDD_DIALOG_EXP_LIT DIALOG DISCARDABLE  0, 0, 265, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "导出点光源数据"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "导出",IDOK,208,74,50,14
+    PUSHBUTTON      "取消",IDCANCEL,7,74,50,14
+    EDITTEXT        IDC_EDIT_EXPORT_PATH,49,23,164,14,ES_AUTOHSCROLL
+    LTEXT           "导出路径",IDC_STATIC,7,27,33,8
+    PUSHBUTTON      "...",IDC_BUTTON_BROWSE,219,22,39,15
+    CONTROL         "Progress1",IDC_PROGRESS_PROCESS,"msctls_progress32",
+                    WS_BORDER,7,49,251,12
+END
+
+IDD_DIALOG_DYNAMIC_OBJECT DIALOG DISCARDABLE  0, 0, 251, 106
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "动态对象"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,85,50,14
+    PUSHBUTTON      "取消",IDCANCEL,194,85,50,14
+    LTEXT           "ID:",IDC_STATIC,7,13,9,8
+    LTEXT           "名字:",IDC_STATIC,7,36,21,8
+    LTEXT           "路径:",IDC_STATIC,7,59,21,8
+    EDITTEXT        IDC_EDIT_ID,33,13,101,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_OBJ_NAME,33,34,101,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_DYNAMIC_OBJECT_PATH,33,55,163,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_BROWSE,200,55,27,14
+END
+
+IDD_DIALOG_DYNAMIC_OBJECT_MAN DIALOG DISCARDABLE  0, 0, 345, 248
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "动态物品管理"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "Check Out",ID_CHECK_OUT,29,212,50,14
+    PUSHBUTTON      "退出",IDOK,288,212,50,14
+    CONTROL         "List1",IDC_LIST_DYNAMIC_OBJECT,"SysListView32",
+                    LVS_REPORT | WS_BORDER | WS_TABSTOP,7,7,331,185
+    PUSHBUTTON      "Check In",ID_CHECK_IN,80,212,50,14
+    PUSHBUTTON      "添加新物品",ID_ADD_NEWOBJECT,134,212,50,14
+    PUSHBUTTON      "删除新物品",ID_DEL_OBJECT,184,212,50,14
+    PUSHBUTTON      "输出",ID_EXPORT,237,212,50,14
+    ICON            IDI_READONLY,IDC_STATIC_FLAG,7,208,21,21
+    GROUPBOX        "",IDC_STATIC,7,191,331,50
+END
+
+IDD_DIALOG_DYNAMIC_OBJECT_SEL DIALOGEX 0, 0, 218, 215
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "请选择"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定 ",IDOK,7,194,50,14
+    PUSHBUTTON      "取消",IDCANCEL,161,194,50,14
+    LISTBOX         IDC_LIST_DY_OBJ,7,7,204,154,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "设置为空",ID_SET_NULL,81,194,50,14
+    EDITTEXT        IDC_EDIT_SEARCH,7,170,50,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "搜索",IDC_BTN_SEARCH,81,170,50,14
+    PUSHBUTTON      "显示全部",IDC_BTN_LIST_ALL,161,170,50,14
+END
+
+IDD_DIALOG_CONTROLLER_OBJECT_SEL DIALOG DISCARDABLE  0, 0, 224, 203
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 9, "宋体"
+BEGIN
+    LISTBOX         IDC_LIST_DY_OBJ,7,7,204,154,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "确定 ",IDOK,7,172,50,14
+    PUSHBUTTON      "取消",IDCANCEL,161,172,50,14
+    PUSHBUTTON      "设置为空",ID_SET_NULL,81,172,50,14
+END
+
+IDD_DIALOG_CONTROLLER_OBJECT_MAN DIALOG DISCARDABLE  0, 0, 352, 255
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "NPC控制编辑"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "Check Out",ID_CHECK_OUT,31,214,50,14
+    PUSHBUTTON      "退出",IDOK,290,214,50,14
+    CONTROL         "List1",IDC_LIST_CONTROLLER_OBJECT,"SysListView32",
+                    LVS_REPORT | WS_BORDER | WS_TABSTOP,9,9,331,185
+    PUSHBUTTON      "Check In",ID_CHECK_IN,82,214,50,14
+    PUSHBUTTON      "添加新控制器",ID_ADD_NEWOBJECT,136,214,50,14
+    PUSHBUTTON      "删除",ID_DEL_OBJECT,186,214,50,14
+    ICON            IDI_READONLY,IDC_STATIC_FLAG,9,210,20,20
+    GROUPBOX        "",IDC_STATIC,9,193,331,50
+    PUSHBUTTON      "导出txt",ID_EXPORT_TXT,238,214,50,14
+END
+
+IDD_DIALOG_CONTROLLER_OBJECT DIALOG DISCARDABLE  0, 0, 358, 351
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "怪物控制器"
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "ID(编辑器用):",IDC_STATIC,9,17,53,8
+    LTEXT           "名字:",IDC_STATIC,9,40,21,8
+    EDITTEXT        IDC_EDIT_ID,123,17,137,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_OBJ_NAME,123,39,137,14,ES_AUTOHSCROLL
+    LTEXT           "等待多少时间才开始生成对象:",IDC_STATIC,9,65,109,8
+    EDITTEXT        IDC_EDIT_ACTIVE_TIMES,123,61,137,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "等待多少时间就自动停止激活:",IDC_STATIC,9,87,109,8
+    EDITTEXT        IDC_EDIT_STOP_TIMES,123,83,137,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "是否初始激活",IDC_CHECK_ISACTIVEINIT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,9,303,64,10
+    COMBOBOX        IDC_COMBO1_YEAR,30,162,33,53,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "年",IDC_STATIC,14,166,9,8
+    COMBOBOX        IDC_COMBO1_MOUTH,90,162,33,67,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "月",IDC_STATIC,74,166,9,8
+    COMBOBOX        IDC_COMBO1_WEEK,313,161,33,67,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "周",IDC_STATIC,297,166,9,8
+    COMBOBOX        IDC_COMBO1_DAY,148,161,33,73,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "日",IDC_STATIC,132,166,9,8
+    COMBOBOX        IDC_COMBO1_HOURS,204,162,33,63,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "时",IDC_STATIC,188,166,9,8
+    COMBOBOX        IDC_COMBO1_MINU,259,162,33,69,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "分",IDC_STATIC,243,166,9,8
+    COMBOBOX        IDC_COMBO2_YEAR,29,267,33,56,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "年",IDC_STATIC,13,271,9,8
+    COMBOBOX        IDC_COMBO2_MOUTH,89,267,33,59,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "月",IDC_STATIC,73,271,9,8
+    COMBOBOX        IDC_COMBO2_WEEK,313,266,33,65,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "周",IDC_STATIC,297,271,9,8
+    COMBOBOX        IDC_COMBO2_DAY,148,266,33,80,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "日",IDC_STATIC,132,271,9,8
+    COMBOBOX        IDC_COMBO2_HOURS,204,267,33,67,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "时",IDC_STATIC,188,271,9,8
+    COMBOBOX        IDC_COMBO2_MINU,259,267,33,60,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "分",IDC_STATIC,243,271,9,8
+    GROUPBOX        "指定激活时间范围",IDC_STATIC,9,131,344,90
+    CONTROL         "指定时间范围有效",IDC_CHECK1_TIMEINVAILID,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,17,144,74,11
+    GROUPBOX        "指定停止激活时间",IDC_STATIC,9,235,344,59
+    CONTROL         "指定时间有效",IDC_CHECK2_TIMEINVAILID,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,17,249,74,11
+    DEFPUSHBUTTON   "确定",IDOK,64,330,50,14
+    PUSHBUTTON      "取消",IDCANCEL,251,330,50,14
+    GROUPBOX        "",IDC_STATIC,7,7,346,316
+    LTEXT           "控制器ID:",IDC_STATIC,9,112,37,8
+    EDITTEXT        IDC_EDIT_CONTROLLERID,123,108,137,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "时间范围(秒):",IDC_STATIC,15,191,53,8
+    EDITTEXT        IDC_EDIT_TIME_RANGE,72,188,76,15,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_STAT_FILTER DIALOG DISCARDABLE  0, 0, 187, 282
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "怪物分布统计过滤"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "查询",IDOK,130,261,50,14
+    PUSHBUTTON      "取消",IDCANCEL,7,261,50,14
+    CONTROL         "Tree1",IDC_TREE_FILTER,"SysTreeView32",TVS_CHECKBOXES | 
+                    WS_BORDER | WS_TABSTOP,7,7,173,216
+    COMBOBOX        IDC_COMBO_SET,90,233,74,89,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "选择查询第几套数据",IDC_STATIC,7,236,73,8
+    PUSHBUTTON      "全选/全不选",IDSELECTALL,69,261,50,14
+END
+
+IDD_TERRAIN_BRUSH_SEL DIALOG DISCARDABLE  0, 0, 286, 171
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "地形刷子选择"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "选择",IDOK,7,150,50,14
+    PUSHBUTTON      "放弃",IDCANCEL,229,150,50,14
+    LISTBOX         IDC_LIST_PATH,7,7,129,126,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_STATIC_BITMAP,"Static",SS_BLACKRECT | NOT 
+                    WS_VISIBLE,144,7,135,125
+END
+
+IDD_DIALOG_EXP_COPY DIALOG DISCARDABLE  0, 0, 235, 207
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "数据输出套数选择"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,186,50,14
+    PUSHBUTTON      "取消",IDCANCEL,178,186,50,14
+    CONTROL         "第0套数据",IDC_CHECK_COPY0,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,7,52,10
+    CONTROL         "第1套数据",IDC_CHECK_COPY1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,23,52,10
+    CONTROL         "第2套数据",IDC_CHECK_COPY2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,39,52,10
+    CONTROL         "第3套数据",IDC_CHECK_COPY3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,55,52,10
+    CONTROL         "第4套数据",IDC_CHECK_COPY4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,71,52,10
+    CONTROL         "第5套数据",IDC_CHECK_COPY5,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,87,52,10
+    CONTROL         "第6套数据",IDC_CHECK_COPY6,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,103,52,10
+    CONTROL         "第7套数据",IDC_CHECK_COPY7,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,119,52,10
+    CONTROL         "第8套数据",IDC_CHECK_COPY8,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,135,52,10
+    CONTROL         "第9套数据",IDC_CHECK_COPY9,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,151,52,10
+    CONTROL         "第10套数据",IDC_CHECK_COPY10,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,167,52,10
+    CONTROL         "第11套数据",IDC_CHECK_COPY11,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,77,7,52,10
+    CONTROL         "第12套数据",IDC_CHECK_COPY12,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,77,22,52,10
+    CONTROL         "第13套数据",IDC_CHECK_COPY13,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,77,37,52,10
+    CONTROL         "第14套数据",IDC_CHECK_COPY14,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,77,52,52,10
+    CONTROL         "第15套数据",IDC_CHECK_COPY15,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,77,67,52,10
+    CONTROL         "第16套数据",IDC_CHECK_COPY16,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,77,82,52,10
+    CONTROL         "第17套数据",IDC_CHECK_COPY17,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,77,97,52,10
+    CONTROL         "第18套数据",IDC_CHECK_COPY18,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,77,112,52,10
+    CONTROL         "第19套数据",IDC_CHECK_COPY19,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,77,127,52,10
+    CONTROL         "第20套数据",IDC_CHECK_COPY20,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,77,142,52,10
+    CONTROL         "第21套数据",IDC_CHECK_COPY21,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,163,7,52,10
+    CONTROL         "第22套数据",IDC_CHECK_COPY22,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,163,22,52,10
+    CONTROL         "第23套数据",IDC_CHECK_COPY23,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,163,37,52,10
+    CONTROL         "第24套数据",IDC_CHECK_COPY24,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,163,52,52,10
+    CONTROL         "第25套数据",IDC_CHECK_COPY25,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,163,67,52,10
+    CONTROL         "第26套数据",IDC_CHECK_COPY26,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,163,82,52,10
+    CONTROL         "第27套数据",IDC_CHECK_COPY27,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,163,97,52,10
+    CONTROL         "第28套数据",IDC_CHECK_COPY28,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,163,112,52,10
+    CONTROL         "第29套数据",IDC_CHECK_COPY29,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,163,127,52,10
+    CONTROL         "第30套数据",IDC_CHECK_COPY30,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,163,142,52,10
+    CONTROL         "第31套数据",IDC_CHECK_COPY31,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,163,157,52,10
+END
+
+IDD_MERGE_PLAYERPASSMAP DIALOG DISCARDABLE  0, 0, 204, 216
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "合并角色寻径图"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDCANCEL,162,198,30,11,BS_FLAT
+    CONTROL         "",IDC_STATIC_GRID,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,12,10,180,181
+    COMBOBOX        IDC_COMBO_LAYER,12,197,68,56,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "合并",IDC_MERGE,120,198,30,11,BS_FLAT
+END
+
+IDD_EXPORT_BHT DIALOG DISCARDABLE  0, 0, 203, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "分块导出服务器凸包"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDCANCEL,162,207,30,11,BS_FLAT
+    CONTROL         "",IDC_STATIC_GRID,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,12,10,180,181
+    PUSHBUTTON      "导出",IDC_EXPORT,112,207,30,11,BS_FLAT
+    PUSHBUTTON      "全选",IDC_SELECT_ALL,62,207,30,11,BS_FLAT
+    PUSHBUTTON      "全不选",IDC_UNSELECT_ALL,12,207,30,11,BS_FLAT
+END
+
+IDD_EXPORT_PATH_INFO DIALOG DISCARDABLE  0, 0, 204, 216
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "请选择需导出的地图块"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDCANCEL,162,198,30,11,BS_FLAT
+    CONTROL         "",IDC_STATIC_GRID,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,12,10,180,181
+    PUSHBUTTON      "导出",IDC_EXPORT,112,198,30,11,BS_FLAT
+    PUSHBUTTON      "全选",IDC_SELECT_ALL,62,198,30,11,BS_FLAT
+    PUSHBUTTON      "全不选",IDC_UNSELECT_ALL,12,198,30,11,BS_FLAT
+END
+
+IDD_RANDOM_MAP_INFO DIALOG DISCARDABLE  0, 0, 334, 281
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置随机地图信息"
+FONT 10, "System"
+BEGIN
+    CONTROL         "",IDC_STATIC_MAP,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,8,7,212,138
+    LTEXT           "所选块的连通性",IDC_STATIC,12,210,57,8
+    LTEXT           "所选块的类型",IDC_STATIC,12,161,49,8
+    CONTROL         "普通",IDC_RAD_TYPE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,66,160,30,10
+    CONTROL         "起点",IDC_RAD_TYPE2,"Button",BS_AUTORADIOBUTTON,125,160,
+                    27,10
+    CONTROL         "终点",IDC_RAD_TYPE3,"Button",BS_AUTORADIOBUTTON,180,159,
+                    28,10
+    CONTROL         "无效",IDC_RAD_TYPE4,"Button",BS_AUTORADIOBUTTON,66,175,
+                    26,10
+    CONTROL         "隐藏茅屋",IDC_RAD_TYPE5,"Button",BS_AUTORADIOBUTTON,135,
+                    175,45,10
+    CONTROL         "隐藏房间",IDC_RAD_TYPE6,"Button",BS_AUTORADIOBUTTON,65,
+                    189,45,10
+    CONTROL         "隐藏圣树",IDC_RAD_TYPE7,"Button",BS_AUTORADIOBUTTON,135,
+                    189,45,10
+    CONTROL         "左",IDC_CHK_CONNECT1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,74,209,24,10
+    CONTROL         "上",IDC_CHK_CONNECT2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,103,209,24,10
+    CONTROL         "右",IDC_CHK_CONNECT3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,132,209,20,10
+    CONTROL         "下",IDC_CHK_CONNECT4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,162,209,24,10
+    PUSHBUTTON      "关闭",IDC_BTN_OK,195,255,50,14
+    CONTROL         "",IDC_COL_1,"Static",SS_BLACKFRAME,96,159,11,10
+    CONTROL         "",IDC_COL_2,"Static",SS_BLACKFRAME,157,160,11,10
+    CONTROL         "",IDC_COL_3,"Static",SS_BLACKFRAME,210,160,11,10
+    CONTROL         "",IDC_COL_4,"Static",SS_BLACKFRAME,96,175,11,10
+    LTEXT           "区域名字",IDC_STATIC,13,228,33,8
+    EDITTEXT        IDC_EDIT_NAME,64,225,105,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "签出",IDC_BTN_CHECKOUT,70,255,25,14
+    PUSHBUTTON      "签入",IDC_BTN_CHECKIN,105,255,25,14
+    CONTROL         "",IDC_COL_5,"Static",SS_BLACKFRAME,185,174,11,10
+    CONTROL         "",IDC_COL_6,"Static",SS_BLACKFRAME,113,189,11,10
+    CONTROL         "",IDC_COL_7,"Static",SS_BLACKFRAME,185,189,11,10
+    GROUPBOX        "每块属性",IDC_STATIC,5,148,220,97
+    GROUPBOX        "整体属性",IDC_STATIC,230,5,98,240
+    LTEXT           "主线长度最小值",IDC_STATIC,237,21,57,8
+    EDITTEXT        IDC_MAINLINE_MIN_LEN,301,19,19,14,ES_AUTOHSCROLL
+    LTEXT           "主线长度最大值",IDC_STATIC,237,41,57,8
+    EDITTEXT        IDC_MAINLINE_MAX_LEN,301,37,19,14,ES_AUTOHSCROLL
+    LTEXT           "支线数最小值",IDC_STATIC,240,59,49,8
+    LTEXT           "支线数最大值",IDC_STATIC,240,78,49,8
+    LTEXT           "支线长度最小值",IDC_STATIC,240,98,57,8
+    LTEXT           "支线长度最大值",IDC_STATIC,240,116,57,8
+    EDITTEXT        IDC_BRANCH_MIN_COUNT,301,55,20,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BRANCH_MAX_COUNT,301,75,20,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BRANCH_MIN_LEN,301,94,20,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BRANCH_MAX_LEN,301,113,20,15,ES_AUTOHSCROLL
+    LTEXT           "起始点相对位置:",IDC_STATIC,236,137,59,8
+    EDITTEXT        IDC_START_POSX,257,150,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_START_POSY,258,169,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_START_POSZ,258,187,40,14,ES_AUTOHSCROLL
+    LTEXT           "X",IDC_STATIC,243,153,8,8
+    LTEXT           "Y",IDC_STATIC,243,171,8,8
+    LTEXT           "Z",IDC_STATIC,244,189,8,8
+END
+
+IDD_SCENE_OBJECT_FINDER DIALOG DISCARDABLE  0, 0, 220, 173
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "查找.."
+FONT 9, "宋体"
+BEGIN
+    EDITTEXT        IDC_EDIT_KEY,71,8,108,13,ES_AUTOHSCROLL | ES_WANTRETURN
+    PUSHBUTTON      "查找",IDC_BUTTON_FIND,182,8,31,13
+    LISTBOX         IDC_LIST_OBJECT,7,41,206,103,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "选中",IDOK,7,152,50,14
+    PUSHBUTTON      "取消",IDCANCEL,163,152,50,14
+    LTEXT           "输入查找关键字:",IDC_STATIC,7,11,61,8
+    LTEXT           "查找结果:",IDC_STATIC,7,30,41,12
+    CONTROL         "0",IDC_STATIC_COUNT,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,49,30,116,12
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 0,0,8,2
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "FileDescription", "ElementEditor Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "0, 0, 8, 2\0"
+            VALUE "InternalName", "ElementEditor\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2004\0"
+            VALUE "OriginalFilename", "ElementEditor.EXE\0"
+            VALUE "ProductName", "ElementEditor 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO MOVEABLE PURE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 70
+    END
+
+    IDD_NEWMAP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 207
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 130
+    END
+
+    IDD_HEIGHTMAP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 374
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 400
+    END
+
+    IDD_NEWHEIGHTMAP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 250
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 118
+    END
+
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 159
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 363
+    END
+
+    IDD_RENDEROPT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 160
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 385
+    END
+
+    IDD_SURFACES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 363
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 472
+    END
+
+    IDD_SELECTFILE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 438
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 310
+    END
+
+    IDD_SAVEAS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 185
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_EXPGAMEDATA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 397
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 272
+    END
+
+    IDD_LIGHTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 373
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 210
+    END
+
+    IDD_TERRAIN_MODIFY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 353
+    END
+
+    IDD_BRUSH_SET, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 98
+    END
+
+    IDD_TERRAIN_MODIFY_STRETCH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 552
+    END
+
+    IDD_TERRAIN_MODIFY_NOISE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 124
+    END
+
+    IDD_TERRAIN_MODIFY_LAYMASK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 352
+    END
+
+    IDD_TERRAIN_MODIFY_SMOOTH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 95
+    END
+
+    IDD_SCENE_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+    END
+
+    IDD_TERRAIN_MODIFY_LAYMASKSMOOTH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 160
+    END
+
+    IDD_PROPERTY_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 224
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 209
+    END
+
+    IDD_PATH_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 338
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 242
+        BOTTOMMARGIN, 234
+    END
+
+    IDD_MEMOEDIT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 291
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 156
+    END
+
+    IDD_CUSTOM_VECTOR_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 152
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 118
+    END
+
+    IDD_COMMONFILE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 381
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 312
+    END
+
+    IDC_CHOOSECOLOR_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 331
+        VERTGUIDE, 138
+        VERTGUIDE, 144
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 197
+        HORZGUIDE, 120
+    END
+
+    IDD_SCENE_OBJECT_LIGHT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+    END
+
+    IDD_SCENE_OBJECT_PROPERTY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 136
+    END
+
+    IDD_SCENE_OBJECT_MODEL_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 287
+    END
+
+    IDD_SCENE_OBJECTS_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 187
+    END
+
+    IDD_SCENE_OBJECT_SKY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 154
+        TOPMARGIN, 8
+        BOTTOMMARGIN, 164
+    END
+
+    IDD_TERRAIN_MODIFY_PLANTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 446
+    END
+
+    IDD_PLANTS_IN_SORT_NAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 145
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 60
+    END
+
+    IDD_DIALOG_VERNIER_SET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 189
+    END
+
+    IDD_TREE_TYPE_ADD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 120
+    END
+
+    IDD_AUTOPARTHM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 134
+    END
+
+    IDD_AI_AREA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 203
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 148
+    END
+
+    IDD_AI_PROPERTY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 409
+    END
+
+    IDD_FIXED_NPC_SEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 164
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 98
+    END
+
+    IDD_EXP_GAME_DATA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 339
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 286
+    END
+
+    IDD_MODIFIED_TERRAIN_PROFILE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 495
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 402
+    END
+
+    IDD_TERRAIN_CONNECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 193
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 256
+    END
+
+    IDD_BEZIER_MERGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 110
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_MONSTER_FINDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 213
+        TOPMARGIN, 8
+        BOTTOMMARGIN, 166
+    END
+
+    IDD_TERRAIN_BLOCK_VIEW_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 462
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 460
+    END
+
+    IDD_LOG_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 399
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 308
+    END
+
+    IDD_BEZIER_ID_SEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 160
+    END
+
+    IDD_DIALOG_NATRUE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 149
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 134
+    END
+
+    IDD_DIALOG_RES_MAN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 622
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 458
+        HORZGUIDE, 68
+    END
+
+    IDD_DIALOG_VSS_OPTION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        VERTGUIDE, 65
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 90
+    END
+
+    IDD_DIALOG_EXP_RES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 267
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 114
+    END
+
+    IDD_PRICIENT_NPC_SEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 170
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+
+    IDD_PRECINCT_NPC_IMPORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 150
+    END
+
+    IDD_MOVE_ALL_OBJ_HEIGHT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 94
+    END
+
+    IDD_DIALOG_MUSIC_SEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 180
+    END
+
+    IDD_GATER_AREA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+    END
+
+    IDD_GATHER_PROPERTY_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 208
+    END
+
+    IDD_DIALOG_RES_FINDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 293
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 190
+    END
+
+    IDD_CLOUD_SET_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 504
+    END
+
+    IDD_DIALOG_DEL_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 158
+    END
+
+    IDD_DIALOG_SET_WORKSPACE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 226
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 134
+    END
+
+    IDD_DIALOG_CREATE_WORKSPACE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 93
+    END
+
+    IDD_DIALOG_EXP_PATH_SEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 185
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 52
+    END
+
+    IDD_DIALOG_HULL_PROPERTY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 82
+    END
+
+    IDD_DIALOG_STAT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 308
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 283
+    END
+
+    IDD_DIALOG_MODEL_CHANGED, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 172
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 96
+    END
+
+    IDD_DIALOG_EXP_LIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 258
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_DIALOG_DYNAMIC_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 244
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 99
+    END
+
+    IDD_DIALOG_DYNAMIC_OBJECT_MAN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 338
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 241
+    END
+
+    IDD_DIALOG_DYNAMIC_OBJECT_SEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 211
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 208
+    END
+
+    IDD_DIALOG_CONTROLLER_OBJECT_SEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 217
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 196
+    END
+
+    IDD_DIALOG_CONTROLLER_OBJECT_MAN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 345
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 248
+    END
+
+    IDD_DIALOG_CONTROLLER_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 351
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 344
+    END
+
+    IDD_DIALOG_STAT_FILTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 275
+    END
+
+    IDD_TERRAIN_BRUSH_SEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 279
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 164
+    END
+
+    IDD_DIALOG_EXP_COPY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 200
+    END
+
+    IDD_MERGE_PLAYERPASSMAP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 197
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 209
+    END
+
+    IDD_EXPORT_BHT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 196
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_EXPORT_PATH_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 197
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 209
+    END
+
+    IDD_RANDOM_MAP_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 327
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 274
+    END
+
+    IDD_SCENE_OBJECT_FINDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 213
+        TOPMARGIN, 8
+        BOTTOMMARGIN, 166
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_OBJECT_MOVE  CURSOR  DISCARDABLE     "res\\SARROWS.CUR"
+IDC_CURSOR_CROSS        CURSOR  DISCARDABLE     "res\\crosshr.cur"
+IDC_CURSOR_SCALE        CURSOR  DISCARDABLE     "res\\MAGNIFY.CUR"
+IDC_CURSOR_ROTATE       CURSOR  DISCARDABLE     "res\\cursor1.cur"
+IDC_CURSOR_OBJECTADD    CURSOR  DISCARDABLE     "res\\object_add.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "ElementEditor"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "ElementEditor"
+    AFX_IDS_IDLEMESSAGE     "就绪"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EDIT_X     "          "
+    ID_INDICATOR_EDIT_Z     "          "
+    ID_INDICATOR_STATIC_X   "X"
+    ID_INDICATOR_STATIC_Y   "Y"
+    ID_INDICATOR_STATIC_Z   "Z"
+    ID_INDICATOR_EDIT_Y     "          "
+    ID_INDICATOR_BRUSH_RADIUS "1111111111111111111"
+    ID_INDICATOR_COMBO      "1111111111111111111"
+    ID_INDICATOR_PROGRESS   "                            "
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "显示程序信息，版本号和版权\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回前一个窗格\n前一窗格"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "将活动的窗口分隔成窗格\n分隔"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "删除被选对象\n删除"
+    ID_EDIT_CLEAR_ALL       "全部删除\n全部删除"
+    ID_EDIT_COPY            "复制被选对象并将其置于剪贴板上\n复制"
+    ID_EDIT_CUT             "剪切被选对象并将其置于剪贴板上\n剪切"
+    ID_EDIT_FIND            "查找指定的正文\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_REPEAT          "重复上一步操作\n重复"
+    ID_EDIT_REPLACE         "用不同的正文替换指定的正文\n替换"
+    ID_EDIT_SELECT_ALL      "选择整个文档\n选择全部"
+    ID_EDIT_UNDO            "撤消最后一步操作\n撤消"
+    ID_EDIT_REDO            "重新执行先前已撤消的操作\n重新执行"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n显隐工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n显隐状态栏"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "改变窗口大小"
+    AFX_IDS_SCMOVE          "改变窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小成图标"
+    AFX_IDS_SCMAXIMIZE      "把窗口放大到最大尺寸"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到先前的文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动的窗口并提示保存所有文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "把窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务表"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_BRUSH_RADIUS_ADD     "刷子半径加1\n刷子半径加1"
+    ID_BRUSH_RADIUS_SUB     "刷子半径减1\n刷子半径减1"
+    ID_BRUSH_RADIUS_1       "把刷子半径设置为5\n刷子半径为5"
+    ID_BRUSH_RADIUS_2       "把刷子半径设置为10\n刷子半径为10"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_BRUSH_RADIUS_3       "把刷子半径设置为15\n刷子半径为15"
+    ID_BRUSH_RECT           "把刷子设置为方形2\n方形画刷"
+    ID_BRUSH_CIRCLE         "把刷子设置为圆形2\n圆形画刷"
+    ID_OPERATION_UNDO       "Undo(Ctrl+Z)\nUndo(Ctrl+Z)"
+    ID_OPERATION_REDO       "Redo(Ctrl+Y)\nRedo(Ctrl+Y)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_OPERATION_SELECT     "选择单个对象\n选择单个对象"
+    ID_OPERATION_MOVE       "移动对象\n移动对象"
+    ID_OPERATION_ROTATE     "旋转对象\n旋转对象"
+    ID_OPERATION_SELECTMULTI "选择多个对象\n选择多个对象"
+    ID_OPERATION_SCALE      "缩放对象\n缩放对象"
+    ID_OPERATION_DELETE     "删除对象\n删除对象"
+    ID_BEZIER_ADDPOINT      "加路径点\n加路径点"
+    ID_BEZIER_SUBPOINT      "减路径点\n减路径点"
+    ID_BEZIER_CUT           "断开路径\n断开路径"
+    ID_BEZIER_SMOOTH        "光滑处理\n光滑处理"
+    ID_BEZIER_DRAG          "拖拽曲线\n拖拽曲线"
+    ID_BUTTON_NOSPEAK       "关闭或打开音效\n关闭或打开音效"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_BUTTON_SHOW_VERNIER  "显示或关闭坐标指示\n显示或关闭坐标指示"
+    ID_BEZIER_TEST          "测试Bezier\n测试Bezier"
+    ID_EDIT_OBJECT_COPY     "复制选择对象(Ctrl +C)\n复制选择对象(Ctrl +C)"
+    ID_OPERATION_OBSTRUCT   "转变为线段\n转变为线段"
+    ID_BEZIER_MERGE         "合并曲线\n合并曲线"
+    ID_DAY_NIGHT            "白天\\晚上\n白天\\晚上"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_OPERATION_TEST_BEIZER_INTERSECT 
+                            "测试路径是否自相交\n测试路径是否自相交"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_SHOW_MODEL_PLANE     "显示模型平面\n显示模型平面"
+    ID_SHOW_SEL_ONLY        "只显示选择对象\n只显示选择对象"
+    ID_SHOW_TERRAIN_LIGHT   "显示关闭地形灯光图\n显示关闭地形灯光图"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_SHOW_DISTANCE        "显示两个选中对象之间的距离\n显示两个选中对象之间的距离"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_SELECT_BY_ID         "根据ID查找当前可见可选择的NPC、矿、怪物"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\ElementEditor.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

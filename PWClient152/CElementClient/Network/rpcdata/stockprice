@@ -1,0 +1,64 @@
+#ifndef __GNET_STOCKPRICE_RPCDATA
+#define __GNET_STOCKPRICE_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class StockPrice : public GNET::Rpc::Data
+	{
+	public:
+		int price;
+		int volume;
+
+	public:
+		StockPrice (int l_price = 0,int l_volume = 0)
+			: price(l_price),volume(l_volume)
+		{
+		}
+
+		StockPrice(const StockPrice &rhs)
+			: price(rhs.price),volume(rhs.volume) { }
+
+		Rpc::Data *Clone() const { return new StockPrice(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const StockPrice *r = dynamic_cast<const StockPrice *>(&rhs);
+			if (r && r != this)
+			{
+				price = r->price;
+				volume = r->volume;
+			}
+			return *this;
+		}
+
+		StockPrice& operator = (const StockPrice &rhs)
+		{
+			const StockPrice *r = &rhs;
+			if (r && r != this)
+			{
+				price = r->price;
+				volume = r->volume;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << price;
+			os << volume;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> price;
+			os >> volume;
+			return os;
+		}
+
+	};
+};
+#endif

@@ -1,0 +1,44 @@
+	public:
+		int retcode;
+		int localsid;
+		unsigned int money;
+		unsigned int yinpiao;
+		enum { PROTOCOL_TYPE = PROTOCOL_PSHOPMANAGEFUND_RE };
+	public:
+		PShopManageFund_Re() { type = PROTOCOL_PSHOPMANAGEFUND_RE; }
+		PShopManageFund_Re(void*) : Protocol(PROTOCOL_PSHOPMANAGEFUND_RE) { }
+		PShopManageFund_Re (int l_retcode,int l_localsid,unsigned int l_money = 0,
+			unsigned int l_yinpiao = 0)
+			 : retcode(l_retcode),localsid(l_localsid),money(l_money)
+			,yinpiao(l_yinpiao)
+		{
+			type = PROTOCOL_PSHOPMANAGEFUND_RE;
+		}
+
+		PShopManageFund_Re(const PShopManageFund_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),localsid(rhs.localsid),money(rhs.money)
+			,yinpiao(rhs.yinpiao) { }
+
+		GNET::Protocol *Clone() const { return new PShopManageFund_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << localsid;
+			os << money;
+			os << yinpiao;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> localsid;
+			os >> money;
+			os >> yinpiao;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

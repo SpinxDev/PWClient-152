@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		int dst_roleid;
+		Octets content;
+		enum { PROTOCOL_TYPE = PROTOCOL_PLAYERACCUSE };
+	public:
+		PlayerAccuse() { type = PROTOCOL_PLAYERACCUSE; }
+		PlayerAccuse(void*) : Protocol(PROTOCOL_PLAYERACCUSE) { }
+		PlayerAccuse (int l_roleid,int l_dst_roleid,const Octets& l_content)
+			 : roleid(l_roleid),dst_roleid(l_dst_roleid),content(l_content)
+		{
+			type = PROTOCOL_PLAYERACCUSE;
+		}
+
+		PlayerAccuse(const PlayerAccuse &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),dst_roleid(rhs.dst_roleid),content(rhs.content) { }
+
+		GNET::Protocol *Clone() const { return new PlayerAccuse(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << dst_roleid;
+			os << content;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> dst_roleid;
+			os >> content;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

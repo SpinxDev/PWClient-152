@@ -1,0 +1,71 @@
+DIALOG "Win_SettingGame" 0 0 311 431 0 1 10 "Window\对话框_标准边框x.dds" "" "" 0 0 283 33 "人鱼传说新界面\面板关闭按钮.tga" 47 30 96 96 96 255 1
+EDIT "Img_Title" "" "" 16 23 283 37 "人鱼传说新界面\title.tga" 2 15 255 255 255 "TEXT" 1 0 20
+LABEL "title" "" "" 116 29 0 0 3 16 4 255 203 74 255
+IMAGEPICTURE "Control_598033854" "" "" 4 0 305 431 1 0 "人鱼传说新界面\未命名-1副本.dds"
+EDIT "BG1" "" "" 189 146 100 220 "Editbox\文本框_4c.dds" 5 15 255 255 255 "TEXT" 1 0 20
+EDIT "BG2" "" "" 22 101 270 43 "Editbox\文本框_4c.dds" 6 15 255 255 255 "TEXT" 1 0 20
+EDIT "BG3" "" "" 50 167 93 157 "Editbox\文本框_4c.dds" 7 15 255 255 255 "TEXT" 1 0 20
+STILLIMAGEBUTTON "Btn_Game" "gamesetting" "SFX\Interface\ClickB.wav" 149 59 64 24 0 0 0 0 8 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 9 1
+STILLIMAGEBUTTON "Btn_Video" "videosetting" "SFX\Interface\ClickB.wav" 85 59 64 24 0 0 0 0 10 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 11 1
+STILLIMAGEBUTTON "Btn_System" "systemsetting" "SFX\Interface\ClickB.wav" 21 59 64 24 0 0 0 0 12 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 13 1
+STILLIMAGEBUTTON "Btn_Blacklist" "blacklist" "SFX\Interface\ClickB.wav" 213 59 80 24 0 0 0 0 14 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 15 1
+STILLIMAGEBUTTON "Btn_Default" "default" "SFX\Interface\ClickB.wav" 25 393 50 24 0 0 0 0 16 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 17 1
+STILLIMAGEBUTTON "Btn_Apply" "apply" "SFX\Interface\ClickB.wav" 134 394 50 24 0 0 0 0 18 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 19 1
+STILLIMAGEBUTTON "Btn_Decide" "confirm" "SFX\Interface\ClickB.wav" 187 394 50 24 0 0 0 0 20 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 21 1
+STILLIMAGEBUTTON "Btn_Exit" "IDCANCEL" "SFX\Interface\ClickB.wav" 240 394 50 24 0 0 0 0 22 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 23 1
+LABEL "过滤信息" "" "" 26 123 0 0 24 10 25 255 255 255 255
+LABEL "聊天栏设置" "" "" 22 85 54 15 26 10 27 255 203 74 255
+LABEL "Control_297018943" "" "" 106 124 80 15 28 10 29 255 255 255 255
+LABEL "Control_315571630" "" "" 208 124 80 14 30 10 31 255 255 255 255
+LABEL "Control_146429638" "" "" 106 106 80 14 32 10 33 255 255 255 255
+LABEL "lb_普通频道" "" "" 223 151 56 16 34 10 35 255 255 255 255
+LABEL "lb_呐喊频道" "" "" 223 170 56 16 36 10 37 255 228 0 255
+LABEL "lb_队伍频道" "" "" 223 208 56 16 38 10 39 0 255 0 255
+LABEL "lb_帮派频道" "" "" 223 189 58 16 40 10 41 0 255 252 255
+LABEL "lb_交易频道" "" "" 223 227 58 16 42 10 43 255 129 0 255
+LABEL "lb_密语信息" "" "" 223 246 56 16 44 10 45 255 74 176 255
+LABEL "lb_伤害信息" "" "" 223 284 57 16 46 10 47 192 192 192 255
+LABEL "lb_战斗信息" "" "" 223 303 58 16 48 10 49 255 129 0 255
+LABEL "lb_系统信息" "" "" 223 265 56 16 50 10 51 190 210 147 255
+LABEL "Control_627138188" "" "" 41 371 0 0 52 10 53 255 255 255 255
+CHECK "Chk_Noteam" "" "SFX\Interface\ClickA.wav" 84 123 18 18 "Extra\复选框_标准.tga"
+CHECK "Chk_Notrade" "" "SFX\Interface\ClickA.wav" 189 123 18 18 "Extra\复选框_标准.tga"
+CHECK "Chk_ReverseMouse" "" "SFX\Interface\ClickA.wav" 84 104 18 18 "Extra\复选框_标准.tga"
+CHECK "Chk_SwitchAD" "" "SFX\Interface\ClickA.wav" 189 104 18 18 "Extra\复选框_标准.tga"
+CHECK "Ch_1" "ch1" "SFX\Interface\ClickA.wav" 195 151 18 18 "Extra\复选框_标准.tga"
+CHECK "Ch_2" "ch2" "SFX\Interface\ClickA.wav" 195 170 18 18 "Extra\复选框_标准.tga"
+CHECK "Ch_3" "ch3" "SFX\Interface\ClickA.wav" 195 208 18 18 "Extra\复选框_标准.tga"
+CHECK "Ch_4" "ch4" "SFX\Interface\ClickA.wav" 195 189 18 18 "Extra\复选框_标准.tga"
+CHECK "Ch_8" "ch8" "SFX\Interface\ClickA.wav" 195 227 18 18 "Extra\复选框_标准.tga"
+CHECK "Ch_6" "ch6" "SFX\Interface\ClickA.wav" 195 284 18 18 "Extra\复选框_标准.tga"
+CHECK "Ch_7" "ch7" "SFX\Interface\ClickA.wav" 195 303 18 18 "Extra\复选框_标准.tga"
+CHECK "Ch_9" "ch9" "SFX\Interface\ClickA.wav" 195 265 18 18 "Extra\复选框_标准.tga"
+CHECK "Ch_5" "ch5" "SFX\Interface\ClickA.wav" 195 246 18 18 "Extra\复选框_标准.tga"
+CHECK "Chk_Autoreply" "autoreply" "SFX\Interface\ClickA.wav" 23 370 18 18 "Extra\复选框_标准.tga"
+EDIT "Txt_Reply" "" "" 132 368 160 21 "Editbox\文本框_4b.tga" 54 10 255 255 255 "TEXT" 0 0 40
+CHECK "Ch_10" "ch10" "SFX\Interface\ClickA.wav" 195 322 18 18 "Extra\复选框_标准.tga"
+CHECK "Ch_11" "ch11" "SFX\Interface\ClickA.wav" 195 341 18 18 "Extra\复选框_标准.tga"
+LABEL "lb_系统广播" "" "" 223 322 59 16 55 10 56 254 54 0 255
+LABEL "lb_其它信息" "" "" 223 341 56 16 57 10 58 154 166 255 255
+LABEL "Control_234063724" "" "" 26 106 53 14 59 10 60 255 255 255 255
+LABEL "lb_聊天区域1" "" "" 22 149 83 15 61 10 62 255 203 74 255
+RADIO "Radio_Set1" "set1" "" 55 169 120 25 "Extra\单选框_大频道.tga" 1 1
+RADIO "Radio_Set2" "set2" "" 55 194 120 25 "Extra\单选框_大频道.tga" 2 1
+RADIO "Radio_Set3" "set3" "" 55 219 120 25 "Extra\单选框_大频道.tga" 3 1
+RADIO "Radio_Set4" "set4" "" 55 244 120 25 "Extra\单选框_大频道.tga" 4 1
+RADIO "Radio_Set5" "set5" "" 55 269 120 25 "Extra\单选框_大频道.tga" 5 1
+RADIO "Radio_Set6" "set6" "" 55 294 120 25 "Extra\单选框_大频道.tga" 6 1
+LABEL "Lb_普通聊天b" "" "" 70 175 59 16 63 10 64 255 255 255 255
+LABEL "Lb_组队聊天2" "" "" 70 200 56 16 65 10 66 255 255 255 255
+LABEL "Lb_帮派聊天b" "" "" 70 225 57 16 67 10 68 255 255 255 255
+LABEL "Lb_密语聊天b" "" "" 70 250 59 16 69 10 70 255 255 255 255
+LABEL "Lb_交易信息b" "" "" 70 275 57 16 71 10 72 255 255 255 255
+LABEL "Lb_通用信息b" "" "" 70 300 56 16 73 10 74 255 255 255 255
+LABEL "Control_127768844" "" "" 28 326 79 16 75 10 76 255 203 74 255
+SLIDER "Slider_ChatFsize" "size" "" 115 330 70 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 4
+LABEL "Control_320404434" "" "" 208 106 80 14 77 10 78 255 255 255 255
+LABEL "Control_281798208" "" "" 28 346 78 14 79 10 80 255 203 74 255
+CHECK "Chk_FontBord" "" "SFX\Interface\ClickA.wav" 125 346 18 18 "Extra\复选框_标准.tga"
+LABEL "Control_558747195" "" "" 143 346 30 16 81 10 82 255 255 255 255
+CHECK "Ch_12" "" "SFX\Interface\ClickA.wav" -2000 -2000 18 18 "Extra\复选框_标准.tga"
+CHECK "Ch_13" "" "SFX\Interface\ClickA.wav" -2000 -2000 18 18 "Extra\复选框_标准.tga"

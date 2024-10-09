@@ -1,0 +1,22 @@
+DIALOG "Win_Map" 0 0 236 184 0 1 10 "" "" "" 0 0 -1 -1 "" 0 0 96 96 96 0 1
+EDIT "Hide_1" "" "" -2 -1 240 48 "Window\对话框_标准边框5.tga" 2 12 255 255 255 "TEXT" 1 0 256
+LABEL "Txt_Address" "" "" 56 8 0 0 3 10 4 255 255 255 255
+LABEL "Txt_xyz" "" "" 8 24 0 0 5 8 6 255 255 255 255
+IMAGEPICTURE "Img_SystemTime" "" "" 6 7 16 16 4 0 "Window\servertime.tga"
+LABEL "Txt_RestMonster" "" "" 114 155 120 15 7 10 8 255 255 255 255
+LABEL "Txt_RestTime" "" "" 94 141 140 15 9 10 10 255 255 255 255
+LABEL "Txt_TankDistance" "" "" 168 168 66 15 11 10 12 255 255 255 255
+IMAGEPICTURE "cover" "" "" 115 0 120 120 1 0 "Window\对话框_标准边框4_新.tga"
+IMAGEPICTURE "Hide_2" "" "" 119 4 112 112 1 0 "Window\对话框_透明色a.bmp"
+STILLIMAGEBUTTON "Btn_TreasureBag" "treasurebag" "" 150 113 30 30 0 0 0 0 13 10 255 255 255 255 "Button\大乾坤袋-1.tga" "Button\大乾坤袋-2.tga" 14 1
+STILLIMAGEBUTTON "Btn_BigMap" "bigmap" "SFX\Interface\ClickB.wav" 126 108 21 21 1 0 0 0 15 10 200 200 0 255 "Button\按钮_大地图1.tga" "Button\按钮_大地图2.tga" 16 1
+STILLIMAGEBUTTON "Btn_+" "roomout" "SFX\Interface\ClickB.wav" 101 66 16 16 0 0 0 0 17 8 200 200 0 255 "Button\按钮_放大1.tga" "Button\按钮_放大2.tga" 18 1
+STILLIMAGEBUTTON "Btn_-" "roomin" "SFX\Interface\ClickB.wav" 101 46 15 15 0 0 0 0 19 8 200 200 0 255 "Button\按钮_缩小1.tga" "Button\按钮_缩小2.tga" 20 1
+CHECK "Check_Mark" "openmarkwin" "SFX\Interface\ClickA.wav" 210 99 25 25 "Extra\复选框_标记.tga"
+CHECK "Chk_Mode" "mode" "SFX\Interface\ClickA.wav" 107 89 18 18 "Extra\复选框_锁定.tga"
+CHECK "Chk_SwitchSafety" "safe" "SFX\Interface\ClickA.wav" 185 114 24 24 "Extra\复选框_APK.tga"
+CHECK "Chk_Closeall" "closeall" "SFX\Interface\ClickA.wav" 215 0 21 21 "Extra\复选框_开关地图.tga"
+CHECK "Chk_CloseInfo" "closeinfo" "SFX\Interface\ClickA.wav" 317 0 21 21 "Extra\复选框_开关座标.tga"
+CHECK "Chk_Mail" "" "" 86 22 18 16 "Window\信件.tga"
+CHECK "Chk_SwitchPK" "pk" "" 106 19 20 20 "Extra\PVE.tga"
+CHECK "Chk_Wiki" "wiki" "SFX\Interface\ClickA.wav" 121 1 20 20 "extra\百科全书.tga"

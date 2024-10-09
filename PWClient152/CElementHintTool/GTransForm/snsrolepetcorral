@@ -1,0 +1,64 @@
+#ifndef __GNET_SNSROLEPETCORRAL_RPCDATA
+#define __GNET_SNSROLEPETCORRAL_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class SNSRolePetCorral : public GNET::Rpc::Data
+	{
+	public:
+		unsigned int crc;
+		Octets petcorral;
+
+	public:
+		SNSRolePetCorral (unsigned int l_crc = 0,const Octets& l_petcorral = Octets())
+			: crc(l_crc),petcorral(l_petcorral)
+		{
+		}
+
+		SNSRolePetCorral(const SNSRolePetCorral &rhs)
+			: crc(rhs.crc),petcorral(rhs.petcorral) { }
+
+		Rpc::Data *Clone() const { return new SNSRolePetCorral(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const SNSRolePetCorral *r = dynamic_cast<const SNSRolePetCorral *>(&rhs);
+			if (r && r != this)
+			{
+				crc = r->crc;
+				petcorral = r->petcorral;
+			}
+			return *this;
+		}
+
+		SNSRolePetCorral& operator = (const SNSRolePetCorral &rhs)
+		{
+			const SNSRolePetCorral *r = &rhs;
+			if (r && r != this)
+			{
+				crc = r->crc;
+				petcorral = r->petcorral;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << crc;
+			os << petcorral;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> crc;
+			os >> petcorral;
+			return os;
+		}
+
+	};
+};
+#endif

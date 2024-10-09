@@ -1,0 +1,47 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		unsigned char mail_id;
+		unsigned char obj_type;
+		Octets syncdata;
+		enum { PROTOCOL_TYPE = PROTOCOL_GETMAILATTACHOBJ };
+	public:
+		GetMailAttachObj() { type = PROTOCOL_GETMAILATTACHOBJ; }
+		GetMailAttachObj(void*) : Protocol(PROTOCOL_GETMAILATTACHOBJ) { }
+		GetMailAttachObj (int l_roleid,unsigned int l_localsid,unsigned char l_mail_id,
+			unsigned char l_obj_type,const Octets& l_syncdata = Octets())
+			 : roleid(l_roleid),localsid(l_localsid),mail_id(l_mail_id),
+			obj_type(l_obj_type),syncdata(l_syncdata)
+		{
+			type = PROTOCOL_GETMAILATTACHOBJ;
+		}
+
+		GetMailAttachObj(const GetMailAttachObj &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid),mail_id(rhs.mail_id),
+			obj_type(rhs.obj_type),syncdata(rhs.syncdata) { }
+
+		GNET::Protocol *Clone() const { return new GetMailAttachObj(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << mail_id;
+			os << obj_type;
+			os << syncdata;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> mail_id;
+			os >> obj_type;
+			os >> syncdata;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 102400; }

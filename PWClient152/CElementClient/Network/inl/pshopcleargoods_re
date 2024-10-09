@@ -1,0 +1,44 @@
+	public:
+		int retcode;
+		int localsid;
+		PShopItemVector slist;
+		GRoleInventoryVector store;
+		enum { PROTOCOL_TYPE = PROTOCOL_PSHOPCLEARGOODS_RE };
+	public:
+		PShopClearGoods_Re() { type = PROTOCOL_PSHOPCLEARGOODS_RE; }
+		PShopClearGoods_Re(void*) : Protocol(PROTOCOL_PSHOPCLEARGOODS_RE) { }
+		PShopClearGoods_Re (int l_retcode,int l_localsid,const PShopItemVector& l_slist = PShopItemVector(),
+			const GRoleInventoryVector& l_store = GRoleInventoryVector())
+			 : retcode(l_retcode),localsid(l_localsid),slist(l_slist)
+			,store(l_store)
+		{
+			type = PROTOCOL_PSHOPCLEARGOODS_RE;
+		}
+
+		PShopClearGoods_Re(const PShopClearGoods_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),localsid(rhs.localsid),slist(rhs.slist)
+			,store(rhs.store) { }
+
+		GNET::Protocol *Clone() const { return new PShopClearGoods_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << localsid;
+			os << slist;
+			os << store;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> localsid;
+			os >> slist;
+			os >> store;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 65535; }

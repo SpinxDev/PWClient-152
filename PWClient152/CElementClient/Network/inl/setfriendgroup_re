@@ -1,0 +1,47 @@
+	public:
+		char retcode;
+		char gid;
+		int roleid;
+		int friendid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_SETFRIENDGROUP_RE };
+	public:
+		SetFriendGroup_Re() { type = PROTOCOL_SETFRIENDGROUP_RE; }
+		SetFriendGroup_Re(void*) : Protocol(PROTOCOL_SETFRIENDGROUP_RE) { }
+		SetFriendGroup_Re (char l_retcode,char l_gid,int l_roleid,
+			int l_friendid,unsigned int l_localsid)
+			 : retcode(l_retcode),gid(l_gid),roleid(l_roleid),
+			friendid(l_friendid),localsid(l_localsid)
+		{
+			type = PROTOCOL_SETFRIENDGROUP_RE;
+		}
+
+		SetFriendGroup_Re(const SetFriendGroup_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),gid(rhs.gid),roleid(rhs.roleid),
+			friendid(rhs.friendid),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new SetFriendGroup_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << gid;
+			os << roleid;
+			os << friendid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> gid;
+			os >> roleid;
+			os >> friendid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

@@ -1,0 +1,42 @@
+DIALOG "Dlg_Mountain" 0 0 220 480 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "" 26 5 96 96 96 255 1
+IMAGEPICTURE "Control_118277810" "" "" 11 35 197 3 1 0 "Window\分隔线.tga"
+LABEL "Control_237554344" "" "" 80 5 54 20 2 16 3 255 203 74 255
+LABEL "Control_340788975" "" "" 7 80 68 17 4 15 5 255 255 255 255
+LABEL "Control_556946965" "" "" 7 50 55 16 6 15 7 255 255 255 255
+LABEL "Control_203679393" "" "" 7 105 71 15 8 15 9 255 255 255 255
+LABEL "Control_262857840" "" "" 7 128 54 16 10 15 11 255 255 255 255
+LABEL "Control_57132752" "" "" 7 152 80 16 12 15 13 255 255 255 255
+LABEL "Control_195884245" "" "" 7 179 81 16 14 15 15 255 255 255 255
+LABEL "Control_241149552" "" "" 7 244 69 15 16 15 17 255 255 255 255
+RADIO "Radio_UpAndDown" "OnRadio" "" 14 278 19 19 "Extra\单选框_标准.tga" 0 1
+LABEL "Control_90557670" "" "" 37 279 57 16 18 15 19 255 255 255 255
+RADIO "Radio_UpFirst" "OnRadio" "" 101 277 19 19 "Extra\单选框_标准.tga" 1 1
+LABEL "Control_424147821" "" "" 127 278 40 17 20 15 21 255 255 255 255
+RADIO "Radio_DownFirst" "OnRadio" "" 64 303 19 19 "Extra\单选框_标准.tga" 2 1
+LABEL "Control_824875584" "" "" 80 301 45 18 22 15 23 255 255 255 255
+SLIDER "Slider_MaxHeightHill" "moveSlider" "" 87 55 115 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_PartSmoothHill" "moveSlider" "" 87 110 115 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_BridgeScope" "moveSlider" "" 87 157 115 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_MainSmoothHill" "moveSlider" "" 87 84 115 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_TerrainSeedHill" "moveSlider" "" 87 132 115 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_BridgeDepth" "moveSlider" "" 87 185 115 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_LineHillWidth" "moveSlider" "" 85 248 115 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+STILLIMAGEBUTTON "Control_294532000" "OpenChooseTexture" "" 7 324 83 21 0 0 0 0 24 15 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 25 1
+STILLIMAGEBUTTON "Control_333632464" "CreateHillLine" "" 99 379 83 21 0 0 0 0 26 15 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 27 1
+STILLIMAGEBUTTON "Control_52575390" "Refresh" "" 29 439 112 21 0 0 0 0 28 15 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 29 1
+STILLIMAGEBUTTON "Control_588296544" "ClearAllHill" "" 15 404 112 21 0 0 0 0 30 15 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 31 1
+STILLIMAGEBUTTON "Control_734146640" "CreateHillPoly" "" 100 350 83 21 0 0 0 0 32 15 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 33 1
+LABEL "Label_MaxHeightHill" "" "" 149 36 33 16 34 15 35 255 255 255 255
+LABEL "Label_MainSmoothHill" "" "" 86 65 44 17 36 15 37 255 255 255 255
+LABEL "Label_PartSmoothHill" "" "" 87 92 45 16 38 15 39 255 255 255 255
+LABEL "Label_TerrainSeedHill" "" "" 85 119 47 18 40 15 41 255 255 255 255
+LABEL "Label_BridgeScope" "" "" 87 140 46 17 42 15 43 255 255 255 255
+LABEL "Label_BridgeDepth" "" "" 88 166 49 16 44 15 45 255 255 255 255
+LABEL "Label_LineHillWidth" "" "" 86 225 51 18 46 15 47 255 255 255 255
+LABEL "Control_199840508" "" "" 7 209 56 16 48 15 49 255 255 255 255
+SLIDER "Slider_BorderErode" "moveSlider" "" 86 215 115 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+LABEL "Label_BorderErode" "" "" 86 195 54 15 50 15 51 255 255 255 255
+CHECK "Check_HillUp" "" "" 55 260 18 19 "Extra\复选框_标准.tga"
+LABEL "Control_105639768" "" "" 82 260 64 18 52 15 53 255 255 255 255
+STILLIMAGEBUTTON "Btn_HeightCurve" "OpenHeightCurveDlg" "" 109 318 83 21 0 0 0 0 54 15 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 55 1
+STILLIMAGEBUTTON "Btn_LineCurve" "OpenLineCurveDlg" "" 6 354 83 21 0 0 0 0 56 15 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 57 1

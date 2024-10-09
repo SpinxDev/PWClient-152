@@ -1,0 +1,34 @@
+DIALOG "Win_EquipUp" 0 0 320 260 0 1 10 "Window\对话框_标准边框1.dds" "" "人鱼传说新界面\title.tga" 3 3 314 33 "人鱼传说新界面\面板关闭按钮.tga" 37 7 96 96 96 255 1
+STILLIMAGEBUTTON "Btn_Confirm" "confirm" "" 63 225 54 24 0 0 0 0 2 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 3 1
+LABEL "Control_331332150" "" "" 118 7 120 20 4 15 5 255 204 74 255
+EDIT "Edt_Confirm1" "" "" 221 79 90 20 "Editbox\文本框_4d.dds" 6 10 255 0 0 "TEXT" 0 0 20
+LABEL "Control_134003072" "" "" 11 35 0 0 7 10 8 255 204 74 255
+STILLIMAGEBUTTON "Btn_Cancel" "IDCANCEL" "" 192 225 54 24 0 0 0 0 9 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 10 1
+LABEL "Txt_Name" "" "" 41 35 110 20 11 10 12 255 0 0 255
+LABEL "Control_123698445" "" "" 148 36 0 0 13 10 14 255 204 74 255
+LABEL "Control_634917672" "" "" 11 55 150 20 15 10 16 255 204 74 255
+LABEL "Control_732059262" "" "" 12 81 0 0 17 10 18 255 204 74 255
+LABEL "Txt_EquipRefine" "" "" 42 81 30 20 19 10 20 255 0 0 255
+LABEL "Control_315791791" "" "" 69 81 0 0 21 10 22 255 204 74 255
+LABEL "Txt_Num1" "" "" 111 81 50 20 23 10 24 255 0 0 255
+LABEL "Control_634222068" "" "" 156 81 0 0 25 10 26 255 204 74 255
+LABEL "Control_161869525" "" "" 12 98 0 0 27 10 28 255 204 74 255
+LABEL "Txt_EquipHole" "" "" 43 99 20 20 29 10 30 255 0 0 255
+LABEL "Control_829848121" "" "" 56 99 0 0 31 10 32 255 204 74 255
+LABEL "Txt_Num2" "" "" 111 100 50 20 33 10 34 255 0 0 255
+LABEL "Control_353489997" "" "" 156 100 0 0 35 10 36 255 204 74 255
+EDIT "Edt_Confirm2" "" "" 221 99 90 20 "Editbox\文本框_4d.dds" 37 10 255 0 0 "TEXT" 0 0 20
+LABEL "Txt_Stone3" "" "" 14 160 80 20 38 10 39 255 204 74 255
+LABEL "Txt_Stone2" "" "" 221 139 80 20 40 10 41 255 204 74 255
+IMAGEPICTURE "Control_50231426" "" "" 10 121 300 16 1 0 "收费道具查看面板\小条格子.tga"
+IMAGEPICTURE "Control_6498772" "" "" 10 55 300 16 1 0 "收费道具查看面板\小条格子.tga"
+LABEL "Txt_Stone1" "" "" 14 140 80 20 42 10 43 255 204 74 255
+LABEL "Txt_Stone4" "" "" 221 160 80 20 44 10 45 255 204 74 255
+LABEL "Control_534706830" "" "" 14 180 0 0 46 10 47 255 204 74 255
+LABEL "Txt_Num3" "" "" 110 180 50 20 48 10 49 255 0 0 255
+LABEL "Control_81783923" "" "" 156 181 0 0 50 10 51 255 204 74 255
+LABEL "Control_427178801" "" "" 66 121 0 0 52 10 53 255 0 0 255
+EDIT "Edt_Confirm3" "" "" 221 180 90 20 "Editbox\文本框_4d.dds" 54 10 255 0 0 "TEXT" 0 0 20
+IMAGEPICTURE "Control_13472886" "" "" 10 160 300 16 1 0 "收费道具查看面板\小条格子.tga"
+IMAGEPICTURE "Control_54841824" "" "" 10 205 300 16 1 0 "收费道具查看面板\小条格子.tga"
+LABEL "Txt_Num" "" "" 10 205 300 0 55 10 56 255 204 74 255

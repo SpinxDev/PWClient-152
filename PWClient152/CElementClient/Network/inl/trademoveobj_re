@@ -1,0 +1,56 @@
+	public:
+		int retcode;
+		unsigned int tid;
+		int roleid;
+		unsigned int localsid;
+		char src_pos;
+		int count;
+		char dst_pos;
+		enum { PROTOCOL_TYPE = PROTOCOL_TRADEMOVEOBJ_RE };
+	public:
+		TradeMoveObj_Re() { type = PROTOCOL_TRADEMOVEOBJ_RE; }
+		TradeMoveObj_Re(void*) : Protocol(PROTOCOL_TRADEMOVEOBJ_RE) { }
+		TradeMoveObj_Re (int l_retcode,unsigned int l_tid,int l_roleid,
+			unsigned int l_localsid,char l_src_pos,int l_count,
+			char l_dst_pos)
+			 : retcode(l_retcode),tid(l_tid),roleid(l_roleid),
+			localsid(l_localsid),src_pos(l_src_pos),count(l_count),
+			dst_pos(l_dst_pos)
+		{
+			type = PROTOCOL_TRADEMOVEOBJ_RE;
+		}
+
+		TradeMoveObj_Re(const TradeMoveObj_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),tid(rhs.tid),roleid(rhs.roleid),
+			localsid(rhs.localsid),src_pos(rhs.src_pos),count(rhs.count),
+			dst_pos(rhs.dst_pos) { }
+
+		GNET::Protocol *Clone() const { return new TradeMoveObj_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << tid;
+			os << roleid;
+			os << localsid;
+			os << src_pos;
+			os << count;
+			os << dst_pos;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> tid;
+			os >> roleid;
+			os >> localsid;
+			os >> src_pos;
+			os >> count;
+			os >> dst_pos;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

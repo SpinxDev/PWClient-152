@@ -1,0 +1,78 @@
+#ifndef __GNET_GAUCTIONBRIEF_RPCDATA
+#define __GNET_GAUCTIONBRIEF_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GAuctionBrief : public GNET::Rpc::Data
+	{
+	public:
+		unsigned int auctionid;
+		unsigned int itemid;
+		short count;
+		unsigned int time;
+
+	public:
+		GAuctionBrief (unsigned int l_auctionid = 0,unsigned int l_itemid = 0,short l_count = 0
+			,unsigned int l_time = 0)
+			: auctionid(l_auctionid),itemid(l_itemid),count(l_count)
+			,time(l_time)
+		{
+		}
+
+		GAuctionBrief(const GAuctionBrief &rhs)
+			: auctionid(rhs.auctionid),itemid(rhs.itemid),count(rhs.count),
+			time(rhs.time) { }
+
+		Rpc::Data *Clone() const { return new GAuctionBrief(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GAuctionBrief *r = dynamic_cast<const GAuctionBrief *>(&rhs);
+			if (r && r != this)
+			{
+				auctionid = r->auctionid;
+				itemid = r->itemid;
+				count = r->count;
+				time = r->time;
+			}
+			return *this;
+		}
+
+		GAuctionBrief& operator = (const GAuctionBrief &rhs)
+		{
+			const GAuctionBrief *r = &rhs;
+			if (r && r != this)
+			{
+				auctionid = r->auctionid;
+				itemid = r->itemid;
+				count = r->count;
+				time = r->time;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << auctionid;
+			os << itemid;
+			os << count;
+			os << time;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> auctionid;
+			os >> itemid;
+			os >> count;
+			os >> time;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<GAuctionBrief>	GAuctionBriefVector;
+};
+#endif

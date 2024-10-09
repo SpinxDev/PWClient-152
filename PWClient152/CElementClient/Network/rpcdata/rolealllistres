@@ -1,0 +1,69 @@
+#ifndef __GNET_ROLEALLLISTRES_RPCDATA
+#define __GNET_ROLEALLLISTRES_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class RoleAllListRes : public GNET::Rpc::Data
+	{
+	public:
+		char retcode;
+		char handle;
+		RoleVector roles;
+
+	public:
+		RoleAllListRes (char l_retcode = 0,char l_handle = 0)
+			: retcode(l_retcode),handle(l_handle)
+		{
+		}
+
+		RoleAllListRes(const RoleAllListRes &rhs)
+			: retcode(rhs.retcode),handle(rhs.handle),roles(rhs.roles) { }
+
+		Rpc::Data *Clone() const { return new RoleAllListRes(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const RoleAllListRes *r = dynamic_cast<const RoleAllListRes *>(&rhs);
+			if (r && r != this)
+			{
+				retcode = r->retcode;
+				handle = r->handle;
+				roles = r->roles;
+			}
+			return *this;
+		}
+
+		RoleAllListRes& operator = (const RoleAllListRes &rhs)
+		{
+			const RoleAllListRes *r = &rhs;
+			if (r && r != this)
+			{
+				retcode = r->retcode;
+				handle = r->handle;
+				roles = r->roles;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << handle;
+			os << roles;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> handle;
+			os >> roles;
+			return os;
+		}
+
+	};
+};
+#endif

@@ -1,0 +1,50 @@
+	public:
+		int retcode;
+		int roleid;
+		unsigned int localsid;
+		int renamed_roleid;
+		Octets new_name;
+		int operater;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONRENAME_RE };
+	public:
+		FactionRename_Re() { type = PROTOCOL_FACTIONRENAME_RE; }
+		FactionRename_Re(void*) : Protocol(PROTOCOL_FACTIONRENAME_RE) { }
+		FactionRename_Re (int l_retcode,int l_roleid,unsigned int l_localsid,
+			int l_renamed_roleid,const Octets& l_new_name,int l_operater)
+			 : retcode(l_retcode),roleid(l_roleid),localsid(l_localsid),
+			renamed_roleid(l_renamed_roleid),new_name(l_new_name),operater(l_operater)
+		{
+			type = PROTOCOL_FACTIONRENAME_RE;
+		}
+
+		FactionRename_Re(const FactionRename_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),roleid(rhs.roleid),localsid(rhs.localsid),
+			renamed_roleid(rhs.renamed_roleid),new_name(rhs.new_name),operater(rhs.operater) { }
+
+		GNET::Protocol *Clone() const { return new FactionRename_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roleid;
+			os << localsid;
+			os << renamed_roleid;
+			os << new_name;
+			os << operater;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roleid;
+			os >> localsid;
+			os >> renamed_roleid;
+			os >> new_name;
+			os >> operater;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 512; }

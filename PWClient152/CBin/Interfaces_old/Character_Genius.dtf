@@ -1,0 +1,28 @@
+DIALOG "Win_ELFGenius" 0 0 310 440 0 1 10 "小精灵新加tga\板子panel\完美世界精灵属性大板子无标题.tga" "" "" 0 0 -1 -1 "人鱼传说新界面\面板关闭按钮.tga" 60 30 96 96 96 255 1
+IMAGEPICTURE "Img_111" "" "" 16 63 280 280 1 0 "小精灵新加tga\板子panel\五行术原型五角星1.tga"
+LABEL "Txt_Name" "" "" 115 32 96 24 2 15 3 255 203 74 255
+LABEL "Txt_Total" "" "" 103 64 32 20 4 15 5 255 255 255 255
+STILLIMAGEBUTTON "Btn_4" "Btn_4" "" 190 255 32 32 0 0 0 0 6 15 255 255 255 255 "小精灵新加tga\按钮button\5五行按钮土-1高亮.tga" "小精灵新加tga\按钮button\5五行按钮土-3按下.tga" 7 1
+STILLIMAGEBUTTON "Btn_2" "Btn_2" "" 87 256 32 32 0 0 0 0 8 15 255 255 255 255 "小精灵新加tga\按钮button\5五行按钮水-1高亮.tga" "小精灵新加tga\按钮button\5五行按钮水-2普通.tga" 9 1
+STILLIMAGEBUTTON "Btn_1" "Btn_1" "" 222 157 32 32 0 0 0 0 10 15 255 255 255 255 "小精灵新加tga\按钮button\5五行按钮木-1高亮.tga" "小精灵新加tga\按钮button\5五行按钮木-2普通.tga" 11 1
+STILLIMAGEBUTTON "Btn_3" "Btn_3" "" 56 158 32 32 0 0 0 0 12 15 255 255 255 255 "小精灵新加tga\按钮button\5五行按钮火-1高亮.tga" "小精灵新加tga\按钮button\5五行按钮火-2普通.tga" 13 1
+STILLIMAGEBUTTON "Btn_0" "Btn_0" "" 139 97 32 32 0 0 0 0 14 15 255 255 255 255 "小精灵新加tga\按钮button\5五行按钮金-1高亮.tga" "小精灵新加tga\按钮button\5五行按钮金-2普通.tga" 15 1
+IMAGEPICTURE "Img_0" "" "" 137 129 35 41 9 0 "小精灵新加tga\五角星tag\金.tga"
+IMAGEPICTURE "Img_1" "" "" 182 178 42 24 9 0 "小精灵新加tga\五角星tag\木.tga"
+IMAGEPICTURE "Img_4" "" "" 163 220 35 40 9 0 "小精灵新加tga\五角星tag\土.tga"
+IMAGEPICTURE "Img_2" "" "" 112 218 35 40 9 0 "小精灵新加tga\五角星tag\水.tga"
+IMAGEPICTURE "Img_3" "" "" 87 178 42 24 9 0 "小精灵新加tga\五角星tag\火.tga"
+LABEL "Control_479757200" "" "" 26 63 82 22 16 12 17 255 203 74 255
+LABEL "Control_225838935" "" "" 157 368 85 23 18 12 19 255 203 74 255
+LABEL "Txt_Remain" "" "" 232 370 40 22 20 15 21 255 255 255 255
+LABEL "Control_58357546" "" "" 26 313 59 20 22 12 23 188 191 43 255
+LABEL "Txt_0" "" "" 55 315 0 0 24 15 25 255 255 255 255
+LABEL "Control_58357776" "" "" 26 332 54 21 26 12 27 0 255 0 255
+LABEL "Txt_1" "" "" 55 334 0 0 28 15 29 255 255 255 255
+LABEL "Txt_4" "" "" 55 354 0 0 30 15 31 255 255 255 255
+LABEL "Control_89099588" "" "" 26 352 55 21 32 12 33 199 126 61 255
+LABEL "Control_188943780" "" "" 26 371 48 21 34 12 35 128 255 255 255
+LABEL "Txt_2" "" "" 55 373 0 0 36 15 37 255 255 255 255
+LABEL "Control_57016324" "" "" 26 388 47 23 38 12 39 255 0 0 255
+LABEL "Txt_3" "" "" 55 390 0 0 40 15 41 255 255 255 255
+STILLIMAGEBUTTON "Btn_Skilllook" "skillview" "" 155 393 77 28 0 0 0 0 42 15 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 43 1

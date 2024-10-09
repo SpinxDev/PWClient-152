@@ -1,0 +1,52 @@
+DIALOG "Win_ArrangeTeam" 0 0 406 386 0 1 10 "Window\对话框_标准边框1.dds" "" "人鱼传说新界面\title.tga" 3 3 400 33 "人鱼传说新界面\面板关闭按钮.tga" 36 7 96 96 96 255 1
+EDIT "BG1" "" "" 256 261 142 115 "Editbox\文本框_4c.dds" 2 15 255 255 255 "TEXT" 1 0 20
+EDIT "Txt_Name" "invite" "" 108 286 144 21 "Editbox\文本框_4.dds" 3 10 255 255 255 "TEXT" 0 0 20
+LABEL "Control_810189505" "" "" 157 6 84 22 4 16 5 255 203 74 255
+STILLIMAGEBUTTON "Btn_Disband" "disband" "SFX\Interface\ClickB.wav" 323 266 70 24 0 0 0 0 6 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 7 1
+STILLIMAGEBUTTON "Btn_Kick" "kick" "SFX\Interface\ClickB.wav" 256 234 70 24 0 0 0 0 8 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 9 1
+STILLIMAGEBUTTON "Btn_MakeLeader" "makeleader" "SFX\Interface\ClickB.wav" 327 234 70 24 0 0 0 0 10 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 11 1
+STILLIMAGEBUTTON "Btn_Invite" "invite" "SFX\Interface\ClickB.wav" 9 285 96 24 0 0 0 0 12 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 13 1
+LABEL "Control_146820366" "" "" 142 33 86 14 14 10 15 255 203 74 255
+LABEL "Control_137285496" "" "" 284 33 79 14 16 10 17 255 203 74 255
+LIST "Lst_Nearbypp" "choseplayer" "SFX\Interface\ClickB.wav" 97 51 154 230 18 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LIST "DEFAULT_Lst_CurrentTmate" "SFX\Interface\ClickB.wav" "" 256 50 142 182 19 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+STILLIMAGEBUTTON "Btn_Leave" "leave" "SFX\Interface\ClickB.wav" 349 292 44 24 0 0 0 0 20 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 21 1
+RADIO "Rdo_Free" "free" "SFX\Interface\ClickA.wav" 349 334 21 21 "Extra\单选框_标准.tga" 2 1
+RADIO "Rdo_Random" "random" "SFX\Interface\ClickA.wav" 286 334 21 21 "Extra\单选框_标准.tga" 1 1
+LABEL "Control_361832019" "" "" 260 316 89 14 22 10 23 255 255 255 255
+LABEL "Control_429956670" "" "" 266 356 57 14 24 10 25 255 255 255 255
+LABEL "Control_123750529" "" "" 331 356 62 14 26 10 27 255 255 255 255
+LABEL "Control_250438830" "" "" 261 296 82 14 28 10 29 255 255 255 255
+LABEL "Control_10687072" "" "" 261 271 55 14 30 10 31 255 255 255 255
+CHECK "Chk_Slogan" "slogan" "SFX\Interface\ClickA.wav" 10 316 18 18 "Extra\复选框_标准.tga"
+LABEL "Control_602989866" "" "" 39 316 55 14 32 10 33 255 203 74 255
+EDIT "Txt_GroupMsg" "" "" 108 312 144 21 "Editbox\文本框_4.dds" 34 10 255 255 255 "TEXT" 1 0 20
+CHECK "Chk_Showself" "showself" "SFX\Interface\ClickA.wav" 33 335 18 18 "Extra\复选框_标准.tga"
+LABEL "Control_31024056" "" "" 54 335 143 14 35 10 36 255 255 255 255
+RADIO "Rdo_Lfgroup" "lfg" "SFX\Interface\ClickA.wav" 31 357 21 21 "Extra\单选框_标准.tga" 1 2
+LABEL "Control_295462625" "" "" 56 359 57 14 37 10 38 255 255 255 255
+RADIO "Rdo_Lfmember" "lfm" "SFX\Interface\ClickA.wav" 123 357 21 21 "Extra\单选框_标准.tga" 2 2
+LABEL "Control_1184449" "" "" 147 359 61 14 39 10 40 255 255 255 255
+STILLIMAGEBUTTON "Btn_Confirm" "confirm" "SFX\Interface\ClickB.wav" 204 354 48 24 0 0 0 0 41 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 42 1
+LABEL "Control_681462000" "" "" 14 40 71 16 43 10 44 255 203 74 255
+LABEL "Control_21003303" "" "" 38 60 41 18 45 15 46 255 203 74 255
+LABEL "Control_1161712" "" "" 38 80 42 19 47 15 48 255 203 74 255
+LABEL "Control_738385920" "" "" 38 100 40 22 49 15 50 255 203 74 255
+LABEL "Control_238315916" "" "" 38 120 40 22 51 15 52 255 203 74 255
+LABEL "Control_64085266" "" "" 38 140 41 21 53 15 54 255 203 74 255
+LABEL "Control_231805128" "" "" 38 160 42 21 55 15 56 255 203 74 255
+CHECK "Chk_ProfWX" "refresh" "SFX\Interface\ClickA.wav" 15 60 18 18 "Extra\复选框_标准.tga"
+CHECK "Chk_ProfFS" "refresh" "SFX\Interface\ClickA.wav" 15 80 18 18 "Extra\复选框_标准.tga"
+CHECK "Chk_ProfYS" "refresh" "SFX\Interface\ClickA.wav" 15 100 18 18 "Extra\复选框_标准.tga"
+CHECK "Chk_ProfYJ" "refresh" "SFX\Interface\ClickA.wav" 15 120 18 18 "Extra\复选框_标准.tga"
+CHECK "Chk_ProfYM" "refresh" "SFX\Interface\ClickA.wav" 15 140 18 18 "Extra\复选框_标准.tga"
+CHECK "Chk_ProfYL" "refresh" "SFX\Interface\ClickA.wav" 15 160 18 18 "Extra\复选框_标准.tga"
+LABEL "Control_457374630" "" "" 14 221 69 18 57 10 58 255 203 74 255
+CHECK "Chk_GuildIn" "refresh" "SFX\Interface\ClickA.wav" 14 242 18 18 "Extra\复选框_标准.tga"
+LABEL "Control_579437645" "" "" 37 242 57 18 59 15 60 255 203 74 255
+CHECK "Chk_GuildOut" "refresh" "SFX\Interface\ClickA.wav" 14 265 18 18 "Extra\复选框_标准.tga"
+LABEL "Control_40054769" "" "" 37 265 57 20 61 15 62 255 203 74 255
+CHECK "Chk_ProfCK" "refresh" "SFX\Interface\ClickA.wav" 15 180 18 18 "Extra\复选框_标准.tga"
+LABEL "Control_73957600" "" "" 38 180 42 21 63 15 64 255 203 74 255
+CHECK "Chk_ProfWS" "refresh" "SFX\Interface\ClickA.wav" 15 200 18 18 "Extra\复选框_标准.tga"
+LABEL "Control_232105104" "" "" 38 200 42 21 65 15 66 255 203 74 255

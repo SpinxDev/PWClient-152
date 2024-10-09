@@ -1,0 +1,44 @@
+	public:
+		int pre_apply_type;
+		char agree;
+		int src_fid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONRELATIONRECVREPLY };
+	public:
+		FactionRelationRecvReply() { type = PROTOCOL_FACTIONRELATIONRECVREPLY; }
+		FactionRelationRecvReply(void*) : Protocol(PROTOCOL_FACTIONRELATIONRECVREPLY) { }
+		FactionRelationRecvReply (int l_pre_apply_type,char l_agree,int l_src_fid,
+			unsigned int l_localsid)
+			 : pre_apply_type(l_pre_apply_type),agree(l_agree),src_fid(l_src_fid)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_FACTIONRELATIONRECVREPLY;
+		}
+
+		FactionRelationRecvReply(const FactionRelationRecvReply &rhs)
+			: Protocol(rhs),pre_apply_type(rhs.pre_apply_type),agree(rhs.agree),src_fid(rhs.src_fid)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new FactionRelationRecvReply(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << pre_apply_type;
+			os << agree;
+			os << src_fid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> pre_apply_type;
+			os >> agree;
+			os >> src_fid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

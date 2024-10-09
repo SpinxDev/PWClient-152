@@ -1,0 +1,83 @@
+#ifndef __GNET_ROLE_RPCDATA
+#define __GNET_ROLE_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class Role : public GNET::Rpc::Data
+	{
+	public:
+		char zoneid;
+		int roleid;
+		Octets rolename;
+		char status;
+		char privacy;
+
+	public:
+		Role (char l_zoneid = 0,int l_roleid = -1,Octets l_rolename = Octets(0)
+			,char l_status = 0,char l_privacy = 0)
+			: zoneid(l_zoneid),roleid(l_roleid),rolename(l_rolename)
+			,status(l_status),privacy(l_privacy)
+		{
+		}
+
+		Role(const Role &rhs)
+			: zoneid(rhs.zoneid),roleid(rhs.roleid),rolename(rhs.rolename),
+			status(rhs.status),privacy(rhs.privacy) { }
+
+		Rpc::Data *Clone() const { return new Role(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const Role *r = dynamic_cast<const Role *>(&rhs);
+			if (r && r != this)
+			{
+				zoneid = r->zoneid;
+				roleid = r->roleid;
+				rolename = r->rolename;
+				status = r->status;
+				privacy = r->privacy;
+			}
+			return *this;
+		}
+
+		Role& operator = (const Role &rhs)
+		{
+			const Role *r = &rhs;
+			if (r && r != this)
+			{
+				zoneid = r->zoneid;
+				roleid = r->roleid;
+				rolename = r->rolename;
+				status = r->status;
+				privacy = r->privacy;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << zoneid;
+			os << roleid;
+			os << rolename;
+			os << status;
+			os << privacy;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> zoneid;
+			os >> roleid;
+			os >> rolename;
+			os >> status;
+			os >> privacy;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<Role>	RoleVector;
+};
+#endif

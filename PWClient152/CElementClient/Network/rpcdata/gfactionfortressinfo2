@@ -1,0 +1,100 @@
+#ifndef __GNET_GFACTIONFORTRESSINFO2_RPCDATA
+#define __GNET_GFACTIONFORTRESSINFO2_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GFactionFortressInfo2 : public GNET::Rpc::Data
+	{
+	public:
+		int health;
+		int offense_faction;
+		int offense_starttime;
+		int offense_endtime;
+		std::vector<int> challenge_list;
+		int reserved1;
+		int reserved2;
+		int reserved3;
+
+	public:
+		GFactionFortressInfo2 (int l_health = 0,int l_offense_faction = 0,int l_offense_starttime = 0
+			,int l_offense_endtime = 0,const std::vector<int>& l_challenge_list = std::vector<int>(),int l_reserved1 = 0
+			,int l_reserved2 = 0,int l_reserved3 = 0)
+			: health(l_health),offense_faction(l_offense_faction),offense_starttime(l_offense_starttime)
+			,offense_endtime(l_offense_endtime),challenge_list(l_challenge_list),reserved1(l_reserved1)
+			,reserved2(l_reserved2),reserved3(l_reserved3)
+		{
+		}
+
+		GFactionFortressInfo2(const GFactionFortressInfo2 &rhs)
+			: health(rhs.health),offense_faction(rhs.offense_faction),offense_starttime(rhs.offense_starttime),
+			offense_endtime(rhs.offense_endtime),challenge_list(rhs.challenge_list),reserved1(rhs.reserved1),
+			reserved2(rhs.reserved2),reserved3(rhs.reserved3) { }
+
+		Rpc::Data *Clone() const { return new GFactionFortressInfo2(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GFactionFortressInfo2 *r = dynamic_cast<const GFactionFortressInfo2 *>(&rhs);
+			if (r && r != this)
+			{
+				health = r->health;
+				offense_faction = r->offense_faction;
+				offense_starttime = r->offense_starttime;
+				offense_endtime = r->offense_endtime;
+				challenge_list = r->challenge_list;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+			}
+			return *this;
+		}
+
+		GFactionFortressInfo2& operator = (const GFactionFortressInfo2 &rhs)
+		{
+			const GFactionFortressInfo2 *r = &rhs;
+			if (r && r != this)
+			{
+				health = r->health;
+				offense_faction = r->offense_faction;
+				offense_starttime = r->offense_starttime;
+				offense_endtime = r->offense_endtime;
+				challenge_list = r->challenge_list;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << health;
+			os << offense_faction;
+			os << offense_starttime;
+			os << offense_endtime;
+			os << challenge_list;
+			os << reserved1;
+			os << reserved2;
+			os << reserved3;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> health;
+			os >> offense_faction;
+			os >> offense_starttime;
+			os >> offense_endtime;
+			os >> challenge_list;
+			os >> reserved1;
+			os >> reserved2;
+			os >> reserved3;
+			return os;
+		}
+
+	};
+};
+#endif

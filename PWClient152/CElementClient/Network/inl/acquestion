@@ -1,0 +1,47 @@
+	public:
+		int roleid;
+		int qtype;
+		int seq;
+		int reserved;
+		std::vector<Octets> question;
+		enum { PROTOCOL_TYPE = PROTOCOL_ACQUESTION };
+	public:
+		ACQuestion() { type = PROTOCOL_ACQUESTION; }
+		ACQuestion(void*) : Protocol(PROTOCOL_ACQUESTION) { }
+		ACQuestion (int l_roleid,int l_qtype,int l_seq,
+			int l_reserved,std::vector<Octets> l_question)
+			 : roleid(l_roleid),qtype(l_qtype),seq(l_seq)
+			,reserved(l_reserved),question(l_question)
+		{
+			type = PROTOCOL_ACQUESTION;
+		}
+
+		ACQuestion(const ACQuestion &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),qtype(rhs.qtype),seq(rhs.seq)
+			,reserved(rhs.reserved),question(rhs.question) { }
+
+		GNET::Protocol *Clone() const { return new ACQuestion(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << qtype;
+			os << seq;
+			os << reserved;
+			os << question;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> qtype;
+			os >> seq;
+			os >> reserved;
+			os >> question;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 8192; }

@@ -1,0 +1,34 @@
+DIALOG "Dlg_OutdoorGrass" 0 0 220 400 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "" 27 6 96 96 96 255 1
+LABEL "title" "" "" 67 4 87 22 2 16 3 255 203 74 255
+STILLIMAGEBUTTON "Btn_OutdoorGrass" "ChooseOutdoorGrass" "" 66 28 32 32 0 0 0 0 4 10 255 255 255 255 "home\草坪.dds" "home\草坪D.dds" 5 1
+STILLIMAGEBUTTON "Btn_OutdoorBuilding" "ChooseOutdoorBuilding" "" 115 28 32 32 0 0 0 0 6 10 255 203 74 255 "home\房屋摆设.dds" "home\房屋摆设D.dds" 7 1
+STILLIMAGEBUTTON "Btn_OutdoorOtherObject" "ChooseOutdoorOtherObject" "" 167 28 32 32 0 0 0 0 8 10 255 255 255 255 "home\其他.dds" "home\其他D.dds" 9 1
+STILLIMAGEBUTTON "Btn_OutdoorTree" "ChooseOutdoorTree" "" 17 28 32 32 0 0 0 0 10 10 255 255 255 255 "home\树木.dds" "home\树木D.dds" 11 1
+LABEL "label_Terrain" "" "" 8 100 95 16 12 10 13 255 203 74 255
+LIST "ListBox_NormalGrassSet" "" "" 8 117 92 84 14 10 255 255 255 255 "Editbox\文本框_4.tga" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LABEL "asdf1" "" "" 11 201 32 16 15 10 16 255 203 74 255
+LIST "ListBox_NormalGrassPlant" "" "" 121 117 92 84 17 10 255 255 255 255 "Editbox\文本框_4.tga" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LABEL "Control_198301500" "" "" 120 100 93 16 18 10 19 255 203 74 255
+STILLIMAGEBUTTON "Btn_NormalGrassAdd" "AddNormalGrassInfo" "" 104 122 12 15 0 0 0 0 20 15 255 255 255 255 "Button\按钮_右移1.tga" "Button\按钮_右移2.tga" 21 1
+STILLIMAGEBUTTON "Btn_NormalGrassRemove" "DelNormalGrassInfo" "" 104 150 12 15 0 0 0 0 22 15 255 255 255 255 "Button\按钮_左移1.tga" "Button\按钮_左移2.tga" 23 1
+STILLIMAGEBUTTON "Btn_NormalGrassRemoveAll" "ClearAllNormalGrassInfo" "" 104 179 14 16 0 0 0 0 24 15 255 255 255 255 "Button\按钮_删除1.bmp" "Button\按钮_删除2.bmp" 25 1
+SLIDER "Slider_GrassDensity" "moveSlider" "" 92 67 115 8 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_GrassSeed" "moveSlider" "" 92 85 115 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+LABEL "Label_GrassDensity" "" "" 65 62 30 15 26 10 27 255 255 255 255
+LABEL "Label_GrassSeed" "" "" 65 81 30 15 28 10 29 255 255 255 255
+LABEL "Control_52779118" "" "" 8 62 53 17 30 10 31 255 203 74 255
+LABEL "Control_457066040" "" "" 9 81 53 16 32 10 33 255 203 74 255
+LABEL "Control_145181895" "" "" 14 244 81 17 34 10 35 255 203 74 255
+LABEL "Control_344781994" "" "" 127 244 81 15 36 10 37 255 203 74 255
+LIST "ListBox_WaterGrassSet" "" "" 10 261 92 85 38 10 255 255 255 255 "Editbox\文本框_4.tga" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LABEL "asdf2" "" "" 11 347 32 16 39 10 40 255 203 74 255
+LIST "ListBox_WaterGrassPlant" "" "" 121 261 92 85 41 10 255 255 255 255 "Editbox\文本框_4.tga" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+STILLIMAGEBUTTON "Btn_WaterGrassAdd" "AddWaterGrassInfo" "" 105 266 12 15 0 0 0 0 42 15 255 255 255 255 "Button\按钮_右移1.tga" "Button\按钮_右移2.tga" 43 1
+STILLIMAGEBUTTON "Btn_WaterGrassRemove" "DelWaterGrassInfo" "" 105 294 12 15 0 0 0 0 44 15 255 255 255 255 "Button\按钮_左移1.tga" "Button\按钮_左移2.tga" 45 1
+STILLIMAGEBUTTON "Btn_WaterGrassRemoveAll" "ClearAllWaterGrassInfo" "" 105 323 14 16 0 0 0 0 46 15 255 255 255 255 "Button\按钮_删除1.bmp" "Button\按钮_删除2.bmp" 47 1
+STILLIMAGEBUTTON "Btn_CreateNormalGrass" "CreateNormalGrass" "" 68 218 83 25 0 0 0 0 48 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本1.dds" 49 1
+STILLIMAGEBUTTON "Btn_CreateWaterGrass" "CreateWaterGrass" "" 69 367 83 25 0 0 0 0 50 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 51 1
+SLIDER "Slider_NormalGrassWeight" "moveSlider" "" 86 205 124 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_WaterGrassWeight" "moveSlider" "" 85 352 124 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+LABEL "Label_NormalGrassWeight" "" "" 44 201 36 14 52 15 53 255 255 255 255
+LABEL "Label_WaterGrassWeight" "" "" 43 347 40 14 54 15 55 255 255 255 255

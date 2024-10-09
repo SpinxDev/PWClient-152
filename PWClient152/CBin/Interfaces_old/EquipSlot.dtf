@@ -1,0 +1,16 @@
+DIALOG "Win_EquipSlot" 0 0 242 199 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 -1 -1 "人鱼传说新界面\面板关闭按钮.tga" 32 6 96 96 96 255 1
+IMAGEPICTURE "Img_Equip" "" "" 12 48 32 32 1 0 "Window\图标_物品栏.dds"
+LABEL "Label_Title" "" "" 1 0 0 0 2 16 3 255 203 74 255
+LABEL "Label_Equip" "" "" 5 27 0 0 4 10 5 255 203 74 255
+IMAGEPICTURE "Control_196012979" "" "" 74 34 160 4 1 0 "Window\分隔线.tga"
+EDIT "Txt_Name" "" "" 50 56 121 20 "Editbox\文本框_4b.tga" 6 10 255 255 255 "TEXT" 1 0 256
+LABEL "Label_SlotNumber" "" "" 174 48 28 36 7 10 8 255 203 74 255
+EDIT "Txt_SlotNumber" "" "" 208 56 20 20 "Editbox\文本框_4b.tga" 9 10 255 255 255 "TEXT" 1 0 20
+LABEL "Label_Item" "" "" 12 88 0 0 10 10 11 255 203 74 255
+IMAGEPICTURE "Control_136548900" "" "" 74 95 160 4 1 0 "Window\分隔线.tga"
+LABEL "Label_TianGong" "" "" 24 113 65 18 12 12 13 255 203 74 255
+EDIT "Txt_Number1" "" "" 101 113 108 19 "Editbox\文本框_4b.tga" 14 10 255 255 255 "TEXT" 1 0 256
+LABEL "Control_25762005" "" "" 28 139 185 18 15 10 16 255 255 255 255
+STILLIMAGEBUTTON "Btn_Confirm" "confirm" "" 35 162 70 24 0 0 0 0 17 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 18 1
+STILLIMAGEBUTTON "Btn_Cancel" "IDCANCEL" "" 137 162 70 24 0 0 0 0 19 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 20 1
+STILLIMAGEBUTTON "Btn_Help" "help" "" 180 7 22 22 0 0 0 0 21 15 255 255 255 255 "Button\按钮_标记1.tga" "Button\按钮_标记2.tga" 22 1

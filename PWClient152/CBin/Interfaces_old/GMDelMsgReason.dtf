@@ -1,0 +1,8 @@
+DIALOG "Win_GMDelMsgReason" 0 0 206 284 0 1 10 "Window\对话框_标准边框.dds" "" "Window\对话框_透明色.bmp" 0 12 -1 -1 "" 0 0 255 255 128 255 1
+LIST "lbxReason" "" "" 20 80 164 75 2 10 255 255 255 255 "Editbox\文本框_4d.dds" "Listbox\列表框_反显u.dds" "Listbox\列表框_上移u.bmp" "Listbox\列表框_下移u.bmp" "Listbox\列表框_滚动槽1u.tga" "Listbox\列表框_拖动按钮1u.bmp" 0 "0"
+COMBO "cbxReason" "select_reason" "" 20 56 164 24 3 15 255 255 255 255 "Editbox\文本框_4d.dds" "lbxReason"
+EDIT "ebxReason" "" "" 20 116 164 89 "Editbox\文本框_4e.dds" 4 15 255 255 255 "TEXT" 0 1 1000
+LABEL "Control_10962248" "" "" 20 37 71 17 5 15 6 255 255 255 255
+LABEL "Control_527605687" "" "" 20 98 113 18 7 15 8 255 255 255 255
+STILLIMAGEBUTTON "btnOK" "ok" "" 20 234 56 30 0 0 0 0 9 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 10 1
+STILLIMAGEBUTTON "btnCancel" "cancel" "" 128 234 56 30 0 0 0 0 11 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 12 1

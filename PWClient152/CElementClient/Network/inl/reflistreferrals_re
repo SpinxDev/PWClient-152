@@ -1,0 +1,56 @@
+	public:
+		int retcode;
+		int roleid;
+		int start_index;
+		int total;
+		int bonus_avail_today;
+		std::vector<ReferralBrief> referrals;
+		int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_REFLISTREFERRALS_RE };
+	public:
+		RefListReferrals_Re() { type = PROTOCOL_REFLISTREFERRALS_RE; }
+		RefListReferrals_Re(void*) : Protocol(PROTOCOL_REFLISTREFERRALS_RE) { }
+		RefListReferrals_Re (int l_retcode,int l_roleid = 0,int l_start_index = 0,
+			int l_total = 0,int l_bonus_avail_today = 0,const std::vector<ReferralBrief>& l_referrals = std::vector<ReferralBrief>(),
+			int l_localsid = 0)
+			 : retcode(l_retcode),roleid(l_roleid),start_index(l_start_index)
+			,total(l_total),bonus_avail_today(l_bonus_avail_today),referrals(l_referrals)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_REFLISTREFERRALS_RE;
+		}
+
+		RefListReferrals_Re(const RefListReferrals_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),roleid(rhs.roleid),start_index(rhs.start_index)
+			,total(rhs.total),bonus_avail_today(rhs.bonus_avail_today),referrals(rhs.referrals)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new RefListReferrals_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roleid;
+			os << start_index;
+			os << total;
+			os << bonus_avail_today;
+			os << referrals;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roleid;
+			os >> start_index;
+			os >> total;
+			os >> bonus_avail_today;
+			os >> referrals;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 2048; }

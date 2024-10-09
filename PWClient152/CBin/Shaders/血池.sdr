@@ -1,0 +1,25 @@
+//  ************* Angelica 3D shader ***************
+
+huangpujiang
+{
+	//  General properties
+
+	//  Stage 0
+	{
+		texture          TEX_NORMAL  Ñª³Ø.tga
+		tcstretch        W_SIN  1.000000  0.010000  0.000000  8000
+		tcscroll         0.001000  0.001000
+	}
+
+	//  Stage 1
+	{
+		texture          TEX_NORMAL  Ñª³Ø.tga
+		colorop          TOP_MODULATE2X
+		colorarg1        TA_CURRENT
+		colorarg2        TA_TEXTURE  TA_COMPLEMENT
+		tcscroll         0.001000  0.001000
+		tcstretch        W_SIN  1.000000  0.010000  0.000000  10000
+		tcrotate         -0.100000
+	}
+
+}

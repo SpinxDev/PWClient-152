@@ -1,0 +1,47 @@
+	public:
+		int faction_id;
+		unsigned int score;
+		unsigned short rob_horse_count;
+		unsigned short rob_resource_count;
+		char can_get_bonus;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONRESOURCEBATTLEPLAYERQUERYRESULT };
+	public:
+		FactionResourceBattlePlayerQueryResult() { type = PROTOCOL_FACTIONRESOURCEBATTLEPLAYERQUERYRESULT; }
+		FactionResourceBattlePlayerQueryResult(void*) : Protocol(PROTOCOL_FACTIONRESOURCEBATTLEPLAYERQUERYRESULT) { }
+		FactionResourceBattlePlayerQueryResult (int l_faction_id,unsigned int l_score,unsigned short l_rob_horse_count,
+			unsigned short l_rob_resource_count,char l_can_get_bonus)
+			 : faction_id(l_faction_id),score(l_score),rob_horse_count(l_rob_horse_count)
+			,rob_resource_count(l_rob_resource_count),can_get_bonus(l_can_get_bonus)
+		{
+			type = PROTOCOL_FACTIONRESOURCEBATTLEPLAYERQUERYRESULT;
+		}
+
+		FactionResourceBattlePlayerQueryResult(const FactionResourceBattlePlayerQueryResult &rhs)
+			: Protocol(rhs),faction_id(rhs.faction_id),score(rhs.score),rob_horse_count(rhs.rob_horse_count)
+			,rob_resource_count(rhs.rob_resource_count),can_get_bonus(rhs.can_get_bonus) { }
+
+		GNET::Protocol *Clone() const { return new FactionResourceBattlePlayerQueryResult(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << faction_id;
+			os << score;
+			os << rob_horse_count;
+			os << rob_resource_count;
+			os << can_get_bonus;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> faction_id;
+			os >> score;
+			os >> rob_horse_count;
+			os >> rob_resource_count;
+			os >> can_get_bonus;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 65536; }

@@ -1,0 +1,65 @@
+#ifndef __GNET_SHOPENTRY_RPCDATA
+#define __GNET_SHOPENTRY_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class ShopEntry : public GNET::Rpc::Data
+	{
+	public:
+		int roleid;
+		Octets rolename;
+
+	public:
+		ShopEntry (int l_roleid = 0,Octets l_rolename = Octets())
+			: roleid(l_roleid),rolename(l_rolename)
+		{
+		}
+
+		ShopEntry(const ShopEntry &rhs)
+			: roleid(rhs.roleid),rolename(rhs.rolename) { }
+
+		Rpc::Data *Clone() const { return new ShopEntry(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const ShopEntry *r = dynamic_cast<const ShopEntry *>(&rhs);
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				rolename = r->rolename;
+			}
+			return *this;
+		}
+
+		ShopEntry& operator = (const ShopEntry &rhs)
+		{
+			const ShopEntry *r = &rhs;
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				rolename = r->rolename;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << rolename;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> rolename;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<ShopEntry>	ShopEntryVector;
+};
+#endif

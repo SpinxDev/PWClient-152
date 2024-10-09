@@ -1,0 +1,47 @@
+	public:
+		int roleid;
+		int localsid;
+		int itemid;
+		char listtype;
+		int page_num;
+		enum { PROTOCOL_TYPE = PROTOCOL_PSHOPLISTITEM };
+	public:
+		PShopListItem() { type = PROTOCOL_PSHOPLISTITEM; }
+		PShopListItem(void*) : Protocol(PROTOCOL_PSHOPLISTITEM) { }
+		PShopListItem (int l_roleid,int l_localsid,int l_itemid = 0,
+			char l_listtype = 0,int l_page_num = 0)
+			 : roleid(l_roleid),localsid(l_localsid),itemid(l_itemid)
+			,listtype(l_listtype),page_num(l_page_num)
+		{
+			type = PROTOCOL_PSHOPLISTITEM;
+		}
+
+		PShopListItem(const PShopListItem &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid),itemid(rhs.itemid)
+			,listtype(rhs.listtype),page_num(rhs.page_num) { }
+
+		GNET::Protocol *Clone() const { return new PShopListItem(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << itemid;
+			os << listtype;
+			os << page_num;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> itemid;
+			os >> listtype;
+			os >> page_num;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

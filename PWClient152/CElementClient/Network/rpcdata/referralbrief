@@ -1,0 +1,87 @@
+#ifndef __GNET_REFERRALBRIEF_RPCDATA
+#define __GNET_REFERRALBRIEF_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class ReferralBrief : public GNET::Rpc::Data
+	{
+	public:
+		std::vector<Octets> rolenames;
+		int max_level;
+		int bonus_total1;
+		int bonus_total2;
+		int bonus_left;
+		int bonus_avail;
+
+	public:
+		ReferralBrief (const std::vector<Octets>& l_rolenames = std::vector<Octets>(),int l_max_level = 0,int l_bonus_total1 = 0
+			,int l_bonus_total2 = 0,int l_bonus_left = 0,int l_bonus_avail = 0)
+			: rolenames(l_rolenames),max_level(l_max_level),bonus_total1(l_bonus_total1)
+			,bonus_total2(l_bonus_total2),bonus_left(l_bonus_left),bonus_avail(l_bonus_avail)
+		{
+		}
+
+		ReferralBrief(const ReferralBrief &rhs)
+			: rolenames(rhs.rolenames),max_level(rhs.max_level),bonus_total1(rhs.bonus_total1),
+			bonus_total2(rhs.bonus_total2),bonus_left(rhs.bonus_left),bonus_avail(rhs.bonus_avail) { }
+
+		Rpc::Data *Clone() const { return new ReferralBrief(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const ReferralBrief *r = dynamic_cast<const ReferralBrief *>(&rhs);
+			if (r && r != this)
+			{
+				rolenames = r->rolenames;
+				max_level = r->max_level;
+				bonus_total1 = r->bonus_total1;
+				bonus_total2 = r->bonus_total2;
+				bonus_left = r->bonus_left;
+				bonus_avail = r->bonus_avail;
+			}
+			return *this;
+		}
+
+		ReferralBrief& operator = (const ReferralBrief &rhs)
+		{
+			const ReferralBrief *r = &rhs;
+			if (r && r != this)
+			{
+				rolenames = r->rolenames;
+				max_level = r->max_level;
+				bonus_total1 = r->bonus_total1;
+				bonus_total2 = r->bonus_total2;
+				bonus_left = r->bonus_left;
+				bonus_avail = r->bonus_avail;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << rolenames;
+			os << max_level;
+			os << bonus_total1;
+			os << bonus_total2;
+			os << bonus_left;
+			os << bonus_avail;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> rolenames;
+			os >> max_level;
+			os >> bonus_total1;
+			os >> bonus_total2;
+			os >> bonus_left;
+			os >> bonus_avail;
+			return os;
+		}
+
+	};
+};
+#endif

@@ -1,0 +1,41 @@
+vs.1.1
+
+;------------------------------------------------------------------------------
+; v0 = position
+; v1 = blend indices
+; v2 = diffuse
+; v3 = specular
+; v4 = texture coordinates
+;------------------------------------------------------------------------------
+
+;------------------------------------------------------------------------------
+; Constants specified by the app;
+;
+; >= c10  = palette of world matrices (from model space to world space)
+; c5-c8		= projection matrix
+; c1-c4   = view matrix
+; c0	  = {1, 0, 0, 765.01};
+;------------------------------------------------------------------------------
+
+;------------------------------------------------------------------------------
+; oPos	  = Output position
+; oT0	  = texture coordinates
+;------------------------------------------------------------------------------
+
+; ============ Transform position and normal from model space to world space ==========
+
+; Compensate for lack of UBYTE4 on Geforce3
+mul r1, v1.zyxw, c0.wwww
+
+mov a0.x, r1.x
+m4x3 r1, v0, c[a0.x + 10]
+mov r1.w, c0.x
+m4x4 r2, r1, c1
+m4x4 oPos, r2, c5
+
+; Copy texture coordinate
+mov oT0, v4
+
+; Copy diffuse and specular and clear fog
+mov oD0, v2
+mov oD1, v3

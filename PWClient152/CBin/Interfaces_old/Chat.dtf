@@ -1,0 +1,28 @@
+DIALOG "Win_Chat" 0 0 352 168 0 1 10 "" "" "" 0 -35 -1 -1 "" 0 0 96 96 96 0 1
+IMAGEPICTURE "Pic_BG" "" "" 0 130 352 40 1 0 "Window\对话框_聊天1.tga"
+EDIT "Img_Back0" "" "" 0 0 352 130 "Window\对话框_透明色.bmp" 2 35 255 0 255 "TEXT" 1 0 256
+EDIT "Img_Back1" "" "" 0 0 352 130 "Editbox\文本框_4b.tga" 3 35 255 0 255 "TEXT" 1 0 256
+EDIT "Img_Back2" "" "" 0 0 352 130 "Editbox\文本框_4b.tga" 4 35 255 0 255 "TEXT" 1 0 256
+EDIT "Img_Back3" "" "" 0 0 352 130 "Window\对话框_标准边框3b.dds" 5 35 255 0 255 "TEXT" 1 0 256
+EDIT "Img_Back4" "" "" 0 0 352 130 "Window\对话框_标准边框3b.dds" 6 35 255 0 255 "TEXT" 1 0 256
+EDIT "Img_Back5" "" "" 0 0 352 130 "Window\对话框_标准边框.dds" 7 35 255 0 255 "TEXT" 1 0 256
+TEXT "Txt_Content" "" "" 0 0 352 128 8 10 255 255 255 255 "Window\对话框_透明色.bmp" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp"
+EDIT "DEFAULT_Txt_Speech" "speak" "" 92 149 241 20 "Window\对话框_透明色.bmp" 9 10 255 255 255 "TEXT" 0 0 80
+COMBO "Txt_Speakway" "speakmode" "" 53 151 16 15 10 10 255 255 255 255 "Window\对话框_透明色5.tga" "Listbox\列表框_反显.dds"
+STILLIMAGEBUTTON "Btn_Color" "chgcolor" "SFX\Interface\ClickB.wav" 31 155 9 9 0 0 0 0 11 15 255 255 255 255 "Button\按钮_换色1.bmp" "Button\按钮_换色2.bmp" 12 1
+STILLIMAGEBUTTON "Btn_Large" "chgsize" "SFX\Interface\ClickB.wav" 21 154 9 12 0 0 0 0 13 15 255 255 255 255 "Button\按钮_大小1.bmp" "Button\按钮_大小2.bmp" 14 1
+STILLIMAGEBUTTON "Btn_Popface" "popface" "SFX\Interface\ClickB.wav" 338 154 12 12 0 0 0 0 15 15 255 255 255 255 "Button\按钮_表情1.tga" "Button\按钮_表情2.tga" 16 1
+STILLIMAGEBUTTON "Btn_Channel" "channel" "SFX\Interface\ClickB.wav" 4 153 12 12 0 0 0 0 17 12 255 255 255 255 "Button\按钮_频道.bmp" "Button\按钮_频道2.bmp" 18 1
+STILLIMAGEBUTTON "Btn_Clear" "clear" "SFX\Interface\ClickB.wav" 41 154 9 12 0 0 0 0 19 15 255 255 255 255 "Button\按钮_清空1.tga" "Button\按钮_清空2.tga" 20 1
+IMAGEPICTURE "Input" "" "" 72 153 9 13 2 0 "Extra\复选框_输入法.bmp"
+STILLIMAGEBUTTON "Btn_Set1" "set1" "" 21 131 28 14 0 0 0 0 21 10 255 255 255 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 22 1
+STILLIMAGEBUTTON "Btn_Set2" "set2" "" 56 131 28 14 0 0 0 0 23 10 255 255 255 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 24 1
+STILLIMAGEBUTTON "Btn_Set3" "set3" "" 91 131 28 14 0 0 0 0 25 10 255 255 255 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 26 1
+STILLIMAGEBUTTON "Btn_Set4" "set4" "" 126 131 28 14 0 0 0 0 27 10 255 255 255 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 28 1
+STILLIMAGEBUTTON "Btn_Set5" "set5" "" 161 131 28 14 0 0 0 0 29 10 255 255 255 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 30 1
+LABEL "Txt_1" "" "" 80 151 12 15 31 9 32 255 255 255 255
+STILLIMAGEBUTTON "Btn_Lock" "lock" "" 1 131 14 14 0 0 0 0 33 10 255 255 255 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 34 1
+STILLIMAGEBUTTON "Btn_CreateChannel" "createchannel" "" 192 131 44 14 0 0 0 0 35 10 255 203 74 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 36 1
+STILLIMAGEBUTTON "Btn_JoinChannel" "joinchannel" "" 237 131 43 14 0 0 0 0 37 10 255 203 74 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 38 1
+STILLIMAGEBUTTON "Btn_Set6" "set6" "" 284 131 28 14 0 0 0 0 39 10 255 229 0 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 40 1
+STILLIMAGEBUTTON "Btn_Set7" "set7" "" 319 132 28 14 0 0 0 0 41 10 255 229 0 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 42 1

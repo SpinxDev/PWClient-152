@@ -1,0 +1,42 @@
+DIALOG "Dlg_OutdoorTree" 0 0 220 400 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "" 27 6 96 96 96 255 1
+LABEL "title" "" "" 67 4 87 22 2 16 3 255 203 74 255
+STILLIMAGEBUTTON "Btn_OutdoorGrass" "ChooseOutdoorGrass" "" 66 28 32 32 0 0 0 0 4 10 255 255 255 255 "home\草坪.dds" "home\草坪D.dds" 5 1
+STILLIMAGEBUTTON "Btn_OutdoorBuilding" "ChooseOutdoorBuilding" "" 115 28 32 32 0 0 0 0 6 10 255 203 74 255 "home\房屋摆设.dds" "home\房屋摆设D.dds" 7 1
+STILLIMAGEBUTTON "Btn_OutdoorOtherObject" "ChooseOutdoorOtherObject" "" 167 28 32 32 0 0 0 0 8 10 255 255 255 255 "home\其他.dds" "home\其他D.dds" 9 1
+STILLIMAGEBUTTON "Btn_OutdoorTree" "ChooseOutdoorTree" "" 17 28 32 32 0 0 0 0 10 10 255 255 255 255 "home\树木.dds" "home\树木D.dds" 11 1
+STILLIMAGEBUTTON "Btn_Create" "CreateTree" "" 156 362 50 25 0 0 0 0 12 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 13 1
+LABEL "label_Terrain" "" "" 15 62 80 16 14 10 15 255 203 74 255
+LIST "ListBox_TreeSet" "" "" 8 80 92 84 16 10 255 255 255 255 "Editbox\文本框_4.tga" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LABEL "Control_613795308" "" "" 10 165 38 16 17 10 18 255 203 74 255
+LIST "ListBox_TreePlant" "" "" 121 80 92 84 19 10 255 255 255 255 "Editbox\文本框_4.tga" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LABEL "Control_198301500" "" "" 120 62 81 16 20 10 21 255 203 74 255
+STILLIMAGEBUTTON "Btn_Add" "AddTreeInfo" "" 104 85 12 15 0 0 0 0 22 15 255 255 255 255 "Button\按钮_右移1.tga" "Button\按钮_右移2.tga" 23 1
+STILLIMAGEBUTTON "Btn_Remove" "DelTreeInfo" "" 104 113 12 15 0 0 0 0 24 15 255 255 255 255 "Button\按钮_左移1.tga" "Button\按钮_左移2.tga" 25 1
+STILLIMAGEBUTTON "Btn_RemoveAll" "ClearAllTreeInfo" "" 104 142 14 16 0 0 0 0 26 15 255 255 255 255 "Button\按钮_删除1.bmp" "Button\按钮_删除2.bmp" 27 1
+STILLIMAGEBUTTON "BTN_B_POLY" "EditTreePoly" "" 7 185 100 25 0 0 0 0 28 10 128 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 29 1
+STILLIMAGEBUTTON "BTN_B_LINE" "EditTreeLine" "" 110 185 100 26 0 0 0 0 30 10 255 128 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 31 1
+SLIDER "Slider_TreeSeed" "moveSlider" "" 92 220 115 8 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_TreeDensity" "moveSlider" "" 92 260 115 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_TreeSpaceX" "moveSlider" "" 92 280 115 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_TreeSlope" "moveSlider" "" 92 240 115 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_TreeSpaceZ" "moveSlider" "" 92 300 115 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_TreeSpaceLine" "moveSlider" "" 92 320 115 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_TreeSpaceNoise" "moveSlider" "" 92 340 115 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+LABEL "Label_TreeSeed" "" "" 65 215 25 15 32 10 33 255 255 255 255
+LABEL "Label_TreeDensity" "" "" 65 255 25 15 34 10 35 255 255 255 255
+LABEL "Label_TreeSlope" "" "" 65 235 25 15 36 10 37 255 255 255 255
+LABEL "Label_TreeSpaceX" "" "" 65 275 25 15 38 10 39 255 255 255 255
+LABEL "Label_TreeSpaceZ" "" "" 65 295 25 15 40 10 41 255 255 255 255
+LABEL "Label_TreeSpaceLine" "" "" 65 315 25 15 42 10 43 255 255 255 255
+LABEL "Label_TreeSpaceNoise" "" "" 65 335 25 14 44 10 45 255 255 255 255
+LABEL "Control_52779118" "" "" 10 215 53 17 46 10 47 255 203 74 255
+LABEL "Control_457066040" "" "" 10 255 53 16 48 10 49 128 255 255 255
+LABEL "Control_21466992" "" "" 10 235 52 14 50 10 51 255 203 74 255
+LABEL "Control_348381632" "" "" 10 275 54 16 52 10 53 128 255 255 255
+LABEL "Control_73325005" "" "" 10 295 56 18 54 10 55 128 255 255 255
+LABEL "Control_634316364" "" "" 10 315 42 16 56 10 57 255 128 255 255
+LABEL "Control_467836920" "" "" 10 335 39 15 58 10 59 255 128 255 255
+CHECK "Check_TreeRegular" "" "" 18 365 19 19 "Extra\复选框_标准.tga"
+LABEL "Control_134729208" "" "" 44 367 84 17 60 10 61 128 255 255 255
+SLIDER "Slider_TreeWeight" "moveSlider" "" 92 169 115 8 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+LABEL "Label_TreeWeight" "" "" 65 165 30 14 62 15 63 255 255 255 255

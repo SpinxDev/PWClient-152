@@ -1,0 +1,33 @@
+;  cheap water pixel shader used by A3DTerrainWater. 
+
+; t1, water base map
+; t2, reflect map, alpha channel of which is the edge alpha value
+; t3, reflect vector in world space, packed to [0.0, 1.0]
+
+ps.1.4
+
+def c1, 0.25, 0.2, 0.0, 0.6
+def c2, 0.0, 0.0, 0.0, 1.0
+def c3, 0.85, 0.85, 0.85, 1.0
+; c6, water color
+; def c6, 0.2, 0.3, 0.4, 0.6
+
+
+texcrd	r2.xy, t2_dw.xyw
+
+mov r2.b, c3.a
+
+phase
+
+texld	r1, t1
+texld 	r2, r2
+;texld	r0, t3			// camera space reflect vector transformed into world space, with normalization (packed)
+
+lrp r0, r1.a, r1, c6		// texture * water color
+; mul r0.rgb, r1.a, c6
+
+mad r0.rgb, r1.a, v1_x2, r0	// add specular
+
+add r0.a, r1.a, c6.a
+mul r0.a, r0.a, r2.a
+

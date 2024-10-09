@@ -1,0 +1,35 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_GETPLAYERFACTIONINFO };
+	public:
+		GetPlayerFactionInfo() { type = PROTOCOL_GETPLAYERFACTIONINFO; }
+		GetPlayerFactionInfo(void*) : Protocol(PROTOCOL_GETPLAYERFACTIONINFO) { }
+		GetPlayerFactionInfo (int l_roleid,unsigned int l_localsid)
+			 : roleid(l_roleid),localsid(l_localsid)
+		{
+			type = PROTOCOL_GETPLAYERFACTIONINFO;
+		}
+
+		GetPlayerFactionInfo(const GetPlayerFactionInfo &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new GetPlayerFactionInfo(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 4096; }

@@ -1,0 +1,50 @@
+	public:
+		unsigned char channel;
+		unsigned char emotion;
+		int src_roleid;
+		Octets msg;
+		Octets data;
+		unsigned int dst_localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONCHAT };
+	public:
+		FactionChat() { type = PROTOCOL_FACTIONCHAT; }
+		FactionChat(void*) : Protocol(PROTOCOL_FACTIONCHAT) { }
+		FactionChat (unsigned char l_channel,unsigned char l_emotion = 0,int l_src_roleid = 0,
+			const Octets& l_msg = Octets(),const Octets& l_data = Octets(),unsigned int l_dst_localsid = 0)
+			 : channel(l_channel),emotion(l_emotion),src_roleid(l_src_roleid)
+			,msg(l_msg),data(l_data),dst_localsid(l_dst_localsid)
+		{
+			type = PROTOCOL_FACTIONCHAT;
+		}
+
+		FactionChat(const FactionChat &rhs)
+			: Protocol(rhs),channel(rhs.channel),emotion(rhs.emotion),src_roleid(rhs.src_roleid)
+			,msg(rhs.msg),data(rhs.data),dst_localsid(rhs.dst_localsid) { }
+
+		GNET::Protocol *Clone() const { return new FactionChat(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << channel;
+			os << emotion;
+			os << src_roleid;
+			os << msg;
+			os << data;
+			os << dst_localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> channel;
+			os >> emotion;
+			os >> src_roleid;
+			os >> msg;
+			os >> data;
+			os >> dst_localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

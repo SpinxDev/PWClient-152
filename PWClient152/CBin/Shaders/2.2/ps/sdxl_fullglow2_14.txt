@@ -1,0 +1,30 @@
+; fullscreen glow render pixel shader running for 7 pixel length
+
+; c0.rgba is the weight of farest to nearest sample pixel
+
+ps.1.4
+
+def c4, 1.0, 1.0, 1.0, 0.5
+
+texld r0, t0
+texld r1, t1
+texld r2, t2
+texld r3, t3
+texld r4, t4
+texld r5, t5
+
+mul r1, r1, c0.r
+mad r1, r2, c0.g, r1
+mad r1, r3, c0.b, r1
+mad r1, r4, c0.g, r1
+mad r1, r5, c0.r, r1
+
+phase
+ 
+mul r2.rgb, r1, r1
+lrp r1.rgb, c1.g, r1, r0
+
+mad r0.rgb, c1.b, r2, r1
+
+mul r0.rgb, r0, c3
++mov r0.a, c3.a

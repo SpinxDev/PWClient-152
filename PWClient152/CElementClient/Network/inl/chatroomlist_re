@@ -1,0 +1,44 @@
+	public:
+		unsigned short sum;
+		GChatRoomVector rooms;
+		char end;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_CHATROOMLIST_RE };
+	public:
+		ChatRoomList_Re() { type = PROTOCOL_CHATROOMLIST_RE; }
+		ChatRoomList_Re(void*) : Protocol(PROTOCOL_CHATROOMLIST_RE) { }
+		ChatRoomList_Re (unsigned short l_sum,GChatRoomVector l_rooms,char l_end,
+			unsigned int l_localsid)
+			 : sum(l_sum),rooms(l_rooms),end(l_end),
+			localsid(l_localsid)
+		{
+			type = PROTOCOL_CHATROOMLIST_RE;
+		}
+
+		ChatRoomList_Re(const ChatRoomList_Re &rhs)
+			: Protocol(rhs),sum(rhs.sum),rooms(rhs.rooms),end(rhs.end),
+			localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new ChatRoomList_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << sum;
+			os << rooms;
+			os << end;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> sum;
+			os >> rooms;
+			os >> end;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

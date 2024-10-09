@@ -1,0 +1,30 @@
+//  ************* Angelica 3D shader ***************
+
+version 5
+
+"Fashion"
+{
+	//  General properties
+	texturefactor    1.000000  1.000000  1.000000  1.000000
+	pixelshader      Shaders\2.2\ps\fashionrender.txt
+
+	//  Stage 0
+	{
+		colorop          TOP_MODULATE
+		colorarg1        TA_TEXTURE
+		colorarg2        TA_DIFFUSE
+		alphaop          TOP_SELECTARG2
+		alphaarg1        TA_TEXTURE
+		alphaarg2        TA_DIFFUSE
+	}
+	
+	//  Stage 1
+	{
+		colorop          TOP_MODULATE
+		colorarg1        TA_TFACTOR
+		colorarg2        TA_CURRENT
+		alphaop          TOP_SELECTARG2
+		alphaarg1        TA_TFACTOR
+		alphaarg2        TA_CURRENT
+	}
+}

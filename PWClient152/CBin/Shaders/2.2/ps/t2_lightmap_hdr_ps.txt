@@ -1,0 +1,35 @@
+//---------------------------------------
+//FileName:t2_lightmap_hdr_ps.txt
+//Created by liyi 2010-1-30
+//---------------------------------------
+
+ps.1.4
+
+def c0, 1.0, 0.0, 0.0, 1.0
+
+texcrd r0.xy, t0_dw.xyw
+texld r1, t1
+texld r2, t1
+
+lrp r1, c1.a, r2, r1
+mov r0.z, c0.a
+
+mov r2, r1.g
+mov r5, r1.b
+phase
+texld r0, r0
+texld r3, r1
+texld r4, r2
+texld r5, r5
+
+mov_x8 r3.g, r3.g
+add r2.r, r3.r, r3.g
+
+mov_x8 r4.g, r4.g
+add r2.g, r4.r, r4.g
+
+mov_x8 r5.g, r5.g
+add r2.b, r5.r, r5.g
+
+mul r0.rgb, r2, r0
++mov r0.a, c0.a

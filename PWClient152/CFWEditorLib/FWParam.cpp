@@ -1,0 +1,11 @@
+// FWParam.cpp: implementation of the FWParam class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "FWParam.h"
+
+#define new A_DEBUG_NEW
+
+
+
+

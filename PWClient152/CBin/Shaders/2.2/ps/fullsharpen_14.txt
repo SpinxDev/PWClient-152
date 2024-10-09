@@ -1,0 +1,21 @@
+; fullscreen sharpen render pixel shader
+
+; t0, t1, t2, t3, t4 is the content to be sampled
+ps.1.4
+
+def c4, -1.0, -1.0, -1.0, 1.0
+
+texld r0, t0
+texld r1, t1
+texld r2, t2
+texld r3, t3
+texld r4, t4
+
+mov r5, r0
+mad r0, r1, c4, r5
+mad r0, r2, c4, r5
+mad r0, r3, c4, r5
+mad r0, r4, c4, r5
+add r0.rgb, r0, r5
++mov r0.a, c4.a
+

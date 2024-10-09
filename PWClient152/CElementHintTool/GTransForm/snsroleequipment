@@ -1,0 +1,65 @@
+#ifndef __GNET_SNSROLEEQUIPMENT_RPCDATA
+#define __GNET_SNSROLEEQUIPMENT_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "groleequipment"
+
+namespace GNET
+{
+	class SNSRoleEquipment : public GNET::Rpc::Data
+	{
+	public:
+		unsigned int crc;
+		GRoleEquipment equipment;
+
+	public:
+		SNSRoleEquipment (unsigned int l_crc = 0,const GRoleEquipment& l_equipment = GRoleEquipment())
+			: crc(l_crc),equipment(l_equipment)
+		{
+		}
+
+		SNSRoleEquipment(const SNSRoleEquipment &rhs)
+			: crc(rhs.crc),equipment(rhs.equipment) { }
+
+		Rpc::Data *Clone() const { return new SNSRoleEquipment(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const SNSRoleEquipment *r = dynamic_cast<const SNSRoleEquipment *>(&rhs);
+			if (r && r != this)
+			{
+				crc = r->crc;
+				equipment = r->equipment;
+			}
+			return *this;
+		}
+
+		SNSRoleEquipment& operator = (const SNSRoleEquipment &rhs)
+		{
+			const SNSRoleEquipment *r = &rhs;
+			if (r && r != this)
+			{
+				crc = r->crc;
+				equipment = r->equipment;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << crc;
+			os << equipment;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> crc;
+			os >> equipment;
+			return os;
+		}
+
+	};
+};
+#endif

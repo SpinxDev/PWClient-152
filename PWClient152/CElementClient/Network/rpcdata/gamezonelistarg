@@ -1,0 +1,59 @@
+#ifndef __GNET_GAMEZONELISTARG_RPCDATA
+#define __GNET_GAMEZONELISTARG_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GameZoneListArg : public GNET::Rpc::Data
+	{
+	public:
+		char handle;
+
+	public:
+		GameZoneListArg (char l_handle = 0)
+			: handle(l_handle)
+		{
+		}
+
+		GameZoneListArg(const GameZoneListArg &rhs)
+			: handle(rhs.handle) { }
+
+		Rpc::Data *Clone() const { return new GameZoneListArg(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GameZoneListArg *r = dynamic_cast<const GameZoneListArg *>(&rhs);
+			if (r && r != this)
+			{
+				handle = r->handle;
+			}
+			return *this;
+		}
+
+		GameZoneListArg& operator = (const GameZoneListArg &rhs)
+		{
+			const GameZoneListArg *r = &rhs;
+			if (r && r != this)
+			{
+				handle = r->handle;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << handle;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> handle;
+			return os;
+		}
+
+	};
+};
+#endif

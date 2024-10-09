@@ -1,0 +1,19 @@
+DIALOG "Win_QuickAction" 0 0 122 266 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 -1 -1 "" 0 0 96 96 96 255 1
+STILLIMAGEBUTTON "SecretMsg" "SecretMsg" "SFX\Interface\ClickB.wav" 5 88 54 20 0 0 0 0 2 10 255 255 128 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 3 1
+STILLIMAGEBUTTON "Extra" "Extra" "SFX\Interface\ClickB.wav" 5 109 54 20 0 0 0 0 4 10 255 255 128 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 5 1
+STILLIMAGEBUTTON "report" "Report" "SFX\Interface\ClickB.wav" 5 194 110 20 0 0 0 0 6 10 255 0 0 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 7 1
+STILLIMAGEBUTTON "Trade" "Trade" "SFX\Interface\ClickB.wav" 61 4 54 20 0 0 0 0 8 10 0 255 0 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 9 1
+STILLIMAGEBUTTON "WhisperChat" "WhisperChat" "SFX\Interface\ClickB.wav" 61 88 54 20 0 0 0 0 10 10 255 255 128 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 11 1
+STILLIMAGEBUTTON "AddFriend" "AddFriend" "SFX\Interface\ClickB.wav" 61 109 54 20 0 0 0 0 12 10 255 255 128 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 13 1
+STILLIMAGEBUTTON "InviteGroup" "InviteGroup" "SFX\Interface\ClickB.wav" 5 25 54 20 0 0 0 0 14 10 0 255 0 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 15 1
+STILLIMAGEBUTTON "InviteGuild" "InviteGuild" "SFX\Interface\ClickB.wav" 5 151 110 20 0 0 0 0 16 10 255 255 128 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 17 1
+STILLIMAGEBUTTON "Follow" "Follow" "SFX\Interface\ClickB.wav" 5 4 54 20 0 0 0 0 18 10 0 255 0 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 19 1
+STILLIMAGEBUTTON "Cancel" "IDCANCEL" "SFX\Interface\ClickB.wav" 31 240 60 21 0 0 0 0 20 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 21 1
+IMAGEPICTURE "Control_403463108" "" "" 4 216 112 2 1 0 "Window\分隔线.tga"
+STILLIMAGEBUTTON "JoinChannel" "JoinChannel" "SFX\Interface\ClickB.wav" 61 130 54 20 0 0 0 0 22 10 255 255 128 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 23 1
+STILLIMAGEBUTTON "InviteChannel" "InviteChannel" "SFX\Interface\ClickB.wav" 5 130 54 20 0 0 0 0 24 10 255 255 128 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 25 1
+STILLIMAGEBUTTON "Bind" "Bind" "SFX\Interface\ClickB.wav" 5 172 110 20 0 0 0 0 26 10 255 128 192 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 27 1
+STILLIMAGEBUTTON "Duel" "Duel" "SFX\Interface\ClickB.wav" 61 25 54 20 0 0 0 0 28 10 0 255 0 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 29 1
+STILLIMAGEBUTTON "EPEquip" "EPEquip" "SFX\Interface\ClickB.wav" 5 67 110 20 0 0 0 0 30 10 0 255 0 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 31 1
+STILLIMAGEBUTTON "CopyName" "CopyName" "SFX\Interface\ClickB.wav" 5 46 110 20 0 0 0 0 32 10 0 255 0 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 33 1
+STILLIMAGEBUTTON "ProfView" "ProfView" "SFX\Interface\ClickB.wav" 5 218 110 20 0 0 0 0 34 10 0 255 0 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 35 1

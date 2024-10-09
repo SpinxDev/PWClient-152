@@ -1,0 +1,3142 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\TaskTemplEditor.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\TaskTemplEditor.ico"
+IDR_TASKTETYPE          ICON    DISCARDABLE     "res\\TaskTemplEditorDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "新建(&N)\tCtrl+N",            ID_NEW_TASK
+        MENUITEM "保存(&S)\tCtrl+S",            ID_SAVE_TASK
+        MENUITEM "查找文件名\tCtrl+F",          ID_FIND_TASK
+        MENUITEM "查找任务名\tCtrl+T",          ID_FIND_NAME
+        MENUITEM "查找ID\tCtrl+W",              ID_FIND_BY_ID
+        MENUITEM "查找下一个\tF3",              ID_FIND_NEXT
+        MENUITEM "Excel导入(&E)",               IDD_LOAD_FORM_EXCEL
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+    POPUP "VSS"
+    BEGIN
+        MENUITEM "配置VSS服务器",               ID_CONFIG_VSS
+    END
+    POPUP "NPC信息"
+    BEGIN
+        MENUITEM "查看NPC信息",                 ID_VIEW_NPC_INFO
+        MENUITEM "修改NPC信息",                 ID_EDIT_NPC_INFO
+        MENUITEM "导出NPC信息",                 ID_EXPORT_NPC_INFO
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于 TaskTemplEditor(&A)...", ID_APP_ABOUT
+        MENUITEM "查看",                        ID_VIEW
+        MENUITEM "测试加载",                    ID_TEST_PACK
+        MENUITEM "测试导出动态包",              ID_TEST_EXPORT_DYN
+        MENUITEM "测试加载动态包",              ID_TEST_DYN_PACK
+        MENUITEM "查错",                        ID_VERIFY
+        MENUITEM "清除NPC上没有的任务",         ID_CHECK_NPC
+        MENUITEM SEPARATOR
+        MENUITEM "各种任务日志",                ID_RECORD
+    END
+END
+
+IDR_TASK_TEMPL MENU DISCARDABLE 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "插入并列任务",                ID_INSERT_TASK
+        MENUITEM "增加子任务",                  ID_ADD_SUB_TASK
+        MENUITEM "删除子任务",                  ID_DEL_SUB_TASK
+        MENUITEM SEPARATOR
+        MENUITEM "Check In",                    ID_CHECK_IN
+        MENUITEM "Check Out",                   ID_CHECK_OUT
+    END
+END
+
+IDR_MENU_TALK MENU DISCARDABLE 
+BEGIN
+    POPUP "&"
+    BEGIN
+        MENUITEM "创建一个新对象",              ID_CREATE_TALK_WINDOW
+        MENUITEM "修改对象",                    ID_MODIFY_TALK_WINDOW
+    END
+END
+
+IDR_TASK_CLASS MENU DISCARDABLE 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "创建此类型任务",              ID_ADD_CLASS_TEMPL
+        MENUITEM "Check In",                    ID_CHECK_IN_CLASS
+        MENUITEM "Check Out",                   ID_CHECK_OUT_CLASS
+    END
+END
+
+IDR_TASK_LINK MENU DISCARDABLE 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "插入到任务链",                ID_INSERT_LINK
+        MENUITEM "增加到任务链末尾",            ID_ADD_LINK
+        MENUITEM "从任务链中删除",              ID_DEL_LINK
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "F",            ID_FIND_TASK,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_NEW_TASK,            VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_SAVE_TASK,           VIRTKEY, CONTROL, NOINVERT
+    "T",            ID_FIND_NAME,           VIRTKEY, CONTROL, NOINVERT
+    "W",            ID_FIND_BY_ID,          VIRTKEY, CONTROL, NOINVERT
+    VK_F3,          ID_FIND_NEXT,           VIRTKEY, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 TaskTemplEditor"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "TaskTemplEditor 1.0 版",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2004",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_TASKTEMPLEDITOR_FORM DIALOG DISCARDABLE  0, 0, 695, 598
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "Tree1",IDC_TASK_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,0,12,164,485
+    DEFPUSHBUTTON   "确定修改",IDC_APPLY,509,577,55,18
+    PUSHBUTTON      "取消修改",IDC_CANCEL,577,577,55,18
+    CONTROL         "Tree1",IDC_TASK_TEMPL_CLASS,"SysTreeView32",
+                    TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | 
+                    TVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,0,12,164,401
+    PUSHBUTTON      "确定修改",IDC_APPLY_CLASS,509,577,55,18,WS_DISABLED
+END
+
+IDD_TASK_PROPERTY DIALOG DISCARDABLE  0, 0, 480, 454
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "任务属性"
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "任务名称：",IDC_STATIC,11,12,41,8
+    EDITTEXT        IDC_TASK_NAME,58,9,115,14,ES_AUTOHSCROLL
+    CONTROL         "按顺序进行子任务",IDC_ORDER_EXE_CHILD,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,35,80,10
+    CONTROL         "失败后认为父任务也失败",IDC_PARENT_ALSO_FAIL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,52,104,10
+    CONTROL         "成功后认为父任务也成功",IDC_PARENT_ALSO_SUCCESS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,70,104,10
+    CONTROL         "能否放弃此任务",IDC_CAN_GIVEUP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,240,35,72,10
+    LTEXT           "时间限制：",IDC_STATIC,119,54,41,8
+    EDITTEXT        IDC_MAX_TIME,165,50,41,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "（秒）",IDC_STATIC,211,54,25,8
+    GROUPBOX        "仅主任务有的属性",IDC_STATIC,11,159,453,159
+    CONTROL         "成功后可重复完成",IDC_CAN_REDO,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,22,170,80,10
+    CONTROL         "失败后可重新完成",IDC_CAN_REDO_AFTER_FAILURE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,22,185,80,10
+    CONTROL         "需要记录完成结果",IDC_NEED_RECORD,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,22,200,80,10
+    CONTROL         "玩家被杀死认为失败",IDC_KILLED_AS_FAIL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,120,170,88,10
+    CONTROL         "接受者人数上限：",IDC_MAX_RECEIVER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,120,186,80,10
+    EDITTEXT        IDC_RECEIVER_NUM,201,183,51,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "放弃清空任务",IDC_GIVEUP_CLEAR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,120,202,64,10
+    LTEXT           "任务描述：",IDC_STATIC,11,326,41,8
+    EDITTEXT        IDC_DESCRIPT,11,337,215,83,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_WANTRETURN | WS_VSCROLL
+    LTEXT           "发放时间段：",IDC_STATIC,268,176,49,8
+    PUSHBUTTON      "编辑",IDC_EDIT_TIMETABLE,318,172,27,14
+    LTEXT           "接收任务对话：",IDC_STATIC,12,432,57,8
+    PUSHBUTTON      "...",IDC_DELIVER_TALK,70,428,17,14
+    LTEXT           "发放任务物品对话：",IDC_STATIC,185,432,74,8
+    LTEXT           "已接收任务对话：",IDC_STATIC,283,432,65,8
+    LTEXT           "完成任务对话：",IDC_STATIC,375,432,57,8
+    PUSHBUTTON      "...",IDC_DELIVER_ITEM_TALK,259,428,17,14
+    PUSHBUTTON      "...",IDC_ACCEPTED_TALK,350,428,17,14
+    PUSHBUTTON      "...",IDC_AWARD_TALK,433,428,17,14
+    LTEXT           "感谢辞：（仅记录完成结果的任务有）",IDC_STATIC,243,325,
+                    137,8
+    EDITTEXT        IDC_TRIBUTE,242,337,221,84,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_WANTRETURN | WS_VSCROLL
+    CONTROL         "手动选取子任务",IDC_CHOOSE_ONE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,22,215,72,10
+    CONTROL         "在特定区域触发，划定区域：",IDC_HAS_ZONE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,268,190,120,10
+    PUSHBUTTON      "...",IDC_SEL_MAX_POINT,388,187,17,14
+    LTEXT           "",IDC_TASK_ID,182,12,29,8
+    LTEXT           "不满足条件对话：",IDC_STATIC,93,432,65,8
+    PUSHBUTTON      "...",IDC_SHOW_TALK,160,428,17,14
+    CONTROL         "满足条件自动触发",IDC_AUTO_DELV,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,268,222,80,10
+    CONTROL         "自动选取子任务",IDC_RAND_ONE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,119,35,72,10
+    CONTROL         "死亡触发",IDC_DEATH_TRIG,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,120,218,48,10
+    CONTROL         "清除所得物品",IDC_CLEAR_ACQUIRED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,119,70,64,10
+    CONTROL         "关键任务",IDC_KEY_TASK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,22,230,48,10
+    CONTROL         "显示提示",IDC_SHOW_PROMPT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,120,234,48,10
+    LTEXT           "推荐级别：",IDC_STATIC,353,240,41,8
+    EDITTEXT        IDC_SUIT_LEVEL,400,235,51,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "发放NPC：",IDC_STATIC,220,12,37,8
+    EDITTEXT        IDC_DELV_NPC,262,10,54,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_SEL_DELV_NPC,319,9,17,14
+    LTEXT           "回收NPC：",IDC_STATIC,339,12,37,8
+    EDITTEXT        IDC_AWARD_NPC,378,10,54,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_SEL_AWARD_NPC,437,9,17,14
+    CONTROL         "生活技能任务",IDC_SKILL_TASK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,268,238,64,10
+    LTEXT           "世界ID：",IDC_STATIC,385,176,33,8
+    EDITTEXT        IDC_WORD_ID,422,171,25,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "传送到，世界ID：",IDC_TRANSPORT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,268,206,80,10
+    EDITTEXT        IDC_TRANS_WORLD,349,204,25,14,ES_AUTOHSCROLL
+    LTEXT           "坐标：",IDC_STATIC,381,207,25,8
+    PUSHBUTTON      "...",IDC_TRANS_POINT,410,203,17,14
+    LTEXT           "署名：",IDC_STATIC,240,54,25,8
+    EDITTEXT        IDC_SIGNATURE,265,50,55,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_TYPE,265,68,56,117,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "类型：",IDC_STATIC,240,71,25,8
+    CONTROL         "能否被查找",IDC_SEEK_OUT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,336,35,56,10
+    CONTROL         "能否显示方向提示",IDC_SHOW_DIRECTION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,336,52,80,10
+    LTEXT           "怪物控制器：",IDC_STATIC,337,71,49,8
+    EDITTEXT        IDC_CONTROLLER,387,68,27,14,ES_AUTOHSCROLL
+    CONTROL         "是否触发",IDC_TRIG_CTRL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,419,70,48,10
+    CONTROL         "绝对时间",IDC_ABS_TIME,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,419,35,48,10
+    COMBOBOX        IDC_AVAIL_FREQUENCY,23,278,35,78,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "结婚任务",IDC_MARRIAGE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,268,253,48,10
+    PUSHBUTTON      "...",IDC_EDIT_CHANGE_VAL,328,266,17,14
+    LTEXT           "改变全局变量：",IDC_STATIC,268,270,57,8
+    CONTROL         "切换场景即失败",IDC_SWITCH_SCENE_FAIL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,22,245,72,10
+    CONTROL         "隐藏任务",IDC_HIDDEN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,120,249,48,10
+    CONTROL         "进入区域任务失败，世界ID：",IDC_ENTER_REGION_FAIL,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,86,116,10
+    CONTROL         "离开区域任务失败，世界ID：",IDC_LEAVE_REGION_FAIL,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,104,116,10
+    EDITTEXT        IDC_ENTER_WORLD_ID,130,84,33,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_LEAVE_WORLD_ID,130,102,33,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "划定区域：",IDC_STATIC,168,87,41,8
+    PUSHBUTTON      "...",IDC_EDIT_ENTER_BIG,212,83,17,14
+    LTEXT           "划定区域：",IDC_STATIC,167,105,41,8
+    PUSHBUTTON      "...",IDC_EDIT_LEAVE_BIG,212,101,17,14
+    CONTROL         "下线任务失败",IDC_OFFLINE_FAIL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,285,87,66,10
+    CONTROL         "任务失败时间",IDC_TASK_FAIL_TIME,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,368,86,59,10
+    PUSHBUTTON      "编辑",IDC_EDIT_FAIL_TIME,431,83,27,14
+    CONTROL         "任务开启物品校验不收取",IDC_ITEM_NOT_TAKE_OFF,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,285,105,100,10
+    CONTROL         "PQ任务",IDC_PQ_TASK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,172,218,40,10
+    PUSHBUTTON      "全局变量声明",IDC_PQ_VALUE,212,216,54,14
+    CONTROL         "PQ子任务",IDC_PQ_SUB_TASK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,12,124,48,10
+    PUSHBUTTON      "属性编辑",IDC_PQ_SUB_TASK_PROP,61,122,46,14
+    CONTROL         "账号限制完成次数：",IDC_ACCOUNT_TASK_LIMIT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,64,274,88,10
+    CONTROL         "发放技能",IDC_DELIVERYSKILL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,262,123,48,10
+    LTEXT           "技能ID：",IDC_STATIC,311,124,33,8
+    EDITTEXT        IDC_DELIVERYSKILLID,345,121,38,14,ES_AUTOHSCROLL
+    LTEXT           "技能等级：",IDC_STATIC,388,124,41,8
+    EDITTEXT        IDC_DELIVERYSKILLLEVEL,429,121,34,14,ES_AUTOHSCROLL
+    CONTROL         "显示完成任务光效",IDC_SHOWGFX,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,391,112,80,10
+    CONTROL         "PQ中不更改玩家排名",IDC_CHANGE_PQRANK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,142,88,10
+    CONTROL         "发放前对比发放物品与包裹空位,个数:",
+                    IDC_CHK_COMPAREITEMANDINVENTORY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,126,142,152,10
+    EDITTEXT        IDC_EDIT_INVENTORYSLOTNUM,281,140,28,14,ES_AUTOHSCROLL
+    CONTROL         "是否提示",IDC_WHETHER_PROMPT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,351,222,48,10
+    EDITTEXT        IDC_TASK_PERIOD_LIMIT,160,277,34,14,ES_AUTOHSCROLL
+    CONTROL         "离开势力任务失败",IDC_LEAVEFORCE_FAIL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,344,143,86,10
+    CONTROL         "离开帮派任务失败",IDC_LEAVEFACTION_FAIL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,136,123,86,10
+    CONTROL         "失败不清除",IDC_NOT_CLEAR_WHEN_FAILED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,184,69,56,10
+    CONTROL         "显示在称号任务界面",IDC_TITLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,357,255,88,10
+    CONTROL         "失败时不记录",IDC_NOT_ADD_COUNT_WHEN_FAILED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,200,279,64,10
+    GROUPBOX        "发放时间间隔",IDC_STATIC,19,263,246,47
+    CONTROL         "角色限制完成次数：",IDC_ROLE_TASK_LIMIT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,64,288,88,10
+    CONTROL         "用于兑换",IDC_TOKENSHOP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,269,287,48,10
+END
+
+IDD_TASK_PREMISE DIALOG DISCARDABLE  0, 0, 480, 531
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "开启条件及方式"
+FONT 9, "宋体"
+BEGIN
+    GROUPBOX        "开启条件",IDC_STATIC,9,8,454,277
+    LTEXT           "等级：",IDC_STATIC,23,25,25,8
+    LTEXT           "下限",IDC_STATIC,77,25,17,8
+    EDITTEXT        IDC_PREMISE_LEVEL_MIN,98,22,26,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "上限",IDC_STATIC,129,25,17,8
+    EDITTEXT        IDC_PREMISE_LEVEL_MAX,149,22,26,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "所需物品：",IDC_STATIC,23,42,41,8
+    COMBOBOX        IDC_ITEMS_WANTED,74,39,57,105,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDC_EDIT_ITEMS_WANTED,135,38,17,14
+    LTEXT           "押金：",IDC_STATIC,23,60,25,8
+    EDITTEXT        IDC_PREMISE_DEPOSIT,74,57,57,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "声望：",IDC_STATIC,23,78,25,8
+    EDITTEXT        IDC_PREMISE_REPUTATION,74,74,29,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "前提任务：",IDC_STATIC,23,113,41,8
+    PUSHBUTTON      "...",IDC_SEL_PRETASK,74,113,17,14
+    CONTROL         "组队任务",IDC_IS_TEAM,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,23,135,48,10
+    PUSHBUTTON      "编辑",IDC_EDIT_TEAM,74,135,26,14
+    CONTROL         "是否某帮派成员",IDC_IS_CLAN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,23,171,72,10
+    LTEXT           "性别：",IDC_STATIC,23,188,25,8
+    COMBOBOX        IDC_GENDER,112,188,41,53,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "职业：",IDC_STATIC,23,206,25,8
+    PUSHBUTTON      "编辑",IDC_EDIT_OCCUP,74,203,26,14
+    CONTROL         "是否夫妻",IDC_IS_SPOUSE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,258,17,48,10
+    LTEXT           "达到修真阶段：",IDC_STATIC,258,35,57,8
+    LTEXT           "关联任务：",IDC_STATIC,258,53,42,8
+    EDITTEXT        IDC_PREMISE_COTASK,302,50,63,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "...",IDC_SEL_COTASK,372,50,17,14
+    CONTROL         "显示前提",IDC_SHOW_BY_LEVEL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,181,25,44,10
+    CONTROL         "显示前提",IDC_SHOW_BY_ITEMS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,181,42,44,10
+    CONTROL         "显示前提",IDC_SHOW_BY_DEPOSIT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,181,57,44,10
+    CONTROL         "显示前提",IDC_SHOW_BY_REPUTATION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,181,74,44,10
+    CONTROL         "显示前提",IDC_SHOW_BY_PRE_TASK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,181,113,44,10
+    CONTROL         "显示前提",IDC_SHOW_BY_TEAM,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,181,135,44,10
+    CONTROL         "显示前提",IDC_SHOW_BY_FACTION,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,181,171,44,10
+    CONTROL         "显示前提",IDC_SHOW_BY_GENDER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,181,188,44,10
+    CONTROL         "显示前提",IDC_SHOW_BY_OCCUP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,181,203,44,10
+    CONTROL         "显示前提",IDC_SHOW_BY_SPOUSE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,398,17,44,10
+    CONTROL         "显示前提",IDC_SHOW_BY_PERIOD,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,398,33,44,10
+    CONTROL         "一一对应",IDC_COTASK_COND1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,398,48,48,10
+    CONTROL         "接一个即可",IDC_COTASK_COND2,"Button",
+                    BS_AUTORADIOBUTTON,398,63,56,10
+    LTEXT           "发放任务物品：",IDC_STATIC,21,310,57,8
+    PUSHBUTTON      "...",IDC_DELIVER_PREM_ITEM,79,308,17,14
+    GROUPBOX        "发放物品",IDC_STATIC,11,288,119,56,WS_GROUP
+    LTEXT           "互斥任务：",IDC_STATIC,258,71,41,8
+    PUSHBUTTON      "...",IDC_SEL_MUTEX_TASK,326,67,17,14
+    COMBOBOX        IDC_PERIOD,320,32,68,107,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "生产技能熟练度：",IDC_STATIC,373,221,65,8
+    PUSHBUTTON      "...",IDC_CHANGE_PROFICIENCY,441,218,17,14
+    CONTROL         "是否GM",IDC_IS_GM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    328,221,40,10
+    LTEXT           "上限：",IDC_STATIC,107,78,25,8
+    EDITTEXT        IDC_PREMISE_REPUMAX,133,74,29,14,ES_AUTOHSCROLL
+    GROUPBOX        "全局key/value条件",IDC_STATIC,141,288,321,59
+    CONTROL         "是否判断",IDC_PREM_NEED_COMP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,149,303,48,10
+    COMBOBOX        IDC_PREM1_COMPARE1,261,301,36,105,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_PREM1_KV1,304,301,29,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_PREM1_COMPARE,339,301,36,105,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PREM1_COMPARE2,381,301,36,105,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_PREM1_KV2,423,301,29,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_PREM2_COMPARE1,261,325,36,105,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_PREM2_KV1,304,325,29,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_PREM2_COMPARE,339,325,36,105,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PREM2_COMPARE2,381,325,36,105,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_PREM2_KV2,423,325,29,14,ES_AUTOHSCROLL
+    LTEXT           "条件1：",IDC_STATIC,228,304,29,8
+    LTEXT           "条件2：",IDC_STATIC,228,327,29,8
+    LTEXT           "条件关系：",IDC_STATIC,149,326,41,8
+    COMBOBOX        IDC_PREM_AND_OR,192,324,28,105,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "完美神盾用户",IDC_IS_SHIELD_USER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,258,221,64,10
+    LTEXT           "充值金额：",IDC_STATIC,258,240,41,8
+    LTEXT           "下限",IDC_STATIC,305,240,17,8
+    EDITTEXT        IDC_PREMISE_RMB_MIN,331,235,58,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "上限",IDC_STATIC,305,255,17,8
+    EDITTEXT        IDC_PREMISE_RMB_MAX,331,251,58,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "角色相关时间判断",IDC_CHAR_TIME,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,23,362,80,10
+    CONTROL         "显示前提",IDC_SHOW_BY_CHAR_TIME,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,181,361,48,10
+    LTEXT           "开始日期",IDC_STATIC,45,379,33,8
+    COMBOBOX        IDC_CHAR_START_TIME,88,377,93,55,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "当前日期",IDC_CHAR_CURR_TIME,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,24,395,48,10
+    CONTROL         "指定日期",IDC_CHAR_CURR_TIME2,"Button",
+                    BS_AUTORADIOBUTTON,24,411,48,10
+    GROUPBOX        "角色时间",IDC_STATIC,12,350,227,103
+    EDITTEXT        IDC_CHAR_TIME_GREATER_THAN,78,429,37,14,ES_AUTOHSCROLL
+    LTEXT           "大于",IDC_STATIC,45,432,17,8
+    CONTROL         "DateTimePicker1",IDC_SPECIFIED_DATE,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_LONGDATEFORMAT | WS_TABSTOP,78,407,
+                    78,15
+    LTEXT           "天",IDC_STATIC,120,432,9,8
+    CONTROL         "显示前提",IDC_SHOW_BY_RMB,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,402,238,44,10
+    CONTROL         "是否库任务",IDC_IS_KU_TASK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,267,371,56,10
+    GROUPBOX        "库任务属性",IDC_STATIC,246,350,227,103
+    EDITTEXT        IDC_CHAR_PROBABILITY,289,392,37,14,ES_AUTOHSCROLL
+    LTEXT           "概率",IDC_STATIC,267,396,17,8
+    LTEXT           "帮派贡献度：",IDC_STATIC,23,93,49,8
+    EDITTEXT        IDC_PREMISE_FACTION_CONTRIB,76,93,29,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "显示前提",IDC_SHOW_BY_FACTION_CONTRIB,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,180,93,44,10
+    LTEXT           "记录完成结果任务完成个数：",IDC_STATIC,23,221,105,8
+    EDITTEXT        IDC_PREMISE_NEED_RECORD_TASKS_NUM,131,220,29,14,
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "显示前提",IDC_SHOW_BY_NEEDRECORD_TASKS_NUM,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,181,220,44,10
+    COMBOBOX        IDC_FACTION_ROLE,112,171,52,53,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "是否唯一库任务",IDC_IS_UNIQUE_STORAGE_TASK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,269,418,72,10
+    COMBOBOX        IDC_TRANSFORMED,306,85,68,107,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "显示前提",IDC_SHOW_BY_TRANSFORMED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,398,85,44,10
+    LTEXT           "变身状态：",IDC_STATIC,258,87,42,8
+    COMBOBOX        IDC_PREM_FORCE,316,108,59,107,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "显示前提",IDC_SHOW_BY_FORCE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,398,108,44,10
+    LTEXT           "战功：",IDC_STATIC,258,144,45,8
+    EDITTEXT        IDC_PREM_FORCE_CONTRIB,307,141,57,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "显示前提",IDC_SHOW_BY_FORCE_CONTRIB,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,397,142,44,10
+    LTEXT           "威望：",IDC_STATIC,258,162,45,8
+    EDITTEXT        IDC_PREM_FORCE_REPU,307,159,57,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "显示前提",IDC_SHOW_BY_FORCE_REPU,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,397,160,44,10
+    LTEXT           "经验值：",IDC_STATIC,258,180,45,8
+    EDITTEXT        IDC_PREM_FORCE_EXP,307,177,57,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "显示前提",IDC_SHOW_BY_FORCE_EXP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,397,178,44,10
+    LTEXT           "元神值：",IDC_STATIC,258,198,45,8
+    EDITTEXT        IDC_PREM_FORCE_SP,307,195,57,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "显示前提",IDC_SHOW_BY_FORCE_SP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,397,196,44,10
+    GROUPBOX        "势力属性",IDC_STATIC,252,100,200,115,WS_GROUP
+    CONTROL         "势力限制：",IDC_CHECK_FORCE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,259,111,44,10
+    COMBOBOX        IDC_PREM_FORCE_AL,307,125,59,107,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "显示前提",IDC_SHOW_BY_FORCE_AL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,397,126,44,10
+    LTEXT           "活跃等级：",IDC_STATIC,258,129,45,8
+    CONTROL         "是否预约了当前结婚场次",IDC_WEDDING_OWNER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,25,239,104,10
+    CONTROL         "显示前提",IDC_SHOW_BY_WEDDING_OWNER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,181,237,44,10
+    CONTROL         "是否国王",IDC_IS_KING,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,25,254,48,10
+    CONTROL         "显示前提",IDC_SHOW_BY_KING,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,181,252,44,10
+    CONTROL         "不能组队",IDC_NOT_IN_TEAM,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,23,153,48,10
+    CONTROL         "显示前提",IDC_SHOW_BY_NOT_IN_TEAM,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,181,153,44,10
+    CONTROL         "显示前提",IDC_SHOW_BY_TITLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,181,267,44,10
+    LTEXT           "称号：",IDC_STATIC,24,270,25,8
+    PUSHBUTTON      "...",IDC_SEL_TITLE,55,267,17,14
+    EDITTEXT        IDC_PREMISE_TITLE_REQUIRED,136,265,29,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "至少几个：",IDC_STATIC,91,269,41,8
+    LTEXT           "历史阶段:",IDC_STATIC,242,271,37,8
+    LTEXT           "下限",IDC_STATIC,282,271,17,8
+    EDITTEXT        IDC_EDIT_HISTORYLOW,305,268,35,14,ES_AUTOHSCROLL
+    LTEXT           "上限",IDC_STATIC,345,270,17,8
+    EDITTEXT        IDC_EDIT_HISTORYHIGH,366,268,34,14,ES_AUTOHSCROLL
+    CONTROL         "历史最高",IDC_CHECK_HISTORY_MAX_LEVEL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,181,13,44,10
+    LTEXT           "下限",IDC_STATIC,87,478,17,8
+    EDITTEXT        IDC_PREMISE_REINCARNATION_MIN,108,476,26,14,
+                    ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "上限",IDC_STATIC,139,478,17,8
+    EDITTEXT        IDC_PREMISE_REINCARNATION_MAX,159,476,26,14,
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "显示前提",IDC_SHOW_BY_REINCARNATION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,190,476,44,10
+    CONTROL         "检查转生",IDC_PREM_CHECK_REINCARNATION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,28,476,44,10
+    GROUPBOX        "转生",IDC_STATIC,13,461,227,39
+    EDITTEXT        IDC_PREMISE_REINCARNATIONLEVEL_MIN,340,468,26,14,
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_PREMISE_REINCARNATIONLEVEL_MAX,391,468,26,14,
+                    ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "显示前提",IDC_SHOW_BY_REINCARNATIONLEVEL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,422,483,44,10
+    CONTROL         "检查境界等级",IDC_PREM_CHECK_REINCARNATIONLEVEL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,255,468,60,10
+    LTEXT           "下限",IDC_STATIC,318,471,17,8
+    LTEXT           "上限",IDC_STATIC,370,471,17,8
+    CONTROL         "境界经验已满",IDC_PREM_CHECK_REALMEXP_FULL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,255,487,60,10
+    GROUPBOX        "境界",IDC_STATIC,246,458,227,45
+    LTEXT           "卡牌收集数量",IDC_STATIC,17,509,49,8
+    EDITTEXT        IDC_CARDCOUNT,73,507,40,14,ES_AUTOHSCROLL
+    CONTROL         "显示前提",IDC_CHK_CARDCOUNT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,127,509,48,10
+    COMBOBOX        IDC_GENERALCARD_RANK,331,509,41,53,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_CARDRANKCOUNT,377,509,40,14,ES_AUTOHSCROLL
+    CONTROL         "显示前提",IDC_CHK_CARDRANKCOUNT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,423,511,48,10
+    LTEXT           "某品阶卡牌数量",IDC_STATIC,271,511,57,8
+    CONTROL         "显示前提",IDC_CHK_SHOWPREMHISTORY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,408,270,48,10
+    EDITTEXT        IDC_WORLD_CONTRIB_REQUIRE,409,392,37,14,ES_AUTOHSCROLL
+    LTEXT           "活跃值要求",IDC_STATIC,347,396,41,8
+END
+
+IDD_TASK_METHOD DIALOG DISCARDABLE  0, 0, 480, 397
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "完成条件及方式"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "无",IDC_TMK_NONE,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    11,25,24,10
+    CONTROL         "杀数量怪",IDC_TM_KILL_NUM_MONSTER,"Button",
+                    BS_AUTORADIOBUTTON,11,44,48,10
+    CONTROL         "收集数量物品",IDC_TM_COLLECT_NUM_ARTICLE,"Button",
+                    BS_AUTORADIOBUTTON,11,64,61,10
+    CONTROL         "与特定NPC对话",IDC_TM_TALK_TO_NPC,"Button",
+                    BS_AUTORADIOBUTTON,11,144,68,10
+    CONTROL         "到达特定地点，划定区域:",IDC_TM_REACH_SITE,"Button",
+                    BS_AUTORADIOBUTTON,11,166,108,10
+    CONTROL         "等待特定时间",IDC_TM_WAIT_TIME,"Button",
+                    BS_AUTORADIOBUTTON,12,206,64,10
+    CONTROL         "选择问答",IDC_TM_ANSWER_QUESTION,"Button",
+                    BS_AUTORADIOBUTTON,12,233,48,10
+    CONTROL         "小游戏",IDC_TM_TINY_GAME,"Button",BS_AUTORADIOBUTTON,67,
+                    232,40,10
+    CONTROL         "保护特定NPC一定时间",IDC_TM_PROTECT_NPC,"Button",
+                    BS_AUTORADIOBUTTON,237,18,89,10
+    CONTROL         "特定NPC到达目标地点",IDC_TM_NPC_REACH_SITE,"Button",
+                    BS_AUTORADIOBUTTON,237,45,92,10
+    CONTROL         "满足全局key/value条件",IDC_TM_GLOBAL_VAL_OK,"Button",
+                    BS_AUTORADIOBUTTON,237,71,100,10
+    CONTROL         "离开特定区域，划定区域：",IDC_TM_LEAVE_SITE,"Button",
+                    BS_AUTORADIOBUTTON,238,171,112,10
+    CONTROL         "藏宝图",IDC_TM_TREASH_HUNT,"Button",BS_AUTORADIOBUTTON,
+                    12,256,40,10
+    CONTROL         "杀数量玩家",IDC_TM_KILL_NUM_MONSTER2,"Button",
+                    BS_AUTORADIOBUTTON,247,209,56,10
+    CONTROL         "检查变身",IDC_TM_CHECK_TRANSFORM,"Button",
+                    BS_AUTORADIOBUTTON,248,230,48,10
+    CONTROL         "到达一定等级",IDC_TM_CHECK_LEVEL,"Button",
+                    BS_AUTORADIOBUTTON,248,252,64,10
+    CONTROL         "简单客户端任务",IDC_RAD_SIMPLETASK,"Button",
+                    BS_AUTORADIOBUTTON,248,305,72,10
+    CONTROL         "强制移动",IDC_RAD_NAVIGATE,"Button",BS_AUTORADIOBUTTON,
+                    248,326,48,10
+    GROUPBOX        "完成方式（复合任务无完成方式） ",IDC_STATIC,4,4,469,341,
+                    WS_GROUP
+    PUSHBUTTON      "编辑",IDC_SEL_MONSTER,85,41,26,14
+    EDITTEXT        IDC_NPC_TO_PROTECT,331,16,46,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "...",IDC_SEL_NPC_TO_PROTECT,380,15,17,14
+    EDITTEXT        IDC_PROTECT_TIME,401,15,29,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "（秒）",IDC_STATIC,433,18,25,8
+    EDITTEXT        IDC_NPC_MOVING,331,45,46,13,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_SEL_NPC_MOVING,380,45,17,14
+    GROUPBOX        "完成条件",IDC_STATIC,4,355,469,33,WS_GROUP
+    CONTROL         "直接完成",IDC_TFT_DIRECT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,12,368,48,10
+    CONTROL         "与特定NPC对话:",IDC_TFT_NPC,"Button",BS_AUTORADIOBUTTON,
+                    76,367,72,10
+    CONTROL         "点击确定",IDC_TFT_CONFIRM,"Button",BS_AUTORADIOBUTTON,
+                    161,367,48,10
+    EDITTEXT        IDC_WAITTIME_LEN,77,204,40,14,ES_AUTOHSCROLL
+    LTEXT           "（秒）",IDC_STATIC,125,208,25,8
+    COMBOBOX        IDC_ITEMS_WANTED,85,62,68,105,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "编辑",IDC_EDIT_ITEMS_WANTED,157,62,26,14
+    PUSHBUTTON      "...",IDC_SEL_MAX_POINT,125,163,17,14
+    LTEXT           "需要钱数：",IDC_STATIC,23,87,41,8
+    EDITTEXT        IDC_GOLD_WANTED,70,83,60,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "世界ID：",IDC_STATIC,25,185,33,8
+    EDITTEXT        IDC_SITE_ID,61,182,24,14,ES_AUTOHSCROLL
+    GROUPBOX        "全局key/value条件",IDC_STATIC,236,86,229,78
+    CONTROL         "是否判断",IDC_FIN_NEED_COMP,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,330,104,48,10
+    COMBOBOX        IDC_FIN1_COMPARE1,274,122,36,105,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_FIN1_KV1,313,122,29,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_FIN1_COMPARE,349,122,36,105,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_FIN1_COMPARE2,390,122,36,105,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_FIN1_KV2,430,122,29,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_FIN2_COMPARE1,274,141,36,105,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_FIN2_KV1,313,141,29,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_FIN2_COMPARE,349,141,36,105,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_FIN2_COMPARE2,390,141,36,105,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_FIN2_KV2,430,141,29,14,ES_AUTOHSCROLL
+    LTEXT           "条件1：",IDC_STATIC,242,126,29,8
+    LTEXT           "条件2：",IDC_STATIC,242,143,29,8
+    LTEXT           "关系：",IDC_STATIC,242,104,25,8
+    COMBOBOX        IDC_FIN_AND_OR,274,102,36,105,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "...",IDC_SHOW_TASKCHAR,339,68,17,14
+    PUSHBUTTON      "...",IDC_SEL_MAX_POINT2,355,168,17,14
+    LTEXT           "世界ID：",IDC_STATIC,252,188,33,8
+    EDITTEXT        IDC_SITE_ID2,288,186,24,14,ES_AUTOHSCROLL
+    LTEXT           "需要贡献度：",IDC_STATIC,23,109,49,8
+    EDITTEXT        IDC_FACTION_CONTRIB_WANTED,74,105,60,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "需要帮派经验：",IDC_STATIC,16,127,57,8
+    EDITTEXT        IDC_FACTION_EXP_CONTRIB_WANTED,74,123,60,14,
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_ZONE_START_X,83,271,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ZONE_START_Z,83,289,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ZONE_SIDE,189,256,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ZONES_NUM_X,189,271,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ZONES_NUM_Z,189,289,40,14,ES_AUTOHSCROLL
+    LTEXT           "大区域最小点坐标",IDC_STATIC,59,256,65,8
+    LTEXT           "X：",IDC_STATIC,59,274,13,8
+    LTEXT           "Z：",IDC_STATIC,59,293,13,8
+    LTEXT           "小区域边长：",IDC_STATIC,134,256,49,8
+    LTEXT           "X方向个数：",IDC_STATIC,138,274,45,8
+    LTEXT           "Z方向个数：",IDC_STATIC,138,292,45,8
+    GROUPBOX        "",IDC_STATIC,55,245,183,65
+    PUSHBUTTON      "编辑",IDC_SEL_PLAYER,321,206,26,14
+    COMBOBOX        IDC_TRANSFORMED,308,228,68,107,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_REACH_LEVEL,370,248,24,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_REACH_REINCARNATION,370,265,24,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_REACH_REINCARNATIONLEVEL,370,284,24,14,
+                    ES_AUTOHSCROLL
+    LTEXT           "普通等级：",IDC_STATIC,326,253,41,8
+    LTEXT           "转生次数：",IDC_STATIC,326,270,41,8
+    LTEXT           "境界等级：",IDC_STATIC,326,289,41,8
+    COMBOBOX        IDC_CMB_EMOTION,328,303,70,268,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_TASK_AWARD DIALOG DISCARDABLE  0, 0, 480, 340
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "任务奖励"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "成功奖励",IDC_AWARD_SUCCESS,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,3,10,48,10
+    CONTROL         "失败奖励",IDC_AWARD_FAILURE,"Button",BS_AUTORADIOBUTTON,
+                    82,10,48,10
+    GROUPBOX        "奖励方式",IDC_STATIC,3,26,436,235,WS_GROUP
+    CONTROL         "普通方式",IDC_COMMON,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,144,73,48,10
+    CONTROL         "按杀怪或取得物品的数目乘以单个",IDC_BY_EACH,"Button",
+                    BS_AUTORADIOBUTTON,144,95,136,10
+    CONTROL         "按完成时间比例",IDC_BY_TM_RATIO,"Button",
+                    BS_AUTORADIOBUTTON,144,117,72,10
+    CONTROL         "按取得任务物品数目",IDC_BY_ITEMS,"Button",
+                    BS_AUTORADIOBUTTON,144,139,88,10
+    PUSHBUTTON      "编辑奖励内容",IDC_EDIT,156,175,68,14,WS_GROUP
+END
+
+IDD_SEL_STRING DIALOGEX 0, 0, 449, 247
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "从字符串表中选择字符串"
+FONT 8, "Tahoma", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "选择(&O)",IDOK,173,226,50,14,WS_DISABLED
+    PUSHBUTTON      "取消(&C)",IDCANCEL,225,226,50,14
+    CONTROL         "List1",IDC_LIST_STRINGTABLE,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOLABELWRAP | 
+                    LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,435,213,
+                    WS_EX_CLIENTEDGE
+END
+
+IDD_DIALOG_OPTION_VSS DIALOG DISCARDABLE  0, 0, 174, 130
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "配置SourceSafe"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,10,104,50,14
+    PUSHBUTTON      "取消",IDCANCEL,113,104,50,14
+    LTEXT           "用户名：",IDC_STATIC,10,14,33,8
+    EDITTEXT        IDC_USER,65,10,98,13,ES_AUTOHSCROLL
+    LTEXT           "密码：",IDC_STATIC,10,38,33,8
+    EDITTEXT        IDC_PWD,65,34,98,13,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "数据库路径：",IDC_STATIC,10,62,49,8
+    EDITTEXT        IDC_VSS_PATH,65,58,98,13,ES_AUTOHSCROLL
+    CONTROL         "每次启动自动从服务器上取得最新数据",
+                    IDC_CHECK_AUTO_UPDATE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,85,152,10
+END
+
+IDD_DIALOG_LOGO DIALOG DISCARDABLE  0, 0, 185, 49
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "正在从服务器更新数据，请稍后... ...",IDC_STATIC,36,15,
+                    141,12
+    GROUPBOX        "",IDC_STATIC,3,3,178,43
+    ICON            IDR_MAINFRAME,IDC_STATIC,9,11,20,20,WS_BORDER
+END
+
+IDD_NEW_TASK DIALOG DISCARDABLE  0, 0, 213, 99
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "新建任务"
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "任务名称：",IDC_STATIC,16,17,41,8
+    EDITTEXT        IDC_NAME,67,14,109,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "确定",IDOK,45,77,50,14
+    PUSHBUTTON      "取消",IDCANCEL,118,77,50,14
+    LTEXT           "从模板复制：",IDC_STATIC,16,36,49,8
+    EDITTEXT        IDC_SRC,67,34,109,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_SEL_SRC,183,33,14,14
+    CONTROL         "复制子任务结构",IDC_COPY_SUB_TASK,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,67,58,72,10
+END
+
+IDD_TEMPL_ID_SEL DIALOGEX 0, 0, 165, 187
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "模板选择"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tree1",IDC_TREE_TEMPL,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,2,5,161,131
+    DEFPUSHBUTTON   "确定",IDOK,19,165,50,14,WS_DISABLED
+    PUSHBUTTON      "取消",IDCANCEL,96,165,50,14
+    EDITTEXT        IDC_TO_FIND,16,143,75,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "查找",IDC_FIND,104,143,43,14
+END
+
+IDD_TASK_ID_SEL DIALOGEX 0, 0, 165, 160
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "任务模板选择"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tree1",IDC_TREE_TASK,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,2,5,161,131
+    DEFPUSHBUTTON   "确定",IDOK,16,141,50,14,WS_DISABLED
+    PUSHBUTTON      "取消",IDCANCEL,98,141,50,14
+END
+
+IDD_ITEMS_WANTED DIALOG DISCARDABLE  0, 0, 304, 198
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择物品"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "添加",IDC_ADD,7,179,50,14
+    PUSHBUTTON      "删除",IDC_DEL,66,179,50,14
+    CONTROL         "List3",IDC_ITEMS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,7,289,152
+    PUSHBUTTON      "编辑数目",IDC_EDIT_NUM,125,179,50,14
+    PUSHBUTTON      "编辑概率",IDC_PROB,184,179,50,14
+    CONTROL         "随机选择单个物品发放",IDC_RAND_ONE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,164,96,10
+    LTEXT           "概率总计：",IDC_STATIC,120,164,41,8
+    EDITTEXT        IDC_TOTAL_PROB,166,160,60,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "编辑时间",IDC_PERIOD,244,179,53,14
+END
+
+IDD_NUMBER DIALOG DISCARDABLE  0, 0, 145, 67
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "输入整数"
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "输入整数：",IDC_STATIC,13,18,41,8
+    EDITTEXT        IDC_NUM,58,14,65,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "确定",IDOK,16,44,50,14
+    PUSHBUTTON      "取消",IDCANCEL,80,44,50,14
+END
+
+IDD_TEAM_INFO DIALOG DISCARDABLE  0, 0, 386, 245
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "组队信息"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,111,218,50,14
+    PUSHBUTTON      "取消",IDCANCEL,223,218,50,14
+    CONTROL         "必须组队（且需队长）接收",IDC_TEAM_RCV,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,8,112,10
+    CONTROL         "新队员分享任务",IDC_SHARE_TASK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,205,8,72,10
+    CONTROL         "分享杀怪、掉落物品",IDC_SHARE_ACQUIRED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,25,88,10
+    CONTROL         "任意队员失败则全队失败",IDC_ALL_FAIL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,205,25,104,10
+    CONTROL         "队长失败则全队失败",IDC_CAPTAIN_FAIL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,205,42,88,10
+    CONTROL         "队员离队则自身任务失败",IDC_DISMISS_SELF_FAIL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,205,59,104,10
+    LTEXT           "成员要求：",IDC_STATIC,12,109,41,8
+    CONTROL         "List1",IDC_MEM_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,12,122,316,89
+    PUSHBUTTON      "添加",IDC_ADD,338,137,36,14
+    PUSHBUTTON      "删除",IDC_DELETE,338,158,36,14
+    PUSHBUTTON      "修改",IDC_EDIT,338,179,36,14
+    CONTROL         "分享杀怪、物品时检查队友距离",IDC_CHECK_TEAMMATE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,42,128,10
+    EDITTEXT        IDC_DIST,148,38,38,14,ES_AUTOHSCROLL
+    CONTROL         "接收任务时检查队友距离",IDC_RCV_CHCK_MEM,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,59,104,10
+    CONTROL         "杀怪时检查队友距离",IDC_CNT_BY_MEM,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,76,88,10
+    EDITTEXT        IDC_RCV_MEM_DIST,148,56,38,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_CNT_BY_MEM_DIST,148,74,38,14,ES_AUTOHSCROLL
+    CONTROL         "队长成功则全队成功,队员距离",IDC_CAP_SUCCESS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,205,76,124,10
+    EDITTEXT        IDC_SUCCESS_DIST,334,74,38,14,ES_AUTOHSCROLL
+    CONTROL         "任意队员完成，则全队完成",IDC_ALL_SUCCESS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,205,92,112,10
+    CONTROL         "队员必须为队长配偶",IDC_COUPLE_ONLY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,91,88,10
+    CONTROL         "队伍中不能有相同的职业",IDC_DISTINGUISHED_OCC,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,205,107,104,10
+END
+
+IDD_MEM_INFO DIALOG DISCARDABLE  0, 0, 153, 263
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "队员属性"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,51,242,50,14
+    LTEXT           "职业：",IDC_STATIC,15,30,25,8
+    COMBOBOX        IDC_OCCUPATION,60,25,59,90,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "性别：",IDC_STATIC,15,50,25,8
+    COMBOBOX        IDC_GENDER,60,44,59,61,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "最低级别：",IDC_STATIC,15,70,41,8
+    EDITTEXT        IDC_LEV_MIN,60,64,59,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "最高级别：",IDC_STATIC,15,90,41,8
+    EDITTEXT        IDC_LEV_MAX,60,85,59,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "最少人数：",IDC_STATIC,15,110,41,8
+    EDITTEXT        IDC_MEM_MIN,60,106,59,14,ES_AUTOHSCROLL
+    LTEXT           "最大人数：",IDC_STATIC,15,130,41,8
+    EDITTEXT        IDC_MEM_MAX,60,127,59,14,ES_AUTOHSCROLL
+    LTEXT           "队员任务：",IDC_STATIC,15,150,41,8
+    EDITTEXT        IDC_MEM_TASK,60,147,59,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_SEL_MEM_TASK,123,147,15,14
+    LTEXT           "种族：",IDC_STATIC,15,10,25,8
+    COMBOBOX        IDC_RACE,60,6,59,90,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "所需物品：",IDC_STATIC,15,175,41,8,NOT WS_VISIBLE | 
+                    WS_DISABLED
+    COMBOBOX        IDC_ITEMS,60,172,59,61,CBS_DROPDOWNLIST | CBS_SORT | NOT 
+                    WS_VISIBLE | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "队员道具仅校验，不收取",IDC_JUST_CHECK,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_DISABLED | 
+                    WS_TABSTOP,16,196,107,10
+    PUSHBUTTON      "...",IDC_SELECT_ITEMS,123,172,16,14
+    COMBOBOX        IDC_TEAM_FORCE,60,216,59,61,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "所属势力：",IDC_STATIC,16,218,41,8
+END
+
+IDD_TIMETABLE DIALOG DISCARDABLE  0, 0, 312, 128
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "时间段"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDOK,276,79,33,14
+    CONTROL         "List1",IDC_TIMETALBE,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,4,7,266,113
+    PUSHBUTTON      "增加",IDC_ADD,276,33,33,14
+    PUSHBUTTON      "删除",IDC_DEL,276,56,33,14
+END
+
+IDD_TIMESPAN DIALOG DISCARDABLE  0, 0, 231, 311
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "时间段"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "具体时间段",IDC_TYPE_1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,12,24,56,10
+    CONTROL         "每月时间段",IDC_TYPE_2,"Button",BS_AUTORADIOBUTTON,12,
+                    134,56,10
+    CONTROL         "每周时间段",IDC_TYPE_3,"Button",BS_AUTORADIOBUTTON,12,
+                    188,56,10
+    CONTROL         "每天时间段",IDC_TYPE_4,"Button",BS_AUTORADIOBUTTON,12,
+                    223,56,10
+    CONTROL         "每年时间段",IDC_TYPE_5,"Button",BS_AUTORADIOBUTTON,12,
+                    79,56,10
+    GROUPBOX        "",IDC_STATIC,4,1,221,54,WS_GROUP
+    GROUPBOX        "",IDC_STATIC,4,111,221,54
+    GROUPBOX        "",IDC_STATIC,4,163,221,54
+    GROUPBOX        "",IDC_STATIC,4,57,221,54
+    LTEXT           "起始时间:",IDC_STATIC,98,13,37,8
+    CONTROL         "DateTimePicker1",IDC_START_DATE,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_LONGDATEFORMAT | WS_TABSTOP,139,9,
+                    78,15
+    LTEXT           "终止时间:",IDC_STATIC,98,32,37,8
+    CONTROL         "DateTimePicker1",IDC_END_DATE,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_LONGDATEFORMAT | WS_TABSTOP,139,28,
+                    78,15
+    LTEXT           "起始时间:",IDC_STATIC,98,123,37,8
+    EDITTEXT        IDC_MONTH_DAY_START,139,119,23,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "(1-31)",IDC_STATIC,165,122,25,8
+    LTEXT           "终止时间:",IDC_STATIC,98,142,37,8
+    EDITTEXT        IDC_MONTH_DAY_END,139,139,23,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "(1-31)",IDC_STATIC,165,142,25,8
+    LTEXT           "起始时间:",IDC_STATIC,98,179,37,8
+    EDITTEXT        IDC_WEEK_DAY_START,139,176,23,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "(1-7)",IDC_STATIC,165,179,21,8
+    LTEXT           "终止时间:",IDC_STATIC,98,199,37,8
+    EDITTEXT        IDC_WEEK_DAY_END,139,196,23,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "(1-7)",IDC_STATIC,165,199,21,8
+    LTEXT           "起始时刻",IDC_STATIC,12,244,33,8
+    EDITTEXT        IDC_START_HOUR,74,241,22,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "时",IDC_STATIC,103,245,9,8
+    LTEXT           ":",IDC_STATIC,115,245,8,8
+    EDITTEXT        IDC_START_MIN,127,241,22,14,ES_AUTOHSCROLL
+    LTEXT           "分",IDC_STATIC,155,245,9,8
+    LTEXT           "终止时刻",IDC_STATIC,12,263,33,8
+    EDITTEXT        IDC_END_HOUR,74,261,22,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "时",IDC_STATIC,103,263,9,8
+    LTEXT           ":",IDC_STATIC,115,263,8,8
+    EDITTEXT        IDC_END_MIN,127,261,22,14,ES_AUTOHSCROLL
+    LTEXT           "分",IDC_STATIC,155,263,9,8
+    DEFPUSHBUTTON   "确定",IDOK,46,282,50,14
+    PUSHBUTTON      "取消",IDCANCEL,134,282,50,14
+    LTEXT           "起始时间:",IDC_STATIC,98,69,37,8
+    EDITTEXT        IDC_YEAR_START_MONTH,139,65,23,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "月",IDC_STATIC,165,68,9,8
+    LTEXT           "终止时间:",IDC_STATIC,98,87,37,8
+    EDITTEXT        IDC_YEAR_END_MONTH,139,85,23,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "月",IDC_STATIC,165,88,9,8
+    EDITTEXT        IDC_YEAR_START_DAY,179,65,23,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "日",IDC_STATIC,206,68,9,8
+    EDITTEXT        IDC_YEAR_END_DAY,179,85,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "日",IDC_STATIC,206,88,9,8
+END
+
+IDD_OCCUPATION DIALOG DISCARDABLE  0, 0, 187, 102
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "职业选择"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDOK,85,60,30,14
+    CONTROL         "List1",IDC_OCCUPATIONS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,8,4,70,86
+    PUSHBUTTON      "增加",IDC_ADD,85,18,30,14
+    PUSHBUTTON      "删除",IDC_DEL,85,39,30,14
+    COMBOBOX        IDC_OCCUPATION,121,18,59,207,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_AWARD DIALOG DISCARDABLE  0, 0, 361, 530
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "奖励内容"
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "金钱：",IDC_STATIC,11,12,25,8
+    EDITTEXT        IDC_GOLD_NUM,66,10,60,14,ES_AUTOHSCROLL | ES_NUMBER | 
+                    WS_GROUP
+    LTEXT           "经验：",IDC_STATIC,11,34,25,8
+    EDITTEXT        IDC_EXP_NUM,66,32,60,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "SP：",IDC_STATIC,11,56,17,8
+    EDITTEXT        IDC_SP_NUM,66,54,60,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "声望：",IDC_STATIC,11,124,25,8
+    EDITTEXT        IDC_REPU_NUM,53,122,60,14,ES_AUTOHSCROLL
+    LTEXT           "物品：",IDC_STATIC,11,168,25,8
+    PUSHBUTTON      "编辑",IDC_EDIT_ITEMS_WANTED,53,164,26,14
+    LTEXT           "开启任务：",IDC_STATIC,11,190,41,8
+    EDITTEXT        IDC_NEW_TASK,53,186,74,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    WS_GROUP
+    PUSHBUTTON      "...",IDC_SEL_NEW_TASK,133,187,17,14
+    DEFPUSHBUTTON   "关闭",IDOK,154,509,50,14
+    LTEXT           "修真阶段：",IDC_STATIC,11,146,41,8
+    COMBOBOX        IDC_PERIOD,53,144,60,111,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "开启驿站：",IDC_STATIC,11,211,41,8
+    EDITTEXT        IDC_STATION,53,208,60,14,ES_AUTOHSCROLL
+    LTEXT           "设置仓库大小：",IDC_STATIC,11,232,57,8
+    EDITTEXT        IDC_STOREHOUSE,73,228,40,14,ES_AUTOHSCROLL
+    LTEXT           "设置怒气值上限：",IDC_STATIC,11,254,65,8
+    EDITTEXT        IDC_FURY,83,251,30,14,ES_AUTOHSCROLL
+    LTEXT           "传送到，世界ID：",IDC_STATIC,11,274,65,8
+    EDITTEXT        IDC_TRANS_WLD,83,272,30,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_TRANS_PT,147,270,17,14
+    LTEXT           "坐标：",IDC_STATIC,121,274,25,8
+    LTEXT           "宠物栏大小：",IDC_STATIC,11,313,49,8
+    EDITTEXT        IDC_PET_NUM,66,311,30,14,ES_AUTOHSCROLL
+    LTEXT           "怪物控制器：",IDC_STATIC,11,293,49,8
+    EDITTEXT        IDC_CONTROLLER,66,291,30,14,ES_AUTOHSCROLL
+    CONTROL         "是否触发",IDC_TRIG_CTRL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,102,292,48,10
+    LTEXT           "包裹栏大小：",IDC_STATIC,11,334,49,8
+    EDITTEXT        IDC_INVENTORY,66,331,30,14,ES_AUTOHSCROLL
+    CONTROL         "使用等级系数（仅用于经验，SP）",IDC_USE_LEV_CO,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,106,136,10
+    CONTROL         "离婚",IDC_DIVORCE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    11,350,32,10
+    CONTROL         "广播消息",IDC_SEND_MSG,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,368,48,10
+    COMBOBOX        IDC_MSG_CHANNEL,62,367,48,71,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "设置时装仓库大小：",IDC_STATIC,201,11,73,8
+    EDITTEXT        IDC_STOREHOUSE2,283,7,40,14,ES_AUTOHSCROLL
+    LTEXT           "设置材料仓库大小：",IDC_STATIC,201,30,73,8
+    EDITTEXT        IDC_STOREHOUSE3,283,28,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_AWARD_CHANGE_VALUE,283,67,17,14
+    LTEXT           "改变全局变量：",IDC_STATIC,201,70,57,8
+    CONTROL         "倍率：",IDC_AWARD_NEED_MULTI,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,201,193,40,10
+    COMBOBOX        IDC_AWARD_NUM_TYPE,241,191,37,111,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_AWARD_NUM_VAL,283,191,40,14,ES_AUTOHSCROLL
+    LTEXT           "显示全局变量：",IDC_STATIC,201,177,57,8
+    PUSHBUTTON      "...",IDC_AWARD_DISPLAY_VALUE,283,173,17,14,WS_DISABLED
+    LTEXT           "怪物召唤：",IDC_STATIC,202,213,41,8
+    PUSHBUTTON      "编辑",IDC_AWARD_SUMMON_MONSTER,246,210,25,14
+    CONTROL         "奖励死亡：",IDC_AWARD_DEATH,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,201,232,56,10
+    COMBOBOX        IDC_AWARD_DEATH_TYPE,258,230,66,111,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "任务ID：",IDC_STATIC,213,267,33,8
+    GROUPBOX        "指定任务贡献度",IDC_STATIC,200,249,126,85
+    EDITTEXT        IDC_PQ_SPECIFY_TASKID,253,264,59,14,ES_AUTOHSCROLL
+    LTEXT           "贡献度：",IDC_STATIC,213,312,33,8
+    EDITTEXT        IDC_PQ_SPECIFY_TASK_CONTRIB,254,310,59,14,ES_AUTOHSCROLL
+    GROUPBOX        "PQ子任务奖励",IDC_STATIC,199,338,127,98
+    LTEXT           "贡献度：",IDC_STATIC,209,356,33,8
+    EDITTEXT        IDC_PQ_CONTRIB,265,352,54,14,ES_AUTOHSCROLL
+    LTEXT           "随机贡献度：",IDC_STATIC,209,374,53,8
+    EDITTEXT        IDC_PQ_RANDOM_CONTRIB,266,370,53,14,ES_AUTOHSCROLL
+    LTEXT           "最低贡献度：",IDC_STATIC,208,393,49,8
+    EDITTEXT        IDC_PQ_LOWEST_CONTRIB,266,389,53,14,ES_AUTOHSCROLL
+    LTEXT           "排名奖励：",IDC_STATIC,208,415,41,8
+    PUSHBUTTON      "编辑",IDC_PQ_RANKING,265,411,32,14
+    LTEXT           "设置账号仓库大小：",IDC_STATIC,202,51,73,8
+    EDITTEXT        IDC_STOREHOUSE4,284,49,40,14,ES_AUTOHSCROLL
+    LTEXT           "鸿利值：",IDC_STATIC,11,390,33,8
+    EDITTEXT        IDC_DIVIDEND,59,387,58,14,ES_AUTOHSCROLL
+    LTEXT           "子任务ID：",IDC_STATIC,212,290,41,8
+    EDITTEXT        IDC_PQ_SPECIFY_SUBTASKID,254,286,58,14,ES_AUTOHSCROLL
+    CONTROL         "发放技能",IDC_AWARD_DELIVERYSKILL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,12,442,48,10
+    LTEXT           "技能ID：",IDC_STATIC,76,443,33,8
+    LTEXT           "技能等级：",IDC_STATIC,174,444,41,8
+    EDITTEXT        IDC_AWARDSKILLID,117,441,47,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_AWARDSKILLLEVEL,222,441,40,14,ES_AUTOHSCROLL
+    LTEXT           "帮派贡献度：",IDC_STATIC,11,76,49,8
+    EDITTEXT        IDC_AW_FACTION_CONTRIB,66,74,60,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "帮派经验：",IDC_STATIC,11,92,41,8
+    EDITTEXT        IDC_AW_FACTION_EXP_CONTRIB,66,90,60,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "势力活跃度：",IDC_STATIC,201,96,49,8
+    EDITTEXT        IDC_FORCE_ACTIVITY,284,92,40,14,ES_AUTOHSCROLL
+    LTEXT           "战功：",IDC_STATIC,201,112,25,8
+    EDITTEXT        IDC_FORCE_CONTRIB,284,108,40,14,ES_AUTOHSCROLL
+    LTEXT           "声望：",IDC_STATIC,201,130,25,8
+    EDITTEXT        IDC_FORCE_REPU,284,126,40,14,ES_AUTOHSCROLL
+    GROUPBOX        "势力相关：",IDC_STATIC,193,82,140,85
+    LTEXT           "设置声望：",IDC_STATIC,201,148,41,8
+    EDITTEXT        IDC_FORCE_SET_REPU,284,144,40,14,ES_AUTOHSCROLL
+    CONTROL         "将任务上限扩充到30个",IDC_30_TASKLIMIT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,407,96,10
+    LTEXT           "发放称号：",IDC_STATIC,13,424,41,8
+    PUSHBUTTON      "...",IDC_AWARD_TITLE,86,421,17,14
+    LTEXT           "修正进度标识",IDC_STATIC,15,465,49,8
+    PUSHBUTTON      "...",IDC_BTN_EDITHISTORYVAR,72,462,20,14
+    LTEXT           "境界经验值：",IDC_STATIC,133,463,49,8
+    EDITTEXT        IDC_REINCARNATIONLEVEL_EXP,185,461,47,14,ES_AUTOHSCROLL
+    CONTROL         "整10级境界突破",IDC_AWARD_EXPAND_REALMLEVEL_MAX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,245,463,72,10
+    LTEXT           "增加统御值：",IDC_STATIC,15,486,49,8
+    EDITTEXT        IDC_LEADERSHIP,68,483,40,14,ES_AUTOHSCROLL
+    LTEXT           "活跃值：",IDC_STATIC,121,487,33,8
+    EDITTEXT        IDC_AWARD_WORLD_CONTRIB,174,484,40,14,ES_AUTOHSCROLL
+END
+
+IDD_AWARD_BY_RATIO DIALOG DISCARDABLE  0, 0, 150, 115
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "按完成时间比例"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDOK,84,90,60,14
+    CONTROL         "List1",IDC_AWARD,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,3,5,72,104
+    PUSHBUTTON      "增加",IDC_ADD,84,10,60,14
+    PUSHBUTTON      "删除",IDC_DEL,84,30,60,14
+    PUSHBUTTON      "编辑比例",IDC_EDIT_RATIO,84,50,60,14
+    PUSHBUTTON      "编辑奖励内容",IDC_EDIT_AWARD,84,70,60,14
+END
+
+IDD_AWARD_BY_ITEMS DIALOG DISCARDABLE  0, 0, 150, 138
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "按任务物品数量"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDOK,84,111,60,14
+    CONTROL         "List1",IDC_AWARD,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,3,26,72,104
+    PUSHBUTTON      "增加",IDC_ADD,84,31,60,14
+    PUSHBUTTON      "删除",IDC_DEL,84,51,60,14
+    PUSHBUTTON      "编辑物品数量",IDC_EDIT_NUM,84,71,60,14
+    PUSHBUTTON      "编辑奖励内容",IDC_EDIT_AWARD,84,91,60,14
+    LTEXT           "任务物品：",IDC_STATIC,3,8,41,8
+    EDITTEXT        IDC_ITEM,49,5,74,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_EDIT_ITEM,129,5,15,14
+END
+
+IDD_TALK_DIALOG DIALOG DISCARDABLE  0, 0, 327, 305
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "对话编辑"
+FONT 9, "宋体"
+BEGIN
+    EDITTEXT        IDC_EDIT_TALK_NAME,62,5,155,15,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_TALK_ID,62,25,155,15,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "运行测试",IDC_BUTTON_TALK_TEST,252,15,60,15
+    PUSHBUTTON      "删除",IDC_BUTTON_DELETE_ITEM,14,62,61,12
+    PUSHBUTTON      "向上移",IDC_BUTTON_MOVE_ITEM_UP,79,62,61,12
+    PUSHBUTTON      "向下移",IDC_BUTTON_MOVE_ITEM_DOWN,144,62,61,12
+    CONTROL         "Tree1",IDC_TREE_TALK,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,14,83,300,191
+    PUSHBUTTON      "取消",IDCANCEL,7,284,50,14
+    PUSHBUTTON      "确定",IDOK,270,284,50,14
+    GROUPBOX        "对话内容",IDC_STATIC,7,47,313,232
+    LTEXT           "对话的名字:",IDC_STATIC,15,10,45,8
+    LTEXT           "对话的ID:",IDC_STATIC,15,30,45,8
+END
+
+IDD_DIALOG_CREATE_WINDOW DIALOG DISCARDABLE  0, 0, 414, 339
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "创建窗口"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "窗口",IDC_RADIO_TALK_TYPE1,"Button",BS_AUTORADIOBUTTON,
+                    23,24,47,8
+    CONTROL         "功能",IDC_RADIO_TALK_TYPE2,"Button",BS_AUTORADIOBUTTON,
+                    92,24,47,8
+    EDITTEXT        IDC_EDIT_NAME,58,49,131,12,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    EDITTEXT        IDC_EDIT_COMMAND_NAME,14,95,173,102,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    EDITTEXT        IDC_EDIT_WINDOW_ID,256,60,94,12,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_WINDOW_DESC,218,95,184,101,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    COMBOBOX        IDC_COMBO_SERVICE,74,234,148,94,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_SERVICE_LINK,74,265,95,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "...",IDC_BUTTON_SERVICE_LINK,180,264,28,13
+    PUSHBUTTON      "放弃",IDCANCEL,7,318,50,14
+    PUSHBUTTON      "确定",IDOK,357,318,50,14
+    GROUPBOX        "窗口",IDC_STATIC_WINDOW,211,45,196,158,WS_TABSTOP
+    GROUPBOX        "功能",IDC_STATIC_SERVICE,7,215,400,97,WS_TABSTOP
+    GROUPBOX        "类型选择",IDC_STATIC,7,7,400,33,WS_TABSTOP
+    LTEXT           "对象名字:",IDC_STATIC,11,51,37,8,NOT WS_VISIBLE | NOT 
+                    WS_GROUP | WS_TABSTOP
+    LTEXT           "描述文字:",IDC_STATIC_DESC,218,82,37,8,NOT WS_GROUP | 
+                    WS_TABSTOP
+    LTEXT           "功能选择：",IDC_STATIC_SERVICE_TYPE,14,237,41,8,NOT 
+                    WS_GROUP | WS_TABSTOP
+    LTEXT           "窗口ID:",IDC_STATIC_ID,218,62,29,8,NOT WS_GROUP | 
+                    WS_TABSTOP
+    LTEXT           "功能相关模板：",IDC_STATIC_SERVICE_TYPE2,13,268,57,8,
+                    NOT WS_GROUP | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SERVICE_PARAMS,74,287,96,76,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "功能相关参数：",IDC_STATIC_SERVICE_PARAMS,13,290,57,8,
+                    NOT WS_GROUP | WS_TABSTOP
+    CONTROL         "弹出窗口",IDC_RADIO_TALK_TYPE3,"Button",
+                    BS_AUTORADIOBUTTON,161,24,47,8
+    GROUPBOX        "选项提示文字",IDC_STATIC_WINDOW2,7,72,189,131,
+                    WS_TABSTOP
+END
+
+IDD_NEW_TALK_FILE DIALOG DISCARDABLE  0, 0, 214, 67
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "新建立一个对话"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "创建",IDOK,157,46,50,14
+    PUSHBUTTON      "取消",IDCANCEL,7,46,50,14
+    LTEXT           "对话名字：",IDC_STATIC,7,21,41,8
+    EDITTEXT        IDC_EDIT1,59,18,136,13,ES_AUTOHSCROLL
+END
+
+IDD_ITEMS_CAND DIALOG DISCARDABLE  0, 0, 155, 144
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "候选物品"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDOK,97,86,50,14
+    CONTROL         "List1",IDC_ITEMS_CAND,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,2,4,89,131
+    PUSHBUTTON      "增加",IDC_ADD,97,11,50,14
+    PUSHBUTTON      "删除",IDC_DEL,97,36,50,14
+    PUSHBUTTON      "编辑",IDC_EDIT,97,61,50,14
+END
+
+IDD_FLOAT DIALOG DISCARDABLE  0, 0, 145, 67
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "输入浮点数"
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "输入浮点数：",IDC_STATIC,13,18,49,8
+    EDITTEXT        IDC_NUM,69,14,56,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "确定",IDOK,16,44,50,14
+    PUSHBUTTON      "取消",IDCANCEL,80,44,50,14
+END
+
+IDD_VECTOR DIALOG DISCARDABLE  0, 0, 127, 101
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "输入坐标"
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "x:",IDC_STATIC,16,14,9,8
+    EDITTEXT        IDC_X,40,11,70,14,ES_AUTOHSCROLL
+    LTEXT           "y:",IDC_STATIC,16,34,9,8
+    EDITTEXT        IDC_Y,40,31,70,14,ES_AUTOHSCROLL
+    LTEXT           "z:",IDC_STATIC,16,54,9,8
+    EDITTEXT        IDC_Z,40,51,70,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "确定",IDOK,14,79,39,14
+    PUSHBUTTON      "取消",IDCANCEL,74,79,39,14
+END
+
+IDD_PRETASK DIALOG DISCARDABLE  0, 0, 207, 141
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "前提任务"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDOK,156,113,45,13
+    CONTROL         "List1",IDC_PRETASK,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,4,3,198,92
+    PUSHBUTTON      "增加",IDC_ADD,6,113,45,13
+    PUSHBUTTON      "删除",IDC_DEL,56,113,45,13
+    PUSHBUTTON      "修改",IDC_EDIT,106,113,45,13
+    EDITTEXT        IDC_LEAST_PREM_TASK_NUM,110,97,81,12,ES_AUTOHSCROLL
+    LTEXT           "至少需要完成的任务数：",IDC_STATIC,17,100,88,14
+END
+
+IDD_FIND_TASK DIALOG DISCARDABLE  0, 0, 161, 49
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "查找任务"
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "查找：",IDC_STATIC,13,9,25,8
+    EDITTEXT        IDC_TASK,46,6,102,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "确定",IDOK,21,28,50,14
+    PUSHBUTTON      "取消",IDCANCEL,90,28,50,14
+END
+
+IDD_VERIFY DIALOG DISCARDABLE  0, 0, 317, 176
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "查错"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDOK,263,157,50,14
+    LTEXT           "错误提示：",IDC_DESCRIPT,5,4,308,8
+    CONTROL         "List1",IDC_REPORT,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,5,15,308,137
+    PUSHBUTTON      "无发放对话",IDC_NO_DELIVER_TALK,5,157,50,14
+    PUSHBUTTON      "重复杀怪",IDC_DUP_MONSTER,66,157,50,14
+    PUSHBUTTON      "NPC不匹配",IDC_WRONG_NPC,127,157,50,14
+END
+
+IDD_TASK_CLASS_FORM DIALOGEX 0, 0, 480, 340
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "任务属性"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    LTEXT           "任务名称：",IDC_STATIC,8,12,41,8
+    EDITTEXT        IDC_TASK_NAME,64,9,115,14,ES_AUTOHSCROLL
+    LTEXT           "",IDC_TASK_ID,188,12,67,8
+    LTEXT           "等级条件：",IDC_STATIC,8,32,41,8
+    LTEXT           "下限",IDC_STATIC,64,32,17,8
+    EDITTEXT        IDC_LEVEL_MIN,86,29,26,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "上限",IDC_STATIC,121,32,17,8
+    EDITTEXT        IDC_LEVEL_MAX,146,29,26,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "推荐级别：",IDC_STATIC,183,32,41,8
+    EDITTEXT        IDC_SUIT_LEVEL,231,29,31,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "杀怪：",IDC_STATIC,8,52,25,8
+    PUSHBUTTON      "编辑",IDC_SEL_MONSTER,64,49,26,14
+    LTEXT           "收集物品：",IDC_STATIC,7,72,41,8
+    PUSHBUTTON      "编辑",IDC_EDIT_ITEMS_WANTED,64,69,26,14
+    LTEXT           "限制时间：",IDC_STATIC,7,92,41,8
+    EDITTEXT        IDC_TIME_LIMIT,64,89,48,14,ES_AUTOHSCROLL
+    LTEXT           "（秒）",IDC_STATIC,118,92,25,8
+    LTEXT           "接收任务NPC对话：",IDC_STATIC,8,166,69,8
+    EDITTEXT        IDC_DELV_NPC_TEXT,101,151,368,37,ES_MULTILINE | 
+                    WS_VSCROLL
+    LTEXT           "接收任务玩家接受对话：",IDC_STATIC,8,196,89,8
+    EDITTEXT        IDC_DELV_YES_TEXT,101,193,368,13,ES_AUTOHSCROLL
+    LTEXT           "接收任务玩家拒绝对话：",IDC_STATIC,8,214,89,8
+    EDITTEXT        IDC_DELV_NO_TEXT,101,211,368,13,ES_AUTOHSCROLL
+    LTEXT           "已接收未完成NPC对话：",IDC_STATIC,8,232,85,8
+    EDITTEXT        IDC_UNFINISHED_NPC_TEXT,101,229,368,13,ES_AUTOHSCROLL
+    LTEXT           "已接收未完成玩家对话：",IDC_STATIC,8,250,89,8
+    EDITTEXT        IDC_UNFINISHED_PLAYER_TEXT,101,247,368,13,ES_AUTOHSCROLL
+    LTEXT           "完成任务NPC对话：",IDC_STATIC,8,268,69,8
+    EDITTEXT        IDC_FINISH_NPC_TEXT,101,265,368,13,ES_AUTOHSCROLL
+    LTEXT           "完成任务玩家对话：",IDC_STATIC,8,286,73,8
+    EDITTEXT        IDC_FINISH_PLAYER_TEXT,101,283,368,13,ES_AUTOHSCROLL
+    LTEXT           "任务描述：",IDC_STATIC,8,304,41,8
+    EDITTEXT        IDC_DESCRIPT,101,301,368,33,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    LTEXT           "任务奖励：",IDC_STATIC,7,112,41,8
+    PUSHBUTTON      "编辑",IDC_AWARD,64,109,26,14
+    LTEXT           "发放任务NPC：",IDC_STATIC,7,133,53,8
+    EDITTEXT        IDC_DELV_NPC,64,130,64,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_SEL_DELV_NPC,133,130,15,14
+    LTEXT           "回收任务NPC：",IDC_STATIC,157,133,53,8
+    EDITTEXT        IDC_AWARD_NPC,211,130,64,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_SEL_AWARD_NPC,280,130,15,14
+    LTEXT           "发放物品：",IDC_STATIC,108,72,41,8
+    PUSHBUTTON      "编辑",IDC_EDIT_GIVEN_ITEMS,153,69,26,14
+    LTEXT           "前提任务：",IDC_STATIC,306,133,41,8
+    EDITTEXT        IDC_PRE_TASK,350,130,52,14,ES_AUTOHSCROLL | ES_READONLY
+    COMBOBOX        IDC_TYPE,304,9,59,117,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "类型：",IDC_STATIC,277,12,25,8
+    CONTROL         "组队任务",IDC_TEAM,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,277,52,48,10
+    LTEXT           "特殊运营活动奖励号：",IDC_STATIC,277,32,81,8
+    EDITTEXT        IDC_SPECIAL_AWARD,360,29,41,14,ES_AUTOHSCROLL
+    CONTROL         "能否被查找",IDC_SEEK_OUT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,277,90,56,10
+    COMBOBOX        IDC_PERIOD,383,48,68,107,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "修真级别：",IDC_STATIC,340,52,41,8
+    CONTROL         "自动触发",IDC_AUTO_DELIVER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,277,71,48,10
+    CONTROL         "显示方向提示",IDC_SHOW_DIRECTION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,355,90,64,10
+END
+
+IDD_MONSTER_WANTED DIALOG DISCARDABLE  0, 0, 279, 198
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择怪物"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "添加",IDC_ADD,26,179,50,14
+    PUSHBUTTON      "删除",IDC_DEL,85,179,50,14
+    CONTROL         "List3",IDC_MONSTERS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,5,5,268,164
+    PUSHBUTTON      "编辑",IDC_EDIT_MONSTER,144,179,50,14
+    PUSHBUTTON      "关闭",IDOK,203,179,50,14
+END
+
+IDD_MONSTER DIALOG DISCARDABLE  0, 0, 139, 200
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "杀怪属性"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,12,163,50,14
+    PUSHBUTTON      "取消",IDCANCEL,76,163,50,14
+    LTEXT           "怪物：",IDC_STATIC,9,14,25,8
+    EDITTEXT        IDC_MONSTER,51,10,58,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_SEL_MONSTER,114,10,16,14
+    LTEXT           "怪物数量：",IDC_STATIC,9,32,41,8
+    EDITTEXT        IDC_MONSTER_NUM,51,28,58,14,ES_AUTOHSCROLL
+    LTEXT           "掉落物品：",IDC_STATIC,9,50,41,8
+    EDITTEXT        IDC_DROP_ITEM,51,46,58,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "掉落数量：",IDC_STATIC,9,68,41,8
+    LTEXT           "掉落概率：",IDC_STATIC,9,86,41,8
+    EDITTEXT        IDC_DROP_NUM,51,64,58,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DROP_PROB,51,82,58,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_SEL_ITEM,114,46,16,14
+    CONTROL         "玩家等级限制",IDC_PLAYER_LEV,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,9,103,64,10
+    LTEXT           "DPS：",IDC_STATIC,9,121,21,8
+    LTEXT           "DPH：",IDC_STATIC,9,138,21,8
+    EDITTEXT        IDC_DPH,53,138,58,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DPS,53,121,58,14,ES_AUTOHSCROLL
+END
+
+IDD_TASK_LINK DIALOG DISCARDABLE  0, 0, 196, 279
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "任务链设置"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDOK,142,257,50,14
+    CONTROL         "Tree1",IDC_TASK_LINK,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_TABSTOP,
+                    3,4,189,228
+    PUSHBUTTON      "新建",IDC_NEW_LINK,142,237,50,14
+    LTEXT           "前提任务：",IDC_STATIC,3,242,41,8
+    EDITTEXT        IDC_PREV_NAME,48,239,67,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "后续任务：",IDC_STATIC,3,259,41,8
+    EDITTEXT        IDC_NEXT_NAME,48,257,67,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_PREV,121,238,16,14
+    PUSHBUTTON      "...",IDC_NEXT,121,257,16,14
+END
+
+IDD_PROFICIENCY DIALOG DISCARDABLE  0, 0, 158, 101
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "生产技能级别"
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "SKILL",IDC_SKILL1,21,10,62,8
+    EDITTEXT        IDC_PROFICIENCY1,93,6,40,14,ES_AUTOHSCROLL
+    LTEXT           "SKILL",IDC_SKILL2,21,28,62,8
+    EDITTEXT        IDC_PROFICIENCY2,93,24,40,14,ES_AUTOHSCROLL
+    LTEXT           "SKILL",IDC_SKILL3,21,46,62,8
+    EDITTEXT        IDC_PROFICIENCY3,93,42,40,14,ES_AUTOHSCROLL
+    LTEXT           "SKILL",IDC_SKILL4,21,64,62,8
+    EDITTEXT        IDC_PROFICIENCY4,93,60,40,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "确定",IDOK,17,81,50,14
+    PUSHBUTTON      "取消",IDCANCEL,90,81,50,14
+END
+
+IDD_AREA DIALOG DISCARDABLE  0, 0, 187, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,24,50,14
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,10,7,82,68
+END
+
+IDD_NPC_INFO DIALOG DISCARDABLE  0, 0, 219, 268
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "任务NPC信息"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定修改",ID_CHECK_IN,80,245,59,17
+    CONTROL         "List1",IDC_NPC,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,3,22,213,217
+    LTEXT           "未设置坐标NPC数：",IDC_STATIC,2,7,69,8
+    EDITTEXT        IDC_UNMATCH,77,4,27,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    ES_NUMBER
+    EDITTEXT        IDC_NPC_TO_FIND,110,4,73,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "查找",IDC_FIND_NPC,189,4,27,14
+END
+
+IDD_SET_NPC_INFO DIALOG DISCARDABLE  0, 0, 117, 107
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置NPC信息"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,33,88,50,14
+    LTEXT           "X:",IDC_STATIC,14,31,9,8
+    LTEXT           "Y:",IDC_STATIC,14,50,9,8
+    LTEXT           "",IDC_NAME,14,11,82,8
+    EDITTEXT        IDC_X,28,28,68,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Y,28,48,68,14,ES_AUTOHSCROLL
+    LTEXT           "Z:",IDC_STATIC,14,69,9,8
+    EDITTEXT        IDC_Z,28,68,68,14,ES_AUTOHSCROLL
+END
+
+IDD_WEEK_SEL DIALOG DISCARDABLE  0, 0, 123, 115
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,57,39,50,14
+    PUSHBUTTON      "取消",IDCANCEL,57,61,50,14
+    CONTROL         "星期一",IDC_WEEK_1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,8,8,40,10
+    CONTROL         "星期二",IDC_WEEK_2,"Button",BS_AUTORADIOBUTTON,8,23,40,
+                    10
+    CONTROL         "星期三",IDC_WEEK_3,"Button",BS_AUTORADIOBUTTON,8,38,40,
+                    10
+    CONTROL         "星期四",IDC_WEEK_4,"Button",BS_AUTORADIOBUTTON,8,53,40,
+                    10
+    CONTROL         "星期五",IDC_WEEK_5,"Button",BS_AUTORADIOBUTTON,8,68,40,
+                    10
+    CONTROL         "星期六",IDC_WEEK_6,"Button",BS_AUTORADIOBUTTON,8,83,40,
+                    10
+    CONTROL         "星期天",IDC_WEEK_7,"Button",BS_AUTORADIOBUTTON,8,98,40,
+                    10
+END
+
+IDD_DATE_TYPE DIALOG DISCARDABLE  0, 0, 134, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "时间类型"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,72,25,50,14
+    PUSHBUTTON      "取消",IDCANCEL,72,53,50,14
+    CONTROL         "具体时间段",IDC_DATE_TYPE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,10,14,56,10
+    CONTROL         "每月时间段",IDC_MONTH_TYPE,"Button",BS_AUTORADIOBUTTON,
+                    10,32,56,10
+    CONTROL         "每周时间段",IDC_WEEK_TYPE,"Button",BS_AUTORADIOBUTTON,
+                    10,50,56,10
+    CONTROL         "每天时间段",IDC_DAY_TYPE,"Button",BS_AUTORADIOBUTTON,10,
+                    68,56,10
+END
+
+IDD_AWARD_CHANGE_VALUE DIALOG DISCARDABLE  0, 0, 267, 162
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "改变Value"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,214,103,45,20
+    PUSHBUTTON      "取消",IDCANCEL,214,131,45,20
+    PUSHBUTTON      "添加",IDC_ADD,214,21,45,13
+    PUSHBUTTON      "删除",IDC_DEL,214,49,45,13
+    CONTROL         "List3",IDC_AWARD_CHANGE_VALUE,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,7,
+                    198,147
+END
+
+IDD_AWARD_DISPLAY_VALUE DIALOG DISCARDABLE  0, 0, 300, 346
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "显示全局表达式"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "List3",IDC_AWARD_DISPLAY_VALUE,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,7,
+                    229,147
+    DEFPUSHBUTTON   "确定",IDOK,7,320,45,20
+    PUSHBUTTON      "取消",IDCANCEL,191,320,45,20
+    PUSHBUTTON      "添加",IDC_ADD,243,36,45,13
+    PUSHBUTTON      "删除",IDC_DEL,243,82,45,13
+    CONTROL         "List3",IDC_AWARD_DISPLAY_STRING,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,
+                    166,229,147
+    PUSHBUTTON      "添加",IDC_ADD2,243,195,45,13
+    PUSHBUTTON      "删除",IDC_DEL2,243,245,45,13
+END
+
+IDD_DISPLAY_GLOBAL_VALUE DIALOG DISCARDABLE  0, 0, 300, 346
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "显示全局表达式"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "List3",IDC_DISPLAY_VALUE,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,7,229,147
+    DEFPUSHBUTTON   "确定",IDOK,7,320,45,20
+    PUSHBUTTON      "取消",IDCANCEL,191,320,45,20
+    PUSHBUTTON      "添加",IDC_ADD,243,36,45,13
+    PUSHBUTTON      "删除",IDC_DEL,243,82,45,13
+    CONTROL         "List3",IDC_DISPLAY_STRING,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,166,229,147
+    PUSHBUTTON      "添加",IDC_ADD2,243,195,45,13
+    PUSHBUTTON      "删除",IDC_DEL2,243,245,45,13
+END
+
+IDD_AWARD_MONSTER_SUMMONED DIALOG DISCARDABLE  0, 0, 318, 176
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择怪物(NPC)或物品"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "添加",IDC_ADD,20,152,38,11
+    PUSHBUTTON      "删除",IDC_DEL,69,152,38,11
+    CONTROL         "List3",IDC_MONSTERS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,10,6,299,122
+    PUSHBUTTON      "编辑数目",IDC_EDIT_NUM,136,152,48,11
+    PUSHBUTTON      "编辑概率",IDC_PROB,195,152,44,11
+    CONTROL         "随机选择召唤",IDC_RAND_SEL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,12,133,62,8
+    LTEXT           "概率总计：",IDC_STATIC,235,133,42,10
+    EDITTEXT        IDC_TOTAL_PROB,279,132,28,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "编辑有效时间",IDC_PERIOD,250,152,57,11
+    LTEXT           "召唤半径",IDC_STATIC,76,133,33,8
+    EDITTEXT        IDC_RADIUS,110,131,27,12,ES_RIGHT | ES_AUTOHSCROLL
+    LTEXT           "米",IDC_STATIC,139,133,9,8
+    CONTROL         "随召唤者死亡消失",IDC_DISAPPEAR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,153,133,75,8
+END
+
+IDD_ABS_TIME DIALOG DISCARDABLE  0, 0, 206, 81
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "准确时间"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,51,60,43,14
+    PUSHBUTTON      "取消",IDCANCEL,113,60,43,14
+    CONTROL         "DateTimePicker1",IDC_ABS_DATE,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_LONGDATEFORMAT | WS_TABSTOP,13,28,
+                    78,12
+    EDITTEXT        IDC_EDIT_HOUR,101,27,27,13,ES_AUTOHSCROLL
+    LTEXT           "时",IDC_STATIC,133,29,9,8
+    EDITTEXT        IDC_EDIT_MINUTE,146,27,27,13,ES_AUTOHSCROLL
+    LTEXT           "分",IDC_STATIC,178,29,9,8
+    LTEXT           "输入一个时间：",IDC_STATIC,7,10,68,9
+END
+
+IDD_COPY_SUB_TASK DIALOG DISCARDABLE  0, 0, 321, 249
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "子任务模板选择"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,215,228,40,14
+    PUSHBUTTON      "取消",IDCANCEL,277,228,37,14
+    CONTROL         "Tree1",IDC_TREE_SUB_TASK,"SysTreeView32",WS_BORDER | 
+                    WS_TABSTOP,7,7,115,235
+    LTEXT           "",IDC_STATIC_OLD_NAME,128,19,97,11
+    LTEXT           "子任务新名字：",IDC_STATIC,128,45,57,8
+    EDITTEXT        IDC_EDIT_NEW_NAME,189,43,104,14,ES_AUTOHSCROLL
+    CONTROL         "复制此子任务",IDC_CHECK_COPY_SUB_TASK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,234,19,66,10
+END
+
+IDD_ITEMS_SELECT DIALOG DISCARDABLE  0, 0, 233, 247
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择物品"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "添加",ID_ADD,22,226,50,14
+    PUSHBUTTON      "删除",ID_DEL,81,226,50,14
+    PUSHBUTTON      "编辑数目",ID_DEL2,145,226,50,14
+    CONTROL         "List2",IDC_ITEMS,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,7,7,219,208
+END
+
+IDD_PQ_GLOBAL_VALUE DIALOG DISCARDABLE  0, 0, 366, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "PQ全局变量显示"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,245,204,50,14
+    PUSHBUTTON      "取消",IDCANCEL,309,204,50,14
+    CONTROL         "List3",IDC_PQ_DISPLAY_VALUE,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,7,7,292,186
+    PUSHBUTTON      "添加",IDC_ADD,308,40,44,14
+    PUSHBUTTON      "删除",IDC_DEL,309,80,43,14
+END
+
+IDD_PQ_SUBTASK_PROP DIALOG DISCARDABLE  0, 0, 309, 203
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "PQ子任务属性"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "List1",IDC_MONSTER_CONTRIB,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,7,19,295,135
+    CONTROL         "任务开始时清空贡献度",IDC_CLEAR_CONTRIB,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,10,162,96,10
+    PUSHBUTTON      "添加",IDC_ADD,58,178,50,14
+    PUSHBUTTON      "删除",IDC_DEL,127,178,50,14
+    PUSHBUTTON      "编辑",IDC_EDIT,200,178,50,14
+    LTEXT           "贡献度设定：",IDC_STATIC,7,7,49,8
+END
+
+IDD_PQ_AWARD_RANKING DIALOG DISCARDABLE  0, 0, 408, 277
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "排名奖励"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "List1",IDC_RANKING_LIST,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,15,13,382,220
+    CONTROL         "按职业排名发奖励",IDC_AWARD_BY_PROF,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,17,241,80,10
+    PUSHBUTTON      "添加",IDC_BUTTON_ADD,89,255,50,14
+    PUSHBUTTON      "删除",IDC_BUTTON_DEL,223,253,50,14
+    PUSHBUTTON      "编辑",IDC_BUTTON_EDIT,158,254,50,14
+END
+
+IDD_RANKING_AWARD_EDIT DIALOG DISCARDABLE  0, 0, 156, 157
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "奖励编辑"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,20,133,50,14
+    PUSHBUTTON      "取消",IDCANCEL,82,133,50,14
+    EDITTEXT        IDC_RANK_START,15,25,46,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RANK_END,92,25,45,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_AWARD_ITEM,58,50,56,14,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "排名范围",IDC_STATIC,13,12,33,8
+    LTEXT           "到",IDC_STATIC,71,29,9,8
+    LTEXT           "物品：",IDC_STATIC,15,53,25,8
+    EDITTEXT        IDC_ITEM_NUM,58,75,56,14,ES_AUTOHSCROLL
+    LTEXT           "数量：",IDC_STATIC,15,78,25,8
+    EDITTEXT        IDC_ITEM_PERIOD,57,100,56,14,ES_AUTOHSCROLL
+    LTEXT           "有效时间：",IDC_STATIC,15,104,41,8
+    PUSHBUTTON      "...",IDC_SEL_ITEM,122,50,19,14
+END
+
+IDD_TASKREGION DIALOG DISCARDABLE  0, 0, 271, 163
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "划定区域"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "关闭",IDOK,222,126,38,14
+    PUSHBUTTON      "增加",IDC_BTN_ADD,220,32,40,14
+    PUSHBUTTON      "删除",IDC_BTN_DEL,221,58,39,14
+    CONTROL         "List1",IDC_LST_REGION,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,15,15,198,130
+END
+
+IDD_REGIONPOINT DIALOG DISCARDABLE  0, 0, 260, 143
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "点坐标"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,48,110,50,14
+    PUSHBUTTON      "取消",IDCANCEL,169,109,50,14
+    LTEXT           "x:",IDC_STATIC,37,35,8,8
+    EDITTEXT        IDC_EDIT_X,54,32,40,14,ES_AUTOHSCROLL
+    LTEXT           "y:",IDC_STATIC,105,35,8,8
+    EDITTEXT        IDC_EDIT_Y,116,32,40,14,ES_AUTOHSCROLL
+    LTEXT           "z:",IDC_STATIC,166,36,8,8
+    EDITTEXT        IDC_EDIT_Z,180,32,40,14,ES_AUTOHSCROLL
+    LTEXT           "最小点:",IDC_STATIC,22,17,27,8
+    LTEXT           "x:",IDC_STATIC,35,73,8,8
+    EDITTEXT        IDC_EDIT_X2,52,70,40,14,ES_AUTOHSCROLL
+    LTEXT           "y:",IDC_STATIC,103,73,8,8
+    EDITTEXT        IDC_EDIT_Y2,114,70,40,14,ES_AUTOHSCROLL
+    LTEXT           "z:",IDC_STATIC,164,74,8,8
+    EDITTEXT        IDC_EDIT_Z2,178,70,40,14,ES_AUTOHSCROLL
+    LTEXT           "最大点:",IDC_STATIC,20,55,27,8
+END
+
+IDD_PLAYER_WANTED DIALOG DISCARDABLE  0, 0, 248, 146
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择玩家"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "List2",IDC_PLAYERS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,7,234,99
+    PUSHBUTTON      "添加",IDC_ADD,18,120,38,11
+    PUSHBUTTON      "删除",IDC_DEL,63,120,38,11
+    PUSHBUTTON      "编辑",IDC_EDIT_PLAYER,107,120,38,11
+    PUSHBUTTON      "关闭",IDOK,151,120,38,11
+END
+
+IDD_PLAYER DIALOG DISCARDABLE  0, 0, 168, 180
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "击杀条件"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,26,159,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,93,159,50,14
+    LTEXT           "玩家类别：",IDC_STATIC,14,21,42,11
+    EDITTEXT        IDC_PLAYER,58,21,44,11,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_SEL_PLAYER,117,21,28,11
+    LTEXT           "玩家数量：",IDC_STATIC,14,43,42,11
+    EDITTEXT        IDC_PLAYER_NUM,58,43,44,11,ES_AUTOHSCROLL
+    LTEXT           "掉落物品：",IDC_STATIC,13,69,42,11
+    EDITTEXT        IDC_ITEM,57,69,44,11,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_SEL_ITEM,117,69,27,11
+    LTEXT           "掉落概率：",IDC_STATIC,13,92,42,11
+    EDITTEXT        IDC_DROP_PROB,57,92,44,11,ES_AUTOHSCROLL
+    LTEXT           "掉落数量：",IDC_STATIC,13,112,42,11
+    EDITTEXT        IDC_ITEM_NUM,57,112,44,11,ES_AUTOHSCROLL
+END
+
+IDD_PLAYER_REQUIREMENT DIALOG DISCARDABLE  0, 0, 352, 206
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "条件选择"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "武侠",IDC_WUXIA,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    84,21,32,10
+    CONTROL         "剑灵",IDC_JIANLING,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,129,21,32,10
+    CONTROL         "刺客",IDC_CIKE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    173,21,32,10
+    CONTROL         "羽灵",IDC_YULING,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    219,21,32,10
+    CONTROL         "妖兽",IDC_YAOSHOU,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    268,21,32,10
+    CONTROL         "法师",IDC_FASHI,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    83,43,32,10
+    CONTROL         "魅灵",IDC_MEILING,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    129,43,32,10
+    CONTROL         "巫师",IDC_WUSHI,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    173,43,32,10
+    CONTROL         "羽芒",IDC_YUMANG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    219,43,32,10
+    CONTROL         "妖精",IDC_YAOJING,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    267,43,32,10
+    CONTROL         "华光",IDC_HUAGUANG,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,83,134,32,10
+    CONTROL         "暗隐",IDC_ANYIN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    129,134,32,10
+    CONTROL         "辉夜",IDC_HUIYE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    173,134,32,10
+    DEFPUSHBUTTON   "OK",IDOK,215,185,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,271,185,50,14
+    LTEXT           "玩家职业",IDC_STATIC,17,20,57,12
+    LTEXT           "玩家等级",IDC_STATIC,17,72,57,12
+    LTEXT           "玩家性别",IDC_STATIC,17,106,57,12
+    LTEXT           "玩家势力",IDC_STATIC,17,136,57,12
+    EDITTEXT        IDC_MINLEVEL,83,68,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAXLEVEL,147,68,40,14,ES_AUTOHSCROLL
+    CONTROL         "无",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    83,103,24,10
+    CONTROL         "男",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,134,103,24,
+                    10
+    CONTROL         "女",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,181,103,24,
+                    10
+    CONTROL         "夜影",IDC_CHK_SHADOW,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,308,21,32,10
+    CONTROL         "月仙",IDC_CHK_FAIRY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,308,42,32,10
+END
+
+IDD_PREM_TITLE DIALOG DISCARDABLE  0, 0, 291, 145
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "称号"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,218,100,50,14
+    CONTROL         "List1",IDC_LST_TITLE,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,7,198,130
+    DEFPUSHBUTTON   "增加",ID_ADD,219,21,50,14
+    DEFPUSHBUTTON   "删除",ID_DEL,219,43,50,14
+    DEFPUSHBUTTON   "编辑时间",ID_PERIOD,219,61,50,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "FileDescription", "TaskTemplEditor Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "TaskTemplEditor\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2004\0"
+            VALUE "OriginalFilename", "TaskTemplEditor.EXE\0"
+            VALUE "ProductName", "TaskTemplEditor 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO MOVEABLE PURE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_TASKTEMPLEDITOR_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 688
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 532
+    END
+
+    IDD_TASK_PROPERTY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 473
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 447
+    END
+
+    IDD_TASK_PREMISE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 473
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 529
+    END
+
+    IDD_TASK_METHOD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 473
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 390
+    END
+
+    IDD_TASK_AWARD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 473
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 333
+    END
+
+    IDD_SEL_STRING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 442
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 240
+    END
+
+    IDD_DIALOG_OPTION_VSS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 167
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 123
+    END
+
+    IDD_DIALOG_LOGO, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 181
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 46
+    END
+
+    IDD_NEW_TASK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 206
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 92
+    END
+
+    IDD_TEMPL_ID_SEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 158
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 180
+    END
+
+    IDD_TASK_ID_SEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 158
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_ITEMS_WANTED, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 297
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 191
+    END
+
+    IDD_NUMBER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 138
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 60
+    END
+
+    IDD_TEAM_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 379
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 238
+    END
+
+    IDD_MEM_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 146
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 256
+    END
+
+    IDD_TIMETABLE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 305
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 121
+    END
+
+    IDD_TIMESPAN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 224
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 304
+    END
+
+    IDD_OCCUPATION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 95
+    END
+
+    IDD_AWARD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 354
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 523
+    END
+
+    IDD_AWARD_BY_RATIO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 143
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 108
+    END
+
+    IDD_AWARD_BY_ITEMS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 143
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 131
+    END
+
+    IDD_TALK_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 320
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 298
+    END
+
+    IDD_DIALOG_CREATE_WINDOW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 407
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 332
+    END
+
+    IDD_NEW_TALK_FILE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 207
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 60
+    END
+
+    IDD_ITEMS_CAND, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 148
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 137
+    END
+
+    IDD_FLOAT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 138
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 60
+    END
+
+    IDD_VECTOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 120
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 94
+    END
+
+    IDD_PRETASK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 200
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 134
+    END
+
+    IDD_FIND_TASK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 154
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 42
+    END
+
+    IDD_VERIFY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 310
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_TASK_CLASS_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 473
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 333
+    END
+
+    IDD_MONSTER_WANTED, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 272
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 191
+    END
+
+    IDD_MONSTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 132
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_TASK_LINK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 189
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 272
+    END
+
+    IDD_PROFICIENCY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 151
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 94
+    END
+
+    IDD_AREA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_NPC_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 212
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 261
+    END
+
+    IDD_SET_NPC_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 110
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 100
+    END
+
+    IDD_WEEK_SEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 116
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 108
+    END
+
+    IDD_DATE_TYPE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 127
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_AWARD_DISPLAY_VALUE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 293
+        TOPMARGIN, 7
+    END
+
+    IDD_DISPLAY_GLOBAL_VALUE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 293
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 339
+    END
+
+    IDD_AWARD_MONSTER_SUMMONED, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 311
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_ABS_TIME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 199
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 74
+    END
+
+    IDD_COPY_SUB_TASK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 314
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 242
+    END
+
+    IDD_ITEMS_SELECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 226
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 240
+    END
+
+    IDD_PQ_GLOBAL_VALUE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+
+    IDD_PQ_SUBTASK_PROP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 196
+    END
+
+    IDD_PQ_AWARD_RANKING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 401
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 270
+    END
+
+    IDD_RANKING_AWARD_EDIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 149
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 150
+    END
+
+    IDD_TASKREGION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 264
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 156
+    END
+
+    IDD_REGIONPOINT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 136
+    END
+
+    IDD_PLAYER_WANTED, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 241
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 139
+    END
+
+    IDD_PLAYER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 161
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 173
+    END
+
+    IDD_PLAYER_REQUIREMENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 345
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 199
+    END
+
+    IDD_PREM_TITLE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 284
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 138
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR MOVEABLE PURE  16, 15
+BEGIN
+    BUTTON      ID_NEW_TASK
+    BUTTON      ID_SAVE_TASK
+    BUTTON      ID_SAVEALL
+    SEPARATOR
+    BUTTON      ID_REFRESH
+    BUTTON      ID_EXPORT
+    SEPARATOR
+    BUTTON      ID_EXPORT_DESCRIPT
+    BUTTON      ID_CLASS_MODE
+    BUTTON      ID_TASK_LINK
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDB_LISTTAG             BITMAP  MOVEABLE PURE   "res\\listtag.bmp"
+IDB_TALKLIST            BITMAP  MOVEABLE PURE   "res\\bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_MEM_INFO DLGINIT
+BEGIN
+    IDC_OCCUPATION, 0x403, 7, 0
+0xa8a3, 0xdece, 0xa9a3, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xe4ce, 0xc0cf, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xa8b7, 0xa6ca, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xd7ce, 0xa6ca, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xfdd1, 0xabbe, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xfdd1, 0xdeca, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xccb4, 0xcdbf, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xf0d3, 0xa2c3, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xf0d3, 0xe9c1, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xa3bd, 0xe9c1, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xc8f7, 0xe9c1, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xb9d2, 0xb0d3, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xc2d4, 0xc9cf, "\000" 
+    IDC_GENDER, 0x403, 7, 0
+0xa8a3, 0xdece, 0xa9a3, "\000" 
+    IDC_GENDER, 0x403, 3, 0
+0xd0c4, "\000" 
+    IDC_GENDER, 0x403, 3, 0
+0xaec5, "\000" 
+    IDC_RACE, 0x403, 7, 0
+0xa8a3, 0xdece, 0xa9a3, "\000" 
+    IDC_RACE, 0x403, 5, 0
+0xcbc8, 0xe5d7, "\000" 
+    IDC_RACE, 0x403, 5, 0
+0xfdd1, 0xe5d7, "\000" 
+    IDC_RACE, 0x403, 5, 0
+0xabcf, 0xe5d7, "\000" 
+    IDC_RACE, 0x403, 5, 0
+0xf0d3, 0xe5d7, "\000" 
+    IDC_RACE, 0x403, 5, 0
+0xe9c1, 0xe5d7, "\000" 
+    IDC_RACE, 0x403, 5, 0
+0xcaeb, 0xe5d7, "\000" 
+    IDC_TEAM_FORCE, 0x403, 7, 0
+0xa8a3, 0xdece, 0xa9a3, "\000" 
+    IDC_TEAM_FORCE, 0x403, 7, 0
+0xaabb, 0xe2b9, 0xe1bb, "\000" 
+    IDC_TEAM_FORCE, 0x403, 7, 0
+0xb5b0, 0xfed2, 0xe1bb, "\000" 
+    IDC_TEAM_FORCE, 0x403, 7, 0
+0xd4bb, 0xb9d2, 0xe1bb, "\000" 
+    IDC_TEAM_FORCE, 0x403, 9, 0
+0xcec8, 0xe2d2, 0xc6ca, 0xa6c1, "\000" 
+    0
+END
+
+IDD_TASK_PREMISE DLGINIT
+BEGIN
+    IDC_GENDER, 0x403, 3, 0
+0xdece, "\000" 
+    IDC_GENDER, 0x403, 3, 0
+0xd0c4, "\000" 
+    IDC_GENDER, 0x403, 3, 0
+0xaec5, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xfed6, 0xf9bb, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xe9c1, 0xaccf, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xcdba, 0xcfba, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xaad4, 0xa4d3, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xd5bf, 0xa4da, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xc4c2, 0xaacb, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xc9b6, 0xd9bd, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xc5bc, 0xf0c3, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xf3b4, 0xcbb3, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xcfc9, 0xc9cf, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xf1bf, 0xa7c4, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xe6d5, 0xc9cf, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xa7c4, 0xa5ca, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xeccc, 0xc9cf, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xa7c4, 0xf0d7, "\000" 
+    IDC_PREM1_COMPARE1, 0x403, 6, 0
+0x454b, 0xd659, 0x00b5, 
+    IDC_PREM1_COMPARE1, 0x403, 5, 0
+0xfdca, 0xb5d6, "\000" 
+    IDC_PREM1_COMPARE, 0x403, 5, 0
+0xf3b4, 0xdad3, "\000" 
+    IDC_PREM1_COMPARE, 0x403, 5, 0
+0xc8b5, 0xdad3, "\000" 
+    IDC_PREM1_COMPARE, 0x403, 5, 0
+0xa1d0, 0xdad3, "\000" 
+    IDC_PREM1_COMPARE2, 0x403, 6, 0
+0x454b, 0xd659, 0x00b5, 
+    IDC_PREM1_COMPARE2, 0x403, 5, 0
+0xfdca, 0xb5d6, "\000" 
+    IDC_PREM2_COMPARE1, 0x403, 6, 0
+0x454b, 0xd659, 0x00b5, 
+    IDC_PREM2_COMPARE1, 0x403, 5, 0
+0xfdca, 0xb5d6, "\000" 
+    IDC_PREM2_COMPARE, 0x403, 5, 0
+0xf3b4, 0xdad3, "\000" 
+    IDC_PREM2_COMPARE, 0x403, 5, 0
+0xc8b5, 0xdad3, "\000" 
+    IDC_PREM2_COMPARE, 0x403, 5, 0
+0xa1d0, 0xdad3, "\000" 
+    IDC_PREM2_COMPARE2, 0x403, 6, 0
+0x454b, 0xd659, 0x00b5, 
+    IDC_PREM2_COMPARE2, 0x403, 5, 0
+0xfdca, 0xb5d6, "\000" 
+    IDC_PREM_AND_OR, 0x403, 3, 0
+0xf2bb, "\000" 
+    IDC_PREM_AND_OR, 0x403, 3, 0
+0xebd3, "\000" 
+    IDC_CHAR_START_TIME, 0x403, 13, 0
+0xc7bd, 0xabc9, 0xa8bd, 0xa2c1, 0xd5c8, 0xdac6, "\000" 
+    IDC_CHAR_START_TIME, 0x403, 17, 0
+0xc7bd, 0xabc9, 0xcfc9, 0xceb4, 0xc7b5, 0xbdc2, 0xd5c8, 0xdac6, "\000" 
+    IDC_FACTION_ROLE, 0x403, 3, 0
+0xdece, "\000" 
+    IDC_FACTION_ROLE, 0x403, 9, 0
+0xe3cf, 0xf7d6, 0xd4d2, 0xcfc9, "\000" 
+    IDC_FACTION_ROLE, 0x403, 9, 0
+0xc3cc, 0xf7d6, 0xd4d2, 0xcfc9, "\000" 
+    IDC_FACTION_ROLE, 0x403, 11, 0
+0xb1b8, 0xefb0, 0xf7d6, 0xd4d2, 0xcfc9, "\000" 
+    IDC_FACTION_ROLE, 0x403, 9, 0
+0xefb0, 0xf7d6, 0xd4d2, 0xcfc9, "\000" 
+    IDC_TRANSFORMED, 0x403, 7, 0
+0xdece, 0xaad2, 0xf3c7, "\000" 
+    IDC_TRANSFORMED, 0x403, 13, 0
+0xcec8, 0xe2d2, 0xe4b1, 0xedc9, 0xced0, 0xaccc, "\000" 
+    IDC_TRANSFORMED, 0x403, 9, 0
+0xc7d3, 0xf4d3, 0xd0d6, 0xeac4, "\000" 
+    IDC_TRANSFORMED, 0x403, 9, 0
+0xbde4, 0xdcd0, 0xd0c4, 0xecba, "\000" 
+    IDC_TRANSFORMED, 0x403, 7, 0
+0xa1d0, 0xedc2, 0xb5b3, "\000" 
+    IDC_TRANSFORMED, 0x403, 7, 0
+0xa1d0, 0xa9d1, 0xcbc8, "\000" 
+    IDC_TRANSFORMED, 0x403, 7, 0
+0xf0bd, 0xaec7, 0xdccd, "\000" 
+    IDC_TRANSFORMED, 0x403, 5, 0
+0xafcd, 0xd0c4, "\000" 
+    IDC_TRANSFORMED, 0x403, 5, 0
+0xafcd, 0xaec5, "\000" 
+    IDC_TRANSFORMED, 0x403, 11, 0
+0xb0d4, 0xd5d2, 0xf8c7, 0xdac9, 0xf8b1, "\000" 
+    IDC_TRANSFORMED, 0x403, 5, 0
+0xf7ca, 0xa6bc, "\000" 
+    IDC_TRANSFORMED, 0x403, 7, 0
+0xa1d0, 0xa7c4, 0xa2bb, "\000" 
+    IDC_TRANSFORMED, 0x403, 9, 0
+0xecba, 0xabc9, 0xc9cb, 0xf3ca, "\000" 
+    IDC_TRANSFORMED, 0x403, 11, 0
+0xbdc2, 0xafbb, 0xc4b5, 0xa3ba, 0xeab9, "\000" 
+    IDC_TRANSFORMED, 0x403, 11, 0
+0xc2d0, 0xefc4, 0xc4b5, 0xedb1, 0xe7b8, "\000" 
+    IDC_TRANSFORMED, 0x403, 9, 0
+0xdac9, 0xf8b1, 0xfebf, 0xdcc0, "\000" 
+    IDC_TRANSFORMED, 0x403, 9, 0
+0xf3c6, 0xecb6, 0xdbb5, 0xf5cd, "\000" 
+    IDC_TRANSFORMED, 0x403, 9, 0
+0xf3c6, 0xecb6, 0xcabb, 0xf3ba, "\000" 
+    IDC_TRANSFORMED, 0x403, 5, 0
+0xa9d1, 0xc3cd, "\000" 
+    IDC_TRANSFORMED, 0x403, 7, 0
+0xa9cc, 0xcfb5, 0xdcd0, "\000" 
+    IDC_TRANSFORMED, 0x403, 11, 0
+0xecba, 0xabc9, 0xc9cb, 0xf3ca, 0xf3b4, "\000" 
+    IDC_TRANSFORMED, 0x403, 7, 0
+0xf7ca, 0xa6bc, 0xf3b4, "\000" 
+    IDC_TRANSFORMED, 0x403, 15, 0
+0xb0d4, 0xd5d2, 0xf8c7, 0xdac9, 0xf8b1, 0xdfb7, 0xadc5, "\000" 
+    IDC_TRANSFORMED, 0x403, 15, 0
+0xb0d4, 0xd5d2, 0xf8c7, 0xdac9, 0xf8b1, 0xdabe, 0xa5c9, "\000" 
+    IDC_TRANSFORMED, 0x403, 15, 0
+0xb0d4, 0xd5d2, 0xf8c7, 0xdac9, 0xf8b1, 0xa7ca, 0xe4c2, "\000" 
+    IDC_TRANSFORMED, 0x403, 9, 0
+0xa9d1, 0xc3cd, 0xe7b5, 0xe2b9, "\000" 
+    IDC_TRANSFORMED, 0x403, 3, 0
+0xfac1, "\000" 
+    IDC_TRANSFORMED, 0x403, 7, 0
+0xe7b7, 0xa8b7, 0xa6ca, "\000" 
+    IDC_TRANSFORMED, 0x403, 9, 0
+0xb9d2, 0xb0d3, 0xb0d3, 0xddb6, "\000" 
+    IDC_TRANSFORMED, 0x403, 5, 0
+0xb0b5, 0xb0b5, "\000" 
+    IDC_TRANSFORMED, 0x403, 5, 0
+0xcab7, 0xf2d1, "\000" 
+    IDC_TRANSFORMED, 0x403, 5, 0
+0xfac1, 0xa8c3, "\000" 
+    IDC_TRANSFORMED, 0x403, 7, 0
+0xddc5, 0xddc5, 0xe3d3, "\000" 
+    IDC_PREM_FORCE, 0x403, 7, 0
+0xdece, 0xc6ca, 0xa6c1, "\000" 
+    IDC_PREM_FORCE, 0x403, 7, 0
+0xaabb, 0xe2b9, 0xe1bb, "\000" 
+    IDC_PREM_FORCE, 0x403, 7, 0
+0xb5b0, 0xfed2, 0xe1bb, "\000" 
+    IDC_PREM_FORCE, 0x403, 7, 0
+0xd4bb, 0xb9d2, 0xe1bb, "\000" 
+    IDC_PREM_FORCE, 0x403, 9, 0
+0xcec8, 0xe2d2, 0xc6ca, 0xa6c1, "\000" 
+    IDC_PREM_FORCE_AL, 0x403, 7, 0
+0xdece, 0xaad2, 0xf3c7, "\000" 
+    IDC_PREM_FORCE_AL, 0x403, 5, 0
+0xfdd5, 0xa3b3, "\000" 
+    IDC_PREM_FORCE_AL, 0x403, 5, 0
+0xcdb5, 0xe4c2, "\000" 
+    IDC_PREM_FORCE_AL, 0x403, 5, 0
+0xeebb, 0xbed4, "\000" 
+    IDC_GENERALCARD_RANK, 0x403, 3, 0
+0xdece, "\000" 
+    IDC_GENERALCARD_RANK, 0x403, 2, 0
+0x0043, 
+    IDC_GENERALCARD_RANK, 0x403, 2, 0
+0x0042, 
+    IDC_GENERALCARD_RANK, 0x403, 2, 0
+0x0041, 
+    IDC_GENERALCARD_RANK, 0x403, 2, 0
+0x0053, 
+    IDC_GENERALCARD_RANK, 0x403, 3, 0
+0x2b53, "\000" 
+    0
+END
+
+IDD_OCCUPATION DLGINIT
+BEGIN
+    IDC_OCCUPATION, 0x403, 5, 0
+0xe4ce, 0xc0cf, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xa8b7, 0xa6ca, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xd7ce, 0xa6ca, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xfdd1, 0xabbe, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xfdd1, 0xdeca, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xccb4, 0xcdbf, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xf0d3, 0xa2c3, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xf0d3, 0xe9c1, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xa3bd, 0xe9c1, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xc8f7, 0xe9c1, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xb9d2, 0xb0d3, "\000" 
+    IDC_OCCUPATION, 0x403, 5, 0
+0xc2d4, 0xc9cf, "\000" 
+    0
+END
+
+IDD_AWARD DLGINIT
+BEGIN
+    IDC_PERIOD, 0x403, 5, 0
+0xfed6, 0xf9bb, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xe9c1, 0xaccf, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xcdba, 0xcfba, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xaad4, 0xa4d3, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xd5bf, 0xa4da, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xc4c2, 0xaacb, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xc9b6, 0xd9bd, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xc5bc, 0xf0c3, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xf3b4, 0xcbb3, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xcfc9, 0xc9cf, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xf1bf, 0xa7c4, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xe6d5, 0xc9cf, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xa7c4, 0xa5ca, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xeccc, 0xc9cf, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xa7c4, 0xf0d7, "\000" 
+    IDC_MSG_CHANNEL, 0x403, 5, 0
+0xd5c6, 0xa8cd, "\000" 
+    IDC_MSG_CHANNEL, 0x403, 5, 0
+0xc0ca, 0xe7bd, "\000" 
+    IDC_MSG_CHANNEL, 0x403, 9, 0
+0xb5cf, 0xb3cd, 0xe3b9, 0xa5b2, "\000" 
+    IDC_AWARD_NUM_TYPE, 0x403, 6, 0
+0x454b, 0xd659, 0x00b5, 
+    IDC_AWARD_NUM_TYPE, 0x403, 5, 0
+0xfdca, 0xb5d6, "\000" 
+    IDC_AWARD_DEATH_TYPE, 0x403, 9, 0
+0xd0d3, 0xf0cb, 0xc0cb, 0xf6cd, "\000" 
+    IDC_AWARD_DEATH_TYPE, 0x403, 9, 0
+0xdece, 0xf0cb, 0xc0cb, 0xf6cd, "\000" 
+    0
+END
+
+IDD_TASK_PROPERTY DLGINIT
+BEGIN
+    IDC_TYPE, 0x403, 5, 0
+0xbfc3, 0xd5c8, "\000" 
+    IDC_TYPE, 0x403, 5, 0
+0xded0, 0xe6d5, "\000" 
+    IDC_TYPE, 0x403, 5, 0
+0xf7d6, 0xdfcf, "\000" 
+    IDC_TYPE, 0x403, 5, 0
+0xa7d6, 0xdfcf, "\000" 
+    IDC_TYPE, 0x403, 5, 0
+0xeebb, 0xafb6, "\000" 
+    IDC_TYPE, 0x403, 7, 0
+0xdfc6, 0xb1c9, 0xf1b0, "\000" 
+    IDC_TYPE, 0x403, 5, 0
+0xefb0, 0xc9c5, "\000" 
+    IDC_TYPE, 0x403, 5, 0
+0xadbe, 0xaad3, "\000" 
+    IDC_TYPE, 0x403, 5, 0
+0xabb4, 0xe6c6, "\000" 
+    IDC_TYPE, 0x403, 5, 0
+0xf0b4, 0xe2cc, "\000" 
+    IDC_AVAIL_FREQUENCY, 0x403, 5, 0
+0xd5c6, 0xa8cd, "\000" 
+    IDC_AVAIL_FREQUENCY, 0x403, 5, 0
+0xbfc3, 0xeccc, "\000" 
+    IDC_AVAIL_FREQUENCY, 0x403, 5, 0
+0xbfc3, 0xdcd6, "\000" 
+    IDC_AVAIL_FREQUENCY, 0x403, 5, 0
+0xbfc3, 0xc2d4, "\000" 
+    IDC_AVAIL_FREQUENCY, 0x403, 5, 0
+0xbfc3, 0xeac4, "\000" 
+    0
+END
+
+IDD_TASK_CLASS_FORM DLGINIT
+BEGIN
+    IDC_TYPE, 0x403, 5, 0
+0xbfc3, 0xd5c8, "\000" 
+    IDC_TYPE, 0x403, 5, 0
+0xded0, 0xe6d5, "\000" 
+    IDC_TYPE, 0x403, 5, 0
+0xf7d6, 0xdfcf, "\000" 
+    IDC_TYPE, 0x403, 5, 0
+0xa7d6, 0xdfcf, "\000" 
+    IDC_TYPE, 0x403, 5, 0
+0xeebb, 0xafb6, "\000" 
+    IDC_TYPE, 0x403, 7, 0
+0xdfc6, 0xb1c9, 0xf1b0, "\000" 
+    IDC_TYPE, 0x403, 5, 0
+0xefb0, 0xc9c5, "\000" 
+    IDC_TYPE, 0x403, 5, 0
+0xadbe, 0xaad3, "\000" 
+    IDC_TYPE, 0x403, 5, 0
+0xabb4, 0xe6c6, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xfed6, 0xf9bb, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xe9c1, 0xaccf, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xcdba, 0xcfba, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xaad4, 0xa4d3, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xd5bf, 0xa4da, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xc4c2, 0xaacb, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xc9b6, 0xd9bd, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xc5bc, 0xf0c3, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xf3b4, 0xcbb3, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xcfc9, 0xc9cf, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xf1bf, 0xa7c4, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xe6d5, 0xc9cf, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xa7c4, 0xa5ca, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xeccc, 0xc9cf, "\000" 
+    IDC_PERIOD, 0x403, 5, 0
+0xa7c4, 0xf0d7, "\000" 
+    0
+END
+
+IDD_TASK_METHOD DLGINIT
+BEGIN
+    IDC_FIN1_COMPARE1, 0x403, 6, 0
+0x454b, 0xd659, 0x00b5, 
+    IDC_FIN1_COMPARE1, 0x403, 5, 0
+0xfdca, 0xb5d6, "\000" 
+    IDC_FIN1_COMPARE, 0x403, 5, 0
+0xf3b4, 0xdad3, "\000" 
+    IDC_FIN1_COMPARE, 0x403, 5, 0
+0xc8b5, 0xdad3, "\000" 
+    IDC_FIN1_COMPARE, 0x403, 5, 0
+0xa1d0, 0xdad3, "\000" 
+    IDC_FIN1_COMPARE2, 0x403, 6, 0
+0x454b, 0xd659, 0x00b5, 
+    IDC_FIN1_COMPARE2, 0x403, 5, 0
+0xfdca, 0xb5d6, "\000" 
+    IDC_FIN2_COMPARE1, 0x403, 6, 0
+0x454b, 0xd659, 0x00b5, 
+    IDC_FIN2_COMPARE1, 0x403, 5, 0
+0xfdca, 0xb5d6, "\000" 
+    IDC_FIN2_COMPARE, 0x403, 5, 0
+0xf3b4, 0xdad3, "\000" 
+    IDC_FIN2_COMPARE, 0x403, 5, 0
+0xc8b5, 0xdad3, "\000" 
+    IDC_FIN2_COMPARE, 0x403, 5, 0
+0xa1d0, 0xdad3, "\000" 
+    IDC_FIN2_COMPARE2, 0x403, 6, 0
+0x454b, 0xd659, 0x00b5, 
+    IDC_FIN2_COMPARE2, 0x403, 5, 0
+0xfdca, 0xb5d6, "\000" 
+    IDC_FIN_AND_OR, 0x403, 3, 0
+0xf2bb, "\000" 
+    IDC_FIN_AND_OR, 0x403, 3, 0
+0xebd3, "\000" 
+    IDC_TRANSFORMED, 0x403, 13, 0
+0xcec8, 0xe2d2, 0xe4b1, 0xedc9, 0xced0, 0xaccc, "\000" 
+    IDC_TRANSFORMED, 0x403, 9, 0
+0xc7d3, 0xf4d3, 0xd0d6, 0xeac4, "\000" 
+    IDC_TRANSFORMED, 0x403, 9, 0
+0xbde4, 0xdcd0, 0xd0c4, 0xecba, "\000" 
+    IDC_TRANSFORMED, 0x403, 7, 0
+0xa1d0, 0xedc2, 0xb5b3, "\000" 
+    IDC_TRANSFORMED, 0x403, 7, 0
+0xa1d0, 0xa9d1, 0xcbc8, "\000" 
+    IDC_TRANSFORMED, 0x403, 7, 0
+0xf0bd, 0xaec7, 0xdccd, "\000" 
+    IDC_TRANSFORMED, 0x403, 5, 0
+0xafcd, 0xd0c4, "\000" 
+    IDC_TRANSFORMED, 0x403, 5, 0
+0xafcd, 0xaec5, "\000" 
+    IDC_TRANSFORMED, 0x403, 11, 0
+0xb0d4, 0xd5d2, 0xf8c7, 0xdac9, 0xf8b1, "\000" 
+    IDC_TRANSFORMED, 0x403, 5, 0
+0xf7ca, 0xa6bc, "\000" 
+    IDC_TRANSFORMED, 0x403, 7, 0
+0xa1d0, 0xa7c4, 0xa2bb, "\000" 
+    IDC_TRANSFORMED, 0x403, 9, 0
+0xecba, 0xabc9, 0xc9cb, 0xf3ca, "\000" 
+    IDC_TRANSFORMED, 0x403, 11, 0
+0xbdc2, 0xafbb, 0xc4b5, 0xa3ba, 0xeab9, "\000" 
+    IDC_TRANSFORMED, 0x403, 11, 0
+0xc2d0, 0xefc4, 0xc4b5, 0xedb1, 0xe7b8, "\000" 
+    IDC_TRANSFORMED, 0x403, 9, 0
+0xdac9, 0xf8b1, 0xfebf, 0xdcc0, "\000" 
+    IDC_TRANSFORMED, 0x403, 9, 0
+0xf3c6, 0xecb6, 0xdbb5, 0xf5cd, "\000" 
+    IDC_TRANSFORMED, 0x403, 9, 0
+0xf3c6, 0xecb6, 0xcabb, 0xf3ba, "\000" 
+    IDC_TRANSFORMED, 0x403, 5, 0
+0xa9d1, 0xc3cd, "\000" 
+    IDC_TRANSFORMED, 0x403, 7, 0
+0xa9cc, 0xcfb5, 0xdcd0, "\000" 
+    IDC_TRANSFORMED, 0x403, 11, 0
+0xecba, 0xabc9, 0xc9cb, 0xf3ca, 0xf3b4, "\000" 
+    IDC_TRANSFORMED, 0x403, 7, 0
+0xf7ca, 0xa6bc, 0xf3b4, "\000" 
+    IDC_TRANSFORMED, 0x403, 15, 0
+0xb0d4, 0xd5d2, 0xf8c7, 0xdac9, 0xf8b1, 0xdfb7, 0xadc5, "\000" 
+    IDC_TRANSFORMED, 0x403, 15, 0
+0xb0d4, 0xd5d2, 0xf8c7, 0xdac9, 0xf8b1, 0xdabe, 0xa5c9, "\000" 
+    IDC_TRANSFORMED, 0x403, 15, 0
+0xb0d4, 0xd5d2, 0xf8c7, 0xdac9, 0xf8b1, 0xa7ca, 0xe4c2, "\000" 
+    IDC_TRANSFORMED, 0x403, 9, 0
+0xa9d1, 0xc3cd, 0xe7b5, 0xe2b9, "\000" 
+    IDC_TRANSFORMED, 0x403, 3, 0
+0xfac1, "\000" 
+    IDC_TRANSFORMED, 0x403, 7, 0
+0xe7b7, 0xa8b7, 0xa6ca, "\000" 
+    IDC_TRANSFORMED, 0x403, 9, 0
+0xb9d2, 0xb0d3, 0xb0d3, 0xddb6, "\000" 
+    IDC_TRANSFORMED, 0x403, 5, 0
+0xb0b5, 0xb0b5, "\000" 
+    IDC_TRANSFORMED, 0x403, 5, 0
+0xcab7, 0xf2d1, "\000" 
+    IDC_TRANSFORMED, 0x403, 5, 0
+0xfac1, 0xa8c3, "\000" 
+    IDC_TRANSFORMED, 0x403, 7, 0
+0xddc5, 0xddc5, 0xe3d3, "\000" 
+    IDC_CMB_EMOTION, 0x403, 1, 0
+"\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "TaskTemplEditor\n\nTaskTempl\nTaskTempl 文件 (*.tkt)\n.tkt\nTaskTemplEditor.Document\nTaskTe Document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "TaskTemplEditor"
+    AFX_IDS_IDLEMESSAGE     "就绪"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "扩展名"
+    ID_INDICATOR_CAPS       "大写"
+    ID_INDICATOR_NUM        "数字"
+    ID_INDICATOR_SCRL       "滚动"
+    ID_INDICATOR_OVR        "改写"
+    ID_INDICATOR_REC        "记录"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "建立新文档\n新建"
+    ID_FILE_OPEN            "打开一个现有文档\n打开"
+    ID_FILE_CLOSE           "关闭活动文档\n关闭"
+    ID_FILE_SAVE            "保存活动文档\n保存"
+    ID_FILE_SAVE_AS         "将活动文档以一个新文件名保存\n另存为"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "显示程序信息，版本号和版权\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "打开该文档"
+    ID_FILE_MRU_FILE2       "打开该文档"
+    ID_FILE_MRU_FILE3       "打开该文档"
+    ID_FILE_MRU_FILE4       "打开该文档"
+    ID_FILE_MRU_FILE5       "打开该文档"
+    ID_FILE_MRU_FILE6       "打开该文档"
+    ID_FILE_MRU_FILE7       "打开该文档"
+    ID_FILE_MRU_FILE8       "打开该文档"
+    ID_FILE_MRU_FILE9       "打开该文档"
+    ID_FILE_MRU_FILE10      "打开该文档"
+    ID_FILE_MRU_FILE11      "打开该文档"
+    ID_FILE_MRU_FILE12      "打开该文档"
+    ID_FILE_MRU_FILE13      "打开该文档"
+    ID_FILE_MRU_FILE14      "打开该文档"
+    ID_FILE_MRU_FILE15      "打开该文档"
+    ID_FILE_MRU_FILE16      "打开该文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回前一个窗格\n前一窗格"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "将活动的窗口分隔成窗格\n分隔"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "删除被选对象\n删除"
+    ID_EDIT_CLEAR_ALL       "全部删除\n全部删除"
+    ID_EDIT_COPY            "复制被选对象并将其置于剪贴板上\n复制"
+    ID_EDIT_CUT             "剪切被选对象并将其置于剪贴板上\n剪切"
+    ID_EDIT_FIND            "查找指定的正文\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_REPEAT          "重复上一步操作\n重复"
+    ID_EDIT_REPLACE         "用不同的正文替换指定的正文\n替换"
+    ID_EDIT_SELECT_ALL      "选择整个文档\n选择全部"
+    ID_EDIT_UNDO            "撤消最后一步操作\n撤消"
+    ID_EDIT_REDO            "重新执行先前已撤消的操作\n重新执行"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n显隐状态栏"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "改变窗口大小"
+    AFX_IDS_SCMOVE          "改变窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小成图标"
+    AFX_IDS_SCMAXIMIZE      "把窗口放大到最大尺寸"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到先前的文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动的窗口并提示保存所有文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "把窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务表"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDD_LOAD_FORM_EXCEL     "从Excel导入任务模板，要求将任务填写在表格sheet1中"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\TaskTemplEditor.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

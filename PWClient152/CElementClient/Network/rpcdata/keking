@@ -1,0 +1,82 @@
+#ifndef __GNET_KEKING_RPCDATA
+#define __GNET_KEKING_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class KEKing : public GNET::Rpc::Data
+	{
+	public:
+		int roleid;
+		int end_time;
+		int reserved1;
+		int reserved2;
+		int reserved3;
+
+	public:
+		KEKing (int l_roleid = 0,int l_end_time = 0,int l_reserved1 = 0
+			,int l_reserved2 = 0,int l_reserved3 = 0)
+			: roleid(l_roleid),end_time(l_end_time),reserved1(l_reserved1)
+			,reserved2(l_reserved2),reserved3(l_reserved3)
+		{
+		}
+
+		KEKing(const KEKing &rhs)
+			: roleid(rhs.roleid),end_time(rhs.end_time),reserved1(rhs.reserved1),
+			reserved2(rhs.reserved2),reserved3(rhs.reserved3) { }
+
+		Rpc::Data *Clone() const { return new KEKing(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const KEKing *r = dynamic_cast<const KEKing *>(&rhs);
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				end_time = r->end_time;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+			}
+			return *this;
+		}
+
+		KEKing& operator = (const KEKing &rhs)
+		{
+			const KEKing *r = &rhs;
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				end_time = r->end_time;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << end_time;
+			os << reserved1;
+			os << reserved2;
+			os << reserved3;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> end_time;
+			os >> reserved1;
+			os >> reserved2;
+			os >> reserved3;
+			return os;
+		}
+
+	};
+};
+#endif

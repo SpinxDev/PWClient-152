@@ -1,0 +1,48 @@
+//  ************* Angelica 3D shader ***************
+
+version 5
+
+"ToonArmor"
+{
+	//  General properties
+	pixelshader      Shaders\2.2\ps\toonrender.txt
+
+	//  Stage 0
+	{
+		colorop          TOP_MODULATE
+		colorarg1        TA_TEXTURE
+		colorarg2        TA_DIFFUSE
+		alphaop          TOP_SELECTARG1
+		alphaarg1        TA_TEXTURE
+		alphaarg2        TA_DIFFUSE
+	}
+
+	//  Stage 1
+	{
+		texture          TEX_NORMAL  0  Textures\dev\toonedge.dds
+		filter           TEXF_LINEAR
+		address          TADDR_CLAMP
+		colorop          TOP_MODULATE
+		colorarg1        TA_CURRENT
+		colorarg2        TA_TEXTURE
+		alphaop          TOP_SELECTARG1
+		alphaarg1        TA_CURRENT
+		alphaarg2        TA_TEXTURE
+		textrans         4  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  -1.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  1.000000
+		texcoord         0  TCI_CAMERASPACENORMAL
+	}
+
+	//  Stage 2
+	{
+		texture          TEX_NORMAL  0  Textures\dev\64shade.bmp
+		filter           TEXF_LINEAR
+		address          TADDR_CLAMP
+		colorop          TOP_SELECTARG1
+		colorarg1        TA_CURRENT
+		colorarg2        TA_DIFFUSE
+		alphaop          TOP_DISABLE
+		alphaarg1        TA_DIFFUSE
+		alphaarg2        TA_DIFFUSE
+	}
+
+}

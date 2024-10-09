@@ -1,0 +1,6 @@
+DIALOG "Dlg_ChooseSky" 0 0 250 250 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 -1 -1 "" 0 0 96 96 96 255 1
+STILLIMAGEBUTTON "Control_12012348" "OK" "" 47 212 45 28 0 0 0 0 2 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 3 1
+STILLIMAGEBUTTON "Control_41560052" "Cancel" "" 158 212 45 28 0 0 0 0 4 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 5 1
+LABEL "Label_Weight" "" "" 218 42 40 19 6 15 7 255 255 255 255
+LIST "ListBox_Skys" "" "" 11 30 227 178 8 10 255 255 255 255 "Editbox\文本框_4.tga" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LABEL "Control_112006780" "" "" 82 5 85 22 9 16 10 255 203 74 255

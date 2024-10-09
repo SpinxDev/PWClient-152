@@ -1,0 +1,79 @@
+#ifndef __GNET_GFACTIONRESOURCEBATTLERECORD_RPCDATA
+#define __GNET_GFACTIONRESOURCEBATTLERECORD_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GFactionResourceBattleRecord : public GNET::Rpc::Data
+	{
+	public:
+		int roleid;
+		unsigned short kill_count;
+		unsigned short death_count;
+		unsigned short use_tool_count;
+		int score;
+
+	public:
+		GFactionResourceBattleRecord ()
+		{
+		}
+
+		GFactionResourceBattleRecord(const GFactionResourceBattleRecord &rhs)
+			: roleid(rhs.roleid),kill_count(rhs.kill_count),death_count(rhs.death_count),
+			use_tool_count(rhs.use_tool_count),score(rhs.score) { }
+
+		Rpc::Data *Clone() const { return new GFactionResourceBattleRecord(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GFactionResourceBattleRecord *r = dynamic_cast<const GFactionResourceBattleRecord *>(&rhs);
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				kill_count = r->kill_count;
+				death_count = r->death_count;
+				use_tool_count = r->use_tool_count;
+				score = r->score;
+			}
+			return *this;
+		}
+
+		GFactionResourceBattleRecord& operator = (const GFactionResourceBattleRecord &rhs)
+		{
+			const GFactionResourceBattleRecord *r = &rhs;
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				kill_count = r->kill_count;
+				death_count = r->death_count;
+				use_tool_count = r->use_tool_count;
+				score = r->score;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << kill_count;
+			os << death_count;
+			os << use_tool_count;
+			os << score;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> kill_count;
+			os >> death_count;
+			os >> use_tool_count;
+			os >> score;
+			return os;
+		}
+
+	};
+};
+#endif

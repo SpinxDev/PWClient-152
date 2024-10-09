@@ -1,0 +1,77 @@
+#ifndef __GNET_GFACTIONBASEINFO_RPCDATA
+#define __GNET_GFACTIONBASEINFO_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GFactionBaseInfo : public GNET::Rpc::Data
+	{
+	public:
+		unsigned int fid;
+		Octets name;
+		char level;
+		short mem_num;
+
+	public:
+		GFactionBaseInfo (unsigned int l_fid = 0,const Octets& l_name = Octets(0),char l_level = 0
+			,short l_mem_num = 0)
+			: fid(l_fid),name(l_name),level(l_level)
+			,mem_num(l_mem_num)
+		{
+		}
+
+		GFactionBaseInfo(const GFactionBaseInfo &rhs)
+			: fid(rhs.fid),name(rhs.name),level(rhs.level),
+			mem_num(rhs.mem_num) { }
+
+		Rpc::Data *Clone() const { return new GFactionBaseInfo(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GFactionBaseInfo *r = dynamic_cast<const GFactionBaseInfo *>(&rhs);
+			if (r && r != this)
+			{
+				fid = r->fid;
+				name = r->name;
+				level = r->level;
+				mem_num = r->mem_num;
+			}
+			return *this;
+		}
+
+		GFactionBaseInfo& operator = (const GFactionBaseInfo &rhs)
+		{
+			const GFactionBaseInfo *r = &rhs;
+			if (r && r != this)
+			{
+				fid = r->fid;
+				name = r->name;
+				level = r->level;
+				mem_num = r->mem_num;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << fid;
+			os << name;
+			os << level;
+			os << mem_num;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> fid;
+			os >> name;
+			os >> level;
+			os >> mem_num;
+			return os;
+		}
+
+	};
+};
+#endif

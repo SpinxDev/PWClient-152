@@ -1,0 +1,65 @@
+DIALOG "Win_Elf_Skilltree2" 0 0 514 423 0 1 10 "小精灵新加tga\完美精灵界面2.tga" "" "" 0 0 -1 -1 "人鱼传说新界面\面板关闭按钮.tga" 60 30 96 96 96 255 1
+IMAGEPICTURE "Skill_未知技能6" "" "" 155 271 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_未知技能5" "" "" 155 231 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_元气盗窃" "" "" 195 271 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_群嘲" "" "" 235 71 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_凤舞" "" "" 195 191 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_未知技能4" "" "" 195 151 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_潜能激发" "" "" 195 111 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_寒冰领域" "" "" 235 151 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_法师之星" "" "" 275 71 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_冰暴" "" "" 235 271 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_荆棘之怒" "" "" 235 231 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_虚弱咒" "" "" 235 111 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_绝对领域" "" "" 235 191 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_水火符" "" "" 275 111 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_未知技能2" "" "" 315 71 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_未知技能3" "" "" 315 111 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_灵气爆发" "" "" 275 191 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_破魔咒" "" "" 275 151 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_乱魂咒" "" "" 275 271 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_升龙气" "" "" 275 231 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_放逐" "" "" 315 151 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_炎闪" "" "" 315 231 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_信念" "" "" 315 271 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill_未知技能7" "" "" 355 271 34 34 1 0 "精灵技能外框_混合.tga"
+LABEL "Control_159993432" "" "" 30 75 91 21 2 15 3 255 255 255 255
+LABEL "Control_298659530" "" "" 157 26 224 28 4 16 5 254 203 74 255
+LABEL "Control_14920892" "" "" 30 155 93 22 6 15 7 255 255 255 255
+LABEL "Control_24373104" "" "" 30 195 130 23 8 15 9 255 255 255 255
+LABEL "Control_407189836" "" "" 30 235 124 26 10 15 11 255 255 255 255
+LABEL "Control_159325785" "" "" 30 275 149 24 12 15 13 255 255 255 255
+LABEL "Control_17306476" "" "" 30 355 100 21 14 15 15 255 255 255 255
+STILLIMAGEBUTTON "Btn_Junior" "Junior" "" 400 381 88 27 0 0 0 0 16 15 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 17 1
+IMAGEPICTURE "Skill2_未知技能6" "" "" 157 273 30 30 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill2_未知技能5" "" "" 157 233 30 30 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill2_元气盗窃" "" "" 197 273 30 30 1 0 "小精灵新加tga\元气盗窃.dds"
+IMAGEPICTURE "Skill2_群嘲" "" "" 237 73 30 30 1 0 "小精灵新加tga\群嘲.dds"
+IMAGEPICTURE "Skill2_凤舞" "" "" 197 193 30 30 1 0 "小精灵新加tga\凤舞.dds"
+IMAGEPICTURE "Skill2_未知技能4" "" "" 197 153 30 30 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill2_潜能激发" "" "" 197 113 30 30 1 0 "小精灵新加tga\潜能激发.dds"
+IMAGEPICTURE "Skill2_寒冰领域" "" "" 237 153 30 30 1 0 "小精灵新加tga\寒冰领域.dds"
+IMAGEPICTURE "Skill2_法师之星" "" "" 277 73 30 30 1 0 "小精灵新加tga\法师之星.dds"
+IMAGEPICTURE "Skill2_冰暴" "" "" 237 273 30 30 1 0 "小精灵新加tga\冰暴.dds"
+IMAGEPICTURE "Skill2_荆棘之怒" "" "" 237 233 30 30 1 0 "小精灵新加tga\荆棘之怒.dds"
+IMAGEPICTURE "Skill2_虚弱咒" "" "" 237 113 30 30 1 0 "小精灵新加tga\虚弱咒.dds"
+IMAGEPICTURE "Skill2_绝对领域" "" "" 237 193 30 30 1 0 "小精灵新加tga\绝对领域.dds"
+IMAGEPICTURE "Skill2_水火符" "" "" 277 113 30 30 1 0 "小精灵新加tga\水火符.dds"
+IMAGEPICTURE "Skill2_未知技能2" "" "" 317 73 30 30 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill2_未知技能3" "" "" 317 113 30 30 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill2_灵气爆发" "" "" 277 193 30 30 1 0 "小精灵新加tga\灵气爆发.dds"
+IMAGEPICTURE "Skill2_破魔咒" "" "" 277 153 30 30 1 0 "小精灵新加tga\破魔咒.dds"
+IMAGEPICTURE "Skill2_乱魂咒" "" "" 277 273 30 30 1 0 "小精灵新加tga\乱魂咒.dds"
+IMAGEPICTURE "Skill2_升龙气" "" "" 277 233 30 30 1 0 "小精灵新加tga\升龙气.dds"
+IMAGEPICTURE "Skill2_放逐" "" "" 317 153 30 30 1 0 "小精灵新加tga\放逐.dds"
+IMAGEPICTURE "Skill2_炎闪" "" "" 317 233 30 30 1 0 "小精灵新加tga\炎闪.dds"
+IMAGEPICTURE "Skill2_信念" "" "" 317 273 30 30 1 0 "小精灵新加tga\信念.dds"
+IMAGEPICTURE "Skill2_未知技能7" "" "" 357 273 30 30 1 0 "精灵技能外框_混合.tga"
+LABEL "Control_675580020" "" "" 30 115 117 23 18 15 19 255 255 255 255
+LABEL "Control_340402052" "" "" 30 315 142 24 20 15 21 255 255 255 255
+LABEL "Control_581258400" "" "" 149 316 63 22 22 15 23 255 0 0 255
+LABEL "Control_252553596" "" "" 148 357 95 27 24 15 25 255 0 0 255
+IMAGEPICTURE "Skill_倍返" "" "" 355 71 34 34 1 0 "精灵技能外框_混合.tga"
+IMAGEPICTURE "Skill2_倍返" "" "" 357 73 30 30 1 0 "小精灵新加tga\倍返.dds"
+IMAGEPICTURE "Skill_平衡" "" "" 197 73 30 30 1 0 "小精灵新加tga\平衡.dds"
+IMAGEPICTURE "Skill2_平衡" "" "" 195 71 34 34 1 0 "精灵技能外框_混合.tga"

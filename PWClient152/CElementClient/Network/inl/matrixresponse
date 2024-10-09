@@ -1,0 +1,32 @@
+	public:
+		unsigned int response;
+		enum { PROTOCOL_TYPE = PROTOCOL_MATRIXRESPONSE };
+	public:
+		MatrixResponse() { type = PROTOCOL_MATRIXRESPONSE; }
+		MatrixResponse(void*) : Protocol(PROTOCOL_MATRIXRESPONSE) { }
+		MatrixResponse (unsigned int l_response)
+			 : response(l_response)
+		{
+			type = PROTOCOL_MATRIXRESPONSE;
+		}
+
+		MatrixResponse(const MatrixResponse &rhs)
+			: Protocol(rhs),response(rhs.response) { }
+
+		GNET::Protocol *Clone() const { return new MatrixResponse(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << response;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> response;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 101; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

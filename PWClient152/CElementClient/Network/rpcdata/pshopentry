@@ -1,0 +1,78 @@
+#ifndef __GNET_PSHOPENTRY_RPCDATA
+#define __GNET_PSHOPENTRY_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class PShopEntry : public GNET::Rpc::Data
+	{
+	public:
+		int roleid;
+		int shoptype;
+		int createtime;
+		int invstate;
+
+	public:
+		PShopEntry (int l_roleid = 0,int l_shoptype = 0,int l_createtime = 0
+			,int l_invstate = 0)
+			: roleid(l_roleid),shoptype(l_shoptype),createtime(l_createtime)
+			,invstate(l_invstate)
+		{
+		}
+
+		PShopEntry(const PShopEntry &rhs)
+			: roleid(rhs.roleid),shoptype(rhs.shoptype),createtime(rhs.createtime),
+			invstate(rhs.invstate) { }
+
+		Rpc::Data *Clone() const { return new PShopEntry(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const PShopEntry *r = dynamic_cast<const PShopEntry *>(&rhs);
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				shoptype = r->shoptype;
+				createtime = r->createtime;
+				invstate = r->invstate;
+			}
+			return *this;
+		}
+
+		PShopEntry& operator = (const PShopEntry &rhs)
+		{
+			const PShopEntry *r = &rhs;
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				shoptype = r->shoptype;
+				createtime = r->createtime;
+				invstate = r->invstate;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << shoptype;
+			os << createtime;
+			os << invstate;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> shoptype;
+			os >> createtime;
+			os >> invstate;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<PShopEntry>	PShopEntryVector;
+};
+#endif

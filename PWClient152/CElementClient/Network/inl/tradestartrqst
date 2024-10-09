@@ -1,0 +1,9 @@
+		GNET::Protocol *Clone() const {  return new TradeStartRqst(*this); }
+	public:
+		enum { PROTOCOL_TYPE = RPC_TRADESTARTRQST };
+		TradeStartRqst(Type type, Rpc::Data *argument, Rpc::Data *result)
+			: RPC_BASECLASS(type, argument, result ) { }
+		TradeStartRqst(const TradeStartRqst &rhs) : RPC_BASECLASS(rhs) { }
+		int  PriorPolicy( ) const { return 1; }
+		bool SizePolicy(size_t size) const { return size <= 32; }
+		bool TimePolicy(int timeout) const { return timeout <= 60; }

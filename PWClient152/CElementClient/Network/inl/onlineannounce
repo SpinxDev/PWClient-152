@@ -1,0 +1,71 @@
+	public:
+		int userid;
+		unsigned int localsid;
+		int remain_time;
+		char zoneid;
+		int free_time_left;
+		int free_time_end;
+		int creatime;
+		char referrer_flag;
+		char passwd_flag;
+		char usbbind;
+		char accountinfo_flag;
+		enum { PROTOCOL_TYPE = PROTOCOL_ONLINEANNOUNCE };
+	public:
+		OnlineAnnounce() { type = PROTOCOL_ONLINEANNOUNCE; }
+		OnlineAnnounce(void*) : Protocol(PROTOCOL_ONLINEANNOUNCE) { }
+		OnlineAnnounce (int l_userid,unsigned int l_localsid,int l_remain_time = 0,
+			char l_zoneid = 0,int l_free_time_left = 0,int l_free_time_end = 0,
+			int l_creatime = 0,char l_referrer_flag = 0,char l_passwd_flag = 0,
+			char l_usbbind = 0,char l_accountinfo_flag = 0)
+			 : userid(l_userid),localsid(l_localsid),remain_time(l_remain_time)
+			,zoneid(l_zoneid),free_time_left(l_free_time_left),free_time_end(l_free_time_end)
+			,creatime(l_creatime),referrer_flag(l_referrer_flag),passwd_flag(l_passwd_flag)
+			,usbbind(l_usbbind),accountinfo_flag(l_accountinfo_flag)
+		{
+			type = PROTOCOL_ONLINEANNOUNCE;
+		}
+
+		OnlineAnnounce(const OnlineAnnounce &rhs)
+			: Protocol(rhs),userid(rhs.userid),localsid(rhs.localsid),remain_time(rhs.remain_time)
+			,zoneid(rhs.zoneid),free_time_left(rhs.free_time_left),free_time_end(rhs.free_time_end)
+			,creatime(rhs.creatime),referrer_flag(rhs.referrer_flag),passwd_flag(rhs.passwd_flag)
+			,usbbind(rhs.usbbind),accountinfo_flag(rhs.accountinfo_flag) { }
+
+		GNET::Protocol *Clone() const { return new OnlineAnnounce(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << userid;
+			os << localsid;
+			os << remain_time;
+			os << zoneid;
+			os << free_time_left;
+			os << free_time_end;
+			os << creatime;
+			os << referrer_flag;
+			os << passwd_flag;
+			os << usbbind;
+			os << accountinfo_flag;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> userid;
+			os >> localsid;
+			os >> remain_time;
+			os >> zoneid;
+			os >> free_time_left;
+			os >> free_time_end;
+			os >> creatime;
+			os >> referrer_flag;
+			os >> passwd_flag;
+			os >> usbbind;
+			os >> accountinfo_flag;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 101; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

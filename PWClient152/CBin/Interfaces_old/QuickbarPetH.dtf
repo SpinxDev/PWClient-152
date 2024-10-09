@@ -1,0 +1,13 @@
+DIALOG "Win_QuickbarPetH" 0 0 265 40 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 -1 -1 "" 0 0 96 96 96 192 1
+STILLIMAGEBUTTON "Btn_Vertigo" "switch" "SFX\Interface\ClickB.wav" 5 5 12 12 0 0 0 0 2 15 255 0 255 255 "Button\按钮_水平1.tga" "Button\按钮_水平2.tga" 3 1
+IMAGEPICTURE "Skill_1" "" "" 126 4 32 32 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Skill_2" "" "" 160 4 32 32 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Skill_3" "" "" 194 4 32 32 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Skill_4" "" "" 228 4 32 32 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Stick" "" "" 6 22 9 12 1 0 "Extra\复选框_快捷栏单.bmp"
+STILLIMAGEBUTTON "Btn_Combat" "combat" "" 23 4 16 16 0 0 0 0 4 15 255 255 255 255 "Button\战宠手动_1.tga" "Button\战宠手动_2.tga" 5 1
+STILLIMAGEBUTTON "Btn_Offensive" "offensive" "" 31 21 15 15 0 0 0 0 6 15 255 255 255 255 "Button\战宠主动_1.tga" "Button\战宠主动_2.tga" 7 1
+STILLIMAGEBUTTON "Btn_Defensive" "defensive" "" 15 20 15 15 0 0 0 0 8 15 255 255 255 255 "Button\战宠防御_1.tga" "Button\战宠防御_2.tga" 9 1
+STILLIMAGEBUTTON "Btn_Stop" "stop" "" 48 4 24 32 0 0 0 0 10 10 255 206 74 255 "Button\战宠停止_1.tga" "Button\战宠停止_2.tga" 11 1
+STILLIMAGEBUTTON "Btn_Follow" "follow" "" 74 4 24 32 0 0 0 0 12 10 255 203 74 255 "Button\战宠跟踪_1.tga" "Button\战宠跟踪_2.tga" 13 1
+STILLIMAGEBUTTON "Btn_Attack" "attack" "" 100 4 24 32 0 0 0 0 14 10 255 203 74 255 "Button\战宠攻击_1.tga" "Button\战宠攻击_2.tga" 15 1

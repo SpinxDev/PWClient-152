@@ -1,0 +1,38 @@
+	public:
+		int userid;
+		int roleid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_WEBTRADEROLEPRECANCELPOST };
+	public:
+		WebTradeRolePreCancelPost() { type = PROTOCOL_WEBTRADEROLEPRECANCELPOST; }
+		WebTradeRolePreCancelPost(void*) : Protocol(PROTOCOL_WEBTRADEROLEPRECANCELPOST) { }
+		WebTradeRolePreCancelPost (int l_userid,int l_roleid,unsigned int l_localsid)
+			 : userid(l_userid),roleid(l_roleid),localsid(l_localsid)
+		{
+			type = PROTOCOL_WEBTRADEROLEPRECANCELPOST;
+		}
+
+		WebTradeRolePreCancelPost(const WebTradeRolePreCancelPost &rhs)
+			: Protocol(rhs),userid(rhs.userid),roleid(rhs.roleid),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new WebTradeRolePreCancelPost(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << userid;
+			os << roleid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> userid;
+			os >> roleid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

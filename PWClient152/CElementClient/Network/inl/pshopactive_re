@@ -1,0 +1,44 @@
+	public:
+		int retcode;
+		int localsid;
+		int status;
+		int expiretime;
+		enum { PROTOCOL_TYPE = PROTOCOL_PSHOPACTIVE_RE };
+	public:
+		PShopActive_Re() { type = PROTOCOL_PSHOPACTIVE_RE; }
+		PShopActive_Re(void*) : Protocol(PROTOCOL_PSHOPACTIVE_RE) { }
+		PShopActive_Re (int l_retcode,int l_localsid,int l_status = 0,
+			int l_expiretime = 0)
+			 : retcode(l_retcode),localsid(l_localsid),status(l_status)
+			,expiretime(l_expiretime)
+		{
+			type = PROTOCOL_PSHOPACTIVE_RE;
+		}
+
+		PShopActive_Re(const PShopActive_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),localsid(rhs.localsid),status(rhs.status)
+			,expiretime(rhs.expiretime) { }
+
+		GNET::Protocol *Clone() const { return new PShopActive_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << localsid;
+			os << status;
+			os << expiretime;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> localsid;
+			os >> status;
+			os >> expiretime;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

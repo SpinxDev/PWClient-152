@@ -1,0 +1,69 @@
+#include "ECScriptCheckImp.h"
+
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckScriptExecuted", CECScriptCheckScriptExecuted);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckDisplayNext", CECScriptCheckDisplayNext);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckAddress", CECScriptCheckAddress);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckDialogIsVisible", CECScriptCheckDialogIsVisible);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckDialogItemText", CECScriptCheckDialogItemText);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckDialogItemIsChecked", CECScriptCheckDialogItemIsChecked);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckTaskInventoryItemCount", CECScriptCheckTaskInventoryItemCount);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckInventoryItemCount", CECScriptCheckInventoryItemCount);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerLevelBetween", CECScriptCheckPlayerLevelBetween);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerHPPercentBetween", CECScriptCheckPlayerHPPercentBetween);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerMPPercentBetween", CECScriptCheckPlayerMPPercentBetween);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerProfession", CECScriptCheckPlayerProfession);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckSkillLevelBetween", CECScriptCheckSkillLevelBetween);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckSkillAbilityBetween", CECScriptCheckSkillAbilityBetween);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckServiceNPC", CECScriptCheckServiceNPC);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckTargetNPC", CECScriptCheckTargetNPC);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckTargetPlayer", CECScriptCheckTargetPlayer);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckTargetMonster", CECScriptCheckTargetMonster);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckTaskStatus", CECScriptCheckTaskStatus);
+
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsDead", CECScriptCheckPlayerIsDead);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsFlying", CECScriptCheckPlayerIsFlying);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsSitting", CECScriptCheckPlayerIsSitting);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsInVader", CECScriptCheckPlayerIsInVader);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsPariah", CECScriptCheckPlayerIsPariah);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsDiving", CECScriptCheckPlayerIsDiving);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsPVPOpen", CECScriptCheckPlayerIsPVPOpen);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsInFashionMode", CECScriptCheckPlayerIsInFashionMode);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsFighting", CECScriptCheckPlayerIsFighting);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsTrading", CECScriptCheckPlayerIsTrading);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsUsingTrashBox", CECScriptCheckPlayerIsUsingTrashBox);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsRooting", CECScriptCheckPlayerIsRooting);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerCannotAttack", CECScriptCheckPlayerCannotAttack);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsMeleeing", CECScriptCheckPlayerIsMeleeing);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsTalkingWithNPC", CECScriptCheckPlayerIsTalkingWithNPC);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsSpellingMagic", CECScriptCheckPlayerIsSpellingMagic);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsJumping", CECScriptCheckPlayerIsJumping);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsPickin", CECScriptCheckPlayerIsPicking);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsGathering", CECScriptCheckPlayerIsGathering);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsReviving", CECScriptCheckPlayerIsReviving);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsUsingReviveItem", CECScriptCheckPlayerIsUsingItem);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsChangingFace", CECScriptCheckPlayerIsChangingFace);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsDoingSessionPose", CECScriptCheckPlayerIsDoingSessionPose);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerTrashBoxHasPsw", CECScriptCheckPlayerTrashBoxHasPsw);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsMoving", CECScriptCheckPlayerIsMoving);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsUnderWater", CECScriptCheckPlayerIsUnderWater);
+
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerKilledMonster", CECScriptCheckKillMonster);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerUseNewWeapon", CECScriptCheckEquipNewWeapon);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsAdjustOrient", CECScriptCheckPlayerIsAdjustOrient);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsAdjustDistance", CECScriptCheckPlayerIsAdjustDistance);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPlayerIsPlayTrick", CECScriptCheckPlayerIsPlayTrick);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckInventoryItemMoved", CECScriptCheckInventoryItemMoved);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckIsTimerTriggered", CECScriptCheckIsTimerTriggered);
+
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckPQIsTriggered", CECScriptCheckPQIsTriggered);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckAccountBoxIsTriggered", CECScriptCheckAccountBoxIsTriggered);
+
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckInstanceID", CECScriptCheckMapID);
+
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckAutoMove", CECScriptCheckAutoMove);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckFrameRateBetween", CECScriptCheckFrameRateBetween);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckHavePet", CECScriptCheckHavePet);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckReputationBetween", CECScriptCheckReputationBetween);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckReincarnation", CECScriptCheckReincarnation);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckTitle", CECScriptCheckTitle);
+REGISTER_TO_ECSCRIPTCHECK_FACTORY("CheckNoActiveScript", CECScriptCheckNoActiveScript);

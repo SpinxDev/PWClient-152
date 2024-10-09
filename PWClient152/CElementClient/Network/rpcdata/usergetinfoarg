@@ -1,0 +1,64 @@
+#ifndef __GNET_USERGETINFOARG_RPCDATA
+#define __GNET_USERGETINFOARG_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class UserGetInfoArg : public GNET::Rpc::Data
+	{
+	public:
+		char zoneid;
+		int roleid;
+
+	public:
+		UserGetInfoArg (char l_zoneid = 0,int l_roleid = -1)
+			: zoneid(l_zoneid),roleid(l_roleid)
+		{
+		}
+
+		UserGetInfoArg(const UserGetInfoArg &rhs)
+			: zoneid(rhs.zoneid),roleid(rhs.roleid) { }
+
+		Rpc::Data *Clone() const { return new UserGetInfoArg(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const UserGetInfoArg *r = dynamic_cast<const UserGetInfoArg *>(&rhs);
+			if (r && r != this)
+			{
+				zoneid = r->zoneid;
+				roleid = r->roleid;
+			}
+			return *this;
+		}
+
+		UserGetInfoArg& operator = (const UserGetInfoArg &rhs)
+		{
+			const UserGetInfoArg *r = &rhs;
+			if (r && r != this)
+			{
+				zoneid = r->zoneid;
+				roleid = r->roleid;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << zoneid;
+			os << roleid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> zoneid;
+			os >> roleid;
+			return os;
+		}
+
+	};
+};
+#endif

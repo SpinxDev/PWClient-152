@@ -1,0 +1,44 @@
+	public:
+		int retcode;
+		int roleid;
+		unsigned int localsid;
+		int newmaster;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONMASTERRESIGN_RE };
+	public:
+		FactionMasterResign_Re() { type = PROTOCOL_FACTIONMASTERRESIGN_RE; }
+		FactionMasterResign_Re(void*) : Protocol(PROTOCOL_FACTIONMASTERRESIGN_RE) { }
+		FactionMasterResign_Re (int l_retcode,int l_roleid,unsigned int l_localsid,
+			int l_newmaster)
+			 : retcode(l_retcode),roleid(l_roleid),localsid(l_localsid),
+			newmaster(l_newmaster)
+		{
+			type = PROTOCOL_FACTIONMASTERRESIGN_RE;
+		}
+
+		FactionMasterResign_Re(const FactionMasterResign_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),roleid(rhs.roleid),localsid(rhs.localsid),
+			newmaster(rhs.newmaster) { }
+
+		GNET::Protocol *Clone() const { return new FactionMasterResign_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roleid;
+			os << localsid;
+			os << newmaster;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roleid;
+			os >> localsid;
+			os >> newmaster;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

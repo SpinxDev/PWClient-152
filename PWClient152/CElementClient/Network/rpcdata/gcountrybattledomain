@@ -1,0 +1,95 @@
+#ifndef __GNET_GCOUNTRYBATTLEDOMAIN_RPCDATA
+#define __GNET_GCOUNTRYBATTLEDOMAIN_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GCountryBattleDomain : public GNET::Rpc::Data
+	{
+	public:
+		int id;
+		char owner;
+		char challenger;
+		char status;
+		char battle_config_mask;
+		int time;
+		std::vector<int> country_playercnt;
+
+	public:
+		GCountryBattleDomain (int l_id = 0,char l_owner = 0,char l_challenger = 0
+			,char l_status = 0,char l_battle_config_mask = 0,int l_time = 0
+			,const std::vector<int>& l_country_playercnt = std::vector<int>())
+			: id(l_id),owner(l_owner),challenger(l_challenger)
+			,status(l_status),battle_config_mask(l_battle_config_mask),time(l_time)
+			,country_playercnt(l_country_playercnt)
+		{
+		}
+
+		GCountryBattleDomain(const GCountryBattleDomain &rhs)
+			: id(rhs.id),owner(rhs.owner),challenger(rhs.challenger),
+			status(rhs.status),battle_config_mask(rhs.battle_config_mask),time(rhs.time),
+			country_playercnt(rhs.country_playercnt) { }
+
+		Rpc::Data *Clone() const { return new GCountryBattleDomain(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GCountryBattleDomain *r = dynamic_cast<const GCountryBattleDomain *>(&rhs);
+			if (r && r != this)
+			{
+				id = r->id;
+				owner = r->owner;
+				challenger = r->challenger;
+				status = r->status;
+				battle_config_mask = r->battle_config_mask;
+				time = r->time;
+				country_playercnt = r->country_playercnt;
+			}
+			return *this;
+		}
+
+		GCountryBattleDomain& operator = (const GCountryBattleDomain &rhs)
+		{
+			const GCountryBattleDomain *r = &rhs;
+			if (r && r != this)
+			{
+				id = r->id;
+				owner = r->owner;
+				challenger = r->challenger;
+				status = r->status;
+				battle_config_mask = r->battle_config_mask;
+				time = r->time;
+				country_playercnt = r->country_playercnt;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << id;
+			os << owner;
+			os << challenger;
+			os << status;
+			os << battle_config_mask;
+			os << time;
+			os << country_playercnt;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> id;
+			os >> owner;
+			os >> challenger;
+			os >> status;
+			os >> battle_config_mask;
+			os >> time;
+			os >> country_playercnt;
+			return os;
+		}
+
+	};
+};
+#endif

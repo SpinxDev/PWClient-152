@@ -1,0 +1,44 @@
+	public:
+		int retcode;
+		int dst_fid;
+		char agree;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONREMOVERELATIONREPLY_RE };
+	public:
+		FactionRemoveRelationReply_Re() { type = PROTOCOL_FACTIONREMOVERELATIONREPLY_RE; }
+		FactionRemoveRelationReply_Re(void*) : Protocol(PROTOCOL_FACTIONREMOVERELATIONREPLY_RE) { }
+		FactionRemoveRelationReply_Re (int l_retcode,int l_dst_fid,char l_agree,
+			unsigned int l_localsid)
+			 : retcode(l_retcode),dst_fid(l_dst_fid),agree(l_agree)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_FACTIONREMOVERELATIONREPLY_RE;
+		}
+
+		FactionRemoveRelationReply_Re(const FactionRemoveRelationReply_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),dst_fid(rhs.dst_fid),agree(rhs.agree)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new FactionRemoveRelationReply_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << dst_fid;
+			os << agree;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> dst_fid;
+			os >> agree;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

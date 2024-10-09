@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		int reason;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONDEGRADE_RE };
+	public:
+		FactionDegrade_Re() { type = PROTOCOL_FACTIONDEGRADE_RE; }
+		FactionDegrade_Re(void*) : Protocol(PROTOCOL_FACTIONDEGRADE_RE) { }
+		FactionDegrade_Re (int l_roleid,unsigned int l_localsid,int l_reason)
+			 : roleid(l_roleid),localsid(l_localsid),reason(l_reason)
+		{
+			type = PROTOCOL_FACTIONDEGRADE_RE;
+		}
+
+		FactionDegrade_Re(const FactionDegrade_Re &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid),reason(rhs.reason) { }
+
+		GNET::Protocol *Clone() const { return new FactionDegrade_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << reason;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> reason;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

@@ -1,0 +1,75 @@
+#ifndef __GNET_GAMEZONELISTRES_RPCDATA
+#define __GNET_GAMEZONELISTRES_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GameZoneListRes : public GNET::Rpc::Data
+	{
+	public:
+		char retcode;
+		char handle;
+		IntOctetsVector games;
+		ZoneVector zones;
+
+	public:
+		GameZoneListRes (char l_retcode = -1,char l_handle = 0)
+			: retcode(l_retcode),handle(l_handle)
+		{
+		}
+
+		GameZoneListRes(const GameZoneListRes &rhs)
+			: retcode(rhs.retcode),handle(rhs.handle),games(rhs.games),
+			zones(rhs.zones) { }
+
+		Rpc::Data *Clone() const { return new GameZoneListRes(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GameZoneListRes *r = dynamic_cast<const GameZoneListRes *>(&rhs);
+			if (r && r != this)
+			{
+				retcode = r->retcode;
+				handle = r->handle;
+				games = r->games;
+				zones = r->zones;
+			}
+			return *this;
+		}
+
+		GameZoneListRes& operator = (const GameZoneListRes &rhs)
+		{
+			const GameZoneListRes *r = &rhs;
+			if (r && r != this)
+			{
+				retcode = r->retcode;
+				handle = r->handle;
+				games = r->games;
+				zones = r->zones;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << handle;
+			os << games;
+			os << zones;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> handle;
+			os >> games;
+			os >> zones;
+			return os;
+		}
+
+	};
+};
+#endif

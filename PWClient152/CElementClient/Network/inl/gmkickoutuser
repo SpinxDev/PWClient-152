@@ -1,0 +1,47 @@
+	public:
+		int gmroleid;
+		int localsid;
+		int kickuserid;
+		int forbid_time;
+		Octets reason;
+		enum { PROTOCOL_TYPE = PROTOCOL_GMKICKOUTUSER };
+	public:
+		GMKickoutUser() { type = PROTOCOL_GMKICKOUTUSER; }
+		GMKickoutUser(void*) : Protocol(PROTOCOL_GMKICKOUTUSER) { }
+		GMKickoutUser (int l_gmroleid,int l_localsid,int l_kickuserid,
+			int l_forbid_time = 600,const Octets& l_reason = Octets())
+			 : gmroleid(l_gmroleid),localsid(l_localsid),kickuserid(l_kickuserid),
+			forbid_time(l_forbid_time),reason(l_reason)
+		{
+			type = PROTOCOL_GMKICKOUTUSER;
+		}
+
+		GMKickoutUser(const GMKickoutUser &rhs)
+			: Protocol(rhs),gmroleid(rhs.gmroleid),localsid(rhs.localsid),kickuserid(rhs.kickuserid),
+			forbid_time(rhs.forbid_time),reason(rhs.reason) { }
+
+		GNET::Protocol *Clone() const { return new GMKickoutUser(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << gmroleid;
+			os << localsid;
+			os << kickuserid;
+			os << forbid_time;
+			os << reason;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> gmroleid;
+			os >> localsid;
+			os >> kickuserid;
+			os >> forbid_time;
+			os >> reason;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 256; }

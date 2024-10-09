@@ -1,0 +1,47 @@
+	public:
+		int retcode;
+		unsigned int tid;
+		int submit_roleid;
+		int roleid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_TRADESUBMIT_RE };
+	public:
+		TradeSubmit_Re() { type = PROTOCOL_TRADESUBMIT_RE; }
+		TradeSubmit_Re(void*) : Protocol(PROTOCOL_TRADESUBMIT_RE) { }
+		TradeSubmit_Re (int l_retcode,unsigned int l_tid,int l_submit_roleid,
+			int l_roleid,unsigned int l_localsid)
+			 : retcode(l_retcode),tid(l_tid),submit_roleid(l_submit_roleid),
+			roleid(l_roleid),localsid(l_localsid)
+		{
+			type = PROTOCOL_TRADESUBMIT_RE;
+		}
+
+		TradeSubmit_Re(const TradeSubmit_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),tid(rhs.tid),submit_roleid(rhs.submit_roleid),
+			roleid(rhs.roleid),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new TradeSubmit_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << tid;
+			os << submit_roleid;
+			os << roleid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> tid;
+			os >> submit_roleid;
+			os >> roleid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

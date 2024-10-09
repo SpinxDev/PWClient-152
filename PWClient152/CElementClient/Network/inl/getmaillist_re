@@ -1,0 +1,44 @@
+	public:
+		int retcode;
+		int roleid;
+		unsigned int localsid;
+		GMailHeaderVector maillist;
+		enum { PROTOCOL_TYPE = PROTOCOL_GETMAILLIST_RE };
+	public:
+		GetMailList_Re() { type = PROTOCOL_GETMAILLIST_RE; }
+		GetMailList_Re(void*) : Protocol(PROTOCOL_GETMAILLIST_RE) { }
+		GetMailList_Re (int l_retcode,int l_roleid,unsigned int l_localsid,
+			const GMailHeaderVector& l_maillist = GMailHeaderVector())
+			 : retcode(l_retcode),roleid(l_roleid),localsid(l_localsid),
+			maillist(l_maillist)
+		{
+			type = PROTOCOL_GETMAILLIST_RE;
+		}
+
+		GetMailList_Re(const GetMailList_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),roleid(rhs.roleid),localsid(rhs.localsid),
+			maillist(rhs.maillist) { }
+
+		GNET::Protocol *Clone() const { return new GetMailList_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roleid;
+			os << localsid;
+			os << maillist;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roleid;
+			os >> localsid;
+			os >> maillist;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 10240; }

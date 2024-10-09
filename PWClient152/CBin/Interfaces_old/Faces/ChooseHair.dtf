@@ -1,0 +1,25 @@
+DIALOG "Win_ChooseHair" 0 0 250 480 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "Window\对话框_标准关闭.tga" 26 5 96 96 96 255 1
+LABEL "Control_620196584" "" "" 45 233 61 14 2 10 3 255 203 74 255
+LABEL "Control_237554344" "" "" 83 2 91 25 4 16 5 255 203 74 255
+IMAGEPICTURE "Control_82950052" "" "" 111 240 130 3 1 0 "Window\分隔线.tga"
+STILLIMAGEBUTTON "Control_69605439" "ChooseFace" "" 0 48 38 48 0 0 0 0 6 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 7 1
+STILLIMAGEBUTTON "Control_588733145" "ChooseEye" "" 0 96 38 48 0 0 0 0 8 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 9 1
+STILLIMAGEBUTTON "Control_368912370" "ChooseEyebrow" "" 0 144 38 48 0 0 0 0 10 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 11 1
+STILLIMAGEBUTTON "Control_120048474" "ChooseNose" "" 0 192 38 48 0 0 0 0 12 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 13 1
+STILLIMAGEBUTTON "Control_673114926" "ChooseMouth" "" 0 240 38 48 0 0 0 0 14 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 15 1
+STILLIMAGEBUTTON "Control_332562581" "ChooseEar" "" 0 288 38 48 0 0 0 0 16 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 17 1
+STILLIMAGEBUTTON "Btm_ChooseHair" "ChooseHair" "" 0 336 38 48 0 0 0 0 18 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 19 1
+STILLIMAGEBUTTON "Control_193291245" "ChooseFacePainting" "" 0 384 38 48 0 0 0 0 20 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 21 1
+LABEL "Control_384653492" "" "" 59 247 76 14 22 10 23 255 255 255 255
+LABEL "Control_371834360" "" "" 59 323 71 14 24 10 25 255 255 255 255
+LIST "ListBox_Goatee" "" "" 42 340 200 56 26 10 0 0 0 255 "Editbox\文本框_4.tga" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LIST "ListBox_Moustache" "" "" 42 264 200 56 27 10 0 0 0 255 "Editbox\文本框_4.tga" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LIST "ListBox_Hair" "" "" 42 31 200 125 28 10 0 0 0 255 "Editbox\文本框_4.tga" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+STILLIMAGEBUTTON "Control_87945996" "ChooseStature" "" 0 432 38 48 0 0 0 0 29 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 30 1
+STILLIMAGEBUTTON "Control_495549720" "ChoosePreCustomize" "" 0 0 38 48 0 0 0 0 31 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 32 1
+LIST "ListBox_HairTex" "" "" 42 174 200 56 33 10 0 0 0 255 "Editbox\文本框_4.tga" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LIST "ListBox_GoateeTex" "" "" 42 417 200 56 34 10 0 0 0 255 "Editbox\文本框_4.tga" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LABEL "Control_107207500" "" "" 45 401 85 14 35 10 36 255 203 74 255
+LABEL "Control_317927863" "" "" 45 157 81 14 37 10 38 255 203 74 255
+IMAGEPICTURE "Control_118277810" "" "" 130 164 110 3 1 0 "Window\分隔线.tga"
+IMAGEPICTURE "Control_51393822" "" "" 130 408 110 3 1 0 "Window\分隔线.tga"

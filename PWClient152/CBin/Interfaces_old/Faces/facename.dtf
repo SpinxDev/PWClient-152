@@ -1,0 +1,6 @@
+DIALOG "Win_Facename" 0 0 212 107 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 185 27 "Window\对话框_标准关闭.tga" 27 7 96 96 96 255 1
+LABEL "Control_285650307" "" "" 4 3 0 0 2 16 3 255 203 74 255
+STILLIMAGEBUTTON "Btn_Exit" "IDCANCEL" "SFX\Interface\ClickB.wav" 124 74 40 24 0 0 0 0 4 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 5 1
+STILLIMAGEBUTTON "Btn_Confirm" "confirm" "SFX\Interface\ClickB.wav" 48 74 40 24 0 0 0 0 6 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 7 1
+EDIT "DEFAULT_Txt_Input" "confirm" "" 6 49 197 21 "Editbox\文本框_4.dds" 8 10 255 255 255 "TEXT" 0 0 9
+LABEL "Control_15561963" "" "" 5 29 197 17 9 10 10 255 203 74 255

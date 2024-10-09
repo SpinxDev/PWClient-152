@@ -1,0 +1,28 @@
+//  ************* Angelica 3D shader ***************
+
+王笑青云山小瀑布
+{
+	//  General properties
+
+	//  Stage 0
+	{
+		texture          TEX_NORMAL  王笑小瀑布01.tga
+		colorop          TOP_SELECTARG1
+		colorarg1        TA_TEXTURE
+		colorarg2        TA_CURRENT
+		alphaop          TOP_SELECTARG1
+		alphaarg1        TA_TEXTURE
+		alphaarg2        TA_CURRENT
+	}
+
+	//  Stage 1
+	{
+		texture          TEX_NORMAL  王笑小瀑布02.tga
+		colorop          TOP_SELECTARG1
+		colorarg1        TA_TEXTURE
+		colorarg2        TA_CURRENT
+		tcscale          0.600000  0.600000
+		tcscroll         0.000000  -0.500000
+	}
+
+}

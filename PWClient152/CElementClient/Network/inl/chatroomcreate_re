@@ -1,0 +1,50 @@
+	public:
+		short retcode;
+		unsigned short roomid;
+		Octets subject;
+		unsigned short capacity;
+		unsigned char status;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_CHATROOMCREATE_RE };
+	public:
+		ChatRoomCreate_Re() { type = PROTOCOL_CHATROOMCREATE_RE; }
+		ChatRoomCreate_Re(void*) : Protocol(PROTOCOL_CHATROOMCREATE_RE) { }
+		ChatRoomCreate_Re (short l_retcode,unsigned short l_roomid,const Octets& l_subject,
+			unsigned short l_capacity,unsigned char l_status,unsigned int l_localsid)
+			 : retcode(l_retcode),roomid(l_roomid),subject(l_subject),
+			capacity(l_capacity),status(l_status),localsid(l_localsid)
+		{
+			type = PROTOCOL_CHATROOMCREATE_RE;
+		}
+
+		ChatRoomCreate_Re(const ChatRoomCreate_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),roomid(rhs.roomid),subject(rhs.subject),
+			capacity(rhs.capacity),status(rhs.status),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new ChatRoomCreate_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roomid;
+			os << subject;
+			os << capacity;
+			os << status;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roomid;
+			os >> subject;
+			os >> capacity;
+			os >> status;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 48; }

@@ -1,0 +1,35 @@
+	public:
+		int roleid;
+		int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_REFWITHDRAWBONUS };
+	public:
+		RefWithdrawBonus() { type = PROTOCOL_REFWITHDRAWBONUS; }
+		RefWithdrawBonus(void*) : Protocol(PROTOCOL_REFWITHDRAWBONUS) { }
+		RefWithdrawBonus (int l_roleid,int l_localsid = 0)
+			 : roleid(l_roleid),localsid(l_localsid)
+		{
+			type = PROTOCOL_REFWITHDRAWBONUS;
+		}
+
+		RefWithdrawBonus(const RefWithdrawBonus &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new RefWithdrawBonus(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

@@ -1,0 +1,44 @@
+	public:
+		int result;
+		unsigned int CRC;
+		int roleid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_SETCUSTOMDATA_RE };
+	public:
+		SetCustomData_Re() { type = PROTOCOL_SETCUSTOMDATA_RE; }
+		SetCustomData_Re(void*) : Protocol(PROTOCOL_SETCUSTOMDATA_RE) { }
+		SetCustomData_Re (int l_result,unsigned int l_CRC,int l_roleid,
+			unsigned int l_localsid)
+			 : result(l_result),CRC(l_CRC),roleid(l_roleid),
+			localsid(l_localsid)
+		{
+			type = PROTOCOL_SETCUSTOMDATA_RE;
+		}
+
+		SetCustomData_Re(const SetCustomData_Re &rhs)
+			: Protocol(rhs),result(rhs.result),CRC(rhs.CRC),roleid(rhs.roleid),
+			localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new SetCustomData_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << result;
+			os << CRC;
+			os << roleid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> result;
+			os >> CRC;
+			os >> roleid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

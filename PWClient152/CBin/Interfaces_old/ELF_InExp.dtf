@@ -1,0 +1,29 @@
+DIALOG "Win_ELFInExp" 0 0 305 267 0 1 10 "小精灵新加tga\经验注入面板\经验注入底板.tga" "" "" 0 0 -1 -1 "人鱼传说新界面\面板关闭按钮.tga" 30 10 96 96 96 255 1
+LABEL "Control_191099400" "" "" 64 148 91 22 2 15 3 255 203 74 255
+LABEL "Txt_CHAREXP" "" "" 161 149 78 19 4 15 5 255 255 255 255
+PROGRESS "Pgs_Inject" "" "" 17 117 270 38 "小精灵新加tga\经验注入面板\槽子框.tga" "小精灵新加tga\经验注入面板\血.tga" 16 16 16 16
+LABEL "Control_360458605" "" "" 3 188 122 21 6 15 7 255 255 255 255
+LABEL "Txt_LEVEL" "" "" 126 189 28 24 8 15 9 255 255 255 255
+STILLIMAGEBUTTON "Btn_POWER" "inject" "" 56 230 66 24 0 0 0 0 10 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 11 1
+STILLIMAGEBUTTON "Btn_OK" "confirm" "" 206 230 64 24 0 0 0 0 12 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 13 1
+STILLIMAGEBUTTON "Btn_Powerdown" "reset" "" 130 230 66 24 0 0 0 0 14 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 15 1
+LABEL "Control_849964564" "" "" 106 33 132 22 16 15 17 255 203 74 255
+LABEL "Control_388733488" "" "" 106 11 118 18 18 15 19 255 203 74 255
+IMAGEPICTURE "Img_Pill" "" "" 29 26 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Control_488109325" "" "" 79 76 138 36 1 0 "小精灵新加tga\经验注入面板\宝石装饰.tga"
+LABEL "Lab_HostLevel" "" "" 4 209 105 21 20 15 21 255 255 255 255
+LABEL "Txt_HostLevel" "" "" 97 210 42 20 22 15 23 255 255 255 255
+LABEL "Control_107676657" "" "" 155 205 97 21 24 15 25 255 255 255 255
+LABEL "Txt_Ratio" "" "" 244 205 57 18 26 15 27 255 255 255 255
+LABEL "Lab_ItemLevel" "" "" 6 208 96 21 28 15 29 255 255 255 255
+LABEL "Txt_ItemLevel" "" "" 98 209 42 22 30 15 31 255 255 255 255
+LABEL "Control_325317734" "" "" 10 92 65 20 32 15 33 255 203 74 255
+LABEL "Txt_ExpIn" "" "" 37 108 82 17 34 15 35 255 255 255 255
+LABEL "Control_42985702" "" "" 223 94 61 21 36 15 37 255 203 74 255
+LABEL "Txt_ExpOut" "" "" 199 110 71 19 38 15 39 255 255 255 255
+STILLIMAGEBUTTON "Btn_QuickSet" "QuickSet" "" 163 181 89 22 0 0 0 0 40 15 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 41 1
+LABEL "Lab_Expwan" "" "" 17 60 60 19 42 15 43 255 255 255 255
+RADIO "Chk_HostInject" "HostInject" "" 81 32 20 20 "Extra\单选框_标准.tga" 1 1
+RADIO "Chk_PillInject" "PillInject" "" 81 9 20 20 "Extra\单选框_标准.tga" 2 1
+RADIO "Chk_SP" "SPInject" "" 81 55 20 20 "Extra\单选框_标准.tga" 3 1
+LABEL "Control_24460688" "" "" 106 56 122 22 44 15 45 255 203 74 255

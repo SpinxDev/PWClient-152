@@ -1,0 +1,35 @@
+	public:
+		Octets nonce;
+		char blkickuser;
+		enum { PROTOCOL_TYPE = PROTOCOL_KEYEXCHANGE };
+	public:
+		KeyExchange() { type = PROTOCOL_KEYEXCHANGE; }
+		KeyExchange(void*) : Protocol(PROTOCOL_KEYEXCHANGE) { }
+		KeyExchange (const Octets& l_nonce,char l_blkickuser = 0)
+			 : nonce(l_nonce),blkickuser(l_blkickuser)
+		{
+			type = PROTOCOL_KEYEXCHANGE;
+		}
+
+		KeyExchange(const KeyExchange &rhs)
+			: Protocol(rhs),nonce(rhs.nonce),blkickuser(rhs.blkickuser) { }
+
+		GNET::Protocol *Clone() const { return new KeyExchange(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << nonce;
+			os << blkickuser;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> nonce;
+			os >> blkickuser;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 101; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

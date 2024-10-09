@@ -1,0 +1,35 @@
+	public:
+		unsigned int localsid;
+		std::vector<SellPointInfo> list;
+		enum { PROTOCOL_TYPE = PROTOCOL_GETSELLLIST_RE };
+	public:
+		GetSellList_Re() { type = PROTOCOL_GETSELLLIST_RE; }
+		GetSellList_Re(void*) : Protocol(PROTOCOL_GETSELLLIST_RE) { }
+		GetSellList_Re (unsigned int l_localsid,const std::vector<SellPointInfo>& l_list)
+			 : localsid(l_localsid),list(l_list)
+		{
+			type = PROTOCOL_GETSELLLIST_RE;
+		}
+
+		GetSellList_Re(const GetSellList_Re &rhs)
+			: Protocol(rhs),localsid(rhs.localsid),list(rhs.list) { }
+
+		GNET::Protocol *Clone() const { return new GetSellList_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << localsid;
+			os << list;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> localsid;
+			os >> list;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 102400; }

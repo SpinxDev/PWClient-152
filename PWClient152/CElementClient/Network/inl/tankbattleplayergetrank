@@ -1,0 +1,35 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_TANKBATTLEPLAYERGETRANK };
+	public:
+		TankBattlePlayerGetRank() { type = PROTOCOL_TANKBATTLEPLAYERGETRANK; }
+		TankBattlePlayerGetRank(void*) : Protocol(PROTOCOL_TANKBATTLEPLAYERGETRANK) { }
+		TankBattlePlayerGetRank (int l_roleid,unsigned int l_localsid)
+			 : roleid(l_roleid),localsid(l_localsid)
+		{
+			type = PROTOCOL_TANKBATTLEPLAYERGETRANK;
+		}
+
+		TankBattlePlayerGetRank(const TankBattlePlayerGetRank &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new TankBattlePlayerGetRank(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

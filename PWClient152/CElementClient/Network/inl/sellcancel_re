@@ -1,0 +1,38 @@
+	public:
+		int retcode;
+		unsigned int localsid;
+		int sellid;
+		enum { PROTOCOL_TYPE = PROTOCOL_SELLCANCEL_RE };
+	public:
+		SellCancel_Re() { type = PROTOCOL_SELLCANCEL_RE; }
+		SellCancel_Re(void*) : Protocol(PROTOCOL_SELLCANCEL_RE) { }
+		SellCancel_Re (int l_retcode,unsigned int l_localsid,int l_sellid)
+			 : retcode(l_retcode),localsid(l_localsid),sellid(l_sellid)
+		{
+			type = PROTOCOL_SELLCANCEL_RE;
+		}
+
+		SellCancel_Re(const SellCancel_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),localsid(rhs.localsid),sellid(rhs.sellid) { }
+
+		GNET::Protocol *Clone() const { return new SellCancel_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << localsid;
+			os << sellid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> localsid;
+			os >> sellid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

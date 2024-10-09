@@ -1,0 +1,35 @@
+	public:
+		int roleid;
+		int master;
+		enum { PROTOCOL_TYPE = PROTOCOL_PSHOPPLAYERGET };
+	public:
+		PShopPlayerGet() { type = PROTOCOL_PSHOPPLAYERGET; }
+		PShopPlayerGet(void*) : Protocol(PROTOCOL_PSHOPPLAYERGET) { }
+		PShopPlayerGet (int l_roleid,int l_master)
+			 : roleid(l_roleid),master(l_master)
+		{
+			type = PROTOCOL_PSHOPPLAYERGET;
+		}
+
+		PShopPlayerGet(const PShopPlayerGet &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),master(rhs.master) { }
+
+		GNET::Protocol *Clone() const { return new PShopPlayerGet(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << master;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> master;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

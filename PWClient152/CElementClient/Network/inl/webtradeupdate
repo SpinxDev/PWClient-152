@@ -1,0 +1,38 @@
+	public:
+		int64_t sn;
+		int roleid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_WEBTRADEUPDATE };
+	public:
+		WebTradeUpdate() { type = PROTOCOL_WEBTRADEUPDATE; }
+		WebTradeUpdate(void*) : Protocol(PROTOCOL_WEBTRADEUPDATE) { }
+		WebTradeUpdate (int64_t l_sn,int l_roleid,unsigned int l_localsid)
+			 : sn(l_sn),roleid(l_roleid),localsid(l_localsid)
+		{
+			type = PROTOCOL_WEBTRADEUPDATE;
+		}
+
+		WebTradeUpdate(const WebTradeUpdate &rhs)
+			: Protocol(rhs),sn(rhs.sn),roleid(rhs.roleid),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new WebTradeUpdate(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << sn;
+			os << roleid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> sn;
+			os >> roleid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

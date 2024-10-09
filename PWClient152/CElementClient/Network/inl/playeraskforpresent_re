@@ -1,0 +1,38 @@
+	public:
+		int localsid;
+		int roleid;
+		int retcode;
+		enum { PROTOCOL_TYPE = PROTOCOL_PLAYERASKFORPRESENT_RE };
+	public:
+		PlayerAskForPresent_Re() { type = PROTOCOL_PLAYERASKFORPRESENT_RE; }
+		PlayerAskForPresent_Re(void*) : Protocol(PROTOCOL_PLAYERASKFORPRESENT_RE) { }
+		PlayerAskForPresent_Re (int l_localsid,int l_roleid,int l_retcode)
+			 : localsid(l_localsid),roleid(l_roleid),retcode(l_retcode)
+		{
+			type = PROTOCOL_PLAYERASKFORPRESENT_RE;
+		}
+
+		PlayerAskForPresent_Re(const PlayerAskForPresent_Re &rhs)
+			: Protocol(rhs),localsid(rhs.localsid),roleid(rhs.roleid),retcode(rhs.retcode) { }
+
+		GNET::Protocol *Clone() const { return new PlayerAskForPresent_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << localsid;
+			os << roleid;
+			os << retcode;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> localsid;
+			os >> roleid;
+			os >> retcode;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

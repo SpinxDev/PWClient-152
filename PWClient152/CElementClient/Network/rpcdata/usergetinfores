@@ -1,0 +1,70 @@
+#ifndef __GNET_USERGETINFORES_RPCDATA
+#define __GNET_USERGETINFORES_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "userinfodetail"
+
+namespace GNET
+{
+	class UserGetInfoRes : public GNET::Rpc::Data
+	{
+	public:
+		char retcode;
+		UserInfoDetail info;
+		char privacy;
+
+	public:
+		UserGetInfoRes (char l_retcode = 0)
+			: retcode(l_retcode)
+		{
+		}
+
+		UserGetInfoRes(const UserGetInfoRes &rhs)
+			: retcode(rhs.retcode),info(rhs.info),privacy(rhs.privacy) { }
+
+		Rpc::Data *Clone() const { return new UserGetInfoRes(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const UserGetInfoRes *r = dynamic_cast<const UserGetInfoRes *>(&rhs);
+			if (r && r != this)
+			{
+				retcode = r->retcode;
+				info = r->info;
+				privacy = r->privacy;
+			}
+			return *this;
+		}
+
+		UserGetInfoRes& operator = (const UserGetInfoRes &rhs)
+		{
+			const UserGetInfoRes *r = &rhs;
+			if (r && r != this)
+			{
+				retcode = r->retcode;
+				info = r->info;
+				privacy = r->privacy;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << info;
+			os << privacy;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> info;
+			os >> privacy;
+			return os;
+		}
+
+	};
+};
+#endif

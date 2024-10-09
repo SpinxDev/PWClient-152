@@ -1,0 +1,35 @@
+ps_2_0
+
+// c0.r dissolve threshold
+// c1.r ±ßÔµ·¶Î§
+// c1.g alpha·¶Î§
+// c2 ±ßÔµÑÕÉ«
+
+dcl_2d s0
+dcl_2d s1
+dcl t0.xy
+dcl v0
+
+def c3, 1.0, 0, 0, 0
+
+texld r0, t0, s0
+texld r1, t0, s1
+
+mul r0, r0, v0
+
+// deltaÖµ
+sub r2.r, r1, c0
+
+// ±ßÔµ·¶Î§µ¹Êý
+rcp r3.r, c1.r
+
+sub r3.g, r2.r, c1.g
+mul_sat r3.b, r3.g, r3.r
+
+lrp r0.rgb, r3.b, r0, c2
+
+rcp r4.r, c1.g
+mul_sat r1.a, r2.r, r4.r
+mul r0.a, r0, r1
+
+mov oC0, r0

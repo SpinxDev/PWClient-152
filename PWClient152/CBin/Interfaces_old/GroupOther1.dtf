@@ -1,0 +1,9 @@
+POPUP "GroupOther1" 0 0 117 76 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 0 0 "" 0 0 255 255 255 255 1
+HILIGHT "Listbox\列表框_反显.dds"
+MENUITEM 101 "Whisper"
+MENUITEM 103 "MakeLeader"
+MENUITEM 105 "Kick"
+MENUITEM 107 "Trade"
+MENUITEM 109 "Follow"
+MENUITEM 111 "Assist"
+MENUITEM 113 "Close"

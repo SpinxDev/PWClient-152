@@ -1,0 +1,38 @@
+	public:
+		int result;
+		int timeout;
+		int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_AUTOLOCKSET_RE };
+	public:
+		AutolockSet_Re() { type = PROTOCOL_AUTOLOCKSET_RE; }
+		AutolockSet_Re(void*) : Protocol(PROTOCOL_AUTOLOCKSET_RE) { }
+		AutolockSet_Re (int l_result,int l_timeout,int l_localsid)
+			 : result(l_result),timeout(l_timeout),localsid(l_localsid)
+		{
+			type = PROTOCOL_AUTOLOCKSET_RE;
+		}
+
+		AutolockSet_Re(const AutolockSet_Re &rhs)
+			: Protocol(rhs),result(rhs.result),timeout(rhs.timeout),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new AutolockSet_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << result;
+			os << timeout;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> result;
+			os >> timeout;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

@@ -1,0 +1,44 @@
+	public:
+		int retcode;
+		int domain_id;
+		std::vector<GCountryBattleLimit> limit;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_COUNTRYBATTLEGETBATTLELIMIT_RE };
+	public:
+		CountryBattleGetBattleLimit_Re() { type = PROTOCOL_COUNTRYBATTLEGETBATTLELIMIT_RE; }
+		CountryBattleGetBattleLimit_Re(void*) : Protocol(PROTOCOL_COUNTRYBATTLEGETBATTLELIMIT_RE) { }
+		CountryBattleGetBattleLimit_Re (int l_retcode,int l_domain_id,const std::vector<GCountryBattleLimit>& l_limit,
+			unsigned int l_localsid)
+			 : retcode(l_retcode),domain_id(l_domain_id),limit(l_limit)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_COUNTRYBATTLEGETBATTLELIMIT_RE;
+		}
+
+		CountryBattleGetBattleLimit_Re(const CountryBattleGetBattleLimit_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),domain_id(rhs.domain_id),limit(rhs.limit)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new CountryBattleGetBattleLimit_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << domain_id;
+			os << limit;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> domain_id;
+			os >> limit;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 512; }

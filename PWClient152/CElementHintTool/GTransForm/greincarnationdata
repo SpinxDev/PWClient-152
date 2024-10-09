@@ -1,0 +1,88 @@
+#ifndef __GNET_GREINCARNATIONDATA_RPCDATA
+#define __GNET_GREINCARNATIONDATA_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "greincarnationrecord"
+
+namespace GNET
+{
+	class GReincarnationData : public GNET::Rpc::Data
+	{
+	public:
+		int tome_exp;
+		char tome_active;
+		GReincarnationRecordVector records;
+		int reserved1;
+		int reserved2;
+		int reserved3;
+
+	public:
+		GReincarnationData (int l_tome_exp = 0,char l_tome_active = 0,const GReincarnationRecordVector& l_records = GReincarnationRecordVector()
+			,int l_reserved1 = 0,int l_reserved2 = 0,int l_reserved3 = 0)
+			: tome_exp(l_tome_exp),tome_active(l_tome_active),records(l_records)
+			,reserved1(l_reserved1),reserved2(l_reserved2),reserved3(l_reserved3)
+		{
+		}
+
+		GReincarnationData(const GReincarnationData &rhs)
+			: tome_exp(rhs.tome_exp),tome_active(rhs.tome_active),records(rhs.records),
+			reserved1(rhs.reserved1),reserved2(rhs.reserved2),reserved3(rhs.reserved3) { }
+
+		Rpc::Data *Clone() const { return new GReincarnationData(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GReincarnationData *r = dynamic_cast<const GReincarnationData *>(&rhs);
+			if (r && r != this)
+			{
+				tome_exp = r->tome_exp;
+				tome_active = r->tome_active;
+				records = r->records;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+			}
+			return *this;
+		}
+
+		GReincarnationData& operator = (const GReincarnationData &rhs)
+		{
+			const GReincarnationData *r = &rhs;
+			if (r && r != this)
+			{
+				tome_exp = r->tome_exp;
+				tome_active = r->tome_active;
+				records = r->records;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << tome_exp;
+			os << tome_active;
+			os << records;
+			os << reserved1;
+			os << reserved2;
+			os << reserved3;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> tome_exp;
+			os >> tome_active;
+			os >> records;
+			os >> reserved1;
+			os >> reserved2;
+			os >> reserved3;
+			return os;
+		}
+
+	};
+};
+#endif

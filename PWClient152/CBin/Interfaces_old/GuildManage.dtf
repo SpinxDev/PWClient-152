@@ -1,0 +1,36 @@
+DIALOG "Win_GuildManage" 0 0 476 355 0 1 10 "Window\对话框_标准边框1.dds" "" "人鱼传说新界面\title.tga" 3 3 471 33 "人鱼传说新界面\面板关闭按钮.tga" 37 7 96 96 96 255 1
+LABEL "Txt_GuildName" "" "" 234 4 0 0 2 16 3 255 203 74 255
+EDIT "back1" "" "" 6 33 146 19 "Editbox\文本框_4.dds" 4 15 255 0 255 "TEXT" 1 0 256
+EDIT "back2" "" "" 150 33 75 19 "Editbox\文本框_4.dds" 5 15 255 0 255 "TEXT" 1 0 256
+EDIT "back3" "" "" 223 33 75 19 "Editbox\文本框_4.dds" 6 15 255 0 255 "TEXT" 1 0 256
+EDIT "back4" "" "" 296 33 45 19 "Editbox\文本框_4.dds" 7 15 255 0 255 "TEXT" 1 0 256
+EDIT "back5" "" "" 340 33 45 19 "Editbox\文本框_4.dds" 8 15 255 0 255 "TEXT" 1 0 256
+EDIT "back6" "" "" 384 33 68 19 "Editbox\文本框_4.dds" 9 15 255 0 255 "TEXT" 1 0 256
+LIST "List_Member" "listmember" "" 6 52 462 210 10 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "167 59 73 43 50 53"
+TEXT "Txt_Message" "" "" 6 280 390 42 11 10 255 255 255 255 "Editbox\文本框_4c.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp"
+STILLIMAGEBUTTON "Btn_SortName" "sortname" "" 9 34 140 14 0 0 0 0 12 10 255 203 74 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 13 1
+STILLIMAGEBUTTON "Btn_SortJob" "sortjob" "" 151 34 72 14 0 0 0 0 14 10 255 203 74 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 15 1
+STILLIMAGEBUTTON "Btn_SortTitle" "sorttitle" "" 224 34 72 14 0 0 0 0 16 10 255 203 74 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 17 1
+STILLIMAGEBUTTON "Btn_SortLevel" "sortlevel" "" 302 34 30 14 0 0 0 0 18 10 255 203 74 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 19 1
+STILLIMAGEBUTTON "Btn_SortProf" "sortprof" "" 345 34 35 14 0 0 0 0 20 10 255 203 74 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 21 1
+STILLIMAGEBUTTON "Btn_SortOL" "sortol" "" 387 34 60 14 0 0 0 0 22 10 255 203 74 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 23 1
+IMAGEPICTURE "Img_GuildIcon" "" "" 8 262 17 18 0 0 ""
+LABEL "Txt_GuildName2" "" "" 26 263 118 16 24 10 25 255 255 255 255
+LABEL "Control_218089809" "" "" 376 265 56 12 26 8 27 255 255 255 255
+LABEL "Control_467412692" "" "" 301 265 55 13 28 8 29 255 255 255 255
+LABEL "Control_122432375" "" "" 163 263 66 16 30 10 31 255 255 255 255
+STILLIMAGEBUTTON "Btn_Edit" "Edit" "SFX\Interface\ClickB.wav" 400 276 70 24 0 0 0 0 32 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 33 1
+STILLIMAGEBUTTON "Btn_GuildQuit" "gquit" "SFX\Interface\ClickB.wav" 400 324 70 24 0 0 0 0 34 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 35 1
+STILLIMAGEBUTTON "Btn_GuildPass" "gpass" "SFX\Interface\ClickB.wav" 166 324 42 24 0 0 0 0 36 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 37 1
+STILLIMAGEBUTTON "Btn_GuildDemission" "gdemiss" "SFX\Interface\ClickB.wav" 209 324 42 24 0 0 0 0 38 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 39 1
+STILLIMAGEBUTTON "Btn_GuildPromote" "gpromote" "SFX\Interface\ClickB.wav" 80 324 42 24 0 0 0 0 40 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 41 1
+STILLIMAGEBUTTON "Btn_GuildDemote" "gdemote" "SFX\Interface\ClickB.wav" 123 324 42 24 0 0 0 0 42 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 43 1
+STILLIMAGEBUTTON "Btn_GuildKick" "gkick" "SFX\Interface\ClickB.wav" 255 324 70 24 0 0 0 0 44 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 45 1
+STILLIMAGEBUTTON "Btn_GuildTitle" "gtitle" "SFX\Interface\ClickB.wav" 326 324 70 24 0 0 0 0 46 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 47 1
+LABEL "Txt_GuildLevel" "" "" 226 263 26 15 48 10 49 255 255 255 255
+LABEL "Txt_PplCap" "" "" 352 265 27 15 50 8 51 255 255 255 255
+LABEL "Txt_PplOnline" "" "" 426 265 48 16 52 8 53 255 255 255 255
+IMAGEPICTURE "Img_Refresh" "" "" 455 33 12 18 1 0 "Button\刷新_0.tga"
+STILLIMAGEBUTTON "Btn_Refresh" "refresh" "SFX\Interface\ClickB.wav" 455 33 12 18 0 0 0 0 54 10 255 203 74 255 "Button\刷新_1.tga" "Button\刷新_2.tga" 55 1
+STILLIMAGEBUTTON "Btn_GuildInvite" "ginvite" "" 6 324 70 24 0 0 0 0 56 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 57 1
+STILLIMAGEBUTTON "Btn_FindPlayer" "find" "SFX\Interface\ClickB.wav" 400 300 70 24 0 0 0 0 58 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 59 1

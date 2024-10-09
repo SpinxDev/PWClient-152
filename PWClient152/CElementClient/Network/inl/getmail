@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		unsigned char mail_id;
+		enum { PROTOCOL_TYPE = PROTOCOL_GETMAIL };
+	public:
+		GetMail() { type = PROTOCOL_GETMAIL; }
+		GetMail(void*) : Protocol(PROTOCOL_GETMAIL) { }
+		GetMail (int l_roleid,unsigned int l_localsid,unsigned char l_mail_id)
+			 : roleid(l_roleid),localsid(l_localsid),mail_id(l_mail_id)
+		{
+			type = PROTOCOL_GETMAIL;
+		}
+
+		GetMail(const GetMail &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid),mail_id(rhs.mail_id) { }
+
+		GNET::Protocol *Clone() const { return new GetMail(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << mail_id;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> mail_id;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

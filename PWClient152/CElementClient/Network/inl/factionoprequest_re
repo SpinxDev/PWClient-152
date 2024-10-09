@@ -1,0 +1,47 @@
+	public:
+		int retcode;
+		int optype;
+		int roleid;
+		int linkid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONOPREQUEST_RE };
+	public:
+		FactionOPRequest_Re() { type = PROTOCOL_FACTIONOPREQUEST_RE; }
+		FactionOPRequest_Re(void*) : Protocol(PROTOCOL_FACTIONOPREQUEST_RE) { }
+		FactionOPRequest_Re (int l_retcode,int l_optype,int l_roleid,
+			int l_linkid,unsigned int l_localsid)
+			 : retcode(l_retcode),optype(l_optype),roleid(l_roleid),
+			linkid(l_linkid),localsid(l_localsid)
+		{
+			type = PROTOCOL_FACTIONOPREQUEST_RE;
+		}
+
+		FactionOPRequest_Re(const FactionOPRequest_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),optype(rhs.optype),roleid(rhs.roleid),
+			linkid(rhs.linkid),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new FactionOPRequest_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << optype;
+			os << roleid;
+			os << linkid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> optype;
+			os >> roleid;
+			os >> linkid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

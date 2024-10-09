@@ -1,0 +1,32 @@
+	public:
+		int aid;
+		enum { PROTOCOL_TYPE = PROTOCOL_TOOLANNOUNCEAID };
+	public:
+		ToolAnnounceAid() { type = PROTOCOL_TOOLANNOUNCEAID; }
+		ToolAnnounceAid(void*) : Protocol(PROTOCOL_TOOLANNOUNCEAID) { }
+		ToolAnnounceAid (int l_aid)
+			 : aid(l_aid)
+		{
+			type = PROTOCOL_TOOLANNOUNCEAID;
+		}
+
+		ToolAnnounceAid(const ToolAnnounceAid &rhs)
+			: Protocol(rhs),aid(rhs.aid) { }
+
+		GNET::Protocol *Clone() const { return new ToolAnnounceAid(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << aid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> aid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

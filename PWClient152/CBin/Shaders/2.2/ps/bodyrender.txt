@@ -1,0 +1,11 @@
+ps.1.1
+
+; c0 is the body color
+tex t0		; base texture
+
+mul r1, t0, c0
+lrp r0, t0.a, r1, t0
+mul r0.rgb, r0, v0
++mov r0.a, v0.a
+
+add r0.rgb, r0, v1

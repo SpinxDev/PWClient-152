@@ -1,0 +1,78 @@
+#ifndef __GNET_PLAYERBRIEFINFO_RPCDATA
+#define __GNET_PLAYERBRIEFINFO_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class PlayerBriefInfo : public GNET::Rpc::Data
+	{
+	public:
+		int roleid;
+		unsigned char occupation;
+		Octets name;
+		char gender;
+
+	public:
+		PlayerBriefInfo (int l_roleid = -1,unsigned char l_occupation = 0,const Octets& l_name = Octets(0)
+			,char l_gender = 0)
+			: roleid(l_roleid),occupation(l_occupation),name(l_name)
+			,gender(l_gender)
+		{
+		}
+
+		PlayerBriefInfo(const PlayerBriefInfo &rhs)
+			: roleid(rhs.roleid),occupation(rhs.occupation),name(rhs.name),
+			gender(rhs.gender) { }
+
+		Rpc::Data *Clone() const { return new PlayerBriefInfo(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const PlayerBriefInfo *r = dynamic_cast<const PlayerBriefInfo *>(&rhs);
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				occupation = r->occupation;
+				name = r->name;
+				gender = r->gender;
+			}
+			return *this;
+		}
+
+		PlayerBriefInfo& operator = (const PlayerBriefInfo &rhs)
+		{
+			const PlayerBriefInfo *r = &rhs;
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				occupation = r->occupation;
+				name = r->name;
+				gender = r->gender;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << occupation;
+			os << name;
+			os << gender;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> occupation;
+			os >> name;
+			os >> gender;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<PlayerBriefInfo>	PlayerBriefInfoVector;
+};
+#endif

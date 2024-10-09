@@ -1,0 +1,35 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_STOCKBILL };
+	public:
+		StockBill() { type = PROTOCOL_STOCKBILL; }
+		StockBill(void*) : Protocol(PROTOCOL_STOCKBILL) { }
+		StockBill (int l_roleid,unsigned int l_localsid = 0)
+			 : roleid(l_roleid),localsid(l_localsid)
+		{
+			type = PROTOCOL_STOCKBILL;
+		}
+
+		StockBill(const StockBill &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new StockBill(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

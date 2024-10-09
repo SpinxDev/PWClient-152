@@ -1,0 +1,47 @@
+	public:
+		int retcode;
+		unsigned int tid;
+		int discard_roleid;
+		int roleid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_TRADEDISCARD_RE };
+	public:
+		TradeDiscard_Re() { type = PROTOCOL_TRADEDISCARD_RE; }
+		TradeDiscard_Re(void*) : Protocol(PROTOCOL_TRADEDISCARD_RE) { }
+		TradeDiscard_Re (int l_retcode,unsigned int l_tid,int l_discard_roleid,
+			int l_roleid,unsigned int l_localsid)
+			 : retcode(l_retcode),tid(l_tid),discard_roleid(l_discard_roleid),
+			roleid(l_roleid),localsid(l_localsid)
+		{
+			type = PROTOCOL_TRADEDISCARD_RE;
+		}
+
+		TradeDiscard_Re(const TradeDiscard_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),tid(rhs.tid),discard_roleid(rhs.discard_roleid),
+			roleid(rhs.roleid),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new TradeDiscard_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << tid;
+			os << discard_roleid;
+			os << roleid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> tid;
+			os >> discard_roleid;
+			os >> roleid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

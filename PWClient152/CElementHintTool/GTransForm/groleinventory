@@ -1,0 +1,114 @@
+#ifndef __GNET_GROLEINVENTORY_RPCDATA
+#define __GNET_GROLEINVENTORY_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GRoleInventory : public GNET::Rpc::Data
+	{
+	public:
+		unsigned int id;
+		int pos;
+		int count;
+		int max_count;
+		Octets data;
+		int proctype;
+		int expire_date;
+		int guid1;
+		int guid2;
+		int mask;
+
+	public:
+		GRoleInventory (unsigned int l_id = 0,int l_pos = -1,int l_count = 0
+			,int l_max_count = 0,const Octets& l_data = Octets(0),int l_proctype = 0
+			,int l_expire_date = 0,int l_guid1 = 0,int l_guid2 = 0
+			,int l_mask = 0)
+			: id(l_id),pos(l_pos),count(l_count)
+			,max_count(l_max_count),data(l_data),proctype(l_proctype)
+			,expire_date(l_expire_date),guid1(l_guid1),guid2(l_guid2)
+			,mask(l_mask)
+		{
+		}
+
+		GRoleInventory(const GRoleInventory &rhs)
+			: id(rhs.id),pos(rhs.pos),count(rhs.count),
+			max_count(rhs.max_count),data(rhs.data),proctype(rhs.proctype),
+			expire_date(rhs.expire_date),guid1(rhs.guid1),guid2(rhs.guid2),
+			mask(rhs.mask) { }
+
+		Rpc::Data *Clone() const { return new GRoleInventory(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GRoleInventory *r = dynamic_cast<const GRoleInventory *>(&rhs);
+			if (r && r != this)
+			{
+				id = r->id;
+				pos = r->pos;
+				count = r->count;
+				max_count = r->max_count;
+				data = r->data;
+				proctype = r->proctype;
+				expire_date = r->expire_date;
+				guid1 = r->guid1;
+				guid2 = r->guid2;
+				mask = r->mask;
+			}
+			return *this;
+		}
+
+		GRoleInventory& operator = (const GRoleInventory &rhs)
+		{
+			const GRoleInventory *r = &rhs;
+			if (r && r != this)
+			{
+				id = r->id;
+				pos = r->pos;
+				count = r->count;
+				max_count = r->max_count;
+				data = r->data;
+				proctype = r->proctype;
+				expire_date = r->expire_date;
+				guid1 = r->guid1;
+				guid2 = r->guid2;
+				mask = r->mask;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << id;
+			os << pos;
+			os << count;
+			os << max_count;
+			os << data;
+			os << proctype;
+			os << expire_date;
+			os << guid1;
+			os << guid2;
+			os << mask;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> id;
+			os >> pos;
+			os >> count;
+			os >> max_count;
+			os >> data;
+			os >> proctype;
+			os >> expire_date;
+			os >> guid1;
+			os >> guid2;
+			os >> mask;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<GRoleInventory>	GRoleInventoryVector;
+};
+#endif

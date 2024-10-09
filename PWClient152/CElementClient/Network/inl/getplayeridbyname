@@ -1,0 +1,38 @@
+	public:
+		Octets rolename;
+		unsigned int localsid;
+		unsigned char reason;
+		enum { PROTOCOL_TYPE = PROTOCOL_GETPLAYERIDBYNAME };
+	public:
+		GetPlayerIDByName() { type = PROTOCOL_GETPLAYERIDBYNAME; }
+		GetPlayerIDByName(void*) : Protocol(PROTOCOL_GETPLAYERIDBYNAME) { }
+		GetPlayerIDByName (const Octets& l_rolename,unsigned int l_localsid,unsigned char l_reason = 0)
+			 : rolename(l_rolename),localsid(l_localsid),reason(l_reason)
+		{
+			type = PROTOCOL_GETPLAYERIDBYNAME;
+		}
+
+		GetPlayerIDByName(const GetPlayerIDByName &rhs)
+			: Protocol(rhs),rolename(rhs.rolename),localsid(rhs.localsid),reason(rhs.reason) { }
+
+		GNET::Protocol *Clone() const { return new GetPlayerIDByName(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << rolename;
+			os << localsid;
+			os << reason;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> rolename;
+			os >> localsid;
+			os >> reason;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

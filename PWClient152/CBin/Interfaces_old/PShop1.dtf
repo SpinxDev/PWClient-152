@@ -1,0 +1,61 @@
+DIALOG "Win_PShop1" 0 0 349 393 0 1 10 "Window\对话框_标准边框.dds" "" "人鱼传说新界面\title.tga" 3 3 344 33 "人鱼传说新界面\面板关闭按钮.tga" 37 7 96 96 96 255 1
+IMAGEPICTURE "Img_PartitionLine2" "" "" 5 205 339 3 1 0 "Window\分隔线.tga"
+IMAGEPICTURE "Img_PartitionLine1" "" "" 174 32 3 173 1 0 "Window\分隔线2.tga"
+IMAGEPICTURE "SellItem_01" "" "" 7 53 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_02" "" "" 40 53 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_02" "" "" 212 53 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_01" "" "" 179 53 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_04" "" "" 106 53 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_04" "" "" 278 53 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_03" "" "" 245 53 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_03" "" "" 73 53 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_06" "" "" 7 86 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_07" "" "" 40 86 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_07" "" "" 212 86 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_06" "" "" 179 86 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_09" "" "" 106 86 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_09" "" "" 278 86 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_08" "" "" 245 86 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_08" "" "" 73 86 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_11" "" "" 7 119 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_12" "" "" 40 119 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_12" "" "" 212 119 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_11" "" "" 179 119 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_14" "" "" 106 119 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_14" "" "" 278 119 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_13" "" "" 245 119 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_13" "" "" 73 119 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_16" "" "" 7 152 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_17" "" "" 40 152 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_17" "" "" 212 152 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_16" "" "" 179 152 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_19" "" "" 106 152 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_19" "" "" 278 152 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_18" "" "" 245 152 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_18" "" "" 73 152 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_05" "" "" 139 53 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_10" "" "" 139 86 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_10" "" "" 311 86 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_05" "" "" 311 53 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_20" "" "" 139 152 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_20" "" "" 311 152 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_15" "" "" 311 119 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_15" "" "" 139 119 32 32 1 0 "Window\图标_物品栏t.dds"
+STILLIMAGEBUTTON "Btn_Cancel" "IDCANCEL" "SFX\Interface\ClickB.wav" 302 259 40 24 0 0 0 0 2 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 3 1
+LABEL "Lab_MyShop" "" "" 133 6 0 0 4 16 5 255 203 74 255
+LABEL "Lab_BagMoney" "" "" 22 237 0 0 6 10 7 255 203 74 255
+STILLIMAGEBUTTON "Img_Coin" "" "" 88 238 24 15 0 0 0 0 8 15 255 0 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱1.tga" 9 1
+EDIT "Txt_GoldAll" "" "" 121 236 186 21 "Editbox\文本框_4b.dds" 10 10 255 255 255 "TEXT" 1 0 256
+STILLIMAGEBUTTON "Btn_Confirm" "confirm" "SFX\Interface\ClickB.wav" 259 259 40 24 0 0 0 0 11 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 12 1
+LABEL "Lab_Shopname" "" "" 23 213 0 0 13 10 14 255 203 74 255
+EDIT "DEFAULT_Txt_Name" "" "" 95 211 232 21 "Editbox\文本框_4.dds" 15 10 255 255 255 "TEXT" 0 0 30
+LABEL "Lab_SellList" "" "" 8 34 59 16 16 10 17 255 203 74 255
+LABEL "Lab_BuyList" "" "" 180 34 58 16 18 10 19 255 203 74 255
+STILLIMAGEBUTTON "Btn_Gold" "" "" 8 187 24 16 0 0 0 0 20 10 255 255 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱1.tga" 21 1
+STILLIMAGEBUTTON "Img_icon1" "" "" 181 187 24 16 0 0 0 0 22 10 255 255 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱1.tga" 23 1
+LABEL "Txt_Worth1" "" "" 37 187 0 0 24 10 25 255 255 255 255
+LABEL "Txt_Worth2" "" "" 209 187 0 0 26 10 27 255 255 255 255
+STILLIMAGEBUTTON "Btn_Reset" "reset" "SFX\Interface\ClickB.wav" 8 259 71 24 0 0 0 0 28 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 29 1
+TEXT "Txt_MsgList" "msglist" "" 50 287 292 98 30 15 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp"
+LABEL "Lab_CustomerMessage" "" "" 12 292 28 57 31 10 32 255 203 74 255
+STILLIMAGEBUTTON "Btn_ClearMsg" "clearmsg" "" 6 360 40 24 0 0 0 0 33 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 34 1

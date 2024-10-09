@@ -1,0 +1,9 @@
+DIALOG "Dlg_OutdoorOtherObject" 0 0 220 400 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "" 27 6 96 96 96 255 1
+LABEL "title" "" "" 67 4 87 22 2 16 3 255 203 74 255
+STILLIMAGEBUTTON "Btn_OutdoorGrass" "ChooseOutdoorGrass" "" 66 28 32 32 0 0 0 0 4 10 255 255 255 255 "home\草坪.dds" "home\草坪D.dds" 5 1
+STILLIMAGEBUTTON "Btn_OutdoorBuilding" "ChooseOutdoorBuilding" "" 115 28 32 32 0 0 0 0 6 10 255 203 74 255 "home\房屋摆设.dds" "home\房屋摆设D.dds" 7 1
+STILLIMAGEBUTTON "Btn_OutdoorOtherObject" "ChooseOutdoorOtherObject" "" 167 28 32 32 0 0 0 0 8 10 255 255 255 255 "home\其他.dds" "home\其他D.dds" 9 1
+STILLIMAGEBUTTON "Btn_OutdoorTree" "ChooseOutdoorTree" "" 17 28 32 32 0 0 0 0 10 10 255 255 255 255 "home\树木.dds" "home\树木D.dds" 11 1
+LABEL "label_Terrain" "" "" 8 62 82 16 12 10 13 255 203 74 255
+LIST "ListBox_OutDoorOtherObject" "" "" 8 80 205 295 14 10 255 255 255 255 "Editbox\文本框_4b.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LABEL "Control_450414468" "" "" 8 376 211 14 15 10 16 255 203 74 255

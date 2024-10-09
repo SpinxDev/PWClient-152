@@ -1,0 +1,35 @@
+	public:
+		int handle;
+		GUniqueDataElemNodeVector values;
+		enum { PROTOCOL_TYPE = PROTOCOL_UNIQUEDATAMODIFYBROADCAST };
+	public:
+		UniqueDataModifyBroadcast() { type = PROTOCOL_UNIQUEDATAMODIFYBROADCAST; }
+		UniqueDataModifyBroadcast(void*) : Protocol(PROTOCOL_UNIQUEDATAMODIFYBROADCAST) { }
+		UniqueDataModifyBroadcast (int l_handle,const GUniqueDataElemNodeVector& l_values = GUniqueDataElemNodeVector())
+			 : handle(l_handle),values(l_values)
+		{
+			type = PROTOCOL_UNIQUEDATAMODIFYBROADCAST;
+		}
+
+		UniqueDataModifyBroadcast(const UniqueDataModifyBroadcast &rhs)
+			: Protocol(rhs),handle(rhs.handle),values(rhs.values) { }
+
+		GNET::Protocol *Clone() const { return new UniqueDataModifyBroadcast(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << handle;
+			os << values;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> handle;
+			os >> values;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

@@ -1,0 +1,44 @@
+	public:
+		int userid;
+		Octets cash_password;
+		unsigned int localsid;
+		char lock;
+		enum { PROTOCOL_TYPE = PROTOCOL_CASHLOCK };
+	public:
+		CashLock() { type = PROTOCOL_CASHLOCK; }
+		CashLock(void*) : Protocol(PROTOCOL_CASHLOCK) { }
+		CashLock (int l_userid,Octets l_cash_password,unsigned int l_localsid = 0,
+			char l_lock = 0)
+			 : userid(l_userid),cash_password(l_cash_password),localsid(l_localsid),
+			lock(l_lock)
+		{
+			type = PROTOCOL_CASHLOCK;
+		}
+
+		CashLock(const CashLock &rhs)
+			: Protocol(rhs),userid(rhs.userid),cash_password(rhs.cash_password),localsid(rhs.localsid),
+			lock(rhs.lock) { }
+
+		GNET::Protocol *Clone() const { return new CashLock(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << userid;
+			os << cash_password;
+			os << localsid;
+			os << lock;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> userid;
+			os >> cash_password;
+			os >> localsid;
+			os >> lock;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

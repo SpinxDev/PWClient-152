@@ -1,0 +1,82 @@
+#ifndef __GNET_GFACTIONFORTRESSBRIEFINFO_RPCDATA
+#define __GNET_GFACTIONFORTRESSBRIEFINFO_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GFactionFortressBriefInfo : public GNET::Rpc::Data
+	{
+	public:
+		int factionid;
+		int level;
+		Octets building;
+		int health;
+		int offense_faction;
+
+	public:
+		GFactionFortressBriefInfo (int l_factionid = 0,int l_level = 0,const Octets& l_building = Octets()
+			,int l_health = 0,int l_offense_faction = 0)
+			: factionid(l_factionid),level(l_level),building(l_building)
+			,health(l_health),offense_faction(l_offense_faction)
+		{
+		}
+
+		GFactionFortressBriefInfo(const GFactionFortressBriefInfo &rhs)
+			: factionid(rhs.factionid),level(rhs.level),building(rhs.building),
+			health(rhs.health),offense_faction(rhs.offense_faction) { }
+
+		Rpc::Data *Clone() const { return new GFactionFortressBriefInfo(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GFactionFortressBriefInfo *r = dynamic_cast<const GFactionFortressBriefInfo *>(&rhs);
+			if (r && r != this)
+			{
+				factionid = r->factionid;
+				level = r->level;
+				building = r->building;
+				health = r->health;
+				offense_faction = r->offense_faction;
+			}
+			return *this;
+		}
+
+		GFactionFortressBriefInfo& operator = (const GFactionFortressBriefInfo &rhs)
+		{
+			const GFactionFortressBriefInfo *r = &rhs;
+			if (r && r != this)
+			{
+				factionid = r->factionid;
+				level = r->level;
+				building = r->building;
+				health = r->health;
+				offense_faction = r->offense_faction;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << factionid;
+			os << level;
+			os << building;
+			os << health;
+			os << offense_faction;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> factionid;
+			os >> level;
+			os >> building;
+			os >> health;
+			os >> offense_faction;
+			return os;
+		}
+
+	};
+};
+#endif

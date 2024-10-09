@@ -1,0 +1,88 @@
+#ifndef __GNET_GCHATROOM_RPCDATA
+#define __GNET_GCHATROOM_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GChatRoom : public GNET::Rpc::Data
+	{
+	public:
+		unsigned short roomid;
+		Octets subject;
+		Octets owner;
+		unsigned short capacity;
+		unsigned short number;
+		unsigned char status;
+
+	public:
+		GChatRoom (unsigned short l_roomid = 0,const Octets& l_subject = Octets(),const Octets& l_owner = Octets()
+			,unsigned short l_capacity = 0,unsigned short l_number = 0,unsigned char l_status = 0)
+			: roomid(l_roomid),subject(l_subject),owner(l_owner)
+			,capacity(l_capacity),number(l_number),status(l_status)
+		{
+		}
+
+		GChatRoom(const GChatRoom &rhs)
+			: roomid(rhs.roomid),subject(rhs.subject),owner(rhs.owner),
+			capacity(rhs.capacity),number(rhs.number),status(rhs.status) { }
+
+		Rpc::Data *Clone() const { return new GChatRoom(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GChatRoom *r = dynamic_cast<const GChatRoom *>(&rhs);
+			if (r && r != this)
+			{
+				roomid = r->roomid;
+				subject = r->subject;
+				owner = r->owner;
+				capacity = r->capacity;
+				number = r->number;
+				status = r->status;
+			}
+			return *this;
+		}
+
+		GChatRoom& operator = (const GChatRoom &rhs)
+		{
+			const GChatRoom *r = &rhs;
+			if (r && r != this)
+			{
+				roomid = r->roomid;
+				subject = r->subject;
+				owner = r->owner;
+				capacity = r->capacity;
+				number = r->number;
+				status = r->status;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roomid;
+			os << subject;
+			os << owner;
+			os << capacity;
+			os << number;
+			os << status;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roomid;
+			os >> subject;
+			os >> owner;
+			os >> capacity;
+			os >> number;
+			os >> status;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<GChatRoom>	GChatRoomVector;
+};
+#endif

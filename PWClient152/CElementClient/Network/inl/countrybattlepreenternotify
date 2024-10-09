@@ -1,0 +1,44 @@
+	public:
+		int battle_id;
+		int roleid;
+		int timeout;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_COUNTRYBATTLEPREENTERNOTIFY };
+	public:
+		CountryBattlePreEnterNotify() { type = PROTOCOL_COUNTRYBATTLEPREENTERNOTIFY; }
+		CountryBattlePreEnterNotify(void*) : Protocol(PROTOCOL_COUNTRYBATTLEPREENTERNOTIFY) { }
+		CountryBattlePreEnterNotify (int l_battle_id,int l_roleid,int l_timeout,
+			unsigned int l_localsid)
+			 : battle_id(l_battle_id),roleid(l_roleid),timeout(l_timeout)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_COUNTRYBATTLEPREENTERNOTIFY;
+		}
+
+		CountryBattlePreEnterNotify(const CountryBattlePreEnterNotify &rhs)
+			: Protocol(rhs),battle_id(rhs.battle_id),roleid(rhs.roleid),timeout(rhs.timeout)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new CountryBattlePreEnterNotify(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << battle_id;
+			os << roleid;
+			os << timeout;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> battle_id;
+			os >> roleid;
+			os >> timeout;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 512; }

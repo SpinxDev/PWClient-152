@@ -1,0 +1,56 @@
+	public:
+		int start_timestamp;
+		int end_timetamp;
+		int bonus;
+		char is_battle_open;
+		char domain2_datatype;
+		unsigned int domain2_datat_timestamp;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_COUNTRYBATTLEGETCONFIG_RE };
+	public:
+		CountryBattleGetConfig_Re() { type = PROTOCOL_COUNTRYBATTLEGETCONFIG_RE; }
+		CountryBattleGetConfig_Re(void*) : Protocol(PROTOCOL_COUNTRYBATTLEGETCONFIG_RE) { }
+		CountryBattleGetConfig_Re (int l_start_timestamp,int l_end_timetamp,int l_bonus,
+			char l_is_battle_open,char l_domain2_datatype,unsigned int l_domain2_datat_timestamp,
+			unsigned int l_localsid)
+			 : start_timestamp(l_start_timestamp),end_timetamp(l_end_timetamp),bonus(l_bonus)
+			,is_battle_open(l_is_battle_open),domain2_datatype(l_domain2_datatype),domain2_datat_timestamp(l_domain2_datat_timestamp)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_COUNTRYBATTLEGETCONFIG_RE;
+		}
+
+		CountryBattleGetConfig_Re(const CountryBattleGetConfig_Re &rhs)
+			: Protocol(rhs),start_timestamp(rhs.start_timestamp),end_timetamp(rhs.end_timetamp),bonus(rhs.bonus)
+			,is_battle_open(rhs.is_battle_open),domain2_datatype(rhs.domain2_datatype),domain2_datat_timestamp(rhs.domain2_datat_timestamp)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new CountryBattleGetConfig_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << start_timestamp;
+			os << end_timetamp;
+			os << bonus;
+			os << is_battle_open;
+			os << domain2_datatype;
+			os << domain2_datat_timestamp;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> start_timestamp;
+			os >> end_timetamp;
+			os >> bonus;
+			os >> is_battle_open;
+			os >> domain2_datatype;
+			os >> domain2_datat_timestamp;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

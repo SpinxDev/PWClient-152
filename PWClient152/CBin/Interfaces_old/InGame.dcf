@@ -1,0 +1,423 @@
+CWindowMain.dtf 		-1	-1	0
+
+Console.dtf 		0	0	0
+
+EnterWait.dtf		-1	-1	0
+
+AutoLock.dtf			-1	-1	0
+BBS.dtf			-1	-1	0
+Chat.dtf		0	-2	1
+ChatSmall.dtf	0	-170	1
+ChatBig.dtf     0   -242    1
+Pop.dtf			-1	100	1
+Poplist.dtf		-1	120	0
+Popface.dtf		-1	-1	0
+Popface01.dtf   -1  -1  0
+Popface02.dtf   -1  -1  0
+QuickAction.dtf		-1	-1	0
+Bigmap.dtf		-2	0	0
+WorldMap.dtf		-1	-1	0
+WorldMapTravel.dtf	-1	-1	0
+WorldMapDetail.dtf	-1	-1	0
+GuildMap.dtf		-1	-1	0
+Map.dtf			-2	0	1
+Activity.dtf            -1      -1      0
+Mark.dtf		0	0	0
+GMapStatus1.dtf		-1	-1	0
+GMapStatus2.dtf		-1	-1	0
+GMapBattleTime.dtf		-1	-1	0
+GMapChallenge.dtf		-1	-1	0
+GMapTravel.dtf		-1	-1	0
+MyFactionColor.dtf	-1	-1	0
+BigMapMark.dtf		-2	-50	0
+Flag1.dtf		0	0	0
+Flag2.dtf		0	0	0
+Flag3.dtf		0	0	0
+Flag4.dtf		0	0	0
+Flag5.dtf		0	0	0
+mMark1.dtf		0	0	0
+mMark2.dtf		0	0	0
+mMark3.dtf		0	0	0
+mMark4.dtf		0	0	0
+mMark5.dtf		0	0	0
+mMark6.dtf		0	0	0
+Sign1.dtf		0	0	0
+Sign2.dtf		0	0	0
+Sign3.dtf		0	0	0
+Sign4.dtf		0	0	0
+Sign5.dtf		0	0	0
+
+HideHP.dtf		0	0	1
+Hpmpxp.dtf		0	0	1
+HpOther.dtf		-1	0	0
+HpOtherB.dtf		-1	0	0
+HpmpOther.dtf		-1	0	0
+HpmpOtherB.dtf		-1	0	0
+Progress.dtf		75	100	0
+Progress1.dtf		75	100	0
+Progress2.dtf		-1	-90	0
+Progress_HP.dtf	80	120	0
+Progress_MP.dtf	80	145	0
+MagicProgress1.dtf	-1	-180	0
+MagicProgress2.dtf	-1	-180	0
+MagicProgress3.dtf	-1	-180	0
+Popmsg.dtf		-1	10	0
+Broken.dtf		0	-1	1
+AccountTime.dtf	-1	10	0
+
+WinMain.dtf		-3	-3	1
+WinMain2.dtf		-2	-2	0
+WinMain3.dtf		-2	-2	0
+
+ServerTypePVP.dtf		-1	-1	0
+ServerTypePVE.dtf		-1	-1	0
+
+Setting_System.dtf	360	105	0
+Setting_Video.dtf	360	105	0
+Setting_Game.dtf	360	105	0
+Setting_Blacklist.dtf	360	105	0
+
+QShop.dtf	-1	-1	0
+QShopItemDefault0.dtf	-1	-1	0
+QShopItemDefault1.dtf	-1	-1	0
+QShopItemDefault2.dtf	-1	-1	0
+QShopItemDefault3.dtf	-1	-1	0
+QShopItemDefault4.dtf	-1	-1	0
+QShopItemDefault5.dtf	-1	-1	0
+QShopItemDefault6.dtf	-1	-1	0
+QShopItemDefault7.dtf	-1	-1	0
+BackShop.dtf -1 -1 0
+BackOthers.dtf -1 -1 0
+BackSelf.dtf -1 -1 0
+BackHelp.dtf -1 -1 0
+
+PShop1.dtf		25	105	0
+PShop2.dtf		25	105	0
+Camera.dtf	-1	-1	0
+Cosmetic.dtf		-1	-1	0
+DragDrop.dtf		-1	-1	0
+GuildCreate.dtf		-1	-1	0
+GuildManage.dtf		-1	-1	0
+FindPlayer.dtf          -1      -1      0
+Inventory_M.dtf		360	105	0
+Inventory_F.dtf		360	105	0
+Bag.dtf                 671     105     0
+FittingRoom_M.dtf	25 105 0
+FittingRoom_F.dtf	25 105 0
+Character.dtf		25	105	0
+Skill.dtf		25	105	0
+SkillEdit.dtf		360	105	0
+Skill_0.dtf		360	105	0
+Skill_1.dtf		360	105	0
+Skill_2.dtf		360	105	0
+Skill_3.dtf		360	105	0
+Skill_4.dtf		360	105	0
+Skill_5.dtf		360	105	0
+Skill_6.dtf		360	105	0
+Skill_7.dtf		360	105	0
+Skill_Pet.dtf		360	105	0
+GroupMe1.dtf		-1	-1	0
+GroupMe2.dtf		-1	-1	0
+GroupOther1.dtf		-1	-1	0
+GroupOther2.dtf		-1	-1	0
+Quest.dtf		-1	-1	0
+QuestMinion.dtf		-2	155	0
+Hint.dtf		87	120	1
+Zone.dtf		-1	150	1
+Action.dtf		360	105	0
+Trade.dtf		25	105	0
+InputNO.dtf		-1	-120	0
+InputNO2.dtf		-1	-120	0
+NPC.dtf			25	105	0
+Shop.dtf		25	105	0
+Enchase.dtf		25	-1	0
+Disenchase.dtf		25	-1	0
+EquipRefine.dtf		25	-1	0
+EquipBind.dtf		25	-1	0
+EquipDestroy.dtf		25	-1	0
+EquipUndestroy.dtf		25	-1	0
+EquipDye.dtf		25	-1	0
+AllEquipDye.dtf		25	-1	0
+DamageRep.dtf           25      -1      0
+EquipSlot.dtf		25	-1	0
+EquipSlotPrice.dtf		-1	-1	0
+RefineTrans.dtf		25	-1	0
+Teach.dtf		25	105	0
+PKSetting.dtf	-1	-1	0
+PQtitle.dtf   	-140	50	0
+PQrank.dtf      -1      -1      0
+Produce_Icon.dtf	25	105	0
+Produce1.dtf	25	105	0
+EquipUp.dtf             -1      -1      0
+ProduceColor.dtf	325	-1	0
+Reagent.dtf		325	-1	0
+Split.dtf		25	-1	0
+Award.dtf		360	-1	0
+Storage.dtf		25	-1	0
+Storage1.dtf		25	-1	0
+Storage2.dtf		25	-1	0
+Storage3.dtf		25	-1	0
+ChangeSkirt.dtf        320      -1      0
+InputString.dtf		-1	-1	0
+InputString3.dtf	-1	-1	0
+InputString5.dtf	-1	-1	0
+InputString6.dtf	-1	-1	0
+InputString7.dtf	-1	-1	0
+InputString8.dtf	-1	-1	0
+InputString10.dtf		-1	-1	0
+Message1.dtf		-1	-1	0
+Message2.dtf		-1	-1	0
+Message4.dtf		-1	-1	0
+Identify.dtf		25	-1	0
+Broadcast.dtf		-1	-1	0
+WhisperChat.dtf		-1	-1	0
+WhisperChoose.dtf	70	-20	0
+FriendExtra.dtf		-1	-1	0
+Friendlist.dtf		25	105	0
+FriendChat0.dtf		-1	-1	0
+FriendChat1.dtf		-1	-1	0
+FriendChat2.dtf		-1	-1	0
+FriendChat3.dtf		-1	-1	0
+FriendChat4.dtf		-1	-1	0
+FriendChat5.dtf		-1	-1	0
+FriendChat6.dtf		-1	-1	0
+FriendChat7.dtf		-1	-1	0
+FriendChat8.dtf		-1	-1	0
+FriendChat9.dtf		-1	-1	0
+FriendHistory.dtf	-1	-1	0
+FriendGroup.dtf		-1	-1	0
+FriendColor.dtf		-1	-1	0
+
+MailList.dtf			-1	-1	0
+MailOption.dtf		-1	-1	0
+MailRead.dtf			25	105	0
+MailWrite.dtf			25	105	0
+
+ArrangeTeamSip.dtf	-1	-1	0
+TeamMain.dtf		0	0	0
+TeamMate1.dtf		0	0	0
+TeamMate2.dtf		0	0	0
+TeamMate3.dtf		0	0	0
+TeamMate4.dtf		0	0	0
+TeamMate5.dtf		0	0	0
+TeamMate6.dtf		0	0	0
+TeamMate7.dtf		0	0	0
+TeamMate8.dtf		0	0	0
+TeamMate9.dtf		0	0	0
+
+Help.dtf		25	105	0
+AutoMove.dtf	-1 -186 0
+HideMove.dtf	-1 -1 0
+
+Question.dtf		-1	-1	0
+
+Quickbar8Va.dtf		-2	-1	0
+Quickbar8Vb_1.dtf	-2	-1	0
+Quickbar8Vb_2.dtf	-2	-1	0
+Quickbar8Vb_3.dtf	-2	-1	0
+
+Quickbar8Ha.dtf		-183	-2	1
+Quickbar8Hb_1.dtf	-183	-2	0
+Quickbar8Hb_2.dtf	-183	-2	0
+Quickbar8Hb_3.dtf	-183	-2	0
+
+Quickbar9Va.dtf		-2	-1	1
+Quickbar9Vb_1.dtf	-2	-1	0
+Quickbar9Vb_2.dtf	-2	-1	0
+Quickbar9Vb_3.dtf	-2	-1	0
+Quickbar9Vb_4.dtf	-2	-1	0
+Quickbar9Vb_5.dtf	-2	-1	0
+
+Quickbar9Ha.dtf		-1	-2	0
+Quickbar9Hb_1.dtf	-1	-2	0
+Quickbar9Hb_2.dtf	-1	-2	0
+Quickbar9Hb_3.dtf	-1	-2	0
+Quickbar9Hb_4.dtf	-1	-2	0
+Quickbar9Hb_5.dtf	-1	-2	0
+
+QuickbarPetV.dtf	-50	-1	0
+QuickbarPetH.dtf	-183	-50	0
+
+QuickKey.dtf           -1       -1      0
+
+Option1.dtf		-1	-1	0
+Option2.dtf		-1	-1	0
+Option3.dtf		-1	-1	0
+FriendOptionGroup.dtf	-1	-1	0
+FriendOptionName.dtf	-1	-1	0
+FriendOptionNormal.dtf	-1	-1	0
+
+ChannelCreate.dtf -1 -1 0
+ChannelChat.dtf -1 -1 0
+ChannelJoin.dtf -1 -1 0
+ChannelOption.dtf -1 -1 0
+InputString9.dtf -1 -1 0
+
+AuctionBuyList.dtf	-1	-1	0
+AuctionList.dtf	-1	-1	0
+AuctionSellList.dtf	-1	-1	0
+AuctionSearch.dtf	-1	-1	0
+AuctionMyAttention.dtf -1 -1 0
+
+BuddyState.dtf	-1	-1	0
+
+EPEquip.dtf	-1	-1	0
+
+WarTower.dtf	-1	-1	0
+
+ResetProp.dtf 25	105	0
+
+DoubleExp.dtf	-1	-1	0
+DoubleExpS.dtf	-1	-1	0
+
+GoldAccount.dtf	-1	-1	0
+GoldTrade.dtf	-1	-1	0
+GoldInquire.dtf	-1	-1	0
+GoldPwdChange.dtf	-1	-1	0
+GoldPwdInput.dtf	-1	-1	0
+
+CardBuy.dtf	-1	-1	0
+CardSell.dtf	-1	-1	0
+
+PetHatch.dtf	25	105	0
+PetRec.dtf	360	105	0
+PetList.dtf	25	105	0
+PetDetail0.dtf	360	105	0
+PetDetail1.dtf	360	105	0
+PetDetail2.dtf	360	105	0
+PetRename.dtf	360	105	0
+PetRetrain.dtf	360	105	0
+HpmpxpPet0.dtf	-1	-1	0
+HpmpxpPet1.dtf	-1	-1	0
+HpmpxpPet2.dtf	-1	-1	0
+Character_ELFchat.dtf	2	240	0
+Character_ELFchatZoom.dtf	2	240	0
+Character_ELF.dtf -1 -1 0
+Character_Genius.dtf -1 -1 0
+ELF_XiDian.dtf -1 -1 0
+ELF_InExp.dtf -1 -1 0
+ELF_Refine.dtf -1 -1 0
+ELF_ToPill.dtf -1 -1 0
+ELF_Retrain.dtf -1 -1 0
+ELF_GeniusReset.dtf -1 -1 0
+ELF_RefineTrans.dtf -1 -1 0
+ELF_EquipRemove.dtf -1 -1 0
+ELF_Learn.dtf -1 -1 0
+ELF_Transaction1.dtf -1 -1 0
+ELF_Transaction2.dtf -1 -1 0
+ELF_Skilltree1.dtf -1 -1 0
+ELF_Skilltree2.dtf -1 -1 0
+ProfView.dtf -1 -1 0
+
+
+MinimizeBar0.dtf	-1	-1	0
+MinimizeBar1.dtf	-1	-1	0
+MinimizeBar2.dtf	-1	-1	0
+MinimizeBar3.dtf	-1	-1	0
+MinimizeBar4.dtf	-1	-1	0
+MinimizeBar5.dtf	-1	-1	0
+MinimizeBar6.dtf	-1	-1	0
+MinimizeBar7.dtf	-1	-1	0
+MinimizeBar8.dtf	-1	-1	0
+MinimizeBar9.dtf	-1	-1	0
+MinimizeBar10.dtf	-1	-1	0
+MinimizeBar11.dtf	-1	-1	0
+
+ScriptHelp.dtf		-2	-45	0
+Setting_ScriptHelp.dtf	0	0	0 
+ScriptHelpHistory.dtf	0	0	0
+
+Customize.dtf		-1	-10	0
+GMConsole.dtf		0 0 0
+GMParam.dtf			0 0 0
+GMDelMsgReason.dtf	0 0 0
+GMFinishMsg.dtf		0 0 0
+
+AddExp.dtf -1 -1 0
+SetExp.dtf -1 -1 0
+addExpHelp.dtf -1 -1 0
+Palette.dtf -1 -1 0
+
+Web_Myshop.dtf	-1	-1	0
+Web_ViewProduct.dtf	-1	-1	0
+
+BShop.dtf	-1 -1 0
+BShophelp.dtf	-1 -1 0
+
+sagedemonconvert.dtf -1 -1 0
+sagedemonconverthelp.dtf -1 -1 0
+
+wiki\Wiki.dtf -1 -1 0
+wiki\Wiki_MonsterSearch.dtf -1 -1 0
+wiki\Wiki_MonsterDrop.dtf -1 -1 0
+wiki\Wiki_MonsterTask.dtf -1 -1 0
+wiki\Wiki_EquipmentSearch.dtf -1 -1 0
+wiki\Wiki_RandomProperty.dtf -1 -1 0
+wiki\Wiki_EquipmentDrop.dtf -1 -1 0
+wiki\Wiki_TaskSearch.dtf -1 -1 0
+wiki\Wiki_TaskDetail.dtf -1 -1 0
+wiki\WikiHelp.dtf -1 -1 0
+
+faces\ChooseFace.dtf	-2	0	0
+faces\ChooseEye.dtf	-2	0	0
+faces\ChooseEyebrow.dtf	-2	0	0
+faces\ChooseNose.dtf	-2	0	0
+faces\ChooseMouth.dtf	-2	0	0
+faces\ChooseEar.dtf	-2	0	0
+faces\ChooseHair.dtf	-2	0	0
+Faces\ChooseFacePainting.dtf	-2	0	0
+faces\AdvancedOption.dtf	-2	0	0
+faces\ChooseStature.dtf	-2	0	0
+faces\ChoosePreCustomize.dtf	-2	0	0
+faces\ChooseExpression.dtf	-2	0	0
+faces\ExpressionList.dtf	0	0	0
+faces\MoveCamera.dtf	-1	-65	0
+faces\UserPic.dtf	0	0	0
+faces\ChoosePreCustomizeForFree.dtf -2 0 0
+faces\1ChoosePreCustomize1.dtf 0 0 0
+faces\facename.dtf -1 -1 0
+
+terrain\AutoAdvanceLocalTex.dtf -1 0 0
+terrain\AutoAdvanceMountain.dtf -1 0 0
+terrain\AutoAdvanceMountain2.dtf -1 0 0
+terrain\AutoAdvanceRoad.dtf -1 0 0
+terrain\AutoAdvanceTerrain.dtf -1 0 0
+terrain\AutoAdvanceWater.dtf -1 0 0
+
+terrain\autolight.dtf -2 0 0
+
+terrain\autochoosetexture.dtf -1 0 0
+terrain\curve.dtf 0 0 0
+terrain\autochoosesky.dtf 0 0 0
+terrain\autochoosecolor.dtf -1 0 0
+terrain\autochooselight.dtf -1 0 0
+
+terrain\autonote.dtf 0 -2 0
+terrain\autonote2.dtf 0 -2 0
+
+terrain\AutoAllRes.dtf 0 0 0
+
+terrain\autoCtrl.dtf -1 -2 0
+terrain\AutoTools.dtf -2 -2 0
+
+terrain\AutoBaseTerrain.dtf -2 0 0
+terrain\AutoBaseMountain.dtf -2 0 0
+terrain\AutoBaseMountain2.dtf -2 0 0
+terrain\AutoBaseRoad.dtf -2 0 0
+terrain\AutoBaseWater.dtf -2 0 0
+terrain\AutoBaseLocalTex.dtf -2 0 0
+terrain\AutoLevelOff.dtf -2 0 0
+
+terrain\AutoOutdoorTree.dtf -2 0 0
+terrain\AutoOutdoorGrass.dtf -2 0 0
+terrain\AutoOutdoorBuilding.dtf -2 0 0
+terrain\AutoOutdoorOtherObject.dtf -2 0 0
+
+terrain\AutoIndoorFurniture.dtf -2 0 0
+terrain\AutoIndoorToy.dtf -2 0 0
+terrain\AutoIndoorVirtu.dtf -2 0 0
+terrain\AutoIndoorPlant.dtf -2 0 0
+terrain\AutoSwitchDlg.dtf -2 0 0
+terrain\AutoCtrlEditArea.dtf -1 -2 0
+terrain\AutoGenLightMapProgress.dtf 0 0 0
+terrain\AutoCamera.dtf -1 0 0

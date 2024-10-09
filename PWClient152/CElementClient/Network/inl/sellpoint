@@ -1,0 +1,44 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		int point;
+		int price;
+		enum { PROTOCOL_TYPE = PROTOCOL_SELLPOINT };
+	public:
+		SellPoint() { type = PROTOCOL_SELLPOINT; }
+		SellPoint(void*) : Protocol(PROTOCOL_SELLPOINT) { }
+		SellPoint (int l_roleid,unsigned int l_localsid = 0,int l_point = 0,
+			int l_price = 0)
+			 : roleid(l_roleid),localsid(l_localsid),point(l_point),
+			price(l_price)
+		{
+			type = PROTOCOL_SELLPOINT;
+		}
+
+		SellPoint(const SellPoint &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid),point(rhs.point),
+			price(rhs.price) { }
+
+		GNET::Protocol *Clone() const { return new SellPoint(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << point;
+			os << price;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> point;
+			os >> price;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

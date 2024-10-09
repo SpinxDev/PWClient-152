@@ -1,0 +1,100 @@
+#ifndef __GNET_GAUCTIONITEM_RPCDATA
+#define __GNET_GAUCTIONITEM_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GAuctionItem : public GNET::Rpc::Data
+	{
+	public:
+		unsigned int auctionid;
+		unsigned int bidprice;
+		unsigned int binprice;
+		unsigned int end_time;
+		unsigned int itemid;
+		unsigned short count;
+		unsigned int seller;
+		unsigned int bidder;
+
+	public:
+		GAuctionItem (unsigned int l_auctionid = 0,unsigned int l_bidprice = 0,unsigned int l_binprice = 0
+			,unsigned int l_end_time = 0,unsigned int l_itemid = 0,unsigned short l_count = 0
+			,unsigned int l_seller = 0,unsigned int l_bidder = 0)
+			: auctionid(l_auctionid),bidprice(l_bidprice),binprice(l_binprice)
+			,end_time(l_end_time),itemid(l_itemid),count(l_count)
+			,seller(l_seller),bidder(l_bidder)
+		{
+		}
+
+		GAuctionItem(const GAuctionItem &rhs)
+			: auctionid(rhs.auctionid),bidprice(rhs.bidprice),binprice(rhs.binprice),
+			end_time(rhs.end_time),itemid(rhs.itemid),count(rhs.count),
+			seller(rhs.seller),bidder(rhs.bidder) { }
+
+		Rpc::Data *Clone() const { return new GAuctionItem(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GAuctionItem *r = dynamic_cast<const GAuctionItem *>(&rhs);
+			if (r && r != this)
+			{
+				auctionid = r->auctionid;
+				bidprice = r->bidprice;
+				binprice = r->binprice;
+				end_time = r->end_time;
+				itemid = r->itemid;
+				count = r->count;
+				seller = r->seller;
+				bidder = r->bidder;
+			}
+			return *this;
+		}
+
+		GAuctionItem& operator = (const GAuctionItem &rhs)
+		{
+			const GAuctionItem *r = &rhs;
+			if (r && r != this)
+			{
+				auctionid = r->auctionid;
+				bidprice = r->bidprice;
+				binprice = r->binprice;
+				end_time = r->end_time;
+				itemid = r->itemid;
+				count = r->count;
+				seller = r->seller;
+				bidder = r->bidder;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << auctionid;
+			os << bidprice;
+			os << binprice;
+			os << end_time;
+			os << itemid;
+			os << count;
+			os << seller;
+			os << bidder;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> auctionid;
+			os >> bidprice;
+			os >> binprice;
+			os >> end_time;
+			os >> itemid;
+			os >> count;
+			os >> seller;
+			os >> bidder;
+			return os;
+		}
+
+	};
+};
+#endif

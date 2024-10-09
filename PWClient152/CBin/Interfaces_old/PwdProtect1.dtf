@@ -1,0 +1,11 @@
+DIALOG "Win_PwdProtect1" 0 0 321 172 0 1 10 "Window\对话框_标准边框.dds" "" "" 3 3 315 27 "人鱼传说新界面\面板关闭按钮.tga" 35 7 96 96 96 255 1
+LABEL "titletext" "" "" 112 7 0 0 2 16 3 255 203 74 255
+LABEL "hint1" "" "" 25 36 264 17 4 10 5 255 203 74 255
+LABEL "hint2" "" "" 12 54 173 16 6 10 7 255 203 74 255
+LABEL "txt_1" "" "" 158 71 0 0 8 16 9 255 128 128 255
+EDIT "Input_1" "confirm" "" 109 95 102 32 "InGameHintFrame.dds" 10 10 255 255 255 "TEXT" 0 0 10
+STILLIMAGEBUTTON "Btn_Clear" "clear" "" 53 133 50 26 0 0 0 0 11 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 12 1
+STILLIMAGEBUTTON "Btn_Exit" "IDCANCEL" "SFX\Interface\ClickB.wav" 214 133 50 26 0 0 0 0 13 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 14 1
+STILLIMAGEBUTTON "Btn_Decide" "confirm" "SFX\Interface\ClickB.wav" 135 133 50 26 0 0 0 0 15 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 16 1
+STILLIMAGEBUTTON "Btn_Link" "link" "" 182 52 121 16 0 0 0 0 17 10 128 255 255 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 18 1
+EDIT "Control_392239716" "" "" 3 3 316 33 "人鱼传说新界面\title.tga" 19 10 255 255 255 "TEXT" 1 0 20

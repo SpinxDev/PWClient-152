@@ -1,0 +1,65 @@
+#ifndef __GNET_GFACTIONALLIANCE_RPCDATA
+#define __GNET_GFACTIONALLIANCE_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GFactionAlliance : public GNET::Rpc::Data
+	{
+	public:
+		int fid;
+		int end_time;
+
+	public:
+		GFactionAlliance (int l_fid = 0,int l_end_time = 0)
+			: fid(l_fid),end_time(l_end_time)
+		{
+		}
+
+		GFactionAlliance(const GFactionAlliance &rhs)
+			: fid(rhs.fid),end_time(rhs.end_time) { }
+
+		Rpc::Data *Clone() const { return new GFactionAlliance(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GFactionAlliance *r = dynamic_cast<const GFactionAlliance *>(&rhs);
+			if (r && r != this)
+			{
+				fid = r->fid;
+				end_time = r->end_time;
+			}
+			return *this;
+		}
+
+		GFactionAlliance& operator = (const GFactionAlliance &rhs)
+		{
+			const GFactionAlliance *r = &rhs;
+			if (r && r != this)
+			{
+				fid = r->fid;
+				end_time = r->end_time;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << fid;
+			os << end_time;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> fid;
+			os >> end_time;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<GFactionAlliance>	GFactionAllianceVector;
+};
+#endif

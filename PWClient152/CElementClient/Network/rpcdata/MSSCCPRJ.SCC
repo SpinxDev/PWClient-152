@@ -1,0 +1,74 @@
+SCC = This is a Source Code Control file.
+
+[AUInterface.dsp]
+SCC_Aux_Path = 10.68.20.62:8877:CPW_DevLatest_ElementClientVSS
+SCC_Project_Name = $/CElement/CAUInterface
+
+[AUInterface.vcproj]
+SCC_Aux_Path = 10.68.20.62:8877:CPW_DevLatest_ElementClientVSS
+SCC_Project_Name = $/CElement/CAUInterface
+
+[AUIEditor.dsp]
+SCC_Aux_Path = 10.68.20.62:8877:CPW_DevLatest_ElementClientVSS
+SCC_Project_Name = $/AUIEditor
+
+[CElement.sln]
+SCC_Aux_Path = 10.68.20.62:8877:CPW_DevLatest_ElementClientVSS
+SCC_Project_Name = $/CElement
+
+[ADWindow.dsp]
+SCC_Aux_Path = 10.68.20.62:8877:CPW_DevLatest_ElementClientVSS
+SCC_Project_Name = $/CElement/ADWindow
+
+[AUIAnalyze.csproj]
+SCC_Aux_Path = 10.68.20.62:8877:CPW_DevLatest_ElementClientVSS
+SCC_Project_Name = $/CElement/AUIAnalyze
+
+[AUIAnalyze.sln]
+SCC_Aux_Path = 10.68.20.62:8877:CPW_DevLatest_ElementClientVSS
+SCC_Project_Name = $/CElement/AUIAnalyze
+
+[AutoPFImp.dsp]
+SCC_Aux_Path = 10.68.20.62:8877:CPW_DevLatest_ElementClientVSS
+SCC_Project_Name = $/CElement/AutoPFImp
+
+[AutoMoveImp.dsp]
+SCC_Aux_Path = 10.68.20.62:8877:CPW_DevLatest_ElementClientVSS
+SCC_Project_Name = $/CElement/AutoPFImp/AutoMoveImp
+
+[AutoPFImpFindPara.dsp]
+SCC_Aux_Path = 10.68.20.62:8877:CPW_DevLatest_ElementClientVSS
+SCC_Project_Name = $/CElement/AutoPFImp/AutoPFImpFindPara
+
+[AutoPFImpGenerator.dsp]
+SCC_Aux_Path = 10.68.20.62:8877:CPW_DevLatest_ElementClientVSS
+SCC_Project_Name = $/CElement/AutoPFImp/AutoPFImpGenerator
+
+[AutoPFImpOptimize.dsp]
+SCC_Aux_Path = 10.68.20.62:8877:CPW_DevLatest_ElementClientVSS
+SCC_Project_Name = $/CElement/AutoPFImp/AutoPFImpOptimize
+
+[AutoHomeEditor.dsp]
+SCC_Aux_Path = 10.68.20.62:8877:CPW_DevLatest_ElementClientVSS
+SCC_Project_Name = $/CElement/CAutoHomeEditor
+
+[CHBasedCD.dsp]
+SCC_Aux_Path = 10.68.20.62:8877:CPW_DevLatest_ElementClientVSS
+SCC_Project_Name = $/CElement/CCHBasedCD
+
+[CHBasedCD.vcproj]
+SCC_Aux_Path = 10.68.20.62:8877:CPW_DevLatest_ElementClientVSS
+SCC_Project_Name = $/CElement/CCHBasedCD
+
+[EleDataMan.dsp]
+SCC_Aux_Path = 10.68.20.62:8877:CPW_DevLatest_ElementClientVSS
+SCC_Project_Name = $/CElement/CEleDataMan
+
+[ElementClient.vcproj]
+SCC_Aux_Path = 10.68.20.62:8877:CPW_DevLatest_ElementClientVSS
+SCC_Project_Name = $/CElement/CElementClient
+
+[ElementClient.dsp]
+SCC_Aux_Path = 10.68.20.62:8877:CPW_DevLatest_ElementClientVSS
+SCC_Project_Name = $/CElement/CElementClient
+

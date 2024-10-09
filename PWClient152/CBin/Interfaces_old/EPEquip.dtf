@@ -1,0 +1,43 @@
+DIALOG "Win_EPEquip" 0 0 295 372 0 1 10 "Window\对话框_标准边框1.dds" "" "人鱼传说新界面\title.tga" 3 3 289 33 "人鱼传说新界面\面板关闭按钮.tga" 37 7 96 96 96 255 1
+LABEL "Control_168069414" "" "" 103 6 0 0 2 16 3 255 203 74 255
+LABEL "Lab_Name" "" "" 13 37 0 0 4 10 5 255 203 74 255
+LABEL "Lab_Prof" "" "" 13 56 0 0 6 10 7 255 203 74 255
+LABEL "Lab_Level" "" "" 162 56 0 0 8 10 9 255 203 74 255
+LABEL "Lab_Faction" "" "" 12 75 0 0 10 10 11 255 203 74 255
+LABEL "Lab_NickName" "" "" 162 75 0 0 12 10 13 255 203 74 255
+LABEL "Txt_Name" "" "" 119 37 0 0 14 10 15 255 255 255 255
+LABEL "Txt_Prof" "" "" 49 56 0 0 16 10 17 255 255 255 255
+LABEL "Txt_Level" "" "" 198 56 0 0 18 10 19 255 255 255 255
+LABEL "Txt_Faction" "" "" 68 75 0 0 20 10 21 255 255 255 255
+LABEL "Txt_NickName" "" "" 225 75 0 0 22 10 23 255 255 255 255
+IMAGEPICTURE "Img_M" "" "" 120 121 128 256 1 0 "Window\图片_01.dds"
+IMAGEPICTURE "Img_F" "" "" 131 118 128 256 1 0 "Window\图片_02.dds"
+IMAGEPICTURE "Equip_04" "" "" 214 169 32 32 1 0 "Window\图标_上衣f.dds"
+IMAGEPICTURE "Equip_01" "" "" 214 129 32 32 1 0 "Window\图标_头盔.dds"
+IMAGEPICTURE "Equip_06" "" "" 214 209 32 32 1 0 "Window\图标_裤子f.dds"
+IMAGEPICTURE "Equip_07" "" "" 214 249 32 32 1 0 "Window\图标_鞋f.dds"
+IMAGEPICTURE "Equip_05" "" "" 52 209 32 32 1 0 "Window\图标_腰饰.dds"
+IMAGEPICTURE "Equip_11" "" "" 251 249 32 32 1 0 "Window\图标_箭囊.dds"
+IMAGEPICTURE "Equip_00" "" "" 251 209 32 32 1 0 "Window\图标_武器1.dds"
+IMAGEPICTURE "Equip_10" "" "" 52 249 32 32 1 0 "Window\图标_戒指.dds"
+IMAGEPICTURE "Equip_08" "" "" 15 209 32 32 1 0 "Window\图标_护腕.dds"
+IMAGEPICTURE "Equip_09" "" "" 15 249 32 32 1 0 "Window\图标_戒指.dds"
+IMAGEPICTURE "Equip_02" "" "" 15 169 32 32 1 0 "Window\图标_项链.dds"
+IMAGEPICTURE "Equip_03" "" "" 52 169 32 32 1 0 "Window\图标_披风.dds"
+IMAGEPICTURE "Equip_12" "" "" 89 129 32 32 1 0 "Window\图标_翅膀.dds"
+IMAGEPICTURE "Equip_13" "" "" 181 328 32 32 1 0 "Window\图标_上衣f.dds"
+IMAGEPICTURE "Equip_14" "" "" 84 328 32 32 1 0 "Window\图标_裤子f.dds"
+IMAGEPICTURE "Equip_15" "" "" 239 328 32 32 1 0 "Window\图标_鞋f.dds"
+IMAGEPICTURE "Equip_16" "" "" 29 328 32 32 1 0 "Window\图标_护腕.dds"
+IMAGEPICTURE "Equip_18" "" "" 89 169 32 32 1 0 "Window\图标_天书.dds"
+IMAGEPICTURE "Equip_19" "" "" 251 129 32 32 1 0 "Window\图标_喇叭.dds"
+IMAGEPICTURE "Equip_20" "" "" 15 129 32 32 1 0 "Window\图标_护身符.dds"
+IMAGEPICTURE "Equip_21" "" "" 52 129 32 32 1 0 "Window\图标_守神符.dds"
+IMAGEPICTURE "Equip_17" "" "" 251 169 32 32 1 0 "Window\图标_优化符.dds"
+LABEL "Control_94225152" "" "" 91 102 137 16 24 10 25 255 203 74 255
+LABEL "Control_236708850" "" "" 14 304 142 17 26 10 27 255 203 74 255
+STILLIMAGEBUTTON "Btn_Try" "try" "" 179 299 108 24 0 0 0 0 28 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 29 1
+IMAGEPICTURE "Equip_22" "" "" 90 209 32 32 1 0 "妙计锦囊.dds"
+IMAGEPICTURE "Equip_23" "" "" 90 249 32 32 1 0 "Window\图标_精灵.dds"
+IMAGEPICTURE "Equip_24" "" "" -5000 -5129 32 32 1 0 "妙计锦囊.dds"
+IMAGEPICTURE "Equip_25" "" "" 133 328 32 32 1 0 "Window\帽子时装.dds"

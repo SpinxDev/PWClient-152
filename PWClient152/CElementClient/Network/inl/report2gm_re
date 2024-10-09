@@ -1,0 +1,38 @@
+	public:
+		int retcode;
+		int roleid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_REPORT2GM_RE };
+	public:
+		Report2GM_Re() { type = PROTOCOL_REPORT2GM_RE; }
+		Report2GM_Re(void*) : Protocol(PROTOCOL_REPORT2GM_RE) { }
+		Report2GM_Re (int l_retcode,int l_roleid,unsigned int l_localsid)
+			 : retcode(l_retcode),roleid(l_roleid),localsid(l_localsid)
+		{
+			type = PROTOCOL_REPORT2GM_RE;
+		}
+
+		Report2GM_Re(const Report2GM_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),roleid(rhs.roleid),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new Report2GM_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roleid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roleid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

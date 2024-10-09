@@ -1,0 +1,4 @@
+DIALOG "Win_HelpHistory" 0 0 150 245 0 1 10 "Window\对话框_标准边框1.dds" "" "" 0 0 -1 -1 "" 0 0 96 96 96 255 1
+TREE "Trv_History" "" "" 7 27 135 180 2 15 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" "Extra\TreePlus.bmp" "Extra\TreeMinus.bmp" "Extra\TreeLeaf.bmp"
+LABEL "Control_171985058" "" "" 6 8 67 16 3 10 4 255 203 74 255
+STILLIMAGEBUTTON "Btn_Reactive" "reactive" "" 46 212 95 24 0 0 0 0 5 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 6 1

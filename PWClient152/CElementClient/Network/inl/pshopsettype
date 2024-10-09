@@ -1,0 +1,35 @@
+	public:
+		int roleid;
+		int newtype;
+		enum { PROTOCOL_TYPE = PROTOCOL_PSHOPSETTYPE };
+	public:
+		PShopSetType() { type = PROTOCOL_PSHOPSETTYPE; }
+		PShopSetType(void*) : Protocol(PROTOCOL_PSHOPSETTYPE) { }
+		PShopSetType (int l_roleid,int l_newtype = -1)
+			 : roleid(l_roleid),newtype(l_newtype)
+		{
+			type = PROTOCOL_PSHOPSETTYPE;
+		}
+
+		PShopSetType(const PShopSetType &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),newtype(rhs.newtype) { }
+
+		GNET::Protocol *Clone() const { return new PShopSetType(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << newtype;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> newtype;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

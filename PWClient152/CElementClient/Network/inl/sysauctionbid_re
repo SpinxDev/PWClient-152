@@ -1,0 +1,44 @@
+	public:
+		int retcode;
+		unsigned int cash;
+		GSysAuctionItem info;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_SYSAUCTIONBID_RE };
+	public:
+		SysAuctionBid_Re() { type = PROTOCOL_SYSAUCTIONBID_RE; }
+		SysAuctionBid_Re(void*) : Protocol(PROTOCOL_SYSAUCTIONBID_RE) { }
+		SysAuctionBid_Re (int l_retcode,unsigned int l_cash = 0,const GSysAuctionItem& l_info = GSysAuctionItem(),
+			unsigned int l_localsid = 0)
+			 : retcode(l_retcode),cash(l_cash),info(l_info)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_SYSAUCTIONBID_RE;
+		}
+
+		SysAuctionBid_Re(const SysAuctionBid_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),cash(rhs.cash),info(rhs.info)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new SysAuctionBid_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << cash;
+			os << info;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> cash;
+			os >> info;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

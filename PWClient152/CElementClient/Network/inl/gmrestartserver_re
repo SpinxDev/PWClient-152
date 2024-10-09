@@ -1,0 +1,44 @@
+	public:
+		int retcode;
+		int gmroleid;
+		unsigned int localsid;
+		int gsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_GMRESTARTSERVER_RE };
+	public:
+		GMRestartServer_Re() { type = PROTOCOL_GMRESTARTSERVER_RE; }
+		GMRestartServer_Re(void*) : Protocol(PROTOCOL_GMRESTARTSERVER_RE) { }
+		GMRestartServer_Re (int l_retcode,int l_gmroleid,unsigned int l_localsid,
+			int l_gsid)
+			 : retcode(l_retcode),gmroleid(l_gmroleid),localsid(l_localsid),
+			gsid(l_gsid)
+		{
+			type = PROTOCOL_GMRESTARTSERVER_RE;
+		}
+
+		GMRestartServer_Re(const GMRestartServer_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),gmroleid(rhs.gmroleid),localsid(rhs.localsid),
+			gsid(rhs.gsid) { }
+
+		GNET::Protocol *Clone() const { return new GMRestartServer_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << gmroleid;
+			os << localsid;
+			os << gsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> gmroleid;
+			os >> localsid;
+			os >> gsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

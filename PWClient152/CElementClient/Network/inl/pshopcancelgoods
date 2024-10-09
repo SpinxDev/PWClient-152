@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		int canceltype;
+		int pos;
+		enum { PROTOCOL_TYPE = PROTOCOL_PSHOPCANCELGOODS };
+	public:
+		PShopCancelGoods() { type = PROTOCOL_PSHOPCANCELGOODS; }
+		PShopCancelGoods(void*) : Protocol(PROTOCOL_PSHOPCANCELGOODS) { }
+		PShopCancelGoods (int l_roleid,int l_canceltype,int l_pos = -1)
+			 : roleid(l_roleid),canceltype(l_canceltype),pos(l_pos)
+		{
+			type = PROTOCOL_PSHOPCANCELGOODS;
+		}
+
+		PShopCancelGoods(const PShopCancelGoods &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),canceltype(rhs.canceltype),pos(rhs.pos) { }
+
+		GNET::Protocol *Clone() const { return new PShopCancelGoods(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << canceltype;
+			os << pos;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> canceltype;
+			os >> pos;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 131072; }

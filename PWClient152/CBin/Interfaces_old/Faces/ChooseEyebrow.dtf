@@ -1,0 +1,33 @@
+DIALOG "Win_ChooseEyebrow" 0 0 250 480 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "Window\对话框_标准关闭.tga" 26 5 96 96 96 255 1
+LABEL "Control_620196584" "" "" 43 100 60 14 2 10 3 255 203 74 255
+LABEL "Control_237554344" "" "" 83 2 84 21 4 16 5 255 203 74 255
+LABEL "Control_2698444" "" "" 61 264 53 14 6 10 7 255 203 74 255
+STILLIMAGEBUTTON "Control_716737528" "Reset" "" 195 449 48 24 0 0 0 0 8 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 9 1
+STILLIMAGEBUTTON "Control_69605439" "ChooseFace" "" 0 48 38 48 0 0 0 0 10 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 11 1
+STILLIMAGEBUTTON "Control_588733145" "ChooseEye" "" 0 96 38 48 0 0 0 0 12 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 13 1
+STILLIMAGEBUTTON "Btm_ChooseBrow" "ChooseEyebrow" "" 0 144 38 48 0 0 0 0 14 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 15 1
+STILLIMAGEBUTTON "Control_120048474" "ChooseNose" "" 0 192 38 48 0 0 0 0 16 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 17 1
+STILLIMAGEBUTTON "Control_673114926" "ChooseMouth" "" 0 240 38 48 0 0 0 0 18 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 19 1
+STILLIMAGEBUTTON "Control_332562581" "ChooseEar" "" 0 288 38 48 0 0 0 0 20 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 21 1
+STILLIMAGEBUTTON "Control_78047744" "ChooseHair" "" 0 336 38 48 0 0 0 0 22 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 23 1
+STILLIMAGEBUTTON "Control_193291245" "ChooseFacePainting" "" 0 384 38 48 0 0 0 0 24 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 25 1
+STILLIMAGEBUTTON "Btm_ChooseBaseEyebrow1" "ChooseBaseEyebrow1" "" 115 94 48 30 0 0 0 0 26 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 27 1
+LABEL "Label_Brow1" "" "" 40 284 110 14 28 10 29 255 255 255 255
+SLIDER "Slider_ScaleBrowH" "MoveSlider_ScaleBrowH" "" 40 301 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Label_Brow2" "" "" 40 311 133 14 30 10 31 255 255 255 255
+SLIDER "Slider_ScaleBrowV" "MoveSlider_ScaleBrowV" "" 40 328 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Label_Brow3" "" "" 40 338 92 14 32 10 33 255 255 255 255
+SLIDER "Slider_RotateBrow" "MoveSlider_RotateBrow" "" 40 355 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Label_Brow4" "" "" 40 366 121 14 34 10 35 255 255 255 255
+SLIDER "Slider_OffsetBrowH" "MoveSlider_OffsetBrowH" "" 40 383 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Label_Brow5" "" "" 40 394 125 14 36 10 37 255 255 255 255
+SLIDER "Slider_OffsetBrowV" "MoveSlider_OffsetBrowV" "" 40 410 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Label_Brow6" "" "" 41 420 112 14 38 10 39 255 255 255 255
+SLIDER "Slider_OffsetBrowZ" "MoveSlider_OffsetBrowZ" "" 40 437 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LIST "ListBox_Brow" "" "" 41 126 200 135 40 10 0 0 0 255 "Editbox\文本框_4b.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LIST "ListBox_BrowTex" "" "" 41 27 200 65 41 10 0 0 0 255 "Editbox\文本框_4b.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+STILLIMAGEBUTTON "Control_100073364" "ChooseStature" "" 0 432 38 48 0 0 0 0 42 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 43 1
+STILLIMAGEBUTTON "Control_13756680" "ChoosePreCustomize" "" 0 0 38 48 0 0 0 0 44 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 45 1
+CHECK "CheckBox_BrowAdjust" "Check" "" 42 263 18 18 "Extra\复选框_标准.tga"
+STILLIMAGEBUTTON "Btn_LeftBrow" "OnBtnLeftBrow" "" 158 263 40 24 0 0 0 0 46 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 47 1
+STILLIMAGEBUTTON "Btn_RightBrow" "OnBtnRightBrow" "" 200 263 40 24 0 0 0 0 48 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 49 1

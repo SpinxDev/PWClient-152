@@ -1,0 +1,44 @@
+	public:
+		int player_bonus;
+		std::vector<int> country_bonus;
+		std::vector<int> country_domains_cnt;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_COUNTRYBATTLERESULT };
+	public:
+		CountryBattleResult() { type = PROTOCOL_COUNTRYBATTLERESULT; }
+		CountryBattleResult(void*) : Protocol(PROTOCOL_COUNTRYBATTLERESULT) { }
+		CountryBattleResult (int l_player_bonus,const std::vector<int>& l_country_bonus,const std::vector<int>& l_country_domains_cnt,
+			unsigned int l_localsid)
+			 : player_bonus(l_player_bonus),country_bonus(l_country_bonus),country_domains_cnt(l_country_domains_cnt)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_COUNTRYBATTLERESULT;
+		}
+
+		CountryBattleResult(const CountryBattleResult &rhs)
+			: Protocol(rhs),player_bonus(rhs.player_bonus),country_bonus(rhs.country_bonus),country_domains_cnt(rhs.country_domains_cnt)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new CountryBattleResult(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << player_bonus;
+			os << country_bonus;
+			os << country_domains_cnt;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> player_bonus;
+			os >> country_bonus;
+			os >> country_domains_cnt;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 512; }

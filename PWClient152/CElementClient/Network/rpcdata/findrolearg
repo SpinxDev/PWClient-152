@@ -1,0 +1,65 @@
+#ifndef __GNET_FINDROLEARG_RPCDATA
+#define __GNET_FINDROLEARG_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "userinfodetail"
+
+namespace GNET
+{
+	class FindRoleArg : public GNET::Rpc::Data
+	{
+	public:
+		char type;
+		UserInfoDetail detail;
+
+	public:
+		FindRoleArg (char l_type = -1)
+			: type(l_type)
+		{
+		}
+
+		FindRoleArg(const FindRoleArg &rhs)
+			: type(rhs.type),detail(rhs.detail) { }
+
+		Rpc::Data *Clone() const { return new FindRoleArg(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const FindRoleArg *r = dynamic_cast<const FindRoleArg *>(&rhs);
+			if (r && r != this)
+			{
+				type = r->type;
+				detail = r->detail;
+			}
+			return *this;
+		}
+
+		FindRoleArg& operator = (const FindRoleArg &rhs)
+		{
+			const FindRoleArg *r = &rhs;
+			if (r && r != this)
+			{
+				type = r->type;
+				detail = r->detail;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << type;
+			os << detail;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> type;
+			os >> detail;
+			return os;
+		}
+
+	};
+};
+#endif

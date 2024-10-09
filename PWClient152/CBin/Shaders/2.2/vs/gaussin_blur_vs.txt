@@ -1,0 +1,49 @@
+; DESCRIPTION:
+; Vertex shader used to do gaussin blur, this shader will offset texture coord
+
+vs.1.1
+
+dcl_position v0
+dcl_color0 v1
+dcl_texcoord0 v2
+
+;------------------------------------------------------------------------------
+; v0 	  = position in cuboid space
+; v1      = diffuse
+; v2	  = texture coordinates of each corner's center texture uv
+;------------------------------------------------------------------------------
+
+;------------------------------------------------------------------------------
+; Constants specified by the app;
+; c0	  = (dx, dy, 0.0, 0.0)
+; c1      = (cx, cy, 0.0, 0.0)
+;------------------------------------------------------------------------------
+
+;------------------------------------------------------------------------------
+; oPos	  = Output position
+; oD0	  = Diffuse
+; oT0~oT5 = texture coordinates of each offset pixel
+;------------------------------------------------------------------------------
+
+add oPos, v0, c1
+
+mov oD0, v1
+mov oD1, c0.wwww
+
+// set r1 and r2 to center pixel's tex uv
+mov r1, v2
+mov r2, v2
+
+mov oT3, v2
+mov oT0, v2
+
+// offset uv to get each offset pixel's uv
+sub r1, r1, c0
+mov oT2, r1
+add r2, r2, c0
+mov oT4, r2
+
+sub r1, r1, c0
+mov oT1, r1
+add r2, r2, c0
+mov oT5, r2

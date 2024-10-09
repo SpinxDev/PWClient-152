@@ -1,0 +1,50 @@
+	public:
+		int retcode;
+		char opt_type;
+		int operater;
+		int expelroleid;
+		int time;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONDELAYEXPELANNOUNCE };
+	public:
+		FactionDelayExpelAnnounce() { type = PROTOCOL_FACTIONDELAYEXPELANNOUNCE; }
+		FactionDelayExpelAnnounce(void*) : Protocol(PROTOCOL_FACTIONDELAYEXPELANNOUNCE) { }
+		FactionDelayExpelAnnounce (int l_retcode,char l_opt_type,int l_operater,
+			int l_expelroleid,int l_time,unsigned int l_localsid)
+			 : retcode(l_retcode),opt_type(l_opt_type),operater(l_operater)
+			,expelroleid(l_expelroleid),time(l_time),localsid(l_localsid)
+		{
+			type = PROTOCOL_FACTIONDELAYEXPELANNOUNCE;
+		}
+
+		FactionDelayExpelAnnounce(const FactionDelayExpelAnnounce &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),opt_type(rhs.opt_type),operater(rhs.operater)
+			,expelroleid(rhs.expelroleid),time(rhs.time),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new FactionDelayExpelAnnounce(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << opt_type;
+			os << operater;
+			os << expelroleid;
+			os << time;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> opt_type;
+			os >> operater;
+			os >> expelroleid;
+			os >> time;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

@@ -1,0 +1,35 @@
+	public:
+		int roleid;
+		int domain_id;
+		enum { PROTOCOL_TYPE = PROTOCOL_COUNTRYBATTLEGETBATTLELIMIT };
+	public:
+		CountryBattleGetBattleLimit() { type = PROTOCOL_COUNTRYBATTLEGETBATTLELIMIT; }
+		CountryBattleGetBattleLimit(void*) : Protocol(PROTOCOL_COUNTRYBATTLEGETBATTLELIMIT) { }
+		CountryBattleGetBattleLimit (int l_roleid,int l_domain_id)
+			 : roleid(l_roleid),domain_id(l_domain_id)
+		{
+			type = PROTOCOL_COUNTRYBATTLEGETBATTLELIMIT;
+		}
+
+		CountryBattleGetBattleLimit(const CountryBattleGetBattleLimit &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),domain_id(rhs.domain_id) { }
+
+		GNET::Protocol *Clone() const { return new CountryBattleGetBattleLimit(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << domain_id;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> domain_id;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 512; }

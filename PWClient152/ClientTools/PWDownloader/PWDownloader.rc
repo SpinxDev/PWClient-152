@@ -1,0 +1,362 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\PWDownloader.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\PWDownloader.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 PWDownloader"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "完美国际迷你客户端内嵌下载器",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2004-2013 Perfect World All rights reserved.",
+                    IDC_STATIC,40,25,132,23
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_PWDOWNLOADER_DIALOG DIALOGEX 0, 0, 258, 41
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "完美国际迷你下载器"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "Progress1",IDC_DOWN_PROGRESS,"msctls_progress32",
+                    PBS_SMOOTH | WS_BORDER,7,7,244,14
+    LTEXT           "100.0%",IDC_CUR_PROGRESS,50,27,27,8
+    LTEXT           "当前进度：",IDC_STATIC,7,27,41,8
+    LTEXT           "1000.56KB",IDC_DOWN_SPEED,123,27,38,8
+    LTEXT           "下载速度：",IDC_STATIC,82,27,41,8
+    LTEXT           "1000.00KB",IDC_UP_SPEED,207,27,44,8
+    LTEXT           "上传速度：",IDC_STATIC,166,27,41,8
+END
+
+IDD_DLG_INSTALL DIALOG DISCARDABLE  0, 0, 305, 209
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "解压安装文件"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "Progress1",IDC_CTL_PROGRESS,"msctls_progress32",
+                    PBS_SMOOTH | WS_BORDER,7,174,291,14
+    LTEXT           "解压进度：",IDC_STATIC,7,193,41,8
+    LTEXT           "",IDC_PROGRESS_TEXT,50,193,33,8
+    LTEXT           "正在解压：",IDC_STATIC,87,193,41,8
+    LTEXT           "",IDC_CUR_FILE,128,193,170,8
+END
+
+IDD_DLG_SETSPEED DIALOG DISCARDABLE  0, 0, 149, 87
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "速度设置"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,22,66,50,14
+    PUSHBUTTON      "取消",IDCANCEL,77,66,50,14
+    LTEXT           "下载速度：",IDC_STATIC,7,17,41,8
+    LTEXT           "上传速度：",IDC_STATIC,7,37,41,8
+    COMBOBOX        IDC_DOWNSPEED,50,15,92,78,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_UPSPEED,50,36,92,86,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_DLG_PREINSTALL DIALOG DISCARDABLE  0, 0, 180, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "解压安装文件"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "解压",IDOK,29,74,50,14
+    PUSHBUTTON      "取消",IDCANCEL,101,74,50,14
+    LTEXT           "解压路径：",IDC_STATIC,9,38,41,8
+    EDITTEXT        IDC_EXTRACT_DIR,7,50,142,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_SEL_DIR,152,50,21,14
+    LTEXT           "安装文件被暂时解压到下面指定的目录，安装完成后为节省磁盘空间，玩家可以自行删除。",
+                    IDC_STATIC,7,7,166,27
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "PWDownloader Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "PWDownloader\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2013\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "PWDownloader.EXE\0"
+            VALUE "ProductName", "PWDownloader 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PWDOWNLOADER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 251
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 34
+    END
+
+    IDD_DLG_INSTALL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 298
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 202
+    END
+
+    IDD_DLG_SETSPEED, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 142
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 80
+    END
+
+    IDD_DLG_PREINSTALL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 173
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_TRAYMENU MENU DISCARDABLE 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "设置下载速度",                IDM_SETSPEED
+        MENUITEM "退出",                        IDM_QUIT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DLG_SETSPEED DLGINIT
+BEGIN
+    IDC_DOWNSPEED, 0x403, 4, 0
+0x3436, 0x004b, 
+    IDC_DOWNSPEED, 0x403, 5, 0
+0x3532, 0x4b36, "\000" 
+    IDC_DOWNSPEED, 0x403, 5, 0
+0x3135, 0x4b32, "\000" 
+    IDC_DOWNSPEED, 0x403, 3, 0
+0x4d31, "\000" 
+    IDC_DOWNSPEED, 0x403, 3, 0
+0x4d32, "\000" 
+    IDC_DOWNSPEED, 0x403, 3, 0
+0x4d34, "\000" 
+    IDC_DOWNSPEED, 0x403, 7, 0
+0xdece, 0xdecf, 0xc6d6, "\000" 
+    IDC_UPSPEED, 0x403, 4, 0
+0x3436, 0x004b, 
+    IDC_UPSPEED, 0x403, 5, 0
+0x3532, 0x4b36, "\000" 
+    IDC_UPSPEED, 0x403, 5, 0
+0x3135, 0x4b32, "\000" 
+    IDC_UPSPEED, 0x403, 3, 0
+0x4d31, "\000" 
+    IDC_UPSPEED, 0x403, 3, 0
+0x4d32, "\000" 
+    IDC_UPSPEED, 0x403, 3, 0
+0x4d34, "\000" 
+    IDC_UPSPEED, 0x403, 7, 0
+0xdece, 0xdecf, 0xc6d6, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDR_INSTALLBG           PNG     DISCARDABLE     "res\\pw_install.png"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 PWDownloader(&A)..."
+    IDS_P2PE_OK             "正常"
+    IDS_TASK_ALREADY_EXISTS "任务已经存在"
+    IDS_DOWNLOAD_TASK_SEED  "任务种子下载失败"
+    IDS_PARSE_TASK_SEED     "任务种子解析失败"
+    IDS_CHECK_TASK_SEED     "任务种子参数校验失败"
+    IDS_STARTTASK_INEXISTENT "任务不存在"
+    IDS_STARTTASK_DISKFULL  "剩余磁盘空间不足，启动任务失败"
+    IDS_STARTTASK_QUEUING   "任务正在排队"
+    IDS_HTTPDOWNLOAD_PARSEURL "解析URL失败"
+    IDS_HTTPDOWNLOAD_RESOLVEHOST "解析HOST失败"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_HTTPDOWNLOAD_CONNECTSERVER "连接服务器失败"
+    IDS_HTTPDOWNLOAD_REQUEST "发送请求失败"
+    IDS_HTTPDOWNLOAD_READSTATUSLINE "读取HTTP返回头失败"
+    IDS_HTTPDOWNLOAD_UNSUPPORTEPARTIAL "不支持断点"
+    IDS_HTTPDOWNLOAD_READHEADERS "读取HTTP返回头失败"
+    IDS_HTTPDOWNLOAD_READDATA "读取内容失败"
+    IDS_HTTPDOWNLOAD_TRY_TIMES_OVERRUN "错误次数太多"
+    IDS_STARTTASK_CREATE_FILE_ERROR "创建任务失败"
+    IDS_TIMEOUT             "速度不满足设置的最小值，且持续时间超过限制值"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\PWDownloader.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

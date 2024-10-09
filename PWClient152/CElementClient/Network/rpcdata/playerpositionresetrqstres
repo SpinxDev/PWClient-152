@@ -1,0 +1,59 @@
+#ifndef __GNET_PLAYERPOSITIONRESETRQSTRES_RPCDATA
+#define __GNET_PLAYERPOSITIONRESETRQSTRES_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class PlayerPositionResetRqstRes : public GNET::Rpc::Data
+	{
+	public:
+		int retcode;
+
+	public:
+		PlayerPositionResetRqstRes (int l_retcode = 0)
+			: retcode(l_retcode)
+		{
+		}
+
+		PlayerPositionResetRqstRes(const PlayerPositionResetRqstRes &rhs)
+			: retcode(rhs.retcode) { }
+
+		Rpc::Data *Clone() const { return new PlayerPositionResetRqstRes(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const PlayerPositionResetRqstRes *r = dynamic_cast<const PlayerPositionResetRqstRes *>(&rhs);
+			if (r && r != this)
+			{
+				retcode = r->retcode;
+			}
+			return *this;
+		}
+
+		PlayerPositionResetRqstRes& operator = (const PlayerPositionResetRqstRes &rhs)
+		{
+			const PlayerPositionResetRqstRes *r = &rhs;
+			if (r && r != this)
+			{
+				retcode = r->retcode;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			return os;
+		}
+
+	};
+};
+#endif

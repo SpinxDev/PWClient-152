@@ -1,0 +1,38 @@
+	public:
+		int player_score;
+		std::vector<int> country_score;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_COUNTRYBATTLEGETSCORE_RE };
+	public:
+		CountryBattleGetScore_Re() { type = PROTOCOL_COUNTRYBATTLEGETSCORE_RE; }
+		CountryBattleGetScore_Re(void*) : Protocol(PROTOCOL_COUNTRYBATTLEGETSCORE_RE) { }
+		CountryBattleGetScore_Re (int l_player_score,const std::vector<int>& l_country_score,unsigned int l_localsid)
+			 : player_score(l_player_score),country_score(l_country_score),localsid(l_localsid)
+		{
+			type = PROTOCOL_COUNTRYBATTLEGETSCORE_RE;
+		}
+
+		CountryBattleGetScore_Re(const CountryBattleGetScore_Re &rhs)
+			: Protocol(rhs),player_score(rhs.player_score),country_score(rhs.country_score),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new CountryBattleGetScore_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << player_score;
+			os << country_score;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> player_score;
+			os >> country_score;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

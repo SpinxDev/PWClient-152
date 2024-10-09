@@ -1,0 +1,64 @@
+#ifndef __GNET_GFACTIONFORTRESSBATTLEINFO_RPCDATA
+#define __GNET_GFACTIONFORTRESSBATTLEINFO_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GFactionFortressBattleInfo : public GNET::Rpc::Data
+	{
+	public:
+		int factionid;
+		int offense_faction;
+
+	public:
+		GFactionFortressBattleInfo (int l_factionid = 0,int l_offense_faction = 0)
+			: factionid(l_factionid),offense_faction(l_offense_faction)
+		{
+		}
+
+		GFactionFortressBattleInfo(const GFactionFortressBattleInfo &rhs)
+			: factionid(rhs.factionid),offense_faction(rhs.offense_faction) { }
+
+		Rpc::Data *Clone() const { return new GFactionFortressBattleInfo(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GFactionFortressBattleInfo *r = dynamic_cast<const GFactionFortressBattleInfo *>(&rhs);
+			if (r && r != this)
+			{
+				factionid = r->factionid;
+				offense_faction = r->offense_faction;
+			}
+			return *this;
+		}
+
+		GFactionFortressBattleInfo& operator = (const GFactionFortressBattleInfo &rhs)
+		{
+			const GFactionFortressBattleInfo *r = &rhs;
+			if (r && r != this)
+			{
+				factionid = r->factionid;
+				offense_faction = r->offense_faction;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << factionid;
+			os << offense_faction;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> factionid;
+			os >> offense_faction;
+			return os;
+		}
+
+	};
+};
+#endif

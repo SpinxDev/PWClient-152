@@ -1,0 +1,74 @@
+	public:
+		char mass_type;
+		int roleid;
+		unsigned int localsid;
+		Octets title;
+		Octets context;
+		Octets sender_name;
+		std::vector<int> receiver_list;
+		int cost_obj_id;
+		int cost_obj_num;
+		int cost_obj_pos;
+		unsigned int cost_money;
+		Octets syncdata;
+		enum { PROTOCOL_TYPE = PROTOCOL_PLAYERSENDMASSMAIL };
+	public:
+		PlayerSendMassMail() { type = PROTOCOL_PLAYERSENDMASSMAIL; }
+		PlayerSendMassMail(void*) : Protocol(PROTOCOL_PLAYERSENDMASSMAIL) { }
+		PlayerSendMassMail (char l_mass_type,int l_roleid,unsigned int l_localsid,
+			Octets l_title,Octets l_context,const Octets& l_sender_name = Octets(),
+			const std::vector<int>& l_receiver_list = std::vector<int>(),int l_cost_obj_id = -1,int l_cost_obj_num = 0,
+			int l_cost_obj_pos = -1,unsigned int l_cost_money = 0,const Octets& l_syncdata = Octets())
+			 : mass_type(l_mass_type),roleid(l_roleid),localsid(l_localsid)
+			,title(l_title),context(l_context),sender_name(l_sender_name)
+			,receiver_list(l_receiver_list),cost_obj_id(l_cost_obj_id),cost_obj_num(l_cost_obj_num)
+			,cost_obj_pos(l_cost_obj_pos),cost_money(l_cost_money),syncdata(l_syncdata)
+		{
+			type = PROTOCOL_PLAYERSENDMASSMAIL;
+		}
+
+		PlayerSendMassMail(const PlayerSendMassMail &rhs)
+			: Protocol(rhs),mass_type(rhs.mass_type),roleid(rhs.roleid),localsid(rhs.localsid)
+			,title(rhs.title),context(rhs.context),sender_name(rhs.sender_name)
+			,receiver_list(rhs.receiver_list),cost_obj_id(rhs.cost_obj_id),cost_obj_num(rhs.cost_obj_num)
+			,cost_obj_pos(rhs.cost_obj_pos),cost_money(rhs.cost_money),syncdata(rhs.syncdata) { }
+
+		GNET::Protocol *Clone() const { return new PlayerSendMassMail(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << mass_type;
+			os << roleid;
+			os << localsid;
+			os << title;
+			os << context;
+			os << sender_name;
+			os << receiver_list;
+			os << cost_obj_id;
+			os << cost_obj_num;
+			os << cost_obj_pos;
+			os << cost_money;
+			os << syncdata;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> mass_type;
+			os >> roleid;
+			os >> localsid;
+			os >> title;
+			os >> context;
+			os >> sender_name;
+			os >> receiver_list;
+			os >> cost_obj_id;
+			os >> cost_obj_num;
+			os >> cost_obj_pos;
+			os >> cost_money;
+			os >> syncdata;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 131072; }

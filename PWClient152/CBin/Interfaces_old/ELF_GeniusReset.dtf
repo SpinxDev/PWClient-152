@@ -1,0 +1,9 @@
+DIALOG "Win_ELFGeniusReset" 0 0 311 440 0 1 10 "小精灵新加tga\板子panel\完美世界精灵属性大板子无标题.tga" "" "" 0 0 214 27 "人鱼传说新界面\面板关闭按钮.tga" 60 30 96 96 96 255 1
+LABEL "Control_227224809" "" "" 77 30 0 0 2 16 3 255 203 74 255
+LABEL "asdf" "" "" 30 83 255 130 4 10 5 255 203 74 255
+STILLIMAGEBUTTON "Btn_Confirm" "confirm" "SFX\Interface\ClickB.wav" 65 358 47 24 0 0 0 0 6 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 7 1
+STILLIMAGEBUTTON "Btn_Cancel" "IDCANCEL" "SFX\Interface\ClickB.wav" 179 357 48 24 0 0 0 0 8 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 9 1
+LABEL "Txt_A" "" "" 55 283 224 27 10 12 11 255 0 0 255
+IMAGEPICTURE "Img_ELF" "" "" 142 219 32 32 1 0 "Window\图标_精灵.dds"
+LABEL "Control_33492522" "" "" 46 261 0 0 12 15 13 255 255 255 255
+LABEL "Txt_B" "" "" 95 309 136 22 14 12 15 255 0 0 255

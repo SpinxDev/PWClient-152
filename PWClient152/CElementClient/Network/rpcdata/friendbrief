@@ -1,0 +1,88 @@
+#ifndef __GNET_FRIENDBRIEF_RPCDATA
+#define __GNET_FRIENDBRIEF_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class FriendBrief : public GNET::Rpc::Data
+	{
+	public:
+		char zoneid;
+		int roleid;
+		char frdzoneid;
+		int frdroleid;
+		char status;
+		Octets friendname;
+
+	public:
+		FriendBrief (char l_zoneid = 0,int l_roleid = -1,char l_frdzoneid = 0
+			,int l_frdroleid = -1,char l_status = 0,Octets l_friendname = Octets(0))
+			: zoneid(l_zoneid),roleid(l_roleid),frdzoneid(l_frdzoneid)
+			,frdroleid(l_frdroleid),status(l_status),friendname(l_friendname)
+		{
+		}
+
+		FriendBrief(const FriendBrief &rhs)
+			: zoneid(rhs.zoneid),roleid(rhs.roleid),frdzoneid(rhs.frdzoneid),
+			frdroleid(rhs.frdroleid),status(rhs.status),friendname(rhs.friendname) { }
+
+		Rpc::Data *Clone() const { return new FriendBrief(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const FriendBrief *r = dynamic_cast<const FriendBrief *>(&rhs);
+			if (r && r != this)
+			{
+				zoneid = r->zoneid;
+				roleid = r->roleid;
+				frdzoneid = r->frdzoneid;
+				frdroleid = r->frdroleid;
+				status = r->status;
+				friendname = r->friendname;
+			}
+			return *this;
+		}
+
+		FriendBrief& operator = (const FriendBrief &rhs)
+		{
+			const FriendBrief *r = &rhs;
+			if (r && r != this)
+			{
+				zoneid = r->zoneid;
+				roleid = r->roleid;
+				frdzoneid = r->frdzoneid;
+				frdroleid = r->frdroleid;
+				status = r->status;
+				friendname = r->friendname;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << zoneid;
+			os << roleid;
+			os << frdzoneid;
+			os << frdroleid;
+			os << status;
+			os << friendname;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> zoneid;
+			os >> roleid;
+			os >> frdzoneid;
+			os >> frdroleid;
+			os >> status;
+			os >> friendname;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<FriendBrief>	FriendBriefVector;
+};
+#endif

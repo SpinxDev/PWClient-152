@@ -1,0 +1,6 @@
+DIALOG "Win_GMapTravel" 0 0 105 165 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 214 27 "" 0 0 96 96 96 255 1
+LABEL "Control_227224809" "" "" 9 4 0 0 2 16 3 255 203 74 255
+STILLIMAGEBUTTON "Btn_Confirm" "confirm" "SFX\Interface\ClickB.wav" 10 135 40 22 0 0 0 0 4 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 5 1
+STILLIMAGEBUTTON "Btn_Cancel" "IDCANCEL" "SFX\Interface\ClickB.wav" 56 135 40 22 0 0 0 0 6 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 7 1
+LABEL "Control_228634252" "" "" 16 29 69 15 8 10 9 255 203 74 255
+LIST "Lst_Target" "confirm" "" 10 47 88 83 10 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"

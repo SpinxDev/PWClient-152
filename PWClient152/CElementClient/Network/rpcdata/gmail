@@ -1,0 +1,80 @@
+#ifndef __GNET_GMAIL_RPCDATA
+#define __GNET_GMAIL_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "gmailheader"
+#include "groleinventory"
+
+namespace GNET
+{
+	class GMail : public GNET::Rpc::Data
+	{
+	public:
+		GMailHeader header;
+		Octets context;
+		GRoleInventory attach_obj;
+		unsigned int attach_money;
+
+	public:
+		GMail (const GMailHeader& l_header = GMailHeader(),Octets l_context = Octets(),const GRoleInventory& l_attach_obj = GRoleInventory()
+			,unsigned int l_attach_money = 0)
+			: header(l_header),context(l_context),attach_obj(l_attach_obj)
+			,attach_money(l_attach_money)
+		{
+		}
+
+		GMail(const GMail &rhs)
+			: header(rhs.header),context(rhs.context),attach_obj(rhs.attach_obj),
+			attach_money(rhs.attach_money) { }
+
+		Rpc::Data *Clone() const { return new GMail(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GMail *r = dynamic_cast<const GMail *>(&rhs);
+			if (r && r != this)
+			{
+				header = r->header;
+				context = r->context;
+				attach_obj = r->attach_obj;
+				attach_money = r->attach_money;
+			}
+			return *this;
+		}
+
+		GMail& operator = (const GMail &rhs)
+		{
+			const GMail *r = &rhs;
+			if (r && r != this)
+			{
+				header = r->header;
+				context = r->context;
+				attach_obj = r->attach_obj;
+				attach_money = r->attach_money;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << header;
+			os << context;
+			os << attach_obj;
+			os << attach_money;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> header;
+			os >> context;
+			os >> attach_obj;
+			os >> attach_money;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<GMail>	GMailVector;
+};
+#endif

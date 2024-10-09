@@ -1,0 +1,71 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		unsigned short category;
+		int item_id;
+		int item_pos;
+		int item_num;
+		unsigned int baseprice;
+		unsigned int binprice;
+		int elapse_time;
+		unsigned int deposit;
+		Octets syncdata;
+		enum { PROTOCOL_TYPE = PROTOCOL_AUCTIONOPEN };
+	public:
+		AuctionOpen() { type = PROTOCOL_AUCTIONOPEN; }
+		AuctionOpen(void*) : Protocol(PROTOCOL_AUCTIONOPEN) { }
+		AuctionOpen (int l_roleid,unsigned int l_localsid = 0,unsigned short l_category = 0,
+			int l_item_id = -1,int l_item_pos = -1,int l_item_num = 0,
+			unsigned int l_baseprice = 0,unsigned int l_binprice = 0,int l_elapse_time = 0,
+			unsigned int l_deposit = 0,const Octets& l_syncdata = Octets())
+			 : roleid(l_roleid),localsid(l_localsid),category(l_category),
+			item_id(l_item_id),item_pos(l_item_pos),item_num(l_item_num),
+			baseprice(l_baseprice),binprice(l_binprice),elapse_time(l_elapse_time),
+			deposit(l_deposit),syncdata(l_syncdata)
+		{
+			type = PROTOCOL_AUCTIONOPEN;
+		}
+
+		AuctionOpen(const AuctionOpen &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid),category(rhs.category),
+			item_id(rhs.item_id),item_pos(rhs.item_pos),item_num(rhs.item_num),
+			baseprice(rhs.baseprice),binprice(rhs.binprice),elapse_time(rhs.elapse_time),
+			deposit(rhs.deposit),syncdata(rhs.syncdata) { }
+
+		GNET::Protocol *Clone() const { return new AuctionOpen(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << category;
+			os << item_id;
+			os << item_pos;
+			os << item_num;
+			os << baseprice;
+			os << binprice;
+			os << elapse_time;
+			os << deposit;
+			os << syncdata;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> category;
+			os >> item_id;
+			os >> item_pos;
+			os >> item_num;
+			os >> baseprice;
+			os >> binprice;
+			os >> elapse_time;
+			os >> deposit;
+			os >> syncdata;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 131072; }

@@ -1,0 +1,9 @@
+; shadow render pixel shader
+
+; t0 is the shadow map projected
+
+ps.1.1
+
+def c0, 0.0, 0.0, 0.0, 1.0
+
+mov r0, c0

@@ -1,0 +1,32 @@
+//  ************* Angelica 3D shader ***************
+
+version 5
+
+"Armor"
+{
+	//  General properties
+	pixelshader      Shaders\2.2\ps\armornormalrender.txt
+
+	//  Stage 0
+	{
+		colorop          TOP_MODULATE
+		colorarg1        TA_TEXTURE
+		colorarg2        TA_DIFFUSE
+		alphaop          TOP_SELECTARG1
+		alphaarg1        TA_TEXTURE
+		alphaarg2        TA_DIFFUSE
+	}
+	
+	//	Stage 1
+	{
+		texture          TEX_NORMAL  0  Textures\reflect\armorreflect.bmp
+		colorop          TOP_MODULATEALPHA_ADDCOLOR
+		colorarg1        TA_CURRENT
+		colorarg2        TA_TEXTURE
+		alphaop          TOP_SELECTARG2
+		alphaarg1        TA_CURRENT
+		alphaarg2        TA_TEXTURE
+		textrans         4 0.500000  0.000000  0.000000  0.000000  0.000000  -0.500000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.500000  0.500000  0.000000  1.000000
+		texcoord         0  TCI_CAMERASPACENORMAL	
+	}
+}

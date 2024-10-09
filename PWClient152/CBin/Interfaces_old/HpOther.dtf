@@ -1,0 +1,19 @@
+DIALOG "Win_HpOther" 0 0 248 73 0 1 10 "" "" "" 0 0 -1 -1 "" 0 0 96 96 96 0 1
+IMAGEPICTURE "Img_Left" "" "" -17 0 64 64 1 0 "Window\1a.dds"
+IMAGEPICTURE "Img_Right" "" "" 200 0 64 64 1 0 "Window\1b.dds"
+IMAGEPICTURE "Back" "" "" 32 0 176 60 1 0 "人鱼传说新界面\目标怪物2.dds"
+PROGRESS "Prgs_HP" "" "" 48 5 150 10 "Window\对话框_透明色.bmp" "人鱼传说新界面\进度条_hp\进度条_hp.bmp" 0 0 0 0
+LABEL "Txt_Name" "" "" 123 16 0 0 2 10 3 255 255 255 255
+LABEL "Txt_Att" "" "" 123 38 0 0 4 10 5 255 203 74 255
+STILLIMAGEBUTTON "Btn_1" "Size" "SFX\Interface\ClickB.wav" 35 19 12 12 0 0 0 0 6 15 255 255 255 255 "人鱼传说新界面\进度条_hp\头像-hp按钮.tga" "人鱼传说新界面\进度条_hp\头像-hp按钮按下.tga" 7 1
+IMAGEPICTURE "St_1" "" "" 56 53 16 16 1 0 "Window\对话框_透明色.bmp"
+IMAGEPICTURE "St_2" "" "" 75 53 16 16 1 0 "Window\对话框_透明色.bmp"
+IMAGEPICTURE "St_3" "" "" 94 53 16 16 1 0 "Window\对话框_透明色.bmp"
+IMAGEPICTURE "St_4" "" "" 113 53 16 16 1 0 "Window\对话框_透明色.bmp"
+IMAGEPICTURE "St_5" "" "" 132 53 16 16 1 0 "Window\对话框_透明色.bmp"
+IMAGEPICTURE "St_6" "" "" 151 53 16 16 1 0 "Window\对话框_透明色.bmp"
+IMAGEPICTURE "St_7" "" "" 170 53 16 16 1 0 "Window\对话框_透明色.bmp"
+IMAGEPICTURE "Img_PetLevel" "" "" 33 35 16 16 0 0 ""
+IMAGEPICTURE "Img_Demon" "" "" 33 35 16 16 1 0 "Extra\恶魔图标.tga"
+STILLIMAGEBUTTON "Btn_ShowHP" "showhp" "SFX\Interface\ClickB.wav" 35 4 12 12 0 0 0 0 8 15 255 255 255 255 "人鱼传说新界面\进度条_hp\头像-hp按钮.tga" "人鱼传说新界面\进度条_hp\头像-hp按钮按下.tga" 9 1
+LABEL "Txt_HP" "" "" 48 3 150 0 10 8 11 255 255 255 255

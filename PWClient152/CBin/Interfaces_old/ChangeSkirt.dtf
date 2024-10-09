@@ -1,0 +1,40 @@
+DIALOG "Win_ChangeSkirt" 0 0 348 249 0 1 10 "Window\对话框_标准边框x.dds" "" "" 0 0 283 33 "人鱼传说新界面\面板关闭按钮.tga" 49 32 96 96 96 255 1
+EDIT "Img_Title" "" "" 19 27 314 36 "人鱼传说新界面\title.tga" 2 15 255 255 255 "TEXT" 1 0 20
+IMAGEPICTURE "Item_010" "" "" 144 201 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_011" "" "" 180 201 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_013" "" "" 252 201 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_012" "" "" 216 201 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_005" "" "" 144 163 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_006" "" "" 180 163 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_008" "" "" 252 163 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_007" "" "" 216 163 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_000" "" "" 144 125 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_001" "" "" 180 125 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_003" "" "" 252 125 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_002" "" "" 216 125 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Img_Line1" "" "" 16 91 311 3 1 0 "Window\分隔线.tga"
+LABEL "Lab_Title" "" "" 115 32 0 0 3 16 4 255 203 74 255
+EDIT "Edt_Hours" "" "" 86 66 25 20 "Editbox\文本框_4d.dds" 5 18 255 255 255 "TEXT" 0 0 2
+LABEL "Lab_Hours" "" "" 115 68 0 0 6 10 7 255 204 74 255
+EDIT "Edt_Minutes" "" "" 148 66 25 20 "Editbox\文本框_4d.dds" 8 18 255 255 255 "TEXT" 0 0 2
+LABEL "Lab_Minutes" "" "" 177 67 0 0 9 10 10 255 204 74 255
+IMAGEPICTURE "Img_Line10" "" "" 134 93 3 145 1 0 "Window\分隔线2.tga"
+SCROLL "Scl_Right" "" "" 320 94 9 145 "Listbox\列表框_滚动槽1s.tga" "Listbox\列表框_无.bmp" "Listbox\列表框_无.bmp" "Listbox\列表框_拖动按钮2us.bmp"
+STILLIMAGEBUTTON "Btn_BeginChange" "beginchange" "SFX\Interface\ClickB.wav" 214 64 45 24 0 0 0 0 11 10 255 204 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 12 1
+STILLIMAGEBUTTON "Btn_StopChange" "stopchange" "SFX\Interface\ClickB.wav" 268 64 45 24 0 0 0 0 13 10 255 204 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 14 1
+LABEL "Lab_FashionNum" "" "" 49 97 80 24 15 10 16 255 255 255 255
+LABEL "Lab_Time" "" "" 25 66 0 0 17 10 18 255 255 255 255
+LABEL "Lab_Hat" "" "" 145 97 33 20 19 10 20 255 255 255 255
+LABEL "Lab_Skirt" "" "" 182 97 33 20 21 10 22 255 255 255 255
+LABEL "Lab_Pants" "" "" 218 97 33 20 23 10 24 255 255 255 255
+LABEL "Lab_Gloves" "" "" 254 97 33 20 25 10 26 255 255 255 255
+IMAGEPICTURE "Img_Line2" "" "" 17 118 311 3 1 0 "Window\分隔线.tga"
+IMAGEPICTURE "Img_Line3" "" "" 22 158 111 3 1 0 "Window\分隔线.tga"
+IMAGEPICTURE "Img_Line4" "" "" 22 198 111 3 1 0 "Window\分隔线.tga"
+IMAGEPICTURE "Img_No01" "" "" 62 123 32 32 1 0 ""
+IMAGEPICTURE "Img_No02" "" "" 62 163 32 32 1 0 ""
+IMAGEPICTURE "Img_No03" "" "" 62 203 32 32 1 0 ""
+IMAGEPICTURE "Item_004" "" "" 288 125 32 32 1 0 "Window\图标_物品栏t.dds"
+LABEL "Lab_Shoes" "" "" 290 97 33 20 27 10 28 255 255 255 255
+IMAGEPICTURE "Item_009" "" "" 288 163 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_014" "" "" 288 201 32 32 1 0 "Window\图标_物品栏t.dds"

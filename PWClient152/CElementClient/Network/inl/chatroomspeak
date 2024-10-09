@@ -1,0 +1,50 @@
+	public:
+		unsigned short roomid;
+		unsigned char emotion;
+		Octets message;
+		int src;
+		int dst;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_CHATROOMSPEAK };
+	public:
+		ChatRoomSpeak() { type = PROTOCOL_CHATROOMSPEAK; }
+		ChatRoomSpeak(void*) : Protocol(PROTOCOL_CHATROOMSPEAK) { }
+		ChatRoomSpeak (unsigned short l_roomid,unsigned char l_emotion,const Octets& l_message,
+			int l_src,int l_dst,unsigned int l_localsid)
+			 : roomid(l_roomid),emotion(l_emotion),message(l_message),
+			src(l_src),dst(l_dst),localsid(l_localsid)
+		{
+			type = PROTOCOL_CHATROOMSPEAK;
+		}
+
+		ChatRoomSpeak(const ChatRoomSpeak &rhs)
+			: Protocol(rhs),roomid(rhs.roomid),emotion(rhs.emotion),message(rhs.message),
+			src(rhs.src),dst(rhs.dst),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new ChatRoomSpeak(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roomid;
+			os << emotion;
+			os << message;
+			os << src;
+			os << dst;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roomid;
+			os >> emotion;
+			os >> message;
+			os >> src;
+			os >> dst;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 256; }

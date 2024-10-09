@@ -1,0 +1,78 @@
+#ifndef __GNET_PSHOPITEMINFO_RPCDATA
+#define __GNET_PSHOPITEMINFO_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class PShopItemInfo : public GNET::Rpc::Data
+	{
+	public:
+		int id;
+		int pos;
+		int count;
+		int price;
+
+	public:
+		PShopItemInfo (int l_id = 0,int l_pos = -1,int l_count = 0
+			,int l_price = 0)
+			: id(l_id),pos(l_pos),count(l_count)
+			,price(l_price)
+		{
+		}
+
+		PShopItemInfo(const PShopItemInfo &rhs)
+			: id(rhs.id),pos(rhs.pos),count(rhs.count),
+			price(rhs.price) { }
+
+		Rpc::Data *Clone() const { return new PShopItemInfo(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const PShopItemInfo *r = dynamic_cast<const PShopItemInfo *>(&rhs);
+			if (r && r != this)
+			{
+				id = r->id;
+				pos = r->pos;
+				count = r->count;
+				price = r->price;
+			}
+			return *this;
+		}
+
+		PShopItemInfo& operator = (const PShopItemInfo &rhs)
+		{
+			const PShopItemInfo *r = &rhs;
+			if (r && r != this)
+			{
+				id = r->id;
+				pos = r->pos;
+				count = r->count;
+				price = r->price;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << id;
+			os << pos;
+			os << count;
+			os << price;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> id;
+			os >> pos;
+			os >> count;
+			os >> price;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<PShopItemInfo>	PShopItemInfoVector;
+};
+#endif

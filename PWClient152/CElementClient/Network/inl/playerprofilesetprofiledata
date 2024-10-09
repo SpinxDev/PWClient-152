@@ -1,0 +1,35 @@
+	public:
+		int roleid;
+		PlayerProfileData data;
+		enum { PROTOCOL_TYPE = PROTOCOL_PLAYERPROFILESETPROFILEDATA };
+	public:
+		PlayerProfileSetProfileData() { type = PROTOCOL_PLAYERPROFILESETPROFILEDATA; }
+		PlayerProfileSetProfileData(void*) : Protocol(PROTOCOL_PLAYERPROFILESETPROFILEDATA) { }
+		PlayerProfileSetProfileData (int l_roleid,const PlayerProfileData& l_data)
+			 : roleid(l_roleid),data(l_data)
+		{
+			type = PROTOCOL_PLAYERPROFILESETPROFILEDATA;
+		}
+
+		PlayerProfileSetProfileData(const PlayerProfileSetProfileData &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),data(rhs.data) { }
+
+		GNET::Protocol *Clone() const { return new PlayerProfileSetProfileData(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << data;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> data;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

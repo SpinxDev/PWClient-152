@@ -1,0 +1,10 @@
+DIALOG "Win_ChatSmall" 0 0 26 72 0 1 10 "Window\对话框_透明色.bmp" "" "" 0 -35 -1 -1 "" 0 0 96 96 96 255 1
+EDIT "Img_Back0" "" "" 9 0 308 72 "Window\对话框_透明色.bmp" 2 15 255 0 255 "TEXT" 1 0 256
+EDIT "Img_Back1" "" "" 9 0 308 72 "Editbox\文本框_4b.tga" 3 15 255 0 255 "TEXT" 1 0 256
+EDIT "Img_Back2" "" "" 9 0 308 72 "Window\对话框_透明色.bmp" 4 15 255 0 255 "TEXT" 1 0 256
+EDIT "Img_Back3" "" "" 9 0 308 72 "Editbox\文本框_4b.tga" 5 15 255 0 255 "TEXT" 1 0 256
+EDIT "Img_Back4" "" "" 9 0 308 72 "Window\对话框_透明色.bmp" 6 15 255 0 255 "TEXT" 1 0 256
+EDIT "Img_Back5" "" "" 9 0 308 72 "Editbox\文本框_4b.tga" 7 15 255 0 255 "TEXT" 1 0 256
+TEXT "Txt_Content" "" "" 9 0 306 72 8 10 255 255 255 255 "Window\对话框_透明色.bmp" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp"
+CHECK "Chk_Mini" "mini" "" 0 63 9 9 "Extra\复选框_最小化.tga"
+EDIT "Movebar" "" "" 0 0 9 63 "Window\拖动条.dds" 9 15 255 255 255 "TEXT" 1 0 20

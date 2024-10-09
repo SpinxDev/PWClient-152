@@ -1,0 +1,50 @@
+	public:
+		int retcode;
+		int roleid;
+		unsigned int localsid;
+		int dstroleid;
+		char newoccup;
+		int operater;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONAPPOINT_RE };
+	public:
+		FactionAppoint_Re() { type = PROTOCOL_FACTIONAPPOINT_RE; }
+		FactionAppoint_Re(void*) : Protocol(PROTOCOL_FACTIONAPPOINT_RE) { }
+		FactionAppoint_Re (int l_retcode,int l_roleid,unsigned int l_localsid,
+			int l_dstroleid,char l_newoccup,int l_operater)
+			 : retcode(l_retcode),roleid(l_roleid),localsid(l_localsid),
+			dstroleid(l_dstroleid),newoccup(l_newoccup),operater(l_operater)
+		{
+			type = PROTOCOL_FACTIONAPPOINT_RE;
+		}
+
+		FactionAppoint_Re(const FactionAppoint_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),roleid(rhs.roleid),localsid(rhs.localsid),
+			dstroleid(rhs.dstroleid),newoccup(rhs.newoccup),operater(rhs.operater) { }
+
+		GNET::Protocol *Clone() const { return new FactionAppoint_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roleid;
+			os << localsid;
+			os << dstroleid;
+			os << newoccup;
+			os << operater;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roleid;
+			os >> localsid;
+			os >> dstroleid;
+			os >> newoccup;
+			os >> operater;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

@@ -1,0 +1,77 @@
+DIALOG "Win_Teach" 0 0 311 431 0 1 10 "Window\对话框_标准边框x.dds" "" "" 0 0 283 33 "人鱼传说新界面\面板关闭按钮.tga" 47 30 96 96 96 255 1
+EDIT "Img_Title" "" "" 20 26 278 32 "人鱼传说新界面\title.tga" 2 15 255 255 255 "TEXT" 1 0 20
+IMAGEPICTURE "Control_7733044" "" "" 4 0 305 431 1 0 "人鱼传说新界面\未命名-1副本.dds"
+IMAGEPICTURE "Skill_5" "" "" 22 230 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Skill_6" "" "" 22 269 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Skill_7" "" "" 22 309 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Skill_8" "" "" 22 349 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Skill_1" "" "" 22 76 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Skill_2" "" "" 22 115 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Skill_3" "" "" 22 153 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Skill_4" "" "" 22 191 32 32 1 0 "Window\图标_物品栏t.dds"
+STILLIMAGEBUTTON "Btn_Foward" "mover" "SFX\Interface\ClickB.wav" 256 403 12 15 0 0 0 0 3 15 255 0 255 255 "Button\按钮_右移1.tga" "Button\按钮_右移2.tga" 4 1
+STILLIMAGEBUTTON "Btn_Back" "movel" "SFX\Interface\ClickB.wav" 199 403 12 15 0 0 0 0 5 15 255 0 255 255 "Button\按钮_左移1.tga" "Button\按钮_左移2.tga" 6 1
+LABEL "Control_388484460" "" "" 117 29 84 22 7 16 8 255 203 74 255
+LABEL "Control_35515822" "" "" 23 58 57 15 9 10 10 255 203 74 255
+LABEL "Control_561259545" "" "" 219 401 30 16 11 10 12 255 203 74 255
+EDIT "Txt_SkillName1" "" "" 57 75 148 20 "Editbox\文本框_4.dds" 13 10 255 255 255 "TEXT" 1 0 256
+LABEL "Lbl_1a" "" "" 59 93 0 0 14 10 15 255 255 255 255
+LABEL "Lbl_1b" "" "" 206 76 0 0 16 10 17 255 255 255 255
+EDIT "Txt_SkillLevel1" "" "" 261 75 29 20 "Editbox\文本框_4.dds" 18 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_CostSP1" "" "" 91 93 70 18 "Editbox\文本框_4.dds" 19 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_CostMoney1" "" "" 200 93 90 18 "Editbox\文本框_4.dds" 20 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_SkillName2" "" "" 57 114 148 20 "Editbox\文本框_4.dds" 21 10 255 255 255 "TEXT" 1 0 256
+LABEL "Lbl_2a" "" "" 59 132 0 0 22 10 23 255 255 255 255
+LABEL "Lbl_2b" "" "" 206 115 0 0 24 10 25 255 255 255 255
+EDIT "Txt_SkillLevel2" "" "" 261 114 29 20 "Editbox\文本框_4.dds" 26 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_CostSP2" "" "" 91 132 70 18 "Editbox\文本框_4.dds" 27 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_CostMoney2" "" "" 200 132 90 18 "Editbox\文本框_4.dds" 28 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_SkillName3" "" "" 57 152 148 20 "Editbox\文本框_4.dds" 29 10 255 255 255 "TEXT" 1 0 256
+LABEL "Lbl_3a" "" "" 59 170 0 0 30 10 31 255 255 255 255
+LABEL "Lbl_3b" "" "" 206 153 0 0 32 10 33 255 255 255 255
+EDIT "Txt_SkillLevel3" "" "" 261 152 29 20 "Editbox\文本框_4.dds" 34 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_CostSP3" "" "" 91 170 70 18 "Editbox\文本框_4.dds" 35 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_CostMoney3" "" "" 200 170 90 18 "Editbox\文本框_4.dds" 36 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_SkillName4" "" "" 57 190 148 20 "Editbox\文本框_4.dds" 37 10 255 255 255 "TEXT" 1 0 256
+LABEL "Lbl_4a" "" "" 59 208 28 15 38 10 39 255 255 255 255
+LABEL "Lbl_4b" "" "" 206 190 0 0 40 10 41 255 255 255 255
+EDIT "Txt_SkillLevel4" "" "" 261 190 29 20 "Editbox\文本框_4.dds" 42 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_CostSP4" "" "" 91 208 70 18 "Editbox\文本框_4.dds" 43 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_CostMoney4" "" "" 200 208 90 18 "Editbox\文本框_4.dds" 44 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_SkillName5" "" "" 57 229 148 20 "Editbox\文本框_4.dds" 45 10 255 255 255 "TEXT" 1 0 256
+LABEL "Lbl_5a" "" "" 59 247 0 0 46 10 47 255 255 255 255
+LABEL "Lbl_5b" "" "" 206 230 0 0 48 10 49 255 255 255 255
+EDIT "Txt_SkillLevel5" "" "" 261 229 29 20 "Editbox\文本框_4.dds" 50 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_CostSP5" "" "" 91 247 70 18 "Editbox\文本框_4.dds" 51 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_CostMoney5" "" "" 200 247 90 18 "Editbox\文本框_4.dds" 52 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_SkillName6" "" "" 57 268 148 20 "Editbox\文本框_4.dds" 53 10 255 255 255 "TEXT" 1 0 256
+LABEL "Lbl_6a" "" "" 59 286 0 0 54 10 55 255 255 255 255
+LABEL "Lbl_6b" "" "" 206 269 0 0 56 10 57 255 255 255 255
+EDIT "Txt_SkillLevel6" "" "" 261 268 29 20 "Editbox\文本框_4.dds" 58 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_CostSP6" "" "" 91 286 70 18 "Editbox\文本框_4.dds" 59 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_CostMoney6" "" "" 200 286 90 18 "Editbox\文本框_4.dds" 60 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_SkillName7" "" "" 57 308 148 20 "Editbox\文本框_4.dds" 61 10 255 255 255 "TEXT" 1 0 256
+LABEL "Lbl_7a" "" "" 59 326 0 0 62 10 63 255 255 255 255
+LABEL "Lbl_7b" "" "" 206 309 0 0 64 10 65 255 255 255 255
+EDIT "Txt_SkillLevel7" "" "" 261 308 29 20 "Editbox\文本框_4.dds" 66 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_CostSP7" "" "" 91 326 70 18 "Editbox\文本框_4.dds" 67 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_CostMoney7" "" "" 200 326 90 18 "Editbox\文本框_4.dds" 68 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_SkillName8" "" "" 57 348 148 20 "Editbox\文本框_4.dds" 69 10 255 255 255 "TEXT" 1 0 256
+LABEL "Lbl_8a" "" "" 59 366 0 0 70 10 71 255 255 255 255
+LABEL "Lbl_8b" "" "" 206 349 0 0 72 10 73 255 255 255 255
+EDIT "Txt_SkillLevel8" "" "" 261 348 29 20 "Editbox\文本框_4.dds" 74 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_CostSP8" "" "" 91 366 70 18 "Editbox\文本框_4.dds" 75 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_CostMoney8" "" "" 200 366 90 18 "Editbox\文本框_4.dds" 76 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_RestSP" "" "" 80 397 99 21 "Editbox\文本框_4.dds" 77 10 255 255 255 "TEXT" 1 0 256
+LABEL "Control_254207477" "" "" 24 399 56 16 78 10 79 255 203 74 255
+LABEL "Control_35515828" "" "" 135 58 160 15 80 10 81 255 203 74 255
+STILLIMAGEBUTTON "Chk_Skilltree" "skilltree" "SFX\Interface\ClickB.wav" 273 387 12 15 0 0 0 0 82 15 255 255 255 255 "Button\按钮_右移1.tga" "Button\按钮_右移2.tga" 83 1
+LABEL "Control_6981450" "" "" 199 385 69 15 84 10 85 255 203 74 255
+LABEL "Control_148251564" "" "" 166 94 30 15 86 10 87 255 255 255 255
+LABEL "Control_2455425" "" "" 166 133 28 15 88 10 89 255 255 255 255
+LABEL "Control_65418184" "" "" 165 171 30 15 90 10 91 255 255 255 255
+LABEL "Control_2303238" "" "" 165 209 30 15 92 10 93 255 255 255 255
+LABEL "Control_161505355" "" "" 166 248 28 15 94 10 95 255 255 255 255
+LABEL "Control_36886932" "" "" 166 287 29 15 96 10 97 255 255 255 255
+LABEL "Control_554962850" "" "" 166 327 28 16 98 10 99 255 255 255 255
+LABEL "Control_213791770" "" "" 167 367 28 16 100 10 101 255 255 255 255

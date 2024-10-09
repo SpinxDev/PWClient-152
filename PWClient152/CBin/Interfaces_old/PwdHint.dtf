@@ -1,0 +1,4 @@
+DIALOG "Win_PwdHint" 0 0 350 120 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 -1 -1 "" 0 0 96 96 96 255 1
+TEXT "Txt_Content" "" "" 7 31 335 55 2 15 255 255 255 255 "Window\对话框_透明色1.tga" "Window\对话框_透明色2.tga" "Window\对话框_透明色3.tga" "Window\对话框_透明色4.tga" "Window\对话框_透明色5.tga"
+LABEL "Control_37500813" "" "" 136 5 128 22 3 16 4 255 203 74 255
+STILLIMAGEBUTTON "Btn_Confirm" "IDCANCEL" "SFX\Interface\ClickB.wav" 129 88 100 25 0 0 0 0 5 10 255 204 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 6 1

@@ -1,0 +1,8 @@
+DIALOG "Win_BigMapMark" 0 0 126 64 0 1 10 "Window\对话框_标准边框1.dds" "" "" 0 0 -1 -1 "" 0 0 96 96 96 127 1
+STILLIMAGEBUTTON "Btn_Edit" "edit" "" 19 22 15 15 0 0 0 0 2 15 255 255 255 255 "Button\按钮_标记A1.tga" "Button\按钮_标记A2.tga" 3 1
+STILLIMAGEBUTTON "Btn_Delete" "delete" "" 73 22 15 15 0 0 0 0 4 15 255 255 255 255 "Button\按钮_标记D1.tga" "Button\按钮_标记D2.tga" 5 1
+STILLIMAGEBUTTON "Btn_DeleteAll" "deleteall" "" 92 22 15 15 0 0 0 0 6 15 255 255 255 255 "Button\按钮_标记E1.tga" "Button\按钮_标记E2.tga" 7 1
+STILLIMAGEBUTTON "Btn_Radar" "radar" "" 55 22 15 15 0 0 0 0 8 15 255 255 255 255 "Button\按钮_标记C1.tga" "Button\按钮_标记C2.tga" 9 1
+STILLIMAGEBUTTON "Btn_Arrow" "arrow" "" 37 22 15 15 0 0 0 0 10 15 255 255 255 255 "Button\按钮_标记B1.tga" "Button\按钮_标记B2.tga" 11 1
+STILLIMAGEBUTTON "Btn_Mark" "makemark" "" 21 6 12 15 0 0 0 0 12 12 255 255 255 255 "Button\按钮_左移1.tga" "Button\按钮_左移2.tga" 13 1
+STILLIMAGEBUTTON "Btn_GuildMap" "guildmap" "" 21 37 84 21 0 0 0 0 14 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 15 1

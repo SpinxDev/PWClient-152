@@ -1,0 +1,10 @@
+DIALOG "Win_ChannelCreate" 0 0 251 127 0 1 10 "Window\对话框_标准边框1.dds" "" "" 0 0 185 27 "人鱼传说新界面\面板关闭按钮.tga" 32 6 96 96 96 255 1
+LABEL "Control_285650307" "" "" 6 3 0 0 2 16 3 255 203 74 255
+EDIT "DEFAULT_Txt_ChName" "confirm" "" 79 36 163 21 "Editbox\文本框_4.dds" 4 10 255 255 255 "TEXT" 0 0 10
+LABEL "Control_49354896" "" "" 9 37 0 0 5 10 6 255 203 74 255
+STILLIMAGEBUTTON "Btn_Create" "confirm" "SFX\Interface\ClickB.wav" 66 90 45 24 0 0 0 0 7 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 8 1
+STILLIMAGEBUTTON "Btn_Exit" "IDCANCEL" "SFX\Interface\ClickB.wav" 140 91 45 24 0 0 0 0 9 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 10 1
+EDIT "Txt_ChPw" "confirm" "confirm" 151 64 90 21 "Editbox\文本框_4.dds" 11 10 255 255 255 "TEXT" 0 0 6
+LABEL "Control_339080960" "" "" 96 66 0 0 12 10 13 255 203 74 255
+CHECK "Chk_EnablePw" "enablepw" "" 10 66 18 18 "Extra\复选框_标准.tga"
+LABEL "Control_388432940" "" "" 30 66 56 15 14 10 15 255 203 74 255

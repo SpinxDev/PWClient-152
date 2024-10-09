@@ -1,0 +1,5 @@
+Angelica File Module Error Log
+Created(or opened) on 29/08/2018 15:10:46
+
+[15:10:46.329] AFileImage::Can not open file [S:\CPW_DevLatest_ElementClientVSS\CElement\ClientSimulator\Bin\Configs\server_error.txt] from disk!
+[15:10:55.237] Log file closed successfully!

@@ -1,0 +1,66 @@
+#ifndef __GNET_GSYSAUCTIONDETAIL_RPCDATA
+#define __GNET_GSYSAUCTIONDETAIL_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "gsysauctionitem"
+#include "groleinventory"
+
+namespace GNET
+{
+	class GSysAuctionDetail : public GNET::Rpc::Data
+	{
+	public:
+		GSysAuctionItem info;
+		GRoleInventory item;
+
+	public:
+		GSysAuctionDetail (const GSysAuctionItem& l_info = GSysAuctionItem(),const GRoleInventory& l_item = GRoleInventory())
+			: info(l_info),item(l_item)
+		{
+		}
+
+		GSysAuctionDetail(const GSysAuctionDetail &rhs)
+			: info(rhs.info),item(rhs.item) { }
+
+		Rpc::Data *Clone() const { return new GSysAuctionDetail(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GSysAuctionDetail *r = dynamic_cast<const GSysAuctionDetail *>(&rhs);
+			if (r && r != this)
+			{
+				info = r->info;
+				item = r->item;
+			}
+			return *this;
+		}
+
+		GSysAuctionDetail& operator = (const GSysAuctionDetail &rhs)
+		{
+			const GSysAuctionDetail *r = &rhs;
+			if (r && r != this)
+			{
+				info = r->info;
+				item = r->item;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << info;
+			os << item;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> info;
+			os >> item;
+			return os;
+		}
+
+	};
+};
+#endif

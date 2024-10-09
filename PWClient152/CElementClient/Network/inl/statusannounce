@@ -1,0 +1,38 @@
+	public:
+		int userid;
+		unsigned int localsid;
+		unsigned char status;
+		enum { PROTOCOL_TYPE = PROTOCOL_STATUSANNOUNCE };
+	public:
+		StatusAnnounce() { type = PROTOCOL_STATUSANNOUNCE; }
+		StatusAnnounce(void*) : Protocol(PROTOCOL_STATUSANNOUNCE) { }
+		StatusAnnounce (int l_userid,unsigned int l_localsid,unsigned char l_status)
+			 : userid(l_userid),localsid(l_localsid),status(l_status)
+		{
+			type = PROTOCOL_STATUSANNOUNCE;
+		}
+
+		StatusAnnounce(const StatusAnnounce &rhs)
+			: Protocol(rhs),userid(rhs.userid),localsid(rhs.localsid),status(rhs.status) { }
+
+		GNET::Protocol *Clone() const { return new StatusAnnounce(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << userid;
+			os << localsid;
+			os << status;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> userid;
+			os >> localsid;
+			os >> status;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

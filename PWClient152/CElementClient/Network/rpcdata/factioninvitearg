@@ -1,0 +1,82 @@
+#ifndef __GNET_FACTIONINVITEARG_RPCDATA
+#define __GNET_FACTIONINVITEARG_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class FactionInviteArg : public GNET::Rpc::Data
+	{
+	public:
+		int roleid;
+		int invited_roleid;
+		unsigned int factionid;
+		Octets faction_name;
+		Octets role_name;
+
+	public:
+		FactionInviteArg (int l_roleid = -1,int l_invited_roleid = -1,unsigned int l_factionid = 0
+			,const Octets& l_faction_name = Octets(),const Octets& l_role_name = Octets())
+			: roleid(l_roleid),invited_roleid(l_invited_roleid),factionid(l_factionid)
+			,faction_name(l_faction_name),role_name(l_role_name)
+		{
+		}
+
+		FactionInviteArg(const FactionInviteArg &rhs)
+			: roleid(rhs.roleid),invited_roleid(rhs.invited_roleid),factionid(rhs.factionid),
+			faction_name(rhs.faction_name),role_name(rhs.role_name) { }
+
+		Rpc::Data *Clone() const { return new FactionInviteArg(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const FactionInviteArg *r = dynamic_cast<const FactionInviteArg *>(&rhs);
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				invited_roleid = r->invited_roleid;
+				factionid = r->factionid;
+				faction_name = r->faction_name;
+				role_name = r->role_name;
+			}
+			return *this;
+		}
+
+		FactionInviteArg& operator = (const FactionInviteArg &rhs)
+		{
+			const FactionInviteArg *r = &rhs;
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				invited_roleid = r->invited_roleid;
+				factionid = r->factionid;
+				faction_name = r->faction_name;
+				role_name = r->role_name;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << invited_roleid;
+			os << factionid;
+			os << faction_name;
+			os << role_name;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> invited_roleid;
+			os >> factionid;
+			os >> faction_name;
+			os >> role_name;
+			return os;
+		}
+
+	};
+};
+#endif

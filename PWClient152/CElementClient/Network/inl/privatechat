@@ -1,0 +1,62 @@
+	public:
+		unsigned char channel;
+		unsigned char emotion;
+		Octets src_name;
+		int srcroleid;
+		Octets dst_name;
+		int dstroleid;
+		Octets msg;
+		Octets data;
+		int src_level;
+		enum { PROTOCOL_TYPE = PROTOCOL_PRIVATECHAT };
+	public:
+		PrivateChat() { type = PROTOCOL_PRIVATECHAT; }
+		PrivateChat(void*) : Protocol(PROTOCOL_PRIVATECHAT) { }
+		PrivateChat (unsigned char l_channel,unsigned char l_emotion,const Octets& l_src_name,
+			int l_srcroleid,const Octets& l_dst_name,int l_dstroleid,
+			const Octets& l_msg,const Octets& l_data,int l_src_level = 0)
+			 : channel(l_channel),emotion(l_emotion),src_name(l_src_name)
+			,srcroleid(l_srcroleid),dst_name(l_dst_name),dstroleid(l_dstroleid)
+			,msg(l_msg),data(l_data),src_level(l_src_level)
+		{
+			type = PROTOCOL_PRIVATECHAT;
+		}
+
+		PrivateChat(const PrivateChat &rhs)
+			: Protocol(rhs),channel(rhs.channel),emotion(rhs.emotion),src_name(rhs.src_name)
+			,srcroleid(rhs.srcroleid),dst_name(rhs.dst_name),dstroleid(rhs.dstroleid)
+			,msg(rhs.msg),data(rhs.data),src_level(rhs.src_level) { }
+
+		GNET::Protocol *Clone() const { return new PrivateChat(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << channel;
+			os << emotion;
+			os << src_name;
+			os << srcroleid;
+			os << dst_name;
+			os << dstroleid;
+			os << msg;
+			os << data;
+			os << src_level;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> channel;
+			os >> emotion;
+			os >> src_name;
+			os >> srcroleid;
+			os >> dst_name;
+			os >> dstroleid;
+			os >> msg;
+			os >> data;
+			os >> src_level;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

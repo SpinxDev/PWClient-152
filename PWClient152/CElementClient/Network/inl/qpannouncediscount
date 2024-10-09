@@ -1,0 +1,35 @@
+	public:
+		int localsid;
+		QPDiscountInfoVector discount;
+		enum { PROTOCOL_TYPE = PROTOCOL_QPANNOUNCEDISCOUNT };
+	public:
+		QPAnnounceDiscount() { type = PROTOCOL_QPANNOUNCEDISCOUNT; }
+		QPAnnounceDiscount(void*) : Protocol(PROTOCOL_QPANNOUNCEDISCOUNT) { }
+		QPAnnounceDiscount (int l_localsid,const QPDiscountInfoVector& l_discount)
+			 : localsid(l_localsid),discount(l_discount)
+		{
+			type = PROTOCOL_QPANNOUNCEDISCOUNT;
+		}
+
+		QPAnnounceDiscount(const QPAnnounceDiscount &rhs)
+			: Protocol(rhs),localsid(rhs.localsid),discount(rhs.discount) { }
+
+		GNET::Protocol *Clone() const { return new QPAnnounceDiscount(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << localsid;
+			os << discount;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> localsid;
+			os >> discount;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

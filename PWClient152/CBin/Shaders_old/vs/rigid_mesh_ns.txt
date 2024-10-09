@@ -1,0 +1,74 @@
+; DESCRIPTION:
+; Vertex shader used to render A3DRigidMesh or A3DMorphRigidMesh when morph channel number 0. 
+; this shader does below works:
+; # vertex transform
+; # compute light = env_ambient + dir_light(ambient & diffuse)
+; # output texture coordinates
+
+; CREATED BY: duyuxin, 2003/10/28
+; Copyright (c) 2003 Archosaur Studio, All Rights Reserved.
+
+vs.1.1
+
+;------------------------------------------------------------------------------
+; v0 	  = position
+; v3 	  = normal
+; v7 	  = texture coordinates
+;------------------------------------------------------------------------------
+
+;------------------------------------------------------------------------------
+; Constants specified by the app;
+;
+; c14     = world matrix (from model space to world space)
+; c13	  = point_light's attenuation
+; c12	  = material ambient * point_light.ambient
+; c11	  = material.diffuse * point_light.diffuse
+; c10	  = point_light's position in world space
+; c9	  = material.specular * dir_light.specular
+; c8	  = material.diffuse * dir_light.diffuse
+; c7	  = ambient color + emmisive color
+; c6	  = eye's direction in camera space (not used when not consider specular)
+; c2-c5   = projection matrix (from camera space to cuboid space)
+; c1	  = dir_light's direction in camera space
+; c0	  = {1, power, 0, 765.01};
+;------------------------------------------------------------------------------
+
+;------------------------------------------------------------------------------
+; oPos	  = Output position
+; oD0	  = Diffuse
+; oD1	  = Specular
+; oT0	  = texture coordinates
+;------------------------------------------------------------------------------
+
+; ============ Transform position and normal from model space to world space ==========
+
+m4x3 r4, v0, c14
+m3x3 r5, v3, c14 
+
+; Transfrom position from world space to cuboid space and output it
+mov r4.w, c0.x
+m4x4 r1, r4, c2
+mov oPos, r1
+mov oFog, c0.x
+
+; normalize normal
+dp3 r5.w, r5, r5
+rsq r5.w, r5.w
+mul r5, r5, r5.w
+
+; ============ Calculate directional light's diffuse ============
+
+mov r1, c0.zzzz		; clear r1
+dp3 r1.x, r5, -c1     	; normal dot light (N * L)
+lit r1, r1
+
+mul r0.rgb, r1.y, c8.rgb  ; Multiply with diffuse, don't effect alpha value
+mov r0.a, c8.a
+add r0, r0, c7        	; Add in ambient
+min oD0, r0, c0.x     	; output diffuse, clamp if > 1
+
+mov oD1, c0.zzzx   	; output specular as 0
+
+; Copy texture coordinate
+mov oT0, v7
+

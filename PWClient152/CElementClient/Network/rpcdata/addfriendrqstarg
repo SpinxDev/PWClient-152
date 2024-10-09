@@ -1,0 +1,69 @@
+#ifndef __GNET_ADDFRIENDRQSTARG_RPCDATA
+#define __GNET_ADDFRIENDRQSTARG_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class AddFriendRqstArg : public GNET::Rpc::Data
+	{
+	public:
+		int srcroleid;
+		Octets srcname;
+		unsigned int dstlsid;
+
+	public:
+		AddFriendRqstArg (int l_srcroleid = -1)
+			: srcroleid(l_srcroleid)
+		{
+		}
+
+		AddFriendRqstArg(const AddFriendRqstArg &rhs)
+			: srcroleid(rhs.srcroleid),srcname(rhs.srcname),dstlsid(rhs.dstlsid) { }
+
+		Rpc::Data *Clone() const { return new AddFriendRqstArg(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const AddFriendRqstArg *r = dynamic_cast<const AddFriendRqstArg *>(&rhs);
+			if (r && r != this)
+			{
+				srcroleid = r->srcroleid;
+				srcname = r->srcname;
+				dstlsid = r->dstlsid;
+			}
+			return *this;
+		}
+
+		AddFriendRqstArg& operator = (const AddFriendRqstArg &rhs)
+		{
+			const AddFriendRqstArg *r = &rhs;
+			if (r && r != this)
+			{
+				srcroleid = r->srcroleid;
+				srcname = r->srcname;
+				dstlsid = r->dstlsid;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << srcroleid;
+			os << srcname;
+			os << dstlsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> srcroleid;
+			os >> srcname;
+			os >> dstlsid;
+			return os;
+		}
+
+	};
+};
+#endif

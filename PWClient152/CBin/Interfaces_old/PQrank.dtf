@@ -1,0 +1,111 @@
+DIALOG "Win_PQrank" 0 0 440 385 0 1 10 "PQ\对话框_标准边框1.dds" "" "人鱼传说新界面\title.tga" 3 3 434 33 "人鱼传说新界面\面板关闭按钮.tga" 37 7 96 96 96 200 1
+LABEL "Lab_Title" "" "" 186 6 0 0 2 16 3 255 203 74 255
+LABEL "Lab_Time" "" "" 257 38 0 0 4 10 5 255 204 74 255
+LABEL "Txt_Time" "" "" 352 38 30 20 6 10 7 255 0 0 255
+LABEL "Lab_Time1" "" "" 383 38 40 20 8 10 9 255 204 74 255
+LABEL "Control_852634170" "" "" 377 103 40 20 10 10 11 255 204 74 255
+LABEL "Txt_Rank1" "" "" 28 130 20 20 12 12 13 255 204 74 255
+LABEL "Txt_Rank2" "" "" 28 160 20 20 14 12 15 255 204 74 255
+LABEL "Txt_Rank3" "" "" 28 190 20 20 16 12 17 255 204 74 255
+LABEL "Txt_Rank4" "" "" 28 220 20 20 18 12 19 255 204 74 255
+LABEL "Txt_Rank5" "" "" 28 250 20 20 20 12 21 255 204 74 255
+LABEL "Txt_Rank6" "" "" 28 280 20 20 22 12 23 255 204 74 255
+LABEL "Txt_Rank7" "" "" 28 310 20 20 24 12 25 255 204 74 255
+LABEL "Txt_Name1" "" "" 150 130 120 20 26 10 27 255 204 74 255
+LABEL "Txt_Name2" "" "" 150 160 120 20 28 10 29 255 204 74 255
+LABEL "Txt_Name3" "" "" 150 190 80 20 30 10 31 255 204 74 255
+LABEL "Txt_Name4" "" "" 150 220 80 20 32 10 33 255 204 74 255
+LABEL "Txt_Name5" "" "" 150 250 80 20 34 10 35 255 204 74 255
+LABEL "Txt_Name6" "" "" 150 280 80 20 36 10 37 255 204 74 255
+LABEL "Txt_Name7" "" "" 150 310 80 20 38 10 39 255 204 74 255
+LABEL "Txt_Contribution1" "" "" 361 130 45 20 40 10 41 255 204 74 255
+LABEL "Txt_Contribution2" "" "" 361 160 45 20 42 10 43 255 204 74 255
+LABEL "Txt_Contribution3" "" "" 361 190 45 20 44 10 45 255 204 74 255
+LABEL "Txt_Contribution4" "" "" 361 220 45 20 46 10 47 255 204 74 255
+LABEL "Txt_Contribution5" "" "" 361 250 45 20 48 10 49 255 204 74 255
+LABEL "Txt_Contribution6" "" "" 361 280 45 20 50 10 51 255 204 74 255
+LABEL "Txt_Contribution7" "" "" 361 310 45 20 52 10 53 255 204 74 255
+IMAGEPICTURE "Img_Awards7" "" "" 86 308 25 24 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Img_Awards6" "" "" 86 278 25 24 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Img_Awards5" "" "" 86 247 25 24 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Img_Awards3" "" "" 86 188 25 24 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Img_Awards4" "" "" 86 218 25 24 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Img_Awards2" "" "" 86 158 25 24 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Img_Awards1" "" "" 86 129 25 24 1 0 "Window\图标_物品栏.dds"
+RADIO "Rdo_WS" "Rdo_2" "" 393 61 23 23 "PQ\巫师.tga" 2 1
+RADIO "Rdo_CK" "Rdo_5" "" 347 61 23 23 "PQ\刺客.tga" 5 1
+RADIO "Rdo_YJ" "Rdo_3" "" 302 61 23 23 "PQ\妖精.tga" 3 1
+RADIO "Rdo_SS" "Rdo_4" "" 256 61 23 23 "PQ\妖兽.tga" 4 1
+RADIO "Rdo_MG" "Rdo_6" "" 210 61 23 23 "PQ\羽芒.tga" 6 1
+RADIO "Rdo_MM" "Rdo_7" "" 163 61 23 23 "PQ\羽灵.tga" 7 1
+RADIO "Rdo_FS" "Rdo_1" "" 117 61 23 23 "PQ\法师.tga" 1 1
+RADIO "Rdo_WX" "Rdo_0" "" 71 61 23 23 "PQ\武侠.tga" 0 1
+RADIO "Rdo_All" "Rdo_8" "" 25 61 23 23 "PQ\全部.tga" 8 1
+LABEL "Lab_All" "" "" 23 84 0 0 54 10 55 255 204 74 255
+LABEL "Lab_WX" "" "" 69 84 0 0 56 10 57 255 204 74 255
+LABEL "Lab_FS" "" "" 115 84 0 0 58 10 59 255 204 74 255
+LABEL "Lab_MM" "" "" 161 84 0 0 60 10 61 255 204 74 255
+LABEL "Lab_MG" "" "" 208 84 0 0 62 10 63 255 204 74 255
+LABEL "Lab_SS" "" "" 254 84 0 0 64 10 65 255 204 74 255
+LABEL "Lab_YJ" "" "" 300 84 0 0 66 10 67 255 204 74 255
+LABEL "Lab_CK" "" "" 345 84 0 0 68 10 69 255 204 74 255
+LABEL "Lab_WS" "" "" 391 84 0 0 70 10 71 255 204 74 255
+LABEL "Control_262780336" "" "" 29 104 40 20 72 10 73 255 204 74 255
+LABEL "Control_154288132" "" "" 93 104 40 20 74 10 75 255 204 74 255
+STILLIMAGEBUTTON "Control_13725504" "" "" 135 101 145 20 0 0 0 0 76 10 255 255 255 255 "PQ\按钮1.dds" "PQ\按钮1.dds" 77 1
+LABEL "Control_12483144" "" "" 196 103 40 20 78 10 79 255 204 74 255
+IMAGEPICTURE "Control_223651307" "" "" 172 105 14 12 1 0 "PQ\玩家名.tga"
+STILLIMAGEBUTTON "Control_284777109" "" "" 281 101 70 20 0 0 0 0 80 15 255 255 255 255 "PQ\按钮1.dds" "PQ\按钮1.dds" 81 1
+LABEL "Control_696191067" "" "" 309 104 40 20 82 10 83 255 204 74 255
+IMAGEPICTURE "Control_670519368" "" "" 289 105 14 12 1 0 "PQ\随机.tga"
+STILLIMAGEBUTTON "Control_150766336" "" "" 352 101 80 20 0 0 0 0 84 15 255 255 255 255 "PQ\按钮1.dds" "PQ\按钮1.dds" 85 1
+IMAGEPICTURE "Control_496457202" "" "" 362 105 14 12 1 0 "PQ\贡献度.tga"
+IMAGEPICTURE "Img_0101" "" "" 301 129 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0102" "" "" 307 129 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0103" "" "" 313 129 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0104" "" "" 319 129 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0105" "" "" 325 129 9 18 10 0 "PQ\数字2.tga"
+SCROLL "Scl_List" "" "" 416 122 15 215 "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_拖动按钮1.bmp"
+IMAGEPICTURE "Img_0205" "" "" 325 159 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0204" "" "" 319 159 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0203" "" "" 313 159 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0202" "" "" 307 159 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0201" "" "" 301 159 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0305" "" "" 325 189 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0304" "" "" 319 189 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0303" "" "" 313 189 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0302" "" "" 307 189 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0301" "" "" 301 189 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0405" "" "" 325 219 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0404" "" "" 319 219 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0403" "" "" 313 219 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0402" "" "" 307 219 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0401" "" "" 301 219 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0505" "" "" 325 249 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0504" "" "" 319 249 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0503" "" "" 313 249 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0502" "" "" 307 249 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0501" "" "" 301 249 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0605" "" "" 325 279 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0604" "" "" 319 279 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0603" "" "" 313 279 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0602" "" "" 307 279 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0601" "" "" 301 279 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0705" "" "" 325 309 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0704" "" "" 319 309 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0703" "" "" 313 309 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0702" "" "" 307 309 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Img_0701" "" "" 301 309 9 18 10 0 "PQ\数字2.tga"
+IMAGEPICTURE "Control_101629324" "" "" 17 342 180 3 1 0 "Window\分隔线.tga"
+LABEL "Txt_Rank8" "" "" 24 352 30 20 86 12 87 255 204 74 255
+IMAGEPICTURE "Img_Awards8" "" "" 86 350 25 24 1 0 "Window\图标_物品栏.dds"
+LABEL "Txt_Name8" "" "" 150 355 80 20 88 10 89 255 204 74 255
+LABEL "Txt_Contribution8" "" "" 361 356 45 20 90 10 91 255 204 74 255
+LABEL "Control_81391406" "" "" 18 38 0 0 92 10 93 255 204 74 255
+LABEL "Txt_PlayerNum" "" "" 106 38 40 20 94 10 95 255 0 0 255
+STILLIMAGEBUTTON "Control_94472000" "" "" 8 101 60 20 0 0 0 0 96 15 255 255 255 255 "PQ\按钮1.dds" "PQ\按钮1.dds" 97 1
+IMAGEPICTURE "Control_23840288" "" "" 13 106 14 12 1 0 "PQ\排名.tga"
+STILLIMAGEBUTTON "Control_107048994" "" "" 69 101 65 20 0 0 0 0 98 15 255 255 255 255 "PQ\按钮1.dds" "PQ\按钮1.dds" 99 1
+IMAGEPICTURE "Control_18832248" "" "" 75 107 14 12 1 0 "PQ\奖励.tga"
+LABEL "Control_339061770" "" "" 202 337 80 20 100 8 101 255 204 74 255
+IMAGEPICTURE "Control_29668548" "" "" 253 342 160 3 1 0 "Window\分隔线.tga"

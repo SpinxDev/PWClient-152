@@ -1,0 +1,47 @@
+	public:
+		unsigned int localsid;
+		char vip;
+		short vq_size;
+		short cur_queue_pos;
+		int waittime;
+		enum { PROTOCOL_TYPE = PROTOCOL_WAITQUEUESTATENOTIFY };
+	public:
+		WaitQueueStateNotify() { type = PROTOCOL_WAITQUEUESTATENOTIFY; }
+		WaitQueueStateNotify(void*) : Protocol(PROTOCOL_WAITQUEUESTATENOTIFY) { }
+		WaitQueueStateNotify (unsigned int l_localsid,char l_vip,short l_vq_size,
+			short l_cur_queue_pos,int l_waittime)
+			 : localsid(l_localsid),vip(l_vip),vq_size(l_vq_size)
+			,cur_queue_pos(l_cur_queue_pos),waittime(l_waittime)
+		{
+			type = PROTOCOL_WAITQUEUESTATENOTIFY;
+		}
+
+		WaitQueueStateNotify(const WaitQueueStateNotify &rhs)
+			: Protocol(rhs),localsid(rhs.localsid),vip(rhs.vip),vq_size(rhs.vq_size)
+			,cur_queue_pos(rhs.cur_queue_pos),waittime(rhs.waittime) { }
+
+		GNET::Protocol *Clone() const { return new WaitQueueStateNotify(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << localsid;
+			os << vip;
+			os << vq_size;
+			os << cur_queue_pos;
+			os << waittime;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> localsid;
+			os >> vip;
+			os >> vq_size;
+			os >> cur_queue_pos;
+			os >> waittime;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

@@ -1,0 +1,114 @@
+#ifndef __GNET_USERINFODETAIL_RPCDATA
+#define __GNET_USERINFODETAIL_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class UserInfoDetail : public GNET::Rpc::Data
+	{
+	public:
+		char zoneid;
+		int roleid;
+		Octets rolename;
+		char gender;
+		char occupation;
+		short level;
+		char age;
+		Octets city;
+		Octets contact;
+		Octets description;
+
+	public:
+		UserInfoDetail (char l_zoneid = 0,int l_roleid = 0,Octets l_rolename = Octets(0)
+			,char l_gender = 0,char l_occupation = 0,short l_level = 0
+			,char l_age = 0,Octets l_city = Octets(0),Octets l_contact = Octets(0)
+			,Octets l_description = Octets(0))
+			: zoneid(l_zoneid),roleid(l_roleid),rolename(l_rolename)
+			,gender(l_gender),occupation(l_occupation),level(l_level)
+			,age(l_age),city(l_city),contact(l_contact)
+			,description(l_description)
+		{
+		}
+
+		UserInfoDetail(const UserInfoDetail &rhs)
+			: zoneid(rhs.zoneid),roleid(rhs.roleid),rolename(rhs.rolename),
+			gender(rhs.gender),occupation(rhs.occupation),level(rhs.level),
+			age(rhs.age),city(rhs.city),contact(rhs.contact),
+			description(rhs.description) { }
+
+		Rpc::Data *Clone() const { return new UserInfoDetail(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const UserInfoDetail *r = dynamic_cast<const UserInfoDetail *>(&rhs);
+			if (r && r != this)
+			{
+				zoneid = r->zoneid;
+				roleid = r->roleid;
+				rolename = r->rolename;
+				gender = r->gender;
+				occupation = r->occupation;
+				level = r->level;
+				age = r->age;
+				city = r->city;
+				contact = r->contact;
+				description = r->description;
+			}
+			return *this;
+		}
+
+		UserInfoDetail& operator = (const UserInfoDetail &rhs)
+		{
+			const UserInfoDetail *r = &rhs;
+			if (r && r != this)
+			{
+				zoneid = r->zoneid;
+				roleid = r->roleid;
+				rolename = r->rolename;
+				gender = r->gender;
+				occupation = r->occupation;
+				level = r->level;
+				age = r->age;
+				city = r->city;
+				contact = r->contact;
+				description = r->description;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << zoneid;
+			os << roleid;
+			os << rolename;
+			os << gender;
+			os << occupation;
+			os << level;
+			os << age;
+			os << city;
+			os << contact;
+			os << description;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> zoneid;
+			os >> roleid;
+			os >> rolename;
+			os >> gender;
+			os >> occupation;
+			os >> level;
+			os >> age;
+			os >> city;
+			os >> contact;
+			os >> description;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<UserInfoDetail>	UserInfoDetailVector;
+};
+#endif

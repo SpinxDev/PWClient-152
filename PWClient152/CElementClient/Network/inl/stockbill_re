@@ -1,0 +1,38 @@
+	public:
+		unsigned int localsid;
+		std::vector<StockOrder> orders;
+		std::vector<StockLog> logs;
+		enum { PROTOCOL_TYPE = PROTOCOL_STOCKBILL_RE };
+	public:
+		StockBill_Re() { type = PROTOCOL_STOCKBILL_RE; }
+		StockBill_Re(void*) : Protocol(PROTOCOL_STOCKBILL_RE) { }
+		StockBill_Re (unsigned int l_localsid,const std::vector<StockOrder>& l_orders,const std::vector<StockLog>& l_logs)
+			 : localsid(l_localsid),orders(l_orders),logs(l_logs)
+		{
+			type = PROTOCOL_STOCKBILL_RE;
+		}
+
+		StockBill_Re(const StockBill_Re &rhs)
+			: Protocol(rhs),localsid(rhs.localsid),orders(rhs.orders),logs(rhs.logs) { }
+
+		GNET::Protocol *Clone() const { return new StockBill_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << localsid;
+			os << orders;
+			os << logs;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> localsid;
+			os >> orders;
+			os >> logs;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 4096; }

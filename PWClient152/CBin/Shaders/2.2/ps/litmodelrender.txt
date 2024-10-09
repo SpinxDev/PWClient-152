@@ -1,0 +1,18 @@
+; lit model rendering shader
+
+; t0 is the lit model's texture
+; c0 light scale color
+; c1.a is the alpha fraction
+
+ps.1.1
+
+tex t0
+
+mul_x2 r0.rgb, v0, t0
++mov r0.a, t0.a
+mul r0.rgb, r0, c0
++mul r0.a, r0.a, c1.a
+
+
+
+

@@ -1,0 +1,32 @@
+	public:
+		int roleid;
+		enum { PROTOCOL_TYPE = PROTOCOL_PSHOPSELFGET };
+	public:
+		PShopSelfGet() { type = PROTOCOL_PSHOPSELFGET; }
+		PShopSelfGet(void*) : Protocol(PROTOCOL_PSHOPSELFGET) { }
+		PShopSelfGet (int l_roleid)
+			 : roleid(l_roleid)
+		{
+			type = PROTOCOL_PSHOPSELFGET;
+		}
+
+		PShopSelfGet(const PShopSelfGet &rhs)
+			: Protocol(rhs),roleid(rhs.roleid) { }
+
+		GNET::Protocol *Clone() const { return new PShopSelfGet(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

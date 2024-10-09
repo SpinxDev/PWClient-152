@@ -1,0 +1,35 @@
+	public:
+		std::vector<unsigned int> fid_list;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONLISTONLINE_RE };
+	public:
+		FactionListOnline_Re() { type = PROTOCOL_FACTIONLISTONLINE_RE; }
+		FactionListOnline_Re(void*) : Protocol(PROTOCOL_FACTIONLISTONLINE_RE) { }
+		FactionListOnline_Re (const std::vector<unsigned int>& l_fid_list,unsigned int l_localsid)
+			 : fid_list(l_fid_list),localsid(l_localsid)
+		{
+			type = PROTOCOL_FACTIONLISTONLINE_RE;
+		}
+
+		FactionListOnline_Re(const FactionListOnline_Re &rhs)
+			: Protocol(rhs),fid_list(rhs.fid_list),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new FactionListOnline_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << fid_list;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> fid_list;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 8192; }

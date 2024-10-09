@@ -1,0 +1,44 @@
+	public:
+		int roleid;
+		char getsell;
+		unsigned int begin;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_WEBTRADEATTENDLIST };
+	public:
+		WebTradeAttendList() { type = PROTOCOL_WEBTRADEATTENDLIST; }
+		WebTradeAttendList(void*) : Protocol(PROTOCOL_WEBTRADEATTENDLIST) { }
+		WebTradeAttendList (int l_roleid,char l_getsell,unsigned int l_begin,
+			unsigned int l_localsid)
+			 : roleid(l_roleid),getsell(l_getsell),begin(l_begin)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_WEBTRADEATTENDLIST;
+		}
+
+		WebTradeAttendList(const WebTradeAttendList &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),getsell(rhs.getsell),begin(rhs.begin)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new WebTradeAttendList(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << getsell;
+			os << begin;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> getsell;
+			os >> begin;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

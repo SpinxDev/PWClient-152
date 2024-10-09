@@ -1,0 +1,19 @@
+//  ************* Angelica 3D shader ***************
+
+ÆÙ²¼
+{
+	//  General properties
+
+	//  Stage 0
+	{
+		texture          TEX_NORMAL  ÆÙ²¼.tga
+		colorop          TOP_SELECTARG1
+		colorarg1        TA_TEXTURE
+		colorarg2        TA_CURRENT
+		alphaop          TOP_SELECTARG1
+		alphaarg1        TA_TEXTURE
+		alphaarg2        TA_CURRENT
+		tcscroll         0.000000  -0.500000
+	}
+
+}

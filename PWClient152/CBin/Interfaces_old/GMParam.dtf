@@ -1,0 +1,11 @@
+DIALOG "Win_GMParam" 0 0 232 330 0 1 10 "Window\对话框_标准边框.dds" "" "Window\对话框_透明色.bmp" 0 12 -1 -1 "" 0 0 255 255 128 255 1
+LABEL "Control_915270984" "" "" 19 32 72 16 2 10 3 255 255 255 255
+LIST "lbxParam" "select_param" "" 19 54 192 135 4 10 255 255 255 255 "Editbox\文本框_4e.dds" "Listbox\列表框_反显u.dds" "Listbox\列表框_上移u.bmp" "Listbox\列表框_下移u.bmp" "Listbox\列表框_滚动槽1u.tga" "Listbox\列表框_拖动按钮1u.bmp" 0 "0"
+LABEL "Control_375344796" "" "" 19 206 72 21 5 10 6 255 255 255 255
+EDIT "ebxValue" "" "" 19 227 192 24 "Editbox\文本框_4e.dds" 7 10 255 255 255 "TEXT" 0 0 1000
+STILLIMAGEBUTTON "btnOK" "btnOK" "" 19 280 55 30 0 0 0 0 8 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 9 1
+STILLIMAGEBUTTON "btnCancel" "btnCancel" "" 156 280 55 30 0 0 0 0 10 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 11 1
+CHECK "chkValue" "" "" 19 229 18 18 "Extra\复选框_标准.tga"
+LABEL "lblValueForChk" "" "" 41 229 143 21 12 10 13 255 255 255 255
+LIST "lbxValue" "" "" 19 251 192 75 14 10 255 255 255 255 "Editbox\文本框_4d.dds" "Listbox\列表框_反显u.dds" "Listbox\列表框_上移u.bmp" "Listbox\列表框_下移u.bmp" "Listbox\列表框_滚动槽1u.tga" "Listbox\列表框_拖动按钮1u.bmp" 0 "0"
+COMBO "cbxValue" "" "" 19 227 192 24 15 10 255 255 255 255 "Editbox\文本框_4d.dds" "lbxValue"

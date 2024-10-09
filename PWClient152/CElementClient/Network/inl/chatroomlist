@@ -1,0 +1,38 @@
+	public:
+		unsigned short begin;
+		char reverse;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_CHATROOMLIST };
+	public:
+		ChatRoomList() { type = PROTOCOL_CHATROOMLIST; }
+		ChatRoomList(void*) : Protocol(PROTOCOL_CHATROOMLIST) { }
+		ChatRoomList (unsigned short l_begin,char l_reverse,unsigned int l_localsid)
+			 : begin(l_begin),reverse(l_reverse),localsid(l_localsid)
+		{
+			type = PROTOCOL_CHATROOMLIST;
+		}
+
+		ChatRoomList(const ChatRoomList &rhs)
+			: Protocol(rhs),begin(rhs.begin),reverse(rhs.reverse),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new ChatRoomList(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << begin;
+			os << reverse;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> begin;
+			os >> reverse;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 16; }

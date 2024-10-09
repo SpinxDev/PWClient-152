@@ -1,0 +1,70 @@
+#ifndef __GNET_GFACTIONRELATIONAPPLY_RPCDATA
+#define __GNET_GFACTIONRELATIONAPPLY_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GFactionRelationApply : public GNET::Rpc::Data
+	{
+	public:
+		int type;
+		int fid;
+		int end_time;
+
+	public:
+		GFactionRelationApply (int l_type = 0,int l_fid = 0,int l_end_time = 0)
+			: type(l_type),fid(l_fid),end_time(l_end_time)
+		{
+		}
+
+		GFactionRelationApply(const GFactionRelationApply &rhs)
+			: type(rhs.type),fid(rhs.fid),end_time(rhs.end_time) { }
+
+		Rpc::Data *Clone() const { return new GFactionRelationApply(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GFactionRelationApply *r = dynamic_cast<const GFactionRelationApply *>(&rhs);
+			if (r && r != this)
+			{
+				type = r->type;
+				fid = r->fid;
+				end_time = r->end_time;
+			}
+			return *this;
+		}
+
+		GFactionRelationApply& operator = (const GFactionRelationApply &rhs)
+		{
+			const GFactionRelationApply *r = &rhs;
+			if (r && r != this)
+			{
+				type = r->type;
+				fid = r->fid;
+				end_time = r->end_time;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << type;
+			os << fid;
+			os << end_time;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> type;
+			os >> fid;
+			os >> end_time;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<GFactionRelationApply>	GFactionRelationApplyVector;
+};
+#endif

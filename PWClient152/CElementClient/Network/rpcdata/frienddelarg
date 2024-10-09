@@ -1,0 +1,77 @@
+#ifndef __GNET_FRIENDDELARG_RPCDATA
+#define __GNET_FRIENDDELARG_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class FriendDelArg : public GNET::Rpc::Data
+	{
+	public:
+		char zoneid;
+		int roleid;
+		char frdzoneid;
+		int frdroleid;
+
+	public:
+		FriendDelArg (char l_zoneid = 0,int l_roleid = -1,char l_frdzoneid = 0
+			,int l_frdroleid = -1)
+			: zoneid(l_zoneid),roleid(l_roleid),frdzoneid(l_frdzoneid)
+			,frdroleid(l_frdroleid)
+		{
+		}
+
+		FriendDelArg(const FriendDelArg &rhs)
+			: zoneid(rhs.zoneid),roleid(rhs.roleid),frdzoneid(rhs.frdzoneid),
+			frdroleid(rhs.frdroleid) { }
+
+		Rpc::Data *Clone() const { return new FriendDelArg(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const FriendDelArg *r = dynamic_cast<const FriendDelArg *>(&rhs);
+			if (r && r != this)
+			{
+				zoneid = r->zoneid;
+				roleid = r->roleid;
+				frdzoneid = r->frdzoneid;
+				frdroleid = r->frdroleid;
+			}
+			return *this;
+		}
+
+		FriendDelArg& operator = (const FriendDelArg &rhs)
+		{
+			const FriendDelArg *r = &rhs;
+			if (r && r != this)
+			{
+				zoneid = r->zoneid;
+				roleid = r->roleid;
+				frdzoneid = r->frdzoneid;
+				frdroleid = r->frdroleid;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << zoneid;
+			os << roleid;
+			os << frdzoneid;
+			os << frdroleid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> zoneid;
+			os >> roleid;
+			os >> frdzoneid;
+			os >> frdroleid;
+			return os;
+		}
+
+	};
+};
+#endif

@@ -1,0 +1,35 @@
+	public:
+		int battle_id;
+		int roleid;
+		enum { PROTOCOL_TYPE = PROTOCOL_COUNTRYBATTLEPREENTER };
+	public:
+		CountryBattlePreEnter() { type = PROTOCOL_COUNTRYBATTLEPREENTER; }
+		CountryBattlePreEnter(void*) : Protocol(PROTOCOL_COUNTRYBATTLEPREENTER) { }
+		CountryBattlePreEnter (int l_battle_id,int l_roleid)
+			 : battle_id(l_battle_id),roleid(l_roleid)
+		{
+			type = PROTOCOL_COUNTRYBATTLEPREENTER;
+		}
+
+		CountryBattlePreEnter(const CountryBattlePreEnter &rhs)
+			: Protocol(rhs),battle_id(rhs.battle_id),roleid(rhs.roleid) { }
+
+		GNET::Protocol *Clone() const { return new CountryBattlePreEnter(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << battle_id;
+			os << roleid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> battle_id;
+			os >> roleid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 512; }

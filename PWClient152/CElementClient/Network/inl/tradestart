@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		int partner_roleid;
+		enum { PROTOCOL_TYPE = PROTOCOL_TRADESTART };
+	public:
+		TradeStart() { type = PROTOCOL_TRADESTART; }
+		TradeStart(void*) : Protocol(PROTOCOL_TRADESTART) { }
+		TradeStart (int l_roleid,unsigned int l_localsid,int l_partner_roleid)
+			 : roleid(l_roleid),localsid(l_localsid),partner_roleid(l_partner_roleid)
+		{
+			type = PROTOCOL_TRADESTART;
+		}
+
+		TradeStart(const TradeStart &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid),partner_roleid(rhs.partner_roleid) { }
+
+		GNET::Protocol *Clone() const { return new TradeStart(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << partner_roleid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> partner_roleid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

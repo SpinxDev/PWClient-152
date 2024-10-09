@@ -1,0 +1,77 @@
+#ifndef __GNET_GROUPGETINFOARG_RPCDATA
+#define __GNET_GROUPGETINFOARG_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GroupGetInfoArg : public GNET::Rpc::Data
+	{
+	public:
+		int userid;
+		char zoneid;
+		int roleid;
+		int groupid;
+
+	public:
+		GroupGetInfoArg (int l_userid = -1,char l_zoneid = -1,int l_roleid = -1
+			,int l_groupid = -1)
+			: userid(l_userid),zoneid(l_zoneid),roleid(l_roleid)
+			,groupid(l_groupid)
+		{
+		}
+
+		GroupGetInfoArg(const GroupGetInfoArg &rhs)
+			: userid(rhs.userid),zoneid(rhs.zoneid),roleid(rhs.roleid),
+			groupid(rhs.groupid) { }
+
+		Rpc::Data *Clone() const { return new GroupGetInfoArg(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GroupGetInfoArg *r = dynamic_cast<const GroupGetInfoArg *>(&rhs);
+			if (r && r != this)
+			{
+				userid = r->userid;
+				zoneid = r->zoneid;
+				roleid = r->roleid;
+				groupid = r->groupid;
+			}
+			return *this;
+		}
+
+		GroupGetInfoArg& operator = (const GroupGetInfoArg &rhs)
+		{
+			const GroupGetInfoArg *r = &rhs;
+			if (r && r != this)
+			{
+				userid = r->userid;
+				zoneid = r->zoneid;
+				roleid = r->roleid;
+				groupid = r->groupid;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << userid;
+			os << zoneid;
+			os << roleid;
+			os << groupid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> userid;
+			os >> zoneid;
+			os >> roleid;
+			os >> groupid;
+			return os;
+		}
+
+	};
+};
+#endif

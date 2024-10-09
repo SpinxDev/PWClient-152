@@ -1,0 +1,9 @@
+DIALOG "Win_MoveCamera" 0 0 140 140 0 1 10 "" "" "" 0 0 -1 -1 "" 0 0 96 96 96 0 1
+STILLIMAGEBUTTON "Btn_CameraMoveFront" "NULL" "" 56 8 32 32 0 0 0 0 2 12 255 255 255 255 "Button\缩小.dds" "Button\缩小1.dds" 3 1
+STILLIMAGEBUTTON "Btn_CameraTurnLeft" "NULL" "" 13 19 32 32 0 0 0 0 4 12 255 255 255 255 "Button\左转.dds" "Button\左转1.dds" 5 1
+STILLIMAGEBUTTON "Btn_CameraTurnRight" "NULL" "" 99 19 32 32 0 0 0 0 6 12 255 255 255 255 "Button\右转.dds" "Button\右转1.dds" 7 1
+STILLIMAGEBUTTON "Btn_CameraMoveBack" "NULL" "" 54 36 32 32 0 0 0 0 8 12 255 255 255 255 "Button\放大.dds" "Button\放大1.dds" 9 1
+STILLIMAGEBUTTON "Btn_CameraMoveRight" "NULL" "" 92 86 32 32 0 0 0 0 10 12 255 255 255 255 "Button\右屏.dds" "Button\右屏1.dds" 11 1
+STILLIMAGEBUTTON "Btn_CameraMoveLeft" "NULL" "" 15 87 32 32 0 0 0 0 12 12 255 255 255 255 "Button\左屏.dds" "Button\左屏1.dds" 13 1
+STILLIMAGEBUTTON "Btn_CameraMoveUp" "" "" 54 66 32 32 0 0 0 0 14 12 255 255 255 255 "Button\上屏.dds" "Button\上屏1.dds" 15 1
+STILLIMAGEBUTTON "Btn_CameraMoveDown" "" "" 54 105 32 32 0 0 0 0 16 12 255 255 255 255 "Button\下屏.dds" "Button\下屏1.dds" 17 1

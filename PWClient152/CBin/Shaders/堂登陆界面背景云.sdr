@@ -1,0 +1,18 @@
+//  ************* Angelica 3D shader ***************
+
+version 7
+
+"ÌÃµÇÂ½½çÃæ±³¾°ÔÆ"
+{
+	//  General properties
+	alphatexflag     0
+
+	//  Stage 0
+	{
+		texture          TEX_NORMAL  0  "Shaders\Textures\ÌÃµÇÂ½½çÃæ±³¾°ÔÆ.tga"
+		alphaop          TOP_MODULATE2X
+		alphaarg1        TA_TEXTURE
+		alphaarg2        TA_CURRENT
+	}
+
+}

@@ -1,0 +1,64 @@
+#ifndef __GNET_ROLEALLLISTARG_RPCDATA
+#define __GNET_ROLEALLLISTARG_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class RoleAllListArg : public GNET::Rpc::Data
+	{
+	public:
+		int userid;
+		char handle;
+
+	public:
+		RoleAllListArg (int l_userid = -1,char l_handle = 0)
+			: userid(l_userid),handle(l_handle)
+		{
+		}
+
+		RoleAllListArg(const RoleAllListArg &rhs)
+			: userid(rhs.userid),handle(rhs.handle) { }
+
+		Rpc::Data *Clone() const { return new RoleAllListArg(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const RoleAllListArg *r = dynamic_cast<const RoleAllListArg *>(&rhs);
+			if (r && r != this)
+			{
+				userid = r->userid;
+				handle = r->handle;
+			}
+			return *this;
+		}
+
+		RoleAllListArg& operator = (const RoleAllListArg &rhs)
+		{
+			const RoleAllListArg *r = &rhs;
+			if (r && r != this)
+			{
+				userid = r->userid;
+				handle = r->handle;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << userid;
+			os << handle;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> userid;
+			os >> handle;
+			return os;
+		}
+
+	};
+};
+#endif

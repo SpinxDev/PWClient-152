@@ -1,0 +1,6 @@
+DIALOG "Win_Palette" 0 0 160 195 0 1 10 "Window\对话框_标准边框1.dds" "" "" 0 0 -1 -1 "Window\对话框_标准关闭.tga" 28 5 96 96 96 255 1
+LABEL "Lab_palette" "" "" 36 6 84 21 2 16 3 255 203 74 255
+IMAGEPICTURE "Pic_ColorPos" "" "" 66 26 5 5 1 0 "faces\frame1.TGA"
+IMAGEPICTURE "ImagePicture_ColorPic" "" "" 15 32 129 128 1 0 "faces\color.bmp"
+IMAGEPICTURE "Control_378481730" "" "" 35 208 200 1 1 0 "Window\分隔线.tga"
+STILLIMAGEBUTTON "Btn_Restore" "restore" "SFX\Interface\ClickB.wav" 37 164 80 24 0 0 0 0 4 10 255 204 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 5 1

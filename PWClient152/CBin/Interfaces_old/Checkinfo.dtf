@@ -1,0 +1,12 @@
+DIALOG "Win_CheckInfo" 0 0 200 280 0 1 10 "Window\对话框_标准边框1.dds" "" "Window\对话框_标题.tga" 0 0 201 33 "Window\对话框_标准关闭.tga" 47 7 96 96 96 255 1
+LABEL "Control_168069414" "" "" 55 3 0 0 2 16 3 255 203 74 255
+EDIT "Txt_CharName" "" "" 6 33 186 18 "Editbox\文本框_4b.dds" 4 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_Faction" "" "" 48 52 144 18 "Editbox\文本框_4b.dds" 5 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_Distinction" "" "" 47 73 145 18 "Editbox\文本框_4b.dds" 6 10 255 255 255 "TEXT" 1 0 256
+LABEL "Control_251041581" "" "" 13 53 0 0 7 10 8 255 255 255 255
+LABEL "Control_6625320" "" "" 7 73 0 0 9 10 10 255 255 255 255
+IMAGEPICTURE "Control_711915992" "" "" 7 114 120 160 0 0 ""
+STILLIMAGEBUTTON "Btn_L" "rotatel" "SFX\Interface\ClickB.wav" 48 97 14 15 0 0 0 0 11 15 255 0 255 255 "Button\按钮_左移1.tga" "Button\按钮_左移2.tga" 12 1
+STILLIMAGEBUTTON "Btn_R" "rotater" "SFX\Interface\ClickB.wav" 72 97 14 15 0 0 0 0 13 12 255 255 255 255 "Button\按钮_右移1.tga" "Button\按钮_右移2.tga" 14 1
+STILLIMAGEBUTTON "Btn_AddFriend" "addfriend" "SFX\Interface\ClickB.wav" 128 249 65 24 0 0 0 0 15 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 16 1
+STILLIMAGEBUTTON "Btn_Whisper" "sendmsg" "SFX\Interface\ClickB.wav" 128 221 65 24 0 0 0 0 17 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 18 1

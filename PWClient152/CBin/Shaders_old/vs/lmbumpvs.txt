@@ -1,0 +1,66 @@
+; DESCRIPTION:
+; Vertex shader used to calculate tree branch
+
+vs.1.1
+
+;------------------------------------------------------------------------------
+; v0 	  = position in local space
+; v1    = diffuse color precaculated
+; v2 	  = texture coordinates
+; v3    = normal coords in local space
+; v4    = tangents coords in local space
+; v5	  = binormals coords in local space
+;------------------------------------------------------------------------------
+
+;------------------------------------------------------------------------------
+; Constants specified by the app;
+; c0      = (0.5, 0.5, 0.5, 1.0), half vector
+; c1      = light direction in local space
+; c2      = eye position in local space
+; c3-c6   = world matrix * view matrix * projection matrix
+;------------------------------------------------------------------------------
+
+;------------------------------------------------------------------------------
+; oPos	  = Output position
+; oD0   = output precalculated color
+; oT0	  = base texture coordinates
+; oT1	  = light direction in tangent space
+; oT2	  = half way vector in tangent space
+; oFog    = fog value
+;------------------------------------------------------------------------------
+
+; first Transfrom position from local space to cuboid space and output it
+m4x4 oPos, v0, c3
+mov oD0, v1
+
+; pass through base tex coord.
+mov oT0, v2
+
+; now calculate the tangent space light direction
+dp3 r0.x, c1, v4.xzy
+dp3 r0.y, c1, v5.xzy
+dp3 r0.z, c1, v3.xzy
+mov oT1.xyz, r0
+
+; calculate per vertex eye direction
+sub r2.xyz, c2.xzy, v0.xzy
+; then calcualte tangent space half way vector
+dp3 r1.x, r2, v4.xzy
+dp3 r1.y, r2, v5.xzy
+dp3 r1.z, r2, v3.xzy
+; we need normalize eye direction here first
+dp3 r1.w, r1, r1
+rsq r1.w, r1.w
+mul r1, r1, r1.w
+add r1.xyz, -r0, r1
+; we need renormalize the half way vector again
+dp3 r1.w, r1, r1
+rsq r1.w, r1.w
+mul r1, r1, r1.w
+mov oT2.xyz, r1
+
+; set no fog
+mov oFog, c0.w
+
+
+

@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ElementData", "ElementData.vcproj", "{B10A375B-371D-441B-885A-B29C53B5FA96}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 1
+		SccProjectUniqueName0 = ElementData.vcproj
+		SccProjectName0 = \u0022$/CElement/CElementData\u0022,\u0020OWEAAAAA
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B10A375B-371D-441B-885A-B29C53B5FA96}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B10A375B-371D-441B-885A-B29C53B5FA96}.Debug|Win32.Build.0 = Debug|Win32
+		{B10A375B-371D-441B-885A-B29C53B5FA96}.Release|Win32.ActiveCfg = Release|Win32
+		{B10A375B-371D-441B-885A-B29C53B5FA96}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,49 @@
+; DESCRIPTION:
+; Vertex shader used to render water edge with alpha calculation
+; this shader does below works:
+; # vertex transform
+; # output diffuse color alpha channel to be edge alpha
+
+vs.1.1
+
+;------------------------------------------------------------------------------
+; v0 	  = position in world space
+; v1	  = normal
+; v2 	  = texture coordinates
+;------------------------------------------------------------------------------
+
+dcl_position v0
+dcl_normal v1
+dcl_texcoord v2
+
+;------------------------------------------------------------------------------
+; Constants specified by the app;
+; c0      = (1.0, WaterHeight, scale, 0.0f)
+; c1-c4	  = view matrix * projection matrix
+; c5	  = eye position
+;------------------------------------------------------------------------------
+
+;------------------------------------------------------------------------------
+; oPos	  = Output position
+; oD0	  = Diffuse
+; oT0	  = ray travel distance under the water
+; oFog    = fog value
+;------------------------------------------------------------------------------
+
+; Transform position on the water surface from world space to cuboid space and output it
+mov r0, v0
+m4x4 oPos, r0, c1
+
+mov oD0, c0.x
+
+; Set texture coordinates to height difference with scale
+sub r0.y, c0.y, v0.y
+mul r0.y, r0.y, c0.z
+mov oT0, r0.y
+
+; set no fog
+mov oFog, c0.x
+
+
+
+

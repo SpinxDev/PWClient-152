@@ -1,0 +1,44 @@
+	public:
+		unsigned short retcode;
+		unsigned int auctionid;
+		GAuctionDetail item;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_AUCTIONGET_RE };
+	public:
+		AuctionGet_Re() { type = PROTOCOL_AUCTIONGET_RE; }
+		AuctionGet_Re(void*) : Protocol(PROTOCOL_AUCTIONGET_RE) { }
+		AuctionGet_Re (unsigned short l_retcode,unsigned int l_auctionid = 0,const GAuctionDetail& l_item = GAuctionDetail(),
+			unsigned int l_localsid = 0)
+			 : retcode(l_retcode),auctionid(l_auctionid),item(l_item),
+			localsid(l_localsid)
+		{
+			type = PROTOCOL_AUCTIONGET_RE;
+		}
+
+		AuctionGet_Re(const AuctionGet_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),auctionid(rhs.auctionid),item(rhs.item),
+			localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new AuctionGet_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << auctionid;
+			os << item;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> auctionid;
+			os >> item;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 2048; }

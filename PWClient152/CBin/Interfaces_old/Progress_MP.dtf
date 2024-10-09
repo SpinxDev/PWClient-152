@@ -1,0 +1,5 @@
+DIALOG "Win_PrgsMP" 0 0 136 20 0 1 10 "Window\对话框_透明色.bmp" "" "" 0 0 -1 -1 "" 0 0 96 96 96 255 1
+PROGRESS "Prgs_MPLeft" "" "" 22 3 92 12 "Progress\BGBarI.tga" "Progress\MPBarI.tga" 0 1 0 1
+IMAGEPICTURE "Cover" "" "" 0 0 136 20 1 0 "Progress\MPBar.tga"
+PROGRESS "Prgs_MPCD" "" "" 22 3 92 15 "Progress\BGBarII.tga" "Progress\MPBarII.tga" 0 0 0 1
+LABEL "Txt_MPLeft" "" "" 68 4 0 0 2 8 3 255 255 255 255

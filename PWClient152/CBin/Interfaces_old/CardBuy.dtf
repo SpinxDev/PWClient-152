@@ -1,0 +1,15 @@
+DIALOG "Win_CardBuy" 0 0 311 440 0 1 10 "Window\对话框_标准边框x.dds" "" "" 0 0 283 33 "Window\对话框_标准关闭.tga" 59 33 96 96 96 255 1
+EDIT "Img_Title" "" "" 16 25 283 33 "Window\对话框_标题.tga" 2 15 255 255 255 "TEXT" 1 0 20
+IMAGEPICTURE "L" "" "" -6 -2 32 512 1 0 "Window\花纹_L.dds"
+IMAGEPICTURE "U" "" "" 25 -4 512 64 1 0 "Window\花纹_U.dds"
+IMAGEPICTURE "R" "" "" 286 -2 31 512 1 0 "Window\花纹_R.dds"
+IMAGEPICTURE "D" "" "" 25 409 512 32 1 0 "Window\花纹_D.dds"
+STILLIMAGEBUTTON "Btn_Buy" "buy" "SFX\Interface\ClickA.wav" 28 395 60 22 0 0 0 0 3 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 4 1
+LABEL "Control_388484460" "" "" 105 29 0 0 5 16 6 255 203 74 255
+STILLIMAGEBUTTON "Btn_Cancel" "IDCANCEL" "" 226 395 60 22 0 0 0 0 7 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 8 1
+LIST "Lst_Item" "buy" "" 25 84 264 304 9 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "90 55 110"
+LABEL "Control_293076350" "" "" 26 63 0 0 10 10 11 255 203 74 255
+LABEL "Txt_RestPoint" "" "" 152 63 0 0 12 10 13 255 255 255 255
+STILLIMAGEBUTTON "Btn_LastPage" "last" "" 236 64 12 15 0 0 0 0 14 15 255 255 255 255 "Button\按钮_左移1.tga" "Button\按钮_左移2.tga" 15 1
+STILLIMAGEBUTTON "Btn_NextPage" "next" "" 274 64 12 15 0 0 0 0 16 15 255 255 255 255 "Button\按钮_右移1.tga" "Button\按钮_右移2.tga" 17 1
+STILLIMAGEBUTTON "Btn_Refresh" "refresh" "" 255 63 12 15 0 0 0 0 18 15 255 255 255 255 "Button\刷新_1.tga" "Button\刷新_2.tga" 19 1

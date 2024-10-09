@@ -1,0 +1,44 @@
+	public:
+		int userid;
+		unsigned int localsid;
+		RoleInfo roleinfo;
+		Octets referid;
+		enum { PROTOCOL_TYPE = PROTOCOL_CREATEROLE };
+	public:
+		CreateRole() { type = PROTOCOL_CREATEROLE; }
+		CreateRole(void*) : Protocol(PROTOCOL_CREATEROLE) { }
+		CreateRole (int l_userid,unsigned int l_localsid,RoleInfo l_roleinfo,
+			const Octets& l_referid)
+			 : userid(l_userid),localsid(l_localsid),roleinfo(l_roleinfo)
+			,referid(l_referid)
+		{
+			type = PROTOCOL_CREATEROLE;
+		}
+
+		CreateRole(const CreateRole &rhs)
+			: Protocol(rhs),userid(rhs.userid),localsid(rhs.localsid),roleinfo(rhs.roleinfo)
+			,referid(rhs.referid) { }
+
+		GNET::Protocol *Clone() const { return new CreateRole(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << userid;
+			os << localsid;
+			os << roleinfo;
+			os << referid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> userid;
+			os >> localsid;
+			os >> roleinfo;
+			os >> referid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 101; }
+
+		bool SizePolicy(size_t size) const { return size <= 8192; }

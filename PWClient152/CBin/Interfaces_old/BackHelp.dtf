@@ -1,0 +1,7 @@
+DIALOG "Win_BackHelp" 0 0 265 280 0 1 10 "Window\对话框_标准边框1.dds" "" "人鱼传说新界面\title.tga" 3 3 260 33 "人鱼传说新界面\面板关闭按钮.tga" 37 7 96 96 96 255 1
+EDIT "back1" "" "" 6 33 105 19 "Editbox\文本框_4.dds" 2 15 255 0 255 "TEXT" 1 0 256
+EDIT "back2" "" "" 111 33 150 19 "Editbox\文本框_4.dds" 3 15 255 0 255 "TEXT" 1 0 256
+LIST "List_Member" "" "" 6 52 254 221 4 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "167 59 73 43 50 53"
+STILLIMAGEBUTTON "Btn_PlayerLv" "" "" 7 35 100 14 0 0 0 0 5 10 255 203 74 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 6 1
+STILLIMAGEBUTTON "Btn_MaxNum" "" "" 110 35 150 14 0 0 0 0 7 10 255 203 74 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 8 1
+LABEL "Control_842734792" "" "" 104 4 120 24 9 18 10 255 204 74 255

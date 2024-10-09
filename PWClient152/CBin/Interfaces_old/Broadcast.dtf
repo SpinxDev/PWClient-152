@@ -1,0 +1,11 @@
+DIALOG "Win_Broadcast" 0 0 300 265 0 1 10 "Window\对话框_标准边框1.dds" "" "人鱼传说新界面\title.tga" 3 3 295 33 "人鱼传说新界面\面板关闭按钮.tga" 35 7 96 96 96 255 1
+LABEL "Control_810189505" "" "" 108 5 84 22 2 16 3 255 203 74 255
+STILLIMAGEBUTTON "Btn_Cancel" "IDCANCEL" "SFX\Interface\ClickB.wav" 163 233 75 24 0 0 0 0 4 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 5 1
+LABEL "Control_146820366" "" "" 40 37 137 14 6 10 7 255 203 74 255
+LIST "Lst_Channel" "choosechannel" "SFX\Interface\ClickB.wav" 8 110 284 120 8 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+STILLIMAGEBUTTON "Btn_Confirm" "confirm" "SFX\Interface\ClickB.wav" 63 233 75 24 0 0 0 0 9 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 10 1
+IMAGEPICTURE "Control_297674384" "" "" 6 28 32 32 1 0 "Button\B-04.tga"
+LABEL "Control_388226960" "" "" 6 57 269 17 11 10 12 255 255 255 255
+LABEL "Control_95180994" "" "" 44 74 250 16 13 10 14 255 255 255 255
+LABEL "Control_208320795" "" "" 12 72 40 40 15 15 16 255 255 255 255
+LABEL "Control_611395074" "" "" 43 91 211 15 17 10 18 255 255 255 255

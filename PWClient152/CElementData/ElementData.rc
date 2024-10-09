@@ -1,0 +1,1834 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include "..\..\..\SDK\3rdSDK\include\PropDlg_rc.h"
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include ""PropDlg_rc.h""\0"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\ElementData.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#include ""l.chs\\afxprint.rc""        // printing/print preview resources\r\n"
+    "#include ""PropDlg.rc""\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\ElementData.ico"
+IDR_ELEMENTYPE          ICON    DISCARDABLE     "res\\ElementDataDoc.ico"
+IDI_FOLDER              ICON    DISCARDABLE     "res\\folder .ico"
+IDI_OBJECT              ICON    DISCARDABLE     "res\\object.ico"
+IDI_WRITEABLE           ICON    DISCARDABLE     "res\\Writeable.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDB_LISTTAG             BITMAP  DISCARDABLE     "res\\listtag.bmp"
+IDB_TALKLIST            BITMAP  DISCARDABLE     "res\\bitmap1.bmp"
+IDB_LIST_TREASURE       BITMAP  DISCARDABLE     "res\\bitmap2.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_SAVE
+    BUTTON      ID_SAVE_ALL_DOC
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+    BUTTON      ID_VSS_FRESH
+    SEPARATOR
+    BUTTON      ID_EXPORT_DATA
+    BUTTON      ID_CHECK
+    SEPARATOR
+    BUTTON      ID_POLICY_EDITOR
+    BUTTON      ID_EXPORT_POLICY_DATA
+    BUTTON      ID_GET_POLICY_DATA
+    SEPARATOR
+    BUTTON      ID_MOUNSTER_FALL_ITEM_EDITOR
+    BUTTON      ID_ITEMS_EDITOR
+    BUTTON      ID_ITEMS2_EDITOR
+    BUTTON      ID_QUICKLY_GET_ALL_DATA
+    BUTTON      ID_FIND_TEMPLATE
+    BUTTON      ID_TEST_EXPORT_DATA
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM SEPARATOR
+        MENUITEM "最近文件",                    ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+    POPUP "查看(&V)"
+    BEGIN
+        MENUITEM "工具栏(&T)",                  ID_VIEW_TOOLBAR
+        MENUITEM "状态栏(&S)",                  ID_VIEW_STATUS_BAR
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于 ElementData(&A)...",     ID_APP_ABOUT
+    END
+    POPUP "VSS"
+    BEGIN
+        MENUITEM "配置VSS",                     ID_OPTION_VSS
+        MENUITEM SEPARATOR
+        MENUITEM "取得最新的策略数据",          ID_GET_POLICY_DATA
+        MENUITEM "取得最新模板数据",            ID_VSS_FRESH
+    END
+    POPUP "TOOL"
+    BEGIN
+        MENUITEM "怪物掉落重置表编辑",          ID_MOUNSTER_FALL_ITEM_EDITOR
+    END
+END
+
+IDR_ELEMENTYPE MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "最近文件",                    ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+    POPUP "编辑(&E)"
+    BEGIN
+        MENUITEM "撤消(&U)\tCtrl+Z",            ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "剪切(&T)\tCtrl+X",            ID_EDIT_CUT
+        MENUITEM "复制(&C)\tCtrl+C",            ID_EDIT_COPY
+        MENUITEM "粘贴(&P)\tCtrl+V",            ID_EDIT_PASTE
+    END
+    POPUP "查看(&V)"
+    BEGIN
+        MENUITEM "工具栏(&T)",                  ID_VIEW_TOOLBAR
+        MENUITEM "状态栏(&S)",                  ID_VIEW_STATUS_BAR
+    END
+    POPUP "窗口(&W)"
+    BEGIN
+        MENUITEM "新建窗口(&N)",                ID_WINDOW_NEW
+        MENUITEM "层叠(&C)",                    ID_WINDOW_CASCADE
+        MENUITEM "平铺(&T)",                    ID_WINDOW_TILE_HORZ
+        MENUITEM "排列图标(&A)",                ID_WINDOW_ARRANGE
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于 ElementData(&A)...",     ID_APP_ABOUT
+    END
+    POPUP "VSS"
+    BEGIN
+        MENUITEM "配置VSS",                     ID_OPTION_VSS
+    END
+END
+
+IDR_MENU_CREATE_OBJECT MENU DISCARDABLE 
+BEGIN
+    POPUP "&&&"
+    BEGIN
+        MENUITEM "添加基本模板",                ID_CREATE_OBJECT
+        MENUITEM "添加附加属性模板",            ID_CREATE_OBJECT_EXT
+        MENUITEM "修改附加属性模板",            ID_MODIFIED_OBJECT_EXT
+        MENUITEM SEPARATOR
+        MENUITEM "编辑模板属性",                ID_EDIT_TEMPLATE_PROPERTY
+        MENUITEM SEPARATOR
+        MENUITEM "Check In",                    ID_VSS_CHECK_IN
+        MENUITEM "Check Out",                   ID_VSS_CHECK_OUT
+        MENUITEM SEPARATOR
+        MENUITEM "Check In All",                ID_VSS_CHECK_IN_ALL
+        MENUITEM "Check Out All",               ID_VSS_CHECK_OUT_ALL
+        MENUITEM SEPARATOR
+        MENUITEM "Undo Check Out",              ID_VSS_UNDO_CHECK_OUT
+        MENUITEM SEPARATOR
+        MENUITEM "自动打开保存模板",            ID_AUTO_RESAVE_TEMPLATE
+    END
+END
+
+IDR_MENU_TALK MENU DISCARDABLE 
+BEGIN
+    POPUP "&"
+    BEGIN
+        MENUITEM "创建一个新对象",              ID_CREATE_TALK_WINDOW
+        MENUITEM "修改对象",                    ID_MODIFY_TALK_WINDOW
+    END
+END
+
+IDR_MENU_POLICY MENU DISCARDABLE 
+BEGIN
+    POPUP "test"
+    BEGIN
+        MENUITEM "创建策略",                    ID_CREATE_POLICY
+        MENUITEM SEPARATOR
+        MENUITEM "Check out",                   ID_POLICY_CHECK_OUT
+        MENUITEM "Check in",                    ID_POLICY_CHECK_IN
+        MENUITEM "Undo Check out",              ID_POLICY_UNDO_CHECK_OUT
+    END
+END
+
+IDR_MENU_ADD_SUB MENU DISCARDABLE 
+BEGIN
+    POPUP "test"
+    BEGIN
+        MENUITEM "新建子类型",                  ID_MENU_ADDSUB
+        MENUITEM "删除子类型",                  ID_MENU_DELSUB
+        MENUITEM SEPARATOR
+        MENUITEM "新建宝物",                    ID_MENU_ADD_TREASURE
+        MENUITEM "删除宝物",                    ID_MENU_DEL_TREASURE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 209
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 ElementData"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,7,7,21,21
+    LTEXT           "ElementData 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+    ICON            IDI_WRITEABLE,IDC_STATIC,7,65,21,21
+    ICON            IDI_OBJECT,IDC_STATIC,7,109,21,21
+    LTEXT           "可编辑对象  这种图标的文件你可以修改。修改后可以执行 Check In 操作把修改后的文件放到服务器上！",
+                    IDC_STATIC,35,67,193,28
+    LTEXT           "只读对象   这种图标的文件你不能修改。如果你想要修改你必须执行 Check Out 操作！",
+                    IDC_STATIC,36,112,192,30
+    LTEXT           "注意图标：",IDC_STATIC,7,45,41,8
+    LTEXT           "当你 Check out 一个文件发现图标的颜色没有改变，那么这个文件很可能已经被其他用户 Check out 了。另外也可能是该文件已经被别人从服务器上删除！你可以用SourceSafe查看一下该文件的状态。",
+                    IDC_STATIC,7,155,221,40
+END
+
+IDD_ELEMENTDATA_FORM DIALOG DISCARDABLE  0, 0, 320, 200
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "TODO: 在这个对话框里设置表格控制。",IDC_STATIC,24,42,
+                    280,8
+END
+
+IDD_PATH_DIALOG DIALOG DISCARDABLE  0, 0, 345, 249
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "请选择文件"
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "文件名：",IDC_STATIC,7,7,33,8
+    LTEXT           "Static",IDC_FILENAME,41,7,297,8
+    CONTROL         "Tree1",IDC_TREE1,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_TABSTOP,
+                    7,22,331,194
+    DEFPUSHBUTTON   "确定",IDOK,205,227,50,15
+    PUSHBUTTON      "取消",IDCANCEL,288,227,50,15
+END
+
+IDD_TEMPLATE_NEW DIALOG DISCARDABLE  0, 0, 269, 263
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "新模板"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,242,50,14
+    PUSHBUTTON      "取消",IDCANCEL,212,242,50,14
+    EDITTEXT        IDC_EDIT_ITEM_INFOR,133,159,120,50,ES_AUTOHSCROLL
+    LTEXT           "注释：",IDC_STATIC,134,144,25,8
+    LTEXT           "数据项类型：",IDC_STATIC,130,95,49,8
+END
+
+IDD_DIALOG_LIST_BAR DIALOG DISCARDABLE  0, 0, 200, 177
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+END
+
+IDD_DIALOG_LIST DIALOGEX 0, 0, 200, 203
+STYLE WS_CHILD
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tree1",IDC_TREE_SORT_LIST,"SysTreeView32",
+                    TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | 
+                    TVS_SHOWSELALWAYS | TVS_TRACKSELECT | WS_BORDER | 
+                    WS_TABSTOP,35,58,90,62
+    CONTROL         "               Element数据列表",IDC_STATIC,"Static",
+                    SS_LEFTNOWORDWRAP | WS_GROUP,0,0,199,12,
+                    WS_EX_DLGMODALFRAME
+END
+
+IDD_TEMPLATE_DLG DIALOG DISCARDABLE  0, 0, 187, 181
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "模板创建"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,160,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,160,50,14
+END
+
+IDD_DIALOG_TEMPLATE_CREATE DIALOG DISCARDABLE  0, 0, 187, 108
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "模板"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,86,50,14
+    PUSHBUTTON      "取消",IDCANCEL,130,86,50,14
+    EDITTEXT        IDC_EDIT_TEMPLATE_NAME,20,37,150,13,ES_AUTOHSCROLL
+    LTEXT           "输入模板名字",IDC_STATIC,17,15,93,9
+    LTEXT           "从已有模板复制：",IDC_STATIC,17,60,65,8
+    EDITTEXT        IDC_SRC_TEMPL,85,56,74,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_SEL_COPY,164,56,16,14
+END
+
+IDD_DIALOG_EXT_CREATE DIALOG DISCARDABLE  0, 0, 242, 259
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "附加属性创建"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,28,238,50,14
+    PUSHBUTTON      "取消",IDCANCEL,156,238,50,14
+    LTEXT           "数据项类型1：",IDC_STATIC,5,113,53,8
+    EDITTEXT        IDC_EDIT_NAME,75,16,143,14,ES_AUTOHSCROLL
+    LTEXT           "新附加属性名：",IDC_STATIC,5,20,57,8
+    COMBOBOX        IDC_COMBO_EXT_ITEM2,74,137,69,164,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "数据项类型2：",IDC_STATIC,5,140,53,8
+    COMBOBOX        IDC_COMBO_EXT_ITEM3,74,166,69,164,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "数据项类型3：",IDC_STATIC,5,170,53,8
+    COMBOBOX        IDC_COMBO_EXT_ITEM4,74,196,69,164,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "数据项类型4：",IDC_STATIC,5,200,53,8,NOT WS_VISIBLE
+    COMBOBOX        IDC_COMBO_EXT_NUM,82,60,62,164,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "数据项的数目：",IDC_STATIC,7,64,57,8
+    EDITTEXT        IDC_EDIT_NAME1,153,110,75,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_NAME2,153,135,75,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_NAME3,153,165,75,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_NAME4,153,195,75,15,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    LTEXT           "类型选择",IDC_STATIC,75,95,33,8
+    LTEXT           "数据项的名称",IDC_STATIC,155,95,49,8
+    COMBOBOX        IDC_COMBO_EXT_ITEM5,73,110,69,164,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DIALOG_OPTION_VSS DIALOG DISCARDABLE  0, 0, 197, 151
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "配置SourceSafe"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,130,50,14
+    PUSHBUTTON      "取消",IDCANCEL,140,130,50,14
+    LTEXT           "用户名：",IDC_STATIC,15,20,33,8
+    EDITTEXT        IDC_EDIT1,70,15,98,13,ES_AUTOHSCROLL
+    LTEXT           "密码：",IDC_STATIC,15,45,33,8
+    EDITTEXT        IDC_EDIT2,70,40,97,13,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "数据库路径：",IDC_STATIC,15,68,49,8
+    EDITTEXT        IDC_EDIT3,70,65,97,13,ES_AUTOHSCROLL
+    CONTROL         "每次启动自动从服务器上取得最新数据",
+                    IDC_CHECK_AUTO_UPDATE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,91,152,10
+    CONTROL         "连接服务器",IDC_CHECK_CUT_LINK_VSS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,108,152,10
+END
+
+IDD_TEMPL_ID_SEL DIALOGEX 0, 0, 165, 185
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "模板选择"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_TARGET,15,144,97,14,ES_AUTOHSCROLL
+    CONTROL         "Tree1",IDC_TREE_TEMPL,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,2,5,161,131
+    DEFPUSHBUTTON   "搜索",IDC_SEARCH,118,144,32,14
+    PUSHBUTTON      "确定",IDOK,16,166,50,14,WS_DISABLED
+    PUSHBUTTON      "取消",IDCANCEL,98,166,50,14
+END
+
+IDD_FACTIONS_SEL DIALOG DISCARDABLE  0, 0, 241, 163
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "阵营选择"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,54,146,50,14
+    PUSHBUTTON      "取消",IDCANCEL,137,146,50,14
+    CONTROL         "Check1",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,4,54,10
+    CONTROL         "Check2",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,22,54,10
+    CONTROL         "Check3",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,40,54,10
+    CONTROL         "Check4",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,58,54,10
+    CONTROL         "Check5",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,76,54,10
+    CONTROL         "Check6",IDC_CHECK6,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,94,54,10
+    CONTROL         "Check7",IDC_CHECK7,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,112,54,10
+    CONTROL         "Check8",IDC_CHECK8,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,130,54,10
+    CONTROL         "Check9",IDC_CHECK9,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,4,54,10
+    CONTROL         "Check10",IDC_CHECK10,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,22,54,10
+    CONTROL         "Check11",IDC_CHECK11,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,40,54,10
+    CONTROL         "Check12",IDC_CHECK12,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,58,54,10
+    CONTROL         "Check13",IDC_CHECK13,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,76,54,10
+    CONTROL         "Check14",IDC_CHECK14,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,94,54,10
+    CONTROL         "Check15",IDC_CHECK15,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,112,54,10
+    CONTROL         "Check16",IDC_CHECK16,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,130,54,10
+    CONTROL         "Check17",IDC_CHECK17,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,4,54,10
+    CONTROL         "Check18",IDC_CHECK18,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,22,54,10
+    CONTROL         "Check19",IDC_CHECK19,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,40,54,10
+    CONTROL         "Check20",IDC_CHECK20,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,58,54,10
+    CONTROL         "Check21",IDC_CHECK21,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,76,54,10
+    CONTROL         "Check22",IDC_CHECK22,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,94,54,10
+    CONTROL         "Check23",IDC_CHECK23,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,112,54,10
+    CONTROL         "Check24",IDC_CHECK24,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,130,54,10
+    CONTROL         "Check25",IDC_CHECK25,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,4,54,10
+    CONTROL         "Check26",IDC_CHECK26,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,22,54,10
+    CONTROL         "Check27",IDC_CHECK27,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,40,54,10
+    CONTROL         "Check28",IDC_CHECK28,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,58,54,10
+    CONTROL         "Check29",IDC_CHECK29,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,76,54,10
+    CONTROL         "Check30",IDC_CHECK30,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,94,54,10
+    CONTROL         "Check31",IDC_CHECK31,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,112,54,10
+    CONTROL         "Check32",IDC_CHECK32,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,130,54,10
+END
+
+IDD_DIALOG_LOGO DIALOG DISCARDABLE  0, 0, 185, 49
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "正在从服务器更新数据，请稍侯... ...",IDC_STATIC,36,15,
+                    141,12
+    GROUPBOX        "",IDC_STATIC,3,3,178,43
+    ICON            IDR_MAINFRAME,IDC_STATIC,9,11,20,20,WS_BORDER
+END
+
+IDD_EQUIP_MASK DIALOG DISCARDABLE  0, 0, 491, 162
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,157,146,50,14
+    PUSHBUTTON      "取消",IDCANCEL,283,146,50,14
+    CONTROL         "Check1",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,4,116,10
+    CONTROL         "Check2",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,22,116,10
+    CONTROL         "Check3",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,40,116,10
+    CONTROL         "Check4",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,58,116,10
+    CONTROL         "Check5",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,76,116,10
+    CONTROL         "Check6",IDC_CHECK6,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,94,116,10
+    CONTROL         "Check7",IDC_CHECK7,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,112,116,10
+    CONTROL         "Check8",IDC_CHECK8,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,130,116,10
+    CONTROL         "Check9",IDC_CHECK9,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,132,4,115,10
+    CONTROL         "Check10",IDC_CHECK10,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,132,22,115,10
+    CONTROL         "Check11",IDC_CHECK11,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,132,40,115,10
+    CONTROL         "Check12",IDC_CHECK12,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,132,58,115,10
+    CONTROL         "Check13",IDC_CHECK13,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,132,76,115,10
+    CONTROL         "Check14",IDC_CHECK14,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,132,94,115,10
+    CONTROL         "Check15",IDC_CHECK15,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,132,112,115,10
+    CONTROL         "Check16",IDC_CHECK16,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,132,130,115,10
+    CONTROL         "Check17",IDC_CHECK17,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,249,4,115,10
+    CONTROL         "Check18",IDC_CHECK18,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,249,22,115,10
+    CONTROL         "Check19",IDC_CHECK19,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,249,40,115,10
+    CONTROL         "Check20",IDC_CHECK20,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,249,58,115,10
+    CONTROL         "Check21",IDC_CHECK21,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,249,76,115,10
+    CONTROL         "Check22",IDC_CHECK22,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,249,94,115,10
+    CONTROL         "Check23",IDC_CHECK23,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,249,112,115,10
+    CONTROL         "Check24",IDC_CHECK24,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,249,130,115,10
+    CONTROL         "Check25",IDC_CHECK25,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,367,4,117,10
+    CONTROL         "Check26",IDC_CHECK26,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,367,22,117,10
+    CONTROL         "Check27",IDC_CHECK27,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,367,40,117,10
+    CONTROL         "Check28",IDC_CHECK28,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,367,58,117,10
+    CONTROL         "Check29",IDC_CHECK29,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,367,76,117,10
+    CONTROL         "Check30",IDC_CHECK30,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,367,94,117,10
+    CONTROL         "Check31",IDC_CHECK31,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,367,112,117,10
+    CONTROL         "Check32",IDC_CHECK32,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,367,130,117,10
+END
+
+IDD_TASK_ID_SEL DIALOGEX 0, 0, 165, 160
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "模板选择"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tree1",IDC_TREE_TASK,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,2,5,161,131
+    DEFPUSHBUTTON   "确定",IDOK,16,141,50,14,WS_DISABLED
+    PUSHBUTTON      "取消",IDCANCEL,98,141,50,14
+END
+
+IDD_TALK_DIALOG DIALOG DISCARDABLE  0, 0, 327, 305
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "对话编辑"
+FONT 9, "宋体"
+BEGIN
+    EDITTEXT        IDC_EDIT_TALK_NAME,62,5,155,15,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_TALK_ID,62,25,155,15,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "运行测试",IDC_BUTTON_TALK_TEST,252,15,60,15
+    PUSHBUTTON      "删除",IDC_BUTTON_DELETE_ITEM,14,62,61,12
+    PUSHBUTTON      "向上移",IDC_BUTTON_MOVE_ITEM_UP,79,62,61,12
+    PUSHBUTTON      "向下移",IDC_BUTTON_MOVE_ITEM_DOWN,144,62,61,12
+    CONTROL         "Tree1",IDC_TREE_TALK,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,14,83,300,191
+    PUSHBUTTON      "取消",IDCANCEL,270,284,50,14
+    PUSHBUTTON      "确定",IDOK,7,284,50,14
+    GROUPBOX        "对话内容",IDC_STATIC,7,47,313,232
+    LTEXT           "对话的名字:",IDC_STATIC,15,10,45,8
+    LTEXT           "对话的ID:",IDC_STATIC,15,30,45,8
+END
+
+IDD_DIALOG_CREATE_WINDOW DIALOG DISCARDABLE  0, 0, 229, 379
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "创建窗口"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "窗口",IDC_RADIO_TALK_TYPE1,"Button",BS_AUTORADIOBUTTON,
+                    23,24,47,8
+    CONTROL         "功能",IDC_RADIO_TALK_TYPE2,"Button",BS_AUTORADIOBUTTON,
+                    92,24,47,8
+    EDITTEXT        IDC_EDIT_NAME,70,51,141,12,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    EDITTEXT        IDC_EDIT_COMMAND_NAME,70,77,141,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_WINDOW_ID,63,120,129,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_WINDOW_DESC,17,158,205,89,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN
+    COMBOBOX        IDC_COMBO_SERVICE,74,275,148,94,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_SERVICE_LINK,74,307,95,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "...",IDC_BUTTON_SERVICE_LINK,180,306,28,13
+    PUSHBUTTON      "放弃",IDCANCEL,172,358,50,14
+    PUSHBUTTON      "确定",IDOK,7,358,50,14
+    GROUPBOX        "窗口",IDC_STATIC_WINDOW,7,101,215,154,WS_TABSTOP
+    GROUPBOX        "功能",IDC_STATIC_SERVICE,7,257,215,97,WS_TABSTOP
+    GROUPBOX        "类型选择",IDC_STATIC,7,7,215,33,WS_TABSTOP
+    LTEXT           "对象名字:",IDC_STATIC,7,53,37,8,NOT WS_VISIBLE | NOT 
+                    WS_GROUP | WS_TABSTOP
+    LTEXT           "描述文字:",IDC_STATIC_DESC,15,143,37,8,NOT WS_GROUP | 
+                    WS_TABSTOP
+    LTEXT           "功能选择：",IDC_STATIC_SERVICE_TYPE,14,279,41,8,NOT 
+                    WS_GROUP | WS_TABSTOP
+    LTEXT           "窗口ID:",IDC_STATIC_ID,15,122,29,8,NOT WS_GROUP | 
+                    WS_TABSTOP
+    LTEXT           "选项提示文字：",IDC_STATIC_COMMAND,7,81,57,8,NOT 
+                    WS_GROUP | WS_TABSTOP
+    LTEXT           "功能相关模板：",IDC_STATIC_SERVICE_TYPE2,13,310,57,8,
+                    NOT WS_GROUP | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_SERVICE_PARAMS,74,329,96,76,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "功能相关参数：",IDC_STATIC_SERVICE_PARAMS,13,332,57,8,
+                    NOT WS_GROUP | WS_TABSTOP
+    CONTROL         "弹出窗口",IDC_RADIO_TALK_TYPE3,"Button",
+                    BS_AUTORADIOBUTTON,161,24,47,8
+END
+
+IDD_NEW_TALK_FILE DIALOG DISCARDABLE  0, 0, 214, 67
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "新建立一个对话"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "创建",IDOK,7,46,50,14
+    PUSHBUTTON      "取消",IDCANCEL,157,46,50,14
+    LTEXT           "对话名字：",IDC_STATIC,7,21,41,8
+    EDITTEXT        IDC_EDIT1,59,18,136,13,ES_AUTOHSCROLL
+END
+
+IDD_PROC_TYPE_MASK DIALOG DISCARDABLE  0, 0, 122, 266
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "处理方式选择"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,245,50,14
+    PUSHBUTTON      "取消",IDCANCEL,65,245,50,14
+    CONTROL         "",IDC_PROC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    10,5,102,10
+    CONTROL         "",IDC_PROC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    10,22,102,10
+    CONTROL         "",IDC_PROC_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    10,39,102,10
+    CONTROL         "",IDC_PROC_CHECK4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    10,56,102,10
+    CONTROL         "",IDC_PROC_CHECK5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    10,73,102,10
+    CONTROL         "",IDC_PROC_CHECK6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    10,90,102,10
+    CONTROL         "",IDC_PROC_CHECK7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    10,106,102,10
+    CONTROL         "",IDC_PROC_CHECK8,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    10,121,102,10
+    CONTROL         "",IDC_PROC_CHECK9,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    10,138,102,10
+    CONTROL         "",IDC_PROC_CHECK10,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,154,102,10
+    CONTROL         "",IDC_PROC_CHECK11,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,171,102,10
+    CONTROL         "",IDC_PROC_CHECK12,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,187,102,10
+    CONTROL         "",IDC_PROC_CHECK13,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,201,102,10
+    CONTROL         "",IDC_PROC_CHECK14,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,215,102,10
+    CONTROL         "",IDC_PROC_CHECK15,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,230,102,10
+END
+
+IDD_DIALOG_TEST DIALOG DISCARDABLE  0, 0, 290, 241
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "结束测试",IDOK,233,220,50,14
+    EDITTEXT        IDC_EDIT_WNDTXT,7,27,276,68,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN
+    LTEXT           "窗口文字说明：",IDC_STATIC,7,7,124,11
+    LISTBOX         IDC_LIST_COMMAND,7,132,202,102,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "命令列表：(鼠标单击测试)",IDC_STATIC,7,111,101,8
+    PUSHBUTTON      "返回上一级",ID_RETURN,233,189,50,14
+END
+
+IDD_MONSTER_FACTIONS DIALOG DISCARDABLE  0, 0, 241, 163
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "怪物派系"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,54,146,50,14
+    PUSHBUTTON      "取消",IDCANCEL,137,146,50,14
+    CONTROL         "Check1",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,4,54,10
+    CONTROL         "Check2",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,22,54,10
+    CONTROL         "Check3",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,40,54,10
+    CONTROL         "Check4",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,58,54,10
+    CONTROL         "Check5",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,76,54,10
+    CONTROL         "Check6",IDC_CHECK6,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,94,54,10
+    CONTROL         "Check7",IDC_CHECK7,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,112,54,10
+    CONTROL         "Check8",IDC_CHECK8,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,130,54,10
+    CONTROL         "Check9",IDC_CHECK9,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,4,54,10
+    CONTROL         "Check10",IDC_CHECK10,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,22,54,10
+    CONTROL         "Check11",IDC_CHECK11,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,40,54,10
+    CONTROL         "Check12",IDC_CHECK12,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,58,54,10
+    CONTROL         "Check13",IDC_CHECK13,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,76,54,10
+    CONTROL         "Check14",IDC_CHECK14,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,94,54,10
+    CONTROL         "Check15",IDC_CHECK15,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,112,54,10
+    CONTROL         "Check16",IDC_CHECK16,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,62,130,54,10
+    CONTROL         "Check17",IDC_CHECK17,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,4,54,10
+    CONTROL         "Check18",IDC_CHECK18,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,22,54,10
+    CONTROL         "Check19",IDC_CHECK19,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,40,54,10
+    CONTROL         "Check20",IDC_CHECK20,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,58,54,10
+    CONTROL         "Check21",IDC_CHECK21,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,76,54,10
+    CONTROL         "Check22",IDC_CHECK22,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,94,54,10
+    CONTROL         "Check23",IDC_CHECK23,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,112,54,10
+    CONTROL         "Check24",IDC_CHECK24,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,121,130,54,10
+    CONTROL         "Check25",IDC_CHECK25,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,4,54,10
+    CONTROL         "Check26",IDC_CHECK26,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,22,54,10
+    CONTROL         "Check27",IDC_CHECK27,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,40,54,10
+    CONTROL         "Check28",IDC_CHECK28,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,58,54,10
+    CONTROL         "Check29",IDC_CHECK29,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,76,54,10
+    CONTROL         "Check30",IDC_CHECK30,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,94,54,10
+    CONTROL         "Check31",IDC_CHECK31,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,112,54,10
+    CONTROL         "Check32",IDC_CHECK32,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,182,130,54,10
+END
+
+IDD_TEXT_INPUT DIALOG DISCARDABLE  0, 0, 178, 110
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "文本输入"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,20,91,50,14
+    PUSHBUTTON      "取消",IDCANCEL,107,91,50,14
+    EDITTEXT        IDC_TEXT_INPUT,3,3,172,82,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+END
+
+IDD_WIPE_OFF DIALOG DISCARDABLE  0, 0, 288, 202
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "清除列表"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "清除",IDOK,55,183,50,14
+    PUSHBUTTON      "取消",IDCANCEL,182,183,50,14
+    CONTROL         "List1",IDC_WIPEOFF_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,4,0,279,177
+END
+
+IDD_PASSWORD DIALOG DISCARDABLE  0, 0, 167, 56
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "密码输入"
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "密码",IDC_STATIC,22,9,17,8
+    EDITTEXT        IDC_PASSWD,47,6,96,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "确定",IDOK,21,33,50,14
+    PUSHBUTTON      "取消",IDCANCEL,96,33,50,14
+END
+
+IDD_SINGLE_TEXT DIALOG DISCARDABLE  0, 0, 187, 59
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "单行文本输入"
+FONT 9, "宋体"
+BEGIN
+    EDITTEXT        IDC_TEXT,17,9,154,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "确定",IDOK,29,37,50,14
+    PUSHBUTTON      "取消",IDCANCEL,108,37,50,14
+END
+
+IDD_DIALOG_POLICY DIALOGEX 0, 0, 565, 362
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CLIENTEDGE
+CAPTION "怪物策略编辑器"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tree1",IDC_TREE_POLICY,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,15,20,126,329,WS_EX_CLIENTEDGE
+    GROUPBOX        "策略列表",IDC_STATIC,7,7,138,348
+    GROUPBOX        "策略",IDC_STATIC_POLICYNAME,149,7,162,348
+    LISTBOX         IDC_LIST_TRIGGER,154,20,151,275,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "删除",IDC_BUTTON_DEL_TRIGGER,151,300,30,14
+    PUSHBUTTON      "添加",IDC_BUTTON_ADD_TRIGGER,182,300,30,14
+    PUSHBUTTON      "上移",IDC_BUTTON_MOVE_UP,213,300,30,14
+    PUSHBUTTON      "下移",IDC_BUTTON_MOVE_DOWN,244,300,30,14
+    PUSHBUTTON      "保存",IDC_BUTTON_POLICY_SAVE,275,300,30,14
+    GROUPBOX        "模拟运行",IDC_STATIC,316,7,235,348
+    LTEXT           "怪物HP",IDC_STATIC_HP,332,32,32,9
+    PUSHBUTTON      "停止模拟",IDC_BUTTON_STOP_TRIGGER,331,334,53,14
+    PUSHBUTTON      "模拟运行",IDC_BUTTON_RUN_TRIGGER,487,334,53,14
+    EDITTEXT        IDC_EDIT_RUN_LOG,327,117,216,211,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | 
+                    ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    EDITTEXT        IDC_EDIT_HP,370,29,44,12,ES_AUTOHSCROLL
+    GROUPBOX        "条件",IDC_STATIC,328,20,214,94
+    PUSHBUTTON      "随机条件满足",IDC_BUTTON_EVENT_RANDOM,338,46,53,14
+    PUSHBUTTON      "杀死玩家",IDC_BUTTON_EVENT_KILLPLAYER,402,46,53,14
+    PUSHBUTTON      "战斗开始",IDC_BUTTON_EVENT_ATTACKSTART,466,46,53,14
+    PUSHBUTTON      "怪物死亡",IDC_BUTTON_EVENT_DIED,338,62,53,14
+    PUSHBUTTON      "时间点到达",IDC_BUTTON_EVENT_TIME_POINT,402,62,53,14
+    PUSHBUTTON      "查找策略",ID_BTN_FIND_POLICY,267,332,38,13
+    EDITTEXT        ID_EDIT_FIND_POLICY,155,332,108,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "到达路径终点",IDC_BUTTON_EVENT_REACHEND,466,62,53,14
+    PUSHBUTTON      "处于历史阶段",IDC_BUTTON_EVENT_AT_HISTORY_STAGE,338,79,
+                    53,14
+    PUSHBUTTON      "脱离战斗",IDC_BUTTON_EVENT_STOPFIGHT,402,78,53,14
+    PUSHBUTTON      "到达路径终点（新）",IDC_BUTTON_EVENT_REACHEND2,466,78,
+                    75,14
+    PUSHBUTTON      "持有状态包",IDC_BUTTON_EVENT_HASFILTER,337,97,53,14
+    PUSHBUTTON      "复制",IDC_BUTTON_COPY_TRIGGER,151,315,30,14
+    PUSHBUTTON      "粘贴",IDC_BUTTON_PASTE_TRIGGER,182,315,30,14
+END
+
+IDD_DIALOG_POLICY_TRIGGER DIALOG DISCARDABLE  0, 0, 354, 257
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "触发器"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",ID_MODIFY,290,223,50,14
+    EDITTEXT        IDC_EDIT_PROGRAM,13,89,269,14,ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_WANTRETURN
+    PUSHBUTTON      "添加操作",IDC_ADD_OPERATION,290,139,50,14
+    PUSHBUTTON      "删除操作",IDC_DEL_OPERATION,290,160,50,14
+    PUSHBUTTON      "上移",IDC_MOVE_UP,290,181,50,14
+    PUSHBUTTON      "下移",IDC_MOVE_DOWN,290,202,50,14
+    GROUPBOX        "操作",IDC_STATIC,7,124,340,126
+    GROUPBOX        "条件",IDC_STATIC,7,58,340,60
+    LISTBOX         IDC_LISTBOX_OPERATION,13,140,270,100,
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "设置条件",IDC_ADD_CONDITION,289,88,50,14
+    LTEXT           "逻辑表达式",IDC_STATIC,13,77,79,9
+    GROUPBOX        "",IDC_STATIC,7,7,340,46
+    EDITTEXT        IDC_EDIT_TRIGGER_NAME,35,20,101,13,ES_AUTOHSCROLL
+    CONTROL         "默认激活",IDC_CHECK_ACTIVE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,215,21,48,12
+    EDITTEXT        IDC_EDIT_TRIGGER_ID,151,19,54,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "ID",IDC_STATIC,139,23,9,8
+    LTEXT           "名字",IDC_STATIC,13,22,17,8
+    CONTROL         "只在战斗中执行",IDC_RADIO_ATTACK_EFFECT,"Button",
+                    BS_AUTORADIOBUTTON,269,21,72,10
+    CONTROL         "战斗外也执行",IDC_RADIO_ATTACT_NOEFFECT,"Button",
+                    BS_AUTORADIOBUTTON,270,36,64,10
+    GROUPBOX        "",IDC_STATIC,264,7,83,45
+END
+
+IDD_DIALOG_POLICY_OPERATION DIALOG DISCARDABLE  0, 0, 352, 329
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "操作"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,50,305,50,15
+    PUSHBUTTON      "取消",IDCANCEL,255,305,50,15
+    LTEXT           "操作类型:",IDC_STATIC,7,10,37,8
+    COMBOBOX        IDC_COMBO_OPERATION_TYPE,73,7,130,180,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "操作参数",IDC_STATIC,7,31,338,146
+    CONTROL         "List2",IDC_LIST_OPERATION,"SysListView32",NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,13,41,327,129
+    COMBOBOX        IDC_COMBO_TARGET_TYPE,45,199,147,108,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "目标",IDC_STATIC,7,185,338,118
+    LTEXT           "目标类型",IDC_STATIC,7,201,33,8
+    CONTROL         "武侠",IDC_CHECK_WUXIA,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,35,235,32,10
+    CONTROL         "法师",IDC_CHECK_FASHI,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,95,235,32,10
+    CONTROL         "妖兽",IDC_CHECK_YAOSHOU,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,155,235,32,10
+    CONTROL         "羽灵",IDC_CHECK_YULIN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,215,235,32,10
+    CONTROL         "羽芒",IDC_CHECK_YUMANG,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,275,235,32,10
+    GROUPBOX        "目标参数",IDC_STATIC,16,224,322,67
+    CONTROL         "巫师",IDC_CHECK_WUSHI,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,35,257,32,10
+    CONTROL         "妖精",IDC_CHECK_YAOJING,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,95,257,32,10
+    CONTROL         "刺客",IDC_CHECK_CIKE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,155,257,32,10
+    CONTROL         "剑灵",IDC_CHECK_JIANLING,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,215,257,32,10
+    CONTROL         "魅灵",IDC_CHECK_MEILING,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,275,257,32,10
+    CONTROL         "夜影",IDC_CHECK_YEYING,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,35,279,32,10
+    CONTROL         "月仙",IDC_CHECK_YUEXIAN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,95,279,32,10
+END
+
+IDD_DIALOG_CONDITION DIALOG DISCARDABLE  0, 0, 319, 112
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "条件"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,91,50,14
+    PUSHBUTTON      "取消",IDCANCEL,262,91,50,14
+    COMBOBOX        IDC_COMBO_FUNC,15,23,128,153,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PARAM_FLOAT,36,65,76,14,ES_AUTOHSCROLL
+    GROUPBOX        "条件",IDC_STATIC,7,7,305,79
+    LTEXT           "参数",IDC_STATIC,14,59,17,8
+    EDITTEXT        IDC_EDIT_PARAM_INT,36,49,76,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "条件1",IDC_BUTTON_SUB1,148,22,25,14
+    PUSHBUTTON      "条件2",IDC_BUTTON_SUB2,148,61,25,14
+    EDITTEXT        IDC_EDIT_SUB1,179,22,133,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_SUB2,179,61,133,14,ES_AUTOHSCROLL | ES_READONLY
+END
+
+IDD_DIALOG_POLICY_CREATE DIALOG DISCARDABLE  0, 0, 234, 101
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "创建新的策略"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,80,50,14
+    PUSHBUTTON      "取消",IDCANCEL,177,80,50,14
+    LTEXT           "策略的名字:",IDC_STATIC,16,26,45,8
+    EDITTEXT        IDC_EDIT_NAME,68,23,150,13,ES_AUTOHSCROLL
+    LTEXT           "复制:",IDC_STATIC,16,52,23,10
+    EDITTEXT        IDC_EDIT_POLICY_COPY_PATH,46,48,147,15,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_POLICY_COPY_PATH,200,49,21,13
+END
+
+IDD_DIALOG_POLICY_TREE DIALOG DISCARDABLE  0, 0, 233, 300
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择策略"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,279,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,176,279,50,14
+    CONTROL         "Tree1",IDC_TREE_POLICY,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | 
+                    TVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,14,15,205,256
+END
+
+IDD_DIALOG_MOUNSTER_FALL_LIST DIALOG DISCARDABLE  0, 0, 352, 207
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "怪物掉落重置表编辑器"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "退出",IDOK,302,180,39,14
+    LISTBOX         IDC_LIST_ITEM,12,21,327,139,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "添加",IDC_ADD,164,180,36,14
+    PUSHBUTTON      "删除",IDC_DEL,124,180,36,14
+    CONTROL         "Check out",IDC_RADIO_CHECK_OUT,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE,13,179,42,15
+    CONTROL         "check in",IDC_RADIO_CHECK_IN,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE,61,179,42,15
+    GROUPBOX        "状态",IDC_STATIC,5,169,107,31
+    PUSHBUTTON      "输出",IDC_EXPORT,206,180,36,14
+    GROUPBOX        "掉落表集合",IDC_STATIC,6,7,340,158
+    GROUPBOX        "操作",IDC_STATIC,116,169,230,31
+    PUSHBUTTON      "输出文本",IDC_BUTTON_EXPORT_TXT_TEST,250,180,44,14
+END
+
+IDD_DIALOG_MOUNSTER_FALL_ITEM DIALOG DISCARDABLE  0, 0, 429, 291
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "怪物掉落属性"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,236,270,50,14
+    PUSHBUTTON      "取消",IDCANCEL,363,270,50,14
+    CONTROL         "List1",IDC_LIST_ITEM,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,224,23,192,233
+    LISTBOX         IDC_LIST_MOUNSTER,14,67,183,184,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "怪物列表",IDC_STATIC,7,55,197,229
+    PUSHBUTTON      "添加",IDC_ADD,14,264,42,14
+    PUSHBUTTON      "删除",IDC_DEL,83,264,42,14
+    GROUPBOX        "掉落表",IDC_STATIC,217,7,205,255
+    LTEXT           "掉落表名字",IDC_STATIC,7,16,41,8
+    EDITTEXT        IDC_EDIT_NAME,58,14,146,14,ES_AUTOHSCROLL
+    LTEXT           "类型选择",IDC_STATIC,7,36,33,8
+    COMBOBOX        IDC_COMBO_TYPE,58,33,145,66,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "删除全部",IDC_DEL_ALL,152,264,42,14
+END
+
+IDD_DIALOG_MOUNSTER_ELEMENT DIALOG DISCARDABLE  0, 0, 187, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "掉落元素"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,74,50,14
+    PUSHBUTTON      "取消",IDCANCEL,130,74,50,14
+    LTEXT           "物品",IDC_STATIC,7,20,17,8
+    EDITTEXT        IDC_EDIT1,49,17,85,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_BUTTON1,139,17,41,14
+    LTEXT           "掉落概率",IDC_STATIC,7,49,33,8
+    EDITTEXT        IDC_EDIT2,49,46,85,14,ES_AUTOHSCROLL
+END
+
+IDD_TEMPL_ID_SEL_EX DIALOG DISCARDABLE  0, 0, 218, 213
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择(支持筐选)"
+FONT 9, "宋体"
+BEGIN
+    EDITTEXT        IDC_TARGET,75,172,97,14,ES_AUTOHSCROLL
+    CONTROL         "Tree1",IDC_TREE_TEMPL,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | WS_BORDER | WS_TABSTOP,7,7,204,155
+    DEFPUSHBUTTON   "搜索",IDC_SEARCH,177,172,32,14
+    PUSHBUTTON      "确定",IDOK,75,192,50,14,WS_DISABLED
+    PUSHBUTTON      "取消",IDCANCEL,161,192,50,14
+    LTEXT           "注意: 选择文件夹后它下面的所有模板都将被加入(支持多选)",
+                    IDC_STATIC,7,168,56,38
+END
+
+IDD_DIALOG_EXT_SEL DIALOG DISCARDABLE  0, 0, 244, 182
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "附加属性选择"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,161,50,14
+    PUSHBUTTON      "取消",IDCANCEL,187,161,50,14
+    LISTBOX         IDC_LIST_TEMPLATE_EXT,7,7,230,150,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_DIALOG_TREASURE DIALOG DISCARDABLE  0, 0, 286, 274
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "百宝阁"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "退出",IDOK,222,240,50,14
+    GROUPBOX        "",IDC_STATIC,7,7,272,217
+    PUSHBUTTON      "输出",ID_EXPORT,221,41,50,14
+    PUSHBUTTON      "Check Out",ID_CHECK_OUT,28,245,50,14
+    PUSHBUTTON      "Check In",ID_CHECK_IN,87,245,50,14
+    ICON            IDI_OBJECT,IDC_FLOAT_ICON,147,241,21,21
+    GROUPBOX        "状态",IDC_STATIC,7,231,185,35
+    PUSHBUTTON      "刷新",ID_FRESH_TREASURE,221,75,50,14
+    CONTROL         "Tree1",IDC_TREE_TREASURE,"SysTreeView32",NOT WS_VISIBLE | 
+                    WS_BORDER | WS_TABSTOP,7,17,201,198
+    PUSHBUTTON      "上移动",IDC_TREASURE_MOVE_UP,221,142,50,14
+    PUSHBUTTON      "下移动",IDC_TREASURE_MOVE_DOWN,222,175,50,14
+END
+
+IDD_DIALOG_TREASURE_ITEM DIALOG DISCARDABLE  0, 0, 274, 287
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "宝物"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,266,50,14
+    PUSHBUTTON      "取消",IDCANCEL,217,266,50,14
+    LISTBOX         IDC_LIST_TREASURE,7,7,260,252,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | NOT WS_VISIBLE | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_DIALOG_TIME DIALOG DISCARDABLE  0, 0, 283, 71
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "时间设定"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,22,50,50,14
+    PUSHBUTTON      "取消",IDCANCEL,215,50,50,14
+    LTEXT           "年",IDC_STATIC,7,28,9,8
+    EDITTEXT        IDC_EDIT_YEAR,19,23,28,13,ES_AUTOHSCROLL
+    LTEXT           "月",IDC_STATIC,53,28,9,8
+    EDITTEXT        IDC_EDIT_MONTH,65,23,28,13,ES_AUTOHSCROLL
+    LTEXT           "日",IDC_STATIC,99,28,9,8
+    EDITTEXT        IDC_EDIT_DAY,111,23,28,13,ES_AUTOHSCROLL
+    LTEXT           "时",IDC_STATIC,145,28,9,8
+    EDITTEXT        IDC_EDIT_HOURS,157,23,28,13,ES_AUTOHSCROLL
+    LTEXT           "分",IDC_STATIC,191,28,9,8
+    EDITTEXT        IDC_EDIT_MINU,203,23,28,13,ES_AUTOHSCROLL
+    LTEXT           "秒",IDC_STATIC,236,28,9,8
+    EDITTEXT        IDC_EDIT_SEC,248,23,28,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "设置为无效",ID_SET_TO_NULL,73,50,50,14
+END
+
+IDD_DIALOG_INPUT_SUBTYPE DIALOG DISCARDABLE  0, 0, 186, 68
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "新加子类型"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,47,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,47,50,14
+    LTEXT           "名字",IDC_STATIC,13,22,17,8
+    EDITTEXT        IDC_EDIT_SUB_NAME,37,20,135,13,ES_AUTOHSCROLL
+END
+
+IDD_FIND_TEMPLATE DIALOG DISCARDABLE  0, 0, 163, 59
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "查找模板"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "查找",IDOK,126,6,30,12,NOT WS_TABSTOP
+    CTEXT           "请输入",IDC_STATIC,10,6,38,12,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT1,51,6,70,12,ES_AUTOHSCROLL | ES_WANTRETURN | 
+                    NOT WS_TABSTOP
+    COMBOBOX        IDC_COMBO1,51,28,70,54,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CTEXT           "类别",IDC_STATIC,10,27,38,12,SS_CENTERIMAGE
+    PUSHBUTTON      "同步场景名",IDC_BUTTON1,4,44,44,11
+END
+
+IDD_DIALOG_PROGRESS DIALOGEX 0, 0, 187, 41
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW | WS_EX_CLIENTEDGE
+CAPTION "请等待..."
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    CONTROL         "Progress1",IDC_PROGRESS1,"msctls_progress32",WS_BORDER,
+                    7,7,173,12
+    CTEXT           "1/100",IDC_STATIC1,44,23,98,9,SS_CENTERIMAGE
+END
+
+IDD_DIALOG_TEMPL_LIST DIALOG DISCARDABLE  0, 0, 164, 192
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "查找结果"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,14,174,39,11
+    PUSHBUTTON      "拷贝选中",IDBUTTON1,62,174,39,11
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | 
+                    LVS_AUTOARRANGE | WS_BORDER | WS_TABSTOP,7,7,150,163
+    PUSHBUTTON      "拷贝所有",IDBUTTON2,110,174,39,11
+END
+
+IDD_EXPIRE_TIME DIALOG DISCARDABLE  0, 0, 187, 94
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    EDITTEXT        IDC_EDIT_YEAR,13,17,34,13,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "年",IDC_STATIC,49,17,14,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_MONTH,68,17,34,13,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "月",IDC_STATIC,104,17,14,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_DAY,126,17,34,13,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "日",IDC_STATIC,162,17,14,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_HOUR,13,41,34,13,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "时",IDC_STATIC,49,41,14,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_MINUTE,68,41,34,13,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "分",IDC_STATIC,104,41,14,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_SECOND,126,41,34,13,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "秒",IDC_STATIC,162,41,14,13,SS_CENTERIMAGE
+END
+
+IDD_TIME_LENGTH DIALOG DISCARDABLE  0, 0, 187, 94
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    EDITTEXT        IDC_EDIT_HOUR,13,17,34,13,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "时",IDC_STATIC,49,17,14,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_MINUTE,68,17,34,13,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "分",IDC_STATIC,104,17,14,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_SECOND,126,17,34,13,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "秒",IDC_STATIC,162,17,14,13,SS_CENTERIMAGE
+END
+
+IDD_SET_TIME DIALOG DISCARDABLE  0, 0, 194, 134
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置时间"
+FONT 10, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,30,109,44,11
+    PUSHBUTTON      "Cancel",IDCANCEL,114,108,43,12
+    CONTROL         "Tab1",IDC_TAB_TIME,"SysTabControl32",0x0,10,10,174,92
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "ElementData Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "ElementData\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2004\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "ElementData.EXE\0"
+            VALUE "ProductName", "ElementData 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 202
+    END
+
+    IDD_ELEMENTDATA_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_TEMPLATE_NEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 262
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 256
+    END
+
+    IDD_DIALOG_LIST_BAR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 193
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 170
+    END
+
+    IDD_DIALOG_LIST, DIALOG
+    BEGIN
+        RIGHTMARGIN, 199
+    END
+
+    IDD_TEMPLATE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 174
+    END
+
+    IDD_DIALOG_TEMPLATE_CREATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 100
+    END
+
+    IDD_DIALOG_EXT_CREATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 235
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 252
+    END
+
+    IDD_DIALOG_OPTION_VSS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 190
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 144
+    END
+
+    IDD_TEMPL_ID_SEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 158
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+
+    IDD_FACTIONS_SEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 234
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 156
+    END
+
+    IDD_DIALOG_LOGO, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 181
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 46
+    END
+
+    IDD_EQUIP_MASK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 484
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 155
+    END
+
+    IDD_TASK_ID_SEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 158
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_TALK_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 320
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 298
+    END
+
+    IDD_DIALOG_CREATE_WINDOW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 222
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 372
+    END
+
+    IDD_NEW_TALK_FILE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 207
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 60
+    END
+
+    IDD_PROC_TYPE_MASK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 115
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 259
+    END
+
+    IDD_DIALOG_TEST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 283
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 234
+    END
+
+    IDD_MONSTER_FACTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 234
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 156
+    END
+
+    IDD_TEXT_INPUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 171
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+
+    IDD_WIPE_OFF, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 281
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 195
+    END
+
+    IDD_PASSWORD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 160
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 49
+    END
+
+    IDD_SINGLE_TEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 52
+    END
+
+    IDD_DIALOG_POLICY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 558
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 355
+    END
+
+    IDD_DIALOG_POLICY_TRIGGER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 347
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 250
+    END
+
+    IDD_DIALOG_POLICY_OPERATION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 345
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 322
+    END
+
+    IDD_DIALOG_CONDITION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 312
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 105
+    END
+
+    IDD_DIALOG_POLICY_CREATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 207
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 70
+    END
+
+    IDD_DIALOG_MOUNSTER_FALL_ITEM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 422
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 284
+    END
+
+    IDD_DIALOG_MOUNSTER_ELEMENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_TEMPL_ID_SEL_EX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 211
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 206
+    END
+
+    IDD_DIALOG_EXT_SEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 237
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 175
+    END
+
+    IDD_DIALOG_TREASURE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 279
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 266
+    END
+
+    IDD_DIALOG_TREASURE_ITEM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 267
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 280
+    END
+
+    IDD_DIALOG_TIME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 276
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 64
+    END
+
+    IDD_DIALOG_INPUT_SUBTYPE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 61
+    END
+
+    IDD_FIND_TEMPLATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 156
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_DIALOG_PROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 34
+    END
+
+    IDD_DIALOG_TEMPL_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 157
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 185
+    END
+
+    IDD_EXPIRE_TIME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_TIME_LENGTH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_SET_TIME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_NODRAG              CURSOR  DISCARDABLE     "res\\no_il.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "ElementData"
+    IDR_ELEMENTYPE          "\nElemen\nElemen\n\n\nElementData.Document\nElemen Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "ElementData"
+    AFX_IDS_IDLEMESSAGE     "就绪"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "扩展名"
+    ID_INDICATOR_CAPS       "大写"
+    ID_INDICATOR_NUM        "数字"
+    ID_INDICATOR_SCRL       "滚动"
+    ID_INDICATOR_OVR        "改写"
+    ID_INDICATOR_REC        "记录"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "建立新工程文档\n新建"
+    ID_FILE_OPEN            "打开一个现有模板工程\n打开"
+    ID_FILE_CLOSE           "关闭活动文档\n关闭"
+    ID_FILE_SAVE            "保存活动文档\n保存"
+    ID_FILE_SAVE_AS         "将活动文档以一个新文件名保存\n另存为"
+    ID_FILE_PAGE_SETUP      "改变打印选项\n页面设置"
+    ID_FILE_PRINT_SETUP     "改变打印机及打印选项\n打印设置"
+    ID_FILE_PRINT           "打印活动文档\n打印"
+    ID_FILE_PRINT_PREVIEW   "显示整页\n打印预览"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "显示程序信息，版本号和版权\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "打开该文档"
+    ID_FILE_MRU_FILE2       "打开该文档"
+    ID_FILE_MRU_FILE3       "打开该文档"
+    ID_FILE_MRU_FILE4       "打开该文档"
+    ID_FILE_MRU_FILE5       "打开该文档"
+    ID_FILE_MRU_FILE6       "打开该文档"
+    ID_FILE_MRU_FILE7       "打开该文档"
+    ID_FILE_MRU_FILE8       "打开该文档"
+    ID_FILE_MRU_FILE9       "打开该文档"
+    ID_FILE_MRU_FILE10      "打开该文档"
+    ID_FILE_MRU_FILE11      "打开该文档"
+    ID_FILE_MRU_FILE12      "打开该文档"
+    ID_FILE_MRU_FILE13      "打开该文档"
+    ID_FILE_MRU_FILE14      "打开该文档"
+    ID_FILE_MRU_FILE15      "打开该文档"
+    ID_FILE_MRU_FILE16      "打开该文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回前一个窗格\n前一窗格"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_NEW           "为活动文档打开另一个窗口\n新建窗口"
+    ID_WINDOW_ARRANGE       "将图标排列在窗口底部\n排列图标"
+    ID_WINDOW_CASCADE       "排列窗口成相互重叠\n层叠窗口"
+    ID_WINDOW_TILE_HORZ     "排列窗口成互不重叠\n平铺窗口"
+    ID_WINDOW_TILE_VERT     "排列窗口成互不重叠\n平铺窗口"
+    ID_WINDOW_SPLIT         "将活动的窗口分隔成窗格\n分隔"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "删除被选对象\n删除"
+    ID_EDIT_CLEAR_ALL       "全部删除\n全部删除"
+    ID_EDIT_COPY            "复制被选对象并将其置于剪贴板上\n复制"
+    ID_EDIT_CUT             "剪切被选对象并将其置于剪贴板上\n剪切"
+    ID_EDIT_FIND            "查找指定的正文\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_REPEAT          "重复上一步操作\n重复"
+    ID_EDIT_REPLACE         "用不同的正文替换指定的正文\n替换"
+    ID_EDIT_SELECT_ALL      "选择整个文档\n选择全部"
+    ID_EDIT_UNDO            "撤消最后一步操作\n撤消"
+    ID_EDIT_REDO            "重新执行先前已撤消的操作\n重新执行"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n显隐工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n显隐状态栏"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "改变窗口大小"
+    AFX_IDS_SCMOVE          "改变窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小成图标"
+    AFX_IDS_SCMAXIMIZE      "把窗口放大到最大尺寸"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到先前的文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动的窗口并提示保存所有文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "把窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务表"
+    AFX_IDS_MDICHILD        "激活该窗口"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "关闭打印预览模式\n取消预阅"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VSS_FRESH            "刷新模板数据\n刷新模板数据"
+    ID_EXPORT_DATA          "导出elements.data\n导出elements.data"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_POLICY_EDITOR        "启动策略编辑器\n启动策略编辑器"
+    ID_EXPORT_POLICY_DATA   "输出策略数据\n输出策略数据"
+    ID_GET_POLICY_DATA      "刷新策略数据\n刷新策略数据"
+    ID_MOUNSTER_FALL_ITEM_EDITOR "掉落表编辑器\n掉落表编辑器"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_ITEMS_EDITOR         "启动百宝阁\n启动百宝阁"
+    ID_ITEMS2_EDITOR        "鸿利商城\n鸿利商城"
+    ID_QUICKLY_GET_ALL_DATA "快速取最新数据（必须至少全取一次后才有效）\n 快速取最新数据（必须至少全取一次后才有效）"
+    IDT_FIND_TEMPLATE       "查找模板"
+    ID_FIND_TEMPLATE        "根据ID查找模板\n根据ID查找模板"
+    ID_TEST_EXPORT_DATA     "测试导出elements.data，每种类型导出一次\n测试导出elements.data，每种类型导出一次"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\ElementData.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#include "l.chs\afxprint.rc"        // printing/print preview resources
+#include "..\..\..\SDK\3rdSDK\include\PropDlg.rc"
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

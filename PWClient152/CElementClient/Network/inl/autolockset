@@ -1,0 +1,44 @@
+	public:
+		int roleid;
+		int userid;
+		int timeout;
+		int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_AUTOLOCKSET };
+	public:
+		AutolockSet() { type = PROTOCOL_AUTOLOCKSET; }
+		AutolockSet(void*) : Protocol(PROTOCOL_AUTOLOCKSET) { }
+		AutolockSet (int l_roleid,int l_userid,int l_timeout,
+			int l_localsid)
+			 : roleid(l_roleid),userid(l_userid),timeout(l_timeout)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_AUTOLOCKSET;
+		}
+
+		AutolockSet(const AutolockSet &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),userid(rhs.userid),timeout(rhs.timeout)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new AutolockSet(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << userid;
+			os << timeout;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> userid;
+			os >> timeout;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

@@ -1,0 +1,82 @@
+#ifndef __GNET_STOCKLOG_RPCDATA
+#define __GNET_STOCKLOG_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class StockLog : public GNET::Rpc::Data
+	{
+	public:
+		unsigned int tid;
+		int time;
+		short result;
+		short volume;
+		int cost;
+
+	public:
+		StockLog (unsigned int l_tid = 0,int l_time = 0,short l_result = 0
+			,short l_volume = 0,int l_cost = 0)
+			: tid(l_tid),time(l_time),result(l_result)
+			,volume(l_volume),cost(l_cost)
+		{
+		}
+
+		StockLog(const StockLog &rhs)
+			: tid(rhs.tid),time(rhs.time),result(rhs.result),
+			volume(rhs.volume),cost(rhs.cost) { }
+
+		Rpc::Data *Clone() const { return new StockLog(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const StockLog *r = dynamic_cast<const StockLog *>(&rhs);
+			if (r && r != this)
+			{
+				tid = r->tid;
+				time = r->time;
+				result = r->result;
+				volume = r->volume;
+				cost = r->cost;
+			}
+			return *this;
+		}
+
+		StockLog& operator = (const StockLog &rhs)
+		{
+			const StockLog *r = &rhs;
+			if (r && r != this)
+			{
+				tid = r->tid;
+				time = r->time;
+				result = r->result;
+				volume = r->volume;
+				cost = r->cost;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << tid;
+			os << time;
+			os << result;
+			os << volume;
+			os << cost;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> tid;
+			os >> time;
+			os >> result;
+			os >> volume;
+			os >> cost;
+			return os;
+		}
+
+	};
+};
+#endif

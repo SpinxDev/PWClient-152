@@ -1,0 +1,116 @@
+#ifndef __GNET_GAUCTIONDETAIL_RPCDATA
+#define __GNET_GAUCTIONDETAIL_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "gauctionitem"
+#include "groleinventory"
+
+namespace GNET
+{
+	class GAuctionDetail : public GNET::Rpc::Data
+	{
+	public:
+		GAuctionItem info;
+		unsigned short category;
+		unsigned int baseprice;
+		unsigned int deposit;
+		int elapse_time;
+		int prolong;
+		int reserved1;
+		int reserved2;
+		int reserved3;
+		GRoleInventory item;
+
+	public:
+		GAuctionDetail (GAuctionItem l_info = GAuctionItem(),unsigned short l_category = 0,unsigned int l_baseprice = 0
+			,unsigned int l_deposit = 0,int l_elapse_time = 0,int l_prolong = 0
+			,int l_reserved1 = 0,int l_reserved2 = 0,int l_reserved3 = 0
+			,const GRoleInventory& l_item = GRoleInventory())
+			: info(l_info),category(l_category),baseprice(l_baseprice)
+			,deposit(l_deposit),elapse_time(l_elapse_time),prolong(l_prolong)
+			,reserved1(l_reserved1),reserved2(l_reserved2),reserved3(l_reserved3)
+			,item(l_item)
+		{
+		}
+
+		GAuctionDetail(const GAuctionDetail &rhs)
+			: info(rhs.info),category(rhs.category),baseprice(rhs.baseprice),
+			deposit(rhs.deposit),elapse_time(rhs.elapse_time),prolong(rhs.prolong),
+			reserved1(rhs.reserved1),reserved2(rhs.reserved2),reserved3(rhs.reserved3),
+			item(rhs.item) { }
+
+		Rpc::Data *Clone() const { return new GAuctionDetail(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GAuctionDetail *r = dynamic_cast<const GAuctionDetail *>(&rhs);
+			if (r && r != this)
+			{
+				info = r->info;
+				category = r->category;
+				baseprice = r->baseprice;
+				deposit = r->deposit;
+				elapse_time = r->elapse_time;
+				prolong = r->prolong;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+				item = r->item;
+			}
+			return *this;
+		}
+
+		GAuctionDetail& operator = (const GAuctionDetail &rhs)
+		{
+			const GAuctionDetail *r = &rhs;
+			if (r && r != this)
+			{
+				info = r->info;
+				category = r->category;
+				baseprice = r->baseprice;
+				deposit = r->deposit;
+				elapse_time = r->elapse_time;
+				prolong = r->prolong;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+				item = r->item;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << info;
+			os << category;
+			os << baseprice;
+			os << deposit;
+			os << elapse_time;
+			os << prolong;
+			os << reserved1;
+			os << reserved2;
+			os << reserved3;
+			os << item;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> info;
+			os >> category;
+			os >> baseprice;
+			os >> deposit;
+			os >> elapse_time;
+			os >> prolong;
+			os >> reserved1;
+			os >> reserved2;
+			os >> reserved3;
+			os >> item;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<GAuctionDetail>	GAuctionDetailVector;
+};
+#endif

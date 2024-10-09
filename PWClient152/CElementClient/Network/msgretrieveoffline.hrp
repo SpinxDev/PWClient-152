@@ -1,0 +1,42 @@
+
+#ifndef __GNET_MSGRETRIEVEOFFLINE_HPP
+#define __GNET_MSGRETRIEVEOFFLINE_HPP
+
+#include "rpcdefs.h"
+#include "callid.hxx"
+#include "state.hxx"
+#include "msg"
+#include "msgretrieveofflinearg"
+#include "msgretrieveofflineres"
+
+namespace GNET
+{
+
+class MsgRetrieveOffline : public Rpc
+{
+#define	RPC_BASECLASS	Rpc
+	#include "msgretrieveoffline"
+#undef	RPC_BASECLASS
+
+	void Server(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+		// MsgRetrieveOfflineArg *arg = (MsgRetrieveOfflineArg *)argument;
+		// MsgRetrieveOfflineRes *res = (MsgRetrieveOfflineRes *)result;
+	}
+
+	void Client(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+		// TODO
+		// MsgRetrieveOfflineArg *arg = (MsgRetrieveOfflineArg *)argument;
+		// MsgRetrieveOfflineRes *res = (MsgRetrieveOfflineRes *)result;
+	}
+
+	void OnTimeout()
+	{
+		// TODO Client Only
+	}
+
+};
+
+};
+#endif

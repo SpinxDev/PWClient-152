@@ -1,0 +1,7 @@
+DIALOG "Win_ExpressionList" 0 0 250 480 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "Window\对话框_标准关闭.tga" 26 5 96 96 96 255 1
+LIST "ListBox_ExpressionList" "ChooseFace" "" 7 30 235 250 2 10 255 255 255 255 "Editbox\文本框_4.tga" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LABEL "Control_588731976" "" "" 72 2 106 24 3 16 4 255 203 74 255
+STILLIMAGEBUTTON "Btm_PlayExpressionList" "PlayBlendExpList" "" 6 286 102 24 0 0 0 0 5 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 6 1
+STILLIMAGEBUTTON "Btm_StopExpressionList" "StopBlendExpList" "" 143 287 98 24 0 0 0 0 7 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 8 1
+STILLIMAGEBUTTON "DeleteCurSelExpression" "DeleteCurBlendExp" "" 58 318 138 24 0 0 0 0 9 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 10 1
+STILLIMAGEBUTTON "Control_563290770" "CloseExpressionDlg" "" 195 449 48 24 0 0 0 0 11 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 12 1

@@ -1,0 +1,192 @@
+#ifndef __GNET_ROLEINFO_RPCDATA
+#define __GNET_ROLEINFO_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "groleinventory"
+
+namespace GNET
+{
+	class RoleInfo : public GNET::Rpc::Data
+	{
+	public:
+		int roleid;
+		unsigned char gender;
+		unsigned char race;
+		unsigned char occupation;
+		int level;
+		int level2;
+		Octets name;
+		Octets custom_data;
+		GRoleInventoryVector equipment;
+		char status;
+		int delete_time;
+		int create_time;
+		int lastlogin_time;
+		float posx;
+		float posy;
+		float posz;
+		int worldtag;
+		Octets custom_status;
+		Octets charactermode;
+		int referrer_role;
+		int cash_add;
+		Octets reincarnation_data;
+		Octets realm_data;
+
+	public:
+		RoleInfo (int l_roleid = -1,unsigned char l_gender = 0,unsigned char l_race = 0
+			,unsigned char l_occupation = 0,int l_level = 1,int l_level2 = 0
+			,const Octets& l_name = Octets(0),const Octets& l_custom_data = Octets(0),const GRoleInventoryVector& l_equipment = GRoleInventoryVector()
+			,char l_status = 0,int l_delete_time = 0,int l_create_time = 0
+			,int l_lastlogin_time = 0,float l_posx = 0.0,float l_posy = 0.0
+			,float l_posz = 0.0,int l_worldtag = 0,const Octets& l_custom_status = Octets()
+			,const Octets& l_charactermode = Octets(),int l_referrer_role = 0,int l_cash_add = 0
+			,const Octets& l_reincarnation_data = Octets(0),const Octets& l_realm_data = Octets(0))
+			: roleid(l_roleid),gender(l_gender),race(l_race)
+			,occupation(l_occupation),level(l_level),level2(l_level2)
+			,name(l_name),custom_data(l_custom_data),equipment(l_equipment)
+			,status(l_status),delete_time(l_delete_time),create_time(l_create_time)
+			,lastlogin_time(l_lastlogin_time),posx(l_posx),posy(l_posy)
+			,posz(l_posz),worldtag(l_worldtag),custom_status(l_custom_status)
+			,charactermode(l_charactermode),referrer_role(l_referrer_role),cash_add(l_cash_add)
+			,reincarnation_data(l_reincarnation_data),realm_data(l_realm_data)
+		{
+		}
+
+		RoleInfo(const RoleInfo &rhs)
+			: roleid(rhs.roleid),gender(rhs.gender),race(rhs.race),
+			occupation(rhs.occupation),level(rhs.level),level2(rhs.level2),
+			name(rhs.name),custom_data(rhs.custom_data),equipment(rhs.equipment),
+			status(rhs.status),delete_time(rhs.delete_time),create_time(rhs.create_time),
+			lastlogin_time(rhs.lastlogin_time),posx(rhs.posx),posy(rhs.posy),
+			posz(rhs.posz),worldtag(rhs.worldtag),custom_status(rhs.custom_status),
+			charactermode(rhs.charactermode),referrer_role(rhs.referrer_role),cash_add(rhs.cash_add),
+			reincarnation_data(rhs.reincarnation_data),realm_data(rhs.realm_data) { }
+
+		Rpc::Data *Clone() const { return new RoleInfo(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const RoleInfo *r = dynamic_cast<const RoleInfo *>(&rhs);
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				gender = r->gender;
+				race = r->race;
+				occupation = r->occupation;
+				level = r->level;
+				level2 = r->level2;
+				name = r->name;
+				custom_data = r->custom_data;
+				equipment = r->equipment;
+				status = r->status;
+				delete_time = r->delete_time;
+				create_time = r->create_time;
+				lastlogin_time = r->lastlogin_time;
+				posx = r->posx;
+				posy = r->posy;
+				posz = r->posz;
+				worldtag = r->worldtag;
+				custom_status = r->custom_status;
+				charactermode = r->charactermode;
+				referrer_role = r->referrer_role;
+				cash_add = r->cash_add;
+				reincarnation_data = r->reincarnation_data;
+				realm_data = r->realm_data;
+			}
+			return *this;
+		}
+
+		RoleInfo& operator = (const RoleInfo &rhs)
+		{
+			const RoleInfo *r = &rhs;
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				gender = r->gender;
+				race = r->race;
+				occupation = r->occupation;
+				level = r->level;
+				level2 = r->level2;
+				name = r->name;
+				custom_data = r->custom_data;
+				equipment = r->equipment;
+				status = r->status;
+				delete_time = r->delete_time;
+				create_time = r->create_time;
+				lastlogin_time = r->lastlogin_time;
+				posx = r->posx;
+				posy = r->posy;
+				posz = r->posz;
+				worldtag = r->worldtag;
+				custom_status = r->custom_status;
+				charactermode = r->charactermode;
+				referrer_role = r->referrer_role;
+				cash_add = r->cash_add;
+				reincarnation_data = r->reincarnation_data;
+				realm_data = r->realm_data;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << gender;
+			os << race;
+			os << occupation;
+			os << level;
+			os << level2;
+			os << name;
+			os << custom_data;
+			os << equipment;
+			os << status;
+			os << delete_time;
+			os << create_time;
+			os << lastlogin_time;
+			os << posx;
+			os << posy;
+			os << posz;
+			os << worldtag;
+			os << custom_status;
+			os << charactermode;
+			os << referrer_role;
+			os << cash_add;
+			os << reincarnation_data;
+			os << realm_data;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> gender;
+			os >> race;
+			os >> occupation;
+			os >> level;
+			os >> level2;
+			os >> name;
+			os >> custom_data;
+			os >> equipment;
+			os >> status;
+			os >> delete_time;
+			os >> create_time;
+			os >> lastlogin_time;
+			os >> posx;
+			os >> posy;
+			os >> posz;
+			os >> worldtag;
+			os >> custom_status;
+			os >> charactermode;
+			os >> referrer_role;
+			os >> cash_add;
+			os >> reincarnation_data;
+			os >> realm_data;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<RoleInfo>	RoleInfoVector;
+};
+#endif

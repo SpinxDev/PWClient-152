@@ -1,0 +1,32 @@
+	public:
+		int userid;
+		enum { PROTOCOL_TYPE = PROTOCOL_QPGETACTIVATEDSERVICES };
+	public:
+		QPGetActivatedServices() { type = PROTOCOL_QPGETACTIVATEDSERVICES; }
+		QPGetActivatedServices(void*) : Protocol(PROTOCOL_QPGETACTIVATEDSERVICES) { }
+		QPGetActivatedServices (int l_userid)
+			 : userid(l_userid)
+		{
+			type = PROTOCOL_QPGETACTIVATEDSERVICES;
+		}
+
+		QPGetActivatedServices(const QPGetActivatedServices &rhs)
+			: Protocol(rhs),userid(rhs.userid) { }
+
+		GNET::Protocol *Clone() const { return new QPGetActivatedServices(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << userid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> userid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 512; }

@@ -1,0 +1,32 @@
+DIALOG "Win_WikiEquipmentSearch" 0 0 450 350 0 1 10 "Window\对话框_标准边框x.dds" "" "" 0 0 -1 -1 "人鱼传说新界面\面板关闭按钮.tga" 50 30 96 96 96 255 1
+EDIT "Edit_01" "" "" 0 0 450 350 "人鱼传说新界面\未命名-1副本.dds" 2 15 255 255 255 "TEXT" 1 0 20
+LABEL "Lab_Equipment" "" "" 141 24 167 25 3 16 4 255 203 74 255
+LIST "List_Equipment" "select" "" 256 94 170 210 5 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "130 40"
+EDIT "Txt_Search" "search" "" 30 51 133 24 "Editbox\文本框_4.dds" 6 15 255 255 255 "TEXT" 0 0 20
+STILLIMAGEBUTTON "Btn_Search" "search" "" 167 51 89 24 0 0 0 0 7 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 8 1
+STILLIMAGEBUTTON "Btn_Drop" "drop" "" 27 308 89 24 0 0 0 0 9 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 10 1
+STILLIMAGEBUTTON "Btn_RandomProperty" "randomproperty" "" 140 308 89 24 0 0 0 0 11 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 12 1
+STILLIMAGEBUTTON "Lab_01" "sortname" "" 256 73 130 19 0 0 0 0 13 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 14 1
+STILLIMAGEBUTTON "Lab_02" "sortname" "" 385 73 40 19 0 0 0 0 15 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 16 1
+STILLIMAGEBUTTON "Btn_Next" "next" "" 364 309 60 24 0 0 0 0 17 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 18 1
+STILLIMAGEBUTTON "Btn_Prev" "prev" "" 303 309 60 24 0 0 0 0 19 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 20 1
+IMAGEPICTURE "Img_Icon" "" "" 30 88 32 32 1 0 "Window\图标_物品栏.dds"
+LABEL "类别" "" "" 30 134 80 17 21 10 22 255 203 74 255
+LABEL "Txt_Type" "" "" 70 134 0 0 23 10 24 255 255 255 255
+LABEL "性别限制" "" "" 30 152 80 17 25 10 26 255 203 74 255
+LABEL "Txt_Gender" "" "" 93 152 0 0 27 10 28 255 255 255 255
+LABEL "职业限制" "" "" 30 170 80 17 29 10 30 255 203 74 255
+LABEL "Txt_Class" "" "" 93 170 0 0 31 10 32 255 255 255 255
+LABEL "等级限制" "" "" 30 188 80 17 33 10 34 255 203 74 255
+LABEL "Txt_LevelRequire" "" "" 93 188 0 0 35 10 36 255 255 255 255
+LABEL "升级效果" "" "" 30 206 80 17 37 10 38 255 203 74 255
+LABEL "Txt_LevelupAddon" "" "" 93 206 0 0 39 10 40 255 255 255 255
+LABEL "拆分物品" "" "" 30 224 80 17 41 10 42 255 203 74 255
+LABEL "Txt_Split" "" "" 93 224 0 0 43 10 44 255 255 255 255
+LABEL "拆分数量" "" "" 30 242 80 17 45 10 46 255 203 74 255
+LABEL "Txt_SplitNumber" "" "" 93 242 0 0 47 10 48 255 255 255 255
+LABEL "损毁掉落物" "" "" 30 260 80 17 49 10 50 255 203 74 255
+LABEL "Txt_Damaged" "" "" 105 260 0 0 51 10 52 255 255 255 255
+LABEL "损毁修复数" "" "" 30 278 80 17 53 10 54 255 203 74 255
+LABEL "Txt_DamagedNumber" "" "" 105 278 0 0 55 10 56 255 255 255 255
+LABEL "Txt_EquipmentName" "" "" 71 92 0 0 57 10 58 255 255 255 255

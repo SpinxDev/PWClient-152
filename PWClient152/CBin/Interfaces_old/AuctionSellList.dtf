@@ -1,0 +1,38 @@
+DIALOG "Win_AuctionSellList" 0 0 630 380 0 1 10 "Window\对话框_标准边框1.dds" "" "人鱼传说新界面\title.tga" 3 3 625 33 "人鱼传说新界面\面板关闭按钮.tga" 37 7 96 96 96 255 1
+LABEL "title" "" "" 231 6 0 0 2 16 3 255 203 74 255
+EDIT "Shape_Left" "" "" 7 33 170 297 "Editbox\文本框_4.dds" 4 15 255 255 255 "TEXT" 1 0 20
+LABEL "Lab_拍卖品" "" "" 18 34 0 0 5 10 6 255 203 74 255
+IMAGEPICTURE "Img_Item" "" "" 19 52 32 32 1 0 "Window\图标_物品栏.dds"
+EDIT "Txt_Name" "" "" 53 64 110 20 "Editbox\文本框_4.dds" 7 10 255 255 255 "TEXT" 1 0 256
+LABEL "Lab_起始价" "" "" 18 86 0 0 8 10 9 255 203 74 255
+STILLIMAGEBUTTON "Btn_nousex1" "" "" 26 107 24 15 0 0 0 0 10 10 255 0 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱2.tga" 11 1
+EDIT "Txt_SellPrice" "" "" 53 104 110 20 "Editbox\文本框_4.dds" 12 10 255 255 255 "TEXT" 0 0 9
+LABEL "Lab_一口价出价" "" "" 19 127 0 0 13 10 14 255 203 74 255
+STILLIMAGEBUTTON "Btn_nousex2" "" "" 26 148 24 15 0 0 0 0 15 10 255 0 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱2.tga" 16 1
+EDIT "Txt_BinPrice" "" "" 53 145 110 20 "Editbox\文本框_4.dds" 17 10 255 255 255 "TEXT" 0 0 9
+CHECK "Chk_SavePrice" "" "" 22 182 18 18 "Extra\复选框_标准.tga"
+LABEL "Lab_保存上次拍卖价格" "" "" 47 183 0 0 18 10 19 255 203 74 255
+LABEL "lb_拍卖时间" "" "" 20 209 0 0 20 10 21 255 203 74 255
+RADIO "Rdo_8h" "" "" 26 234 20 20 "Extra\单选框_标准.tga" 1 1
+LABEL "lb_8小时" "" "" 47 236 10 16 22 10 23 255 255 255 255
+RADIO "Rdo_16h" "" "" 61 234 20 20 "Extra\单选框_标准.tga" 2 1
+LABEL "lb_16小时" "" "" 80 236 17 16 24 10 25 255 255 255 255
+RADIO "Rdo_24h" "" "" 100 234 20 20 "Extra\单选框_标准.tga" 3 1
+LABEL "lb_24小时" "" "" 120 236 41 18 26 10 27 255 255 255 255
+LABEL "Lab_手续费" "" "" 19 261 0 0 28 10 29 255 203 74 255
+LABEL "Lab_背包金钱" "" "" 6 332 0 0 30 10 31 255 203 74 255
+LABEL "Txt_Poundage" "" "" 73 263 0 0 32 10 33 255 203 74 255
+STILLIMAGEBUTTON "Btn_Confirm" "sell" "" 43 301 105 24 0 0 0 0 34 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 35 1
+STILLIMAGEBUTTON "Back_拍卖号" "sortid" "" 178 32 60 19 0 0 0 0 36 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 37 1
+STILLIMAGEBUTTON "Back_名称" "sortname" "" 236 32 160 19 0 0 0 0 38 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 39 1
+STILLIMAGEBUTTON "Back_剩余时间" "sorttime" "" 393 32 70 19 0 0 0 0 40 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 41 1
+STILLIMAGEBUTTON "Back_当前价" "sortprice" "" 461 32 80 19 0 0 0 0 42 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 43 1
+STILLIMAGEBUTTON "Back_一口价" "sortbinprice" "" 539 32 84 19 0 0 0 0 44 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 45 1
+LIST "Lst_Item" "" "" 178 49 445 301 46 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "60 160 60 80 80"
+STILLIMAGEBUTTON "Btn_AuctionList" "auctionlist" "" 140 352 65 24 0 0 0 0 47 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 48 1
+STILLIMAGEBUTTON "Btn_AuctionBuyList" "auctionbuylist" "" 6 352 65 24 0 0 0 0 49 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 50 1
+EDIT "Txt_PackGold" "" "" 61 330 116 20 "Editbox\文本框_4c.dds" 51 10 255 255 255 "TEXT" 1 0 256
+STILLIMAGEBUTTON "Btn_CloseAuction" "closeauction" "" 511 352 65 24 0 0 0 0 52 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 53 1
+STILLIMAGEBUTTON "Btn_Quit" "IDCANCEL" "" 577 352 45 24 0 0 0 0 54 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 55 1
+STILLIMAGEBUTTON "Btn_AuctionSellList" "" "" 73 352 65 24 0 0 0 0 56 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 57 1
+STILLIMAGEBUTTON "Btn_MyAttention" "auctionmyfavor" "" 207 352 65 24 0 0 0 0 58 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 59 1

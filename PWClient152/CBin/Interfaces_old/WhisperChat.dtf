@@ -1,0 +1,7 @@
+DIALOG "Win_WhisperChat" 0 0 257 250 0 1 10 "Window\对话框_标准边框1.dds" "" "" 0 0 400 33 "人鱼传说新界面\面板关闭按钮.tga" 31 6 96 96 96 150 1
+LABEL "Txt_ToWho" "" "" 7 9 187 18 2 10 3 255 255 255 255
+EDIT "DEFAULT_Txt_Speech" "send" "" 6 220 181 22 "Editbox\文本框_4e.dds" 4 10 255 255 255 "TEXT" 0 0 80
+STILLIMAGEBUTTON "Btn_Popface" "popface" "SFX\Interface\ClickB.wav" 192 225 11 12 0 0 0 0 5 10 255 255 255 255 "Button\按钮_表情1a.tga" "Button\按钮_表情2a.tga" 6 1
+STILLIMAGEBUTTON "Btn_Send" "send" "SFX\Interface\ClickB.wav" 206 219 42 24 0 0 0 0 7 10 255 255 255 255 "Button\按钮_文本1b.dds" "Button\按钮_文本2b.dds" 8 1
+TEXT "Txt_Chat" "" "" 6 30 248 187 9 10 255 255 255 255 "Editbox\文本框_4e.dds" "Listbox\列表框_上移.tga" "Listbox\列表框_下移.tga" "Listbox\列表框_滚动槽1t.tga" "Listbox\列表框_拖动按钮1.bmp"
+STILLIMAGEBUTTON "Btn_Minimize" "minimize" "SFX\Interface\ClickB.wav" 204 10 12 15 0 0 0 0 10 15 255 255 255 255 "Button\按钮_下移1.tga" "Button\按钮_下移2.tga" 11 1

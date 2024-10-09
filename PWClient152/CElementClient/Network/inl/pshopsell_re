@@ -1,0 +1,59 @@
+	public:
+		int retcode;
+		int localsid;
+		int item_id;
+		int item_pos;
+		int item_count;
+		unsigned int item_price;
+		int inv_pos;
+		PShopItem itemsell;
+		enum { PROTOCOL_TYPE = PROTOCOL_PSHOPSELL_RE };
+	public:
+		PShopSell_Re() { type = PROTOCOL_PSHOPSELL_RE; }
+		PShopSell_Re(void*) : Protocol(PROTOCOL_PSHOPSELL_RE) { }
+		PShopSell_Re (int l_retcode,int l_localsid,int l_item_id,
+			int l_item_pos,int l_item_count,unsigned int l_item_price,
+			int l_inv_pos,const PShopItem& l_itemsell = PShopItem())
+			 : retcode(l_retcode),localsid(l_localsid),item_id(l_item_id)
+			,item_pos(l_item_pos),item_count(l_item_count),item_price(l_item_price)
+			,inv_pos(l_inv_pos),itemsell(l_itemsell)
+		{
+			type = PROTOCOL_PSHOPSELL_RE;
+		}
+
+		PShopSell_Re(const PShopSell_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),localsid(rhs.localsid),item_id(rhs.item_id)
+			,item_pos(rhs.item_pos),item_count(rhs.item_count),item_price(rhs.item_price)
+			,inv_pos(rhs.inv_pos),itemsell(rhs.itemsell) { }
+
+		GNET::Protocol *Clone() const { return new PShopSell_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << localsid;
+			os << item_id;
+			os << item_pos;
+			os << item_count;
+			os << item_price;
+			os << inv_pos;
+			os << itemsell;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> localsid;
+			os >> item_id;
+			os >> item_pos;
+			os >> item_count;
+			os >> item_price;
+			os >> inv_pos;
+			os >> itemsell;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 131072; }

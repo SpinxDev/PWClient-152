@@ -1,0 +1,35 @@
+	public:
+		int retcode;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_CASHLOCK_RE };
+	public:
+		CashLock_Re() { type = PROTOCOL_CASHLOCK_RE; }
+		CashLock_Re(void*) : Protocol(PROTOCOL_CASHLOCK_RE) { }
+		CashLock_Re (int l_retcode,unsigned int l_localsid = 0)
+			 : retcode(l_retcode),localsid(l_localsid)
+		{
+			type = PROTOCOL_CASHLOCK_RE;
+		}
+
+		CashLock_Re(const CashLock_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new CashLock_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

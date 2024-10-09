@@ -1,0 +1,44 @@
+	public:
+		int srcroleid;
+		int dstroleid;
+		Octets dstname;
+		unsigned int srclsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_ADDFRIEND };
+	public:
+		AddFriend() { type = PROTOCOL_ADDFRIEND; }
+		AddFriend(void*) : Protocol(PROTOCOL_ADDFRIEND) { }
+		AddFriend (int l_srcroleid,int l_dstroleid,const Octets& l_dstname,
+			unsigned int l_srclsid)
+			 : srcroleid(l_srcroleid),dstroleid(l_dstroleid),dstname(l_dstname),
+			srclsid(l_srclsid)
+		{
+			type = PROTOCOL_ADDFRIEND;
+		}
+
+		AddFriend(const AddFriend &rhs)
+			: Protocol(rhs),srcroleid(rhs.srcroleid),dstroleid(rhs.dstroleid),dstname(rhs.dstname),
+			srclsid(rhs.srclsid) { }
+
+		GNET::Protocol *Clone() const { return new AddFriend(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << srcroleid;
+			os << dstroleid;
+			os << dstname;
+			os << srclsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> srcroleid;
+			os >> dstroleid;
+			os >> dstname;
+			os >> srclsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

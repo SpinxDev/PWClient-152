@@ -1,0 +1,47 @@
+	public:
+		int gmroleid;
+		unsigned int localsid;
+		int dstroleid;
+		int forbid_time;
+		Octets reason;
+		enum { PROTOCOL_TYPE = PROTOCOL_GMSHUTUPROLE };
+	public:
+		GMShutupRole() { type = PROTOCOL_GMSHUTUPROLE; }
+		GMShutupRole(void*) : Protocol(PROTOCOL_GMSHUTUPROLE) { }
+		GMShutupRole (int l_gmroleid,unsigned int l_localsid,int l_dstroleid,
+			int l_forbid_time,const Octets& l_reason = Octets())
+			 : gmroleid(l_gmroleid),localsid(l_localsid),dstroleid(l_dstroleid),
+			forbid_time(l_forbid_time),reason(l_reason)
+		{
+			type = PROTOCOL_GMSHUTUPROLE;
+		}
+
+		GMShutupRole(const GMShutupRole &rhs)
+			: Protocol(rhs),gmroleid(rhs.gmroleid),localsid(rhs.localsid),dstroleid(rhs.dstroleid),
+			forbid_time(rhs.forbid_time),reason(rhs.reason) { }
+
+		GNET::Protocol *Clone() const { return new GMShutupRole(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << gmroleid;
+			os << localsid;
+			os << dstroleid;
+			os << forbid_time;
+			os << reason;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> gmroleid;
+			os >> localsid;
+			os >> dstroleid;
+			os >> forbid_time;
+			os >> reason;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 256; }

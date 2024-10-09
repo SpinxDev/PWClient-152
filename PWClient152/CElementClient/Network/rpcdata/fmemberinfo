@@ -1,0 +1,137 @@
+#ifndef __GNET_FMEMBERINFO_RPCDATA
+#define __GNET_FMEMBERINFO_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class FMemberInfo : public GNET::Rpc::Data
+	{
+	public:
+		unsigned int roleid;
+		unsigned char level;
+		unsigned char occupation;
+		unsigned char froleid;
+		unsigned short loginday;
+		unsigned char online_status;
+		Octets name;
+		Octets nickname;
+		int contrib;
+		unsigned char delayexpel;
+		int expeltime;
+		int reputation;
+		unsigned char reincarn_times;
+		unsigned char gender;
+
+	public:
+		FMemberInfo (unsigned int l_roleid = 0,unsigned char l_level = 0,unsigned char l_occupation = 0
+			,unsigned char l_froleid = 0,unsigned short l_loginday = 0,unsigned char l_online_status = 0
+			,Octets l_name = Octets(),Octets l_nickname = Octets(),int l_contrib = 0
+			,unsigned char l_delayexpel = 0,int l_expeltime = -1,int l_reputation = 0
+			,unsigned char l_reincarn_times = 0,unsigned char l_gender = 0)
+			: roleid(l_roleid),level(l_level),occupation(l_occupation)
+			,froleid(l_froleid),loginday(l_loginday),online_status(l_online_status)
+			,name(l_name),nickname(l_nickname),contrib(l_contrib)
+			,delayexpel(l_delayexpel),expeltime(l_expeltime),reputation(l_reputation)
+			,reincarn_times(l_reincarn_times),gender(l_gender)
+		{
+		}
+
+		FMemberInfo(const FMemberInfo &rhs)
+			: roleid(rhs.roleid),level(rhs.level),occupation(rhs.occupation),
+			froleid(rhs.froleid),loginday(rhs.loginday),online_status(rhs.online_status),
+			name(rhs.name),nickname(rhs.nickname),contrib(rhs.contrib),
+			delayexpel(rhs.delayexpel),expeltime(rhs.expeltime),reputation(rhs.reputation),
+			reincarn_times(rhs.reincarn_times),gender(rhs.gender) { }
+
+		Rpc::Data *Clone() const { return new FMemberInfo(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const FMemberInfo *r = dynamic_cast<const FMemberInfo *>(&rhs);
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				level = r->level;
+				occupation = r->occupation;
+				froleid = r->froleid;
+				loginday = r->loginday;
+				online_status = r->online_status;
+				name = r->name;
+				nickname = r->nickname;
+				contrib = r->contrib;
+				delayexpel = r->delayexpel;
+				expeltime = r->expeltime;
+				reputation = r->reputation;
+				reincarn_times = r->reincarn_times;
+				gender = r->gender;
+			}
+			return *this;
+		}
+
+		FMemberInfo& operator = (const FMemberInfo &rhs)
+		{
+			const FMemberInfo *r = &rhs;
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				level = r->level;
+				occupation = r->occupation;
+				froleid = r->froleid;
+				loginday = r->loginday;
+				online_status = r->online_status;
+				name = r->name;
+				nickname = r->nickname;
+				contrib = r->contrib;
+				delayexpel = r->delayexpel;
+				expeltime = r->expeltime;
+				reputation = r->reputation;
+				reincarn_times = r->reincarn_times;
+				gender = r->gender;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << level;
+			os << occupation;
+			os << froleid;
+			os << loginday;
+			os << online_status;
+			os << name;
+			os << nickname;
+			os << contrib;
+			os << delayexpel;
+			os << expeltime;
+			os << reputation;
+			os << reincarn_times;
+			os << gender;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> level;
+			os >> occupation;
+			os >> froleid;
+			os >> loginday;
+			os >> online_status;
+			os >> name;
+			os >> nickname;
+			os >> contrib;
+			os >> delayexpel;
+			os >> expeltime;
+			os >> reputation;
+			os >> reincarn_times;
+			os >> gender;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<FMemberInfo>	FMemberInfoVector;
+};
+#endif

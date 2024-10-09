@@ -1,0 +1,2 @@
+DIALOG "Win_MinimizeBar7" 0 0 92 23 0 1 10 "Window\对话框_标准边框1.dds" "" "" 0 0 -1 -1 "" 0 0 96 96 96 255 1
+LABEL "Txt_Subject" "" "" 5 3 80 15 2 10 3 255 255 255 255

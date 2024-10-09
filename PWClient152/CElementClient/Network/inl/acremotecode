@@ -1,0 +1,35 @@
+	public:
+		int dstroleid;
+		OctetsVector content;
+		enum { PROTOCOL_TYPE = PROTOCOL_ACREMOTECODE };
+	public:
+		ACRemoteCode() { type = PROTOCOL_ACREMOTECODE; }
+		ACRemoteCode(void*) : Protocol(PROTOCOL_ACREMOTECODE) { }
+		ACRemoteCode (int l_dstroleid,OctetsVector l_content)
+			 : dstroleid(l_dstroleid),content(l_content)
+		{
+			type = PROTOCOL_ACREMOTECODE;
+		}
+
+		ACRemoteCode(const ACRemoteCode &rhs)
+			: Protocol(rhs),dstroleid(rhs.dstroleid),content(rhs.content) { }
+
+		GNET::Protocol *Clone() const { return new ACRemoteCode(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << dstroleid;
+			os << content;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> dstroleid;
+			os >> content;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 8192; }

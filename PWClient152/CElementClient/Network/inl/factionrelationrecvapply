@@ -1,0 +1,38 @@
+	public:
+		int apply_type;
+		int src_fid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONRELATIONRECVAPPLY };
+	public:
+		FactionRelationRecvApply() { type = PROTOCOL_FACTIONRELATIONRECVAPPLY; }
+		FactionRelationRecvApply(void*) : Protocol(PROTOCOL_FACTIONRELATIONRECVAPPLY) { }
+		FactionRelationRecvApply (int l_apply_type,int l_src_fid,unsigned int l_localsid)
+			 : apply_type(l_apply_type),src_fid(l_src_fid),localsid(l_localsid)
+		{
+			type = PROTOCOL_FACTIONRELATIONRECVAPPLY;
+		}
+
+		FactionRelationRecvApply(const FactionRelationRecvApply &rhs)
+			: Protocol(rhs),apply_type(rhs.apply_type),src_fid(rhs.src_fid),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new FactionRelationRecvApply(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << apply_type;
+			os << src_fid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> apply_type;
+			os >> src_fid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

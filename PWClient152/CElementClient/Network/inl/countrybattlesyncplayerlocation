@@ -1,0 +1,44 @@
+	public:
+		int roleid;
+		int domain_id;
+		int reason;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_COUNTRYBATTLESYNCPLAYERLOCATION };
+	public:
+		CountryBattleSyncPlayerLocation() { type = PROTOCOL_COUNTRYBATTLESYNCPLAYERLOCATION; }
+		CountryBattleSyncPlayerLocation(void*) : Protocol(PROTOCOL_COUNTRYBATTLESYNCPLAYERLOCATION) { }
+		CountryBattleSyncPlayerLocation (int l_roleid,int l_domain_id,int l_reason,
+			unsigned int l_localsid)
+			 : roleid(l_roleid),domain_id(l_domain_id),reason(l_reason)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_COUNTRYBATTLESYNCPLAYERLOCATION;
+		}
+
+		CountryBattleSyncPlayerLocation(const CountryBattleSyncPlayerLocation &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),domain_id(rhs.domain_id),reason(rhs.reason)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new CountryBattleSyncPlayerLocation(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << domain_id;
+			os << reason;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> domain_id;
+			os >> reason;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

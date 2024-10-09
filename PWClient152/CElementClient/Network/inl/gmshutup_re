@@ -1,0 +1,38 @@
+	public:
+		int retcode;
+		int dstuserid;
+		int forbid_time;
+		enum { PROTOCOL_TYPE = PROTOCOL_GMSHUTUP_RE };
+	public:
+		GMShutup_Re() { type = PROTOCOL_GMSHUTUP_RE; }
+		GMShutup_Re(void*) : Protocol(PROTOCOL_GMSHUTUP_RE) { }
+		GMShutup_Re (int l_retcode,int l_dstuserid,int l_forbid_time)
+			 : retcode(l_retcode),dstuserid(l_dstuserid),forbid_time(l_forbid_time)
+		{
+			type = PROTOCOL_GMSHUTUP_RE;
+		}
+
+		GMShutup_Re(const GMShutup_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),dstuserid(rhs.dstuserid),forbid_time(rhs.forbid_time) { }
+
+		GNET::Protocol *Clone() const { return new GMShutup_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << dstuserid;
+			os << forbid_time;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> dstuserid;
+			os >> forbid_time;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

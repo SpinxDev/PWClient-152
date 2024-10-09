@@ -1,0 +1,47 @@
+	public:
+		char retcode;
+		int roleid;
+		char gid;
+		Octets name;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_SETGROUPNAME_RE };
+	public:
+		SetGroupName_Re() { type = PROTOCOL_SETGROUPNAME_RE; }
+		SetGroupName_Re(void*) : Protocol(PROTOCOL_SETGROUPNAME_RE) { }
+		SetGroupName_Re (char l_retcode,int l_roleid,char l_gid,
+			const Octets& l_name,unsigned int l_localsid)
+			 : retcode(l_retcode),roleid(l_roleid),gid(l_gid),
+			name(l_name),localsid(l_localsid)
+		{
+			type = PROTOCOL_SETGROUPNAME_RE;
+		}
+
+		SetGroupName_Re(const SetGroupName_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),roleid(rhs.roleid),gid(rhs.gid),
+			name(rhs.name),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new SetGroupName_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roleid;
+			os << gid;
+			os << name;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roleid;
+			os >> gid;
+			os >> name;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

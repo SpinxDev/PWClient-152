@@ -1,0 +1,47 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		int retcode;
+		TankBattlePlayerScoreInfo your_score;
+		TankBattlePlayerScoreInfoVector player_scores;
+		enum { PROTOCOL_TYPE = PROTOCOL_TANKBATTLEPLAYERGETRANK_RE };
+	public:
+		TankBattlePlayerGetRank_Re() { type = PROTOCOL_TANKBATTLEPLAYERGETRANK_RE; }
+		TankBattlePlayerGetRank_Re(void*) : Protocol(PROTOCOL_TANKBATTLEPLAYERGETRANK_RE) { }
+		TankBattlePlayerGetRank_Re (int l_roleid,unsigned int l_localsid,int l_retcode,
+			TankBattlePlayerScoreInfo l_your_score,const TankBattlePlayerScoreInfoVector& l_player_scores)
+			 : roleid(l_roleid),localsid(l_localsid),retcode(l_retcode)
+			,your_score(l_your_score),player_scores(l_player_scores)
+		{
+			type = PROTOCOL_TANKBATTLEPLAYERGETRANK_RE;
+		}
+
+		TankBattlePlayerGetRank_Re(const TankBattlePlayerGetRank_Re &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid),retcode(rhs.retcode)
+			,your_score(rhs.your_score),player_scores(rhs.player_scores) { }
+
+		GNET::Protocol *Clone() const { return new TankBattlePlayerGetRank_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << retcode;
+			os << your_score;
+			os << player_scores;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> retcode;
+			os >> your_score;
+			os >> player_scores;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

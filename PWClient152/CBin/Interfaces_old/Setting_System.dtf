@@ -1,0 +1,123 @@
+DIALOG "Win_SettingSystem" 0 0 311 431 0 1 10 "Window\对话框_标准边框x.dds" "" "" 0 0 283 33 "人鱼传说新界面\面板关闭按钮.tga" 47 30 96 96 96 255 1
+EDIT "Img_Title" "" "" 16 23 283 37 "人鱼传说新界面\title.tga" 2 15 255 255 255 "TEXT" 1 0 20
+LABEL "title" "" "" 116 29 0 0 3 16 4 255 203 74 255
+IMAGEPICTURE "Control_819409014" "" "" 4 0 305 431 1 0 "人鱼传说新界面\未命名-1副本.dds"
+EDIT "BG1" "" "" 22 101 270 239 "Editbox\文本框_4c.dds" 5 53 255 255 255 "TEXT" 1 0 20
+EDIT "BG2" "" "" 22 341 270 49 "Editbox\文本框_4c.dds" 6 53 255 255 255 "TEXT" 1 0 20
+STILLIMAGEBUTTON "Btn_Game" "gamesetting" "SFX\Interface\ClickB.wav" 149 59 64 24 0 0 0 0 7 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 8 1
+STILLIMAGEBUTTON "Btn_Video" "videosetting" "SFX\Interface\ClickB.wav" 85 59 64 24 0 0 0 0 9 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 10 1
+STILLIMAGEBUTTON "Btn_System" "systemsetting" "SFX\Interface\ClickB.wav" 21 59 64 24 0 0 0 0 11 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 12 1
+STILLIMAGEBUTTON "Btn_Blacklist" "blacklist" "SFX\Interface\ClickB.wav" 213 59 80 24 0 0 0 0 13 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 14 1
+STILLIMAGEBUTTON "Btn_Default" "default" "SFX\Interface\ClickB.wav" 25 393 50 24 0 0 0 0 15 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 16 1
+STILLIMAGEBUTTON "Btn_Apply" "apply" "SFX\Interface\ClickB.wav" 134 394 50 24 0 0 0 0 17 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 18 1
+STILLIMAGEBUTTON "Btn_Decide" "confirm" "SFX\Interface\ClickB.wav" 187 394 50 24 0 0 0 0 19 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 20 1
+STILLIMAGEBUTTON "Btn_Exit" "IDCANCEL" "SFX\Interface\ClickB.wav" 240 394 50 24 0 0 0 0 21 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 22 1
+LABEL "视频选项" "" "" 22 85 59 15 23 10 24 255 203 74 255
+LABEL "音频采样率" "" "" 42 372 71 15 25 10 26 255 255 255 255
+LABEL "视野距离" "" "" 50 189 62 15 27 10 28 255 255 255 255
+LABEL "水_1" "" "" 50 204 61 15 29 10 30 255 255 255 255
+LABEL "地形轮廓" "" "" 50 285 59 15 31 10 32 255 255 255 255
+LABEL "树木细节度" "" "" 50 240 60 15 33 10 34 255 255 255 255
+LABEL "Shade" "" "" 57 302 57 15 35 10 36 255 255 255 255
+LABEL "Weather" "" "" 219 303 65 15 37 10 38 255 255 255 255
+LABEL "视频总体设置" "" "" 36 102 80 15 39 10 40 255 255 255 255
+LABEL "Control_255956744" "" "" 119 102 15 15 41 10 42 255 255 255 255
+LABEL "Control_618691880" "" "" 256 102 16 15 43 10 44 255 255 255 255
+LABEL "Control_134084436" "" "" 117 188 16 15 45 10 46 255 255 255 255
+LABEL "Control_144683138" "" "" 255 188 19 15 47 10 48 255 255 255 255
+LABEL "水_3" "" "" 255 203 17 15 49 10 50 255 255 255 255
+LABEL "Control_231785096" "" "" 117 240 16 15 51 10 52 255 255 255 255
+LABEL "Control_66363059" "" "" 255 240 17 15 53 10 54 255 255 255 255
+LABEL "Spacewarp" "" "" 137 302 60 15 55 10 56 255 255 255 255
+LABEL "Fullglow" "" "" 57 320 58 15 57 10 58 255 255 255 255
+SLIDER "Slider_Total" "total" "" 134 106 122 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 4
+SLIDER "Slider_Range" "range" "" 133 192 122 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 4
+LABEL "Control_412802433" "" "" 50 121 47 15 59 10 60 255 255 255 255
+LABEL "Control_189864522" "" "" 50 174 56 16 61 10 62 255 255 255 255
+LABEL "Control_789105" "" "" 117 173 15 15 63 10 64 255 255 255 255
+SLIDER "Slider_Texture" "" "" 133 177 122 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 2
+LABEL "Control_380183695" "" "" 255 173 16 15 65 10 66 255 255 255 255
+LABEL "Control_98189406" "" "" 49 342 61 15 67 10 68 255 255 255 255
+LABEL "Control_485724018" "" "" 49 357 59 15 69 10 70 255 255 255 255
+SLIDER "Slider_Music" "music" "" 132 346 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_Ambience" "ambience" "" 132 361 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+LABEL "水_2" "" "" 117 203 15 15 71 10 72 255 255 255 255
+SLIDER "Slider_Water" "water" "" 133 207 122 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 2
+LABEL "Control_652141256" "" "" 50 158 58 15 73 10 74 255 255 255 255
+LABEL "Control_7453754" "" "" 117 158 15 15 75 10 76 255 255 255 255
+SLIDER "Slider_Bright" "bright" "" 133 162 122 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+LABEL "Control_843423910" "" "" 255 158 16 15 77 10 78 255 255 255 255
+COMBO "Combo_Full" "" "" 216 119 64 21 79 10 255 255 255 255 "Editbox\文本框_4d.dds" "Listbox\列表框_反显.dds"
+LABEL "花草细节度" "" "" 50 255 60 15 80 10 81 255 255 255 255
+LABEL "Control_170130654" "" "" 117 255 16 15 82 10 83 255 255 255 255
+LABEL "Control_9393518" "" "" 255 255 18 15 84 10 85 255 255 255 255
+SLIDER "Slider_Grass" "grass" "" 133 259 122 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 4
+SLIDER "Slider_Sample" "Sample" "" 132 375 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 2
+CHECK "Chk_Shade" "" "SFX\Interface\ClickA.wav" 38 302 18 18 "Extra\复选框_标准.tga"
+CHECK "Chk_Mipmap" "" "SFX\Interface\ClickA.wav" 200 302 18 18 "Extra\复选框_标准.tga"
+CHECK "Chk_Fullglow" "" "SFX\Interface\ClickA.wav" 38 320 18 18 "Extra\复选框_标准.tga"
+CHECK "Chk_Sunflare" "enablemusic" "" 118 320 18 18 "Extra\复选框_标准.tga"
+SLIDER "Slider_Tree" "tree" "" 133 244 122 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 4
+CHECK "Chk_Spacewarp" "" "SFX\Interface\ClickA.wav" 118 302 18 18 "Extra\复选框_标准.tga"
+LABEL "Sunflare" "advwater" "" 137 321 63 15 86 10 87 255 255 255 255
+LABEL "Control_160578800" "" "" 119 342 10 15 88 10 89 255 255 255 255
+LABEL "Control_172715004" "" "" 251 343 24 15 90 10 91 255 255 255 255
+LABEL "Control_4438840" "" "" 119 357 12 15 92 10 93 255 255 255 255
+LABEL "Control_353717474" "" "" 251 358 28 15 94 10 95 255 255 255 255
+LABEL "Control_59685980" "" "" 116 372 15 15 96 10 97 255 255 255 255
+LABEL "Control_594664233" "" "" 255 372 18 15 98 10 99 255 255 255 255
+LABEL "Control_146815263" "" "" 50 142 55 15 100 10 101 255 255 255 255
+CHECK "Chk_WideScr" "wide" "SFX\Interface\ClickA.wav" 118 141 18 18 "Extra\复选框_标准.tga"
+LABEL "WideScr" "" "" 141 142 61 15 102 10 103 255 255 255 255
+SLIDER "Slider_Cloud" "cloud" "" 133 274 122 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 4
+IMAGEPICTURE "Cloud_1" "" "" 142 283 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Cloud_2" "" "" 167 283 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Cloud_3" "" "" 193 283 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Cloud_4" "" "" 219 283 3 3 1 0 "Extra\颜色_2.bmp"
+IMAGEPICTURE "Cloud_5" "" "" 244 283 3 3 1 0 "Extra\颜色_3.bmp"
+IMAGEPICTURE "Total_1" "" "" 142 115 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Total_2" "" "" 167 115 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Total_3" "" "" 193 115 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Total_4" "" "" 219 115 3 3 1 0 "Extra\颜色_2.bmp"
+IMAGEPICTURE "Total_5" "" "" 244 115 3 3 1 0 "Extra\颜色_3.bmp"
+IMAGEPICTURE "Texture_1" "" "" 142 186 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Texture_2" "" "" 193 186 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Texture_3" "" "" 244 186 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Range_1" "" "" 142 201 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Range_2" "" "" 167 201 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Range_3" "" "" 193 201 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Range_4" "" "" 219 201 3 3 1 0 "Extra\颜色_2.bmp"
+IMAGEPICTURE "Range_5" "" "" 244 201 3 3 1 0 "Extra\颜色_3.bmp"
+IMAGEPICTURE "Water_1" "" "" 142 216 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Water_2" "" "" 193 216 3 3 1 0 "Extra\颜色_2.bmp"
+IMAGEPICTURE "Water_3" "" "" 244 216 3 3 1 0 "Extra\颜色_3.bmp"
+IMAGEPICTURE "Tree_1" "" "" 142 253 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Tree_2" "" "" 167 253 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Tree_3" "" "" 193 253 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Tree_4" "" "" 219 253 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Tree_5" "" "" 244 253 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Grass_1" "" "" 142 268 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Grass_2" "" "" 167 268 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Grass_3" "" "" 193 268 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Grass_4" "" "" 219 268 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Grass_5" "" "" 244 268 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Sample_1" "" "" 140 384 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Sample_2" "" "" 191 384 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Sample_3" "" "" 242 384 3 3 1 0 "Extra\颜色_1.bmp"
+LABEL "Control_226376610" "" "" 50 270 54 15 104 15 105 255 255 255 255
+LABEL "Control_66658983" "" "" 117 270 15 15 106 10 107 255 255 255 255
+LABEL "Control_270930156" "" "" 255 270 15 15 108 10 109 255 255 255 255
+LIST "Lst_Res" "" "" 119 140 84 101 110 10 255 255 255 255 "Editbox\文本框_4d.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移u.bmp" "Listbox\列表框_下移u.bmp" "Listbox\列表框_滚动槽1u.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+COMBO "Combo_Res" "res" "" 119 119 84 21 111 10 255 255 255 255 "Editbox\文本框_4d.dds" "Lst_Res"
+LABEL "VerticalSync" "" "" 219 321 55 14 112 10 113 255 255 255 255
+CHECK "Chk_VerticalSync" "sync" "" 200 320 18 18 "Extra\复选框_标准.tga"
+SLIDER "Slider_Terrain" "terrain" "" 133 289 122 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 1
+IMAGEPICTURE "Terrain_1" "" "" 142 298 3 3 1 0 "Extra\颜色_1.bmp"
+IMAGEPICTURE "Terrain_2" "" "" 244 298 3 3 1 0 "Extra\颜色_3.bmp"
+LABEL "Control_592685980" "" "" 117 285 15 15 114 10 115 255 255 255 255
+LABEL "Control_591664233" "" "" 255 286 18 15 116 10 117 255 255 255 255
+LABEL "AdvancedWater" "" "" 50 222 59 15 118 10 119 255 255 255 255
+RADIO "Rdo_AdvancedWaterOpen" "" "" 117 221 21 21 "Extra\单选框_标准.tga" 0 0
+RADIO "Rdo_AdvancedWaterClose" "" "" 191 222 21 21 "Extra\单选框_标准.tga" 1 0
+LABEL "Control_600288376" "" "" 142 223 32 17 120 10 121 255 255 255 255
+LABEL "Control_227444337" "" "" 215 224 36 16 122 10 123 255 255 255 255

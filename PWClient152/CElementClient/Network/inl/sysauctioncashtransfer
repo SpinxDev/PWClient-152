@@ -1,0 +1,47 @@
+	public:
+		int roleid;
+		char withdraw;
+		unsigned int cash;
+		unsigned int localsid;
+		Octets syncdata;
+		enum { PROTOCOL_TYPE = PROTOCOL_SYSAUCTIONCASHTRANSFER };
+	public:
+		SysAuctionCashTransfer() { type = PROTOCOL_SYSAUCTIONCASHTRANSFER; }
+		SysAuctionCashTransfer(void*) : Protocol(PROTOCOL_SYSAUCTIONCASHTRANSFER) { }
+		SysAuctionCashTransfer (int l_roleid,char l_withdraw,unsigned int l_cash,
+			unsigned int l_localsid,const Octets& l_syncdata)
+			 : roleid(l_roleid),withdraw(l_withdraw),cash(l_cash)
+			,localsid(l_localsid),syncdata(l_syncdata)
+		{
+			type = PROTOCOL_SYSAUCTIONCASHTRANSFER;
+		}
+
+		SysAuctionCashTransfer(const SysAuctionCashTransfer &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),withdraw(rhs.withdraw),cash(rhs.cash)
+			,localsid(rhs.localsid),syncdata(rhs.syncdata) { }
+
+		GNET::Protocol *Clone() const { return new SysAuctionCashTransfer(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << withdraw;
+			os << cash;
+			os << localsid;
+			os << syncdata;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> withdraw;
+			os >> cash;
+			os >> localsid;
+			os >> syncdata;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 131072; }

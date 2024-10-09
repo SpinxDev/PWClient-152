@@ -1,0 +1,20 @@
+DIALOG "Win_ELF" 0 0 204 120 0 1 10 "" "" "" 0 0 -1 -1 "" 0 0 255 255 255 1 1
+STILLIMAGEBUTTON "Btn_Power" "activation" "" -4000 -4000 21 21 0 0 0 0 2 15 255 0 255 255 "小精灵新加tga\小精灵面板\精灵按钮-2普通.tga" "小精灵新加tga\小精灵面板\精灵按钮-1高亮.tga" 3 1
+IMAGEPICTURE "Control_435925285" "" "" 70 6 128 66 1 0 "小精灵新加tga\新建文件夹\精灵头像2.tga"
+IMAGEPICTURE "Img_Active" "" "" 9 5 61 66 1 0 "小精灵新加tga\新建文件夹\精灵头像1.tga"
+IMAGEPICTURE "Skill_1" "" "" 72 54 32 32 1 0 "Window\图标_武器1.dds"
+IMAGEPICTURE "Skill_2" "" "" 105 54 32 32 1 0 "Window\图标_武器2.dds"
+IMAGEPICTURE "Skill_3" "" "" 138 54 32 32 1 0 "Window\图标_武器1.dds"
+IMAGEPICTURE "Skill_4" "" "" 171 54 32 32 1 0 "Window\图标_武器2.dds"
+IMAGEPICTURE "Skill_5" "" "" 72 87 32 32 1 0 "妙计锦囊.dds"
+IMAGEPICTURE "Skill_6" "" "" 105 87 32 32 1 0 "妙计锦囊.dds"
+IMAGEPICTURE "Skill_7" "" "" 138 87 32 32 1 0 "妙计锦囊.dds"
+IMAGEPICTURE "Skill_8" "" "" 171 87 32 32 1 0 "妙计锦囊.dds"
+PROGRESS "Progress_Energy" "" "" 73 25 120 10 "Progress\进度条_背景1.bmp" "小精灵新加tga\新建文件夹\精灵黄.tga" 0 0 0 0
+PROGRESS "Progress_Power" "" "" 73 38 120 10 "Progress\进度条_背景2.bmp" "小精灵新加tga\新建文件夹\精灵蓝.tga" 0 0 0 0
+LABEL "ELF_Name" "" "" -2000 -2000 66 16 4 12 5 255 203 74 255
+IMAGEPICTURE "Img_Elf" "" "" 22 17 40 40 1 0 "Window\图标_裤子m.dds"
+IMAGEPICTURE "Control_509669064" "" "" -2000 -2000 80 26 1 0 "小精灵新加tga\小精灵面板\精灵名字按钮-1.tga"
+LABEL "Lab_Energy" "" "" 73 22 120 0 6 15 7 255 255 255 255
+LABEL "Lab_Power" "" "" 73 35 120 0 8 15 9 255 255 255 255
+STILLIMAGEBUTTON "Btn_Zoom" "min" "" 0 0 24 24 0 0 0 0 10 15 255 255 255 255 "小精灵新加tga\新建文件夹\头像关闭按钮1.tga" "小精灵新加tga\新建文件夹\头像关闭按钮2.tga" 11 1

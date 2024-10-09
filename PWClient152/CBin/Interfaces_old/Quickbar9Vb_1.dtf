@@ -1,0 +1,11 @@
+DIALOG "Win_Quickbar9Vb_1" 0 0 40 329 0 1 10 "Window\对话框_快捷板.tga" "" "" 0 0 -1 -1 "" 0 0 96 96 96 215 1
+IMAGEPICTURE "Item_1" "" "" 4 16 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Item_3" "" "" 4 82 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Item_2" "" "" 4 49 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Item_4" "" "" 4 115 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Item_5" "" "" 4 148 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Item_6" "" "" 4 181 32 32 1 0 "Window\图标_物品栏j.dds"
+CHECK "Chk_Normal" "enableext" "SFX\Interface\ClickA.wav" 24 6 9 12 "Extra\复选框_激活.tga"
+IMAGEPICTURE "Item_7" "" "" 4 214 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Item_8" "" "" 4 247 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Item_9" "" "" 4 280 32 32 1 0 "Window\图标_物品栏j.dds"

@@ -1,0 +1,9 @@
+DIALOG "Dlg_IndoorVirtu" 0 0 220 400 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "" 27 6 96 96 96 255 1
+LABEL "title" "" "" 67 4 87 22 2 16 3 255 203 74 255
+STILLIMAGEBUTTON "Btn_InDoorPlant" "ChooseIndoorPlant" "" 66 28 32 32 0 0 0 0 4 10 255 255 255 255 "home\植物.dds" "home\植物D.dds" 5 1
+STILLIMAGEBUTTON "Btn_IndoorToy" "ChooseIndoorToy" "" 115 28 32 32 0 0 0 0 6 10 255 255 255 255 "home\玩具.dds" "home\玩具D.dds" 7 1
+STILLIMAGEBUTTON "Btn_IndoorVirtu" "ChooseIndoorVirtu" "" 164 28 32 32 0 0 0 0 8 10 255 255 255 255 "home\古董.dds" "home\古董D.dds" 9 1
+STILLIMAGEBUTTON "Btn_IndoorFurniture" "ChooseIndoorFurniture" "" 17 28 32 32 0 0 0 0 10 10 255 203 74 255 "home\家具.dds" "home\家具D.dds" 11 1
+LABEL "label1" "" "" 8 62 82 16 12 10 13 255 203 74 255
+LIST "ListBox_InDoorVirtu" "" "" 8 80 205 295 14 10 255 255 255 255 "Editbox\文本框_4b.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LABEL "Control_258629984" "" "" 8 376 209 15 15 10 16 255 203 74 255

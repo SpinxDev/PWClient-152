@@ -1,0 +1,50 @@
+	public:
+		int roleid;
+		short id;
+		unsigned int factionid;
+		unsigned int deposit;
+		int authentication;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_BATTLECHALLENGE };
+	public:
+		BattleChallenge() { type = PROTOCOL_BATTLECHALLENGE; }
+		BattleChallenge(void*) : Protocol(PROTOCOL_BATTLECHALLENGE) { }
+		BattleChallenge (int l_roleid,short l_id,unsigned int l_factionid = 0,
+			unsigned int l_deposit = 0,int l_authentication = 0,unsigned int l_localsid = 0)
+			 : roleid(l_roleid),id(l_id),factionid(l_factionid)
+			,deposit(l_deposit),authentication(l_authentication),localsid(l_localsid)
+		{
+			type = PROTOCOL_BATTLECHALLENGE;
+		}
+
+		BattleChallenge(const BattleChallenge &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),id(rhs.id),factionid(rhs.factionid)
+			,deposit(rhs.deposit),authentication(rhs.authentication),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new BattleChallenge(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << id;
+			os << factionid;
+			os << deposit;
+			os << authentication;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> id;
+			os >> factionid;
+			os >> deposit;
+			os >> authentication;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

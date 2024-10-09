@@ -1,0 +1,23 @@
+; terrain render pixel shader
+;
+
+; t0 is color texture
+; t1 is the day light map
+; t2 is the night light map
+
+; c3.a is the day night factor
+
+ps.1.4
+
+texld r0, t1
+texld r1, t1
+texld r2, t2
+
+; day night light map interpolate
+lrp_sat r5, c3.a, r2, r1
+
+mul r0.rgb, r0, v0
+
+; multiply with light map
+mul_x2 r0.rgb, r0, r5
+

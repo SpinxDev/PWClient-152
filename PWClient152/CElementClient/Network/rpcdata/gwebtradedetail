@@ -1,0 +1,125 @@
+#ifndef __GNET_GWEBTRADEDETAIL_RPCDATA
+#define __GNET_GWEBTRADEDETAIL_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "gwebtradeitem"
+#include "groleinventory"
+
+namespace GNET
+{
+	class GWebTradeDetail : public GNET::Rpc::Data
+	{
+	public:
+		GWebTradeItem info;
+		GRoleInventory item;
+		int64_t post_time;
+		unsigned int deposit;
+		int loginip;
+		Octets rolebrief;
+		char reserved10;
+		short reserved11;
+		int reserved2;
+		int reserved3;
+		int reserved4;
+		int reserved5;
+
+	public:
+		GWebTradeDetail (const GWebTradeItem& l_info = GWebTradeItem(),const GRoleInventory& l_item = GRoleInventory(),int64_t l_post_time = 0
+			,unsigned int l_deposit = 0,int l_loginip = 0,const Octets& l_rolebrief = Octets()
+			,char l_reserved10 = 0,short l_reserved11 = 0,int l_reserved2 = 0
+			,int l_reserved3 = 0,int l_reserved4 = 0,int l_reserved5 = 0)
+			: info(l_info),item(l_item),post_time(l_post_time)
+			,deposit(l_deposit),loginip(l_loginip),rolebrief(l_rolebrief)
+			,reserved10(l_reserved10),reserved11(l_reserved11),reserved2(l_reserved2)
+			,reserved3(l_reserved3),reserved4(l_reserved4),reserved5(l_reserved5)
+		{
+		}
+
+		GWebTradeDetail(const GWebTradeDetail &rhs)
+			: info(rhs.info),item(rhs.item),post_time(rhs.post_time),
+			deposit(rhs.deposit),loginip(rhs.loginip),rolebrief(rhs.rolebrief),
+			reserved10(rhs.reserved10),reserved11(rhs.reserved11),reserved2(rhs.reserved2),
+			reserved3(rhs.reserved3),reserved4(rhs.reserved4),reserved5(rhs.reserved5) { }
+
+		Rpc::Data *Clone() const { return new GWebTradeDetail(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GWebTradeDetail *r = dynamic_cast<const GWebTradeDetail *>(&rhs);
+			if (r && r != this)
+			{
+				info = r->info;
+				item = r->item;
+				post_time = r->post_time;
+				deposit = r->deposit;
+				loginip = r->loginip;
+				rolebrief = r->rolebrief;
+				reserved10 = r->reserved10;
+				reserved11 = r->reserved11;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+				reserved4 = r->reserved4;
+				reserved5 = r->reserved5;
+			}
+			return *this;
+		}
+
+		GWebTradeDetail& operator = (const GWebTradeDetail &rhs)
+		{
+			const GWebTradeDetail *r = &rhs;
+			if (r && r != this)
+			{
+				info = r->info;
+				item = r->item;
+				post_time = r->post_time;
+				deposit = r->deposit;
+				loginip = r->loginip;
+				rolebrief = r->rolebrief;
+				reserved10 = r->reserved10;
+				reserved11 = r->reserved11;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+				reserved4 = r->reserved4;
+				reserved5 = r->reserved5;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << info;
+			os << item;
+			os << post_time;
+			os << deposit;
+			os << loginip;
+			os << rolebrief;
+			os << reserved10;
+			os << reserved11;
+			os << reserved2;
+			os << reserved3;
+			os << reserved4;
+			os << reserved5;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> info;
+			os >> item;
+			os >> post_time;
+			os >> deposit;
+			os >> loginip;
+			os >> rolebrief;
+			os >> reserved10;
+			os >> reserved11;
+			os >> reserved2;
+			os >> reserved3;
+			os >> reserved4;
+			os >> reserved5;
+			return os;
+		}
+
+	};
+};
+#endif

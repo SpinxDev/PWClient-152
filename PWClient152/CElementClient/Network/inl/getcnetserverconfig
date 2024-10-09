@@ -1,0 +1,35 @@
+	public:
+		int roleid;
+		IntVector keys;
+		enum { PROTOCOL_TYPE = PROTOCOL_GETCNETSERVERCONFIG };
+	public:
+		GetCNetServerConfig() { type = PROTOCOL_GETCNETSERVERCONFIG; }
+		GetCNetServerConfig(void*) : Protocol(PROTOCOL_GETCNETSERVERCONFIG) { }
+		GetCNetServerConfig (int l_roleid,const IntVector& l_keys)
+			 : roleid(l_roleid),keys(l_keys)
+		{
+			type = PROTOCOL_GETCNETSERVERCONFIG;
+		}
+
+		GetCNetServerConfig(const GetCNetServerConfig &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),keys(rhs.keys) { }
+
+		GNET::Protocol *Clone() const { return new GetCNetServerConfig(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << keys;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> keys;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 512; }

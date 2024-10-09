@@ -1,0 +1,20 @@
+DIALOG "Win_WarTower" 0 0 227 249 0 1 10 "Window\对话框_标准边框.dds" "" "人鱼传说新界面\title.tga" 3 3 222 33 "人鱼传说新界面\面板关闭按钮.tga" 37 7 96 96 96 255 1
+IMAGEPICTURE "Img_Tower1" "" "" 40 41 32 32 1 0 "InGame\防御塔楼.tga"
+IMAGEPICTURE "Img_Tower2" "" "" 40 85 32 32 1 0 "InGame\防御塔楼.tga"
+IMAGEPICTURE "Img_Tower3" "" "" 40 129 32 32 1 0 "InGame\防御塔楼.tga"
+IMAGEPICTURE "Img_Tower4" "" "" 40 173 32 32 1 0 "InGame\防御塔楼.tga"
+RADIO "Rdo_Tower1" "" "" 15 47 21 21 "Extra\单选框_标准.tga" 0 1
+RADIO "Rdo_Tower2" "" "" 15 91 21 21 "Extra\单选框_标准.tga" 1 1
+RADIO "Rdo_Tower3" "" "" 15 135 21 21 "Extra\单选框_标准.tga" 2 1
+RADIO "Rdo_Tower4" "" "" 14 179 21 21 "Extra\单选框_标准.tga" 3 1
+LABEL "Txt_Money1" "" "" 80 41 140 15 2 10 3 255 255 255 255
+LABEL "Txt_Money2" "" "" 80 85 140 15 4 10 5 255 255 255 255
+LABEL "Txt_Money3" "" "" 80 130 140 15 6 10 7 255 255 255 255
+LABEL "Txt_Money4" "" "" 80 174 140 15 8 10 9 255 255 255 255
+LABEL "Control_3950585" "" "" 72 5 84 22 10 16 11 255 203 74 255
+STILLIMAGEBUTTON "Btn_Confirm" "confirm" "" 49 214 50 24 0 0 0 0 12 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 13 1
+STILLIMAGEBUTTON "Btn_Cancel" "IDCANCEL" "" 111 214 50 24 0 0 0 0 14 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 15 1
+LABEL "Txt_Item1" "" "" 80 58 140 15 16 10 17 255 255 255 255
+LABEL "Txt_Item2" "" "" 80 101 140 15 18 10 19 255 255 255 255
+LABEL "Txt_Item3" "" "" 80 146 140 15 20 10 21 255 255 255 255
+LABEL "Txt_Item4" "" "" 80 190 140 15 22 10 23 255 255 255 255

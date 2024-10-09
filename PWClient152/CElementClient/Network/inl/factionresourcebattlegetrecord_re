@@ -1,0 +1,38 @@
+	public:
+		int retcode;
+		std::vector<GFactionResourceBattleRecord> records;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONRESOURCEBATTLEGETRECORD_RE };
+	public:
+		FactionResourceBattleGetRecord_Re() { type = PROTOCOL_FACTIONRESOURCEBATTLEGETRECORD_RE; }
+		FactionResourceBattleGetRecord_Re(void*) : Protocol(PROTOCOL_FACTIONRESOURCEBATTLEGETRECORD_RE) { }
+		FactionResourceBattleGetRecord_Re (int l_retcode,const std::vector<GFactionResourceBattleRecord>& l_records,unsigned int l_localsid)
+			 : retcode(l_retcode),records(l_records),localsid(l_localsid)
+		{
+			type = PROTOCOL_FACTIONRESOURCEBATTLEGETRECORD_RE;
+		}
+
+		FactionResourceBattleGetRecord_Re(const FactionResourceBattleGetRecord_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),records(rhs.records),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new FactionResourceBattleGetRecord_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << records;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> records;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 65536; }

@@ -1,0 +1,44 @@
+	public:
+		int localsid;
+		int roleid;
+		unsigned int cash_cost;
+		int retcode;
+		enum { PROTOCOL_TYPE = PROTOCOL_PLAYERGIVEPRESENT_RE };
+	public:
+		PlayerGivePresent_Re() { type = PROTOCOL_PLAYERGIVEPRESENT_RE; }
+		PlayerGivePresent_Re(void*) : Protocol(PROTOCOL_PLAYERGIVEPRESENT_RE) { }
+		PlayerGivePresent_Re (int l_localsid,int l_roleid,unsigned int l_cash_cost,
+			int l_retcode = -1)
+			 : localsid(l_localsid),roleid(l_roleid),cash_cost(l_cash_cost)
+			,retcode(l_retcode)
+		{
+			type = PROTOCOL_PLAYERGIVEPRESENT_RE;
+		}
+
+		PlayerGivePresent_Re(const PlayerGivePresent_Re &rhs)
+			: Protocol(rhs),localsid(rhs.localsid),roleid(rhs.roleid),cash_cost(rhs.cash_cost)
+			,retcode(rhs.retcode) { }
+
+		GNET::Protocol *Clone() const { return new PlayerGivePresent_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << localsid;
+			os << roleid;
+			os << cash_cost;
+			os << retcode;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> localsid;
+			os >> roleid;
+			os >> cash_cost;
+			os >> retcode;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

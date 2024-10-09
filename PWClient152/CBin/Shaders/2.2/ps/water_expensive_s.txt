@@ -1,0 +1,64 @@
+; expensive water pixel shader used by A3DTerrainWater. 
+
+; t0, cube map to normalize the reflect vector
+; t1, normal map for water surface
+; t2, reflect map
+; t3, reflect vector in world space, packed to [0.0, 1.0]
+; t4, refract map, alpha channel of which is the edge alpha value
+; c0.a will be set by program to min alpha value for water reflect
+
+ps.1.4
+
+def c1, 0.25, -0.15, 0.0, 0.0
+def c2, 1.0, -1.0, 1.0, 1.0
+def c3, 0.85, 0.85, 0.85, 1.0
+def c4, 0.85, 0.85, 0.85, 1.0
+; c5 is light dir in world space
+; c6 is specular color of the sun
+def c6, 0.3, 0.3, 0.3, 1.0
+
+texld	r0, t3				// camera space reflect vector transformed into world space, with normalization (packed)
+texld	r1, t1				// normal map
+texcrd	r2.xy, t2_dw.xyw		// camera space projected coord.
+texld 	r5, t2_dw.xyw			// edge alpha texture, only alpha is meaningful
+
+// first of all, perturb the uv coords by normal
+mul r2.z, c1.x, r5.a			// consider edge alpha
++mul r5.a, r5.a, r5.a			// power of two of edge alpha
+mad r2.x, r1_bx2.x, r2.z, r2.x		// perturb 2d reflect coords by the normal
+mad r2.y, r1_bx2.z, r2.z, r2.y		// perturb 2d reflect coords by the normal
+
+// calculate the dot product of eye and normal
+dp3 r3.xyzw, r0_bx2, -r1_bx2		// eye reflect vector dot normal, without saturation
+// now reflect the eye vector by the normal
+mad r3, r3_x2, r1_bx2, r0_bx2
+// calculate specular factor
+dp3_sat r3, r3, c5
+// linear transform
+add r3, r3, c0.g
+mul_x8 r3, r3, c0.r
+
+phase
+
+texld	r0, t3				// camera space reflect vector transformed into world space, with normalization (packed)
+texld	r1, t1				// normal map
+texld	r4, r2				// refract projected map
+texld	r2, r2				// reflect projected map
+texld	r3, r3				// look up table of frenel values
+texld	r5, t2_dw.xyw			// load r5 to contain edge alpha value, no bump
+
+// calculate fresnel effects : R0 + (1-R0) (1-cos(q))^5
+dp3_sat r1.rgba, r0_bx2, r1_bx2		// eye vector dot normal
+mul r0.a, 1-r1.a, 1-r1.a		// squared
+mul r4.rgb, r4, c4
++mul r0.a, r0.a, r0.a			// quartic
+mul r2.rgb, r2, c3			// reflect color
++mul_sat r0.a, r0.a, 1-r1.a		// quintic
+
+mul r1.rgb, c6, r3.g			// specular color
++lrp r0.a, r0.a, c2.a, c0.a		// adjust frenel value
+
+lrp r0.rgb, r0.a, r2, r4		// interpolate between reflect and refract
+
+add r0.rgb, r1, r0			// apply specular
++mov r0.a, r5.a				// consider the edge alpha

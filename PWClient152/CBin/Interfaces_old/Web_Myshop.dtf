@@ -1,0 +1,44 @@
+DIALOG "Win_Webmyshop" 0 0 620 375 0 1 10 "Window\对话框_标准边框1.dds" "" "人鱼传说新界面\title.tga" 0 0 620 35 "人鱼传说新界面\面板关闭按钮.tga" 35 5 96 96 96 255 1
+EDIT "Edit_Img01" "" "" 8 36 175 80 "editbox\文本框_4.dds" 2 15 255 255 255 "TEXT" 1 0 20
+EDIT "Edit_Img02" "" "" 8 114 175 70 "editbox\文本框_4.dds" 3 15 255 255 255 "TEXT" 1 0 20
+EDIT "Edit_Img03" "" "" 8 182 175 60 "editbox\文本框_4.dds" 4 15 255 255 255 "TEXT" 1 0 20
+EDIT "Edit_Img04" "" "" 8 240 175 68 "editbox\文本框_4.dds" 5 15 255 255 255 "TEXT" 1 0 20
+EDIT "Edit_Img05" "" "" 8 306 175 33 "editbox\文本框_4.dds" 6 15 255 255 255 "TEXT" 1 0 20
+LIST "Lst_Period" "" "" 11 229 165 120 7 10 255 255 255 255 "Editbox\文本框_4d.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移u.bmp" "Listbox\列表框_下移u.bmp" "Listbox\列表框_滚动槽1u.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+COMBO "Combo_Period" "" "" 11 209 165 20 8 10 255 255 255 255 "Editbox\文本框_4d.dds" "Lst_Period"
+LIST "Lst_Item" "" "" 186 56 425 283 9 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "140 80+ 90 120+"
+IMAGEPICTURE "Item_Prepost" "" "" 18 69 32 32 1 0 "Window\图标_物品栏.dds"
+EDIT "Txt_Name" "" "" 63 76 110 20 "Editbox\文本框_4.dds" 10 15 255 255 255 "TEXT" 1 0 20
+EDIT "Txt_Currency" "" "" 63 76 110 20 "Editbox\文本框_4.dds" 11 15 255 255 255 "TEXT" 0 0 10
+LABEL "Lab_Txt05" "" "" 26 119 159 20 12 11 13 255 203 74 255
+CHECK "Chk_Sell" "check_sell" "SFX\Interface\ClickA.wav" 10 119 18 18 "Extra\复选框_标准.tga"
+LABEL "Lab_Txt04" "" "" 10 137 160 20 14 11 15 255 203 74 255
+LABEL "Lab_Txt03" "" "" 89 156 22 20 16 11 17 255 203 74 255
+LABEL "Lab_Txt02" "" "" 165 157 22 20 18 11 19 255 203 74 255
+LABEL "Lab_Txt01" "" "" 9 183 160 20 20 11 21 255 203 74 255
+LABEL "Lab_Txt07" "" "" 8 242 181 20 22 11 23 255 203 74 255
+RADIO "Rdo_Yes" "specific_yes" "" 39 258 21 21 "Extra\单选框_标准.tga" 1 0
+RADIO "Rdo_No" "specific_no" "" 119 258 21 21 "Extra\单选框_标准.tga" 0 0
+LABEL "Lab_Txt08" "" "" 12 282 65 20 24 11 25 255 203 74 255
+EDIT "Txt_BinPrice01" "" "" 9 157 80 20 "Editbox\文本框_4.dds" 26 15 255 255 255 "TEXT" 0 0 10
+EDIT "Txt_BinPrice02" "" "" 107 157 58 20 "Editbox\文本框_4.dds" 27 15 255 255 255 "TEXT" 0 0 2
+EDIT "Txt_BuyerName" "" "" 68 283 110 20 "Editbox\文本框_4.dds" 28 15 255 255 255 "TEXT" 0 0 20
+LABEL "Lab_Txt09" "" "" 61 260 22 20 29 11 30 255 255 255 255
+LABEL "Lab_Txt10" "" "" 140 260 22 20 31 11 32 255 255 255 255
+STILLIMAGEBUTTON "Btn_Currencysell" "prepost_money" "" 89 38 89 24 0 0 0 0 33 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 34 1
+STILLIMAGEBUTTON "Btn_SellItems" "prepost_item" "" 9 38 74 24 0 0 0 0 35 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 36 1
+LABEL "Lab_Txt11" "" "" 271 4 263 26 37 16 38 255 203 74 255
+STILLIMAGEBUTTON "Lab_Txt14" "sort_str_0" "" 186 36 140 19 0 0 0 0 39 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 40 1
+STILLIMAGEBUTTON "Lab_Txt16" "sortdata_int_1" "" 324 36 80 19 0 0 0 0 41 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 42 1
+STILLIMAGEBUTTON "Lab_Txt17" "sortdata_int_2" "" 403 36 90 19 0 0 0 0 43 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 44 1
+STILLIMAGEBUTTON "Lab_Txt18" "sort_str_3" "" 491 36 120 19 0 0 0 0 45 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 46 1
+LABEL "Lab_Money_Name" "" "" 10 76 49 20 47 11 48 255 203 74 255
+STILLIMAGEBUTTON "Btn_OK" "confirm_deal" "" 24 310 65 24 0 0 0 0 49 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本1.dds" 50 1
+STILLIMAGEBUTTON "Btn_Pagehome" "pagehome" "" 415 342 48 24 0 0 0 0 51 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本1.dds" 52 1
+STILLIMAGEBUTTON "Btn_Pageup" "pageup" "" 462 342 48 24 0 0 0 0 53 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本1.dds" 54 1
+STILLIMAGEBUTTON "Btn_Pagedown" "pagedown" "" 509 342 48 24 0 0 0 0 55 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本1.dds" 56 1
+STILLIMAGEBUTTON "Btn_Pageend" "pageend" "" 556 342 48 24 0 0 0 0 57 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本1.dds" 58 1
+STILLIMAGEBUTTON "Btn_Cancel" "cancel_deal" "" 110 310 65 24 0 0 0 0 59 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本1.dds" 60 1
+STILLIMAGEBUTTON "Btn_CancelSell" "cancel_prepost" "" 331 342 80 24 0 0 0 0 61 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本1.dds" 62 1
+STILLIMAGEBUTTON "Btn_Viewprodu" "goto_viewproduct" "" 6 5 89 24 0 0 0 0 63 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 64 1
+LABEL "Lab_Searching" "" "" 368 180 80 20 65 10 66 255 203 74 255

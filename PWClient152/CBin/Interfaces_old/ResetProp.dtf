@@ -1,0 +1,16 @@
+DIALOG "Win_ResetProp" 0 0 270 200 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 214 27 "人鱼传说新界面\面板关闭按钮.tga" 31 6 96 96 96 255 1
+IMAGEPICTURE "Img_Item" "" "" 8 30 32 32 1 0 "Window\图标_物品栏.dds"
+LABEL "Control_227224809" "" "" 7 4 0 0 2 16 3 255 203 74 255
+LABEL "asdf" "" "" 47 39 0 0 4 10 5 255 203 74 255
+STILLIMAGEBUTTON "Btn_Confirm" "confirm" "SFX\Interface\ClickB.wav" 70 167 48 24 0 0 0 0 6 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 7 1
+STILLIMAGEBUTTON "Btn_Cancel" "IDCANCEL" "SFX\Interface\ClickB.wav" 137 167 48 24 0 0 0 0 8 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 9 1
+RADIO "Rdo_Item1" "" "" 15 70 21 21 "Extra\单选框_标准.tga" 0 1
+RADIO "Rdo_Item2" "" "" 15 95 21 21 "Extra\单选框_标准.tga" 1 1
+RADIO "Rdo_Item3" "" "" 15 120 21 21 "Extra\单选框_标准.tga" 2 1
+RADIO "Rdo_Item4" "" "" 15 145 21 21 "Extra\单选框_标准.tga" 3 1
+RADIO "Rdo_Item5" "" "" 19 200 21 21 "Extra\单选框_标准.tga" 4 1
+LABEL "Txt_Item1" "" "" 45 71 220 15 10 10 11 255 255 255 255
+LABEL "Txt_Item2" "" "" 45 97 220 15 12 10 13 255 255 255 255
+LABEL "Txt_Item3" "" "" 45 122 220 15 14 10 15 255 255 255 255
+LABEL "Txt_Item4" "" "" 45 147 220 15 16 10 17 255 255 255 255
+LABEL "Txt_Item5" "" "" 46 203 159 15 18 10 19 255 255 255 255

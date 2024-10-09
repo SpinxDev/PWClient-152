@@ -1,0 +1,44 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		int sellid;
+		int seller;
+		enum { PROTOCOL_TYPE = PROTOCOL_BUYPOINT };
+	public:
+		BuyPoint() { type = PROTOCOL_BUYPOINT; }
+		BuyPoint(void*) : Protocol(PROTOCOL_BUYPOINT) { }
+		BuyPoint (int l_roleid,unsigned int l_localsid,int l_sellid,
+			int l_seller)
+			 : roleid(l_roleid),localsid(l_localsid),sellid(l_sellid),
+			seller(l_seller)
+		{
+			type = PROTOCOL_BUYPOINT;
+		}
+
+		BuyPoint(const BuyPoint &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid),sellid(rhs.sellid),
+			seller(rhs.seller) { }
+
+		GNET::Protocol *Clone() const { return new BuyPoint(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << sellid;
+			os << seller;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> sellid;
+			os >> seller;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

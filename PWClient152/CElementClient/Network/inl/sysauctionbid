@@ -1,0 +1,44 @@
+	public:
+		int roleid;
+		unsigned int sa_id;
+		unsigned int bid_price;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_SYSAUCTIONBID };
+	public:
+		SysAuctionBid() { type = PROTOCOL_SYSAUCTIONBID; }
+		SysAuctionBid(void*) : Protocol(PROTOCOL_SYSAUCTIONBID) { }
+		SysAuctionBid (int l_roleid,unsigned int l_sa_id,unsigned int l_bid_price,
+			unsigned int l_localsid = 0)
+			 : roleid(l_roleid),sa_id(l_sa_id),bid_price(l_bid_price)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_SYSAUCTIONBID;
+		}
+
+		SysAuctionBid(const SysAuctionBid &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),sa_id(rhs.sa_id),bid_price(rhs.bid_price)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new SysAuctionBid(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << sa_id;
+			os << bid_price;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> sa_id;
+			os >> bid_price;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

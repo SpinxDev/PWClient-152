@@ -1,0 +1,242 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\ClientTryLogin.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\ClientTryLogin.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 客户端自动登录程序"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "客户端自动登录程序 1.0 版",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "版权所有 完美世界 (C) 2012",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_CLIENTTRYLOGIN_DIALOG DIALOGEX 0, 0, 449, 490
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "完美国际客户端自动登录程序"
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "服务器列表配置文件(Serverlist.txt)：",IDC_STATIC,7,57,
+                    201,8
+    EDITTEXT        IDC_EDIT_SERVERLIST,77,70,150,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_FIND_SERVERLIST,229,69,22,15
+    LTEXT           "登陆账号：",IDC_STATIC,7,92,67,8
+    EDITTEXT        IDC_EDIT_USERNAME,77,88,150,14,ES_AUTOHSCROLL
+    LTEXT           "密码：",IDC_STATIC,22,108,53,8
+    EDITTEXT        IDC_EDIT_PWD,77,105,150,14,ES_PASSWORD | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "开始自动登陆测试所有服务器",IDC_BUTTON_LOGIN,89,127,114,
+                    14
+    CONTROL         "Progress1",IDC_PROGRESS_LOGIN,"msctls_progress32",
+                    WS_BORDER,75,148,206,14
+    LTEXT           "登陆进度：",IDC_STATIC,7,150,56,8
+    LTEXT           "登陆结果：",IDC_STATIC,7,180,54,8
+    CONTROL         "List1",IDC_LIST_RESULT_FAIL,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,7,360,435,123
+    LTEXT           "正常服务器信息",IDC_STATIC,127,180,76,8
+    LTEXT           "服务器登陆错误信息",IDC_STATIC,126,342,95,8
+    CONTROL         "List1",IDC_LIST_RESULT_SUCCESS,"SysListView32",
+                    LVS_REPORT | WS_BORDER | WS_TABSTOP,7,195,435,137
+    PUSHBUTTON      "打开错误信息",IDC_BUTTON_OPEN_ERROR,385,339,57,14
+    PUSHBUTTON      "添加账号",IDC_BUTTON_ADDACCOUNT,230,89,42,14
+    PUSHBUTTON      "删除账号",IDC_BUTTON_DELACCOUNT,230,106,42,14
+    LTEXT           "账号信息：",IDC_STATIC,329,26,81,8
+    CONTROL         "List1",IDC_LIST_RESULT_ACCOUNT,"SysListView32",
+                    LVS_REPORT | WS_BORDER | WS_TABSTOP,291,38,151,128
+    PUSHBUTTON      "重新测试失败服务器",IDC_BUTTON_RELOGIN,294,339,86,14
+    LTEXT           "服务器数量：",IDC_STATIC,75,165,60,8
+    LTEXT           "",IDC_STATIC_ServerName,150,165,67,8
+    LTEXT           "注意：本程序仅限完美世界公司内部人员使用！Copyright  2004-2013 Perfect World Co.,Ltd.All rights reserved.",
+                    IDC_STATIC_HINT,7,7,435,8,SS_NOTIFY
+    LTEXT           "版本号：",IDC_STATIC_VERSION,7,19,319,8
+    CONTROL         "正常测试",IDC_NORMAL_TEST,"Button",BS_AUTORADIOBUTTON,
+                    60,33,48,10
+    CONTROL         "跨服测试（需用GM号测试）",IDC_CROSS_TEST,"Button",
+                    BS_AUTORADIOBUTTON,150,34,112,10
+    LTEXT           "每个账号10分钟内只能登陆20次，当前所提供账号的登录次数已用完，冷却时间过后将继续测试，请稍后^_^",
+                    IDC_WAIT_WARNING,216,175,223,19
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "ClientTryLogin Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "ClientTryLogin\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2012\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "ClientTryLogin.EXE\0"
+            VALUE "ProductName", "ClientTryLogin 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_CLIENTTRYLOGIN_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 442
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 483
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 客户端自动登录程序(&A)..."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\ClientTryLogin.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

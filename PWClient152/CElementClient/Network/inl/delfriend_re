@@ -1,0 +1,44 @@
+	public:
+		char retcode;
+		int roleid;
+		int friendid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_DELFRIEND_RE };
+	public:
+		DelFriend_Re() { type = PROTOCOL_DELFRIEND_RE; }
+		DelFriend_Re(void*) : Protocol(PROTOCOL_DELFRIEND_RE) { }
+		DelFriend_Re (char l_retcode,int l_roleid,int l_friendid,
+			unsigned int l_localsid)
+			 : retcode(l_retcode),roleid(l_roleid),friendid(l_friendid),
+			localsid(l_localsid)
+		{
+			type = PROTOCOL_DELFRIEND_RE;
+		}
+
+		DelFriend_Re(const DelFriend_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),roleid(rhs.roleid),friendid(rhs.friendid),
+			localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new DelFriend_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roleid;
+			os << friendid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roleid;
+			os >> friendid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

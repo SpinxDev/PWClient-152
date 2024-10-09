@@ -1,0 +1,82 @@
+#ifndef __GNET_GBATTLECHALLENGE_RPCDATA
+#define __GNET_GBATTLECHALLENGE_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GBattleChallenge : public GNET::Rpc::Data
+	{
+	public:
+		short id;
+		unsigned int challenger;
+		unsigned int deposit;
+		unsigned int maxbonus;
+		unsigned int cutoff_time;
+
+	public:
+		GBattleChallenge (short l_id = 0,unsigned int l_challenger = 0,unsigned int l_deposit = 0
+			,unsigned int l_maxbonus = 0,unsigned int l_cutoff_time = 0)
+			: id(l_id),challenger(l_challenger),deposit(l_deposit)
+			,maxbonus(l_maxbonus),cutoff_time(l_cutoff_time)
+		{
+		}
+
+		GBattleChallenge(const GBattleChallenge &rhs)
+			: id(rhs.id),challenger(rhs.challenger),deposit(rhs.deposit),
+			maxbonus(rhs.maxbonus),cutoff_time(rhs.cutoff_time) { }
+
+		Rpc::Data *Clone() const { return new GBattleChallenge(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GBattleChallenge *r = dynamic_cast<const GBattleChallenge *>(&rhs);
+			if (r && r != this)
+			{
+				id = r->id;
+				challenger = r->challenger;
+				deposit = r->deposit;
+				maxbonus = r->maxbonus;
+				cutoff_time = r->cutoff_time;
+			}
+			return *this;
+		}
+
+		GBattleChallenge& operator = (const GBattleChallenge &rhs)
+		{
+			const GBattleChallenge *r = &rhs;
+			if (r && r != this)
+			{
+				id = r->id;
+				challenger = r->challenger;
+				deposit = r->deposit;
+				maxbonus = r->maxbonus;
+				cutoff_time = r->cutoff_time;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << id;
+			os << challenger;
+			os << deposit;
+			os << maxbonus;
+			os << cutoff_time;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> id;
+			os >> challenger;
+			os >> deposit;
+			os >> maxbonus;
+			os >> cutoff_time;
+			return os;
+		}
+
+	};
+};
+#endif

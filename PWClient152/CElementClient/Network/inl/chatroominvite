@@ -1,0 +1,62 @@
+	public:
+		unsigned short roomid;
+		int invitee;
+		int inviter;
+		Octets name;
+		Octets subject;
+		unsigned short capacity;
+		unsigned short number;
+		Octets password;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_CHATROOMINVITE };
+	public:
+		ChatRoomInvite() { type = PROTOCOL_CHATROOMINVITE; }
+		ChatRoomInvite(void*) : Protocol(PROTOCOL_CHATROOMINVITE) { }
+		ChatRoomInvite (unsigned short l_roomid,int l_invitee,int l_inviter,
+			const Octets& l_name,const Octets& l_subject,unsigned short l_capacity,
+			unsigned short l_number,const Octets& l_password,unsigned int l_localsid)
+			 : roomid(l_roomid),invitee(l_invitee),inviter(l_inviter),
+			name(l_name),subject(l_subject),capacity(l_capacity),
+			number(l_number),password(l_password),localsid(l_localsid)
+		{
+			type = PROTOCOL_CHATROOMINVITE;
+		}
+
+		ChatRoomInvite(const ChatRoomInvite &rhs)
+			: Protocol(rhs),roomid(rhs.roomid),invitee(rhs.invitee),inviter(rhs.inviter),
+			name(rhs.name),subject(rhs.subject),capacity(rhs.capacity),
+			number(rhs.number),password(rhs.password),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new ChatRoomInvite(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roomid;
+			os << invitee;
+			os << inviter;
+			os << name;
+			os << subject;
+			os << capacity;
+			os << number;
+			os << password;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roomid;
+			os >> invitee;
+			os >> inviter;
+			os >> name;
+			os >> subject;
+			os >> capacity;
+			os >> number;
+			os >> password;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

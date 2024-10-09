@@ -1,0 +1,8 @@
+DIALOG "Win_Main3" 0 0 158 39 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 -1 -1 "" 0 0 96 96 96 255 1
+STILLIMAGEBUTTON "Btn_GM" "wgm" "SFX\Interface\ClickB.wav" 8 5 24 30 0 0 0 0 2 18 255 255 255 255 "Window\图片_GM.bmp" "Window\图片_GM1.bmp" 3 1
+STILLIMAGEBUTTON "Btn_Help" "whelp" "SFX\Interface\ClickB.wav" 32 5 24 30 0 0 0 0 4 18 255 255 255 255 "Window\图片_菜单帮助.bmp" "Window\图片_菜单帮助1.bmp" 5 1
+STILLIMAGEBUTTON "Btn_Setting" "wsetting" "SFX\Interface\ClickB.wav" 80 5 24 30 0 0 0 0 6 18 255 255 255 255 "Window\图片_菜单系统设置.bmp" "Window\图片_菜单系统设置1.bmp" 7 1
+STILLIMAGEBUTTON "Btn_Repick" "repick" "SFX\Interface\ClickB.wav" 104 5 24 30 0 0 0 0 8 12 255 255 255 255 "Window\图片_菜单小退.bmp" "Window\图片_菜单小退1.bmp" 9 1
+STILLIMAGEBUTTON "Btn_Quit" "quitgame" "SFX\Interface\ClickB.wav" 128 5 24 30 0 0 0 0 10 12 255 255 255 255 "Window\图片_菜单大退.bmp" "Window\图片_菜单大退1.bmp" 11 1
+STILLIMAGEBUTTON "Btn_Chat" "chat" "SFX\Interface\ClickB.wav" -2000 -2000 27 33 0 0 0 0 12 18 255 255 255 255 "Window\图片_GM.bmp" "Window\图片_GM1.bmp" 13 1
+STILLIMAGEBUTTON "Btn_QuickKey" "wquickkey" "SFX\Interface\ClickB.wav" 56 5 24 30 0 0 0 0 14 18 255 255 255 255 "Window\自定义快捷键.bmp" "Window\自定义快捷键按下.bmp" 15 1

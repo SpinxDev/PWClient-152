@@ -1,0 +1,3 @@
+DIALOG "Win_Bigmap" 0 0 112 36 0 1 10 "" "Window\对话框_透明色.bmp" "" 0 0 -1 -1 "Window\对话框_标准关闭.tga" 28 8 96 96 96 255 1
+STILLIMAGEBUTTON "Btn_Inc" "inc" "" 64 9 16 16 0 0 0 0 2 15 255 255 255 255 "Button\按钮_放大1.tga" "Button\按钮_放大2.tga" 3 1
+STILLIMAGEBUTTON "Btn_Dec" "dec" "" 45 9 15 15 0 0 0 0 4 15 255 255 255 255 "Button\按钮_缩小1.tga" "Button\按钮_缩小2.tga" 5 1

@@ -1,0 +1,47 @@
+	public:
+		int roleid;
+		int qtype;
+		int seq;
+		int reserved;
+		int answer;
+		enum { PROTOCOL_TYPE = PROTOCOL_ACANSWER };
+	public:
+		ACAnswer() { type = PROTOCOL_ACANSWER; }
+		ACAnswer(void*) : Protocol(PROTOCOL_ACANSWER) { }
+		ACAnswer (int l_roleid,int l_qtype,int l_seq,
+			int l_reserved,int l_answer)
+			 : roleid(l_roleid),qtype(l_qtype),seq(l_seq)
+			,reserved(l_reserved),answer(l_answer)
+		{
+			type = PROTOCOL_ACANSWER;
+		}
+
+		ACAnswer(const ACAnswer &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),qtype(rhs.qtype),seq(rhs.seq)
+			,reserved(rhs.reserved),answer(rhs.answer) { }
+
+		GNET::Protocol *Clone() const { return new ACAnswer(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << qtype;
+			os << seq;
+			os << reserved;
+			os << answer;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> qtype;
+			os >> seq;
+			os >> reserved;
+			os >> answer;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 8192; }

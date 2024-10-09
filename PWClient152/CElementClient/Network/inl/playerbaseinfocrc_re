@@ -1,0 +1,47 @@
+	public:
+		int result;
+		int roleid;
+		unsigned int localsid;
+		IntVector playerlist;
+		IntVector CRClist;
+		enum { PROTOCOL_TYPE = PROTOCOL_PLAYERBASEINFOCRC_RE };
+	public:
+		PlayerBaseInfoCRC_Re() { type = PROTOCOL_PLAYERBASEINFOCRC_RE; }
+		PlayerBaseInfoCRC_Re(void*) : Protocol(PROTOCOL_PLAYERBASEINFOCRC_RE) { }
+		PlayerBaseInfoCRC_Re (int l_result,int l_roleid,unsigned int l_localsid,
+			IntVector l_playerlist,IntVector l_CRClist)
+			 : result(l_result),roleid(l_roleid),localsid(l_localsid),
+			playerlist(l_playerlist),CRClist(l_CRClist)
+		{
+			type = PROTOCOL_PLAYERBASEINFOCRC_RE;
+		}
+
+		PlayerBaseInfoCRC_Re(const PlayerBaseInfoCRC_Re &rhs)
+			: Protocol(rhs),result(rhs.result),roleid(rhs.roleid),localsid(rhs.localsid),
+			playerlist(rhs.playerlist),CRClist(rhs.CRClist) { }
+
+		GNET::Protocol *Clone() const { return new PlayerBaseInfoCRC_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << result;
+			os << roleid;
+			os << localsid;
+			os << playerlist;
+			os << CRClist;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> result;
+			os >> roleid;
+			os >> localsid;
+			os >> playerlist;
+			os >> CRClist;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 512; }

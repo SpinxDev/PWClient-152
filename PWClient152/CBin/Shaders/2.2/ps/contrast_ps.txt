@@ -1,0 +1,28 @@
+//------------------------------------------------------------------------------
+// FileName: contrast_ps.txt
+// Created by liyi 2010, 6, 22
+//------------------------------------------------------------------------------
+
+ps.1.4
+def c0, 0.3f, 0.59f, 0.11f, 1.0f
+def c2, 1.0f, 1.0f, 1.0f, 1.0f
+
+
+texld r0, t0
+texcrd r5.rgb, t1
+
+dp3 r1, r0, c0
+sub r1, r1, c1
+mul r3, r1, r5.g
+mul r4, r1, r5.b
+add r3, r3, c2
+
+//mul r2, r2, r0
+//mad r0.rgb, r2, r4.r, r0
+//+mov r0.a, c0.a
+
+mul r3, r0, r3
+mul r4, 1-r0, 1-r4
+
+cmp r0.rgb, r1, 1-r4, r3
++mov r0.a, c0.a

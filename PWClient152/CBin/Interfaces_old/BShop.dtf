@@ -1,0 +1,41 @@
+DIALOG "Win_BShop" 0 0 450 470 0 1 10 "Window\对话框_标准边框x.dds" "" "" 0 0 -1 -1 "人鱼传说新界面\面板关闭按钮.tga" 47 30 96 96 96 255 1
+LABEL "Lab_01" "" "" 181 31 105 24 2 16 3 255 203 74 255
+EDIT "Edit_itemback" "" "" 25 62 180 190 "InGameHintFrame.dds" 4 15 255 255 255 "TEXT" 1 0 20
+EDIT "Edit_01" "" "" 0 0 449 470 "人鱼传说新界面\未命名-1副本.dds" 5 15 255 255 255 "TEXT" 1 0 20
+EDIT "Edit_02" "" "" 206 335 220 94 "Editbox\文本框_4.dds" 6 15 255 255 255 "TEXT" 1 0 20
+LABEL "Lab_cash" "" "" 32 435 77 16 7 10 8 255 203 74 255
+LABEL "Txt_Cash" "" "" 94 435 120 15 9 10 10 255 255 255 255
+STILLIMAGEBUTTON "Btn_GetCash" "payment" "" 350 432 75 25 0 0 0 0 11 10 125 223 128 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 12 1
+IMAGEPICTURE "Img_Item" "" "" 51 87 128 128 1 0 ""
+LABEL "Txt_ItemName" "" "" 50 63 130 0 13 16 14 255 203 74 255
+LABEL "Lab_BeginTime" "" "" 212 162 91 16 15 10 16 255 203 74 255
+LABEL "Lab_LeftTime" "" "" 322 128 108 16 17 10 18 255 203 74 255
+LIST "List_Details" "" "" 207 206 220 100 19 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "listbox\列表框_下移.bmp" "listbox\列表框_滚动槽1.tga" "listbox\列表框_拖动按钮1.bmp" 0 "180 40"
+LABEL "Txt_Frozen" "" "" 94 415 120 15 20 10 21 255 0 0 255
+LABEL "Lab_Frozen" "" "" 32 414 73 16 22 10 23 255 203 74 255
+STILLIMAGEBUTTON "Btn_ReturnCash" "returncash" "" 210 432 116 24 0 0 0 0 24 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 25 1
+STILLIMAGEBUTTON "Btn_BidItem" "biditem" "" 350 309 75 25 0 0 0 0 26 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 27 1
+LABEL "Lab_Price" "" "" 26 222 105 24 28 16 29 255 203 74 255
+LABEL "Txt_Price" "" "" 117 225 86 25 30 14 31 255 255 255 255
+LABEL "Txt_BeginTime" "" "" 213 180 200 15 32 10 33 255 255 255 255
+LABEL "Txt_LeftTime" "" "" 329 145 95 15 34 10 35 255 0 0 255
+LABEL "Txt_CurrentPrice" "" "" 297 67 133 28 36 14 37 0 128 255 255
+LABEL "Lab_CurrentPrice" "" "" 204 65 105 24 38 16 39 255 203 74 255
+LABEL "Lab_MaxPrice" "" "" 207 346 95 16 40 10 41 255 203 74 255
+LABEL "Lab_DeltaPrice" "" "" 207 376 95 16 42 10 43 255 203 74 255
+STILLIMAGEBUTTON "Btn_StartAuto" "startauto" "" 268 399 100 25 0 0 0 0 44 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 45 1
+STILLIMAGEBUTTON "Btn_CancelAuto" "cancelauto" "" 268 399 100 25 0 0 0 0 46 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 47 1
+EDIT "Txt_BidPrice" "" "" 206 309 100 25 "Editbox\文本框_4.dds" 48 15 255 255 255 "TEXT" 0 0 20
+EDIT "Txt_MaxPrice" "" "" 292 342 90 25 "Editbox\文本框_4.dds" 49 15 255 255 255 "TEXT" 0 0 20
+EDIT "Txt_DeltaPrice" "" "" 292 370 90 25 "Editbox\文本框_4.dds" 50 15 255 255 255 "TEXT" 0 0 20
+LABEL "Lab_Gold01" "" "" 307 313 39 20 51 12 52 255 203 74 255
+LABEL "Lab_Gold02" "" "" 382 346 36 21 53 12 54 255 203 74 255
+LABEL "Lab_Gold03" "" "" 382 375 40 20 55 12 56 255 203 74 255
+LIST "List_AuctionItems" "" "" 26 272 177 140 57 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "listbox\列表框_滚动槽1.tga" "listbox\列表框_拖动按钮1.bmp" 0 ""
+LABEL "Lab_AuctionItems" "" "" 26 253 98 16 58 10 59 255 203 74 255
+LABEL "Txt_FreezeTime" "" "" 214 145 96 15 60 10 61 255 0 0 255
+LABEL "Lab_FreezeTime" "" "" 212 128 76 16 62 10 63 255 203 74 255
+TEXT "Txt_Details" "" "" 207 206 220 100 64 10 255 255 255 255 "Window\对话框_透明色.bmp" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp"
+STILLIMAGEBUTTON "Btn_BshopHelp" "bshophelp" "" 376 26 25 31 0 0 0 0 65 15 255 255 255 255 "Button\B-03.tga" "Button\B-03按下.tga" 66 1
+LABEL "Lab_Pname" "" "" 204 93 75 24 67 16 68 255 203 74 255
+LABEL "Txt_Pname" "" "" 276 95 152 22 69 14 70 255 0 0 255

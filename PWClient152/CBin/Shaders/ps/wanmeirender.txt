@@ -1,0 +1,30 @@
+ps.1.4
+
+; c0 is the face color
+; c1 is the eye shadow color
+; c2 is the eyebrow color
+; c3 is the lip color
+texld r0, t0		; base texture, r0.a = alpha channel
+texld r1, t0		; r1.r = face color channel; r1.g = eye shadow color channel; r1.b = eyebrow color channel; r1.a = lip color channel
+
+mul r2.rgb, r0, c0
+lrp r0.rgb, r1.r, r2, r0	;	add face color
+
+mul r2.rgb, r0, c1
+lrp r0.rgb, r1.g, r2, r0	;	add eye shadow color
+
+mul r2.rgb, r0, c3
+lrp r0.rgb, r1.a, r2, r0	;	add lip color
+
+mov r2.r,	r0.a			;	save to continue in phase 2
+
+phase
+
+mov r0.a,	r2.r			;	restore from phase 1
+
+mul r2.rgb, r0, c2
+lrp r0.rgb, r1.b, r2, r0	;	add eyebrow color
+
+mul r0.rgb, r0, v0
+add r0.rgb, r0, v1
++mul r0.a, r0.a, v0.a

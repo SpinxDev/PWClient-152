@@ -1,0 +1,101 @@
+#ifndef __GNET_GMAILHEADER_RPCDATA
+#define __GNET_GMAILHEADER_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GMailHeader : public GNET::Rpc::Data
+	{
+	public:
+		unsigned char id;
+		int sender;
+		unsigned char sndr_type;
+		int receiver;
+		Octets title;
+		int send_time;
+		unsigned char attribute;
+		Octets sender_name;
+
+	public:
+		GMailHeader (unsigned char l_id = 0,int l_sender = -1,unsigned char l_sndr_type = 0
+			,int l_receiver = -1,Octets l_title = Octets(),int l_send_time = 0
+			,unsigned char l_attribute = 0,const Octets& l_sender_name = Octets())
+			: id(l_id),sender(l_sender),sndr_type(l_sndr_type)
+			,receiver(l_receiver),title(l_title),send_time(l_send_time)
+			,attribute(l_attribute),sender_name(l_sender_name)
+		{
+		}
+
+		GMailHeader(const GMailHeader &rhs)
+			: id(rhs.id),sender(rhs.sender),sndr_type(rhs.sndr_type),
+			receiver(rhs.receiver),title(rhs.title),send_time(rhs.send_time),
+			attribute(rhs.attribute),sender_name(rhs.sender_name) { }
+
+		Rpc::Data *Clone() const { return new GMailHeader(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GMailHeader *r = dynamic_cast<const GMailHeader *>(&rhs);
+			if (r && r != this)
+			{
+				id = r->id;
+				sender = r->sender;
+				sndr_type = r->sndr_type;
+				receiver = r->receiver;
+				title = r->title;
+				send_time = r->send_time;
+				attribute = r->attribute;
+				sender_name = r->sender_name;
+			}
+			return *this;
+		}
+
+		GMailHeader& operator = (const GMailHeader &rhs)
+		{
+			const GMailHeader *r = &rhs;
+			if (r && r != this)
+			{
+				id = r->id;
+				sender = r->sender;
+				sndr_type = r->sndr_type;
+				receiver = r->receiver;
+				title = r->title;
+				send_time = r->send_time;
+				attribute = r->attribute;
+				sender_name = r->sender_name;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << id;
+			os << sender;
+			os << sndr_type;
+			os << receiver;
+			os << title;
+			os << send_time;
+			os << attribute;
+			os << sender_name;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> id;
+			os >> sender;
+			os >> sndr_type;
+			os >> receiver;
+			os >> title;
+			os >> send_time;
+			os >> attribute;
+			os >> sender_name;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<GMailHeader>	GMailHeaderVector;
+};
+#endif

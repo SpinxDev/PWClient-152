@@ -1,0 +1,56 @@
+	public:
+		int retcode;
+		unsigned int tid;
+		int owner_roleid;
+		int roleid;
+		int localsid;
+		GRoleInventory goods;
+		unsigned int money;
+		enum { PROTOCOL_TYPE = PROTOCOL_TRADEADDGOODS_RE };
+	public:
+		TradeAddGoods_Re() { type = PROTOCOL_TRADEADDGOODS_RE; }
+		TradeAddGoods_Re(void*) : Protocol(PROTOCOL_TRADEADDGOODS_RE) { }
+		TradeAddGoods_Re (int l_retcode,unsigned int l_tid,int l_owner_roleid,
+			int l_roleid,int l_localsid,GRoleInventory l_goods,
+			unsigned int l_money)
+			 : retcode(l_retcode),tid(l_tid),owner_roleid(l_owner_roleid),
+			roleid(l_roleid),localsid(l_localsid),goods(l_goods),
+			money(l_money)
+		{
+			type = PROTOCOL_TRADEADDGOODS_RE;
+		}
+
+		TradeAddGoods_Re(const TradeAddGoods_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),tid(rhs.tid),owner_roleid(rhs.owner_roleid),
+			roleid(rhs.roleid),localsid(rhs.localsid),goods(rhs.goods),
+			money(rhs.money) { }
+
+		GNET::Protocol *Clone() const { return new TradeAddGoods_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << tid;
+			os << owner_roleid;
+			os << roleid;
+			os << localsid;
+			os << goods;
+			os << money;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> tid;
+			os >> owner_roleid;
+			os >> roleid;
+			os >> localsid;
+			os >> goods;
+			os >> money;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 512; }

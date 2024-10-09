@@ -1,0 +1,44 @@
+	public:
+		int retcode;
+		int64_t sn;
+		GWebTradeItem item;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_WEBTRADEUPDATE_RE };
+	public:
+		WebTradeUpdate_Re() { type = PROTOCOL_WEBTRADEUPDATE_RE; }
+		WebTradeUpdate_Re(void*) : Protocol(PROTOCOL_WEBTRADEUPDATE_RE) { }
+		WebTradeUpdate_Re (int l_retcode,int64_t l_sn,const GWebTradeItem& l_item = GWebTradeItem(),
+			unsigned int l_localsid = 0)
+			 : retcode(l_retcode),sn(l_sn),item(l_item)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_WEBTRADEUPDATE_RE;
+		}
+
+		WebTradeUpdate_Re(const WebTradeUpdate_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),sn(rhs.sn),item(rhs.item)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new WebTradeUpdate_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << sn;
+			os << item;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> sn;
+			os >> item;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 256; }

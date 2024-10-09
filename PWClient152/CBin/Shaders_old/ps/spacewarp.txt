@@ -1,0 +1,29 @@
+;  space warp refract pixel shader
+
+; t0, normal map for space warp
+; t1, the render target map
+
+ps.1.4
+
+def c1, -1.0, 1.0, 0.0, 1.0
+def c2, 0.05, 0.05, 0.0, 1.0
+
+texld	r0, t0
+texcrd	r1.xy, t1_dw.xyw
+texcrd	r2.xyz, t2.xyz
+
+mul r2.rg, r2, c1		// set bump offset coefficient
+mul r3.rg, r0_bx2, r2		// perturb coords by the normal
+mad r1.rg, r3, r0.a, r1		// apply the perturb to texture layer 1
+
+sub r0.r, r0.a, c2.r
+mov r1.z, c1.a
+
+phase
+
+texkill r0
+texld r1, r1
+
+mov r0.rgb, r1
++ mov r0.a, c1.a
+

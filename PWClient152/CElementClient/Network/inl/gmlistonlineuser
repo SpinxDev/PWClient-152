@@ -1,0 +1,44 @@
+	public:
+		int gmroleid;
+		unsigned int localsid;
+		int handler;
+		Octets cond;
+		enum { PROTOCOL_TYPE = PROTOCOL_GMLISTONLINEUSER };
+	public:
+		GMListOnlineUser() { type = PROTOCOL_GMLISTONLINEUSER; }
+		GMListOnlineUser(void*) : Protocol(PROTOCOL_GMLISTONLINEUSER) { }
+		GMListOnlineUser (int l_gmroleid,unsigned int l_localsid,int l_handler,
+			const Octets& l_cond = Octets())
+			 : gmroleid(l_gmroleid),localsid(l_localsid),handler(l_handler),
+			cond(l_cond)
+		{
+			type = PROTOCOL_GMLISTONLINEUSER;
+		}
+
+		GMListOnlineUser(const GMListOnlineUser &rhs)
+			: Protocol(rhs),gmroleid(rhs.gmroleid),localsid(rhs.localsid),handler(rhs.handler),
+			cond(rhs.cond) { }
+
+		GNET::Protocol *Clone() const { return new GMListOnlineUser(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << gmroleid;
+			os << localsid;
+			os << handler;
+			os << cond;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> gmroleid;
+			os >> localsid;
+			os >> handler;
+			os >> cond;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

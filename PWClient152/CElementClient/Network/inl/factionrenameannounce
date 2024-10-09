@@ -1,0 +1,44 @@
+	public:
+		int retcode;
+		int operater;
+		Octets newname;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONRENAMEANNOUNCE };
+	public:
+		FactionRenameAnnounce() { type = PROTOCOL_FACTIONRENAMEANNOUNCE; }
+		FactionRenameAnnounce(void*) : Protocol(PROTOCOL_FACTIONRENAMEANNOUNCE) { }
+		FactionRenameAnnounce (int l_retcode,int l_operater,const Octets& l_newname,
+			unsigned int l_localsid)
+			 : retcode(l_retcode),operater(l_operater),newname(l_newname)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_FACTIONRENAMEANNOUNCE;
+		}
+
+		FactionRenameAnnounce(const FactionRenameAnnounce &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),operater(rhs.operater),newname(rhs.newname)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new FactionRenameAnnounce(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << operater;
+			os << newname;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> operater;
+			os >> newname;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

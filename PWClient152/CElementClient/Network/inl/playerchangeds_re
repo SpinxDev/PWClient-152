@@ -1,0 +1,62 @@
+	public:
+		int retcode;
+		int roleid;
+		int remote_roleid;
+		int userid;
+		char flag;
+		Octets random;
+		int dst_zoneid;
+		unsigned int localsid;
+		Octets roleinfo_pack;
+		enum { PROTOCOL_TYPE = PROTOCOL_PLAYERCHANGEDS_RE };
+	public:
+		PlayerChangeDS_Re() { type = PROTOCOL_PLAYERCHANGEDS_RE; }
+		PlayerChangeDS_Re(void*) : Protocol(PROTOCOL_PLAYERCHANGEDS_RE) { }
+		PlayerChangeDS_Re (int l_retcode,int l_roleid = 0,int l_remote_roleid = 0,
+			int l_userid = 0,char l_flag = 0,const Octets& l_random = Octets(),
+			int l_dst_zoneid = 0,unsigned int l_localsid = 0,const Octets& l_roleinfo_pack = Octets())
+			 : retcode(l_retcode),roleid(l_roleid),remote_roleid(l_remote_roleid)
+			,userid(l_userid),flag(l_flag),random(l_random)
+			,dst_zoneid(l_dst_zoneid),localsid(l_localsid),roleinfo_pack(l_roleinfo_pack)
+		{
+			type = PROTOCOL_PLAYERCHANGEDS_RE;
+		}
+
+		PlayerChangeDS_Re(const PlayerChangeDS_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),roleid(rhs.roleid),remote_roleid(rhs.remote_roleid)
+			,userid(rhs.userid),flag(rhs.flag),random(rhs.random)
+			,dst_zoneid(rhs.dst_zoneid),localsid(rhs.localsid),roleinfo_pack(rhs.roleinfo_pack) { }
+
+		GNET::Protocol *Clone() const { return new PlayerChangeDS_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roleid;
+			os << remote_roleid;
+			os << userid;
+			os << flag;
+			os << random;
+			os << dst_zoneid;
+			os << localsid;
+			os << roleinfo_pack;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roleid;
+			os >> remote_roleid;
+			os >> userid;
+			os >> flag;
+			os >> random;
+			os >> dst_zoneid;
+			os >> localsid;
+			os >> roleinfo_pack;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 8192; }

@@ -1,0 +1,65 @@
+#ifndef __GNET_GSENDAUMAILRECORD_RPCDATA
+#define __GNET_GSENDAUMAILRECORD_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GSendAUMailRecord : public GNET::Rpc::Data
+	{
+	public:
+		int rid;
+		int sendmail_time;
+
+	public:
+		GSendAUMailRecord (int l_rid = 0,int l_sendmail_time = 0)
+			: rid(l_rid),sendmail_time(l_sendmail_time)
+		{
+		}
+
+		GSendAUMailRecord(const GSendAUMailRecord &rhs)
+			: rid(rhs.rid),sendmail_time(rhs.sendmail_time) { }
+
+		Rpc::Data *Clone() const { return new GSendAUMailRecord(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GSendAUMailRecord *r = dynamic_cast<const GSendAUMailRecord *>(&rhs);
+			if (r && r != this)
+			{
+				rid = r->rid;
+				sendmail_time = r->sendmail_time;
+			}
+			return *this;
+		}
+
+		GSendAUMailRecord& operator = (const GSendAUMailRecord &rhs)
+		{
+			const GSendAUMailRecord *r = &rhs;
+			if (r && r != this)
+			{
+				rid = r->rid;
+				sendmail_time = r->sendmail_time;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << rid;
+			os << sendmail_time;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> rid;
+			os >> sendmail_time;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<GSendAUMailRecord>	GSendAUMailRecordVector;
+};
+#endif

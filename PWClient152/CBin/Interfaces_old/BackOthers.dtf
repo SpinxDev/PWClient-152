@@ -1,0 +1,33 @@
+DIALOG "Win_BackOthers" 0 0 510 360 0 1 10 "Window\对话框_标准边框1.dds" "" "人鱼传说新界面\title.tga" 3 3 504 33 "人鱼传说新界面\面板关闭按钮.tga" 37 7 96 96 96 255 1
+EDIT "back1" "" "" 6 33 105 19 "Editbox\文本框_4.dds" 2 15 255 0 255 "TEXT" 1 0 256
+EDIT "back2" "" "" 110 33 75 19 "Editbox\文本框_4.dds" 3 15 255 0 255 "TEXT" 1 0 256
+EDIT "back3" "" "" 185 33 80 19 "Editbox\文本框_4.dds" 4 15 255 0 255 "TEXT" 1 0 256
+LIST "List_Member" "listmember" "" 6 52 496 210 5 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "105 75 80 80 80 80"
+STILLIMAGEBUTTON "Btn_SortName" "sortname" "" 9 36 100 14 0 0 0 0 6 8 255 203 74 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 7 1
+STILLIMAGEBUTTON "Btn_SortLevel" "sortlevel" "" 111 36 72 14 0 0 0 0 8 8 255 203 74 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 9 1
+LABEL "Control_218089809" "" "" 269 334 65 16 10 10 11 255 255 255 255
+LABEL "Control_467412692" "" "" 110 333 65 20 12 10 13 255 255 255 255
+LABEL "Control_122432375" "" "" 14 311 66 16 14 10 15 255 255 255 255
+STILLIMAGEBUTTON "Btn_GetGold" "get" "SFX\Interface\ClickB.wav" 431 325 70 24 0 0 0 0 16 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 17 1
+STILLIMAGEBUTTON "Btn_GetLink" "link" "" 6 330 100 24 0 0 0 0 18 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 19 1
+LABEL "Control_842734792" "" "" 198 6 120 24 20 18 21 255 204 74 255
+LABEL "Txt_ID" "" "" 75 310 320 18 22 10 23 255 255 255 255
+LABEL "Txt_HaveGold" "" "" 177 333 83 16 24 10 25 255 255 255 255
+LABEL "Txt_MayGold" "" "" 337 334 83 16 26 10 27 255 255 255 255
+STILLIMAGEBUTTON "Btn_Help" "help" "SFX\Interface\ClickB.wav" 431 295 70 24 0 0 0 0 28 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 29 1
+STILLIMAGEBUTTON "Btn_FirstPage" "first" "SFX\Interface\ClickB.wav" 79 263 50 24 0 0 0 0 30 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 31 1
+STILLIMAGEBUTTON "Btn_PrevPage" "prev" "SFX\Interface\ClickB.wav" 141 263 50 24 0 0 0 0 32 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 33 1
+STILLIMAGEBUTTON "Btn_NextPage" "next" "SFX\Interface\ClickB.wav" 293 263 50 24 0 0 0 0 34 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 35 1
+STILLIMAGEBUTTON "Btn_EndPage" "end" "SFX\Interface\ClickB.wav" 356 263 50 24 0 0 0 0 36 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 37 1
+LABEL "Txt_Page" "" "" 219 267 50 16 38 10 39 255 255 255 255
+STILLIMAGEBUTTON "Btn_rsh" "refresh" "SFX\Interface\ClickB.wav" 431 265 70 24 0 0 0 0 40 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 41 1
+STILLIMAGEBUTTON "Btn_SortPoint1" "" "" 184 36 80 14 0 0 0 0 42 8 255 203 74 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 43 1
+EDIT "back4" "" "" 265 33 80 19 "Editbox\文本框_4.dds" 44 15 255 255 255 "TEXT" 1 0 20
+STILLIMAGEBUTTON "Btn_SortPoint2" "" "" 264 36 80 14 0 0 0 0 45 8 255 203 74 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 46 1
+EDIT "back5" "" "" 345 33 80 19 "Editbox\文本框_4.dds" 47 15 255 255 255 "TEXT" 1 0 20
+STILLIMAGEBUTTON "Btn_SortPoint3" "" "" 344 36 80 14 0 0 0 0 48 8 255 203 74 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 49 1
+EDIT "back6" "" "" 425 33 80 19 "Editbox\文本框_4.dds" 50 15 255 255 255 "TEXT" 1 0 20
+STILLIMAGEBUTTON "Btn_SortPoint4" "" "" 426 36 80 14 0 0 0 0 51 8 255 203 74 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 52 1
+LABEL "Control_99224631" "" "" 14 290 80 16 53 10 54 255 255 255 255
+LABEL "Txt_Name" "" "" 90 289 200 18 55 10 56 255 255 255 255
+STILLIMAGEBUTTON "Btn_Copy" "copy" "SFX\Interface\ClickB.wav" 314 287 70 24 0 0 0 0 57 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 58 1

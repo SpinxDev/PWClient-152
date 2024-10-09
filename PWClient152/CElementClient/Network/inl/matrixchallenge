@@ -1,0 +1,35 @@
+	public:
+		int algorithm;
+		unsigned int nonce;
+		enum { PROTOCOL_TYPE = PROTOCOL_MATRIXCHALLENGE };
+	public:
+		MatrixChallenge() { type = PROTOCOL_MATRIXCHALLENGE; }
+		MatrixChallenge(void*) : Protocol(PROTOCOL_MATRIXCHALLENGE) { }
+		MatrixChallenge (int l_algorithm,unsigned int l_nonce = 0)
+			 : algorithm(l_algorithm),nonce(l_nonce)
+		{
+			type = PROTOCOL_MATRIXCHALLENGE;
+		}
+
+		MatrixChallenge(const MatrixChallenge &rhs)
+			: Protocol(rhs),algorithm(rhs.algorithm),nonce(rhs.nonce) { }
+
+		GNET::Protocol *Clone() const { return new MatrixChallenge(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << algorithm;
+			os << nonce;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> algorithm;
+			os >> nonce;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 101; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

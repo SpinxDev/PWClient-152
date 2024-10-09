@@ -1,0 +1,44 @@
+	public:
+		int status;
+		KEKing king;
+		KECandidateVector candidate_list;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_KEGETSTATUS_RE };
+	public:
+		KEGetStatus_Re() { type = PROTOCOL_KEGETSTATUS_RE; }
+		KEGetStatus_Re(void*) : Protocol(PROTOCOL_KEGETSTATUS_RE) { }
+		KEGetStatus_Re (int l_status,const KEKing& l_king,const KECandidateVector& l_candidate_list,
+			unsigned int l_localsid)
+			 : status(l_status),king(l_king),candidate_list(l_candidate_list)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_KEGETSTATUS_RE;
+		}
+
+		KEGetStatus_Re(const KEGetStatus_Re &rhs)
+			: Protocol(rhs),status(rhs.status),king(rhs.king),candidate_list(rhs.candidate_list)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new KEGetStatus_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << status;
+			os << king;
+			os << candidate_list;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> status;
+			os >> king;
+			os >> candidate_list;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 256; }

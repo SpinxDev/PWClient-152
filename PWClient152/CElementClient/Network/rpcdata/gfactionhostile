@@ -1,0 +1,65 @@
+#ifndef __GNET_GFACTIONHOSTILE_RPCDATA
+#define __GNET_GFACTIONHOSTILE_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GFactionHostile : public GNET::Rpc::Data
+	{
+	public:
+		int fid;
+		int end_time;
+
+	public:
+		GFactionHostile (int l_fid = 0,int l_end_time = 0)
+			: fid(l_fid),end_time(l_end_time)
+		{
+		}
+
+		GFactionHostile(const GFactionHostile &rhs)
+			: fid(rhs.fid),end_time(rhs.end_time) { }
+
+		Rpc::Data *Clone() const { return new GFactionHostile(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GFactionHostile *r = dynamic_cast<const GFactionHostile *>(&rhs);
+			if (r && r != this)
+			{
+				fid = r->fid;
+				end_time = r->end_time;
+			}
+			return *this;
+		}
+
+		GFactionHostile& operator = (const GFactionHostile &rhs)
+		{
+			const GFactionHostile *r = &rhs;
+			if (r && r != this)
+			{
+				fid = r->fid;
+				end_time = r->end_time;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << fid;
+			os << end_time;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> fid;
+			os >> end_time;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<GFactionHostile>	GFactionHostileVector;
+};
+#endif

@@ -1,0 +1,13 @@
+ps.1.1
+
+tex t0		; base texture
+tex t1		; high texture
+
+; c0 is the goatee color
+
+mul r0, t0, c0
+mul r1, t1, v1
+mad r0, r1, t1.a, r0
+mul r0.rgb, r0, v0
++mul r0.a, t0.a, v0.a
+

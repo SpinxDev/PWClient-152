@@ -1,0 +1,69 @@
+; DESCRIPTION:
+; This vertex shader is used by A3DTerrain2. This shader only calculate vertex's specular
+; component and ignore it's diffuse, because A3DTerrain2 use light map to calculate diffuse.
+
+; CREATED BY: duyuxin, 2004/8/24
+; Copyright (c) 2004 Archosaur Studio, All Rights Reserved.
+
+;------------------------------------------------------------------------------
+; v0 	= position
+; v1 	= normal
+; v2	= texture coordinates 0
+; v3 	= texture coordinates 1
+; v4	= texture coordinates 2
+; v5	= texture coordinates 3
+;------------------------------------------------------------------------------
+
+;------------------------------------------------------------------------------
+; Constants specified by the app
+; c7	= dir_light.specular * material.specular
+; c6	= eye's direction in world space
+; c2-c5 = view matrix * projection matrix (from world space to cuboid space)
+; c1	= dir_light's direction in world space
+; c0	= {1, power, 0, 1};
+;------------------------------------------------------------------------------
+
+;------------------------------------------------------------------------------
+; oPos	  = Output position
+; oD0	  = Diffuse
+; oD1	  = Specular
+; oT0	  = texture coordinates
+;------------------------------------------------------------------------------
+
+vs.1.1
+
+; Transfrom position from world space to cuboid space and output it
+m4x4 oPos, v0, c2
+
+; ============ Calculate directional light's diffuse and specular ============
+
+mov r4, -c1
+dp3 r1.x, v1, r4  	; normal dot light (N * L)
+add r2, -c6, r4		; normalized half vector H = L + V
+
+; renormalize H
+dp3 r2.w, r2, r2
+rsq r2.w, r2.w
+mul r2, r2, r2.w
+
+dp3 r1.y, v1, r2	; N dot H
+
+; compute specular and clamp values (lit)
+; r1.x - N dot L
+; r1.y - N dot H
+; r1.w - specular power n
+mov r1.w, c0.y
+lit r1, r1
+
+mov oD0, c0.x		; output diffuse as 0xffffffff
+
+mul r4, r1.z, c7    ; Multiply with specular
+mov r4.w, c0.x		; Set fog factor to 1
+min oD1, r4, c0.x   ; output specular, clamp if > 1
+
+; Copy texture coordinate
+mov oT0, v2
+mov oT1, v3
+mov oT2, v4
+mov oT3, v5
+

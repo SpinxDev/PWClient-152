@@ -1,0 +1,35 @@
+	public:
+		int retcode;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_KEVOTING_RE };
+	public:
+		KEVoting_Re() { type = PROTOCOL_KEVOTING_RE; }
+		KEVoting_Re(void*) : Protocol(PROTOCOL_KEVOTING_RE) { }
+		KEVoting_Re (int l_retcode,unsigned int l_localsid)
+			 : retcode(l_retcode),localsid(l_localsid)
+		{
+			type = PROTOCOL_KEVOTING_RE;
+		}
+
+		KEVoting_Re(const KEVoting_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new KEVoting_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

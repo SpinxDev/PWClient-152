@@ -1,0 +1,47 @@
+	public:
+		int roleid;
+		int factionid;
+		Octets item_cost;
+		Octets fortress_info;
+		Octets syncdata;
+		enum { PROTOCOL_TYPE = PROTOCOL_CREATEFACTIONFORTRESS };
+	public:
+		CreateFactionFortress() { type = PROTOCOL_CREATEFACTIONFORTRESS; }
+		CreateFactionFortress(void*) : Protocol(PROTOCOL_CREATEFACTIONFORTRESS) { }
+		CreateFactionFortress (int l_roleid,int l_factionid,const Octets& l_item_cost,
+			const Octets& l_fortress_info,const Octets& l_syncdata)
+			 : roleid(l_roleid),factionid(l_factionid),item_cost(l_item_cost)
+			,fortress_info(l_fortress_info),syncdata(l_syncdata)
+		{
+			type = PROTOCOL_CREATEFACTIONFORTRESS;
+		}
+
+		CreateFactionFortress(const CreateFactionFortress &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),factionid(rhs.factionid),item_cost(rhs.item_cost)
+			,fortress_info(rhs.fortress_info),syncdata(rhs.syncdata) { }
+
+		GNET::Protocol *Clone() const { return new CreateFactionFortress(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << factionid;
+			os << item_cost;
+			os << fortress_info;
+			os << syncdata;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> factionid;
+			os >> item_cost;
+			os >> fortress_info;
+			os >> syncdata;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 131071; }

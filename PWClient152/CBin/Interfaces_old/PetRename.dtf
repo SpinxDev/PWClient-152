@@ -1,0 +1,15 @@
+DIALOG "Win_PetRename" 0 0 240 190 0 1 10 "Window\对话框_标准边框1.dds" "" "" 0 0 214 27 "人鱼传说新界面\面板关闭按钮.tga" 31 6 96 96 96 255 1
+IMAGEPICTURE "Img_Item" "" "" 32 58 32 32 1 0 "Window\图标_物品栏.dds"
+LABEL "Control_227224809" "" "" 9 5 0 0 2 16 3 255 203 74 255
+LABEL "Control_30062900" "" "" 10 39 0 0 4 10 5 255 203 74 255
+IMAGEPICTURE "Control_11396040" "" "" 5 32 230 3 1 0 "Window\分隔线.tga"
+STILLIMAGEBUTTON "Btn_Confirm" "confirm" "SFX\Interface\ClickB.wav" 50 156 48 24 0 0 0 0 6 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 7 1
+STILLIMAGEBUTTON "Btn_Cancel" "IDCANCEL" "SFX\Interface\ClickB.wav" 140 156 48 24 0 0 0 0 8 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 9 1
+EDIT "Txt_PetNewName" "" "" 97 96 72 21 "Editbox\文本框_4b.dds" 10 10 255 255 255 "TEXT" 0 0 256
+LABEL "Control_292553758" "" "" 11 97 53 15 11 10 12 255 203 74 255
+LABEL "asdfasdf" "" "" 11 135 204 16 13 10 14 255 203 74 255
+LABEL "Txt_PetName" "" "" 99 74 68 16 15 10 16 255 255 255 255
+LABEL "Txt_PetLevel" "" "" 198 74 26 14 17 10 18 255 255 255 255
+LABEL "Control_135511845" "" "" 70 74 27 17 19 10 20 255 203 74 255
+LABEL "Control_176364900" "" "" 169 74 30 15 21 10 22 255 203 74 255
+LABEL "Control_329704416" "" "" 11 117 199 16 23 10 24 255 203 74 255

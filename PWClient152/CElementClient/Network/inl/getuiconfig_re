@@ -1,0 +1,44 @@
+	public:
+		int result;
+		int roleid;
+		unsigned int localsid;
+		Octets ui_config;
+		enum { PROTOCOL_TYPE = PROTOCOL_GETUICONFIG_RE };
+	public:
+		GetUIConfig_Re() { type = PROTOCOL_GETUICONFIG_RE; }
+		GetUIConfig_Re(void*) : Protocol(PROTOCOL_GETUICONFIG_RE) { }
+		GetUIConfig_Re (int l_result,int l_roleid,unsigned int l_localsid,
+			const Octets& l_ui_config)
+			 : result(l_result),roleid(l_roleid),localsid(l_localsid),
+			ui_config(l_ui_config)
+		{
+			type = PROTOCOL_GETUICONFIG_RE;
+		}
+
+		GetUIConfig_Re(const GetUIConfig_Re &rhs)
+			: Protocol(rhs),result(rhs.result),roleid(rhs.roleid),localsid(rhs.localsid),
+			ui_config(rhs.ui_config) { }
+
+		GNET::Protocol *Clone() const { return new GetUIConfig_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << result;
+			os << roleid;
+			os << localsid;
+			os << ui_config;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> result;
+			os >> roleid;
+			os >> localsid;
+			os >> ui_config;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 4096; }

@@ -1,0 +1,47 @@
+	public:
+		int retcode;
+		int domain_id;
+		char assault_type;
+		int command_point;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_COUNTRYBATTLEKINGASSIGNASSAULT_RE };
+	public:
+		CountryBattleKingAssignAssault_Re() { type = PROTOCOL_COUNTRYBATTLEKINGASSIGNASSAULT_RE; }
+		CountryBattleKingAssignAssault_Re(void*) : Protocol(PROTOCOL_COUNTRYBATTLEKINGASSIGNASSAULT_RE) { }
+		CountryBattleKingAssignAssault_Re (int l_retcode,int l_domain_id,char l_assault_type,
+			int l_command_point,unsigned int l_localsid)
+			 : retcode(l_retcode),domain_id(l_domain_id),assault_type(l_assault_type)
+			,command_point(l_command_point),localsid(l_localsid)
+		{
+			type = PROTOCOL_COUNTRYBATTLEKINGASSIGNASSAULT_RE;
+		}
+
+		CountryBattleKingAssignAssault_Re(const CountryBattleKingAssignAssault_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),domain_id(rhs.domain_id),assault_type(rhs.assault_type)
+			,command_point(rhs.command_point),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new CountryBattleKingAssignAssault_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << domain_id;
+			os << assault_type;
+			os << command_point;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> domain_id;
+			os >> assault_type;
+			os >> command_point;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

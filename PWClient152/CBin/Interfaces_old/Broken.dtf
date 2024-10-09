@@ -1,0 +1,9 @@
+DIALOG "Win_Broken" 0 0 131 65 0 1 10 "" "" "" 0 0 -1 -1 "" 0 0 96 96 96 0 1
+IMAGEPICTURE "Slot_7" "" "" 0 0 32 32 1 0 "Window\对话框_透明色.bmp"
+IMAGEPICTURE "Slot_5" "" "" 33 0 32 32 1 0 "Window\对话框_透明色.bmp"
+IMAGEPICTURE "Slot_3" "" "" 66 0 32 32 1 0 "Window\对话框_透明色.bmp"
+IMAGEPICTURE "Slot_1" "" "" 99 0 32 32 1 0 "Window\对话框_透明色.bmp"
+IMAGEPICTURE "Slot_8" "" "" 0 33 32 32 1 0 "Window\对话框_透明色.bmp"
+IMAGEPICTURE "Slot_6" "" "" 33 33 32 32 1 0 "Window\对话框_透明色.bmp"
+IMAGEPICTURE "Slot_4" "" "" 66 33 32 32 1 0 "Window\对话框_透明色.bmp"
+IMAGEPICTURE "Slot_2" "" "" 99 33 32 32 1 0 "Window\对话框_透明色.bmp"

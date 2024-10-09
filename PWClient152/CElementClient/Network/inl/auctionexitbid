@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		unsigned int auctionid;
+		enum { PROTOCOL_TYPE = PROTOCOL_AUCTIONEXITBID };
+	public:
+		AuctionExitBid() { type = PROTOCOL_AUCTIONEXITBID; }
+		AuctionExitBid(void*) : Protocol(PROTOCOL_AUCTIONEXITBID) { }
+		AuctionExitBid (int l_roleid,unsigned int l_localsid,unsigned int l_auctionid)
+			 : roleid(l_roleid),localsid(l_localsid),auctionid(l_auctionid)
+		{
+			type = PROTOCOL_AUCTIONEXITBID;
+		}
+
+		AuctionExitBid(const AuctionExitBid &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid),auctionid(rhs.auctionid) { }
+
+		GNET::Protocol *Clone() const { return new AuctionExitBid(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << auctionid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> auctionid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

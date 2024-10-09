@@ -1,0 +1,67 @@
+; terrain render pixel shader
+;
+; 3 layers batch render
+;
+
+; t0 is color texture of layer 1
+; t1 is color texture of layer 2
+; t2 is color texture of layer 3
+; t3 is mask texture of the first 3 layer 
+;	red   - layer 3 mask
+;	green - layer 2 mask
+;	blue  - layer 1 mask
+; t4 is the day light map
+; t5 is the night light map
+; c2 is the mask texture's channel mask
+; c3.a is the day night factor
+
+ps.1.4
+
+def c0, 1.0, 1.0, 1.0, 1.0
+
+texld r0, t0
+texld r1, t1
+texld r2, t2
+texld r3, t3
+
+; apply mask texture's mask
+mul r3.rgb, r3, c2
+
+; first layer, begin the iteration
+mul r0.rgb, r0, r3.b
+
+mul r5.r, r0.a, r3.b
++mov r0.a, r3.b
+
+; blend with previous layers' result
+lrp r0.rgb, r3.g, r1, r0
++lrp r0.a, r3.g, c0.a, r0.a
+
+; blend with previous layers' result
+lrp r0.rgb, r3.r, r2, r0
++lrp r0.a, r3.r, c0.a, r0.a
+
+; accumulate specular
+lrp r1.r, r3.g, r1.a, r5.r
+lrp r1.r, r3.r, r2.a, r1.r
+
+; back up r0.a for phase 2
+mov r1.g, r0.a
+
+phase
+
+texld r4, t4
+texld r5, t5
+
+mov r0.a, r1.g
+
+; day night light map interpolate
+lrp_sat r5, c3.a, r5, r4
+
+; apply specular map
+mul r2.rgb, r1.r, v1
+mad r0.rgb, r5, r2, r0
+
+mul r0.rgb, r0, v0
+; multiply with light map
+mul_x2 r0.rgb, r0, r5

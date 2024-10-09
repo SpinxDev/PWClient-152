@@ -1,0 +1,50 @@
+	public:
+		int dstroleid;
+		char dstzoneid;
+		int srcroleid;
+		char srczoneid;
+		unsigned char status;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_DELIVERROLESTATUS };
+	public:
+		DeliverRoleStatus() { type = PROTOCOL_DELIVERROLESTATUS; }
+		DeliverRoleStatus(void*) : Protocol(PROTOCOL_DELIVERROLESTATUS) { }
+		DeliverRoleStatus (int l_dstroleid,char l_dstzoneid,int l_srcroleid,
+			char l_srczoneid,unsigned char l_status,unsigned int l_localsid)
+			 : dstroleid(l_dstroleid),dstzoneid(l_dstzoneid),srcroleid(l_srcroleid),
+			srczoneid(l_srczoneid),status(l_status),localsid(l_localsid)
+		{
+			type = PROTOCOL_DELIVERROLESTATUS;
+		}
+
+		DeliverRoleStatus(const DeliverRoleStatus &rhs)
+			: Protocol(rhs),dstroleid(rhs.dstroleid),dstzoneid(rhs.dstzoneid),srcroleid(rhs.srcroleid),
+			srczoneid(rhs.srczoneid),status(rhs.status),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new DeliverRoleStatus(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << dstroleid;
+			os << dstzoneid;
+			os << srcroleid;
+			os << srczoneid;
+			os << status;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> dstroleid;
+			os >> dstzoneid;
+			os >> srcroleid;
+			os >> srczoneid;
+			os >> status;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

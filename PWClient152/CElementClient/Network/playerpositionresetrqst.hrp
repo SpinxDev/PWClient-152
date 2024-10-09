@@ -1,0 +1,42 @@
+
+#ifndef __GNET_PLAYERPOSITIONRESETRQST_HPP
+#define __GNET_PLAYERPOSITIONRESETRQST_HPP
+
+#include "rpcdefs.h"
+#include "callid.hxx"
+#include "state.hxx"
+
+#include "playerpositionresetrqstarg"
+#include "playerpositionresetrqstres"
+
+namespace GNET
+{
+
+class PlayerPositionResetRqst : public Rpc
+{
+#define	RPC_BASECLASS	Rpc
+	#include "playerpositionresetrqst"
+#undef	RPC_BASECLASS
+
+	void Server(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+		// PlayerPositionResetRqstArg *arg = (PlayerPositionResetRqstArg *)argument;
+		// PlayerPositionResetRqstRes *res = (PlayerPositionResetRqstRes *)result;
+	}
+
+	void Client(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+		// TODO
+		// PlayerPositionResetRqstArg *arg = (PlayerPositionResetRqstArg *)argument;
+		// PlayerPositionResetRqstRes *res = (PlayerPositionResetRqstRes *)result;
+	}
+
+	void OnTimeout()
+	{
+		// TODO Client Only
+	}
+
+};
+
+};
+#endif

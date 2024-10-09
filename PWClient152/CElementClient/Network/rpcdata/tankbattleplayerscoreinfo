@@ -1,0 +1,83 @@
+#ifndef __GNET_TANKBATTLEPLAYERSCOREINFO_RPCDATA
+#define __GNET_TANKBATTLEPLAYERSCOREINFO_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class TankBattlePlayerScoreInfo : public GNET::Rpc::Data
+	{
+	public:
+		int roleid;
+		int kill_cnt;
+		int dead_cnt;
+		int score;
+		int rank;
+
+	public:
+		TankBattlePlayerScoreInfo (int l_kill_cnt = 0,int l_dead_cnt = 0,int l_score = 0
+			,int l_rank = 0)
+			: kill_cnt(l_kill_cnt),dead_cnt(l_dead_cnt),score(l_score)
+			,rank(l_rank)
+		{
+		}
+
+		TankBattlePlayerScoreInfo(const TankBattlePlayerScoreInfo &rhs)
+			: roleid(rhs.roleid),kill_cnt(rhs.kill_cnt),dead_cnt(rhs.dead_cnt),
+			score(rhs.score),rank(rhs.rank) { }
+
+		Rpc::Data *Clone() const { return new TankBattlePlayerScoreInfo(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const TankBattlePlayerScoreInfo *r = dynamic_cast<const TankBattlePlayerScoreInfo *>(&rhs);
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				kill_cnt = r->kill_cnt;
+				dead_cnt = r->dead_cnt;
+				score = r->score;
+				rank = r->rank;
+			}
+			return *this;
+		}
+
+		TankBattlePlayerScoreInfo& operator = (const TankBattlePlayerScoreInfo &rhs)
+		{
+			const TankBattlePlayerScoreInfo *r = &rhs;
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				kill_cnt = r->kill_cnt;
+				dead_cnt = r->dead_cnt;
+				score = r->score;
+				rank = r->rank;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << kill_cnt;
+			os << dead_cnt;
+			os << score;
+			os << rank;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> kill_cnt;
+			os >> dead_cnt;
+			os >> score;
+			os >> rank;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<TankBattlePlayerScoreInfo>	TankBattlePlayerScoreInfoVector;
+};
+#endif

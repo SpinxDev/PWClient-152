@@ -1,0 +1,47 @@
+	public:
+		int retcode;
+		int roleid;
+		unsigned int localsid;
+		unsigned int cus_roleid;
+		Octets customdata;
+		enum { PROTOCOL_TYPE = PROTOCOL_GETCUSTOMDATA_RE };
+	public:
+		GetCustomData_Re() { type = PROTOCOL_GETCUSTOMDATA_RE; }
+		GetCustomData_Re(void*) : Protocol(PROTOCOL_GETCUSTOMDATA_RE) { }
+		GetCustomData_Re (int l_retcode,int l_roleid,unsigned int l_localsid,
+			unsigned int l_cus_roleid,const Octets& l_customdata)
+			 : retcode(l_retcode),roleid(l_roleid),localsid(l_localsid),
+			cus_roleid(l_cus_roleid),customdata(l_customdata)
+		{
+			type = PROTOCOL_GETCUSTOMDATA_RE;
+		}
+
+		GetCustomData_Re(const GetCustomData_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),roleid(rhs.roleid),localsid(rhs.localsid),
+			cus_roleid(rhs.cus_roleid),customdata(rhs.customdata) { }
+
+		GNET::Protocol *Clone() const { return new GetCustomData_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roleid;
+			os << localsid;
+			os << cus_roleid;
+			os << customdata;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roleid;
+			os >> localsid;
+			os >> cus_roleid;
+			os >> customdata;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1536; }

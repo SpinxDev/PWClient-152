@@ -1,0 +1,25 @@
+DIALOG "Win_Quest" 0 0 520 381 0 1 10 "Window\对话框_标准边框.dds" "" "人鱼传说新界面\title.tga" 3 3 515 33 "人鱼传说新界面\面板关闭按钮.tga" 34 4 96 96 96 255 1
+EDIT "Control_357710034" "" "" 174 273 340 74 "Editbox\文本框_4c.dds" 2 15 255 255 255 "TEXT" 1 0 20
+STILLIMAGEBUTTON "Btn_SearchQuest" "searchquest" "SFX\Interface\ClickB.wav" 30 323 116 24 0 0 0 0 3 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 4 1
+STILLIMAGEBUTTON "Btn_Abandon" "abandon" "SFX\Interface\ClickB.wav" 173 349 50 24 0 0 0 0 5 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 6 1
+TEXT "Txt_Content" "" "" 174 35 340 149 7 12 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp"
+TEXT "Txt_QuestItem" "" "" 174 185 340 86 8 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp"
+TREE "Tv_Quest" "" "" 4 59 160 261 9 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" "Extra\TreePlus.bmp" "Extra\TreeMinus.bmp" "Extra\TreeLeaf.bmp"
+STILLIMAGEBUTTON "Btn_Focus" "focus" "SFX\Interface\ClickB.wav" 225 349 50 24 0 0 0 0 10 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 11 1
+STILLIMAGEBUTTON "Btn_FocusAll" "focusall" "SFX\Interface\ClickB.wav" 5 349 160 24 0 0 0 0 12 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 13 1
+LABEL "2" "" "" 217 5 85 22 14 16 15 255 203 74 255
+IMAGEPICTURE "Control_132603350" "" "" 168 32 3 344 1 0 "Window\分隔线2.tga"
+LABEL "Txt_QuestNO" "" "" 318 362 30 12 16 8 17 255 255 255 255
+LABEL "Lab_QuestNO" "" "" 292 350 57 14 18 8 19 255 203 74 255
+LABEL "Txt_BaseAward" "" "" 182 291 325 15 20 10 21 255 255 255 255
+LABEL "Control_195417729" "" "" 308 273 71 19 22 13 23 255 203 74 255
+LABEL "Txt_ItemAward" "" "" 182 318 90 15 24 10 25 255 255 255 255
+IMAGEPICTURE "Img_Item0" "" "" 182 310 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Img_Item1" "" "" 222 310 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Img_Item2" "" "" 262 310 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Img_Item3" "" "" 302 310 32 32 1 0 "Window\图标_物品栏t.dds"
+CHECK "Chk_AwardNPC" "" "SFX\Interface\ClickA.wav" 356 353 18 18 "Extra\复选框_标准.tga"
+LABEL "Lab_AwardNPC" "" "" 378 353 132 17 26 10 27 255 203 74 255
+STILLIMAGEBUTTON "Btn_HaveQuest" "havequest" "" 30 323 116 24 0 0 0 0 28 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 29 1
+LABEL "Txt_HaveQuest" "" "" 41 37 0 0 30 10 31 255 203 74 255
+LABEL "Txt_SearchQuest" "" "" 41 37 0 0 32 10 33 255 203 74 255

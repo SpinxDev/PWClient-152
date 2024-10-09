@@ -1,0 +1,9 @@
+DIALOG "Win_Pop" 0 0 156 39 0 1 10 "" "" "" 0 0 -1 -1 "" 0 0 96 96 96 0 1
+IMAGEPICTURE "Back_1" "f1" "" -7 -7 54 54 1 0 "Button\按钮_提示.tga"
+IMAGEPICTURE "Back_2" "f2" "" 32 -7 54 54 1 0 "Button\按钮_提示.tga"
+IMAGEPICTURE "Back_3" "f3" "" 71 -7 54 54 1 0 "Button\按钮_提示.tga"
+IMAGEPICTURE "Back_4" "f4" "" 110 -7 54 54 1 0 "Button\按钮_提示.tga"
+IMAGEPICTURE "F_1" "f2" "" 4 4 32 32 1 0 "Button\B-05.tga"
+IMAGEPICTURE "F_2" "f2" "" 51 3 18 36 1 0 "Button\B-01.tga"
+IMAGEPICTURE "F_3" "f3" "" 84 4 30 33 1 0 "Button\B-02.tga"
+IMAGEPICTURE "F_4" "f4" "" 124 2 27 36 1 0 "Button\B-03.tga"

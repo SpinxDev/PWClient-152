@@ -1,0 +1,17 @@
+DIALOG "Win_MailRead" 0 0 311 431 0 1 10 "Window\对话框_标准边框x.dds" "" "" 0 0 283 33 "人鱼传说新界面\面板关闭按钮.tga" 47 30 96 96 96 255 1
+EDIT "Img_Title" "" "" 16 23 283 37 "人鱼传说新界面\title.tga" 2 15 255 255 255 "TEXT" 1 0 20
+IMAGEPICTURE "Control_158897754" "" "" 4 0 305 431 1 0 "人鱼传说新界面\未命名-1副本.dds"
+IMAGEPICTURE "Img_AttachItem" "" "" 66 351 32 32 1 0 "Window\图标_物品栏t.dds"
+STILLIMAGEBUTTON "Btn_GetAttach" "getattach" "SFX\Interface\ClickB.wav" 25 393 67 24 0 0 0 0 3 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 4 1
+STILLIMAGEBUTTON "Btn_Close" "IDCANCEL" "SFX\Interface\ClickB.wav" 244 393 45 24 0 0 0 0 5 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 6 1
+LABEL "Control_473590271" "" "" 29 70 45 17 7 10 8 255 203 74 255
+IMAGEPICTURE "Control_396712664" "" "" 19 387 275 3 1 0 "Window\分隔线.tga"
+LABEL "Mail_Send_Title" "" "" 115 30 108 26 9 16 10 255 203 74 255
+LABEL "Control_398831595" "" "" 29 93 43 17 11 10 12 255 203 74 255
+STILLIMAGEBUTTON "Btn_Reply" "reply" "SFX\Interface\ClickB.wav" 195 393 45 24 0 0 0 0 13 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 14 1
+LABEL "Control_432377896" "" "" 27 359 39 17 15 10 16 255 203 74 255
+LABEL "Txt_MailFrom" "" "" 74 70 212 17 17 10 18 255 255 255 255
+LABEL "Txt_Subject" "" "" 74 93 212 17 19 10 20 255 255 255 255
+STILLIMAGEBUTTON "Control_451986244" "" "" 169 365 24 16 0 0 0 0 21 15 255 255 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱2.tga" 22 1
+TEXT "Txt_Content" "" "" 29 116 255 224 23 10 255 255 255 255 "Editbox\文本框_4e.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp"
+EDIT "Txt_AttachGold" "" "" 194 363 89 20 "Editbox\文本框_4e.dds" 24 15 255 255 255 "TEXT" 1 0 20

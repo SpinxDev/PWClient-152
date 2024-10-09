@@ -1,0 +1,56 @@
+	public:
+		int retcode;
+		int roleid;
+		unsigned int localsid;
+		int receiver;
+		int attach_obj_num;
+		int attach_obj_pos;
+		unsigned int attach_money;
+		enum { PROTOCOL_TYPE = PROTOCOL_PLAYERSENDMAIL_RE };
+	public:
+		PlayerSendMail_Re() { type = PROTOCOL_PLAYERSENDMAIL_RE; }
+		PlayerSendMail_Re(void*) : Protocol(PROTOCOL_PLAYERSENDMAIL_RE) { }
+		PlayerSendMail_Re (int l_retcode,int l_roleid,unsigned int l_localsid,
+			int l_receiver,int l_attach_obj_num = 0,int l_attach_obj_pos = -1,
+			unsigned int l_attach_money = 0)
+			 : retcode(l_retcode),roleid(l_roleid),localsid(l_localsid),
+			receiver(l_receiver),attach_obj_num(l_attach_obj_num),attach_obj_pos(l_attach_obj_pos),
+			attach_money(l_attach_money)
+		{
+			type = PROTOCOL_PLAYERSENDMAIL_RE;
+		}
+
+		PlayerSendMail_Re(const PlayerSendMail_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),roleid(rhs.roleid),localsid(rhs.localsid),
+			receiver(rhs.receiver),attach_obj_num(rhs.attach_obj_num),attach_obj_pos(rhs.attach_obj_pos),
+			attach_money(rhs.attach_money) { }
+
+		GNET::Protocol *Clone() const { return new PlayerSendMail_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roleid;
+			os << localsid;
+			os << receiver;
+			os << attach_obj_num;
+			os << attach_obj_pos;
+			os << attach_money;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roleid;
+			os >> localsid;
+			os >> receiver;
+			os >> attach_obj_num;
+			os >> attach_obj_pos;
+			os >> attach_money;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 4096; }

@@ -1,0 +1,24 @@
+DIALOG "Win_AuctionMyAttention" 0 0 630 380 0 1 10 "Window\对话框_标准边框1.dds" "" "人鱼传说新界面\title.tga" 3 3 625 33 "人鱼传说新界面\面板关闭按钮.tga" 37 7 255 203 74 255 1
+LABEL "title" "" "" 231 6 0 0 2 16 3 255 203 74 255
+EDIT "Txt_PackGold" "" "" 61 330 116 20 "Editbox\文本框_4c.dds" 4 15 255 255 255 "TEXT" 1 0 20
+LIST "Lst_Item" "buy" "" 7 78 616 253 5 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "70 250 80 110 110"
+STILLIMAGEBUTTON "Btn_AuctionList" "auctionlist" "" 140 352 65 24 0 0 0 0 6 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本1.dds" 7 1
+STILLIMAGEBUTTON "Btn_AuctionSellList" "auctionselllist" "" 73 352 65 24 0 0 0 0 8 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 9 1
+STILLIMAGEBUTTON "Btn_Gold2" "" "" 343 355 24 16 0 0 0 0 10 15 255 255 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱2.tga" 11 1
+EDIT "Txt_Price" "buy" "" 370 353 100 20 "Editbox\文本框_4c.dds" 12 10 255 255 255 "TEXT" 0 0 9
+STILLIMAGEBUTTON "Btn_Quit" "IDCANCEL" "" 577 352 45 24 0 0 0 0 13 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 14 1
+STILLIMAGEBUTTON "Btn_Buy" "buy" "" 475 352 45 24 0 0 0 0 15 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 16 1
+STILLIMAGEBUTTON "Btn_BinBuy" "binbuy" "" 521 352 55 24 0 0 0 0 17 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 18 1
+STILLIMAGEBUTTON "Back_拍卖号" "sortid" "" 7 60 70 19 0 0 0 0 19 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 20 1
+STILLIMAGEBUTTON "Back_名称" "sortname" "" 74 60 250 19 0 0 0 0 21 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 22 1
+STILLIMAGEBUTTON "Back_剩余时间" "sorttime" "" 322 60 80 19 0 0 0 0 23 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 24 1
+STILLIMAGEBUTTON "Back_当前价" "sortprice" "" 399 60 110 19 0 0 0 0 25 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 26 1
+STILLIMAGEBUTTON "Back_一口价" "sortbinprice" "" 507 60 116 19 0 0 0 0 27 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 28 1
+STILLIMAGEBUTTON "Btn_AuctionBuyList" "auctionbuylist" "" 6 352 65 24 0 0 0 0 29 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 30 1
+LABEL "Control_193362624" "" "" 6 332 0 0 31 10 32 255 203 74 255
+STILLIMAGEBUTTON "Btn_LastPage" "last" "" 567 333 12 15 0 0 0 0 33 15 255 255 255 255 "Button\按钮_左移1.tga" "Button\按钮_左移2.tga" 34 1
+STILLIMAGEBUTTON "Btn_NextPage" "next" "" 606 333 12 15 0 0 0 0 35 15 255 255 255 255 "Button\按钮_右移1.tga" "Button\按钮_右移2.tga" 36 1
+STILLIMAGEBUTTON "Btn_Refresh" "refresh" "" 587 332 12 15 0 0 0 0 37 15 255 255 255 255 "Button\刷新_1.tga" "Button\刷新_2.tga" 38 1
+LABEL "Txt_RefreshStatus" "" "" 180 332 0 0 39 10 40 255 255 255 255
+STILLIMAGEBUTTON "Btn_MyAttention" "auctionmyfavor" "" 207 352 65 24 0 0 0 0 41 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 42 1
+STILLIMAGEBUTTON "Btn_MinMyAttention" "deleteitem" "" 483 35 109 24 0 0 0 0 43 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 44 1

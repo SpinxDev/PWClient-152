@@ -1,0 +1,35 @@
+	public:
+		int result;
+		ByteVector auth;
+		enum { PROTOCOL_TYPE = PROTOCOL_SELECTROLE_RE };
+	public:
+		SelectRole_Re() { type = PROTOCOL_SELECTROLE_RE; }
+		SelectRole_Re(void*) : Protocol(PROTOCOL_SELECTROLE_RE) { }
+		SelectRole_Re (int l_result,ByteVector l_auth = ByteVector())
+			 : result(l_result),auth(l_auth)
+		{
+			type = PROTOCOL_SELECTROLE_RE;
+		}
+
+		SelectRole_Re(const SelectRole_Re &rhs)
+			: Protocol(rhs),result(rhs.result),auth(rhs.auth) { }
+
+		GNET::Protocol *Clone() const { return new SelectRole_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << result;
+			os << auth;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> result;
+			os >> auth;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 101; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

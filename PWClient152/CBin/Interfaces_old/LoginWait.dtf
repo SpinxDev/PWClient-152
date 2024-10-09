@@ -1,0 +1,3 @@
+DIALOG "Win_LoginWait" 0 0 400 70 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "" 27 6 96 96 96 255 1
+LABEL "Txt_Message" "" "" 200 8 0 0 2 14 3 255 203 74 255
+STILLIMAGEBUTTON "Btn_Cancel" "IDCANCEL" "SFX\Interface\ClickB.wav" 162 34 75 24 0 0 0 0 4 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 5 1

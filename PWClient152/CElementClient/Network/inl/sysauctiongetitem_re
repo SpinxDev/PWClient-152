@@ -1,0 +1,38 @@
+	public:
+		std::vector<unsigned int> ids;
+		GRoleInventoryVector items;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_SYSAUCTIONGETITEM_RE };
+	public:
+		SysAuctionGetItem_Re() { type = PROTOCOL_SYSAUCTIONGETITEM_RE; }
+		SysAuctionGetItem_Re(void*) : Protocol(PROTOCOL_SYSAUCTIONGETITEM_RE) { }
+		SysAuctionGetItem_Re (const std::vector<unsigned int>& l_ids,const GRoleInventoryVector& l_items,unsigned int l_localsid = 0)
+			 : ids(l_ids),items(l_items),localsid(l_localsid)
+		{
+			type = PROTOCOL_SYSAUCTIONGETITEM_RE;
+		}
+
+		SysAuctionGetItem_Re(const SysAuctionGetItem_Re &rhs)
+			: Protocol(rhs),ids(rhs.ids),items(rhs.items),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new SysAuctionGetItem_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << ids;
+			os << items;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> ids;
+			os >> items;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 102400; }

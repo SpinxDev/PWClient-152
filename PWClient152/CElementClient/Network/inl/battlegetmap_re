@@ -1,0 +1,62 @@
+	public:
+		unsigned short retcode;
+		unsigned short maxbid;
+		int status;
+		std::vector<GTerritory> cities;
+		int bonus_id;
+		int bonus_count1;
+		int bonus_count2;
+		int bonus_count3;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_BATTLEGETMAP_RE };
+	public:
+		BattleGetMap_Re() { type = PROTOCOL_BATTLEGETMAP_RE; }
+		BattleGetMap_Re(void*) : Protocol(PROTOCOL_BATTLEGETMAP_RE) { }
+		BattleGetMap_Re (unsigned short l_retcode,unsigned short l_maxbid,int l_status,
+			std::vector<GTerritory> l_cities = std::vector<GTerritory>(),int l_bonus_id = 0,int l_bonus_count1 = 0,
+			int l_bonus_count2 = 0,int l_bonus_count3 = 0,unsigned int l_localsid = 0)
+			 : retcode(l_retcode),maxbid(l_maxbid),status(l_status)
+			,cities(l_cities),bonus_id(l_bonus_id),bonus_count1(l_bonus_count1)
+			,bonus_count2(l_bonus_count2),bonus_count3(l_bonus_count3),localsid(l_localsid)
+		{
+			type = PROTOCOL_BATTLEGETMAP_RE;
+		}
+
+		BattleGetMap_Re(const BattleGetMap_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),maxbid(rhs.maxbid),status(rhs.status)
+			,cities(rhs.cities),bonus_id(rhs.bonus_id),bonus_count1(rhs.bonus_count1)
+			,bonus_count2(rhs.bonus_count2),bonus_count3(rhs.bonus_count3),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new BattleGetMap_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << maxbid;
+			os << status;
+			os << cities;
+			os << bonus_id;
+			os << bonus_count1;
+			os << bonus_count2;
+			os << bonus_count3;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> maxbid;
+			os >> status;
+			os >> cities;
+			os >> bonus_id;
+			os >> bonus_count1;
+			os >> bonus_count2;
+			os >> bonus_count3;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 2048; }

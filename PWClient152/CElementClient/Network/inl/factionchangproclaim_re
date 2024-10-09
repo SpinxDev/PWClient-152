@@ -1,0 +1,47 @@
+	public:
+		int retcode;
+		int roleid;
+		unsigned int localsid;
+		int operater;
+		Octets proclaim;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONCHANGPROCLAIM_RE };
+	public:
+		FactionChangProclaim_Re() { type = PROTOCOL_FACTIONCHANGPROCLAIM_RE; }
+		FactionChangProclaim_Re(void*) : Protocol(PROTOCOL_FACTIONCHANGPROCLAIM_RE) { }
+		FactionChangProclaim_Re (int l_retcode,int l_roleid,unsigned int l_localsid,
+			int l_operater,const Octets& l_proclaim)
+			 : retcode(l_retcode),roleid(l_roleid),localsid(l_localsid),
+			operater(l_operater),proclaim(l_proclaim)
+		{
+			type = PROTOCOL_FACTIONCHANGPROCLAIM_RE;
+		}
+
+		FactionChangProclaim_Re(const FactionChangProclaim_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),roleid(rhs.roleid),localsid(rhs.localsid),
+			operater(rhs.operater),proclaim(rhs.proclaim) { }
+
+		GNET::Protocol *Clone() const { return new FactionChangProclaim_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roleid;
+			os << localsid;
+			os << operater;
+			os << proclaim;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roleid;
+			os >> localsid;
+			os >> operater;
+			os >> proclaim;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 256; }

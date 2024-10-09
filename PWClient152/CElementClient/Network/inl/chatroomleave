@@ -1,0 +1,38 @@
+	public:
+		unsigned short roomid;
+		int roleid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_CHATROOMLEAVE };
+	public:
+		ChatRoomLeave() { type = PROTOCOL_CHATROOMLEAVE; }
+		ChatRoomLeave(void*) : Protocol(PROTOCOL_CHATROOMLEAVE) { }
+		ChatRoomLeave (unsigned short l_roomid,int l_roleid,unsigned int l_localsid)
+			 : roomid(l_roomid),roleid(l_roleid),localsid(l_localsid)
+		{
+			type = PROTOCOL_CHATROOMLEAVE;
+		}
+
+		ChatRoomLeave(const ChatRoomLeave &rhs)
+			: Protocol(rhs),roomid(rhs.roomid),roleid(rhs.roleid),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new ChatRoomLeave(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roomid;
+			os << roleid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roomid;
+			os >> roleid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 16; }

@@ -1,0 +1,56 @@
+	public:
+		int roleid;
+		unsigned short retcode;
+		int status;
+		unsigned int maxbonus;
+		std::vector<GBattleChallenge> cities;
+		int rand_num;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_BATTLECHALLENGEMAP_RE };
+	public:
+		BattleChallengeMap_Re() { type = PROTOCOL_BATTLECHALLENGEMAP_RE; }
+		BattleChallengeMap_Re(void*) : Protocol(PROTOCOL_BATTLECHALLENGEMAP_RE) { }
+		BattleChallengeMap_Re (int l_roleid,unsigned short l_retcode,int l_status = 0,
+			unsigned int l_maxbonus = 0,std::vector<GBattleChallenge> l_cities = std::vector<GBattleChallenge>(),int l_rand_num = 0,
+			unsigned int l_localsid = 0)
+			 : roleid(l_roleid),retcode(l_retcode),status(l_status)
+			,maxbonus(l_maxbonus),cities(l_cities),rand_num(l_rand_num)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_BATTLECHALLENGEMAP_RE;
+		}
+
+		BattleChallengeMap_Re(const BattleChallengeMap_Re &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),retcode(rhs.retcode),status(rhs.status)
+			,maxbonus(rhs.maxbonus),cities(rhs.cities),rand_num(rhs.rand_num)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new BattleChallengeMap_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << retcode;
+			os << status;
+			os << maxbonus;
+			os << cities;
+			os << rand_num;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> retcode;
+			os >> status;
+			os >> maxbonus;
+			os >> cities;
+			os >> rand_num;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 2048; }

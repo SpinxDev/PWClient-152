@@ -1,0 +1,44 @@
+	public:
+		int userid;
+		Octets cardnum;
+		Octets cardpasswd;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_USERADDCASH };
+	public:
+		UserAddCash() { type = PROTOCOL_USERADDCASH; }
+		UserAddCash(void*) : Protocol(PROTOCOL_USERADDCASH) { }
+		UserAddCash (int l_userid,const Octets& l_cardnum,const Octets& l_cardpasswd,
+			unsigned int l_localsid)
+			 : userid(l_userid),cardnum(l_cardnum),cardpasswd(l_cardpasswd)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_USERADDCASH;
+		}
+
+		UserAddCash(const UserAddCash &rhs)
+			: Protocol(rhs),userid(rhs.userid),cardnum(rhs.cardnum),cardpasswd(rhs.cardpasswd)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new UserAddCash(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << userid;
+			os << cardnum;
+			os << cardpasswd;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> userid;
+			os >> cardnum;
+			os >> cardpasswd;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

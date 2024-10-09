@@ -1,0 +1,38 @@
+	public:
+		int optype;
+		int roleid;
+		Octets params;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONOPREQUEST };
+	public:
+		FactionOPRequest() { type = PROTOCOL_FACTIONOPREQUEST; }
+		FactionOPRequest(void*) : Protocol(PROTOCOL_FACTIONOPREQUEST) { }
+		FactionOPRequest (int l_optype,int l_roleid,const Octets& l_params = Octets())
+			 : optype(l_optype),roleid(l_roleid),params(l_params)
+		{
+			type = PROTOCOL_FACTIONOPREQUEST;
+		}
+
+		FactionOPRequest(const FactionOPRequest &rhs)
+			: Protocol(rhs),optype(rhs.optype),roleid(rhs.roleid),params(rhs.params) { }
+
+		GNET::Protocol *Clone() const { return new FactionOPRequest(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << optype;
+			os << roleid;
+			os << params;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> optype;
+			os >> roleid;
+			os >> params;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 256; }

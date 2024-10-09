@@ -1,0 +1,30 @@
+	public:
+		char code;
+		enum { PROTOCOL_TYPE = PROTOCOL_KEEPALIVE };
+	public:
+		KeepAlive() { type = PROTOCOL_KEEPALIVE; }
+		KeepAlive(void*) : Protocol(PROTOCOL_KEEPALIVE) { }
+		KeepAlive (char l_code)
+			 : code(l_code)
+		{
+			type = PROTOCOL_KEEPALIVE;
+		}
+
+		KeepAlive(const KeepAlive &rhs)
+			: Protocol(rhs),code(rhs.code) { }
+
+		GNET::Protocol *Clone() const { return new KeepAlive(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << code;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> code;
+			return os;
+		}
+
+		bool SizePolicy(size_t size) const { return size <= 16; }

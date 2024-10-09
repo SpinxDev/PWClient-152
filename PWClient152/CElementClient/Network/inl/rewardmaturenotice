@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		int bonus_reward;
+		int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_REWARDMATURENOTICE };
+	public:
+		RewardMatureNotice() { type = PROTOCOL_REWARDMATURENOTICE; }
+		RewardMatureNotice(void*) : Protocol(PROTOCOL_REWARDMATURENOTICE) { }
+		RewardMatureNotice (int l_roleid,int l_bonus_reward = 0,int l_localsid = 0)
+			 : roleid(l_roleid),bonus_reward(l_bonus_reward),localsid(l_localsid)
+		{
+			type = PROTOCOL_REWARDMATURENOTICE;
+		}
+
+		RewardMatureNotice(const RewardMatureNotice &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),bonus_reward(rhs.bonus_reward),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new RewardMatureNotice(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << bonus_reward;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> bonus_reward;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

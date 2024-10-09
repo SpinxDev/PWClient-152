@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		std::vector<unsigned int> ids;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_SYSAUCTIONGETITEM };
+	public:
+		SysAuctionGetItem() { type = PROTOCOL_SYSAUCTIONGETITEM; }
+		SysAuctionGetItem(void*) : Protocol(PROTOCOL_SYSAUCTIONGETITEM) { }
+		SysAuctionGetItem (int l_roleid,const std::vector<unsigned int>& l_ids,unsigned int l_localsid)
+			 : roleid(l_roleid),ids(l_ids),localsid(l_localsid)
+		{
+			type = PROTOCOL_SYSAUCTIONGETITEM;
+		}
+
+		SysAuctionGetItem(const SysAuctionGetItem &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),ids(rhs.ids),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new SysAuctionGetItem(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << ids;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> ids;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 512; }

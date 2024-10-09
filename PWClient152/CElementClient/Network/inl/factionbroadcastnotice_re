@@ -1,0 +1,44 @@
+	public:
+		int srcroleid;
+		int dstroleid;
+		unsigned int dstlocalsid;
+		Octets msg;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONBROADCASTNOTICE_RE };
+	public:
+		FactionBroadcastNotice_Re() { type = PROTOCOL_FACTIONBROADCASTNOTICE_RE; }
+		FactionBroadcastNotice_Re(void*) : Protocol(PROTOCOL_FACTIONBROADCASTNOTICE_RE) { }
+		FactionBroadcastNotice_Re (int l_srcroleid,int l_dstroleid,unsigned int l_dstlocalsid,
+			const Octets& l_msg)
+			 : srcroleid(l_srcroleid),dstroleid(l_dstroleid),dstlocalsid(l_dstlocalsid),
+			msg(l_msg)
+		{
+			type = PROTOCOL_FACTIONBROADCASTNOTICE_RE;
+		}
+
+		FactionBroadcastNotice_Re(const FactionBroadcastNotice_Re &rhs)
+			: Protocol(rhs),srcroleid(rhs.srcroleid),dstroleid(rhs.dstroleid),dstlocalsid(rhs.dstlocalsid),
+			msg(rhs.msg) { }
+
+		GNET::Protocol *Clone() const { return new FactionBroadcastNotice_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << srcroleid;
+			os << dstroleid;
+			os << dstlocalsid;
+			os << msg;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> srcroleid;
+			os >> dstroleid;
+			os >> dstlocalsid;
+			os >> msg;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

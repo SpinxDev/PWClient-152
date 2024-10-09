@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		int factionid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_BATTLECHALLENGEMAP };
+	public:
+		BattleChallengeMap() { type = PROTOCOL_BATTLECHALLENGEMAP; }
+		BattleChallengeMap(void*) : Protocol(PROTOCOL_BATTLECHALLENGEMAP) { }
+		BattleChallengeMap (int l_roleid,int l_factionid,unsigned int l_localsid)
+			 : roleid(l_roleid),factionid(l_factionid),localsid(l_localsid)
+		{
+			type = PROTOCOL_BATTLECHALLENGEMAP;
+		}
+
+		BattleChallengeMap(const BattleChallengeMap &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),factionid(rhs.factionid),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new BattleChallengeMap(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << factionid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> factionid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

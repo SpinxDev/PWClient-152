@@ -1,0 +1,20 @@
+DIALOG "Dlg_BaseMountain" 0 0 220 400 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "" 27 6 96 96 96 255 1
+LABEL "title" "" "" 67 4 87 22 2 16 3 255 203 74 255
+STILLIMAGEBUTTON "Btn_BaseWater" "ChooseBaseWater" "" 90 62 32 32 0 0 0 0 4 10 255 255 255 255 "home\水面设置.dds" "home\水面设置D.dds" 5 1
+STILLIMAGEBUTTON "Btn_BaseMountain" "ChooseBaseMountain" "" 66 28 32 32 0 0 0 0 6 10 255 203 74 255 "home\山丘.dds" "home\山丘D.dds" 7 1
+STILLIMAGEBUTTON "Btn_BaseMountain2" "ChooseBaseMountain2" "" 115 28 32 32 0 0 0 0 8 10 255 255 255 255 "home\山脉.dds" "home\山脉D.dds" 9 1
+STILLIMAGEBUTTON "Btn_BaseLocalTex" "ChooseBaseLocalTex" "" 42 62 32 32 0 0 0 0 10 10 255 255 255 255 "home\特殊区域.dds" "home\特殊区域D.dds" 11 1
+STILLIMAGEBUTTON "Btn_BaseRoad" "ChooseBaseRoad" "" 164 28 32 32 0 0 0 0 12 10 255 255 255 255 "home\道路修整1.dds" "home\道路修整1D.dds" 13 1
+STILLIMAGEBUTTON "Btn_BaseTerrain" "ChooseBaseTerrain" "" 17 28 32 32 0 0 0 0 14 10 255 203 74 255 "home\基本区域.dds" "home\基本区域D.dds" 15 1
+STILLIMAGEBUTTON "Btn_LevelOff" "ChooseLevelOff" "" 139 62 32 32 0 0 0 0 16 10 255 255 255 255 "home\地面平整.dds" "home\地面平整D.dds" 17 1
+STILLIMAGEBUTTON "BTN_CREATE_HILL" "CreateMountainPoly" "" 13 205 50 25 0 0 0 0 18 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 19 1
+LABEL "label_Mountain" "" "" 10 105 59 16 20 10 21 255 203 74 255
+LABEL "label_Texture" "" "" 10 236 80 17 22 10 23 255 203 74 255
+LIST "ListBox_Mountain" "" "" 8 121 205 80 24 10 255 255 255 255 "Editbox\文本框_4b.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LIST "ListBox_Texture" "" "" 8 257 205 100 25 10 255 255 255 255 "Editbox\文本框_4b.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+STILLIMAGEBUTTON "BTN_ADV_HILL" "Advance" "" 69 205 65 25 0 0 0 0 26 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 27 1
+STILLIMAGEBUTTON "BTN_ADV_TEX" "AdvTex" "" 70 362 65 25 0 0 0 0 28 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 29 1
+STILLIMAGEBUTTON "BTN_DEL_HILL" "DelHill" "" 141 205 65 25 0 0 0 0 30 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 31 1
+STILLIMAGEBUTTON "BTN_DEL_TEX" "DelTex" "" 142 362 65 25 0 0 0 0 32 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 33 1
+STILLIMAGEBUTTON "BTN_APPLY_TEX" "ApplyTex" "" 13 362 50 25 0 0 0 0 34 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 35 1
+IMAGEPICTURE "Control_364850895" "" "" 67 113 148 3 1 0 "Window\分隔线.tga"

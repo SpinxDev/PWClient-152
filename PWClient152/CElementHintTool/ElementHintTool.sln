@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ElementHintLauncher", "..\CElementHintLauncher\ElementHintLauncher.vcproj", "{EE6F7989-35D4-4C04-9F1D-B4ED23E937E2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ElementHintTool", "ElementHintTool.vcproj", "{82EE9C4A-10A7-44AB-9D37-27EA6BB18734}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ElementHintToolServer", "..\CElementHintToolServer\ElementHintToolServer.vcproj", "{EADA3CA2-5EEC-4550-BC2F-EEE7A2BDB9A8}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 1
+		SccProjectUniqueName0 = ElementHintTool.vcproj
+		SccProjectName0 = \u0022$/CElement\u0022,\u0020RIDAAAAA
+		SccLocalPath0 = ..
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		SccProjectFilePathRelativizedFromConnection0 = CElementHintTool\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		DbgRelease|Win32 = DbgRelease|Win32
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE6F7989-35D4-4C04-9F1D-B4ED23E937E2}.DbgRelease|Win32.ActiveCfg = Release|Win32
+		{EE6F7989-35D4-4C04-9F1D-B4ED23E937E2}.DbgRelease|Win32.Build.0 = Release|Win32
+		{EE6F7989-35D4-4C04-9F1D-B4ED23E937E2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EE6F7989-35D4-4C04-9F1D-B4ED23E937E2}.Debug|Win32.Build.0 = Debug|Win32
+		{EE6F7989-35D4-4C04-9F1D-B4ED23E937E2}.Release|Win32.ActiveCfg = Release|Win32
+		{EE6F7989-35D4-4C04-9F1D-B4ED23E937E2}.Release|Win32.Build.0 = Release|Win32
+		{82EE9C4A-10A7-44AB-9D37-27EA6BB18734}.DbgRelease|Win32.ActiveCfg = DbgRelease|Win32
+		{82EE9C4A-10A7-44AB-9D37-27EA6BB18734}.DbgRelease|Win32.Build.0 = DbgRelease|Win32
+		{82EE9C4A-10A7-44AB-9D37-27EA6BB18734}.Debug|Win32.ActiveCfg = Debug|Win32
+		{82EE9C4A-10A7-44AB-9D37-27EA6BB18734}.Debug|Win32.Build.0 = Debug|Win32
+		{82EE9C4A-10A7-44AB-9D37-27EA6BB18734}.Release|Win32.ActiveCfg = Release|Win32
+		{82EE9C4A-10A7-44AB-9D37-27EA6BB18734}.Release|Win32.Build.0 = Release|Win32
+		{EADA3CA2-5EEC-4550-BC2F-EEE7A2BDB9A8}.DbgRelease|Win32.ActiveCfg = Release|Win32
+		{EADA3CA2-5EEC-4550-BC2F-EEE7A2BDB9A8}.DbgRelease|Win32.Build.0 = Release|Win32
+		{EADA3CA2-5EEC-4550-BC2F-EEE7A2BDB9A8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EADA3CA2-5EEC-4550-BC2F-EEE7A2BDB9A8}.Debug|Win32.Build.0 = Debug|Win32
+		{EADA3CA2-5EEC-4550-BC2F-EEE7A2BDB9A8}.Release|Win32.ActiveCfg = Release|Win32
+		{EADA3CA2-5EEC-4550-BC2F-EEE7A2BDB9A8}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

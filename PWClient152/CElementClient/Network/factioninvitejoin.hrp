@@ -1,0 +1,42 @@
+
+#ifndef __GNET_FACTIONINVITEJOIN_HPP
+#define __GNET_FACTIONINVITEJOIN_HPP
+
+#include "rpcdefs.h"
+#include "callid.hxx"
+#include "state.hxx"
+
+#include "factioninvitearg"
+#include "factioninviteres"
+
+namespace GNET
+{
+
+class FactionInviteJoin : public Rpc
+{
+#define	RPC_BASECLASS	Rpc
+	#include "factioninvitejoin"
+#undef	RPC_BASECLASS
+
+	void Server(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+		// FactionInviteArg *arg = (FactionInviteArg *)argument;
+		// FactionInviteRes *res = (FactionInviteRes *)result;
+	}
+
+	void Client(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+		// TODO
+		// FactionInviteArg *arg = (FactionInviteArg *)argument;
+		// FactionInviteRes *res = (FactionInviteRes *)result;
+	}
+
+	void OnTimeout()
+	{
+		// TODO Client Only
+	}
+
+};
+
+};
+#endif

@@ -1,0 +1,16 @@
+;  edge rendering used by A3DTerrainWater. 
+
+; t0, position in water surface space, t0.y is the delta height * -1.0f
+
+ps.1.4
+
+;c0 is fog color and 1/fogEnd
+def c1, 1.0, 1.0, 1.0, 1.0
+
+texcrd	r1.xyz, t0.xyz
+
+mul_sat r0.a, r1.y, c0.a
+mul r0.rgb, r0.a, c0
+
+
+

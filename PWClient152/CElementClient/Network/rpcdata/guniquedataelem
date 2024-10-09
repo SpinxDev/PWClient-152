@@ -1,0 +1,77 @@
+#ifndef __GNET_GUNIQUEDATAELEM_RPCDATA
+#define __GNET_GUNIQUEDATAELEM_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GUniqueDataElem : public GNET::Rpc::Data
+	{
+	public:
+		char vtype;
+		Octets value;
+		int version;
+		short reserved;
+
+	public:
+		GUniqueDataElem (char l_vtype = 0,const Octets& l_value = Octets(0),int l_version = 0
+			,short l_reserved = 0)
+			: vtype(l_vtype),value(l_value),version(l_version)
+			,reserved(l_reserved)
+		{
+		}
+
+		GUniqueDataElem(const GUniqueDataElem &rhs)
+			: vtype(rhs.vtype),value(rhs.value),version(rhs.version),
+			reserved(rhs.reserved) { }
+
+		Rpc::Data *Clone() const { return new GUniqueDataElem(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GUniqueDataElem *r = dynamic_cast<const GUniqueDataElem *>(&rhs);
+			if (r && r != this)
+			{
+				vtype = r->vtype;
+				value = r->value;
+				version = r->version;
+				reserved = r->reserved;
+			}
+			return *this;
+		}
+
+		GUniqueDataElem& operator = (const GUniqueDataElem &rhs)
+		{
+			const GUniqueDataElem *r = &rhs;
+			if (r && r != this)
+			{
+				vtype = r->vtype;
+				value = r->value;
+				version = r->version;
+				reserved = r->reserved;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << vtype;
+			os << value;
+			os << version;
+			os << reserved;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> vtype;
+			os >> value;
+			os >> version;
+			os >> reserved;
+			return os;
+		}
+
+	};
+};
+#endif

@@ -1,0 +1,47 @@
+	public:
+		int userid;
+		unsigned int localsid;
+		int login_time;
+		int login_ip;
+		int current_ip;
+		enum { PROTOCOL_TYPE = PROTOCOL_ACCOUNTLOGINRECORD };
+	public:
+		AccountLoginRecord() { type = PROTOCOL_ACCOUNTLOGINRECORD; }
+		AccountLoginRecord(void*) : Protocol(PROTOCOL_ACCOUNTLOGINRECORD) { }
+		AccountLoginRecord (int l_userid,unsigned int l_localsid,int l_login_time,
+			int l_login_ip,int l_current_ip)
+			 : userid(l_userid),localsid(l_localsid),login_time(l_login_time)
+			,login_ip(l_login_ip),current_ip(l_current_ip)
+		{
+			type = PROTOCOL_ACCOUNTLOGINRECORD;
+		}
+
+		AccountLoginRecord(const AccountLoginRecord &rhs)
+			: Protocol(rhs),userid(rhs.userid),localsid(rhs.localsid),login_time(rhs.login_time)
+			,login_ip(rhs.login_ip),current_ip(rhs.current_ip) { }
+
+		GNET::Protocol *Clone() const { return new AccountLoginRecord(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << userid;
+			os << localsid;
+			os << login_time;
+			os << login_ip;
+			os << current_ip;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> userid;
+			os >> localsid;
+			os >> login_time;
+			os >> login_ip;
+			os >> current_ip;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

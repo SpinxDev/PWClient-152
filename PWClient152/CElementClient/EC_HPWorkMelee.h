@@ -1,0 +1,89 @@
+/*
+ * FILE: EC_HPWorkMelee.h
+ *
+ * DESCRIPTION: 
+ *
+ * CREATED BY: Duyuxin, 2004/10/11
+ *
+ * HISTORY: 
+ *
+ * Copyright (c) 2004 Archosaur Studio, All Rights Reserved.
+ */
+
+#pragma once
+
+#include "EC_HPWork.h"
+
+///////////////////////////////////////////////////////////////////////////
+//	
+//	Define and Macro
+//	
+///////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////
+//	
+//	Types and Global variables
+//	
+///////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////
+//	
+//	Declare of Global functions
+//	
+///////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////
+//	
+//	Class CECHPWorkMelee
+//	
+///////////////////////////////////////////////////////////////////////////
+
+class CECHPWorkMelee : public CECHPWork
+{
+public:		//	Types
+
+public:		//	Constructor and Destructor
+
+	CECHPWorkMelee(CECHPWorkMan* pWorkMan);
+	virtual ~CECHPWorkMelee();
+
+public:		//	Attributes
+
+public:		//	Operations
+
+	//	Tick routine
+	virtual bool Tick(DWORD dwDeltaTime);
+	//	Reset work
+	virtual void Reset();
+	//	Copy work data
+	virtual bool CopyData(CECHPWork* pWork);
+	virtual void Cancel();
+
+	//	Get attack target
+	int GetTarget() { return m_idTarget; }
+	//	Set idle time
+	void SetIdleTime(int iTime);
+	//	Get idle time
+	int GetIdleTime() { return m_iIdleTime; }
+
+protected:	//	Attributes
+
+	int		m_idTarget;		//	Target id
+	int		m_iIdleTime;	//	Idle time
+	int		m_iIdleTimeCnt;	//	Idle time counter
+
+protected:	//	Operations
+
+	//	On first tick
+	virtual void OnFirstTick();
+};
+
+///////////////////////////////////////////////////////////////////////////
+//	
+//	Inline functions
+//	
+///////////////////////////////////////////////////////////////////////////
+

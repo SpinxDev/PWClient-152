@@ -1,0 +1,50 @@
+	public:
+		int roleid;
+		int provider_link_id;
+		int locktime;
+		int timeout;
+		int settime;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_ENTERWORLD };
+	public:
+		EnterWorld() { type = PROTOCOL_ENTERWORLD; }
+		EnterWorld(void*) : Protocol(PROTOCOL_ENTERWORLD) { }
+		EnterWorld (int l_roleid,int l_provider_link_id = -1,int l_locktime = 0,
+			int l_timeout = 0,int l_settime = 0,unsigned int l_localsid = 0)
+			 : roleid(l_roleid),provider_link_id(l_provider_link_id),locktime(l_locktime)
+			,timeout(l_timeout),settime(l_settime),localsid(l_localsid)
+		{
+			type = PROTOCOL_ENTERWORLD;
+		}
+
+		EnterWorld(const EnterWorld &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),provider_link_id(rhs.provider_link_id),locktime(rhs.locktime)
+			,timeout(rhs.timeout),settime(rhs.settime),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new EnterWorld(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << provider_link_id;
+			os << locktime;
+			os << timeout;
+			os << settime;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> provider_link_id;
+			os >> locktime;
+			os >> timeout;
+			os >> settime;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 101; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

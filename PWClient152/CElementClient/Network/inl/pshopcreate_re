@@ -1,0 +1,35 @@
+	public:
+		int retcode;
+		int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_PSHOPCREATE_RE };
+	public:
+		PShopCreate_Re() { type = PROTOCOL_PSHOPCREATE_RE; }
+		PShopCreate_Re(void*) : Protocol(PROTOCOL_PSHOPCREATE_RE) { }
+		PShopCreate_Re (int l_retcode,int l_localsid)
+			 : retcode(l_retcode),localsid(l_localsid)
+		{
+			type = PROTOCOL_PSHOPCREATE_RE;
+		}
+
+		PShopCreate_Re(const PShopCreate_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new PShopCreate_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

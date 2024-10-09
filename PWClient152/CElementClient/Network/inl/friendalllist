@@ -1,0 +1,9 @@
+		GNET::Protocol *Clone() const {  return new FriendAllList(*this); }
+	public:
+		enum { PROTOCOL_TYPE = RPC_FRIENDALLLIST };
+		FriendAllList(Type type, Rpc::Data *argument, Rpc::Data *result)
+			: RPC_BASECLASS(type, argument, result ) { }
+		FriendAllList(const FriendAllList &rhs) : RPC_BASECLASS(rhs) { }
+		int  PriorPolicy( ) const { return 1; }
+		bool SizePolicy(size_t size) const { return size <= 2048; }
+		bool TimePolicy(int timeout) const { return timeout <= 10; }

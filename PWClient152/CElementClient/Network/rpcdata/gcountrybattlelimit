@@ -1,0 +1,64 @@
+#ifndef __GNET_GCOUNTRYBATTLELIMIT_RPCDATA
+#define __GNET_GCOUNTRYBATTLELIMIT_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GCountryBattleLimit : public GNET::Rpc::Data
+	{
+	public:
+		unsigned char occupation_cnt_ceil;
+		int minor_str_floor;
+
+	public:
+		GCountryBattleLimit (unsigned char l_occupation_cnt_ceil = 0,int l_minor_str_floor = 0)
+			: occupation_cnt_ceil(l_occupation_cnt_ceil),minor_str_floor(l_minor_str_floor)
+		{
+		}
+
+		GCountryBattleLimit(const GCountryBattleLimit &rhs)
+			: occupation_cnt_ceil(rhs.occupation_cnt_ceil),minor_str_floor(rhs.minor_str_floor) { }
+
+		Rpc::Data *Clone() const { return new GCountryBattleLimit(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GCountryBattleLimit *r = dynamic_cast<const GCountryBattleLimit *>(&rhs);
+			if (r && r != this)
+			{
+				occupation_cnt_ceil = r->occupation_cnt_ceil;
+				minor_str_floor = r->minor_str_floor;
+			}
+			return *this;
+		}
+
+		GCountryBattleLimit& operator = (const GCountryBattleLimit &rhs)
+		{
+			const GCountryBattleLimit *r = &rhs;
+			if (r && r != this)
+			{
+				occupation_cnt_ceil = r->occupation_cnt_ceil;
+				minor_str_floor = r->minor_str_floor;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << occupation_cnt_ceil;
+			os << minor_str_floor;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> occupation_cnt_ceil;
+			os >> minor_str_floor;
+			return os;
+		}
+
+	};
+};
+#endif

@@ -1,0 +1,30 @@
+DIALOG "Win_ChooseStature" 0 0 250 480 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "Window\对话框_标准关闭.tga" 26 5 96 96 96 255 1
+STILLIMAGEBUTTON "Control_716737528" "ResetArmWidth" "" 193 282 48 24 0 0 0 0 2 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 3 1
+LABEL "Control_253840310" "" "" 41 40 60 14 4 10 5 255 255 255 255
+SLIDER "Slider_HeadScale" "MoveSlider" "" 40 57 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Control_107641138" "" "" 40 108 97 14 6 10 7 255 255 255 255
+SLIDER "Slider_UpScale" "MoveSlider" "" 40 125 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Control_942689376" "" "" 42 177 70 14 8 10 9 255 255 255 255
+SLIDER "Slider_WaistScale" "MoveSlider" "" 40 192 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Control_45108370" "" "" 40 251 68 14 10 10 11 255 255 255 255
+SLIDER "Slider_ArmWidth" "MoveSlider" "" 40 267 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Control_115359434" "" "" 39 322 71 14 12 10 13 255 255 255 255
+SLIDER "Slider_LegWidth" "MoveSlider" "" 40 338 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Label_BreastScale" "" "" 40 394 72 14 14 10 15 255 255 255 255
+SLIDER "Slider_BreastScale" "MoveSlider" "" 40 410 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+STILLIMAGEBUTTON "Control_193291245" "ChooseFacePainting" "" 0 384 38 48 0 0 0 0 16 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 17 1
+STILLIMAGEBUTTON "Control_78047744" "ChooseHair" "" 0 336 38 48 0 0 0 0 18 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 19 1
+STILLIMAGEBUTTON "Control_332562581" "ChooseEar" "" 0 288 38 48 0 0 0 0 20 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 21 1
+STILLIMAGEBUTTON "Control_673114926" "ChooseMouth" "" 0 240 38 48 0 0 0 0 22 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 23 1
+STILLIMAGEBUTTON "Control_120048474" "ChooseNose" "" 0 192 38 48 0 0 0 0 24 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 25 1
+STILLIMAGEBUTTON "Control_368912370" "ChooseEyebrow" "" 0 144 38 48 0 0 0 0 26 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 27 1
+STILLIMAGEBUTTON "Control_588733145" "ChooseEye" "" 0 96 38 48 0 0 0 0 28 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 29 1
+STILLIMAGEBUTTON "Control_69605439" "ChooseFace" "" 0 48 38 48 0 0 0 0 30 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 31 1
+STILLIMAGEBUTTON "Btm_ChooseStature" "ChooseStature" "" 0 432 38 48 0 0 0 0 32 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 33 1
+LABEL "Control_59341800" "" "" 72 2 105 22 34 16 35 255 203 74 255
+STILLIMAGEBUTTON "Control_1032530940" "ResetWaistScale" "" 192 206 48 24 0 0 0 0 36 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 37 1
+STILLIMAGEBUTTON "Control_99269256" "ResetUpScale" "" 192 139 48 24 0 0 0 0 38 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 39 1
+STILLIMAGEBUTTON "Control_446771346" "ResetHeadScale" "" 193 72 48 24 0 0 0 0 40 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 41 1
+STILLIMAGEBUTTON "Control_77024212" "ChoosePreCustomize" "" 0 0 38 48 0 0 0 0 42 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 43 1
+STILLIMAGEBUTTON "Control_34260800" "ResetLegWidth" "" 193 353 48 24 0 0 0 0 44 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 45 1
+STILLIMAGEBUTTON "StillImageButton_BreastScaleReset" "ResetBreastScale" "" 193 426 48 24 0 0 0 0 46 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 47 1

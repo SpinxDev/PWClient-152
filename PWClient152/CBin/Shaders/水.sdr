@@ -1,0 +1,21 @@
+//  ************* Angelica 3D shader ***************
+
+Ë®
+{
+	//  General properties
+
+	//  Stage 0
+	{
+		texture          TEX_NORMAL  »ÆÆÖ½­.tga
+		tcscroll         0.000000  0.100000
+		tcrotate         0.400000
+	}
+
+	//  Stage 1
+	{
+Texture
+		tcscroll         0.000000  0.100000
+		tcrotate         0.100000
+	}
+
+}

@@ -1,0 +1,44 @@
+	public:
+		int localsid;
+		PShopItemEntryVector itemlist;
+		char listtype;
+		int page_num;
+		enum { PROTOCOL_TYPE = PROTOCOL_PSHOPLISTITEM_RE };
+	public:
+		PShopListItem_Re() { type = PROTOCOL_PSHOPLISTITEM_RE; }
+		PShopListItem_Re(void*) : Protocol(PROTOCOL_PSHOPLISTITEM_RE) { }
+		PShopListItem_Re (int l_localsid,const PShopItemEntryVector& l_itemlist = PShopItemEntryVector(),char l_listtype = 0,
+			int l_page_num = 0)
+			 : localsid(l_localsid),itemlist(l_itemlist),listtype(l_listtype)
+			,page_num(l_page_num)
+		{
+			type = PROTOCOL_PSHOPLISTITEM_RE;
+		}
+
+		PShopListItem_Re(const PShopListItem_Re &rhs)
+			: Protocol(rhs),localsid(rhs.localsid),itemlist(rhs.itemlist),listtype(rhs.listtype)
+			,page_num(rhs.page_num) { }
+
+		GNET::Protocol *Clone() const { return new PShopListItem_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << localsid;
+			os << itemlist;
+			os << listtype;
+			os << page_num;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> localsid;
+			os >> itemlist;
+			os >> listtype;
+			os >> page_num;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 65535; }

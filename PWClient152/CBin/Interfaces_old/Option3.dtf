@@ -1,0 +1,5 @@
+POPUP "HelpMenu" 0 0 105 60 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 0 0 "" 0 0 255 255 255 255 1
+HILIGHT "Listbox\列表框_反显.dds"
+MENUITEM 101 "OpenHelp"
+MENUITEM 103 "HelpWizard"
+MENUITEM 105 "Exit"

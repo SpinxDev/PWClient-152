@@ -1,0 +1,39 @@
+; DESCRIPTION:
+; Vertex shader used to do direct output
+
+vs.1.1
+
+;------------------------------------------------------------------------------
+; v0 	  = position in screen space
+; v1    = diffuse
+; v2		= specular
+; v3	  = texture coordinates of each corner's center texture uv
+;------------------------------------------------------------------------------
+
+;------------------------------------------------------------------------------
+; Constants specified by the app;
+; c0	  = (2 / width, -2 / height, 1.0, 0.0)
+; c1		= (x, y, 0, 0)
+;------------------------------------------------------------------------------
+
+;------------------------------------------------------------------------------
+; oPos	  = Output position
+; oD0	  = Diffuse
+; oT0 = texture coordinates
+;------------------------------------------------------------------------------
+
+sub r1, v0, c1
+mul r0, r1, c0.xyzz
+add r1, r0, c0.zzww
+sub r1.x, r0.x, c0.z
+rcp r0.x, v0.w
+mul oPos.xyz, r1.xyz, r0.x
+mov oPos.w, r0.x
+
+mov oD0, v1
+mov oD1, v2
+mov oT0, v3
+mov oT1, v4
+mov oT2, v5
+mov oT3, v6
+mov oT4, v7

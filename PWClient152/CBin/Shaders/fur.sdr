@@ -1,0 +1,32 @@
+//  ************* Angelica 3D shader ***************
+
+version 5
+
+"Fur"
+{
+	//  General properties
+	texturefactor    1.000000  1.000000  1.000000  1.000000
+	pixelshader      Shaders\2.2\ps\facerender\furrender.txt
+
+	//  Stage 0
+	{
+		colorop          TOP_MODULATE
+		colorarg1        TA_TEXTURE
+		colorarg2        TA_DIFFUSE
+		alphaop          TOP_MODULATE
+		alphaarg1        TA_TEXTURE
+		alphaarg2        TA_DIFFUSE
+	}
+	
+	//  Stage 1
+	{
+		address          TADDR_CLAMP
+		colorop          TOP_BLENDTEXTUREALPHA
+		colorarg1        TA_TEXTURE
+		colorarg2        TA_CURRENT
+		alphaop          TOP_SELECTARG2
+		alphaarg1        TA_TEXTURE
+		alphaarg2        TA_CURRENT
+	}
+
+}

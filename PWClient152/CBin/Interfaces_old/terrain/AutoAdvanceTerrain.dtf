@@ -1,0 +1,31 @@
+DIALOG "Dlg_AdvanceTerrain" 0 0 220 310 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "" 27 6 96 96 96 255 1
+LABEL "Control_23758989" "" "" 67 5 86 20 2 16 3 255 203 74 255
+LABEL "Control_21800988" "" "" 8 44 56 14 4 10 5 255 203 74 255
+SLIDER "Slider_MaxHeight" "moveSlider" "" 88 49 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+LABEL "Control_400108176" "" "" 7 68 69 14 6 10 7 255 203 74 255
+SLIDER "Slider_MainSmooth" "moveSlider" "" 88 73 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+LABEL "Control_405303570" "" "" 8 117 56 16 8 10 9 255 203 74 255
+SLIDER "Slider_TerrainSeed" "moveSlider" "" 88 122 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+LABEL "Control_84616721" "" "" 8 93 71 17 10 10 11 255 203 74 255
+SLIDER "Slider_PartSmooth" "moveSlider" "" 88 97 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+LABEL "Label_MaxHeight" "" "" 87 34 30 14 12 10 13 255 255 255 255
+LABEL "Label_MainSmooth" "" "" 87 58 30 14 14 10 15 255 255 255 255
+LABEL "Label_PartSmooth" "" "" 87 82 30 14 16 10 17 255 255 255 255
+LABEL "Label_TerrainSeed" "" "" 87 106 30 14 18 10 19 255 255 255 255
+STILLIMAGEBUTTON "Btn_CreateTerrain" "CreateTerrain" "" 80 240 60 28 0 0 0 0 20 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 21 1
+STILLIMAGEBUTTON "Control_460061542" "TurnToBase" "" 160 273 45 28 0 0 0 0 22 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 23 1
+STILLIMAGEBUTTON "BTN_SAVE" "Save" "" 14 273 45 28 0 0 0 0 24 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 25 1
+STILLIMAGEBUTTON "BTN_SAVE_AS" "SaveAs" "" 86 273 45 28 0 0 0 0 26 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 27 1
+SLIDER "Slider_MainTexture" "moveSlider" "" 88 172 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_PatchTexture" "moveSlider" "" 88 198 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_PatchDivision" "moveSlider" "" 88 223 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_TextureRatio" "moveSlider" "" 88 146 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+LABEL "Control_146206120" "" "" 7 142 81 17 28 10 29 255 203 74 255
+LABEL "Control_420047803" "" "" 8 167 71 14 30 10 31 255 203 74 255
+LABEL "Control_424091641" "" "" 8 193 65 14 32 10 33 255 203 74 255
+LABEL "Control_266845284" "" "" 8 218 73 14 34 10 35 255 203 74 255
+LABEL "Label_TextureRatio" "" "" 87 132 30 14 36 15 37 255 255 255 255
+LABEL "Label_MainTexture" "" "" 87 156 30 14 38 15 39 255 255 255 255
+LABEL "Label_PatchTexture" "" "" 87 183 30 14 40 15 41 255 255 255 255
+LABEL "Label_PatchDivision" "" "" 87 209 30 14 42 15 43 255 255 255 255
+IMAGEPICTURE "Control_161417682" "" "" 5 30 210 3 1 0 "Window\分隔线.tga"

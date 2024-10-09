@@ -1,0 +1,47 @@
+	public:
+		Octets nonce;
+		unsigned int version;
+		char algo;
+		Octets edition;
+		unsigned char exp_rate;
+		enum { PROTOCOL_TYPE = PROTOCOL_CHALLENGE };
+	public:
+		Challenge() { type = PROTOCOL_CHALLENGE; }
+		Challenge(void*) : Protocol(PROTOCOL_CHALLENGE) { }
+		Challenge (const Octets& l_nonce,unsigned int l_version,char l_algo,
+			const Octets& l_edition,unsigned char l_exp_rate)
+			 : nonce(l_nonce),version(l_version),algo(l_algo)
+			,edition(l_edition),exp_rate(l_exp_rate)
+		{
+			type = PROTOCOL_CHALLENGE;
+		}
+
+		Challenge(const Challenge &rhs)
+			: Protocol(rhs),nonce(rhs.nonce),version(rhs.version),algo(rhs.algo)
+			,edition(rhs.edition),exp_rate(rhs.exp_rate) { }
+
+		GNET::Protocol *Clone() const { return new Challenge(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << nonce;
+			os << version;
+			os << algo;
+			os << edition;
+			os << exp_rate;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> nonce;
+			os >> version;
+			os >> algo;
+			os >> edition;
+			os >> exp_rate;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 101; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

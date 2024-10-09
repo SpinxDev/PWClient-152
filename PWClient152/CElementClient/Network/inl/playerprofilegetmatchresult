@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		int match_mode;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_PLAYERPROFILEGETMATCHRESULT };
+	public:
+		PlayerProfileGetMatchResult() { type = PROTOCOL_PLAYERPROFILEGETMATCHRESULT; }
+		PlayerProfileGetMatchResult(void*) : Protocol(PROTOCOL_PLAYERPROFILEGETMATCHRESULT) { }
+		PlayerProfileGetMatchResult (int l_roleid,int l_match_mode,unsigned int l_localsid)
+			 : roleid(l_roleid),match_mode(l_match_mode),localsid(l_localsid)
+		{
+			type = PROTOCOL_PLAYERPROFILEGETMATCHRESULT;
+		}
+
+		PlayerProfileGetMatchResult(const PlayerProfileGetMatchResult &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),match_mode(rhs.match_mode),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new PlayerProfileGetMatchResult(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << match_mode;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> match_mode;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 16; }

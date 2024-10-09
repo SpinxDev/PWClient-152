@@ -1,0 +1,66 @@
+#ifndef __GNET_PSHOPITEMENTRY_RPCDATA
+#define __GNET_PSHOPITEMENTRY_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "pshopitem"
+
+namespace GNET
+{
+	class PShopItemEntry : public GNET::Rpc::Data
+	{
+	public:
+		int roleid;
+		PShopItem item;
+
+	public:
+		PShopItemEntry (int l_roleid = 0,const PShopItem& l_item = PShopItem())
+			: roleid(l_roleid),item(l_item)
+		{
+		}
+
+		PShopItemEntry(const PShopItemEntry &rhs)
+			: roleid(rhs.roleid),item(rhs.item) { }
+
+		Rpc::Data *Clone() const { return new PShopItemEntry(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const PShopItemEntry *r = dynamic_cast<const PShopItemEntry *>(&rhs);
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				item = r->item;
+			}
+			return *this;
+		}
+
+		PShopItemEntry& operator = (const PShopItemEntry &rhs)
+		{
+			const PShopItemEntry *r = &rhs;
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				item = r->item;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << item;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> item;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<PShopItemEntry>	PShopItemEntryVector;
+};
+#endif

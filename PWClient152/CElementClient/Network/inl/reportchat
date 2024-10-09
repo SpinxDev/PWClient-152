@@ -1,0 +1,47 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		int dst_roleid;
+		Octets dst_rolename;
+		Octets content;
+		enum { PROTOCOL_TYPE = PROTOCOL_REPORTCHAT };
+	public:
+		ReportChat() { type = PROTOCOL_REPORTCHAT; }
+		ReportChat(void*) : Protocol(PROTOCOL_REPORTCHAT) { }
+		ReportChat (int l_roleid,unsigned int l_localsid,int l_dst_roleid,
+			const Octets& l_dst_rolename,const Octets& l_content)
+			 : roleid(l_roleid),localsid(l_localsid),dst_roleid(l_dst_roleid)
+			,dst_rolename(l_dst_rolename),content(l_content)
+		{
+			type = PROTOCOL_REPORTCHAT;
+		}
+
+		ReportChat(const ReportChat &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid),dst_roleid(rhs.dst_roleid)
+			,dst_rolename(rhs.dst_rolename),content(rhs.content) { }
+
+		GNET::Protocol *Clone() const { return new ReportChat(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << dst_roleid;
+			os << dst_rolename;
+			os << content;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> dst_roleid;
+			os >> dst_rolename;
+			os >> content;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

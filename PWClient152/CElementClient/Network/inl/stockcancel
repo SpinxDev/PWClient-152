@@ -1,0 +1,44 @@
+	public:
+		int roleid;
+		unsigned int tid;
+		int price;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_STOCKCANCEL };
+	public:
+		StockCancel() { type = PROTOCOL_STOCKCANCEL; }
+		StockCancel(void*) : Protocol(PROTOCOL_STOCKCANCEL) { }
+		StockCancel (int l_roleid,unsigned int l_tid,int l_price = 0,
+			unsigned int l_localsid = 0)
+			 : roleid(l_roleid),tid(l_tid),price(l_price),
+			localsid(l_localsid)
+		{
+			type = PROTOCOL_STOCKCANCEL;
+		}
+
+		StockCancel(const StockCancel &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),tid(rhs.tid),price(rhs.price),
+			localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new StockCancel(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << tid;
+			os << price;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> tid;
+			os >> price;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

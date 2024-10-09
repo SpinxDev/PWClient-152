@@ -1,0 +1,87 @@
+#ifndef __GNET_QQADDFRIENDRQSTARG_RPCDATA
+#define __GNET_QQADDFRIENDRQSTARG_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class QQAddFriendRqstArg : public GNET::Rpc::Data
+	{
+	public:
+		int srcroleid;
+		char srczoneid;
+		Octets srcrolename;
+		int dstroleid;
+		char dstzoneid;
+		Octets dstrolename;
+
+	public:
+		QQAddFriendRqstArg (int l_srcroleid = 0,char l_srczoneid = 0,Octets l_srcrolename = Octets(0)
+			,int l_dstroleid = 0,char l_dstzoneid = 0,Octets l_dstrolename = Octets(0))
+			: srcroleid(l_srcroleid),srczoneid(l_srczoneid),srcrolename(l_srcrolename)
+			,dstroleid(l_dstroleid),dstzoneid(l_dstzoneid),dstrolename(l_dstrolename)
+		{
+		}
+
+		QQAddFriendRqstArg(const QQAddFriendRqstArg &rhs)
+			: srcroleid(rhs.srcroleid),srczoneid(rhs.srczoneid),srcrolename(rhs.srcrolename),
+			dstroleid(rhs.dstroleid),dstzoneid(rhs.dstzoneid),dstrolename(rhs.dstrolename) { }
+
+		Rpc::Data *Clone() const { return new QQAddFriendRqstArg(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const QQAddFriendRqstArg *r = dynamic_cast<const QQAddFriendRqstArg *>(&rhs);
+			if (r && r != this)
+			{
+				srcroleid = r->srcroleid;
+				srczoneid = r->srczoneid;
+				srcrolename = r->srcrolename;
+				dstroleid = r->dstroleid;
+				dstzoneid = r->dstzoneid;
+				dstrolename = r->dstrolename;
+			}
+			return *this;
+		}
+
+		QQAddFriendRqstArg& operator = (const QQAddFriendRqstArg &rhs)
+		{
+			const QQAddFriendRqstArg *r = &rhs;
+			if (r && r != this)
+			{
+				srcroleid = r->srcroleid;
+				srczoneid = r->srczoneid;
+				srcrolename = r->srcrolename;
+				dstroleid = r->dstroleid;
+				dstzoneid = r->dstzoneid;
+				dstrolename = r->dstrolename;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << srcroleid;
+			os << srczoneid;
+			os << srcrolename;
+			os << dstroleid;
+			os << dstzoneid;
+			os << dstrolename;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> srcroleid;
+			os >> srczoneid;
+			os >> srcrolename;
+			os >> dstroleid;
+			os >> dstzoneid;
+			os >> dstrolename;
+			return os;
+		}
+
+	};
+};
+#endif

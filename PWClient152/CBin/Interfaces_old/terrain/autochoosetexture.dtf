@@ -1,0 +1,24 @@
+DIALOG "Dlg_ChooseTexture" 0 0 375 250 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "" 26 5 96 96 96 255 1
+LABEL "Control_237500184" "" "" 146 4 84 20 2 16 3 255 203 74 255
+LIST "ListBox_MainTexture" "ChooseBuilding" "" 10 29 175 95 4 10 255 255 255 255 "Editbox\文本框_4.tga" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LIST "ListBox_PatchTexture" "ChooseBuilding" "" 190 28 175 95 5 10 255 255 255 255 "Editbox\文本框_4.tga" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+IMAGEPICTURE "ImagePic_MainTexture" "" "" 12 128 70 70 0 0 ""
+IMAGEPICTURE "ImagePic_PatchTexture" "" "" 192 128 70 70 0 0 ""
+STILLIMAGEBUTTON "Control_653262381" "Cancel" "" 263 208 45 28 0 0 0 0 6 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 7 1
+LABEL "Control_783352875" "" "" 88 147 20 16 8 10 9 255 203 74 255
+LABEL "Control_192143952" "" "" 89 175 20 14 10 10 11 255 203 74 255
+SLIDER "Slider_MainTextureU" "moveSlider" "" 86 164 96 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_MainTextureV" "moveSlider" "" 86 190 96 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+LABEL "Control_391924628" "" "" 268 147 21 16 12 10 13 255 203 74 255
+LABEL "Control_477102032" "" "" 268 175 21 14 14 10 15 255 203 74 255
+SLIDER "Slider_PatchTextureU" "moveSlider" "" 266 164 100 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_PatchTextureV" "moveSlider" "" 265 190 101 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+LABEL "Label_MainTextureU" "" "" 108 147 45 14 16 15 17 255 255 255 255
+LABEL "Label_MainTextureV" "" "" 108 175 45 14 18 15 19 255 255 255 255
+LABEL "Label_PatchTextureU" "" "" 287 147 45 14 20 15 21 255 255 255 255
+LABEL "Label_PatchTextureV" "" "" 287 175 45 14 22 15 23 255 255 255 255
+STILLIMAGEBUTTON "BTN_APPLY" "ApplyTex" "" 197 208 45 28 0 0 0 0 24 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 25 1
+STILLIMAGEBUTTON "BTN_SAVE_AS" "SaveAs" "" 133 208 45 28 0 0 0 0 26 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 27 1
+STILLIMAGEBUTTON "BTN_SAVE" "Save" "" 69 208 45 28 0 0 0 0 28 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 29 1
+LABEL "Control_41198125" "" "" 114 129 50 14 30 10 31 255 203 74 255
+LABEL "Control_49688478" "" "" 295 129 50 14 32 10 33 255 203 74 255

@@ -1,0 +1,116 @@
+#ifndef __GNET_GFACTIONRELATION_RPCDATA
+#define __GNET_GFACTIONRELATION_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "gfactionalliance"
+#include "gfactionhostile"
+#include "gfactionrelationapply"
+
+namespace GNET
+{
+	class GFactionRelation : public GNET::Rpc::Data
+	{
+	public:
+		int fid;
+		int last_op_time;
+		GFactionAllianceVector alliance;
+		GFactionHostileVector hostile;
+		GFactionRelationApplyVector apply;
+		int reserved1;
+		int reserved2;
+		int reserved3;
+		int reserved4;
+		int reserved5;
+
+	public:
+		GFactionRelation (int l_fid = 0,int l_last_op_time = 0,const GFactionAllianceVector& l_alliance = GFactionAllianceVector()
+			,const GFactionHostileVector& l_hostile = GFactionHostileVector(),const GFactionRelationApplyVector& l_apply = GFactionRelationApplyVector(),int l_reserved1 = 0
+			,int l_reserved2 = 0,int l_reserved3 = 0,int l_reserved4 = 0
+			,int l_reserved5 = 0)
+			: fid(l_fid),last_op_time(l_last_op_time),alliance(l_alliance)
+			,hostile(l_hostile),apply(l_apply),reserved1(l_reserved1)
+			,reserved2(l_reserved2),reserved3(l_reserved3),reserved4(l_reserved4)
+			,reserved5(l_reserved5)
+		{
+		}
+
+		GFactionRelation(const GFactionRelation &rhs)
+			: fid(rhs.fid),last_op_time(rhs.last_op_time),alliance(rhs.alliance),
+			hostile(rhs.hostile),apply(rhs.apply),reserved1(rhs.reserved1),
+			reserved2(rhs.reserved2),reserved3(rhs.reserved3),reserved4(rhs.reserved4),
+			reserved5(rhs.reserved5) { }
+
+		Rpc::Data *Clone() const { return new GFactionRelation(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GFactionRelation *r = dynamic_cast<const GFactionRelation *>(&rhs);
+			if (r && r != this)
+			{
+				fid = r->fid;
+				last_op_time = r->last_op_time;
+				alliance = r->alliance;
+				hostile = r->hostile;
+				apply = r->apply;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+				reserved4 = r->reserved4;
+				reserved5 = r->reserved5;
+			}
+			return *this;
+		}
+
+		GFactionRelation& operator = (const GFactionRelation &rhs)
+		{
+			const GFactionRelation *r = &rhs;
+			if (r && r != this)
+			{
+				fid = r->fid;
+				last_op_time = r->last_op_time;
+				alliance = r->alliance;
+				hostile = r->hostile;
+				apply = r->apply;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+				reserved4 = r->reserved4;
+				reserved5 = r->reserved5;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << fid;
+			os << last_op_time;
+			os << alliance;
+			os << hostile;
+			os << apply;
+			os << reserved1;
+			os << reserved2;
+			os << reserved3;
+			os << reserved4;
+			os << reserved5;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> fid;
+			os >> last_op_time;
+			os >> alliance;
+			os >> hostile;
+			os >> apply;
+			os >> reserved1;
+			os >> reserved2;
+			os >> reserved3;
+			os >> reserved4;
+			os >> reserved5;
+			return os;
+		}
+
+	};
+};
+#endif

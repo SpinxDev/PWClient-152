@@ -1,0 +1,38 @@
+	public:
+		int startid;
+		unsigned int localsid;
+		char forward;
+		enum { PROTOCOL_TYPE = PROTOCOL_FINDSELLPOINTINFO };
+	public:
+		FindSellPointInfo() { type = PROTOCOL_FINDSELLPOINTINFO; }
+		FindSellPointInfo(void*) : Protocol(PROTOCOL_FINDSELLPOINTINFO) { }
+		FindSellPointInfo (int l_startid,unsigned int l_localsid,char l_forward = 1)
+			 : startid(l_startid),localsid(l_localsid),forward(l_forward)
+		{
+			type = PROTOCOL_FINDSELLPOINTINFO;
+		}
+
+		FindSellPointInfo(const FindSellPointInfo &rhs)
+			: Protocol(rhs),startid(rhs.startid),localsid(rhs.localsid),forward(rhs.forward) { }
+
+		GNET::Protocol *Clone() const { return new FindSellPointInfo(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << startid;
+			os << localsid;
+			os << forward;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> startid;
+			os >> localsid;
+			os >> forward;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 512; }

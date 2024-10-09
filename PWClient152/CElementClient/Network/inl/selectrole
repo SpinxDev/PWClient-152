@@ -1,0 +1,35 @@
+	public:
+		int roleid;
+		char flag;
+		enum { PROTOCOL_TYPE = PROTOCOL_SELECTROLE };
+	public:
+		SelectRole() { type = PROTOCOL_SELECTROLE; }
+		SelectRole(void*) : Protocol(PROTOCOL_SELECTROLE) { }
+		SelectRole (int l_roleid,char l_flag = 0)
+			 : roleid(l_roleid),flag(l_flag)
+		{
+			type = PROTOCOL_SELECTROLE;
+		}
+
+		SelectRole(const SelectRole &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),flag(rhs.flag) { }
+
+		GNET::Protocol *Clone() const { return new SelectRole(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << flag;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> flag;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 101; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

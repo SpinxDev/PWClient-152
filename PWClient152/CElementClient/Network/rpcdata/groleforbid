@@ -1,0 +1,78 @@
+#ifndef __GNET_GROLEFORBID_RPCDATA
+#define __GNET_GROLEFORBID_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GRoleForbid : public GNET::Rpc::Data
+	{
+	public:
+		unsigned char type;
+		int time;
+		int createtime;
+		Octets reason;
+
+	public:
+		GRoleForbid (unsigned char l_type = 0,int l_time = 0,int l_createtime = 0
+			,const Octets& l_reason = Octets(0))
+			: type(l_type),time(l_time),createtime(l_createtime)
+			,reason(l_reason)
+		{
+		}
+
+		GRoleForbid(const GRoleForbid &rhs)
+			: type(rhs.type),time(rhs.time),createtime(rhs.createtime),
+			reason(rhs.reason) { }
+
+		Rpc::Data *Clone() const { return new GRoleForbid(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GRoleForbid *r = dynamic_cast<const GRoleForbid *>(&rhs);
+			if (r && r != this)
+			{
+				type = r->type;
+				time = r->time;
+				createtime = r->createtime;
+				reason = r->reason;
+			}
+			return *this;
+		}
+
+		GRoleForbid& operator = (const GRoleForbid &rhs)
+		{
+			const GRoleForbid *r = &rhs;
+			if (r && r != this)
+			{
+				type = r->type;
+				time = r->time;
+				createtime = r->createtime;
+				reason = r->reason;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << type;
+			os << time;
+			os << createtime;
+			os << reason;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> type;
+			os >> time;
+			os >> createtime;
+			os >> reason;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<GRoleForbid>	GRoleForbidVector;
+};
+#endif

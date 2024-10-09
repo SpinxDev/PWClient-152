@@ -1,0 +1,47 @@
+	public:
+		int roleid;
+		int userid;
+		char flag;
+		int src_zoneid;
+		Octets random;
+		enum { PROTOCOL_TYPE = PROTOCOL_KEYREESTABLISH };
+	public:
+		KeyReestablish() { type = PROTOCOL_KEYREESTABLISH; }
+		KeyReestablish(void*) : Protocol(PROTOCOL_KEYREESTABLISH) { }
+		KeyReestablish (int l_roleid,int l_userid = 0,char l_flag = 0,
+			int l_src_zoneid = 0,const Octets& l_random = Octets())
+			 : roleid(l_roleid),userid(l_userid),flag(l_flag)
+			,src_zoneid(l_src_zoneid),random(l_random)
+		{
+			type = PROTOCOL_KEYREESTABLISH;
+		}
+
+		KeyReestablish(const KeyReestablish &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),userid(rhs.userid),flag(rhs.flag)
+			,src_zoneid(rhs.src_zoneid),random(rhs.random) { }
+
+		GNET::Protocol *Clone() const { return new KeyReestablish(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << userid;
+			os << flag;
+			os << src_zoneid;
+			os << random;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> userid;
+			os >> flag;
+			os >> src_zoneid;
+			os >> random;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

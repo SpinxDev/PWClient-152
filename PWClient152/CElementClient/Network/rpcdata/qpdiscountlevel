@@ -1,0 +1,65 @@
+#ifndef __GNET_QPDISCOUNTLEVEL_RPCDATA
+#define __GNET_QPDISCOUNTLEVEL_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class QPDiscountLevel : public GNET::Rpc::Data
+	{
+	public:
+		int amount_begin;
+		int discount;
+
+	public:
+		QPDiscountLevel (int l_amount_begin = 0,int l_discount = 0)
+			: amount_begin(l_amount_begin),discount(l_discount)
+		{
+		}
+
+		QPDiscountLevel(const QPDiscountLevel &rhs)
+			: amount_begin(rhs.amount_begin),discount(rhs.discount) { }
+
+		Rpc::Data *Clone() const { return new QPDiscountLevel(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const QPDiscountLevel *r = dynamic_cast<const QPDiscountLevel *>(&rhs);
+			if (r && r != this)
+			{
+				amount_begin = r->amount_begin;
+				discount = r->discount;
+			}
+			return *this;
+		}
+
+		QPDiscountLevel& operator = (const QPDiscountLevel &rhs)
+		{
+			const QPDiscountLevel *r = &rhs;
+			if (r && r != this)
+			{
+				amount_begin = r->amount_begin;
+				discount = r->discount;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << amount_begin;
+			os << discount;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> amount_begin;
+			os >> discount;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<QPDiscountLevel>	QPDiscountLevelVector;
+};
+#endif

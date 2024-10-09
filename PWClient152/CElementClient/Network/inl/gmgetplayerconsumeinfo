@@ -1,0 +1,44 @@
+	public:
+		int gmroleid;
+		unsigned int localsid;
+		IntVector playerlist;
+		unsigned char reason;
+		enum { PROTOCOL_TYPE = PROTOCOL_GMGETPLAYERCONSUMEINFO };
+	public:
+		GMGetPlayerConsumeInfo() { type = PROTOCOL_GMGETPLAYERCONSUMEINFO; }
+		GMGetPlayerConsumeInfo(void*) : Protocol(PROTOCOL_GMGETPLAYERCONSUMEINFO) { }
+		GMGetPlayerConsumeInfo (int l_gmroleid,unsigned int l_localsid,const IntVector& l_playerlist,
+			unsigned char l_reason)
+			 : gmroleid(l_gmroleid),localsid(l_localsid),playerlist(l_playerlist)
+			,reason(l_reason)
+		{
+			type = PROTOCOL_GMGETPLAYERCONSUMEINFO;
+		}
+
+		GMGetPlayerConsumeInfo(const GMGetPlayerConsumeInfo &rhs)
+			: Protocol(rhs),gmroleid(rhs.gmroleid),localsid(rhs.localsid),playerlist(rhs.playerlist)
+			,reason(rhs.reason) { }
+
+		GNET::Protocol *Clone() const { return new GMGetPlayerConsumeInfo(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << gmroleid;
+			os << localsid;
+			os << playerlist;
+			os << reason;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> gmroleid;
+			os >> localsid;
+			os >> playerlist;
+			os >> reason;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

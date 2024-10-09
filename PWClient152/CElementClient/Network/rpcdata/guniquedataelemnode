@@ -1,0 +1,66 @@
+#ifndef __GNET_GUNIQUEDATAELEMNODE_RPCDATA
+#define __GNET_GUNIQUEDATAELEMNODE_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "guniquedataelem"
+
+namespace GNET
+{
+	class GUniqueDataElemNode : public GNET::Rpc::Data
+	{
+	public:
+		int key;
+		GUniqueDataElem val;
+
+	public:
+		GUniqueDataElemNode (int l_key = 0,const GUniqueDataElem& l_val = GUniqueDataElem())
+			: key(l_key),val(l_val)
+		{
+		}
+
+		GUniqueDataElemNode(const GUniqueDataElemNode &rhs)
+			: key(rhs.key),val(rhs.val) { }
+
+		Rpc::Data *Clone() const { return new GUniqueDataElemNode(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GUniqueDataElemNode *r = dynamic_cast<const GUniqueDataElemNode *>(&rhs);
+			if (r && r != this)
+			{
+				key = r->key;
+				val = r->val;
+			}
+			return *this;
+		}
+
+		GUniqueDataElemNode& operator = (const GUniqueDataElemNode &rhs)
+		{
+			const GUniqueDataElemNode *r = &rhs;
+			if (r && r != this)
+			{
+				key = r->key;
+				val = r->val;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << key;
+			os << val;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> key;
+			os >> val;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<GUniqueDataElemNode>	GUniqueDataElemNodeVector;
+};
+#endif

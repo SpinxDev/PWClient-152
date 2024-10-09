@@ -1,0 +1,42 @@
+
+#ifndef __GNET_FRIENDMOVE_HPP
+#define __GNET_FRIENDMOVE_HPP
+
+#include "rpcdefs.h"
+#include "callid.hxx"
+#include "state.hxx"
+
+#include "friendmovearg"
+#include "friendmoveres"
+
+namespace GNET
+{
+
+class FriendMove : public Rpc
+{
+#define	RPC_BASECLASS	Rpc
+	#include "friendmove"
+#undef	RPC_BASECLASS
+
+	void Server(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+		// FriendMoveArg *arg = (FriendMoveArg *)argument;
+		// FriendMoveRes *res = (FriendMoveRes *)result;
+	}
+
+	void Client(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+		// TODO
+		// FriendMoveArg *arg = (FriendMoveArg *)argument;
+		// FriendMoveRes *res = (FriendMoveRes *)result;
+	}
+
+	void OnTimeout()
+	{
+		// TODO Client Only
+	}
+
+};
+
+};
+#endif

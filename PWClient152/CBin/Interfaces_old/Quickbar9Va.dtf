@@ -1,0 +1,16 @@
+DIALOG "Win_Quickbar9Va" 0 0 40 329 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 -1 -1 "" 0 0 96 96 96 255 1
+STILLIMAGEBUTTON "Btn_Horizon" "switch" "SFX\Interface\ClickB.wav" 15 312 12 12 0 0 0 0 2 15 255 0 255 255 "Button\按钮_水平1.tga" "Button\按钮_水平2.tga" 3 1
+STILLIMAGEBUTTON "Btn_New" "new" "SFX\Interface\ClickB.wav" 14 4 12 12 0 0 0 0 4 15 255 0 255 255 "Button\按钮_选择1.tga" "Button\按钮_选择2.tga" 5 1
+STILLIMAGEBUTTON "Btn_Other" "openextra" "SFX\Interface\ClickB.wav" 5 3 12 12 0 0 0 0 6 15 255 0 255 255 "Button\按钮_c1.tga" "Button\按钮_c2.tga" 7 1
+IMAGEPICTURE "Item_1" "" "" 4 16 32 32 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Item_3" "" "" 4 82 32 32 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Item_2" "" "" 4 49 32 32 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Item_4" "" "" 4 115 32 32 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Item_5" "" "" 4 148 32 32 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Item_6" "" "" 4 181 32 32 1 0 "Window\图标_物品栏.dds"
+STILLIMAGEBUTTON "Btn_Add" "add" "SFX\Interface\ClickB.wav" 3 312 12 12 0 0 0 0 8 15 255 0 255 255 "Button\按钮_L1.tga" "Button\按钮_L2.tga" 9 1
+STILLIMAGEBUTTON "Btn_Minus" "minus" "SFX\Interface\ClickB.wav" 26 312 12 12 0 0 0 0 10 15 255 0 255 255 "Button\按钮_R1.tga" "Button\按钮_R2.tga" 11 1
+IMAGEPICTURE "Control_353058760" "" "" 27 5 9 12 1 0 "Extra\复选框_快捷栏单.bmp"
+IMAGEPICTURE "Item_7" "" "" 4 214 32 32 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Item_8" "" "" 4 247 32 32 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Item_9" "" "" 4 280 32 32 1 0 "Window\图标_物品栏.dds"

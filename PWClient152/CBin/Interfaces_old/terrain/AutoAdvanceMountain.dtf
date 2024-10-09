@@ -1,0 +1,51 @@
+DIALOG "Dlg_AdvanceMountain" 0 0 220 470 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "" 26 5 96 96 96 255 1
+IMAGEPICTURE "Control_118277810" "" "" 5 30 210 3 1 0 "Window\分隔线.tga"
+LABEL "Control_237554344" "" "" 70 5 81 20 2 16 3 255 203 74 255
+LABEL "Control_340788975" "" "" 8 89 68 14 4 10 5 255 203 74 255
+LABEL "Control_556946965" "" "" 8 65 55 14 6 10 7 255 203 74 255
+LABEL "Control_203679393" "" "" 8 113 71 14 8 10 9 255 203 74 255
+LABEL "Control_262857840" "" "" 8 137 54 14 10 10 11 255 203 74 255
+LABEL "Control_57132752" "" "" 8 161 80 16 12 10 13 255 203 74 255
+LABEL "Control_195884245" "" "" 8 185 81 16 14 10 15 255 203 74 255
+RADIO "Radio_UpAndDown" "OnRadio" "" 137 251 21 21 "Extra\单选框_标准.tga" 0 1
+LABEL "Control_90557670" "" "" 159 252 57 16 16 15 17 255 255 255 255
+RADIO "Radio_UpFirst" "OnRadio" "" 8 249 21 21 "Extra\单选框_标准.tga" 1 1
+LABEL "Control_424147821" "" "" 30 251 40 17 18 15 19 255 255 255 255
+RADIO "Radio_DownFirst" "OnRadio" "" 73 250 21 21 "Extra\单选框_标准.tga" 2 1
+LABEL "Control_824875584" "" "" 95 251 45 18 20 15 21 255 255 255 255
+SLIDER "Slider_MaxHeightHill" "moveSlider" "" 88 68 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_PartSmoothHill" "moveSlider" "" 88 117 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_BridgeScope" "moveSlider" "" 88 165 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_MainSmoothHill" "moveSlider" "" 88 93 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_TerrainSeedHill" "moveSlider" "" 88 141 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_BridgeDepth" "moveSlider" "" 88 189 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+STILLIMAGEBUTTON "Btn_Create" "CreateHillPoly" "" 80 400 60 28 0 0 0 0 22 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 23 1
+LABEL "Label_MaxHeightHill" "" "" 87 53 30 14 24 15 25 255 255 255 255
+LABEL "Label_MainSmoothHill" "" "" 87 77 30 14 26 15 27 255 255 255 255
+LABEL "Label_PartSmoothHill" "" "" 87 101 30 14 28 15 29 255 255 255 255
+LABEL "Label_TerrainSeedHill" "" "" 87 125 30 14 30 15 31 255 255 255 255
+LABEL "Label_BridgeScope" "" "" 87 149 30 14 32 15 33 255 255 255 255
+LABEL "Label_BridgeDepth" "" "" 87 174 30 14 34 15 35 255 255 255 255
+LABEL "Control_199840508" "" "" 8 209 56 14 36 10 37 255 203 74 255
+SLIDER "Slider_BorderErode" "moveSlider" "" 88 215 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+LABEL "Label_BorderErode" "" "" 87 199 30 14 38 15 39 255 255 255 255
+CHECK "Check_HillUp" "" "" 88 35 18 19 "Extra\复选框_标准.tga"
+LABEL "Control_105639768" "" "" 111 36 60 18 40 10 41 255 255 255 255
+STILLIMAGEBUTTON "Btn_HeightCurve" "OpenHeightCurveDlg" "" 63 371 95 24 0 0 0 0 42 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 43 1
+STILLIMAGEBUTTON "Control_275807515" "TurnToBase" "" 160 433 45 28 0 0 0 0 44 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 45 1
+SLIDER "Slider_MainTexture" "moveSlider" "" 88 308 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_PatchTexture" "moveSlider" "" 88 332 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_PatchDivision" "moveSlider" "" 88 356 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_TextureRatio" "moveSlider" "" 88 285 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+LABEL "Control_836850849" "" "" 8 280 82 19 46 10 47 255 203 74 255
+LABEL "Control_282683478" "" "" 8 304 72 14 48 10 49 255 203 74 255
+LABEL "Control_570899730" "" "" 8 328 75 14 50 10 51 255 203 74 255
+LABEL "Control_187924752" "" "" 8 352 68 14 52 10 53 255 203 74 255
+LABEL "Label_TextureRatio" "" "" 87 270 30 14 54 15 55 255 255 255 255
+LABEL "Label_MainTexture" "" "" 87 294 30 14 56 15 57 255 255 255 255
+LABEL "Label_PatchTexture" "" "" 87 317 30 14 58 15 59 255 255 255 255
+LABEL "Label_PatchDivision" "" "" 87 340 30 14 60 15 61 255 255 255 255
+STILLIMAGEBUTTON "BTN_SAVE" "Save" "" 14 433 45 28 0 0 0 0 62 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 63 1
+STILLIMAGEBUTTON "BTN_SAVE_AS" "SaveAs" "" 87 433 45 28 0 0 0 0 64 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 65 1
+LABEL "Control_36168461" "" "" 8 36 62 18 66 10 67 255 203 74 255
+LABEL "Control_53528662" "" "" 8 231 68 14 68 10 69 255 203 74 255

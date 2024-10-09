@@ -1,0 +1,44 @@
+	public:
+		std::vector<int64_t> sns;
+		GRoleInventoryVector items;
+		std::vector<Octets> rolebriefs;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_WEBTRADEGETITEM_RE };
+	public:
+		WebTradeGetItem_Re() { type = PROTOCOL_WEBTRADEGETITEM_RE; }
+		WebTradeGetItem_Re(void*) : Protocol(PROTOCOL_WEBTRADEGETITEM_RE) { }
+		WebTradeGetItem_Re (const std::vector<int64_t>& l_sns,const GRoleInventoryVector& l_items,const std::vector<Octets>& l_rolebriefs,
+			unsigned int l_localsid)
+			 : sns(l_sns),items(l_items),rolebriefs(l_rolebriefs)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_WEBTRADEGETITEM_RE;
+		}
+
+		WebTradeGetItem_Re(const WebTradeGetItem_Re &rhs)
+			: Protocol(rhs),sns(rhs.sns),items(rhs.items),rolebriefs(rhs.rolebriefs)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new WebTradeGetItem_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << sns;
+			os << items;
+			os << rolebriefs;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> sns;
+			os >> items;
+			os >> rolebriefs;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 20480; }

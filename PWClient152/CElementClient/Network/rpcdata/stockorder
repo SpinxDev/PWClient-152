@@ -1,0 +1,87 @@
+#ifndef __GNET_STOCKORDER_RPCDATA
+#define __GNET_STOCKORDER_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class StockOrder : public GNET::Rpc::Data
+	{
+	public:
+		unsigned int tid;
+		int time;
+		int roleid;
+		int price;
+		int volume;
+		char status;
+
+	public:
+		StockOrder (unsigned int l_tid = 0,int l_time = 0,int l_roleid = 0
+			,int l_price = 0,int l_volume = 0,char l_status = 0)
+			: tid(l_tid),time(l_time),roleid(l_roleid)
+			,price(l_price),volume(l_volume),status(l_status)
+		{
+		}
+
+		StockOrder(const StockOrder &rhs)
+			: tid(rhs.tid),time(rhs.time),roleid(rhs.roleid),
+			price(rhs.price),volume(rhs.volume),status(rhs.status) { }
+
+		Rpc::Data *Clone() const { return new StockOrder(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const StockOrder *r = dynamic_cast<const StockOrder *>(&rhs);
+			if (r && r != this)
+			{
+				tid = r->tid;
+				time = r->time;
+				roleid = r->roleid;
+				price = r->price;
+				volume = r->volume;
+				status = r->status;
+			}
+			return *this;
+		}
+
+		StockOrder& operator = (const StockOrder &rhs)
+		{
+			const StockOrder *r = &rhs;
+			if (r && r != this)
+			{
+				tid = r->tid;
+				time = r->time;
+				roleid = r->roleid;
+				price = r->price;
+				volume = r->volume;
+				status = r->status;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << tid;
+			os << time;
+			os << roleid;
+			os << price;
+			os << volume;
+			os << status;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> tid;
+			os >> time;
+			os >> roleid;
+			os >> price;
+			os >> volume;
+			os >> status;
+			return os;
+		}
+
+	};
+};
+#endif

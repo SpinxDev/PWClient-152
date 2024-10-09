@@ -1,0 +1,38 @@
+	public:
+		char retcode;
+		GFriendInfo info;
+		unsigned int srclsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_ADDFRIEND_RE };
+	public:
+		AddFriend_Re() { type = PROTOCOL_ADDFRIEND_RE; }
+		AddFriend_Re(void*) : Protocol(PROTOCOL_ADDFRIEND_RE) { }
+		AddFriend_Re (char l_retcode,const GFriendInfo& l_info,unsigned int l_srclsid)
+			 : retcode(l_retcode),info(l_info),srclsid(l_srclsid)
+		{
+			type = PROTOCOL_ADDFRIEND_RE;
+		}
+
+		AddFriend_Re(const AddFriend_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),info(rhs.info),srclsid(rhs.srclsid) { }
+
+		GNET::Protocol *Clone() const { return new AddFriend_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << info;
+			os << srclsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> info;
+			os >> srclsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

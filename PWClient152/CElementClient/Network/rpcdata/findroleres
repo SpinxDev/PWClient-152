@@ -1,0 +1,64 @@
+#ifndef __GNET_FINDROLERES_RPCDATA
+#define __GNET_FINDROLERES_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class FindRoleRes : public GNET::Rpc::Data
+	{
+	public:
+		char retcode;
+		UserInfoDetailVector roles;
+
+	public:
+		FindRoleRes (char l_retcode = -1)
+			: retcode(l_retcode)
+		{
+		}
+
+		FindRoleRes(const FindRoleRes &rhs)
+			: retcode(rhs.retcode),roles(rhs.roles) { }
+
+		Rpc::Data *Clone() const { return new FindRoleRes(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const FindRoleRes *r = dynamic_cast<const FindRoleRes *>(&rhs);
+			if (r && r != this)
+			{
+				retcode = r->retcode;
+				roles = r->roles;
+			}
+			return *this;
+		}
+
+		FindRoleRes& operator = (const FindRoleRes &rhs)
+		{
+			const FindRoleRes *r = &rhs;
+			if (r && r != this)
+			{
+				retcode = r->retcode;
+				roles = r->roles;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roles;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roles;
+			return os;
+		}
+
+	};
+};
+#endif

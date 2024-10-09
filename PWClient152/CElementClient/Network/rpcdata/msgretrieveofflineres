@@ -1,0 +1,69 @@
+#ifndef __GNET_MSGRETRIEVEOFFLINERES_RPCDATA
+#define __GNET_MSGRETRIEVEOFFLINERES_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class MsgRetrieveOfflineRes : public GNET::Rpc::Data
+	{
+	public:
+		char retcode;
+		char handle;
+		MsgVector msgs;
+
+	public:
+		MsgRetrieveOfflineRes (char l_retcode = 0,char l_handle = 0)
+			: retcode(l_retcode),handle(l_handle)
+		{
+		}
+
+		MsgRetrieveOfflineRes(const MsgRetrieveOfflineRes &rhs)
+			: retcode(rhs.retcode),handle(rhs.handle),msgs(rhs.msgs) { }
+
+		Rpc::Data *Clone() const { return new MsgRetrieveOfflineRes(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const MsgRetrieveOfflineRes *r = dynamic_cast<const MsgRetrieveOfflineRes *>(&rhs);
+			if (r && r != this)
+			{
+				retcode = r->retcode;
+				handle = r->handle;
+				msgs = r->msgs;
+			}
+			return *this;
+		}
+
+		MsgRetrieveOfflineRes& operator = (const MsgRetrieveOfflineRes &rhs)
+		{
+			const MsgRetrieveOfflineRes *r = &rhs;
+			if (r && r != this)
+			{
+				retcode = r->retcode;
+				handle = r->handle;
+				msgs = r->msgs;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << handle;
+			os << msgs;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> handle;
+			os >> msgs;
+			return os;
+		}
+
+	};
+};
+#endif

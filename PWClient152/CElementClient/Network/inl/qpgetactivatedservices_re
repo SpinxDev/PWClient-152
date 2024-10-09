@@ -1,0 +1,38 @@
+	public:
+		int localsid;
+		std::vector<int> merchants;
+		int retcode;
+		enum { PROTOCOL_TYPE = PROTOCOL_QPGETACTIVATEDSERVICES_RE };
+	public:
+		QPGetActivatedServices_Re() { type = PROTOCOL_QPGETACTIVATEDSERVICES_RE; }
+		QPGetActivatedServices_Re(void*) : Protocol(PROTOCOL_QPGETACTIVATEDSERVICES_RE) { }
+		QPGetActivatedServices_Re (int l_localsid,std::vector<int> l_merchants,int l_retcode = 0)
+			 : localsid(l_localsid),merchants(l_merchants),retcode(l_retcode)
+		{
+			type = PROTOCOL_QPGETACTIVATEDSERVICES_RE;
+		}
+
+		QPGetActivatedServices_Re(const QPGetActivatedServices_Re &rhs)
+			: Protocol(rhs),localsid(rhs.localsid),merchants(rhs.merchants),retcode(rhs.retcode) { }
+
+		GNET::Protocol *Clone() const { return new QPGetActivatedServices_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << localsid;
+			os << merchants;
+			os << retcode;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> localsid;
+			os >> merchants;
+			os >> retcode;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

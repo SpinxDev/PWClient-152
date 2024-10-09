@@ -1,0 +1,40 @@
+;  water refract pixel shader used by A3DTerrainWater. 
+
+; t0, bump map, not used
+; t1, normal map for water surface
+; t2, refract map
+; t3, reflect vector in world space, packed to [0.0, 1.0]
+
+ps.1.4
+
+def c1, 0.25, 0.25, 0.0, 0.7
+def c2, 0.0, 0.0, 0.0, 1.0
+def c3, 0.85, 0.85, 0.85, 1.0
+def c4, 1.0, 1.0, 1.0, 1.0
+def c5, 0.0, 0.3, 0.3, 1.0
+
+texld	r1, t1
+texcrd	r2.xy, t2_dw.xyw
+
+mov r0.r, r1.r			// we use r=x, g=y, b=z in normal map
+mov r0.g, r1.b
+
+mad r2.rg, r0_bx2, c1.x, r2	// perturb coords by the normal
+mov r2.b, c3.a
+
+phase
+
+texld 	r2, r2
+texcrd	r3.xyz, t3.xyz
+
+// calculate fresnel effects : R0 + (1-R0) (1-cos(q))^5
+dp3_sat r1.rgba, r3, -r1_bx2
+mul r0.a, 1-r1.a, 1-r1.a			// squared
+mul r0.a, r0.a, r0.a				// quartic
+mul r0.rgb, r2, c3				// refract color
++mul_sat r0.a, r0.a, 1-r1.a			// quintic
+
+lrp r1, r0.a, c5, c4				// a reflect color
+
+mul r0.rgb, r0, r1
++mov r0.a, c3.a

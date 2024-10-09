@@ -1,0 +1,44 @@
+	public:
+		int retcode;
+		int gmroleid;
+		int localsid;
+		int kickuserid;
+		enum { PROTOCOL_TYPE = PROTOCOL_GMKICKOUTUSER_RE };
+	public:
+		GMKickoutUser_Re() { type = PROTOCOL_GMKICKOUTUSER_RE; }
+		GMKickoutUser_Re(void*) : Protocol(PROTOCOL_GMKICKOUTUSER_RE) { }
+		GMKickoutUser_Re (int l_retcode,int l_gmroleid,int l_localsid,
+			int l_kickuserid)
+			 : retcode(l_retcode),gmroleid(l_gmroleid),localsid(l_localsid),
+			kickuserid(l_kickuserid)
+		{
+			type = PROTOCOL_GMKICKOUTUSER_RE;
+		}
+
+		GMKickoutUser_Re(const GMKickoutUser_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),gmroleid(rhs.gmroleid),localsid(rhs.localsid),
+			kickuserid(rhs.kickuserid) { }
+
+		GNET::Protocol *Clone() const { return new GMKickoutUser_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << gmroleid;
+			os << localsid;
+			os << kickuserid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> gmroleid;
+			os >> localsid;
+			os >> kickuserid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

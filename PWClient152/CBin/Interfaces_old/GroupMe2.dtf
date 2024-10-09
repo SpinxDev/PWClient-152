@@ -1,0 +1,5 @@
+POPUP "GroupMe2" 0 0 117 76 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 0 0 "" 0 0 255 255 255 255 1
+HILIGHT "Listbox\列表框_反显.dds"
+MENUITEM 101 "OpenT"
+MENUITEM 103 "GroupLeave"
+MENUITEM 105 "Close"

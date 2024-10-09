@@ -1,0 +1,50 @@
+	public:
+		int retcode;
+		int roleid;
+		int level;
+		int reputation;
+		Octets refcode;
+		int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_REFGETREFERENCECODE_RE };
+	public:
+		RefGetReferenceCode_Re() { type = PROTOCOL_REFGETREFERENCECODE_RE; }
+		RefGetReferenceCode_Re(void*) : Protocol(PROTOCOL_REFGETREFERENCECODE_RE) { }
+		RefGetReferenceCode_Re (int l_retcode,int l_roleid = 0,int l_level = 0,
+			int l_reputation = 0,const Octets& l_refcode = Octets(0),int l_localsid = 0)
+			 : retcode(l_retcode),roleid(l_roleid),level(l_level)
+			,reputation(l_reputation),refcode(l_refcode),localsid(l_localsid)
+		{
+			type = PROTOCOL_REFGETREFERENCECODE_RE;
+		}
+
+		RefGetReferenceCode_Re(const RefGetReferenceCode_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),roleid(rhs.roleid),level(rhs.level)
+			,reputation(rhs.reputation),refcode(rhs.refcode),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new RefGetReferenceCode_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roleid;
+			os << level;
+			os << reputation;
+			os << refcode;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roleid;
+			os >> level;
+			os >> reputation;
+			os >> refcode;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 256; }

@@ -1,0 +1,27 @@
+; simple water pixel shader used by A3DTerrainWater. 
+
+; t0, bump map, not used
+; t1, normal map for water surface
+; t2, reflect map, not used
+; t3, reflect vector in world space, packed to [0.0, 1.0]
+
+ps.1.1
+
+def c1, 0.2, 0.65, 0.65, 0.8
+def c2, 0.0, 0.25, 0.35, 1.0
+def c3, 0.8, 0.8, 0.8, 1.0
+
+tex t1
+texcoord t3
+
+// calculate fresnel effects : R0 + (1-R0) (1-cos(q))^5
+dp3_sat r1.rgba, t3_bx2, t1_bx2
+mul r0.a, 1-r1.a, 1-r1.a			// squared
+mul r0.a, r0.a, r0.a				// quartic
+lrp r0.rgb, r0.a, c1, c2			// water surface color
++mul_sat r0.a, r0.a, 1-r1.a			// quintic
+
+mul_x4 r1.rgb, v1, r0.a
++lrp r0.a, r0.a, c2.a, c1.a
+
+add r0.rgb, r1, r0				// apply specular

@@ -1,0 +1,87 @@
+#ifndef __GNET_FRIENDMOVEARG_RPCDATA
+#define __GNET_FRIENDMOVEARG_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class FriendMoveArg : public GNET::Rpc::Data
+	{
+	public:
+		int zoneid;
+		int roleid;
+		int groupid;
+		int frdzoneid;
+		int frdroleid;
+		int togroupid;
+
+	public:
+		FriendMoveArg (int l_zoneid = -1,int l_roleid = -1,int l_groupid = -1
+			,int l_frdzoneid = -1,int l_frdroleid = -1,int l_togroupid = -1)
+			: zoneid(l_zoneid),roleid(l_roleid),groupid(l_groupid)
+			,frdzoneid(l_frdzoneid),frdroleid(l_frdroleid),togroupid(l_togroupid)
+		{
+		}
+
+		FriendMoveArg(const FriendMoveArg &rhs)
+			: zoneid(rhs.zoneid),roleid(rhs.roleid),groupid(rhs.groupid),
+			frdzoneid(rhs.frdzoneid),frdroleid(rhs.frdroleid),togroupid(rhs.togroupid) { }
+
+		Rpc::Data *Clone() const { return new FriendMoveArg(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const FriendMoveArg *r = dynamic_cast<const FriendMoveArg *>(&rhs);
+			if (r && r != this)
+			{
+				zoneid = r->zoneid;
+				roleid = r->roleid;
+				groupid = r->groupid;
+				frdzoneid = r->frdzoneid;
+				frdroleid = r->frdroleid;
+				togroupid = r->togroupid;
+			}
+			return *this;
+		}
+
+		FriendMoveArg& operator = (const FriendMoveArg &rhs)
+		{
+			const FriendMoveArg *r = &rhs;
+			if (r && r != this)
+			{
+				zoneid = r->zoneid;
+				roleid = r->roleid;
+				groupid = r->groupid;
+				frdzoneid = r->frdzoneid;
+				frdroleid = r->frdroleid;
+				togroupid = r->togroupid;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << zoneid;
+			os << roleid;
+			os << groupid;
+			os << frdzoneid;
+			os << frdroleid;
+			os << togroupid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> zoneid;
+			os >> roleid;
+			os >> groupid;
+			os >> frdzoneid;
+			os >> frdroleid;
+			os >> togroupid;
+			return os;
+		}
+
+	};
+};
+#endif

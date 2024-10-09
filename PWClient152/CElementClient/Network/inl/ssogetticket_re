@@ -1,0 +1,44 @@
+	public:
+		int retcode;
+		Octets ticket;
+		Octets local_context;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_SSOGETTICKET_RE };
+	public:
+		SSOGetTicket_Re() { type = PROTOCOL_SSOGETTICKET_RE; }
+		SSOGetTicket_Re(void*) : Protocol(PROTOCOL_SSOGETTICKET_RE) { }
+		SSOGetTicket_Re (int l_retcode,const Octets& l_ticket,const Octets& l_local_context,
+			unsigned int l_localsid)
+			 : retcode(l_retcode),ticket(l_ticket),local_context(l_local_context)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_SSOGETTICKET_RE;
+		}
+
+		SSOGetTicket_Re(const SSOGetTicket_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),ticket(rhs.ticket),local_context(rhs.local_context)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new SSOGetTicket_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << ticket;
+			os << local_context;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> ticket;
+			os >> local_context;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 2048; }

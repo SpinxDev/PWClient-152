@@ -1,0 +1,64 @@
+#ifndef __GNET_SNSROLESKILLS_RPCDATA
+#define __GNET_SNSROLESKILLS_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class SNSRoleSkills : public GNET::Rpc::Data
+	{
+	public:
+		unsigned int crc;
+		Octets skills;
+
+	public:
+		SNSRoleSkills (unsigned int l_crc = 0,const Octets& l_skills = Octets())
+			: crc(l_crc),skills(l_skills)
+		{
+		}
+
+		SNSRoleSkills(const SNSRoleSkills &rhs)
+			: crc(rhs.crc),skills(rhs.skills) { }
+
+		Rpc::Data *Clone() const { return new SNSRoleSkills(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const SNSRoleSkills *r = dynamic_cast<const SNSRoleSkills *>(&rhs);
+			if (r && r != this)
+			{
+				crc = r->crc;
+				skills = r->skills;
+			}
+			return *this;
+		}
+
+		SNSRoleSkills& operator = (const SNSRoleSkills &rhs)
+		{
+			const SNSRoleSkills *r = &rhs;
+			if (r && r != this)
+			{
+				crc = r->crc;
+				skills = r->skills;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << crc;
+			os << skills;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> crc;
+			os >> skills;
+			return os;
+		}
+
+	};
+};
+#endif

@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		char reason;
+		int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_AUTOTEAMPLAYERLEAVE };
+	public:
+		AutoTeamPlayerLeave() { type = PROTOCOL_AUTOTEAMPLAYERLEAVE; }
+		AutoTeamPlayerLeave(void*) : Protocol(PROTOCOL_AUTOTEAMPLAYERLEAVE) { }
+		AutoTeamPlayerLeave (int l_roleid,char l_reason,int l_localsid)
+			 : roleid(l_roleid),reason(l_reason),localsid(l_localsid)
+		{
+			type = PROTOCOL_AUTOTEAMPLAYERLEAVE;
+		}
+
+		AutoTeamPlayerLeave(const AutoTeamPlayerLeave &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),reason(rhs.reason),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new AutoTeamPlayerLeave(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << reason;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> reason;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

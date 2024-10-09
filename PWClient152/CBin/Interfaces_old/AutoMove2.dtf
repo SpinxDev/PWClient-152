@@ -1,0 +1,6 @@
+DIALOG "Win_AutoMove2" 0 0 264 136 0 1 10 "小精灵新加tga\经验注入面板\1按钮普通.tga" "" "" 0 0 -1 -1 "" 0 0 96 96 96 255 1
+CHECK "check_fly" "" "Extra\单选框_标准.tga" 45 23 18 18 "Extra\单选框_标准.tga"
+LABEL "Control_338859534" "" "" 72 23 157 23 2 12 3 185 174 2 255
+LABEL "Control_19665665" "" "" 28 55 87 20 4 12 5 185 174 2 255
+STILLIMAGEBUTTON "Btn_OK" "Confirm" "" 66 88 114 31 0 0 0 0 6 12 182 174 2 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 7 1
+EDIT "Lab_high" "" "" 104 56 115 23 "/Editbox/文本框_4.dds" 8 15 255 255 255 "TEXT" 0 0 20

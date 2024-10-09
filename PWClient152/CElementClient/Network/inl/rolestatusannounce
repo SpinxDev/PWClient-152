@@ -1,0 +1,47 @@
+	public:
+		char zoneid;
+		int roleid;
+		unsigned int localsid;
+		unsigned char status;
+		Octets rolename;
+		enum { PROTOCOL_TYPE = PROTOCOL_ROLESTATUSANNOUNCE };
+	public:
+		RoleStatusAnnounce() { type = PROTOCOL_ROLESTATUSANNOUNCE; }
+		RoleStatusAnnounce(void*) : Protocol(PROTOCOL_ROLESTATUSANNOUNCE) { }
+		RoleStatusAnnounce (char l_zoneid,int l_roleid,unsigned int l_localsid,
+			unsigned char l_status,const Octets& l_rolename = Octets())
+			 : zoneid(l_zoneid),roleid(l_roleid),localsid(l_localsid),
+			status(l_status),rolename(l_rolename)
+		{
+			type = PROTOCOL_ROLESTATUSANNOUNCE;
+		}
+
+		RoleStatusAnnounce(const RoleStatusAnnounce &rhs)
+			: Protocol(rhs),zoneid(rhs.zoneid),roleid(rhs.roleid),localsid(rhs.localsid),
+			status(rhs.status),rolename(rhs.rolename) { }
+
+		GNET::Protocol *Clone() const { return new RoleStatusAnnounce(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << zoneid;
+			os << roleid;
+			os << localsid;
+			os << status;
+			os << rolename;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> zoneid;
+			os >> roleid;
+			os >> localsid;
+			os >> status;
+			os >> rolename;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

@@ -1,0 +1,5 @@
+DIALOG "MagicProgress3" 0 0 252 33 0 1 10 "" "" "" 0 0 -1 -1 "" 0 0 96 96 96 0 1
+PROGRESS "Prgs" "" "" 18 9 216 16 "Progress\蓄力_1.tga" "Progress\结阵_2.tga" 0 1 0 1
+IMAGEPICTURE "Cover" "" "" 0 0 252 33 1 0 "Progress\结阵_3.tga"
+STILLIMAGEBUTTON "Btn" "stop" "" 231 8 18 18 0 0 0 0 2 10 255 255 255 255 "Progress\结阵_4a.tga" "Progress\结阵_4b.tga" 3 1
+LABEL "Txt" "" "" 126 7 0 0 4 12 5 255 203 74 255

@@ -1,0 +1,47 @@
+	public:
+		int retcode;
+		int cash;
+		int money;
+		std::vector<StockPrice> prices;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_STOCKCOMMISSION_RE };
+	public:
+		StockCommission_Re() { type = PROTOCOL_STOCKCOMMISSION_RE; }
+		StockCommission_Re(void*) : Protocol(PROTOCOL_STOCKCOMMISSION_RE) { }
+		StockCommission_Re (int l_retcode,int l_cash,int l_money,
+			const std::vector<StockPrice>& l_prices,unsigned int l_localsid = 0)
+			 : retcode(l_retcode),cash(l_cash),money(l_money),
+			prices(l_prices),localsid(l_localsid)
+		{
+			type = PROTOCOL_STOCKCOMMISSION_RE;
+		}
+
+		StockCommission_Re(const StockCommission_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),cash(rhs.cash),money(rhs.money),
+			prices(rhs.prices),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new StockCommission_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << cash;
+			os << money;
+			os << prices;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> cash;
+			os >> money;
+			os >> prices;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 4096; }

@@ -1,0 +1,48 @@
+; DESCRIPTION:
+; Vertex shader used to render warp 3d patches
+; this shader does below works:
+; # vertex transform
+
+vs.1.1
+
+dcl_position v0
+dcl_texcoord0 v1
+dcl_texcoord1 v2
+dcl_texcoord2 v3
+
+;------------------------------------------------------------------------------
+; v0 	  = position in world space
+; v1	  = texture coordinates for base layer
+; v2	  = texture coordinates for base layer
+; v3	  = texture coordinates for base layer
+;------------------------------------------------------------------------------
+
+;------------------------------------------------------------------------------
+; Constants specified by the app;
+; c0-c3	  = view matrix * projection matrix
+; c5      = (1.0, 0.0, 0.0, 0.0)
+; c6-c9   = projection tm for texture layer 1
+;------------------------------------------------------------------------------
+
+;------------------------------------------------------------------------------
+; oPos	  = Output position
+; oD0	  = Diffuse
+; oFog    = fog value consider water depth
+;------------------------------------------------------------------------------
+
+; Transform position on the water surface from world space to cuboid space and output it
+mov r0, v0
+m4x4 oPos, r0, c0
+
+mov oD0, c5.xxxx
+mov oD1, c5.wwww
+
+; Calculate texture coordinates
+; first layer 0
+mov oT0, v1
+
+; then layer 1
+m4x4 oT1, r0, c6
+
+; then layer 2
+mov oT2, v3

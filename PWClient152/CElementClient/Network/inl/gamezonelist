@@ -1,0 +1,9 @@
+		GNET::Protocol *Clone() const {  return new GameZoneList(*this); }
+	public:
+		enum { PROTOCOL_TYPE = RPC_GAMEZONELIST };
+		GameZoneList(Type type, Rpc::Data *argument, Rpc::Data *result)
+			: RPC_BASECLASS(type, argument, result ) { }
+		GameZoneList(const GameZoneList &rhs) : RPC_BASECLASS(rhs) { }
+		int  PriorPolicy( ) const { return 1; }
+		bool SizePolicy(size_t size) const { return size <= 12288; }
+		bool TimePolicy(int timeout) const { return timeout <= 10; }

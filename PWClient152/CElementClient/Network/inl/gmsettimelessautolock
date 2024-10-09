@@ -1,0 +1,44 @@
+	public:
+		int gmroleid;
+		unsigned int localsid;
+		int dstroleid;
+		char enable;
+		enum { PROTOCOL_TYPE = PROTOCOL_GMSETTIMELESSAUTOLOCK };
+	public:
+		GMSetTimelessAutoLock() { type = PROTOCOL_GMSETTIMELESSAUTOLOCK; }
+		GMSetTimelessAutoLock(void*) : Protocol(PROTOCOL_GMSETTIMELESSAUTOLOCK) { }
+		GMSetTimelessAutoLock (int l_gmroleid,unsigned int l_localsid,int l_dstroleid,
+			char l_enable)
+			 : gmroleid(l_gmroleid),localsid(l_localsid),dstroleid(l_dstroleid)
+			,enable(l_enable)
+		{
+			type = PROTOCOL_GMSETTIMELESSAUTOLOCK;
+		}
+
+		GMSetTimelessAutoLock(const GMSetTimelessAutoLock &rhs)
+			: Protocol(rhs),gmroleid(rhs.gmroleid),localsid(rhs.localsid),dstroleid(rhs.dstroleid)
+			,enable(rhs.enable) { }
+
+		GNET::Protocol *Clone() const { return new GMSetTimelessAutoLock(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << gmroleid;
+			os << localsid;
+			os << dstroleid;
+			os << enable;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> gmroleid;
+			os >> localsid;
+			os >> dstroleid;
+			os >> enable;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

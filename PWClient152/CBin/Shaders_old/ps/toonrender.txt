@@ -1,0 +1,15 @@
+ps.1.4
+
+texcrd r2.xyz, t3	; toon shade value
+texcrd r1.xyz, t2	; toon edge texture
+
+phase 
+
+texld r0, t0		; base texture
+texld r1, r1		; toon edge texture
+texld r2, r2		; shade value
+
+mul r0.rgb, r0, r1
+mul r0.rgb, r0, r2
++mul r0.a, v0.a, r0.a
+

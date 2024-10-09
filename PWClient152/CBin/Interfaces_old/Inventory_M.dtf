@@ -1,0 +1,82 @@
+DIALOG "Win_InventoryM" 0 0 311 460 0 1 10 "Window\对话框_标准边框x.dds" "" "" 0 0 283 33 "人鱼传说新界面\面板关闭按钮.tga" 47 30 96 96 96 255 1
+EDIT "Img_Title" "" "" 20 26 278 32 "人鱼传说新界面\title.tga" 2 15 255 255 255 "TEXT" 1 0 20
+SCROLL "Scl_Item" "" "" 283 314 9 133 "Listbox\列表框_滚动槽1s.tga" "Listbox\列表框_无.bmp" "Listbox\列表框_无.bmp" "Listbox\列表框_拖动按钮2us.bmp"
+IMAGEPICTURE "Control_366894240" "" "" 130 88 120 226 1 0 "Window\图片_01.dds"
+IMAGEPICTURE "Control_326897674" "" "" 4 0 305 462 1 0 "人鱼传说新界面\未命名-1副本.dds"
+IMAGEPICTURE "Item_24" "" "" 21 416 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_25" "" "" 54 416 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_29" "" "" 186 416 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_28" "" "" 153 416 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_27" "" "" 120 416 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_31" "" "" 252 415 32 33 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_30" "" "" 219 416 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_26" "" "" 87 416 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_16" "" "" 21 382 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_17" "" "" 54 382 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_21" "" "" 186 382 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_20" "" "" 153 382 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_19" "" "" 120 382 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_23" "" "" 252 382 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_22" "" "" 219 382 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_18" "" "" 87 382 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_08" "" "" 21 348 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_09" "" "" 54 348 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_13" "" "" 186 348 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_12" "" "" 153 348 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_11" "" "" 120 348 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_15" "" "" 252 348 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_14" "" "" 219 348 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_10" "" "" 87 348 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_00" "" "" 21 314 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_01" "" "" 54 314 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_05" "" "" 186 314 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_04" "" "" 153 314 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_03" "" "" 120 314 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_07" "" "" 252 314 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_06" "" "" 219 314 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Item_02" "" "" 87 314 32 32 1 0 "Window\图标_物品栏t.dds"
+EDIT "Txt_Gold" "" "" 141 259 100 20 "Editbox\文本框_4b.dds" 3 10 255 255 255 "TEXT" 1 0 256
+STILLIMAGEBUTTON "Btn_Gold" "choosemoney" "SFX\Interface\ClickB.wav" 112 262 24 15 0 0 0 0 4 15 255 0 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱2.tga" 5 1
+STILLIMAGEBUTTON "Btn_NormalItem" "normalitem" "SFX\Interface\ClickB.wav" 27 251 36 32 0 0 0 0 6 10 255 255 255 255 "QuickFashion\NBagUp.tga" "QuickFashion\NBagDown.tga" 7 1
+STILLIMAGEBUTTON "Btn_QuestItem" "questitem" "SFX\Interface\ClickB.wav" 68 251 36 32 0 0 0 0 8 10 255 255 255 255 "QuickFashion\QBagUp.tga" "QuickFashion\QBagDown.tga" 9 1
+STILLIMAGEBUTTON "Btn_NormalMode" "normalmode" "SFX\Interface\ClickB.wav" 49 62 70 24 0 0 0 0 10 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 11 1
+STILLIMAGEBUTTON "Btn_WearMode" "wearmode" "SFX\Interface\ClickB.wav" 146 62 70 24 0 0 0 0 12 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 13 1
+RADIO "Rdo_NormalMode" "normal" "SFX\Interface\ClickA.wav" 25 63 21 21 "Extra\单选框_标准.tga" 1 2
+RADIO "Rdo_WearMode" "wear" "SFX\Interface\ClickA.wav" 122 63 21 21 "Extra\单选框_标准.tga" 2 2
+IMAGEPICTURE "Control_152157375" "" "" 16 248 277 3 1 0 "Window\分隔线.tga"
+IMAGEPICTURE "Equip_04" "" "" 221 131 32 32 1 0 "Window\图标_上衣f.dds"
+IMAGEPICTURE "Equip_01" "" "" 221 91 32 32 1 0 "Window\图标_头盔.dds"
+IMAGEPICTURE "Equip_06" "" "" 221 171 32 32 1 0 "Window\图标_裤子f.dds"
+IMAGEPICTURE "Equip_07" "" "" 221 211 32 32 1 0 "Window\图标_鞋f.dds"
+IMAGEPICTURE "Equip_05" "" "" 59 171 32 32 1 0 "Window\图标_腰饰.dds"
+IMAGEPICTURE "Equip_11" "" "" 258 211 32 32 1 0 "Window\图标_箭囊.dds"
+IMAGEPICTURE "Equip_00" "" "" 258 171 32 32 1 0 "Window\图标_武器1.dds"
+IMAGEPICTURE "Equip_10" "" "" 59 211 32 32 1 0 "Window\图标_戒指.dds"
+IMAGEPICTURE "Equip_08" "" "" 22 171 32 32 1 0 "Window\图标_护腕.dds"
+IMAGEPICTURE "Equip_09" "" "" 22 211 32 32 1 0 "Window\图标_戒指.dds"
+IMAGEPICTURE "Equip_02" "" "" 22 131 32 32 1 0 "Window\图标_项链.dds"
+IMAGEPICTURE "Equip_03" "" "" 59 131 32 32 1 0 "Window\图标_披风.dds"
+IMAGEPICTURE "Equip_12" "" "" 97 91 32 32 1 0 "Window\图标_翅膀.dds"
+LABEL "Control_810189504" "" "" 115 29 0 0 14 16 15 255 203 74 255
+IMAGEPICTURE "Equip_13" "" "" 197 147 32 32 1 0 "Window\图标_上衣f.dds"
+IMAGEPICTURE "Equip_14" "" "" 197 211 32 32 1 0 "Window\图标_裤子f.dds"
+IMAGEPICTURE "Equip_15" "" "" 82 208 32 32 1 0 "Window\图标_鞋f.dds"
+IMAGEPICTURE "Equip_16" "" "" 82 150 32 32 1 0 "Window\图标_护腕.dds"
+IMAGEPICTURE "Equip_18" "" "" 97 131 32 32 1 0 "Window\图标_天书.dds"
+IMAGEPICTURE "Equip_19" "" "" 258 91 32 32 1 0 "Window\图标_喇叭.dds"
+IMAGEPICTURE "Equip_20" "" "" 22 91 32 32 1 0 "Window\图标_护身符.dds"
+IMAGEPICTURE "Equip_21" "" "" 59 91 32 32 1 0 "Window\图标_守神符.dds"
+IMAGEPICTURE "Equip_17" "" "" 258 131 32 32 1 0 "Window\图标_优化符.dds"
+STILLIMAGEBUTTON "Btn_Try" "try" "" 220 62 70 24 0 0 0 0 16 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 17 1
+IMAGEPICTURE "Equip_22" "" "" 97 171 32 32 1 0 "妙计锦囊.dds"
+IMAGEPICTURE "Equip_23" "" "" 97 212 32 32 1 0 "Window\图标_精灵.dds"
+IMAGEPICTURE "Equip_24" "" "" 185 91 32 32 1 0 "Window\图标_物品栏t.dds"
+STILLIMAGEBUTTON "Btn_Fashion" "fashionstore" "SFX\Interface\ClickB.wav" 249 251 36 32 0 0 0 0 18 10 255 255 255 255 "QuickFashion\FBagUp.tga" "QuickFashion\FBagDown.tga" 19 1
+LABEL "Lab_Title" "" "" 112 30 100 30 20 15 21 255 204 74 255
+IMAGEPICTURE "Equip_25" "" "" 197 91 32 32 1 0 "Window\帽子时装.dds"
+RADIO "Rdo_Bag1" "oldbag" "SFX\Interface\ClickA.wav" 23 286 21 21 "Extra\单选框_标准.tga" 1 3
+STILLIMAGEBUTTON "Btn_Bag1" "oldbag" "SFX\Interface\ClickB.wav" 45 285 70 24 0 0 0 0 22 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本1.dds" 23 1
+STILLIMAGEBUTTON "Btn_Bag2" "newbag" "SFX\Interface\ClickB.wav" 138 285 70 24 0 0 0 0 24 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本1.dds" 25 1
+RADIO "Rdo_Bag2" "newbag" "SFX\Interface\ClickA.wav" 116 286 21 21 "Extra\单选框_标准.tga" 2 3
+STILLIMAGEBUTTON "Btn_Finishing" "arrange" "" 214 286 21 21 0 0 0 0 26 15 255 255 255 255 "Button\包裹整理（普通）.dds" "Button\包裹整理（悬浮）.dds" 27 1
+STILLIMAGEBUTTON "Btn_Finishing2" "arrange" "SFX\Interface\ClickB.wav" 236 285 50 24 0 0 0 0 28 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本1.dds" 29 1

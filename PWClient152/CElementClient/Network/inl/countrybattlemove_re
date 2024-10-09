@@ -1,0 +1,44 @@
+	public:
+		int retcode;
+		int roleid;
+		int dest;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_COUNTRYBATTLEMOVE_RE };
+	public:
+		CountryBattleMove_Re() { type = PROTOCOL_COUNTRYBATTLEMOVE_RE; }
+		CountryBattleMove_Re(void*) : Protocol(PROTOCOL_COUNTRYBATTLEMOVE_RE) { }
+		CountryBattleMove_Re (int l_retcode,int l_roleid,int l_dest,
+			unsigned int l_localsid)
+			 : retcode(l_retcode),roleid(l_roleid),dest(l_dest)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_COUNTRYBATTLEMOVE_RE;
+		}
+
+		CountryBattleMove_Re(const CountryBattleMove_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),roleid(rhs.roleid),dest(rhs.dest)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new CountryBattleMove_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roleid;
+			os << dest;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roleid;
+			os >> dest;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

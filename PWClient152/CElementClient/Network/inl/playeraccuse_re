@@ -1,0 +1,38 @@
+	public:
+		unsigned int localsid;
+		int dst_roleid;
+		int recode;
+		enum { PROTOCOL_TYPE = PROTOCOL_PLAYERACCUSE_RE };
+	public:
+		PlayerAccuse_Re() { type = PROTOCOL_PLAYERACCUSE_RE; }
+		PlayerAccuse_Re(void*) : Protocol(PROTOCOL_PLAYERACCUSE_RE) { }
+		PlayerAccuse_Re (unsigned int l_localsid,int l_dst_roleid,int l_recode)
+			 : localsid(l_localsid),dst_roleid(l_dst_roleid),recode(l_recode)
+		{
+			type = PROTOCOL_PLAYERACCUSE_RE;
+		}
+
+		PlayerAccuse_Re(const PlayerAccuse_Re &rhs)
+			: Protocol(rhs),localsid(rhs.localsid),dst_roleid(rhs.dst_roleid),recode(rhs.recode) { }
+
+		GNET::Protocol *Clone() const { return new PlayerAccuse_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << localsid;
+			os << dst_roleid;
+			os << recode;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> localsid;
+			os >> dst_roleid;
+			os >> recode;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

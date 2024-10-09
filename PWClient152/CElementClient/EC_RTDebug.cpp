@@ -1,0 +1,1478 @@
+/*
+ * FILE: EC_RTDebug.cpp
+ *
+ * DESCRIPTION: 
+ *
+ * CREATED BY: Duyuxin, 2004/9/9
+ *
+ * HISTORY: 
+ *
+ * Copyright (c) 2004 Archosaur Studio, All Rights Reserved.
+ */
+
+#include "EC_Global.H"
+#include "EC_RTDebug.h"
+#include "EC_Game.h"
+#include "EC_Configs.h"
+#include "EC_Viewport.h"
+#include "EC_Resource.h"
+#include "EC_CommandLine.h"
+#include "EC_Split.h"
+
+#include "gnproto.h"
+#include "callid.hxx"
+#include "gamedatasend.hpp"
+
+#include "A3DDevice.h"
+#include "A3DFont.h"
+#include "A3DViewport.h"
+#include "A3DEngine.h"
+#include "AChar.h"
+
+#define new A_DEBUG_NEW
+
+///////////////////////////////////////////////////////////////////////////
+//	
+//	Define and Macro
+//	
+///////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////
+//	
+//	Reference to External variables and functions
+//	
+///////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////
+//	
+//	Local Types and Variables and Global variables
+//	
+///////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////
+//	
+//	Local functions
+//	
+///////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////
+//	
+//	Implement CECRTDebug
+//	
+///////////////////////////////////////////////////////////////////////////
+
+CECRTDebug::CECRTDebug()
+{
+	m_pA3DFont		= NULL;
+	m_iMaxVisStr	= 27;
+	m_iLineSpace	= 16;
+	m_dwRTimeCnt	= 0;
+	m_dwRTimeInter	= 15000;
+
+	InitPNameMap();
+	InitCGNameMap();
+	InitSGNameMap();
+	InitHideProto();
+}
+
+CECRTDebug::~CECRTDebug()
+{
+}
+
+//	Initialize object
+bool CECRTDebug::Init()
+{
+	if (!(m_pA3DFont = g_pGame->GetFont(RES_FONT_TITLE)))
+		m_pA3DFont = g_pGame->GetA3DEngine()->GetSystemFont();
+
+	return true;
+}
+
+//	Release object
+void CECRTDebug::Release()
+{
+	EnterCriticalSection(&g_csRTDebug);
+
+	//	Release all resources
+	ALISTPOSITION pos = m_DbgStrList.GetHeadPosition();
+	while (pos)
+	{
+		DBGSTR* pStr = m_DbgStrList.GetNext(pos);
+		delete pStr;
+	}
+
+	m_DbgStrList.RemoveAll();
+
+	LeaveCriticalSection(&g_csRTDebug);
+}
+
+//	Output a debug string
+void CECRTDebug::OutputDebugInfo(DWORD dwCol, const ACHAR* szMsg)
+{
+	if (!szMsg || !a_strlen(szMsg))
+		return;
+
+	DBGSTR* pStr = new DBGSTR;
+	if (!pStr)
+		return;
+
+	//	Roll other strings up
+	RollStringsUp(true);
+
+	pStr->dwCol		= dwCol;
+	pStr->strMsg	= szMsg;
+	pStr->iLine		= 0;
+	pStr->iLevel	= 1;
+
+#ifdef LOG_PROTOCOL
+	a_LogOutput(1, AC2AS(szMsg));
+#endif
+
+	EnterCriticalSection(&g_csRTDebug);
+	m_DbgStrList.AddHead(pStr);
+	LeaveCriticalSection(&g_csRTDebug);
+}
+
+//	Output a notify message
+void CECRTDebug::OutputNotifyMessage(DWORD dwCol, const ACHAR* szMsg)
+{
+	if (!szMsg || !a_strlen(szMsg))
+		return;
+
+	DBGSTR* pStr = new DBGSTR;
+	if (!pStr)
+		return;
+
+	//	Roll other strings up
+	RollStringsUp(true);
+
+	pStr->dwCol		= dwCol;
+	pStr->strMsg	= szMsg;
+	pStr->iLine		= 0;
+	pStr->iLevel	= 2;
+
+	EnterCriticalSection(&g_csRTDebug);
+	m_DbgStrList.AddHead(pStr);
+	LeaveCriticalSection(&g_csRTDebug);
+}
+
+//	Roll strings up
+void CECRTDebug::RollStringsUp(bool bClearCnt)
+{
+	EnterCriticalSection(&g_csRTDebug);
+
+	ALISTPOSITION pos = m_DbgStrList.GetHeadPosition();
+	while (pos)
+	{
+		ALISTPOSITION posCur = pos;
+		DBGSTR* pStr = m_DbgStrList.GetNext(pos);
+		pStr->iLine++;
+
+		if (pStr->iLine >= m_iMaxVisStr)
+		{
+			delete pStr;
+			m_DbgStrList.RemoveAt(posCur);
+		}
+	}
+
+	if (bClearCnt)
+		m_dwRTimeCnt = 0;
+
+	LeaveCriticalSection(&g_csRTDebug);
+}
+
+//	Tick routine
+bool CECRTDebug::Tick(DWORD dwDeltaTime)
+{
+	m_dwRTimeCnt += dwDeltaTime;
+	
+	if (m_dwRTimeCnt >= m_dwRTimeInter)
+	{
+		m_dwRTimeCnt -= m_dwRTimeInter;
+
+		RollStringsUp(false);
+	}
+
+	return true;
+}
+
+//	Render routine
+bool CECRTDebug::Render(CECViewport* pViewport)
+{
+	if (!m_pA3DFont || !g_pGame->GetConfigs()->GetRTDebugLevel())
+		return true;
+
+	g_pGame->GetA3DDevice()->SetZWriteEnable(false);
+
+	EnterCriticalSection(&g_csRTDebug);
+
+	A3DVIEWPORTPARAM* pvp = pViewport->GetA3DViewport()->GetParam();
+
+	int iLevel = g_pGame->GetConfigs()->GetRTDebugLevel();
+	int x = pvp->X + 10;
+	int y = pvp->Y + pvp->Height - 200 - m_iLineSpace;
+
+	ALISTPOSITION pos = m_DbgStrList.GetHeadPosition();
+	while (pos)
+	{
+		DBGSTR* pStr = m_DbgStrList.GetNext(pos);
+		if (pStr->iLevel < iLevel)
+			continue;
+
+		int oy = y - pStr->iLine * m_iLineSpace;
+		if (oy < (int)pvp->Y)
+			break;
+
+		m_pA3DFont->TextOut(x, oy, pStr->strMsg, pStr->dwCol);
+	}
+
+	LeaveCriticalSection(&g_csRTDebug);
+
+	m_pA3DFont->Flush();
+	g_pGame->GetA3DDevice()->SetZWriteEnable(true);
+
+	return true;
+}
+
+void CECRTDebug::InitPNameMap()
+{
+#ifdef LOG_PROTOCOL
+	mProtocol[1] = "PROTOCOL_CHALLENGE";
+	mProtocol[3] = "PROTOCOL_RESPONSE";
+	mProtocol[2] = "PROTOCOL_KEYEXCHANGE";
+	mProtocol[4] = "PROTOCOL_ONLINEANNOUNCE";
+	mProtocol[5] = "PROTOCOL_ERRORINFO";
+	mProtocol[6] = "PROTOCOL_STATUSANNOUNCE";
+
+	mProtocol[7] = "PROTOCOL_ROLESTATUSANNOUNCE";
+	mProtocol[9] = "PROTOCOL_DELIVERROLESTATUS";
+	mProtocol[11] = "PROTOCOL_SENDMSG";
+	mProtocol[12] = "PROTOCOL_QQADDFRIEND";
+	mProtocol[13] = "PROTOCOL_QQADDFRIEND_RE";
+
+
+	mProtocol[70] = "PROTOCOL_SELECTROLE";
+	mProtocol[71] = "PROTOCOL_SELECTROLE_RE";
+	mProtocol[72] = "PROTOCOL_ENTERWORLD";
+	mProtocol[34] = "PROTOCOL_GAMEDATASEND";
+	mProtocol[36] = "PROTOCOL_UPDATEREMAINTIME";
+	mProtocol[69] = "PROTOCOL_PLAYERLOGOUT";
+	mProtocol[79] = "PROTOCOL_PUBLICCHAT";
+	mProtocol[96] = "PROTOCOL_PRIVATECHAT";
+	mProtocol[80] = "PROTOCOL_CHATMESSAGE";
+	mProtocol[133] = "PROTOCOL_WORLDCHAT";
+	mProtocol[82] = "PROTOCOL_ROLELIST";
+	mProtocol[83] = "PROTOCOL_ROLELIST_RE";
+	mProtocol[84] = "PROTOCOL_CREATEROLE";
+	mProtocol[85] = "PROTOCOL_CREATEROLE_RE";
+	mProtocol[86] = "PROTOCOL_DELETEROLE";
+	mProtocol[87] = "PROTOCOL_DELETEROLE_RE";
+	mProtocol[88] = "PROTOCOL_UNDODELETEROLE";
+	mProtocol[89] = "PROTOCOL_UNDODELETEROLE_RE";
+	mProtocol[90] = "PROTOCOL_KEEPALIVE";
+	mProtocol[91] = "PROTOCOL_PLAYERBASEINFO";
+	mProtocol[92] = "PROTOCOL_PLAYERBASEINFO_RE";
+	mProtocol[98] = "PROTOCOL_PLAYERBASEINFOCRC";
+	mProtocol[99] = "PROTOCOL_PLAYERBASEINFOCRC_RE";
+	mProtocol[100] = "PROTOCOL_SETCUSTOMDATA";
+	mProtocol[102] = "PROTOCOL_SETUICONFIG";
+	mProtocol[104] = "PROTOCOL_GETUICONFIG";
+	mProtocol[101] = "PROTOCOL_SETCUSTOMDATA_RE";
+	mProtocol[103] = "PROTOCOL_SETUICONFIG_RE";
+	mProtocol[105] = "PROTOCOL_GETUICONFIG_RE";
+	mProtocol[107] = "PROTOCOL_GETPLAYERBRIEFINFO";
+	mProtocol[108] = "PROTOCOL_GETPLAYERBRIEFINFO_RE";
+	mProtocol[116] = "PROTOCOL_GETCUSTOMDATA";
+	mProtocol[117] = "PROTOCOL_GETCUSTOMDATA_RE";
+	mProtocol[118] = "PROTOCOL_GETPLAYERIDBYNAME";
+	mProtocol[119] = "PROTOCOL_GETPLAYERIDBYNAME_RE";
+
+	mProtocol[4001] = "PROTOCOL_TRADESTART";
+	mProtocol[4002] = "PROTOCOL_TRADESTART_RE";
+	mProtocol[4004] = "PROTOCOL_TRADEADDGOODS";
+	mProtocol[4005] = "PROTOCOL_TRADEADDGOODS_RE";
+	mProtocol[4006] = "PROTOCOL_TRADEREMOVEGOODS";
+	mProtocol[4007] = "PROTOCOL_TRADEREMOVEGOODS_RE";
+	mProtocol[4010] = "PROTOCOL_TRADESUBMIT";
+	mProtocol[4011] = "PROTOCOL_TRADESUBMIT_RE";
+	mProtocol[4008] = "PROTOCOL_TRADEMOVEOBJ";
+	mProtocol[4009] = "PROTOCOL_TRADEMOVEOBJ_RE";
+	mProtocol[4012] = "PROTOCOL_TRADECONFIRM";
+	mProtocol[4013] = "PROTOCOL_TRADECONFIRM_RE";
+	mProtocol[4014] = "PROTOCOL_TRADEDISCARD";
+	mProtocol[4015] = "PROTOCOL_TRADEDISCARD_RE";
+	mProtocol[4016] = "PROTOCOL_TRADEEND";
+
+	mProtocol[202] = "PROTOCOL_ADDFRIEND";
+	mProtocol[203] = "PROTOCOL_ADDFRIEND_RE";
+	mProtocol[206] = "PROTOCOL_GETFRIENDS";
+	mProtocol[207] = "PROTOCOL_GETFRIENDS_RE";
+	mProtocol[208] = "PROTOCOL_SETGROUPNAME";
+	mProtocol[209] = "PROTOCOL_SETGROUPNAME_RE";
+	mProtocol[210] = "PROTOCOL_SETFRIENDGROUP";
+	mProtocol[211] = "PROTOCOL_SETFRIENDGROUP_RE";
+	mProtocol[212] = "PROTOCOL_DELFRIEND";
+	mProtocol[213] = "PROTOCOL_DELFRIEND_RE";
+	mProtocol[214] = "PROTOCOL_FRIENDSTATUS";
+	mProtocol[217] = "PROTOCOL_GETSAVEDMSG";
+	mProtocol[218] = "PROTOCOL_GETSAVEDMSG_RE";
+	mProtocol[219] = "PROTOCOL_CHATROOMCREATE";
+	mProtocol[220] = "PROTOCOL_CHATROOMCREATE_RE";
+	mProtocol[221] = "PROTOCOL_CHATROOMINVITE";
+	mProtocol[222] = "PROTOCOL_CHATROOMINVITE_RE";
+	mProtocol[223] = "PROTOCOL_CHATROOMJOIN";
+	mProtocol[224] = "PROTOCOL_CHATROOMJOIN_RE";
+	mProtocol[225] = "PROTOCOL_CHATROOMLEAVE";
+	mProtocol[226] = "PROTOCOL_CHATROOMEXPEL";
+	mProtocol[227] = "PROTOCOL_CHATROOMSPEAK";
+	mProtocol[228] = "PROTOCOL_CHATROOMLIST";
+	mProtocol[229] = "PROTOCOL_CHATROOMLIST_RE";
+
+
+	mProtocol[350] = "PROTOCOL_GMONLINENUM";
+	mProtocol[351] = "PROTOCOL_GMONLINENUM_RE";
+	mProtocol[352] = "PROTOCOL_GMLISTONLINEUSER";
+	mProtocol[353] = "PROTOCOL_GMLISTONLINEUSER_RE";
+	mProtocol[354] = "PROTOCOL_GMKICKOUTUSER";
+	mProtocol[355] = "PROTOCOL_GMKICKOUTUSER_RE";
+	mProtocol[356] = "PROTOCOL_GMSHUTUP";    
+	mProtocol[357] = "PROTOCOL_GMSHUTUP_RE";
+	mProtocol[358] = "PROTOCOL_GMRESTARTSERVER";
+	mProtocol[359] = "PROTOCOL_GMRESTARTSERVER_RE";
+	mProtocol[360] = "PROTOCOL_GMKICKOUTROLE";
+	mProtocol[361] = "PROTOCOL_GMKICKOUTROLE_RE";
+	mProtocol[362] = "PROTOCOL_GMSHUTUPROLE";
+	mProtocol[363] = "PROTOCOL_GMSHUTUPROLE_RE";
+	mProtocol[364] = "PROTOCOL_GMTOGGLECHAT";
+	mProtocol[365] = "PROTOCOL_GMTOGGLECHAT_RE";
+	mProtocol[366] = "PROTOCOL_GMFORBIDROLE";
+	mProtocol[367] = "PROTOCOL_GMFORBIDROLE_RE";
+	mProtocol[368] = "PROTOCOL_REPORT2GM";
+	mProtocol[369] = "PROTOCOL_REPORT2GM_RE";
+	mProtocol[370] = "PROTOCOL_COMPLAIN2GM";
+	mProtocol[371] = "PROTOCOL_COMPLAIN2GM_RE";
+	mProtocol[123] = "PROTOCOL_ANNOUNCEFORBIDINFO";
+	mProtocol[507] = "PROTOCOL_QUERYUSERPRIVILEGE_RE";
+	mProtocol[5001] = "PROTOCOL_ACREPORT";
+	mProtocol[5003] = "PROTOCOL_ACREMOTECODE";
+	mProtocol[128] = "PROTOCOL_SETHELPSTATES";
+	mProtocol[130] = "PROTOCOL_GETHELPSTATES";
+	mProtocol[129] = "PROTOCOL_SETHELPSTATES_RE";
+	mProtocol[131] = "PROTOCOL_GETHELPSTATES_RE";
+	mProtocol[385] = "PROTOCOL_GMSETTIMELESSAUTOLOCK";
+	mProtocol[386] = "PROTOCOL_GMSETTIMELESSAUTOLOCK_RE";
+
+
+	mProtocol[4803] = "PROTOCOL_FACTIONCHAT";
+	mProtocol[4516] = "PROTOCOL_FACTIONRENAME_RE";
+	mProtocol[4805] = "PROTOCOL_FACTIONOPREQUEST_RE";
+	mProtocol[4502] = "PROTOCOL_FACTIONCREATE_RE";
+	mProtocol[4505] = "PROTOCOL_FACTIONACCEPTJOIN_RE";
+	mProtocol[4506] = "PROTOCOL_FACTIONEXPEL_RE";
+	mProtocol[4507] = "PROTOCOL_FACTIONBROADCASTNOTICE_RE";
+	mProtocol[4509] = "PROTOCOL_FACTIONMASTERRESIGN_RE";
+	mProtocol[4510] = "PROTOCOL_FACTIONAPPOINT_RE";
+	mProtocol[4512] = "PROTOCOL_FACTIONLEAVE_RE";
+	mProtocol[4513] = "PROTOCOL_FACTIONUPGRADE_RE";
+	mProtocol[4514] = "PROTOCOL_FACTIONDEGRADE_RE";
+	mProtocol[4812] = "PROTOCOL_FACTIONACCEPTJOIN";
+	mProtocol[4504] = "PROTOCOL_FACTIONAPPLYJOIN_RE";
+	mProtocol[4503] = "PROTOCOL_FACTIONLISTMEMBER_RE";
+	mProtocol[4814] = "PROTOCOL_GETFACTIONBASEINFO";
+	mProtocol[4815] = "PROTOCOL_GETFACTIONBASEINFO_RE";
+	mProtocol[4515] = "PROTOCOL_FACTIONDISMISS_RE";
+	mProtocol[4816] = "PROTOCOL_GETPLAYERFACTIONINFO";
+	mProtocol[4817] = "PROTOCOL_GETPLAYERFACTIONINFO_RE";
+	mProtocol[4508] = "PROTOCOL_FACTIONCHANGPROCLAIM_RE";
+	mProtocol[4511] = "PROTOCOL_FACTIONRESIGN_RE";
+	mProtocol[4804] = "PROTOCOL_FACTIONOPREQUEST";
+	mProtocol[4526] = "PROTOCOL_FACTIONDELAYEXPELANNOUNCE";
+
+
+	mProtocol[4200] = "PROTOCOL_CHECKNEWMAIL";
+	mProtocol[4201] = "PROTOCOL_ANNOUNCENEWMAIL";
+	mProtocol[4202] = "PROTOCOL_GETMAILLIST";
+	mProtocol[4204] = "PROTOCOL_GETMAIL";
+	mProtocol[4206] = "PROTOCOL_GETMAILATTACHOBJ";
+	mProtocol[4208] = "PROTOCOL_DELETEMAIL";
+	mProtocol[4210] = "PROTOCOL_PRESERVEMAIL";
+	mProtocol[4212] = "PROTOCOL_PLAYERSENDMAIL";
+	mProtocol[4203] = "PROTOCOL_GETMAILLIST_RE";
+	mProtocol[4205] = "PROTOCOL_GETMAIL_RE";
+	mProtocol[4207] = "PROTOCOL_GETMAILATTACHOBJ_RE";
+	mProtocol[4209] = "PROTOCOL_DELETEMAIL_RE";
+	mProtocol[4211] = "PROTOCOL_PRESERVEMAIL_RE";
+	mProtocol[4213] = "PROTOCOL_PLAYERSENDMAIL_RE";
+
+
+	mProtocol[800] = "PROTOCOL_AUCTIONOPEN";
+	mProtocol[801] = "PROTOCOL_AUCTIONOPEN_RE";
+	mProtocol[802] = "PROTOCOL_AUCTIONBID";
+	mProtocol[803] = "PROTOCOL_AUCTIONBID_RE";
+	mProtocol[804] = "PROTOCOL_AUCTIONLIST";
+	mProtocol[805] = "PROTOCOL_AUCTIONLIST_RE";
+	mProtocol[806] = "PROTOCOL_AUCTIONCLOSE";
+	mProtocol[807] = "PROTOCOL_AUCTIONCLOSE_RE";
+	mProtocol[808] = "PROTOCOL_AUCTIONGET";
+	mProtocol[809] = "PROTOCOL_AUCTIONGET_RE";
+	mProtocol[816] = "PROTOCOL_AUCTIONATTENDLIST";
+	mProtocol[817] = "PROTOCOL_AUCTIONATTENDLIST_RE";
+	mProtocol[818] = "PROTOCOL_AUCTIONEXITBID";
+	mProtocol[819] = "PROTOCOL_AUCTIONEXITBID_RE";
+	mProtocol[820] = "PROTOCOL_AUCTIONGETITEM";
+	mProtocol[821] = "PROTOCOL_AUCTIONGETITEM_RE";
+
+
+	mProtocol[850] = "PROTOCOL_BATTLEGETMAP";
+	mProtocol[852] = "PROTOCOL_BATTLECHALLENGE";
+	mProtocol[854] = "PROTOCOL_BATTLECHALLENGEMAP";
+	mProtocol[851] = "PROTOCOL_BATTLEGETMAP_RE";
+	mProtocol[853] = "PROTOCOL_BATTLECHALLENGE_RE";
+	mProtocol[855] = "PROTOCOL_BATTLECHALLENGEMAP_RE";
+	mProtocol[860] = "PROTOCOL_BATTLEENTER";
+	mProtocol[861] = "PROTOCOL_BATTLEENTER_RE";
+	mProtocol[866] = "PROTOCOL_BATTLESTATUS";
+	mProtocol[867] = "PROTOCOL_BATTLESTATUS_RE";
+
+
+	mProtocol[601] = "PROTOCOL_SELLPOINT";
+	mProtocol[607] = "PROTOCOL_BUYPOINT";
+	mProtocol[603] = "PROTOCOL_GETSELLLIST";
+	mProtocol[619] = "PROTOCOL_FINDSELLPOINTINFO";
+	mProtocol[605] = "PROTOCOL_SELLCANCEL";
+	mProtocol[602] = "PROTOCOL_SELLPOINT_RE";
+	mProtocol[604] = "PROTOCOL_GETSELLLIST_RE";
+	mProtocol[620] = "PROTOCOL_FINDSELLPOINTINFO_RE";
+	mProtocol[610] = "PROTOCOL_ANNOUNCESELLRESULT";
+	mProtocol[606] = "PROTOCOL_SELLCANCEL_RE";
+	mProtocol[608] = "PROTOCOL_BUYPOINT_RE";
+
+	mProtocol[409] = "PROTOCOL_STOCKCOMMISSION_RE";
+	mProtocol[408] = "PROTOCOL_STOCKACCOUNT_RE";
+	mProtocol[410] = "PROTOCOL_STOCKTRANSACTION_RE";
+	mProtocol[406] = "PROTOCOL_STOCKBILL_RE";    
+	mProtocol[412] = "PROTOCOL_STOCKCANCEL_RE";    
+	mProtocol[401] = "PROTOCOL_STOCKCOMMISSION";
+	mProtocol[407] = "PROTOCOL_STOCKACCOUNT";
+	mProtocol[405] = "PROTOCOL_STOCKBILL";
+	mProtocol[411] = "PROTOCOL_STOCKCANCEL";
+	mProtocol[4260] = "PROTOCOL_CASHLOCK";
+	mProtocol[4263] = "PROTOCOL_CASHPASSWORDSET";
+	mProtocol[4261] = "PROTOCOL_CASHLOCK_RE";
+	mProtocol[4264] = "PROTOCOL_CASHPASSWORDSET_RE";
+	mProtocol[551] = "PROTOCOL_MATRIXCHALLENGE";
+	mProtocol[552] = "PROTOCOL_MATRIXRESPONSE";
+	mProtocol[5031] = "PROTOCOL_ACQUESTION";
+	mProtocol[5032] = "PROTOCOL_ACANSWER"; 
+	mProtocol[782] = "PROTOCOL_AUTOLOCKSET";
+	mProtocol[783] = "PROTOCOL_AUTOLOCKSET_RE";
+	mProtocol[823] = "PROTOCOL_AUCTIONLISTUPDATE";
+	mProtocol[824] = "PROTOCOL_AUCTIONLISTUPDATE_RE";
+	mProtocol[4908] = "PROTOCOL_REFGETREFERENCECODE";
+	mProtocol[4909] = "PROTOCOL_REFGETREFERENCECODE_RE";
+	mProtocol[4904] = "PROTOCOL_REFLISTREFERRALS";
+	mProtocol[4905] = "PROTOCOL_REFLISTREFERRALS_RE";
+	mProtocol[4906] = "PROTOCOL_REFWITHDRAWBONUS";
+	mProtocol[4907] = "PROTOCOL_REFWITHDRAWBONUS_RE";
+	mProtocol[4952] = "PROTOCOL_GETREWARDLIST";
+	mProtocol[4953] = "PROTOCOL_GETREWARDLIST_RE";
+	mProtocol[4954] = "PROTOCOL_EXCHANGECONSUMEPOINTS";
+	mProtocol[4955] = "PROTOCOL_EXCHANGECONSUMEPOINTS_RE";
+	mProtocol[4956] = "PROTOCOL_REWARDMATURENOTICE";
+
+	mProtocol[4302] = "PROTOCOL_WEBTRADEPREPOST";
+	mProtocol[4305] = "PROTOCOL_WEBTRADEPRECANCELPOST";
+	mProtocol[4308] = "PROTOCOL_WEBTRADELIST";
+	mProtocol[4310] = "PROTOCOL_WEBTRADEGETITEM";
+	mProtocol[4312] = "PROTOCOL_WEBTRADEATTENDLIST";
+	mProtocol[4314] = "PROTOCOL_WEBTRADEGETDETAIL";
+	mProtocol[4303] = "PROTOCOL_WEBTRADEPREPOST_RE";
+	mProtocol[4306] = "PROTOCOL_WEBTRADEPRECANCELPOST_RE";
+	mProtocol[4309] = "PROTOCOL_WEBTRADELIST_RE";
+	mProtocol[4311] = "PROTOCOL_WEBTRADEGETITEM_RE";
+	mProtocol[4313] = "PROTOCOL_WEBTRADEATTENDLIST_RE";
+	mProtocol[4315] = "PROTOCOL_WEBTRADEGETDETAIL_RE";
+	mProtocol[4324] = "PROTOCOL_WEBTRADEUPDATE";
+	mProtocol[4325] = "PROTOCOL_WEBTRADEUPDATE_RE";
+	mProtocol[4326] = "PROTOCOL_WEBTRADEROLEPREPOST";
+	mProtocol[4328] = "PROTOCOL_WEBTRADEROLEPRECANCELPOST";
+	mProtocol[4329] = "PROTOCOL_WEBTRADEROLEGETDETAIL";
+
+	mProtocol[4351] = "PROTOCOL_SYSAUCTIONLIST";
+	mProtocol[4353] = "PROTOCOL_SYSAUCTIONGETITEM";
+	mProtocol[4355] = "PROTOCOL_SYSAUCTIONACCOUNT";
+	mProtocol[4357] = "PROTOCOL_SYSAUCTIONBID";   
+	mProtocol[4359] = "PROTOCOL_SYSAUCTIONCASHTRANSFER";
+	mProtocol[4352] = "PROTOCOL_SYSAUCTIONLIST_RE";
+	mProtocol[4354] = "PROTOCOL_SYSAUCTIONGETITEM_RE";
+	mProtocol[4356] = "PROTOCOL_SYSAUCTIONACCOUNT_RE";
+	mProtocol[4358] = "PROTOCOL_SYSAUCTIONBID_RE";
+	mProtocol[4360] = "PROTOCOL_SYSAUCTIONCASHTRANSFER_RE";
+
+	mProtocol[4406] = "PROTOCOL_CREATEFACTIONFORTRESS";
+	mProtocol[4412] = "PROTOCOL_FACTIONFORTRESSENTER";
+	mProtocol[4414] = "PROTOCOL_FACTIONFORTRESSLIST";
+	mProtocol[4416] = "PROTOCOL_FACTIONFORTRESSCHALLENGE";
+	mProtocol[4419] = "PROTOCOL_FACTIONFORTRESSBATTLELIST";
+	mProtocol[4421] = "PROTOCOL_FACTIONFORTRESSGET";
+	mProtocol[4407] = "PROTOCOL_CREATEFACTIONFORTRESS_RE";
+	mProtocol[4415] = "PROTOCOL_FACTIONFORTRESSLIST_RE";
+	mProtocol[4417] = "PROTOCOL_FACTIONFORTRESSCHALLENGE_RE";
+	mProtocol[4420] = "PROTOCOL_FACTIONFORTRESSBATTLELIST_RE";
+	mProtocol[4422] = "PROTOCOL_FACTIONFORTRESSGET_RE";
+
+	mProtocol[4517] = "PROTOCOL_FACTIONALLIANCEAPPLY_RE";
+	mProtocol[4518] = "PROTOCOL_FACTIONALLIANCEREPLY_RE";
+	mProtocol[4519] = "PROTOCOL_FACTIONHOSTILEAPPLY_RE";
+	mProtocol[4520] = "PROTOCOL_FACTIONHOSTILEREPLY_RE";
+	mProtocol[4521] = "PROTOCOL_FACTIONREMOVERELATIONAPPLY_RE";
+	mProtocol[4522] = "PROTOCOL_FACTIONREMOVERELATIONREPLY_RE";
+	mProtocol[4523] = "PROTOCOL_FACTIONLISTRELATION_RE";
+	mProtocol[4524] = "PROTOCOL_FACTIONRELATIONRECVAPPLY";
+	mProtocol[4525] = "PROTOCOL_FACTIONRELATIONRECVREPLY";
+	mProtocol[4819] = "PROTOCOL_FACTIONLISTONLINE";
+	mProtocol[4820] = "PROTOCOL_FACTIONLISTONLINE_RE";
+
+	mProtocol[138] = "PROTOCOL_USERCOUPON";
+	mProtocol[140] = "PROTOCOL_USERCOUPONEXCHANGE";
+	mProtocol[139] = "PROTOCOL_USERCOUPON_RE";
+	mProtocol[141] = "PROTOCOL_USERCOUPONEXCHANGE_RE";
+	mProtocol[143] = "PROTOCOL_ACCOUNTLOGINRECORD";
+	mProtocol[144] = "PROTOCOL_USERADDCASH";
+	mProtocol[145] = "PROTOCOL_USERADDCASH_RE";
+	mProtocol[147] = "PROTOCOL_SSOGETTICKET";
+	mProtocol[148] = "PROTOCOL_SSOGETTICKET_RE";
+
+	mProtocol[230] = "PROTOCOL_FRIENDEXTLIST";
+	mProtocol[233] = "PROTOCOL_SENDAUMAIL";
+	mProtocol[234] = "PROTOCOL_SENDAUMAIL_RE";
+	
+	mProtocol[382]="PROTOCOL_GMGETPLAYERCONSUMEINFO";
+	mProtocol[383]="PROTOCOL_GMGETPLAYERCONSUMEINFO_RE";
+	
+	mProtocol[4760]="PROTOCOL_COUNTRYBATTLEMOVE";
+	mProtocol[4761]="PROTOCOL_COUNTRYBATTLEMOVE_RE";
+	mProtocol[4762]="PROTOCOL_COUNTRYBATTLESYNCPLAYERLOCATION";
+	mProtocol[4767]="PROTOCOL_COUNTRYBATTLEGETMAP";
+	mProtocol[4770]="PROTOCOL_COUNTRYBATTLEGETPLAYERLOCATION";
+	mProtocol[4768]="PROTOCOL_COUNTRYBATTLEGETMAP_RE";
+	mProtocol[4774]="PROTOCOL_COUNTRYBATTLEGETSCORE";
+	mProtocol[4775]="PROTOCOL_COUNTRYBATTLEGETSCORE_RE";
+	mProtocol[4772]="PROTOCOL_COUNTRYBATTLEGETCONFIG";
+	mProtocol[4773]="PROTOCOL_COUNTRYBATTLEGETCONFIG_RE";
+	mProtocol[4776]="PROTOCOL_COUNTRYBATTLEPREENTERNOTIFY";
+	mProtocol[4777]="PROTOCOL_COUNTRYBATTLEPREENTER";
+	mProtocol[4778]="PROTOCOL_COUNTRYBATTLERESULT";
+	mProtocol[4779]="PROTOCOL_COUNTRYBATTLERETURNCAPITAL";
+	mProtocol[4780]="PROTOCOL_COUNTRYBATTLESINGLEBATTLERESULT";
+	mProtocol[4781]="PROTOCOL_COUNTRYBATTLEKINGASSIGNASSAULT";
+	mProtocol[4782]="PROTOCOL_COUNTRYBATTLEKINGASSIGNASSAULT_RE";
+	mProtocol[4783]="PROTOCOL_COUNTRYBATTLEKINGRESETBATTLELIMIT";
+	mProtocol[4784]="PROTOCOL_COUNTRYBATTLEGETBATTLELIMIT";
+	mProtocol[4785]="PROTOCOL_COUNTRYBATTLEGETBATTLELIMIT_RE";
+	mProtocol[4786]="PROTOCOL_COUNTRYBATTLEGETKINGCOMMANDPOINT";
+	mProtocol[4787]="PROTOCOL_COUNTRYBATTLEGETKINGCOMMANDPOINT_RE";
+
+	mProtocol[150]="PROTOCOL_QPGETACTIVATEDSERVICES";
+	mProtocol[152]="PROTOCOL_QPADDCASH";
+	mProtocol[149]="PROTOCOL_QPANNOUNCEDISCOUNT";
+	mProtocol[151]="PROTOCOL_QPGETACTIVATEDSERVICES_RE";
+	mProtocol[153]="PROTOCOL_QPADDCASH_RE";
+
+	mProtocol[1103]="PROTOCOL_PLAYERCHANGEDS_RE";
+	mProtocol[1104]="PROTOCOL_CHANGEDS_RE";
+	mProtocol[1105]="PROTOCOL_KEYREESTABLISH";
+	mProtocol[3060]="PROTOCOL_PLAYERRENAME_RE";
+	mProtocol[158]="PROTOCOL_PLAYERNAMEUPDATE";
+	mProtocol[4852]="PROTOCOL_KEGETSTATUS";
+	mProtocol[4854]="PROTOCOL_KECANDIDATEAPPLY";
+	mProtocol[4858]="PROTOCOL_KEVOTING";
+	mProtocol[4853]="PROTOCOL_KEGETSTATUS_RE";
+	mProtocol[4855]="PROTOCOL_KECANDIDATEAPPLY_RE";
+	mProtocol[4859]="PROTOCOL_KEVOTING_RE";
+
+	mProtocol[3066]="PROTOCOL_PLAYERGIVEPRESENT_RE";
+	mProtocol[3069]="PROTOCOL_PLAYERASKFORPRESENT_RE";
+
+	mProtocol[901] = "PROTOCOL_PSHOPCREATE_RE";
+	mProtocol[903] = "PROTOCOL_PSHOPBUY_RE";
+	mProtocol[905] = "PROTOCOL_PSHOPSELL_RE";
+	mProtocol[907] = "PROTOCOL_PSHOPCANCELGOODS_RE";
+	mProtocol[909] = "PROTOCOL_PSHOPPLAYERBUY_RE";
+	mProtocol[911] = "PROTOCOL_PSHOPPLAYERSELL_RE";
+	mProtocol[913] = "PROTOCOL_PSHOPSETTYPE_RE";
+	mProtocol[915] = "PROTOCOL_PSHOPACTIVE_RE";
+	mProtocol[917] = "PROTOCOL_PSHOPMANAGEFUND_RE";
+	mProtocol[919] = "PROTOCOL_PSHOPDRAWITEM_RE";
+	mProtocol[921] = "PROTOCOL_PSHOPCLEARGOODS_RE";
+	mProtocol[923] = "PROTOCOL_PSHOPSELFGET_RE";
+	mProtocol[925] = "PROTOCOL_PSHOPPLAYERGET_RE";
+	mProtocol[927] = "PROTOCOL_PSHOPLIST_RE";
+	mProtocol[929] = "PROTOCOL_PSHOPLISTITEM_RE";
+
+	mProtocol[900] = "PROTOCOL_PSHOPCREATE";
+	mProtocol[902] = "PROTOCOL_PSHOPBUY";
+	mProtocol[904] = "PROTOCOL_PSHOPSELL";
+	mProtocol[906] = "PROTOCOL_PSHOPCANCELGOODS";
+	mProtocol[908] = "PROTOCOL_PSHOPPLAYERBUY";
+	mProtocol[910] = "PROTOCOL_PSHOPPLAYERSELL";
+	mProtocol[912] = "PROTOCOL_PSHOPSETTYPE";
+	mProtocol[914] = "PROTOCOL_PSHOPACTIVE";
+	mProtocol[916] = "PROTOCOL_PSHOPMANAGEFUND";
+	mProtocol[918] = "PROTOCOL_PSHOPDRAWITEM";
+	mProtocol[920] = "PROTOCOL_PSHOPCLEARGOODS";
+	mProtocol[922] = "PROTOCOL_PSHOPSELFGET";
+	mProtocol[924] = "PROTOCOL_PSHOPPLAYERGET";
+	mProtocol[926] = "PROTOCOL_PSHOPLIST";
+	mProtocol[928] = "PROTOCOL_PSHOPLISTITEM";
+	
+	mProtocol[951] = "PROTOCOL_PLAYERPROFILEGETPROFILEDATA";
+	mProtocol[952] = "PROTOCOL_PLAYERPROFILEGETPROFILEDATA_RE";
+	mProtocol[953] = "PROTOCOL_PLAYERPROFILESETPROFILEDATA";
+	mProtocol[954] = "PROTOCOL_PLAYERPROFILEGETMATCHRESULT";
+	mProtocol[955] = "PROTOCOL_PLAYERPROFILEGETMATCHRESULT_RE";
+	
+	mProtocol[961] = "PROTOCOL_UNIQUEDATAMODIFYBROADCAST";
+	mProtocol[963] = "PROTOCOL_AUTOTEAMSETGOAL_RE";
+	mProtocol[968] = "PROTOCOL_AUTOTEAMPLAYERLEAVE";
+
+	mProtocol[4788] = "PROTOCOL_GETCNETSERVERCONFIG";
+	mProtocol[4789] = "PROTOCOL_GETCNETSERVERCONFIG_RE";
+
+	mProtocol[161] = "PROTOCOL_PLAYERACCUSE";
+	mProtocol[162] = "PROTOCOL_PLAYERACCUSE_RE";
+
+	mProtocol[4217] = "PROTOCOL_PLAYERSENDMASSMAIL";
+	mProtocol[4431] = "PROTOCOL_FACTIONRESOURCEBATTLEPLAYERQUERYRESULT";
+	mProtocol[4434] = "PROTOCOL_FACTIONRESOURCEBATTLEGETMAP";
+	mProtocol[4436] = "PROTOCOL_FACTIONRESOURCEBATTLEGETRECORD";
+	mProtocol[4435] = "PROTOCOL_FACTIONRESOURCEBATTLEGETMAP_RE";
+	mProtocol[4437] = "PROTOCOL_FACTIONRESOURCEBATTLEGETRECORD_RE";
+	mProtocol[4438] = "PROTOCOL_FACTIONRESOURCEBATTLENOTIFYPLAYEREVENT";
+	mProtocol[37] = "PROTOCOL_COLLECTCLIENTMACHINEINFO";
+	mProtocol[236] = "PROTOCOL_ADDFRIENDREMARKS";
+	mProtocol[237] = "PROTOCOL_ADDFRIENDREMARKS_RE";
+	mProtocol[4532] = "PROTOCOL_FACTIONRENAMEANNOUNCE";
+	mProtocol[164] = "PROTOCOL_WAITQUEUESTATENOTIFY";
+	mProtocol[165] = "PROTOCOL_CANCELWAITQUEUE";
+	mProtocol[166] = "PROTOCOL_CANCELWAITQUEUE_RE";
+
+	// Rpc for Game
+	mProtocol[4003]="RPC_TRADESTARTRQST";
+	mProtocol[204]="RPC_ADDFRIENDRQST";
+	mProtocol[155]="RPC_PLAYERPOSITIONRESETRQST";
+
+	// Rpc for QQ
+	mProtocol[1001]="RPC_GAMEZONELIST";
+	mProtocol[1004]="RPC_ROLEALLLIST";
+	mProtocol[1006]="RPC_FRIENDALLLIST";
+	mProtocol[1009]="RPC_USERGETINFO";
+	mProtocol[1010]="RPC_USERSETINFO";
+	mProtocol[1011]="RPC_GROUPGETINFO";
+	mProtocol[1012]="RPC_GROUPSETINFO";
+	mProtocol[1016]="RPC_FRIENDDEL";
+	mProtocol[1017]="RPC_FRIENDMOVE";
+	mProtocol[1021]="RPC_MSGRETRIEVEOFFLINE";
+	mProtocol[1022]="RPC_FINDROLEBYNAME";
+	mProtocol[14]="RPC_QQADDFRIENDRQST";
+	mProtocol[1024]="RPC_FINDROLE";
+	mProtocol[4813]="RPC_FACTIONINVITEJOIN";
+
+	mProtocol[4873]="PROTOCOL_TANKBATTLEPLAYERAPPLY_RE";
+	mProtocol[4881]="PROTOCOL_TANKBATTLEPLAYERGETRANK";
+	mProtocol[4882]="PROTOCOL_TANKBATTLEPLAYERGETRANK_RE";
+
+#endif
+}
+
+void CECRTDebug::InitCGNameMap()
+{
+#ifdef LOG_PROTOCOL
+	mCGamedata[0]="PLAYER_MOVE";
+	mCGamedata[1]="LOGOUT";
+	mCGamedata[2]="SELECT_TARGET";
+	mCGamedata[3]="NORMAL_ATTACK";
+	mCGamedata[4]="REVIVE_VILLAGE";
+
+	mCGamedata[5]="REVIVE_ITEM";
+	mCGamedata[6]="PICKUP";
+	mCGamedata[7]="STOP_MOVE";
+	mCGamedata[8]="UNSELECT";
+	mCGamedata[9]="GET_ITEM_INFO";
+
+	mCGamedata[10]="GET_IVTR";
+	mCGamedata[11]="GET_IVTR_DETAIL";
+	mCGamedata[12]="EXG_IVTR_ITEM";
+	mCGamedata[13]="MOVE_IVTR_ITEM";
+	mCGamedata[14]="DROP_IVTR_ITEM";
+
+	mCGamedata[15]="DROP_EQUIP_ITEM";
+	mCGamedata[16]="EXG_EQUIP_ITEM";
+	mCGamedata[17]="EQUIP_ITEM";
+	mCGamedata[18]="MOVE_ITEM_TO_EQUIP";
+	mCGamedata[19]="GOTO";
+
+	mCGamedata[20]="THROW_MONEY";
+	mCGamedata[21]="GET_EXT_PROP";
+	mCGamedata[22]="SET_STATUS_POINT";
+	mCGamedata[23]="GET_EXT_PROP_BASE";
+	mCGamedata[24]="GET_EXT_PROP_MOVE";
+
+	mCGamedata[25]="GET_EXT_PROP_ATK";
+	mCGamedata[26]="GET_EXT_PROP_DEF";
+	mCGamedata[27]="TEAM_INVITE";
+	mCGamedata[28]="TEAM_AGREE_INVITE";
+	mCGamedata[29]="TEAM_REJECT_INVITE";
+
+	mCGamedata[30]="TEAM_LEAVE_PARTY";
+	mCGamedata[31]="TEAM_KICK_MEMBER";
+	mCGamedata[32]="TEAM_MEMBER_POS";
+	mCGamedata[33]="GET_OTHER_EQUIP";
+	mCGamedata[34]="TEAM_SET_PICKUP";
+
+	mCGamedata[35]="SEVNPC_HELLO";
+	mCGamedata[36]="SEVNPC_GET_CONTENT";
+	mCGamedata[37]="SEVNPC_SERVE";
+	mCGamedata[38]="GET_OWN_WEALTH";
+	mCGamedata[39]="GET_ALL_DATA";
+
+	mCGamedata[40]="USE_ITEM";
+	mCGamedata[41]="CAST_SKILL";
+	mCGamedata[42]="CANCEL_ACTION";
+	mCGamedata[43]="CHARGE_E_FLYSWORD";
+	mCGamedata[44]="CHARGE_FLYSWORD";
+
+	mCGamedata[45]="USE_ITEM_T";
+	mCGamedata[46]="SIT_DOWN";
+	mCGamedata[47]="STAND_UP";
+	mCGamedata[48]="EMOTE_ACTION";
+	mCGamedata[49]="TASK_NOTIFY";
+
+	mCGamedata[50]="ASSIST_SELECT";
+	mCGamedata[51]="CONTINUE_ACTION";
+	mCGamedata[52]="STOP_FALL";
+	mCGamedata[53]="GET_ITEM_INFO_LIST";
+	mCGamedata[54]="GATHER_MATERIAL";
+
+	mCGamedata[55]="GET_TRASHBOX_INFO";
+	mCGamedata[56]="EXG_TRASHBOX_ITEM";
+	mCGamedata[57]="MOVE_TRASHBOX_ITEM";
+	mCGamedata[58]="EXG_TRASHBOX_IVTR";
+	mCGamedata[59]="TRASHBOX_ITEM_TO_IVTR";
+
+	mCGamedata[60]="IVTR_ITEM_TO_TRASHBOX";
+	mCGamedata[61]="EXG_TRASHBOX_MONEY";
+	mCGamedata[62]="TRICK_ACTION";
+	mCGamedata[63]="SET_ADV_DATA";
+	mCGamedata[64]="CLR_ADV_DATA";
+
+	mCGamedata[65]="TEAM_ASK_TO_JOIN";
+	mCGamedata[66]="TEAM_REPLY_JOIN_ASK";
+	mCGamedata[67]="QUERY_PLAYER_INFO_1";
+	mCGamedata[68]="QUERY_NPC_INFO_1";
+	mCGamedata[69]="SESSION_EMOTE";
+
+	mCGamedata[70]="CON_EMOTE_REQUEST";
+	mCGamedata[71]="CON_EMOTE_REPLY";
+	mCGamedata[72]="CHANGE_TEAM_LEADER";
+	mCGamedata[73]="DEAD_MOVE";
+	mCGamedata[74]="DEAD_STOP_MOVE";
+
+	mCGamedata[75]="ENTER_SANCTUARY";
+	mCGamedata[76]="OPEN_BOOTH";
+	mCGamedata[77]="CLOSE_BOOTH";
+	mCGamedata[78]="QUERY_BOOTH_NAME";
+	mCGamedata[79]="COMPLETE_TRAVEL";
+
+	mCGamedata[80]="CAST_INSTANT_SKILL";
+	mCGamedata[81]="DESTROY_ITEM";
+	mCGamedata[82]="ENABLE_PVP_STATE";
+	mCGamedata[83]="DISABLE_PVP_STATE";
+	mCGamedata[84]="OPEN_BOOTH_TEST";
+
+	mCGamedata[85]="SWITCH_FASHION_MODE";
+	mCGamedata[86]="ENTER_INSTANCE";
+	mCGamedata[87]="REVIVAL_AGREE";
+	mCGamedata[88]="NOTIFY_POS_IN_TEAM";
+	mCGamedata[89]="CAST_POS_SKILL";
+
+	mCGamedata[90]="ACTIVE_RUSH_FLY";
+	mCGamedata[91]="QUERY_DOUBLE_EXP";
+	mCGamedata[92]="DUEL_REQUEST";
+	mCGamedata[93]="DUEL_REPLY";
+	mCGamedata[94]="BIND_PLAYER_REQUEST";
+
+	mCGamedata[95]="BIND_PLAYER_INVITE";
+	mCGamedata[96]="BIND_PLAYER_REQUEST_REPLY";
+	mCGamedata[97]="BIND_PLAYER_INVITE_REPLY";
+	mCGamedata[98]="CANCEL_BIND_PLAYER";
+	mCGamedata[99]="GET_OTHER_EQUIP_DETAIL";
+
+	mCGamedata[100]="SUMMON_PET";
+	mCGamedata[101]="RECALL_PET";
+	mCGamedata[102]="BANISH_PET";
+	mCGamedata[103]="PET_CTRL";
+	mCGamedata[104]="DEBUG_DELIVER_CMD";
+
+	mCGamedata[105]="DEBUG_GS_CMD";
+	mCGamedata[106]="MALL_SHOPPING";
+	mCGamedata[107]="GET_WALLOW_INFO";
+	mCGamedata[108]="TEAM_DISMISS_PARTY";
+	mCGamedata[109]="USE_ITEM_WITH_ARG";
+
+	mCGamedata[110]="QUERY_CASH_INFO";
+	mCGamedata[111]="ELF_ADD_ATTRIBUTE";
+	mCGamedata[112]="ELF_ADD_GENIUS";
+	mCGamedata[113]="ELF_PLAYER_INSERT_EXP";
+	mCGamedata[114]="ELF_EQUIP_ITEM";
+
+	mCGamedata[115]="ELF_CHANGE_SECURE_STATUS";
+	mCGamedata[116]="CAST_ELF_SKILL";
+	mCGamedata[117]="RECHARGE_EQUIPPED_ELF";
+	mCGamedata[118]="GET_MALL_ITEM_PRICE";
+	mCGamedata[119]="EQUIP_FASHION_ITEM";
+
+	mCGamedata[120]="CHECK_SECURITY_PASSWD";
+	mCGamedata[121]="NOTIFY_FORCE_ATTACK";
+	mCGamedata[122]="DIVIDEND_MALL_SHOPPING";
+	mCGamedata[123]="GET_DIVIDEND_MALL_ITEM_PRICE";
+	mCGamedata[124]="CHOOSE_MULTI_EXP";
+
+	mCGamedata[125]="TOGGLE_MULTI_EXP";
+	mCGamedata[126]="MULTI_EXCHANGE_ITEM";
+	mCGamedata[127]="SYSAUCTION_OP";
+	mCGamedata[128]="CALC_NETWORK_DELAY";
+	mCGamedata[129]="GET_FACTION_FORTRESS_INFO";
+
+
+	mCGamedata[130]="CONGREGATE_REPLY";
+	mCGamedata[131]="GET_FORCE_GLOBAL_DATA";
+	mCGamedata[132]="PRODUCE4_CHOOSE";
+
+	mCGamedata[133]= "RECHARGE_ONLINE_AWARD";
+	mCGamedata[134]= "TOGGLE_ONLINE_AWARD";
+	mCGamedata[135]="QUERY_PROFIT_TIME";
+	mCGamedata[136]="ENTER_PK_PROTECTED";
+	mCGamedata[137]="COUNTRYBATTLE_GET_PERSONAL_SCORE";
+	mCGamedata[138]="GET_SERVER_TIMESTAMP";
+	mCGamedata[139]="COUNTRYBATTLE_LEAVE";
+	mCGamedata[140]="GET_CASH_MONEY_EXCHG_RATE";
+	mCGamedata[141] = "EVOLUTION_PET";
+	mCGamedata[142] = "ADD_PET_EXP";
+	mCGamedata[143] = "REBUILD_PET_NATURE";
+	mCGamedata[144] = "REBUILD_PET_INHERIT_RATIO";
+	mCGamedata[145] = "REBUILD_INHERIT_CHOOSE";
+	mCGamedata[146] = "REBUILD_NATURE_CHOOSE";
+	mCGamedata[147] = "EXCHANGE_WANMEI_YINPIAO";
+	mCGamedata[148] = "PLAYER_GIVE_PRESENT";
+	mCGamedata[149] = "PLAYER_ASK_FOR_PRESENT";
+	mCGamedata[150] = "MERIDIANS_IMPACT";
+	mCGamedata[151] = "COUNTRYBATTLE_GET_STRONGHOLD_STATE";
+	mCGamedata[152] = "QUERY_TOUCH_POINT";
+	mCGamedata[153] = "SPEND_TOUCH_POINT";
+	mCGamedata[154] = "QUERY_TITLE";
+	mCGamedata[155] = "CHANGE_CURR_TITLE";
+	mCGamedata[156] = "DAILY_SIGNIN";
+	mCGamedata[157] = "LATE_SIGNIN";
+	mCGamedata[158] = "APPLY_SIGNINAWARD";
+	mCGamedata[159] = "REFRESH_SIGNIN";
+	mCGamedata[160] = "SWITCH_IN_PARALLEL_WORLD";
+	mCGamedata[161] = "QUERY_PARALLEL_WORLD";
+	mCGamedata[165] = "QUERY_UNIQUE_DATA";
+	mCGamedata[166] = "AUTO_TEAM_SET_GOAL";
+	mCGamedata[167] = "AUTO_TEAM_JUMP_TO_GOAL";
+	mCGamedata[168] = "TRICKBATTLE_LEAVE";
+	mCGamedata[169] = "TRICKBATTLE_UPGRADE_CHARIOT";
+	mCGamedata[170] = "SWALLOW_GENERALCARD";
+	mCGamedata[171] = "EQUIP_TRASHBOX_ITEM";
+	mCGamedata[172] = "QUERY_TRICKBATTLE_CHARIOTS";
+	mCGamedata[173] = "COUNTRYBATTLE_LIVE_SHOW";
+	mCGamedata[174] = "SEND_MASS_MAIL";
+	mCGamedata[175] = "RANDOM_MALL_SHOPPING";
+	mCGamedata[176] = "QUERY_MAFIA_PVP_INFO";
+	mCGamedata[177] = "QUERY_CAN_INHERIT_ADDONS";
+	mCGamedata[178]	= "ACTIVATE_REGION_WAYPOINTS";
+	mCGamedata[179]	= "INSTANCE_REENTER_REQUEST";
+
+	//	Below are GM commands
+	mCGamedata[201]="GM_MOVETO_PLAYER";
+	mCGamedata[202]="GM_CALLIN_PLAYER";
+	mCGamedata[203]="GM_KICK_PLAYER";
+	mCGamedata[204]="GM_INVISIBLE";
+
+	mCGamedata[205]="GM_INVINCIBLE";
+	mCGamedata[206]="GM_GENERATE";
+	mCGamedata[207]="GM_ACTIVE_SPAWNER";
+	mCGamedata[208]="GM_GENERATE_MOB";
+
+	//209 ~ 217 obsoleted
+
+	mCGamedata[218]="GM_QUERY_SPEC_ITEM";
+	mCGamedata[219]="GM_REMOVE_SPEC_ITEM";
+
+	
+#endif
+}
+
+void CECRTDebug::InitSGNameMap()
+{
+#ifdef LOG_PROTOCOL
+
+	mSGamedata[0]="PLAYER_INFO_1";
+	mSGamedata[1]="PLAYER_INFO_2";
+	mSGamedata[2]="PLAYER_INFO_3";
+	mSGamedata[3]="PLAYER_INFO_4";
+	mSGamedata[4]="PLAYER_INFO_1_LIST";
+
+	mSGamedata[5]="PLAYER_INFO_2_LIST";
+	mSGamedata[6]="PLAYER_INFO_3_LIST";
+	mSGamedata[7]="PLAYER_INFO_23_LIST";
+	mSGamedata[8]="SELF_INFO_1";
+	mSGamedata[9]="NPC_INFO_LIST";
+
+	mSGamedata[10]="MATTER_INFO_LIST";
+	mSGamedata[11]="NPC_ENTER_SLICE";
+	mSGamedata[12]="PLAYER_ENTER_SLICE";
+	mSGamedata[13]="OBJECT_LEAVE_SLICE";
+	mSGamedata[14]="NOTIFY_HOSTPOS";
+
+	mSGamedata[15]="OBJECT_MOVE";
+	mSGamedata[16]="NPC_ENTER_WORLD";
+	mSGamedata[17]="PLAYER_ENTER_WORLD";
+	mSGamedata[18]="MATTER_ENTER_WORLD";
+	mSGamedata[19]="PLAYER_LEAVE_WORLD";
+
+	mSGamedata[20]="NPC_DIED";
+	mSGamedata[21]="OBJECT_DISAPPEAR";
+	mSGamedata[22]="OBJECT_STARTATTACK";
+	mSGamedata[23]="HOST_STOPATTACK";
+	mSGamedata[24]="HOST_ATTACKRESULT";
+
+	mSGamedata[25]="ERROR_MESSAGE";
+	mSGamedata[26]="HOST_ATTACKED";
+	mSGamedata[27]="PLAYER_DIED";
+	mSGamedata[28]="HOST_DIED";
+	mSGamedata[29]="PLAYER_REVIVE";
+
+	mSGamedata[30]="PICKUP_MONEY";
+	mSGamedata[31]="PICKUP_ITEM";
+	mSGamedata[32]="PLAYER_INFO_00";
+	mSGamedata[33]="NPC_INFO_00";
+	mSGamedata[34]="OUT_OF_SIGHT_LIST";
+
+	mSGamedata[35]="OBJECT_STOP_MOVE";
+	mSGamedata[36]="RECEIVE_EXP";
+	mSGamedata[37]="LEVEL_UP";
+	mSGamedata[38]="SELF_INFO_00";
+	mSGamedata[39]="UNSELECT";
+
+	mSGamedata[40]="OWN_ITEM_INFO";
+	mSGamedata[41]="EMPTY_ITEM_SLOT";
+	mSGamedata[42]="OWN_IVTR_DATA";
+	mSGamedata[43]="OWN_IVTR_DETAIL_DATA";
+	mSGamedata[44]="EXG_IVTR_ITEM";
+
+	mSGamedata[45]="MOVE_IVTR_ITEM";
+	mSGamedata[46]="PLAYER_DROP_ITEM";
+	mSGamedata[47]="EXG_EQUIP_ITEM";
+	mSGamedata[48]="EQUIP_ITEM";
+	mSGamedata[49]="MOVE_EQUIP_ITEM";
+
+	mSGamedata[50]="OWN_EXT_PROP";
+	mSGamedata[51]="ADD_STATUS_POINT";
+	mSGamedata[52]="SELECT_TARGET";
+	mSGamedata[53]="PLAYER_EXT_PROP_BASE";
+	mSGamedata[54]="PLAYER_EXT_PROP_MOVE";
+
+	mSGamedata[55]="PLAYER_EXT_PROP_ATK";
+	mSGamedata[56]="PLAYER_EXT_PROP_DEF";
+	mSGamedata[57]="TEAM_LEADER_INVITE";
+	mSGamedata[58]="TEAM_REJECT_INVITE";
+	mSGamedata[59]="TEAM_JOIN_TEAM";
+
+	mSGamedata[60]="TEAM_MEMBER_LEAVE";
+	mSGamedata[61]="TEAM_LEAVE_PARTY";
+	mSGamedata[62]="TEAM_NEW_MEMBER";
+	mSGamedata[63]="TEAM_LEADER_CACEL_PARTY";
+	mSGamedata[64]="TEAM_MEMBER_DATA";
+
+	mSGamedata[65]="TEAM_MEMBER_POS";
+	mSGamedata[66]="EQUIP_DATA";
+	mSGamedata[67]="EQUIP_DATA_CHANGED";
+	mSGamedata[68]="EQUIP_DAMAGED";
+	mSGamedata[69]="TEAM_MEMBER_PICKUP";
+
+	mSGamedata[70]="NPC_GREETING";
+	mSGamedata[71]="NPC_SERVICE_CONTENT";
+	mSGamedata[72]="PURCHASE_ITEM";
+	mSGamedata[73]="ITEM_TO_MONEY";
+	mSGamedata[74]="REPAIR_ALL";
+
+	mSGamedata[75]="REPAIR";
+	mSGamedata[76]="RENEW";
+	mSGamedata[77]="SPEND_MONEY";
+	mSGamedata[78]="GAIN_MONEY_IN_TRADE";
+	mSGamedata[79]="GAIN_ITEM_IN_TRADE";
+
+	mSGamedata[80]="GAIN_MONEY_AFTER_TRADE";
+	mSGamedata[81]="GAIN_ITEM_AFTER_TRADE";
+	mSGamedata[82]="GET_OWN_MONEY";
+	mSGamedata[83]="ATTACK_ONCE";
+	mSGamedata[84]="HOST_START_ATTACK";
+
+	mSGamedata[85]="OBJECT_CAST_SKILL";
+	mSGamedata[86]="SKILL_INTERRUPTED";
+	mSGamedata[87]="SELF_SKILL_INTERRUPTED";
+	mSGamedata[88]="SKILL_PERFORM";
+	mSGamedata[89]="OBJECT_BE_ATTACKED";
+
+	mSGamedata[90]="SKILL_DATA";
+	mSGamedata[91]="HOST_USE_ITEM";
+	mSGamedata[92]="EMBED_ITEM";
+	mSGamedata[93]="CLEAR_TESSERA";
+	mSGamedata[94]="COST_SKILL_POINT";
+
+	mSGamedata[95]="LEARN_SKILL";
+	mSGamedata[96]="OBJECT_TAKEOFF";
+	mSGamedata[97]="OBJECT_LANDING";
+	mSGamedata[98]="FLYSWORD_TIME";
+	mSGamedata[99]="HOST_OBTAIN_ITEM";
+
+	mSGamedata[100]="PRODUCE_START";
+	mSGamedata[101]="PRODUCE_ONCE";
+	mSGamedata[102]="PRODUCE_END";
+	mSGamedata[103]="DECOMPOSE_START";
+	mSGamedata[104]="DECOMPOSE_END";
+
+	mSGamedata[105]="TASK_DATA";
+	mSGamedata[106]="TASK_VAR_DATA";
+	mSGamedata[107]="OBJECT_START_USE";
+	mSGamedata[108]="OBJECT_CANCEL_USE";
+	mSGamedata[109]="OBJECT_USE_ITEM";
+
+	mSGamedata[110]="OBJECT_START_USE_T";
+	mSGamedata[111]="OBJECT_SIT_DOWN";
+	mSGamedata[112]="OBJECT_STAND_UP";
+	mSGamedata[113]="OBJECT_DO_EMOTE";
+	mSGamedata[114]="SERVER_TIME";
+
+	mSGamedata[115]="OBJECT_ROOT";
+	mSGamedata[116]="HOST_DISPEL_ROOT";
+	mSGamedata[117]="INVADER_RISE";
+	mSGamedata[118]="PARIAH_RISE";
+	mSGamedata[119]="INVADER_FADE";
+
+	mSGamedata[120]="OBJECT_ATTACK_RESULT";
+	mSGamedata[121]="BE_HURT";
+	mSGamedata[122]="HURT_RESULT";
+	mSGamedata[123]="HOST_STOP_SKILL";
+	mSGamedata[124]="UPDATE_EXT_STATE";
+
+	mSGamedata[125]="ICON_STATE_NOTIFY";
+	mSGamedata[126]="PLAYER_GATHER_START";
+	mSGamedata[127]="PLAYER_GATHER_STOP";
+	mSGamedata[128]="TRASHBOX_PWD_CHANGED";
+	mSGamedata[129]="TRASHBOX_PWD_STATE";
+
+	mSGamedata[130]="TRASHBOX_OPEN";
+	mSGamedata[131]="TRASHBOX_CLOSE";
+	mSGamedata[132]="TRASHBOX_WEALTH";
+	mSGamedata[133]="EXG_TRASHBOX_ITEM";
+	mSGamedata[134]="MOVE_TRASHBOX_ITEM";
+
+	mSGamedata[135]="EXG_TRASHBOX_IVTR";
+	mSGamedata[136]="IVTR_ITEM_TO_TRASH";
+	mSGamedata[137]="TRASH_ITEM_TO_IVTR";
+	mSGamedata[138]="EXG_TRASH_MONEY";
+	mSGamedata[139]="ENCHANT_RESULT";
+
+	mSGamedata[140]="HOST_NOTIFY_ROOT";
+	mSGamedata[141]="OBJECT_DO_ACTION";
+	mSGamedata[142]="HOST_SKILL_ATTACK_RESULT";
+	mSGamedata[143]="OBJECT_SKILL_ATTACK_RESULT";
+	mSGamedata[144]="HOST_SKILL_ATTACKED";
+
+	mSGamedata[145]="PLAYER_SET_ADV_DATA";
+	mSGamedata[146]="PLAYER_CLR_ADV_DATA";
+	mSGamedata[147]="PLAYER_IN_TEAM";
+	mSGamedata[148]="TEAM_ASK_TO_JOIN";
+	mSGamedata[149]="OBJECT_EMOTE_RESTORE";
+
+	mSGamedata[150]="CON_EMOTE_REQUEST";
+	mSGamedata[151]="DO_CONCURRENT_EMOTE";
+	mSGamedata[152]="MATTER_PICKUP";
+	mSGamedata[153]="MAFIA_INFO_NOTIFY";
+	mSGamedata[154]="MAFIA_TRADE_START";
+
+	mSGamedata[155]="MAFIA_TRADE_END";
+	mSGamedata[156]="TASK_DELIVER_ITEM";
+	mSGamedata[157]="TASK_DELIVER_REP";
+	mSGamedata[158]="TASK_DELIVER_EXP";
+	mSGamedata[159]="TASK_DELIVER_MONEY";
+
+	mSGamedata[160]="TASK_DELIVER_LEVEL2";
+	mSGamedata[161]="HOST_REPUTATION";
+	mSGamedata[162]="ITEM_IDENTIFY";
+	mSGamedata[163]="PLAYER_CHGSHAPE";
+	mSGamedata[164]="ENTER_SANCTUARY";
+
+	mSGamedata[165]="LEAVE_SANCTUARY";
+	mSGamedata[166]="PLAYER_OPEN_BOOTH";
+	mSGamedata[167]="SELF_OPEN_BOOTH";
+	mSGamedata[168]="PLAYER_CLOSE_BOOTH";
+	mSGamedata[169]="PLAYER_BOOTH_INFO";
+
+	mSGamedata[170]="BOOTH_TRADE_SUCCESS";
+	mSGamedata[171]="BOOTH_NAME";
+	mSGamedata[172]="PLAYER_START_TRAVEL";
+	mSGamedata[173]="HOST_START_TRAVEL";
+	mSGamedata[174]="PLAYER_END_TRAVEL";
+
+	mSGamedata[175]="GM_INVINCIBLE";
+	mSGamedata[176]="GM_INVISIBLE";
+	mSGamedata[177]="HOST_CORRECT_POS";
+	mSGamedata[178]="OBJECT_CAST_INSTANT_SKILL";
+	mSGamedata[179]="ACTIVATE_WAYPOINT";
+
+	mSGamedata[180]="WAYPOINT_LIST";
+	mSGamedata[181]="UNFREEZE_IVTR_SLOT";
+	mSGamedata[182]="TEAM_INVITE_TIMEOUT";
+	mSGamedata[183]="PLAYER_ENABLE_PVP";
+	mSGamedata[184]="PLAYER_DISABLE_PVP";
+
+	mSGamedata[185]="HOST_PVP_COOLDOWN";
+	mSGamedata[186]="COOLTIME_DATA";
+	mSGamedata[187]="SKILL_ABILITY";
+	mSGamedata[188]="OPEN_BOOTH_TEST";
+	mSGamedata[189]="BREATH_DATA";
+
+	mSGamedata[190]="HOST_STOP_DIVE";
+	mSGamedata[191]="BOOTH_SELL_ITEM";
+	mSGamedata[192]="PLAYER_ENABLE_FASHION";
+	mSGamedata[193]="HOST_ENABLE_FREEPVP";
+	mSGamedata[194]="INVALID_OBJECT";
+
+	mSGamedata[195]="PLAYER_ENABLE_EFFECT";
+	mSGamedata[196]="PLAYER_DISABLE_EFFECT";
+	mSGamedata[197]="REVIVAL_INQUIRE";
+	mSGamedata[198]="SET_COOLDOWN";
+	mSGamedata[199]="CHANGE_TEAM_LEADER";
+
+	mSGamedata[200]="EXIT_INSTANCE";
+	mSGamedata[201]="CHANGE_FACE_START";
+	mSGamedata[202]="CHANGE_FACE_END";
+	mSGamedata[203]="PLAYER_CHG_FACE";
+	mSGamedata[204]="OBJECT_CAST_POS_SKILL";
+
+	mSGamedata[205]="SET_MOVE_STAMP";
+	mSGamedata[206]="INST_DATA_CHECKOUT";
+	mSGamedata[207]="HOST_RUSH_FLY";
+	mSGamedata[208]="TRASHBOX_SIZE";
+	mSGamedata[209]="NPC_DIED2";
+
+	mSGamedata[210]="PRODUCE_NULL";
+	mSGamedata[211]="PVP_COMBAT";
+	mSGamedata[212]="DOUBLE_EXP_TIME";
+	mSGamedata[213]="AVAILABLE_DOUBLE_EXP_TIME";
+	mSGamedata[214]="DUEL_RECV_REQUEST";
+
+	mSGamedata[215]="DUEL_REJECT_REQUEST";
+	mSGamedata[216]="DUEL_PREPARE";
+	mSGamedata[217]="DUEL_CANCEL";
+	mSGamedata[218]="HOST_DUEL_START";
+	mSGamedata[219]="DUEL_STOP";
+
+	mSGamedata[220]="DUEL_RESULT";
+	mSGamedata[221]="PLAYER_BIND_REQUEST";
+	mSGamedata[222]="PLAYER_BIND_INVITE";
+	mSGamedata[223]="PLAYER_BIND_REQUEST_REPLY";
+	mSGamedata[224]="PLAYER_BIND_INVITE_REPLY";
+
+	mSGamedata[225]="PLAYER_BIND_START";
+	mSGamedata[226]="PLAYER_BIND_STOP";
+	mSGamedata[227]="PLAYER_MOUNTING";
+	mSGamedata[228]="PLAYER_EQUIP_DETAIL";
+	mSGamedata[229]="PLAYER_DUEL_START";
+
+	mSGamedata[230]="PARIAH_TIME";
+	mSGamedata[231]="GAIN_PET";
+	mSGamedata[232]="FREE_PET";
+	mSGamedata[233]="SUMMON_PET";
+	mSGamedata[234]="RECALL_PET";
+
+	mSGamedata[235]="PLAYER_START_PET_OP";
+	mSGamedata[236]="PLAYER_STOP_PET_OP";
+	mSGamedata[237]="PET_RECEIVE_EXP";
+	mSGamedata[238]="PET_LEVELUP";
+	mSGamedata[239]="PET_ROOM";
+
+	mSGamedata[240]="PET_ROOM_CAPACITY";
+	mSGamedata[241]="PET_HONOR_POINT";
+	mSGamedata[242]="PET_HUNGER_GAUGE";
+	mSGamedata[243]="HOST_ENTER_BATTLE";
+	mSGamedata[244]="TANK_LEADER_NOTIFY";
+
+	mSGamedata[245]="BATTLE_RESULT";
+	mSGamedata[246]="BATTLE_SCORE";
+	mSGamedata[247]="PET_DEAD";
+	mSGamedata[248]="PET_REVIVE";
+	mSGamedata[249]="PET_HP_NOTIFY";
+
+	mSGamedata[250]="PET_AI_STATE";
+	mSGamedata[251]="REFINE_RESULT";
+	mSGamedata[252]="PET_SET_COOLDOWN";
+	mSGamedata[253]="PLAYER_CASH";
+	mSGamedata[254]="PLAYER_BIND_SUCCESS";
+
+	mSGamedata[255]="CHANGE_IVTR_SIZE";
+	mSGamedata[256]="PVP_MODE";
+	mSGamedata[257]="PLAYER_WALLOW_INFO";
+	mSGamedata[258]="PLAYER_USE_ITEM_WITH_ARG";
+	mSGamedata[259]="OBJECT_USE_ITEM_WITH_ARG";
+
+	mSGamedata[260]="PLAYER_CHANGE_SPOUSE";
+	mSGamedata[261]="NOTIFY_SAFE_LOCK";
+	mSGamedata[262]="ELF_VIGOR";
+	mSGamedata[263]="ELF_ENHANCE";
+	mSGamedata[264]="ELF_STAMINA";
+
+	mSGamedata[265]="ELF_CMD_RESULT";
+	mSGamedata[266]="COMMON_DATA_NOTIFY";
+	mSGamedata[267]="COMMON_DATA_LIST";
+	mSGamedata[268]="ELF_REFINE_ACTIVATE";
+	mSGamedata[269]="CAST_ELF_SKILL";
+
+	mSGamedata[270]="MALL_ITEM_PRICE";
+	mSGamedata[271]="MALL_ITEM_BUY_FAILED";
+	mSGamedata[272]="GOBLIN_LEVEL_UP";
+	mSGamedata[273]="PLAYER_PROPERTY";
+	mSGamedata[274]="PLAYER_CAST_RUNE_SKILL";
+
+	mSGamedata[275]="PLAYER_CAST_RUNE_INSTANT_SKILL";
+	mSGamedata[276]="PLAYER_EQUIP_TRASHBOX_ITEM";
+	mSGamedata[277]="SECURITY_PASSWD_CHECKED";
+	mSGamedata[278]="OBJECT_INVISIBLE";
+	mSGamedata[279]="PLAYER_HP_STEAL";
+
+	mSGamedata[280]="PLAYER_DIVIDEND";
+	mSGamedata[281]="DIVIDEND_MALL_ITEM_PRICE";
+	mSGamedata[282]="DIVIDEND_MALL_ITEM_BUY_FAILED";
+	mSGamedata[283]="ELF_EXP";
+	mSGamedata[284]="PUBLIC_QUEST_INFO";
+
+	mSGamedata[285]="PUBLIC_QUEST_RANKS";
+	mSGamedata[286]="MULTI_EXP_INFO";
+	mSGamedata[287]="CHANGE_MULTI_EXP_STATE";
+	mSGamedata[288]="WORLD_LIFE_TIME";
+	mSGamedata[289]="WEDDING_BOOK_LIST";
+
+	mSGamedata[290]="WEDDING_BOOK_SUCCESS";
+	mSGamedata[291]="CALC_NETWORK_DELAY_RE";
+	mSGamedata[292]="PLAYER_KNOCKBACK";
+	mSGamedata[293]="SUMMON_PLANT_PET";
+	mSGamedata[294]="PLANT_PET_DISAPPEAR";
+
+	mSGamedata[295]="PLANT_PET_HP_NOTIFY";
+	mSGamedata[296]="PET_PROPERTY";
+	mSGamedata[297]="FACTION_CONTRIB_NOTIFY";
+	mSGamedata[298]="FACTION_FORTRESS_INFO";
+	mSGamedata[299]="ENTER_FACTIONFORTRESS";
+
+	mSGamedata[300]="FACTION_RELATION_NOTIFY";
+	mSGamedata[301]="PLAYER_EQUIP_DISABLED";
+	mSGamedata[302]="PLAYER_SPEC_ITEM_LIST";
+	mSGamedata[303]="OBJECT_START_PLAY_ACTION";
+	mSGamedata[304]="OBJECT_STOP_PLAY_ACTION";
+
+	mSGamedata[305]="CONGREGATE_REQUEST";
+	mSGamedata[306]="REJECT_CONGREGATE";
+	mSGamedata[307]="CONGREGATE_START";
+	mSGamedata[308]="CANCEL_CONGREGATE";
+	mSGamedata[309]="ENGRAVE_START";
+
+	mSGamedata[310]="ENGRAVE_END";
+	mSGamedata[311]="ENGRAVE_RESULT";
+	mSGamedata[312]="DPS_DPH_RANK";
+	mSGamedata[313]="ADDONREGEN_START";
+	mSGamedata[314]="ADDONREGEN_END";
+
+	mSGamedata[315]="ADDONREGEN_RESULT";
+	mSGamedata[316]="INVISIBLE_OBJ_LIST";
+	mSGamedata[317]="SET_PLAYER_LIMIT";
+	mSGamedata[318]="PLAYER_TELEPORT";
+	mSGamedata[319]="OBJECT_FORBID_BE_SELECTED";
+
+	mSGamedata[320]="PLAYER_INVENTORY_DETAIL";
+	mSGamedata[321]="PLAYER_FORCE_DATA";
+	mSGamedata[322]="PLAYER_FORCE_CHANGED";
+	mSGamedata[323]="PLAYER_FORCE_DATA_UPDATE";
+	mSGamedata[324]="FORCE_GLOBAL_DATA";
+
+	mSGamedata[325]="ADD_MULTIOBJECT_EFFECT";
+	mSGamedata[326]="REMOVE_MULTIOBJECT_EFFECT";
+	mSGamedata[327]="ENTER_WEDDING_SCENE";
+	mSGamedata[328]="PRODUCE4_ITEM_INFO";
+	mSGamedata[329]="ONLINE_AWARD_DATA";
+	mSGamedata[330]="TOGGLE_ONLINE_AWARD";
+	mSGamedata[331]="PLAYER_PROFIT_TIME";
+	mSGamedata[332]="ENTER_NONPENALTY_PVP_STATE";
+	mSGamedata[333]="SELF_COUNTRY_NOTIFY";
+	mSGamedata[334]="PLAYER_COUNTRY_CHANGED";
+	mSGamedata[335]="ENTER_COUNTRYBATTLE";
+	mSGamedata[336]="COUNTRYBATTLE_RESULT";
+	mSGamedata[337]="COUNTRYBATTLE_SCORE";
+	mSGamedata[338]="COUNTRYBATTLE_RESURRECT_REST_TIMES";
+	mSGamedata[339]="COUNTRYBATTLE_FLAG_CARRIER_NOTIFY";
+	mSGamedata[340]="COUNTRYBATTLE_BECAME_FLAG_CARRIER";
+	mSGamedata[341]="COUNTRYBATTLE_PERSONAL_SCORE";
+	mSGamedata[342]="COUNTRYBATTLE_FLAG_MSG_NOTIFY";
+	mSGamedata[343]="DEFENSE_RUNE_ENABLED";
+	mSGamedata[344]="COUNTRYBATTLE_INFO";
+	mSGamedata[345]="SET_PROFIT_TIME";
+	mSGamedata[346]="CASH_MONEY_EXCHG_RATE";
+	mSGamedata[347] = "PET_REBUILD_INHERIT_START";
+	mSGamedata[348] = "PET_REBUILD_INHERIT_INFO";
+	mSGamedata[349] = "PET_REBUILD_INHERIT_END";
+	mSGamedata[350] = "PET_EVOLUTION_DONE";
+	mSGamedata[351] = "PET_EVOLUTION_DONE";
+	mSGamedata[352] = "PET_REBUILD_NATURE_INFO";
+	mSGamedata[353] = "PET_REBUILD_NATURE_END";
+	mSGamedata[354] = "EQUIP_ADDON_UPDATE_NOTIFY";
+	mSGamedata[355] = "SELF_KING_NOTIFY";
+	mSGamedata[356] = "PLAYER_KING_NOTIFY";
+	mSGamedata[357] = "MERIDIANS_NOTIFY";
+	mSGamedata[358] = "MERIDIANS_RESULT";
+	mSGamedata[359] = "COUNTRYBATTLE_STRONGHOND_STATE_NOTIFY";
+	mSGamedata[360]	= "QUERY_TOUCH_POINT";
+	mSGamedata[361]	= "SPEND_TOUCH_POINT";
+	mSGamedata[362]	= "TOTAL_RECHARGE";
+	mSGamedata[363] = "QUERY_TITLE_RE";
+	mSGamedata[364] = "CHANGE_CURR_TITLE_RE";
+	mSGamedata[365] = "MODIFY_TITLE_NOFIFY";
+	mSGamedata[366] = "REFRESH_SIGNIN";
+	mSGamedata[367] = "PARALLEL_WORLD_INFO";
+	mSGamedata[368] = "PLAYER_REINCARNATION";
+	mSGamedata[369] = "REINCARNATION_TOME_INFO";
+	mSGamedata[370] = "ACTIVATE_REINCARNATION_TOME";
+	
+	mSGamedata[371] = "UNIQUE_DATA_NOTIFY";
+	mSGamedata[372] = "USE_GIFTCARD_RESULT";
+	mSGamedata[373] = "REALM_EXP";
+	mSGamedata[374] = "REALM_LEVEL";
+	mSGamedata[375] = "ENTER_TRICKBATTLE";
+	mSGamedata[376] = "TRICKBATTLE_PERSONAL_SCORE";
+	mSGamedata[377] = "TRICKBATTLE_CHARIOT_INFO";
+	mSGamedata[378] = "PLAYER_LEADERSHIP";
+	mSGamedata[379] = "GENERALCARD_COLLECTION_DATA";
+	mSGamedata[380] = "ADD_GENERALCARD_COLLECTION";
+	mSGamedata[381] = "REFRESH_MONSTERSPIRIT_LEVEL";
+	mSGamedata[382] = "MINE_GATHERED";
+	mSGamedata[383] = "PLAYER_IN_OUT_BATTLE";
+	mSGamedata[384] = "PLAYER_QUERY_CHARIOTS";
+	mSGamedata[385] = "COUNTRYBATTLE_LIVE_SHOW_RESULT";
+	mSGamedata[386] = "RANDOM_MALL_SHOPPING_RES";
+	mSGamedata[387] = "FACTION_PVP_MASK_MODIFY";
+	mSGamedata[388] = "PLAYER_WORLD_CONTRIBUTION";
+	mSGamedata[389] = "RANDOM_MAP_ORDER";
+	mSGamedata[390] = "SCENE_SERVICE_NPC_LIST";
+	mSGamedata[391] = "NPC_VISIBLE_TID_NOTIFY";
+	mSGamedata[392] = "CLIENT_SCREEN_EFFECT";
+	mSGamedata[393] = "EQUIP_CAN_INHERIT_ADDONS";
+	mSGamedata[394] = "COMBO_SKILL_PREPARE";
+	mSGamedata[395] = "INSTANCE_REENTER_NOTIFY";
+	mSGamedata[396] = "PRAY_DISTANCE_CHANGE";
+#endif
+}
+
+void CECRTDebug::InitHideProto()
+{
+#ifdef LOG_PROTOCOL
+
+	AString names;
+	if (CECCommandLine::GetRtDebugProtocolsToHide(names)){
+		CECSplitHelperA splitter(names, ",");
+		for (int i(0); i < splitter.Count(); ++ i){
+			m_HideProtos.insert(splitter.ToString(i));
+		}
+	}
+
+#endif
+}
+
+AString CECRTDebug::GetProtocolName(int iCmd)
+{
+	AString str;
+
+	NameMap::iterator it = mProtocol.find(iCmd);
+	if (it == mProtocol.end())
+		str.Format("PROTOCOL_%d", iCmd);
+	else
+		str.Format("%s(%d)", it->second, iCmd);
+
+	return str;
+}
+
+AString CECRTDebug::GetGamedataSendName(int iCmd, bool bFromServer)
+{
+	AString str;
+
+	NameMap &nm = bFromServer ? mSGamedata : mCGamedata;
+
+	NameMap::iterator it = nm.find(iCmd);
+	if (it == nm.end())
+		str.Format("GAMEDATA_%d", iCmd);
+	else
+		str.Format("%s(%d)", it->second, iCmd);
+
+	return str;
+}
+
+AString CECRTDebug::GetProtocolName(const GNET::Protocol &p, bool bFromServer)
+{
+	AString str;
+
+	using namespace GNET;
+
+	if (p.GetType() != PROTOCOL_GAMEDATASEND)
+		str = GetProtocolName(p.GetType());
+	else
+	{
+		const GamedataSend *pGamedata = dynamic_cast<const GamedataSend *>(&p);
+		const S2C::cmd_header *pCmd = (const S2C::cmd_header *)(pGamedata->data.begin());
+		str = GetGamedataSendName(pCmd->cmd, bFromServer);
+	}
+
+	return str;
+}
+
+void CECRTDebug::HideProtocol(const AString& str)
+{
+	m_HideProtos.insert(str);
+}
+
+void CECRTDebug::ShowProtocol(const AString& str)
+{
+	std::set<AString>::iterator it;
+	if( (it = m_HideProtos.find(str)) != m_HideProtos.end() )
+		m_HideProtos.erase(it);
+}
+
+bool CECRTDebug::IsProtocolHide(const GNET::Protocol& p, bool bFromServer)
+{
+	AString str = GetProtocolName(p, bFromServer);
+	int idx = str.Find('(');
+	str.CutRight(str.GetLength() - idx);
+	return m_HideProtos.find(str) != m_HideProtos.end() ? true : false;
+}
+
+bool CECRTDebug::IsGameDataHide(int iCmd, bool bFromServer)
+{
+	AString str = GetGamedataSendName(iCmd, bFromServer);
+	int idx = str.Find('(');
+	str.CutRight(str.GetLength() - idx);
+	return m_HideProtos.find(str) != m_HideProtos.end() ? true : false;
+}

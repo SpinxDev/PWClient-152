@@ -1,0 +1,14 @@
+; grass rendering shader
+
+; t0 is the grass's texture
+; t1 is the light map texture
+
+ps.1.1
+
+tex t0
+tex t1
+mul_x2 r0.rgb, t0, t1
++mul r0.a, v0.a, t0.a
+
+
+

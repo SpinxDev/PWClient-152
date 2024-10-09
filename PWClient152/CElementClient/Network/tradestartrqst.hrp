@@ -1,0 +1,47 @@
+
+#ifndef __GNET_TRADESTARTRQST_HPP
+#define __GNET_TRADESTARTRQST_HPP
+
+#include "rpcdefs.h"
+#include "callid.hxx"
+#include "state.hxx"
+
+#include "tradestartrqstarg"
+#include "tradestartrqstres"
+
+namespace GNET
+{
+
+class TradeStartRqst : public Rpc
+{
+#define	RPC_BASECLASS	Rpc
+	#include "tradestartrqst"
+#undef	RPC_BASECLASS
+
+	void Server(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+		TradeStartRqstArg *arg = (TradeStartRqstArg *)argument;
+		TradeStartRqstRes *res = (TradeStartRqstRes *)result;
+#ifdef _TESTCODE
+		DEBUG_PRINT("trader(roleid=%d) want to trade with you.\n",arg->start_roleid);
+		res->retcode = ERR_TRADE_AGREE;
+		//res->retcode = ERR_TRADE_REFUSE;
+#endif
+	}
+
+	void Client(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+		// TODO
+		// TradeStartRqstArg *arg = (TradeStartRqstArg *)argument;
+		// TradeStartRqstRes *res = (TradeStartRqstRes *)result;
+	}
+
+	void OnTimeout()
+	{
+		// TODO Client Only
+	}
+
+};
+
+};
+#endif

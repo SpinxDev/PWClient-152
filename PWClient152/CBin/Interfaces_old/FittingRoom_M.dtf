@@ -1,0 +1,13 @@
+DIALOG "Win_FittingRoomM" 0 0 311 430 0 1 10 "Window\对话框_标准边框x.dds" "" "" 0 0 283 33 "人鱼传说新界面\面板关闭按钮.tga" 47 30 96 96 96 255 1
+EDIT "Img_Title" "" "" 16 23 283 37 "人鱼传说新界面\title.tga" 2 15 255 255 255 "TEXT" 1 0 20
+SCROLL "Scl_Item" "" "" 285 283 9 133 "Listbox\列表框_滚动槽1s.tga" "Listbox\列表框_无.bmp" "Listbox\列表框_无.bmp" "Listbox\列表框_拖动按钮2us.bmp"
+LABEL "Control_810189504" "" "" 125 30 0 0 3 16 4 255 203 74 255
+IMAGEPICTURE "Control_53349264" "" "" 4 0 305 431 1 0 "人鱼传说新界面\未命名-1副本.dds"
+IMAGEPICTURE "Img_Char" "" "" 27 63 257 323 0 0 ""
+IMAGEPICTURE "Equip_13" "" "" 245 210 32 32 1 0 "Window\图标_上衣m.dds"
+IMAGEPICTURE "Equip_14" "" "" 245 325 32 32 1 0 "Window\图标_裤子m.dds"
+IMAGEPICTURE "Equip_15" "" "" 36 325 32 32 1 0 "Window\图标_鞋m.dds"
+IMAGEPICTURE "Equip_16" "" "" 36 210 32 32 1 0 "Window\图标_护腕.dds"
+STILLIMAGEBUTTON "Btn_LeftTurn" "" "" 116 380 32 32 0 0 0 0 5 10 255 255 255 255 "Button\左屏.dds" "Button\左屏1.dds" 6 1
+STILLIMAGEBUTTON "Btn_RightTurn" "" "" 161 380 32 32 0 0 0 0 7 10 255 255 255 255 "Button\右屏.dds" "Button\右屏1.dds" 8 1
+IMAGEPICTURE "Equip_25" "" "" 245 97 32 32 1 0 "Window\帽子时装.dds"

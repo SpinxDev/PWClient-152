@@ -1,0 +1,36 @@
+DIALOG "Win_SellAgentSell" 0 0 450 360 0 1 10 "Window\对话框_标准边框1.dds" "" "人鱼传说新界面\title.tga" 3 3 444 33 "人鱼传说新界面\面板关闭按钮.tga" 37 7 96 96 96 255 1
+LABEL "title" "" "" 139 5 0 0 2 16 3 255 203 74 255
+EDIT "backl" "" "" 3 33 134 296 "Editbox\文本框_4.dds" 4 15 255 0 255 "TEXT" 1 0 256
+STILLIMAGEBUTTON "goldnouse" "" "" 221 335 24 15 0 0 0 0 5 15 255 0 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱1.tga" 6 1
+EDIT "back2" "" "" 141 33 130 18 "Editbox\文本框_4.dds" 7 15 255 0 255 "TEXT" 1 0 256
+LABEL "label2" "" "" 181 34 0 0 8 10 9 255 203 74 255
+EDIT "back3" "" "" 270 33 55 18 "Editbox\文本框_4.dds" 10 15 255 0 255 "TEXT" 0 0 256
+LABEL "label3" "" "" 270 34 0 0 11 10 12 255 203 74 255
+EDIT "back4" "" "" 324 33 120 18 "Editbox\文本框_4.dds" 13 15 255 0 255 "TEXT" 1 0 256
+LABEL "label4" "" "" 358 34 0 0 14 10 15 255 203 74 255
+STILLIMAGEBUTTON "Btn_Create" "" "" 7 330 65 24 0 0 0 0 16 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本1.dds" 17 1
+STILLIMAGEBUTTON "Btn_Selllist" "" "" 73 330 65 24 0 0 0 0 18 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 19 1
+STILLIMAGEBUTTON "Btn_Ownlist" "" "" 139 330 65 24 0 0 0 0 20 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 21 1
+STILLIMAGEBUTTON "Btn_Buy" "" "" 363 330 40 24 0 0 0 0 22 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 23 1
+STILLIMAGEBUTTON "Btn_Quit" "" "" 404 330 40 24 0 0 0 0 24 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 25 1
+LABEL "lb_寄卖品" "" "" 7 34 50 14 26 10 27 255 203 74 255
+IMAGEPICTURE "Icon_Item" "" "" 5 51 32 32 1 0 "Window\图标_物品栏.dds"
+EDIT "Txt_Item" "" "" 39 51 94 32 "Editbox\文本框_4.dds" 28 10 255 255 255 "TEXT" 1 0 256
+LABEL "lb_寄卖价格" "" "" 7 85 55 12 29 10 30 255 203 74 255
+STILLIMAGEBUTTON "Btn_nousex1" "" "" 7 104 24 15 0 0 0 0 31 10 255 0 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱2.tga" 32 1
+EDIT "Txt_Sellprice" "" "" 32 101 100 21 "Editbox\文本框_4.dds" 33 10 255 255 255 "TEXT" 1 0 256
+LABEL "lb_寄卖时间" "" "" 7 165 59 12 34 10 35 255 203 74 255
+RADIO "Radio_12h" "" "" 6 182 21 21 "Extra\单选框_标准.tga" 1 1
+RADIO "Radio_24h" "" "" 6 206 21 21 "Extra\单选框_标准.tga" 2 1
+RADIO "Radio_48h" "" "" 6 230 21 21 "Extra\单选框_标准.tga" 3 1
+LABEL "lb_12小时" "" "" 31 184 46 12 36 10 37 255 255 255 255
+LABEL "lb_24小时" "" "" 31 208 42 12 38 10 39 255 255 255 255
+LABEL "lb_48小时" "" "" 30 232 47 12 40 10 41 255 255 255 255
+EDIT "Txt_Gold" "" "" 246 332 107 21 "Editbox\文本框_4c.dds" 42 10 255 255 255 "TEXT" 1 0 256
+LIST "lst" "" "" 141 51 302 278 43 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+STILLIMAGEBUTTON "Btn_Confirm" "" "" 93 301 40 24 0 0 0 0 44 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 45 1
+LABEL "lb_寄卖手续费" "" "" 6 262 68 12 46 10 47 255 203 74 255
+EDIT "Txt_Need" "" "" 6 278 127 21 "Editbox\文本框_4.dds" 48 10 255 255 255 "TEXT" 1 0 256
+LABEL "Control_74411136" "" "" 7 122 41 15 49 10 50 255 203 74 255
+STILLIMAGEBUTTON "Btn_nousex2" "" "" 7 144 24 15 0 0 0 0 51 10 255 0 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱2.tga" 52 1
+EDIT "Txt_Buyoutprice" "" "" 32 141 100 21 "Editbox\文本框_4.dds" 53 10 255 255 255 "TEXT" 1 0 256

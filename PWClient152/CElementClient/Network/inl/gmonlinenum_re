@@ -1,0 +1,44 @@
+	public:
+		int gmroleid;
+		unsigned int localsid;
+		int total_num;
+		int local_num;
+		enum { PROTOCOL_TYPE = PROTOCOL_GMONLINENUM_RE };
+	public:
+		GMOnlineNum_Re() { type = PROTOCOL_GMONLINENUM_RE; }
+		GMOnlineNum_Re(void*) : Protocol(PROTOCOL_GMONLINENUM_RE) { }
+		GMOnlineNum_Re (int l_gmroleid,unsigned int l_localsid,int l_total_num,
+			int l_local_num)
+			 : gmroleid(l_gmroleid),localsid(l_localsid),total_num(l_total_num),
+			local_num(l_local_num)
+		{
+			type = PROTOCOL_GMONLINENUM_RE;
+		}
+
+		GMOnlineNum_Re(const GMOnlineNum_Re &rhs)
+			: Protocol(rhs),gmroleid(rhs.gmroleid),localsid(rhs.localsid),total_num(rhs.total_num),
+			local_num(rhs.local_num) { }
+
+		GNET::Protocol *Clone() const { return new GMOnlineNum_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << gmroleid;
+			os << localsid;
+			os << total_num;
+			os << local_num;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> gmroleid;
+			os >> localsid;
+			os >> total_num;
+			os >> local_num;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

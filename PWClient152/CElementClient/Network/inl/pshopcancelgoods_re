@@ -1,0 +1,47 @@
+	public:
+		int retcode;
+		int localsid;
+		int canceltype;
+		int pos;
+		GRoleInventory itemstore;
+		enum { PROTOCOL_TYPE = PROTOCOL_PSHOPCANCELGOODS_RE };
+	public:
+		PShopCancelGoods_Re() { type = PROTOCOL_PSHOPCANCELGOODS_RE; }
+		PShopCancelGoods_Re(void*) : Protocol(PROTOCOL_PSHOPCANCELGOODS_RE) { }
+		PShopCancelGoods_Re (int l_retcode,int l_localsid,int l_canceltype,
+			int l_pos = -1,const GRoleInventory& l_itemstore = GRoleInventory())
+			 : retcode(l_retcode),localsid(l_localsid),canceltype(l_canceltype)
+			,pos(l_pos),itemstore(l_itemstore)
+		{
+			type = PROTOCOL_PSHOPCANCELGOODS_RE;
+		}
+
+		PShopCancelGoods_Re(const PShopCancelGoods_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),localsid(rhs.localsid),canceltype(rhs.canceltype)
+			,pos(rhs.pos),itemstore(rhs.itemstore) { }
+
+		GNET::Protocol *Clone() const { return new PShopCancelGoods_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << localsid;
+			os << canceltype;
+			os << pos;
+			os << itemstore;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> localsid;
+			os >> canceltype;
+			os >> pos;
+			os >> itemstore;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

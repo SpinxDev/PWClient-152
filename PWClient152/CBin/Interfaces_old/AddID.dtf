@@ -1,0 +1,5 @@
+DIALOG "Win_AddID" 0 0 260 224 0 1 10 "小精灵新加tga\板子panel\完美世界精灵属性大板子1.tga" "" "" 0 0 -1 -1 "人鱼传说新界面\面板关闭按钮.tga" 50 35 96 96 96 255 1
+LABEL "Lab_UserScore" "" "" 90 32 99 29 2 14 3 255 203 74 255
+LABEL "Control_175377406" "" "" 30 66 200 80 4 10 5 255 0 0 255
+EDIT "Edt_ID" "" "" 73 151 120 24 "Editbox\文本框_4d.dds" 6 15 255 255 255 "TEXT" 0 0 60
+STILLIMAGEBUTTON "Btn_Confirm" "confirm" "" 107 182 50 24 0 0 0 0 7 10 255 204 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 8 1

@@ -1,0 +1,78 @@
+#ifndef __GNET_GFRIENDINFO_RPCDATA
+#define __GNET_GFRIENDINFO_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GFriendInfo : public GNET::Rpc::Data
+	{
+	public:
+		int rid;
+		char cls;
+		char gid;
+		Octets name;
+
+	public:
+		GFriendInfo (int l_rid = 0,char l_cls = 0,char l_gid = 0
+			,const Octets& l_name = Octets(0))
+			: rid(l_rid),cls(l_cls),gid(l_gid)
+			,name(l_name)
+		{
+		}
+
+		GFriendInfo(const GFriendInfo &rhs)
+			: rid(rhs.rid),cls(rhs.cls),gid(rhs.gid),
+			name(rhs.name) { }
+
+		Rpc::Data *Clone() const { return new GFriendInfo(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GFriendInfo *r = dynamic_cast<const GFriendInfo *>(&rhs);
+			if (r && r != this)
+			{
+				rid = r->rid;
+				cls = r->cls;
+				gid = r->gid;
+				name = r->name;
+			}
+			return *this;
+		}
+
+		GFriendInfo& operator = (const GFriendInfo &rhs)
+		{
+			const GFriendInfo *r = &rhs;
+			if (r && r != this)
+			{
+				rid = r->rid;
+				cls = r->cls;
+				gid = r->gid;
+				name = r->name;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << rid;
+			os << cls;
+			os << gid;
+			os << name;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> rid;
+			os >> cls;
+			os >> gid;
+			os >> name;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<GFriendInfo>	GFriendInfoVector;
+};
+#endif

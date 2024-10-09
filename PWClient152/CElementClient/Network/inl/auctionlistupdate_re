@@ -1,0 +1,38 @@
+	public:
+		unsigned int localsid;
+		std::vector<unsigned int> expired_ids;
+		std::vector<GAuctionItem> items;
+		enum { PROTOCOL_TYPE = PROTOCOL_AUCTIONLISTUPDATE_RE };
+	public:
+		AuctionListUpdate_Re() { type = PROTOCOL_AUCTIONLISTUPDATE_RE; }
+		AuctionListUpdate_Re(void*) : Protocol(PROTOCOL_AUCTIONLISTUPDATE_RE) { }
+		AuctionListUpdate_Re (unsigned int l_localsid,const std::vector<unsigned int>& l_expired_ids = std::vector<unsigned int>(),const std::vector<GAuctionItem>& l_items = std::vector<GAuctionItem>())
+			 : localsid(l_localsid),expired_ids(l_expired_ids),items(l_items)
+		{
+			type = PROTOCOL_AUCTIONLISTUPDATE_RE;
+		}
+
+		AuctionListUpdate_Re(const AuctionListUpdate_Re &rhs)
+			: Protocol(rhs),localsid(rhs.localsid),expired_ids(rhs.expired_ids),items(rhs.items) { }
+
+		GNET::Protocol *Clone() const { return new AuctionListUpdate_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << localsid;
+			os << expired_ids;
+			os << items;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> localsid;
+			os >> expired_ids;
+			os >> items;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

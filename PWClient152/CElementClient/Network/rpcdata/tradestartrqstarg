@@ -1,0 +1,69 @@
+#ifndef __GNET_TRADESTARTRQSTARG_RPCDATA
+#define __GNET_TRADESTARTRQSTARG_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class TradeStartRqstArg : public GNET::Rpc::Data
+	{
+	public:
+		int roleid;
+		unsigned int localsid;
+		int start_roleid;
+
+	public:
+		TradeStartRqstArg (int l_roleid = -1,unsigned int l_localsid = 0,int l_start_roleid = -1)
+			: roleid(l_roleid),localsid(l_localsid),start_roleid(l_start_roleid)
+		{
+		}
+
+		TradeStartRqstArg(const TradeStartRqstArg &rhs)
+			: roleid(rhs.roleid),localsid(rhs.localsid),start_roleid(rhs.start_roleid) { }
+
+		Rpc::Data *Clone() const { return new TradeStartRqstArg(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const TradeStartRqstArg *r = dynamic_cast<const TradeStartRqstArg *>(&rhs);
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				localsid = r->localsid;
+				start_roleid = r->start_roleid;
+			}
+			return *this;
+		}
+
+		TradeStartRqstArg& operator = (const TradeStartRqstArg &rhs)
+		{
+			const TradeStartRqstArg *r = &rhs;
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				localsid = r->localsid;
+				start_roleid = r->start_roleid;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << start_roleid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> start_roleid;
+			return os;
+		}
+
+	};
+};
+#endif

@@ -1,0 +1,24 @@
+DIALOG "Win_Question" 0 0 404 397 0 1 10 "Window\对话框_标准边框1.dds" "" "" 0 0 283 27 "" 26 5 96 96 96 255 1
+LABEL "Title" "" "" 137 10 0 0 2 16 3 255 203 74 255
+STILLIMAGEBUTTON "Btn_Mini" "minimize" "" 372 12 21 21 0 0 0 0 4 10 255 255 255 255 "Button\按钮_标记E1.tga" "Button\按钮_标记E2.tga" 5 1
+RADIO "Rdo_Answer1" "" "" 20 195 21 21 "Extra\单选框_标准.tga" 1 1
+RADIO "Rdo_Answer2" "" "" 20 222 21 21 "Extra\单选框_标准.tga" 2 1
+RADIO "Rdo_Answer3" "" "" 20 249 21 21 "Extra\单选框_标准.tga" 3 1
+RADIO "Rdo_Answer4" "" "" 20 276 21 21 "Extra\单选框_标准.tga" 4 1
+RADIO "Rdo_Answer5" "" "" 20 303 21 21 "Extra\单选框_标准.tga" 5 1
+RADIO "Rdo_Answer6" "" "" 20 330 21 21 "Extra\单选框_标准.tga" 6 1
+STILLIMAGEBUTTON "Btn_Confirm" "confirm" "" 162 355 83 30 0 0 0 0 6 12 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 7 1
+TEXT "Txt_Question" "" "" 12 87 378 75 8 14 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp"
+LABEL "Txt_Answer1" "" "" 54 196 0 0 9 12 10 255 255 255 255
+LABEL "Txt_Answer2" "" "" 53 223 0 0 11 12 12 255 255 255 255
+LABEL "Txt_Answer3" "" "" 53 250 0 0 13 12 14 255 255 255 255
+LABEL "Txt_Answer4" "" "" 53 277 0 0 15 12 16 255 255 255 255
+LABEL "Txt_Answer5" "" "" 53 304 0 0 17 12 18 255 255 255 255
+LABEL "Txt_Answer6" "" "" 53 331 0 0 19 12 20 255 255 255 255
+LABEL "Lab_002" "" "" 255 363 0 0 21 10 22 255 128 128 255
+LABEL "Txt_Time" "" "" 319 362 0 0 23 10 24 255 255 255 255
+LABEL "Control_76372256" "" "" 14 40 381 21 25 12 26 255 255 255 255
+LABEL "Control_197696070" "" "" 19 169 367 21 27 12 28 255 255 255 255
+LABEL "Control_36939664" "" "" 14 63 382 21 29 12 30 255 255 255 255
+EDIT "Shape1" "" "" 195 174 174 174 "Editbox\文本框_4.dds" 31 15 255 255 255 "TEXT" 0 0 20
+LABEL "Image" "" "" 201 180 160 160 32 15 33 255 255 255 255

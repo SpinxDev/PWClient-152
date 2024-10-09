@@ -1,0 +1,44 @@
+	public:
+		int roleid;
+		int factionid;
+		int target_factionid;
+		Octets syncdata;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONFORTRESSCHALLENGE };
+	public:
+		FactionFortressChallenge() { type = PROTOCOL_FACTIONFORTRESSCHALLENGE; }
+		FactionFortressChallenge(void*) : Protocol(PROTOCOL_FACTIONFORTRESSCHALLENGE) { }
+		FactionFortressChallenge (int l_roleid,int l_factionid,int l_target_factionid,
+			const Octets& l_syncdata)
+			 : roleid(l_roleid),factionid(l_factionid),target_factionid(l_target_factionid)
+			,syncdata(l_syncdata)
+		{
+			type = PROTOCOL_FACTIONFORTRESSCHALLENGE;
+		}
+
+		FactionFortressChallenge(const FactionFortressChallenge &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),factionid(rhs.factionid),target_factionid(rhs.target_factionid)
+			,syncdata(rhs.syncdata) { }
+
+		GNET::Protocol *Clone() const { return new FactionFortressChallenge(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << factionid;
+			os << target_factionid;
+			os << syncdata;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> factionid;
+			os >> target_factionid;
+			os >> syncdata;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 131072; }

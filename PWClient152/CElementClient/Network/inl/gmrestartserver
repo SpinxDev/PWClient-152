@@ -1,0 +1,44 @@
+	public:
+		int gmroleid;
+		unsigned int localsid;
+		int gsid;
+		int restart_time;
+		enum { PROTOCOL_TYPE = PROTOCOL_GMRESTARTSERVER };
+	public:
+		GMRestartServer() { type = PROTOCOL_GMRESTARTSERVER; }
+		GMRestartServer(void*) : Protocol(PROTOCOL_GMRESTARTSERVER) { }
+		GMRestartServer (int l_gmroleid,unsigned int l_localsid,int l_gsid,
+			int l_restart_time)
+			 : gmroleid(l_gmroleid),localsid(l_localsid),gsid(l_gsid),
+			restart_time(l_restart_time)
+		{
+			type = PROTOCOL_GMRESTARTSERVER;
+		}
+
+		GMRestartServer(const GMRestartServer &rhs)
+			: Protocol(rhs),gmroleid(rhs.gmroleid),localsid(rhs.localsid),gsid(rhs.gsid),
+			restart_time(rhs.restart_time) { }
+
+		GNET::Protocol *Clone() const { return new GMRestartServer(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << gmroleid;
+			os << localsid;
+			os << gsid;
+			os << restart_time;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> gmroleid;
+			os >> localsid;
+			os >> gsid;
+			os >> restart_time;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

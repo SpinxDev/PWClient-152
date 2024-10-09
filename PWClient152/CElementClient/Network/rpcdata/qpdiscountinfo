@@ -1,0 +1,71 @@
+#ifndef __GNET_QPDISCOUNTINFO_RPCDATA
+#define __GNET_QPDISCOUNTINFO_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "qpdiscountlevel"
+
+namespace GNET
+{
+	class QPDiscountInfo : public GNET::Rpc::Data
+	{
+	public:
+		int id;
+		Octets name;
+		QPDiscountLevelVector discount;
+
+	public:
+		QPDiscountInfo (int l_id = 0,const Octets& l_name = Octets())
+			: id(l_id),name(l_name)
+		{
+		}
+
+		QPDiscountInfo(const QPDiscountInfo &rhs)
+			: id(rhs.id),name(rhs.name),discount(rhs.discount) { }
+
+		Rpc::Data *Clone() const { return new QPDiscountInfo(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const QPDiscountInfo *r = dynamic_cast<const QPDiscountInfo *>(&rhs);
+			if (r && r != this)
+			{
+				id = r->id;
+				name = r->name;
+				discount = r->discount;
+			}
+			return *this;
+		}
+
+		QPDiscountInfo& operator = (const QPDiscountInfo &rhs)
+		{
+			const QPDiscountInfo *r = &rhs;
+			if (r && r != this)
+			{
+				id = r->id;
+				name = r->name;
+				discount = r->discount;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << id;
+			os << name;
+			os << discount;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> id;
+			os >> name;
+			os >> discount;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<QPDiscountInfo>	QPDiscountInfoVector;
+};
+#endif

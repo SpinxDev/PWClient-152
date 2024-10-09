@@ -1,0 +1,123 @@
+#ifndef __GNET_GFACTIONFORTRESSINFO_RPCDATA
+#define __GNET_GFACTIONFORTRESSINFO_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GFactionFortressInfo : public GNET::Rpc::Data
+	{
+	public:
+		int level;
+		int exp;
+		int exp_today;
+		int exp_today_time;
+		int tech_point;
+		Octets technology;
+		Octets material;
+		Octets building;
+		Octets common_value;
+		int reserved1;
+		int reserved2;
+		int reserved3;
+
+	public:
+		GFactionFortressInfo (int l_level = 0,int l_exp = 0,int l_exp_today = 0
+			,int l_exp_today_time = 0,int l_tech_point = 0,const Octets& l_technology = Octets()
+			,const Octets& l_material = Octets(),const Octets& l_building = Octets(),const Octets& l_common_value = Octets()
+			,int l_reserved1 = 0,int l_reserved2 = 0,int l_reserved3 = 0)
+			: level(l_level),exp(l_exp),exp_today(l_exp_today)
+			,exp_today_time(l_exp_today_time),tech_point(l_tech_point),technology(l_technology)
+			,material(l_material),building(l_building),common_value(l_common_value)
+			,reserved1(l_reserved1),reserved2(l_reserved2),reserved3(l_reserved3)
+		{
+		}
+
+		GFactionFortressInfo(const GFactionFortressInfo &rhs)
+			: level(rhs.level),exp(rhs.exp),exp_today(rhs.exp_today),
+			exp_today_time(rhs.exp_today_time),tech_point(rhs.tech_point),technology(rhs.technology),
+			material(rhs.material),building(rhs.building),common_value(rhs.common_value),
+			reserved1(rhs.reserved1),reserved2(rhs.reserved2),reserved3(rhs.reserved3) { }
+
+		Rpc::Data *Clone() const { return new GFactionFortressInfo(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GFactionFortressInfo *r = dynamic_cast<const GFactionFortressInfo *>(&rhs);
+			if (r && r != this)
+			{
+				level = r->level;
+				exp = r->exp;
+				exp_today = r->exp_today;
+				exp_today_time = r->exp_today_time;
+				tech_point = r->tech_point;
+				technology = r->technology;
+				material = r->material;
+				building = r->building;
+				common_value = r->common_value;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+			}
+			return *this;
+		}
+
+		GFactionFortressInfo& operator = (const GFactionFortressInfo &rhs)
+		{
+			const GFactionFortressInfo *r = &rhs;
+			if (r && r != this)
+			{
+				level = r->level;
+				exp = r->exp;
+				exp_today = r->exp_today;
+				exp_today_time = r->exp_today_time;
+				tech_point = r->tech_point;
+				technology = r->technology;
+				material = r->material;
+				building = r->building;
+				common_value = r->common_value;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << level;
+			os << exp;
+			os << exp_today;
+			os << exp_today_time;
+			os << tech_point;
+			os << technology;
+			os << material;
+			os << building;
+			os << common_value;
+			os << reserved1;
+			os << reserved2;
+			os << reserved3;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> level;
+			os >> exp;
+			os >> exp_today;
+			os >> exp_today_time;
+			os >> tech_point;
+			os >> technology;
+			os >> material;
+			os >> building;
+			os >> common_value;
+			os >> reserved1;
+			os >> reserved2;
+			os >> reserved3;
+			return os;
+		}
+
+	};
+};
+#endif

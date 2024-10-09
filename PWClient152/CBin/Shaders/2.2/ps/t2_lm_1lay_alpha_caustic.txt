@@ -1,0 +1,25 @@
+; Pixel shader used by A3DTerrain2. This shader blend one no-zero terrain layer
+; with vertex and lightmap
+
+; t0, layer's normal texture
+; t1, layer's mask texture (with alpha channel)
+; t2, lightmap texture
+; t3, layer's caustic texture
+
+; c0, light color scale 
+; c1, caustic brightness
+
+ps.1.1
+
+tex t0
+tex t1
+tex t2
+tex t3
+
+mul r1, t3_bx2, c1.a	; caustic color
+;mul r1, r1, r1		; enhance the constrast
+mul r0, t2, c0		; scale light color
+mul_x2 r1, r1, r0	; * scaled lightmap color, do A3DTOP_MODULATE2X effect
+mul_x2 r0, t0, r0	; texture * scaled lightmap color, do A3DTOP_MODULATE2X effect
+add_sat r0, r0, r1
+mov r0.a, t1.a

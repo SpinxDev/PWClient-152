@@ -1,0 +1,60 @@
+; expensive water pixel shader used by A3DTerrainWater. 
+
+; t0, bump map, not used
+; t1, normal map for water surface
+; t2, reflect map
+; t3, reflect vector in world space, packed to [0.0, 1.0]
+; t4, refract map, alpha channel of which is the edge alpha value
+; c0.a will be set by program to min alpha value for water reflect
+
+ps.1.4
+
+def c1, 0.3, -0.15, 0.0, 0.0
+def c2, 0.0, 0.0, 0.0, 1.0
+def c3, 1.0, 1.0, 1.0, 1.0
+def c4, 0.95, 0.95, 0.95, 1.0
+
+texld	r0, t3				// camera space reflect vector transformed into world space, with normalization (packed)
+texld	r1, t1				// normal map
+texcrd	r2.xy, t2_dw.xyw		// camera space projected coord.
+texld	r3, t0				// normal map base layer
+texcrd  r4.xyz, t3			// this is only to make r4.z be valid
+texld 	r5, t2_dw.xyw
+
+add r1, r1_bias, r3_bias
+
+mov r3.rgb, r0				// move eye vector to r3 for backup
+
+mov r0.x, r1.x				// we use x=tangent, y=normal, z=binormal in normal map
+mov r0.y, r1.z
++mul r5.a, r5.a, r5.a
+
+mul r5, c1, r5.a			// consider edge alpha
+
+mad r4.xy, r0, r5.y, r2			// perturb 2d coords by the normal
+
+mad r2.xy, r0, r5.x, r2			// perturb 2d coords by the normal
+mov r2.z, c3.a
+
+phase
+
+texld	r2, r2				// reflect projected map
+texld	r0, r1				// normalized water surface normal (packed)
+texld	r4, r4				// refract projected map
+texld	r5, t2_dw.xyw			// load r5 to contain edge alpha value, no bump
+
+// calculate fresnel effects : R0 + (1-R0) (1-cos(q))^5
+dp3_x2_sat r1.rgba, r0_bx2, r3_bias	// eye vector dot normal, for on intel945, r3_bx2 will result to 0
+mul r0.a, 1-r1.a, 1-r1.a		// squared
+mul r4.rgb, r4, c4			// refract color
++mul r0.a, r0.a, r0.a			// quartic
+mul r2.rgb, r2, c3			// reflect color
++mul_sat r0.a, r0.a, 1-r1.a		// quintic
+
+mul_x4 r1.rgb, v1, r0.a			// specular color
++lrp r0.a, r0.a, c2.a, c0.a
+
+lrp r0.rgb, r0.a, r2, r4		// interpolate between reflect and refract
+
+add_sat r0.rgb, r1, r0			// apply specular
++mov r0.a, r5.a				// consider the edge alpha

@@ -1,0 +1,23 @@
+DIALOG "Win_GMapChallenge" 0 0 237 225 0 1 10 "Window\对话框_标准边框1.dds" "" "" 0 0 -1 -1 "人鱼传说新界面\面板关闭按钮.tga" 32 6 96 96 96 255 1
+LABEL "Lab_Name" "" "" 21 33 0 0 2 10 3 255 203 74 255
+LABEL "Txt_Name" "" "" 83 33 0 0 4 10 5 192 192 192 255
+LABEL "Lab_Level" "" "" 21 53 0 0 6 10 7 255 203 74 255
+LABEL "Txt_Level" "" "" 83 53 0 0 8 10 9 192 192 192 255
+LABEL "Lab_Win" "" "" 21 73 0 0 10 10 11 255 203 74 255
+LABEL "Txt_Win" "" "" 83 73 0 0 12 10 13 192 192 192 255
+LABEL "Lab_Attach" "" "" 21 93 0 0 14 10 15 255 203 74 255
+LABEL "Txt_Attach" "" "" 83 93 0 0 16 10 17 192 192 192 255
+LABEL "Lab_Attack" "" "" 21 151 0 0 18 10 19 255 203 74 255
+LABEL "Txt_Attack" "" "" 110 151 0 0 20 10 21 192 192 192 255
+LABEL "Lab_Money" "" "" 21 113 0 0 22 10 23 255 203 74 255
+LABEL "Txt_Money" "" "" 83 113 0 0 24 10 25 192 192 192 255
+LABEL "Lab_Time" "" "" 21 171 0 0 26 10 27 255 203 74 255
+LABEL "Txt_Time" "" "" 110 171 0 0 28 10 29 192 192 192 255
+STILLIMAGEBUTTON "Btn_Confirm" "confirm" "" 13 194 45 22 0 0 0 0 30 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 31 1
+STILLIMAGEBUTTON "Btn_Cancel" "IDCANCEL" "" 60 194 45 22 0 0 0 0 32 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 33 1
+EDIT "Control_498462409" "" "" 11 31 213 160 "Editbox\文本框_4.tga" 34 15 255 255 255 "TEXT" 1 0 20
+LABEL "Control_174184687" "" "" 8 5 0 0 35 16 36 255 203 74 255
+EDIT "Txt_NewMoney" "" "" 144 194 80 22 "Editbox\文本框_4.dds" 37 15 255 255 255 "TEXT" 0 0 9
+STILLIMAGEBUTTON "Control_98189024" "" "" 117 197 24 15 0 0 0 0 38 15 255 255 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱2.tga" 39 1
+LABEL "Lab_MaxReturn" "" "" 21 132 0 0 40 10 41 255 203 74 255
+LABEL "Txt_MaxReturn" "" "" 83 132 0 0 42 10 43 192 192 192 255

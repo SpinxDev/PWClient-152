@@ -1,0 +1,42 @@
+
+#ifndef __GNET_USERGETINFO_HPP
+#define __GNET_USERGETINFO_HPP
+
+#include "rpcdefs.h"
+#include "callid.hxx"
+#include "state.hxx"
+
+#include "usergetinfoarg"
+#include "usergetinfores"
+
+namespace GNET
+{
+
+class UserGetInfo : public Rpc
+{
+#define	RPC_BASECLASS	Rpc
+	#include "usergetinfo"
+#undef	RPC_BASECLASS
+
+	void Server(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+		// UserGetInfoArg *arg = (UserGetInfoArg *)argument;
+		// UserGetInfoRes *res = (UserGetInfoRes *)result;
+	}
+
+	void Client(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+		// TODO
+		// UserGetInfoArg *arg = (UserGetInfoArg *)argument;
+		// UserGetInfoRes *res = (UserGetInfoRes *)result;
+	}
+
+	void OnTimeout()
+	{
+		// TODO Client Only
+	}
+
+};
+
+};
+#endif

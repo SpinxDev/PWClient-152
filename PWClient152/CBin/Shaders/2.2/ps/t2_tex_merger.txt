@@ -1,0 +1,15 @@
+; Pixel shader used by A3DTerrain2. 
+; t0, layer's normal texture
+; t1, mask texture (may contain 4 layers' masks)
+; c2, mask channel selector
+
+ps.1.4
+
+texld r0, t0
+texld r1, t1
+
+mul r2, r1.r, c2.r
+mad r2, r1.g, c2.g, r2
+mad r2, r1.b, c2.b, r2
+
+mov r0.a, r2.a

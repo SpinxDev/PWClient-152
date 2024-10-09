@@ -1,0 +1,56 @@
+	public:
+		int retcode;
+		int roleid;
+		int consume_points;
+		int start_index;
+		int total;
+		RewardItemVector rewardlist;
+		int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_GETREWARDLIST_RE };
+	public:
+		GetRewardList_Re() { type = PROTOCOL_GETREWARDLIST_RE; }
+		GetRewardList_Re(void*) : Protocol(PROTOCOL_GETREWARDLIST_RE) { }
+		GetRewardList_Re (int l_retcode,int l_roleid,int l_consume_points = 0,
+			int l_start_index = 0,int l_total = 0,const RewardItemVector& l_rewardlist = RewardItemVector(),
+			int l_localsid = 0)
+			 : retcode(l_retcode),roleid(l_roleid),consume_points(l_consume_points)
+			,start_index(l_start_index),total(l_total),rewardlist(l_rewardlist)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_GETREWARDLIST_RE;
+		}
+
+		GetRewardList_Re(const GetRewardList_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),roleid(rhs.roleid),consume_points(rhs.consume_points)
+			,start_index(rhs.start_index),total(rhs.total),rewardlist(rhs.rewardlist)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new GetRewardList_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roleid;
+			os << consume_points;
+			os << start_index;
+			os << total;
+			os << rewardlist;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roleid;
+			os >> consume_points;
+			os >> start_index;
+			os >> total;
+			os >> rewardlist;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 4096; }

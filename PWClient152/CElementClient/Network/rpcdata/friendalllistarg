@@ -1,0 +1,64 @@
+#ifndef __GNET_FRIENDALLLISTARG_RPCDATA
+#define __GNET_FRIENDALLLISTARG_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class FriendAllListArg : public GNET::Rpc::Data
+	{
+	public:
+		int userid;
+		char handle;
+
+	public:
+		FriendAllListArg (int l_userid = -1,char l_handle = 0)
+			: userid(l_userid),handle(l_handle)
+		{
+		}
+
+		FriendAllListArg(const FriendAllListArg &rhs)
+			: userid(rhs.userid),handle(rhs.handle) { }
+
+		Rpc::Data *Clone() const { return new FriendAllListArg(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const FriendAllListArg *r = dynamic_cast<const FriendAllListArg *>(&rhs);
+			if (r && r != this)
+			{
+				userid = r->userid;
+				handle = r->handle;
+			}
+			return *this;
+		}
+
+		FriendAllListArg& operator = (const FriendAllListArg &rhs)
+		{
+			const FriendAllListArg *r = &rhs;
+			if (r && r != this)
+			{
+				userid = r->userid;
+				handle = r->handle;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << userid;
+			os << handle;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> userid;
+			os >> handle;
+			return os;
+		}
+
+	};
+};
+#endif

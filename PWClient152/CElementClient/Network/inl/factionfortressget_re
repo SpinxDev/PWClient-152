@@ -1,0 +1,38 @@
+	public:
+		int retcode;
+		GFactionFortressBriefInfo brief;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONFORTRESSGET_RE };
+	public:
+		FactionFortressGet_Re() { type = PROTOCOL_FACTIONFORTRESSGET_RE; }
+		FactionFortressGet_Re(void*) : Protocol(PROTOCOL_FACTIONFORTRESSGET_RE) { }
+		FactionFortressGet_Re (int l_retcode,const GFactionFortressBriefInfo& l_brief,unsigned int l_localsid)
+			 : retcode(l_retcode),brief(l_brief),localsid(l_localsid)
+		{
+			type = PROTOCOL_FACTIONFORTRESSGET_RE;
+		}
+
+		FactionFortressGet_Re(const FactionFortressGet_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),brief(rhs.brief),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new FactionFortressGet_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << brief;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> brief;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 512; }

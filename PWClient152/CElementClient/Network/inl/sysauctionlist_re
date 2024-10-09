@@ -1,0 +1,35 @@
+	public:
+		std::vector<GSysAuctionItem> items;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_SYSAUCTIONLIST_RE };
+	public:
+		SysAuctionList_Re() { type = PROTOCOL_SYSAUCTIONLIST_RE; }
+		SysAuctionList_Re(void*) : Protocol(PROTOCOL_SYSAUCTIONLIST_RE) { }
+		SysAuctionList_Re (const std::vector<GSysAuctionItem>& l_items,unsigned int l_localsid = 0)
+			 : items(l_items),localsid(l_localsid)
+		{
+			type = PROTOCOL_SYSAUCTIONLIST_RE;
+		}
+
+		SysAuctionList_Re(const SysAuctionList_Re &rhs)
+			: Protocol(rhs),items(rhs.items),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new SysAuctionList_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << items;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> items;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 5120; }

@@ -1,0 +1,35 @@
+	public:
+		int result;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_CANCELWAITQUEUE_RE };
+	public:
+		CancelWaitQueue_Re() { type = PROTOCOL_CANCELWAITQUEUE_RE; }
+		CancelWaitQueue_Re(void*) : Protocol(PROTOCOL_CANCELWAITQUEUE_RE) { }
+		CancelWaitQueue_Re (int l_result,unsigned int l_localsid = 0)
+			 : result(l_result),localsid(l_localsid)
+		{
+			type = PROTOCOL_CANCELWAITQUEUE_RE;
+		}
+
+		CancelWaitQueue_Re(const CancelWaitQueue_Re &rhs)
+			: Protocol(rhs),result(rhs.result),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new CancelWaitQueue_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << result;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> result;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

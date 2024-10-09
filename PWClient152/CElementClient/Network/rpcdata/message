@@ -1,0 +1,85 @@
+#ifndef __GNET_MESSAGE_RPCDATA
+#define __GNET_MESSAGE_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class Message : public GNET::Rpc::Data
+	{
+	public:
+		unsigned char channel;
+		Octets src_name;
+		int srcroleid;
+		Octets dst_name;
+		int dstroleid;
+		Octets msg;
+
+	public:
+		Message ()
+		{
+		}
+
+		Message(const Message &rhs)
+			: channel(rhs.channel),src_name(rhs.src_name),srcroleid(rhs.srcroleid),
+			dst_name(rhs.dst_name),dstroleid(rhs.dstroleid),msg(rhs.msg) { }
+
+		Rpc::Data *Clone() const { return new Message(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const Message *r = dynamic_cast<const Message *>(&rhs);
+			if (r && r != this)
+			{
+				channel = r->channel;
+				src_name = r->src_name;
+				srcroleid = r->srcroleid;
+				dst_name = r->dst_name;
+				dstroleid = r->dstroleid;
+				msg = r->msg;
+			}
+			return *this;
+		}
+
+		Message& operator = (const Message &rhs)
+		{
+			const Message *r = &rhs;
+			if (r && r != this)
+			{
+				channel = r->channel;
+				src_name = r->src_name;
+				srcroleid = r->srcroleid;
+				dst_name = r->dst_name;
+				dstroleid = r->dstroleid;
+				msg = r->msg;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << channel;
+			os << src_name;
+			os << srcroleid;
+			os << dst_name;
+			os << dstroleid;
+			os << msg;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> channel;
+			os >> src_name;
+			os >> srcroleid;
+			os >> dst_name;
+			os >> dstroleid;
+			os >> msg;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<Message>	MessageVector;
+};
+#endif

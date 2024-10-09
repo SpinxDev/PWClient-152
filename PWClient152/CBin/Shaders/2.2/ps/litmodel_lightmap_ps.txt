@@ -1,0 +1,15 @@
+ps.1.4
+
+def c0, 1.0, 0.0, 0.9, 1.0
+
+texld r0, t0
+sub r3, r0.a, c0.b
+phase
+texkill r3
+texld r1, t1
+texld r2, t1
+lrp r1, c1.a, r2, r1
+mul_x2 r0.rgb, r1, r0
++mov r0.a, c0.a
+
+

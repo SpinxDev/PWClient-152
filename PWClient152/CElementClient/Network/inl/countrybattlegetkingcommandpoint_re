@@ -1,0 +1,35 @@
+	public:
+		int command_point;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_COUNTRYBATTLEGETKINGCOMMANDPOINT_RE };
+	public:
+		CountryBattleGetKingCommandPoint_Re() { type = PROTOCOL_COUNTRYBATTLEGETKINGCOMMANDPOINT_RE; }
+		CountryBattleGetKingCommandPoint_Re(void*) : Protocol(PROTOCOL_COUNTRYBATTLEGETKINGCOMMANDPOINT_RE) { }
+		CountryBattleGetKingCommandPoint_Re (int l_command_point,unsigned int l_localsid)
+			 : command_point(l_command_point),localsid(l_localsid)
+		{
+			type = PROTOCOL_COUNTRYBATTLEGETKINGCOMMANDPOINT_RE;
+		}
+
+		CountryBattleGetKingCommandPoint_Re(const CountryBattleGetKingCommandPoint_Re &rhs)
+			: Protocol(rhs),command_point(rhs.command_point),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new CountryBattleGetKingCommandPoint_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << command_point;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> command_point;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

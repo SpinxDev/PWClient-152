@@ -1,0 +1,35 @@
+	public:
+		int roleid;
+		int factionid;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONFORTRESSGET };
+	public:
+		FactionFortressGet() { type = PROTOCOL_FACTIONFORTRESSGET; }
+		FactionFortressGet(void*) : Protocol(PROTOCOL_FACTIONFORTRESSGET) { }
+		FactionFortressGet (int l_roleid,int l_factionid)
+			 : roleid(l_roleid),factionid(l_factionid)
+		{
+			type = PROTOCOL_FACTIONFORTRESSGET;
+		}
+
+		FactionFortressGet(const FactionFortressGet &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),factionid(rhs.factionid) { }
+
+		GNET::Protocol *Clone() const { return new FactionFortressGet(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << factionid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> factionid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 16; }

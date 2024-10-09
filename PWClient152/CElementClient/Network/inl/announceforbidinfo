@@ -1,0 +1,38 @@
+	public:
+		int userid;
+		unsigned int localsid;
+		GRoleForbid forbid;
+		enum { PROTOCOL_TYPE = PROTOCOL_ANNOUNCEFORBIDINFO };
+	public:
+		AnnounceForbidInfo() { type = PROTOCOL_ANNOUNCEFORBIDINFO; }
+		AnnounceForbidInfo(void*) : Protocol(PROTOCOL_ANNOUNCEFORBIDINFO) { }
+		AnnounceForbidInfo (int l_userid,unsigned int l_localsid,GRoleForbid l_forbid)
+			 : userid(l_userid),localsid(l_localsid),forbid(l_forbid)
+		{
+			type = PROTOCOL_ANNOUNCEFORBIDINFO;
+		}
+
+		AnnounceForbidInfo(const AnnounceForbidInfo &rhs)
+			: Protocol(rhs),userid(rhs.userid),localsid(rhs.localsid),forbid(rhs.forbid) { }
+
+		GNET::Protocol *Clone() const { return new AnnounceForbidInfo(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << userid;
+			os << localsid;
+			os << forbid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> userid;
+			os >> localsid;
+			os >> forbid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 384; }

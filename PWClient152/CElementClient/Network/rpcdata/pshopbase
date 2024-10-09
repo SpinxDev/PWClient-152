@@ -1,0 +1,78 @@
+#ifndef __GNET_PSHOPBASE_RPCDATA
+#define __GNET_PSHOPBASE_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "pshopitem"
+
+namespace GNET
+{
+	class PShopBase : public GNET::Rpc::Data
+	{
+	public:
+		int roleid;
+		int shoptype;
+		PShopItemVector blist;
+		PShopItemVector slist;
+
+	public:
+		PShopBase (int l_roleid = 0,int l_shoptype = 0,const PShopItemVector& l_blist = PShopItemVector()
+			,const PShopItemVector& l_slist = PShopItemVector())
+			: roleid(l_roleid),shoptype(l_shoptype),blist(l_blist)
+			,slist(l_slist)
+		{
+		}
+
+		PShopBase(const PShopBase &rhs)
+			: roleid(rhs.roleid),shoptype(rhs.shoptype),blist(rhs.blist),
+			slist(rhs.slist) { }
+
+		Rpc::Data *Clone() const { return new PShopBase(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const PShopBase *r = dynamic_cast<const PShopBase *>(&rhs);
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				shoptype = r->shoptype;
+				blist = r->blist;
+				slist = r->slist;
+			}
+			return *this;
+		}
+
+		PShopBase& operator = (const PShopBase &rhs)
+		{
+			const PShopBase *r = &rhs;
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				shoptype = r->shoptype;
+				blist = r->blist;
+				slist = r->slist;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << shoptype;
+			os << blist;
+			os << slist;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> shoptype;
+			os >> blist;
+			os >> slist;
+			return os;
+		}
+
+	};
+};
+#endif

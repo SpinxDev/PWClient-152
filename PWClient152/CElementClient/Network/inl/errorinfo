@@ -1,0 +1,35 @@
+	public:
+		int errcode;
+		Octets info;
+		enum { PROTOCOL_TYPE = PROTOCOL_ERRORINFO };
+	public:
+		ErrorInfo() { type = PROTOCOL_ERRORINFO; }
+		ErrorInfo(void*) : Protocol(PROTOCOL_ERRORINFO) { }
+		ErrorInfo (int l_errcode,const Octets& l_info)
+			 : errcode(l_errcode),info(l_info)
+		{
+			type = PROTOCOL_ERRORINFO;
+		}
+
+		ErrorInfo(const ErrorInfo &rhs)
+			: Protocol(rhs),errcode(rhs.errcode),info(rhs.info) { }
+
+		GNET::Protocol *Clone() const { return new ErrorInfo(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << errcode;
+			os << info;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> errcode;
+			os >> info;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 256; }

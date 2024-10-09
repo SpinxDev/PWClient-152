@@ -1,0 +1,47 @@
+	public:
+		int result;
+		int roleid;
+		unsigned int localsid;
+		RoleInfo roleinfo;
+		int refretcode;
+		enum { PROTOCOL_TYPE = PROTOCOL_CREATEROLE_RE };
+	public:
+		CreateRole_Re() { type = PROTOCOL_CREATEROLE_RE; }
+		CreateRole_Re(void*) : Protocol(PROTOCOL_CREATEROLE_RE) { }
+		CreateRole_Re (int l_result,int l_roleid = -1,unsigned int l_localsid = 0,
+			RoleInfo l_roleinfo = RoleInfo(),int l_refretcode = 0)
+			 : result(l_result),roleid(l_roleid),localsid(l_localsid)
+			,roleinfo(l_roleinfo),refretcode(l_refretcode)
+		{
+			type = PROTOCOL_CREATEROLE_RE;
+		}
+
+		CreateRole_Re(const CreateRole_Re &rhs)
+			: Protocol(rhs),result(rhs.result),roleid(rhs.roleid),localsid(rhs.localsid)
+			,roleinfo(rhs.roleinfo),refretcode(rhs.refretcode) { }
+
+		GNET::Protocol *Clone() const { return new CreateRole_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << result;
+			os << roleid;
+			os << localsid;
+			os << roleinfo;
+			os << refretcode;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> result;
+			os >> roleid;
+			os >> localsid;
+			os >> roleinfo;
+			os >> refretcode;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 101; }
+
+		bool SizePolicy(size_t size) const { return size <= 8192; }

@@ -1,0 +1,20 @@
+DIALOG "Win_SettingBlacklist" 0 0 311 431 0 1 10 "Window\对话框_标准边框x.dds" "" "" 0 0 0 0 "人鱼传说新界面\面板关闭按钮.tga" 47 30 96 96 96 255 1
+EDIT "Img_Title" "" "" 16 23 283 37 "人鱼传说新界面\title.tga" 2 15 255 255 255 "TEXT" 1 0 20
+LABEL "title" "" "" 116 29 0 0 3 16 4 255 203 74 255
+IMAGEPICTURE "Control_130626938" "" "" 4 0 305 431 1 0 "人鱼传说新界面\未命名-1副本.dds"
+STILLIMAGEBUTTON "Btn_Game" "gamesetting" "SFX\Interface\ClickB.wav" 149 59 64 24 0 0 0 0 5 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 6 1
+STILLIMAGEBUTTON "Btn_Video" "videosetting" "SFX\Interface\ClickB.wav" 85 59 64 24 0 0 0 0 7 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 8 1
+STILLIMAGEBUTTON "Btn_System" "systemsetting" "SFX\Interface\ClickB.wav" 21 59 64 24 0 0 0 0 9 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 10 1
+STILLIMAGEBUTTON "Btn_Blacklist" "blacklist" "SFX\Interface\ClickB.wav" 213 59 80 24 0 0 0 0 11 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 12 1
+STILLIMAGEBUTTON "Btn_Default" "default" "SFX\Interface\ClickB.wav" 25 393 50 24 0 0 0 0 13 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 14 1
+STILLIMAGEBUTTON "Btn_Apply" "apply" "SFX\Interface\ClickB.wav" 134 394 50 24 0 0 0 0 15 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 16 1
+STILLIMAGEBUTTON "Btn_Decide" "confirm" "SFX\Interface\ClickB.wav" 187 394 50 24 0 0 0 0 17 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 18 1
+STILLIMAGEBUTTON "Btn_Exit" "IDCANCEL" "SFX\Interface\ClickB.wav" 240 394 50 24 0 0 0 0 19 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 20 1
+LABEL "当前黑名单" "" "" 22 85 54 16 21 10 22 255 203 74 255
+LIST "Lst_Blacklist" "choose" "" 22 101 270 240 23 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+EDIT "Txt_Name" "add" "" 22 365 177 21 "Editbox\文本框_4.dds" 24 10 255 255 255 "TEXT" 0 0 20
+STILLIMAGEBUTTON "Btn_Add" "add" "SFX\Interface\ClickB.wav" 207 363 40 24 0 0 0 0 25 10 0 255 0 255 "Button\按钮_文本1.dds" "Button\按钮_文本1.dds" 26 1
+STILLIMAGEBUTTON "Btn_Remove" "remove" "SFX\Interface\ClickB.wav" 250 363 40 24 0 0 0 0 27 10 255 0 0 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 28 1
+LABEL "Control_312840624" "" "" 23 344 80 16 29 10 30 255 203 74 255
+LABEL "Control_3061408" "" "" 147 344 85 16 31 10 32 255 203 74 255
+EDIT "Txt_Level" "" "" 101 342 47 20 "Editbox\文本框_4.dds" 33 10 255 255 255 "TEXT" 0 0 20

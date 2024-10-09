@@ -1,0 +1,44 @@
+	public:
+		int userid;
+		int cash;
+		int cash_after_discount;
+		int merchant_id;
+		enum { PROTOCOL_TYPE = PROTOCOL_QPADDCASH };
+	public:
+		QPAddCash() { type = PROTOCOL_QPADDCASH; }
+		QPAddCash(void*) : Protocol(PROTOCOL_QPADDCASH) { }
+		QPAddCash (int l_userid,int l_cash,int l_cash_after_discount,
+			int l_merchant_id)
+			 : userid(l_userid),cash(l_cash),cash_after_discount(l_cash_after_discount)
+			,merchant_id(l_merchant_id)
+		{
+			type = PROTOCOL_QPADDCASH;
+		}
+
+		QPAddCash(const QPAddCash &rhs)
+			: Protocol(rhs),userid(rhs.userid),cash(rhs.cash),cash_after_discount(rhs.cash_after_discount)
+			,merchant_id(rhs.merchant_id) { }
+
+		GNET::Protocol *Clone() const { return new QPAddCash(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << userid;
+			os << cash;
+			os << cash_after_discount;
+			os << merchant_id;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> userid;
+			os >> cash;
+			os >> cash_after_discount;
+			os >> merchant_id;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 512; }

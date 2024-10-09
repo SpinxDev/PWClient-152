@@ -1,0 +1,50 @@
+	public:
+		short retcode;
+		unsigned short roomid;
+		int roleid;
+		Octets name;
+		GRoomDetail detail;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_CHATROOMJOIN_RE };
+	public:
+		ChatRoomJoin_Re() { type = PROTOCOL_CHATROOMJOIN_RE; }
+		ChatRoomJoin_Re(void*) : Protocol(PROTOCOL_CHATROOMJOIN_RE) { }
+		ChatRoomJoin_Re (short l_retcode,unsigned short l_roomid,int l_roleid,
+			const Octets& l_name,const GRoomDetail& l_detail,unsigned int l_localsid)
+			 : retcode(l_retcode),roomid(l_roomid),roleid(l_roleid),
+			name(l_name),detail(l_detail),localsid(l_localsid)
+		{
+			type = PROTOCOL_CHATROOMJOIN_RE;
+		}
+
+		ChatRoomJoin_Re(const ChatRoomJoin_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),roomid(rhs.roomid),roleid(rhs.roleid),
+			name(rhs.name),detail(rhs.detail),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new ChatRoomJoin_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roomid;
+			os << roleid;
+			os << name;
+			os << detail;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roomid;
+			os >> roleid;
+			os >> name;
+			os >> detail;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

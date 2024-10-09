@@ -1,0 +1,47 @@
+	public:
+		int retcode;
+		int gmroleid;
+		unsigned int localsid;
+		int handler;
+		GMPlayerInfoVector userlist;
+		enum { PROTOCOL_TYPE = PROTOCOL_GMLISTONLINEUSER_RE };
+	public:
+		GMListOnlineUser_Re() { type = PROTOCOL_GMLISTONLINEUSER_RE; }
+		GMListOnlineUser_Re(void*) : Protocol(PROTOCOL_GMLISTONLINEUSER_RE) { }
+		GMListOnlineUser_Re (int l_retcode,int l_gmroleid,unsigned int l_localsid,
+			int l_handler,GMPlayerInfoVector l_userlist)
+			 : retcode(l_retcode),gmroleid(l_gmroleid),localsid(l_localsid),
+			handler(l_handler),userlist(l_userlist)
+		{
+			type = PROTOCOL_GMLISTONLINEUSER_RE;
+		}
+
+		GMListOnlineUser_Re(const GMListOnlineUser_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),gmroleid(rhs.gmroleid),localsid(rhs.localsid),
+			handler(rhs.handler),userlist(rhs.userlist) { }
+
+		GNET::Protocol *Clone() const { return new GMListOnlineUser_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << gmroleid;
+			os << localsid;
+			os << handler;
+			os << userlist;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> gmroleid;
+			os >> localsid;
+			os >> handler;
+			os >> userlist;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 102400; }

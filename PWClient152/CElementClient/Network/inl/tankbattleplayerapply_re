@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		int retcode;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_TANKBATTLEPLAYERAPPLY_RE };
+	public:
+		TankBattlePlayerApply_Re() { type = PROTOCOL_TANKBATTLEPLAYERAPPLY_RE; }
+		TankBattlePlayerApply_Re(void*) : Protocol(PROTOCOL_TANKBATTLEPLAYERAPPLY_RE) { }
+		TankBattlePlayerApply_Re (int l_roleid,int l_retcode,unsigned int l_localsid)
+			 : roleid(l_roleid),retcode(l_retcode),localsid(l_localsid)
+		{
+			type = PROTOCOL_TANKBATTLEPLAYERAPPLY_RE;
+		}
+
+		TankBattlePlayerApply_Re(const TankBattlePlayerApply_Re &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),retcode(rhs.retcode),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new TankBattlePlayerApply_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << retcode;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> retcode;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

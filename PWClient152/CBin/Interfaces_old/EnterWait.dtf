@@ -1,0 +1,2 @@
+DIALOG "Win_EnterWait" 0 0 400 70 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "" 27 6 96 96 96 255 1
+LABEL "Txt_Message" "" "" 200 21 0 0 2 16 3 255 203 74 255

@@ -1,0 +1,17 @@
+ps.1.4
+
+; c0 is the fashion color
+texld r0, t0		; base texture, r0.a = alpha channel
+texld r1, t0		; r1.r = specular channel; r1.g = reflection channel; r1.b = channel specify the area effected by c0 color
+texld r2, t1		; reflection map
+
+mul r3.rgb, r0, c0
+lrp r0.rgb, r1.b, r3, r0
+mul r0.rgb, r0, v0
++mul r0.a, r0.a, v0.a
+
+mad r0.rgb, r1.r, v1, r0
+mad r0.rgb, r1.g, r2, r0
+
+
+

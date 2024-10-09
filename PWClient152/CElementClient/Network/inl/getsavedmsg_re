@@ -1,0 +1,44 @@
+	public:
+		char retcode;
+		MessageVector messages;
+		int roleid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_GETSAVEDMSG_RE };
+	public:
+		GetSavedMsg_Re() { type = PROTOCOL_GETSAVEDMSG_RE; }
+		GetSavedMsg_Re(void*) : Protocol(PROTOCOL_GETSAVEDMSG_RE) { }
+		GetSavedMsg_Re (char l_retcode,MessageVector l_messages,int l_roleid,
+			unsigned int l_localsid)
+			 : retcode(l_retcode),messages(l_messages),roleid(l_roleid),
+			localsid(l_localsid)
+		{
+			type = PROTOCOL_GETSAVEDMSG_RE;
+		}
+
+		GetSavedMsg_Re(const GetSavedMsg_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),messages(rhs.messages),roleid(rhs.roleid),
+			localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new GetSavedMsg_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << messages;
+			os << roleid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> messages;
+			os >> roleid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 5200; }

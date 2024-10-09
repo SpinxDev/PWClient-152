@@ -1,0 +1,35 @@
+	public:
+		int userid;
+		ByteVector auth;
+		enum { PROTOCOL_TYPE = PROTOCOL_QUERYUSERPRIVILEGE_RE };
+	public:
+		QueryUserPrivilege_Re() { type = PROTOCOL_QUERYUSERPRIVILEGE_RE; }
+		QueryUserPrivilege_Re(void*) : Protocol(PROTOCOL_QUERYUSERPRIVILEGE_RE) { }
+		QueryUserPrivilege_Re (int l_userid,const ByteVector& l_auth)
+			 : userid(l_userid),auth(l_auth)
+		{
+			type = PROTOCOL_QUERYUSERPRIVILEGE_RE;
+		}
+
+		QueryUserPrivilege_Re(const QueryUserPrivilege_Re &rhs)
+			: Protocol(rhs),userid(rhs.userid),auth(rhs.auth) { }
+
+		GNET::Protocol *Clone() const { return new QueryUserPrivilege_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << userid;
+			os << auth;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> userid;
+			os >> auth;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 101; }
+
+		bool SizePolicy(size_t size) const { return size <= 512; }

@@ -1,0 +1,102 @@
+#ifndef __GNET_GFACTIONFORTRESSDETAIL_RPCDATA
+#define __GNET_GFACTIONFORTRESSDETAIL_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "gfactionfortressinfo"
+#include "gfactionfortressinfo2"
+
+namespace GNET
+{
+	class GFactionFortressDetail : public GNET::Rpc::Data
+	{
+	public:
+		int factionid;
+		GFactionFortressInfo info;
+		GFactionFortressInfo2 info2;
+		int reserved1;
+		int reserved2;
+		int reserved3;
+		int reserved4;
+		int reserved5;
+
+	public:
+		GFactionFortressDetail (int l_factionid = 0,const GFactionFortressInfo& l_info = GFactionFortressInfo(),const GFactionFortressInfo2& l_info2 = GFactionFortressInfo2()
+			,int l_reserved1 = 0,int l_reserved2 = 0,int l_reserved3 = 0
+			,int l_reserved4 = 0,int l_reserved5 = 0)
+			: factionid(l_factionid),info(l_info),info2(l_info2)
+			,reserved1(l_reserved1),reserved2(l_reserved2),reserved3(l_reserved3)
+			,reserved4(l_reserved4),reserved5(l_reserved5)
+		{
+		}
+
+		GFactionFortressDetail(const GFactionFortressDetail &rhs)
+			: factionid(rhs.factionid),info(rhs.info),info2(rhs.info2),
+			reserved1(rhs.reserved1),reserved2(rhs.reserved2),reserved3(rhs.reserved3),
+			reserved4(rhs.reserved4),reserved5(rhs.reserved5) { }
+
+		Rpc::Data *Clone() const { return new GFactionFortressDetail(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GFactionFortressDetail *r = dynamic_cast<const GFactionFortressDetail *>(&rhs);
+			if (r && r != this)
+			{
+				factionid = r->factionid;
+				info = r->info;
+				info2 = r->info2;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+				reserved4 = r->reserved4;
+				reserved5 = r->reserved5;
+			}
+			return *this;
+		}
+
+		GFactionFortressDetail& operator = (const GFactionFortressDetail &rhs)
+		{
+			const GFactionFortressDetail *r = &rhs;
+			if (r && r != this)
+			{
+				factionid = r->factionid;
+				info = r->info;
+				info2 = r->info2;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+				reserved4 = r->reserved4;
+				reserved5 = r->reserved5;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << factionid;
+			os << info;
+			os << info2;
+			os << reserved1;
+			os << reserved2;
+			os << reserved3;
+			os << reserved4;
+			os << reserved5;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> factionid;
+			os >> info;
+			os >> info2;
+			os >> reserved1;
+			os >> reserved2;
+			os >> reserved3;
+			os >> reserved4;
+			os >> reserved5;
+			return os;
+		}
+
+	};
+};
+#endif

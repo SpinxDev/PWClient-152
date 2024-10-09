@@ -1,0 +1,44 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		int friend_id;
+		int mail_template_id;
+		enum { PROTOCOL_TYPE = PROTOCOL_SENDAUMAIL };
+	public:
+		SendAUMail() { type = PROTOCOL_SENDAUMAIL; }
+		SendAUMail(void*) : Protocol(PROTOCOL_SENDAUMAIL) { }
+		SendAUMail (int l_roleid,unsigned int l_localsid,int l_friend_id,
+			int l_mail_template_id)
+			 : roleid(l_roleid),localsid(l_localsid),friend_id(l_friend_id)
+			,mail_template_id(l_mail_template_id)
+		{
+			type = PROTOCOL_SENDAUMAIL;
+		}
+
+		SendAUMail(const SendAUMail &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid),friend_id(rhs.friend_id)
+			,mail_template_id(rhs.mail_template_id) { }
+
+		GNET::Protocol *Clone() const { return new SendAUMail(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << friend_id;
+			os << mail_template_id;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> friend_id;
+			os >> mail_template_id;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

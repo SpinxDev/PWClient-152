@@ -1,0 +1,139 @@
+#ifndef __GNET_PSHOPDETAIL_RPCDATA
+#define __GNET_PSHOPDETAIL_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "groleinventory"
+#include "pshopitem"
+
+namespace GNET
+{
+	class PShopDetail : public GNET::Rpc::Data
+	{
+	public:
+		int roleid;
+		int shoptype;
+		int status;
+		int createtime;
+		int expiretime;
+		unsigned int money;
+		GRoleInventoryVector yinpiao;
+		PShopItemVector blist;
+		PShopItemVector slist;
+		GRoleInventoryVector store;
+		int reserved1;
+		int reserved2;
+		int reserved3;
+		int reserved4;
+
+	public:
+		PShopDetail (int l_roleid = 0,int l_shoptype = 0,int l_status = 0
+			,int l_createtime = 0,int l_expiretime = 0,unsigned int l_money = 0
+			,const GRoleInventoryVector& l_yinpiao = GRoleInventoryVector(),const PShopItemVector& l_blist = PShopItemVector(),const PShopItemVector& l_slist = PShopItemVector()
+			,const GRoleInventoryVector& l_store = GRoleInventoryVector(),int l_reserved1 = 0,int l_reserved2 = 0
+			,int l_reserved3 = 0,int l_reserved4 = 0)
+			: roleid(l_roleid),shoptype(l_shoptype),status(l_status)
+			,createtime(l_createtime),expiretime(l_expiretime),money(l_money)
+			,yinpiao(l_yinpiao),blist(l_blist),slist(l_slist)
+			,store(l_store),reserved1(l_reserved1),reserved2(l_reserved2)
+			,reserved3(l_reserved3),reserved4(l_reserved4)
+		{
+		}
+
+		PShopDetail(const PShopDetail &rhs)
+			: roleid(rhs.roleid),shoptype(rhs.shoptype),status(rhs.status),
+			createtime(rhs.createtime),expiretime(rhs.expiretime),money(rhs.money),
+			yinpiao(rhs.yinpiao),blist(rhs.blist),slist(rhs.slist),
+			store(rhs.store),reserved1(rhs.reserved1),reserved2(rhs.reserved2),
+			reserved3(rhs.reserved3),reserved4(rhs.reserved4) { }
+
+		Rpc::Data *Clone() const { return new PShopDetail(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const PShopDetail *r = dynamic_cast<const PShopDetail *>(&rhs);
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				shoptype = r->shoptype;
+				status = r->status;
+				createtime = r->createtime;
+				expiretime = r->expiretime;
+				money = r->money;
+				yinpiao = r->yinpiao;
+				blist = r->blist;
+				slist = r->slist;
+				store = r->store;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+				reserved4 = r->reserved4;
+			}
+			return *this;
+		}
+
+		PShopDetail& operator = (const PShopDetail &rhs)
+		{
+			const PShopDetail *r = &rhs;
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				shoptype = r->shoptype;
+				status = r->status;
+				createtime = r->createtime;
+				expiretime = r->expiretime;
+				money = r->money;
+				yinpiao = r->yinpiao;
+				blist = r->blist;
+				slist = r->slist;
+				store = r->store;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+				reserved4 = r->reserved4;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << shoptype;
+			os << status;
+			os << createtime;
+			os << expiretime;
+			os << money;
+			os << yinpiao;
+			os << blist;
+			os << slist;
+			os << store;
+			os << reserved1;
+			os << reserved2;
+			os << reserved3;
+			os << reserved4;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> shoptype;
+			os >> status;
+			os >> createtime;
+			os >> expiretime;
+			os >> money;
+			os >> yinpiao;
+			os >> blist;
+			os >> slist;
+			os >> store;
+			os >> reserved1;
+			os >> reserved2;
+			os >> reserved3;
+			os >> reserved4;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<PShopDetail>	PShopDetailVector;
+};
+#endif

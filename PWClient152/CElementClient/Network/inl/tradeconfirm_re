@@ -1,0 +1,47 @@
+	public:
+		int retcode;
+		unsigned int tid;
+		int confirm_roleid;
+		int roleid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_TRADECONFIRM_RE };
+	public:
+		TradeConfirm_Re() { type = PROTOCOL_TRADECONFIRM_RE; }
+		TradeConfirm_Re(void*) : Protocol(PROTOCOL_TRADECONFIRM_RE) { }
+		TradeConfirm_Re (int l_retcode,unsigned int l_tid,int l_confirm_roleid,
+			int l_roleid,unsigned int l_localsid)
+			 : retcode(l_retcode),tid(l_tid),confirm_roleid(l_confirm_roleid),
+			roleid(l_roleid),localsid(l_localsid)
+		{
+			type = PROTOCOL_TRADECONFIRM_RE;
+		}
+
+		TradeConfirm_Re(const TradeConfirm_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),tid(rhs.tid),confirm_roleid(rhs.confirm_roleid),
+			roleid(rhs.roleid),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new TradeConfirm_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << tid;
+			os << confirm_roleid;
+			os << roleid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> tid;
+			os >> confirm_roleid;
+			os >> roleid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

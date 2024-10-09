@@ -1,0 +1,124 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: PWDownloader - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Release/PWDownloader.res" /d "NDEBUG" /d "_AFXDLL" "C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\PWDownloader.rc"" 
+Creating temporary file "C:\Users\Wanmei\AppData\Local\Temp\RSP90D2.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "./7z/cpp" /I "../../../CNewSkin/p2sp_4th_lib" /I "../../../CNewSkin/include" /I "../../../../SDK/3rdSDK/include" /I "../../../../SDK/acsdk/Include" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Release/PWDownloader.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\DlgPreInstall.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\DlgSetSpeed.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\PWDownloader.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\PWDownloaderDlg.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\PWInstallDlg.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\7z\CPP\Windows\DLL.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\7z\CPP\Windows\Error.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\7z\CPP\Windows\FileDir.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\7z\CPP\Windows\FileFind.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\7z\CPP\Windows\FileIO.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\7z\CPP\Windows\FileName.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\7z\CPP\Windows\PropVariant.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\7z\CPP\Windows\PropVariantConversions.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\7z\CPP\7zip\Common\FileStreams.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\7z\CPP\Common\IntToString.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\7z\CPP\Common\MyString.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\7z\CPP\Common\MyVector.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\7z\CPP\Common\NewHandler.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\7z\CPP\Common\StringConvert.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\7z\CPP\Common\Wildcard.cpp"
+]
+Creating command line "cl.exe @C:\Users\Wanmei\AppData\Local\Temp\RSP90D2.tmp" 
+Creating temporary file "C:\Users\Wanmei\AppData\Local\Temp\RSP90E3.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "./7z/cpp" /I "../../../CNewSkin/p2sp_4th_lib" /I "../../../CNewSkin/include" /I "../../../../SDK/3rdSDK/include" /I "../../../../SDK/acsdk/Include" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Release/PWDownloader.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\Users\Wanmei\AppData\Local\Temp\RSP90E3.tmp" 
+Creating temporary file "C:\Users\Wanmei\AppData\Local\Temp\RSP90E4.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "./7z/cpp" /I "../../../CNewSkin/p2sp_4th_lib" /I "../../../CNewSkin/include" /I "../../../../SDK/3rdSDK/include" /I "../../../../SDK/acsdk/Include" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\EC_Archive7Z.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CNewSkin\patchlib\EC_HttpGet.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\EC_Pipe.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\EC_PWDownload.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\ClientTools\PWDownloader\LogFile.cpp"
+]
+Creating command line "cl.exe @C:\Users\Wanmei\AppData\Local\Temp\RSP90E4.tmp" 
+Creating temporary file "C:\Users\Wanmei\AppData\Local\Temp\RSP90E5.tmp" with contents
+[
+gdiplus.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/PWDownloader.pdb" /machine:I386 /out:"Release/PWDownloader.exe" /libpath:"../../../CNewSkin/lib" 
+.\Release\DlgPreInstall.obj
+.\Release\DlgSetSpeed.obj
+.\Release\PWDownloader.obj
+.\Release\PWDownloaderDlg.obj
+.\Release\PWInstallDlg.obj
+.\Release\StdAfx.obj
+.\Release\DLL.obj
+.\Release\Error.obj
+.\Release\FileDir.obj
+.\Release\FileFind.obj
+.\Release\FileIO.obj
+.\Release\FileName.obj
+.\Release\PropVariant.obj
+.\Release\PropVariantConversions.obj
+.\Release\FileStreams.obj
+.\Release\IntToString.obj
+.\Release\MyString.obj
+.\Release\MyVector.obj
+.\Release\NewHandler.obj
+.\Release\StringConvert.obj
+.\Release\Wildcard.obj
+.\Release\EC_Archive7Z.obj
+.\Release\EC_HttpGet.obj
+.\Release\EC_Pipe.obj
+.\Release\EC_PWDownload.obj
+.\Release\LogFile.obj
+.\Release\PWDownloader.res
+]
+Creating command line "link.exe @C:\Users\Wanmei\AppData\Local\Temp\RSP90E5.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+DlgPreInstall.cpp
+DlgSetSpeed.cpp
+PWDownloader.cpp
+PWDownloaderDlg.cpp
+PWInstallDlg.cpp
+DLL.cpp
+Error.cpp
+FileDir.cpp
+FileFind.cpp
+FileIO.cpp
+FileName.cpp
+PropVariant.cpp
+PropVariantConversions.cpp
+FileStreams.cpp
+IntToString.cpp
+MyString.cpp
+MyVector.cpp
+NewHandler.cpp
+StringConvert.cpp
+Wildcard.cpp
+Generating Code...
+Compiling...
+EC_Archive7Z.cpp
+EC_HttpGet.cpp
+EC_Pipe.cpp
+EC_PWDownload.cpp
+LogFile.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+PWDownloader.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

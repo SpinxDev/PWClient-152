@@ -1,0 +1,59 @@
+#ifndef __GNET_TRADESTARTRQSTRES_RPCDATA
+#define __GNET_TRADESTARTRQSTRES_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class TradeStartRqstRes : public GNET::Rpc::Data
+	{
+	public:
+		int retcode;
+
+	public:
+		TradeStartRqstRes (int l_retcode = 0)
+			: retcode(l_retcode)
+		{
+		}
+
+		TradeStartRqstRes(const TradeStartRqstRes &rhs)
+			: retcode(rhs.retcode) { }
+
+		Rpc::Data *Clone() const { return new TradeStartRqstRes(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const TradeStartRqstRes *r = dynamic_cast<const TradeStartRqstRes *>(&rhs);
+			if (r && r != this)
+			{
+				retcode = r->retcode;
+			}
+			return *this;
+		}
+
+		TradeStartRqstRes& operator = (const TradeStartRqstRes &rhs)
+		{
+			const TradeStartRqstRes *r = &rhs;
+			if (r && r != this)
+			{
+				retcode = r->retcode;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			return os;
+		}
+
+	};
+};
+#endif

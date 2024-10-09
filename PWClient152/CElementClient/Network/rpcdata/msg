@@ -1,0 +1,96 @@
+#ifndef __GNET_MSG_RPCDATA
+#define __GNET_MSG_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class Msg : public GNET::Rpc::Data
+	{
+	public:
+		char type;
+		char srczoneid;
+		int srcroleid;
+		char dstzoneid;
+		int dstroleid;
+		int time;
+		Octets msg;
+
+	public:
+		Msg (char l_type = 0,char l_srczoneid = 0,int l_srcroleid = -1
+			,char l_dstzoneid = 0,int l_dstroleid = -1,int l_time = -1
+			,Octets l_msg = Octets(0))
+			: type(l_type),srczoneid(l_srczoneid),srcroleid(l_srcroleid)
+			,dstzoneid(l_dstzoneid),dstroleid(l_dstroleid),time(l_time)
+			,msg(l_msg)
+		{
+		}
+
+		Msg(const Msg &rhs)
+			: type(rhs.type),srczoneid(rhs.srczoneid),srcroleid(rhs.srcroleid),
+			dstzoneid(rhs.dstzoneid),dstroleid(rhs.dstroleid),time(rhs.time),
+			msg(rhs.msg) { }
+
+		Rpc::Data *Clone() const { return new Msg(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const Msg *r = dynamic_cast<const Msg *>(&rhs);
+			if (r && r != this)
+			{
+				type = r->type;
+				srczoneid = r->srczoneid;
+				srcroleid = r->srcroleid;
+				dstzoneid = r->dstzoneid;
+				dstroleid = r->dstroleid;
+				time = r->time;
+				msg = r->msg;
+			}
+			return *this;
+		}
+
+		Msg& operator = (const Msg &rhs)
+		{
+			const Msg *r = &rhs;
+			if (r && r != this)
+			{
+				type = r->type;
+				srczoneid = r->srczoneid;
+				srcroleid = r->srcroleid;
+				dstzoneid = r->dstzoneid;
+				dstroleid = r->dstroleid;
+				time = r->time;
+				msg = r->msg;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << type;
+			os << srczoneid;
+			os << srcroleid;
+			os << dstzoneid;
+			os << dstroleid;
+			os << time;
+			os << msg;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> type;
+			os >> srczoneid;
+			os >> srcroleid;
+			os >> dstzoneid;
+			os >> dstroleid;
+			os >> time;
+			os >> msg;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<Msg>	MsgVector;
+};
+#endif

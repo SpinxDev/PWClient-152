@@ -1,0 +1,65 @@
+#ifndef __GNET_GGROUPINFO_RPCDATA
+#define __GNET_GGROUPINFO_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GGroupInfo : public GNET::Rpc::Data
+	{
+	public:
+		char gid;
+		Octets name;
+
+	public:
+		GGroupInfo (char l_gid = 0,const Octets& l_name = Octets(0))
+			: gid(l_gid),name(l_name)
+		{
+		}
+
+		GGroupInfo(const GGroupInfo &rhs)
+			: gid(rhs.gid),name(rhs.name) { }
+
+		Rpc::Data *Clone() const { return new GGroupInfo(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GGroupInfo *r = dynamic_cast<const GGroupInfo *>(&rhs);
+			if (r && r != this)
+			{
+				gid = r->gid;
+				name = r->name;
+			}
+			return *this;
+		}
+
+		GGroupInfo& operator = (const GGroupInfo &rhs)
+		{
+			const GGroupInfo *r = &rhs;
+			if (r && r != this)
+			{
+				gid = r->gid;
+				name = r->name;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << gid;
+			os << name;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> gid;
+			os >> name;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<GGroupInfo>	GGroupInfoVector;
+};
+#endif

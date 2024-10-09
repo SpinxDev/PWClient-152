@@ -1,0 +1,84 @@
+DIALOG "Win_Shop" 0 0 311 431 0 1 10 "Window\对话框_标准边框x.dds" "" "" 0 0 283 33 "人鱼传说新界面\面板关闭按钮.tga" 47 30 96 96 96 255 1
+EDIT "Img_Title" "" "" 16 23 283 37 "人鱼传说新界面\title.tga" 2 15 255 255 255 "TEXT" 1 0 20
+LABEL "Txt_Vendor" "" "" 137 30 42 23 3 16 4 255 203 74 255
+IMAGEPICTURE "Control_98646255" "" "" 4 0 305 431 1 0 "人鱼传说新界面\未命名-1副本.dds"
+IMAGEPICTURE "U_01" "" "" 20 84 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_02" "" "" 54 84 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_06" "" "" 190 84 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_05" "" "" 156 84 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_04" "" "" 122 84 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_08" "" "" 258 84 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_07" "" "" 224 84 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_03" "" "" 88 84 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_09" "" "" 20 117 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_10" "" "" 54 117 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_14" "" "" 190 117 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_13" "" "" 156 117 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_12" "" "" 122 117 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_16" "" "" 258 117 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_15" "" "" 224 117 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_11" "" "" 88 117 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_17" "" "" 20 150 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_18" "" "" 54 150 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_22" "" "" 190 150 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_21" "" "" 156 150 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_20" "" "" 122 150 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_24" "" "" 258 150 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_23" "" "" 224 150 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_19" "" "" 88 150 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_25" "" "" 20 183 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_26" "" "" 54 183 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_30" "" "" 190 183 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_29" "" "" 156 183 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_28" "" "" 122 183 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_32" "" "" 258 183 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_31" "" "" 224 183 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "U_27" "" "" 88 183 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_01" "" "" 20 239 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_02" "" "" 53 239 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Sell_02" "" "" 192 239 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Sell_01" "" "" 159 239 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_04" "" "" 119 239 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Sell_04" "" "" 258 239 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Sell_03" "" "" 225 239 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_03" "" "" 86 239 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_05" "" "" 20 272 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_06" "" "" 53 272 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Sell_06" "" "" 192 272 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Sell_05" "" "" 159 272 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_08" "" "" 119 272 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Sell_08" "" "" 258 272 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Sell_07" "" "" 225 272 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_07" "" "" 86 272 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_09" "" "" 20 305 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_10" "" "" 53 305 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Sell_10" "" "" 192 305 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Sell_09" "" "" 159 305 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_12" "" "" 119 305 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Sell_12" "" "" 258 305 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Sell_11" "" "" 225 305 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_11" "" "" 86 305 32 32 1 0 "Window\图标_物品栏t.dds"
+LABEL "Control_238744830" "" "" 23 221 36 15 5 10 6 255 203 74 255
+LABEL "Control_83532274" "" "" 49 397 29 15 7 10 8 255 203 74 255
+LABEL "Control_840720" "" "" 159 221 32 15 9 10 10 255 203 74 255
+IMAGEPICTURE "Control_396712664" "" "" 16 216 277 3 1 0 "Window\分隔线.tga"
+IMAGEPICTURE "Control_19095232" "" "" 154 217 3 169 1 0 "Window\分隔线2.tga"
+IMAGEPICTURE "Control_53278224" "" "" 16 386 277 3 1 0 "Window\分隔线.tga"
+STILLIMAGEBUTTON "Btn_Sell" "sell" "SFX\Interface\ClickB.wav" 243 360 48 24 0 0 0 0 11 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 12 1
+STILLIMAGEBUTTON "Btn_Buy" "buy" "SFX\Interface\ClickB.wav" 104 360 48 24 0 0 0 0 13 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 14 1
+STILLIMAGEBUTTON "Btn_Repair" "repair" "SFX\Interface\ClickB.wav" 192 394 48 24 0 0 0 0 15 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 16 1
+STILLIMAGEBUTTON "Btn_RepairAll" "repairall" "SFX\Interface\ClickB.wav" 243 394 48 24 0 0 0 0 17 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 18 1
+STILLIMAGEBUTTON "Btn_Set1" "set1" "SFX\Interface\ClickB.wav" 19 59 35 24 0 0 0 0 19 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 20 1
+STILLIMAGEBUTTON "Btn_Set2" "set2" "SFX\Interface\ClickB.wav" 53 59 35 24 0 0 0 0 21 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 22 1
+STILLIMAGEBUTTON "Btn_Set3" "set3" "SFX\Interface\ClickB.wav" 87 59 35 24 0 0 0 0 23 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 24 1
+STILLIMAGEBUTTON "Btn_Set4" "set4" "SFX\Interface\ClickB.wav" 121 59 35 24 0 0 0 0 25 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 26 1
+STILLIMAGEBUTTON "Btn_Set5" "set5" "SFX\Interface\ClickB.wav" 155 59 35 24 0 0 0 0 27 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 28 1
+STILLIMAGEBUTTON "Btn_Set6" "set6" "SFX\Interface\ClickB.wav" 189 59 35 24 0 0 0 0 29 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 30 1
+STILLIMAGEBUTTON "Btn_Set7" "set7" "SFX\Interface\ClickB.wav" 223 59 35 24 0 0 0 0 31 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 32 1
+STILLIMAGEBUTTON "Btn_Set8" "set8" "SFX\Interface\ClickB.wav" 257 59 35 24 0 0 0 0 33 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 34 1
+STILLIMAGEBUTTON "Control_61448730" "" "" 23 340 24 16 0 0 0 0 35 15 255 0 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱1.tga" 36 1
+STILLIMAGEBUTTON "Control_432142732" "" "" 22 397 25 15 0 0 0 0 37 15 255 0 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱1.tga" 38 1
+STILLIMAGEBUTTON "Control_107277345" "" "" 160 340 24 16 0 0 0 0 39 15 255 255 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱1.tga" 40 1
+LABEL "Txt_Worth1" "" "" 49 340 0 0 41 10 42 255 255 255 255
+LABEL "Txt_Worth2" "" "" 189 340 0 0 43 10 44 255 255 255 255
+LABEL "Txt_Gold" "" "" 79 397 0 0 45 10 46 255 255 255 255

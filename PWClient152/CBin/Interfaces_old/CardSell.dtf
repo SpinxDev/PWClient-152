@@ -1,0 +1,25 @@
+DIALOG "Win_CardSell" 0 0 311 440 0 1 10 "Window\对话框_标准边框x.dds" "" "" 0 0 283 33 "Window\对话框_标准关闭.tga" 59 33 96 96 96 255 1
+EDIT "Img_Title" "" "" 16 25 283 33 "Window\对话框_标题.tga" 2 15 255 255 255 "TEXT" 1 0 20
+IMAGEPICTURE "L" "" "" -6 -2 32 512 1 0 "Window\花纹_L.dds"
+IMAGEPICTURE "U" "" "" 25 -4 512 64 1 0 "Window\花纹_U.dds"
+IMAGEPICTURE "R" "" "" 286 -3 31 512 1 0 "Window\花纹_R.dds"
+IMAGEPICTURE "D" "" "" 25 409 512 32 1 0 "Window\花纹_D.dds"
+STILLIMAGEBUTTON "Btn_Confirm" "confirm" "SFX\Interface\ClickA.wav" 249 165 42 24 0 0 0 0 3 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 4 1
+LABEL "Control_388484460" "" "" 105 29 0 0 5 16 6 255 203 74 255
+LABEL "Control_421641990" "" "" 26 84 0 0 7 10 8 255 203 74 255
+LABEL "Control_159159210" "" "" 25 104 0 0 9 10 10 255 203 74 255
+LABEL "Control_11402355" "" "" 25 124 0 0 11 10 12 255 203 74 255
+STILLIMAGEBUTTON "Btn_Cancel" "IDCANCEL" "" 229 393 60 24 0 0 0 0 13 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 14 1
+LABEL "Control_591767040" "" "" 24 169 0 0 15 10 16 255 203 74 255
+LABEL "Control_189138850" "" "" 135 169 0 0 17 10 18 255 203 74 255
+LIST "Lst_Item" "" "" 25 209 265 180 19 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "90 55 110"
+EDIT "Txt_Price" "" "" 171 167 75 20 "Editbox\文本框_4.tga" 20 10 255 255 255 "TEXT" 0 0 9
+LABEL "Control_196978899" "" "" 116 188 0 0 21 10 22 255 203 74 255
+LABEL "Txt_RestPoint" "" "" 129 85 0 0 23 10 24 255 255 255 255
+LABEL "Txt_SellPoint" "" "" 128 104 0 0 25 10 26 255 255 255 255
+LABEL "Txt_MaxPoint" "" "" 128 124 0 0 27 10 28 255 255 255 255
+STILLIMAGEBUTTON "Btn_CancelSell" "cancelsell" "" 24 394 70 24 0 0 0 0 29 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 30 1
+LABEL "Control_72998380" "" "" 22 146 257 18 31 10 32 131 205 129 255
+LABEL "Control_188988460" "" "" 26 63 97 16 33 10 34 255 203 74 255
+STILLIMAGEBUTTON "Btn_Switch" "" "" 247 60 45 25 0 0 0 0 35 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 36 1
+LABEL "Txt_Stats" "" "" 123 63 120 17 37 10 38 255 255 255 255

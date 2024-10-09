@@ -1,0 +1,47 @@
+	public:
+		int retcode;
+		unsigned char mail_id;
+		unsigned int money_left;
+		unsigned int item_left;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_GETMAILATTACHOBJ_RE };
+	public:
+		GetMailAttachObj_Re() { type = PROTOCOL_GETMAILATTACHOBJ_RE; }
+		GetMailAttachObj_Re(void*) : Protocol(PROTOCOL_GETMAILATTACHOBJ_RE) { }
+		GetMailAttachObj_Re (int l_retcode,unsigned char l_mail_id,unsigned int l_money_left,
+			unsigned int l_item_left,unsigned int l_localsid)
+			 : retcode(l_retcode),mail_id(l_mail_id),money_left(l_money_left),
+			item_left(l_item_left),localsid(l_localsid)
+		{
+			type = PROTOCOL_GETMAILATTACHOBJ_RE;
+		}
+
+		GetMailAttachObj_Re(const GetMailAttachObj_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),mail_id(rhs.mail_id),money_left(rhs.money_left),
+			item_left(rhs.item_left),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new GetMailAttachObj_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << mail_id;
+			os << money_left;
+			os << item_left;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> mail_id;
+			os >> money_left;
+			os >> item_left;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 2048; }

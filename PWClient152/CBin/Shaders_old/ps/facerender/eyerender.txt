@@ -1,0 +1,14 @@
+ps.1.1
+
+tex t0		; base texture
+tex t1		; high texture
+
+; c0 is the eye shadow color
+; c1 is the skin color
+
+mul r0, t0, c1
+mul r1, t1, c0
+lrp r0, t1.a, r1, r0
+mul r0, r0, v0
+add r0.rgb, r0, v1
++mul r0.a, t0.a, v0.a

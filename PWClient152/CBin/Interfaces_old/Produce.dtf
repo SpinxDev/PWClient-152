@@ -1,0 +1,44 @@
+DIALOG "Win_Produce" 0 0 283 400 0 1 -842150451 "/Window/对话框_标准边框1.dds" "" "Window\对话框_标题.tga" 0 0 283 33 "/Window/对话框_标准关闭.tga" 30 6 96 96 96 255 1
+IMAGEPICTURE "L" "" "" -22 -27 32 512 1 0 "Window\花纹_L.dds"
+IMAGEPICTURE "U" "" "" 10 -30 512 64 1 0 "Window\花纹_U.dds"
+IMAGEPICTURE "R" "" "" 272 -28 31 512 1 0 "Window\花纹_R.dds"
+IMAGEPICTURE "D" "" "" 10 400 512 32 1 0 "Window\花纹_D.dds"
+IMAGEPICTURE "Item_out" "" "" 74 337 32 32 1 0 "/Window/图标_物品栏t.dds"
+IMAGEPICTURE "Item_05" "" "" 5 286 32 32 1 0 "/Window/图标_物品栏t.dds"
+IMAGEPICTURE "Item_07" "" "" 143 285 32 32 1 0 "/Window/图标_物品栏t.dds"
+IMAGEPICTURE "Item_08" "" "" 213 285 32 32 1 0 "/Window/图标_物品栏t.dds"
+IMAGEPICTURE "Item_06" "" "" 74 285 32 32 1 0 "/Window/图标_物品栏t.dds"
+IMAGEPICTURE "Item_01" "" "" 5 250 32 32 1 0 "/Window/图标_物品栏t.dds"
+IMAGEPICTURE "Item_03" "" "" 143 248 32 32 1 0 "/Window/图标_物品栏t.dds"
+IMAGEPICTURE "Item_04" "" "" 213 247 32 32 1 0 "/Window/图标_物品栏t.dds"
+IMAGEPICTURE "Item_02" "" "" 74 248 32 32 1 0 "/Window/图标_物品栏t.dds"
+EDIT "Txt_Gold" "" "" 205 226 70 18 "/Editbox/文本框_4b.dds" 2 12 255 255 255 "TEXT" 0 0 256
+STILLIMAGEBUTTON "Btn_Gold" "" "" 179 230 24 15 0 0 0 0 3 15 255 0 255 255 "/Button/按钮_金钱1.tga" "/Button/按钮_金钱1.tga" 4 1
+LABEL "Control_810189505" "" "" 120 11 0 0 5 12 6 255 255 255 255
+STILLIMAGEBUTTON "Btn_Produce" "begin" "SFX\Interface\ClickB.wav" 76 370 65 24 0 0 0 0 7 12 255 255 255 255 "/Button/按钮_文本1.dds" "/Button/按钮_文本2.dds" 8 1
+STILLIMAGEBUTTON "Btn_Cancel" "IDCANCEL" "SFX\Interface\ClickB.wav" 146 370 65 24 0 0 0 0 9 12 255 255 255 255 "/Button/按钮_文本1.dds" "/Button/按钮_文本2.dds" 10 1
+EDIT "Control_121821136" "" "" 5 226 60 18 "/Editbox/文本框_4b.dds" 11 15 255 0 255 "TEXT" 1 0 256
+LABEL "Control_633493056" "" "" 12 229 0 0 12 12 13 255 255 255 255
+EDIT "Txt_Number" "" "" 68 225 38 18 "/Editbox/文本框_4.dds" 14 12 255 255 255 "TEXT" 1 0 256
+STILLIMAGEBUTTON "Btn_Add" "add" "SFX\Interface\ClickB.wav" 106 225 9 9 0 0 0 0 15 15 255 0 255 255 "/Button/按钮_加1.bmp" "/Button/按钮_加2.bmp" 16 1
+STILLIMAGEBUTTON "Btn_Minus" "minus" "SFX\Interface\ClickB.wav" 106 234 9 9 0 0 0 0 17 15 255 0 255 255 "/Button/按钮_减1.bmp" "/Button/按钮_减2.bmp" 18 1
+STILLIMAGEBUTTON "Btn_Max" "max" "SFX\Interface\ClickB.wav" 121 223 40 24 0 0 0 0 19 12 255 255 255 255 "/Button/按钮_文本1.dds" "/Button/按钮_文本2.dds" 20 1
+EDIT "Txt_Produce" "" "" 5 31 80 38 "/Editbox/文本框_4b.dds" 21 12 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_ToolName" "" "" 88 31 190 18 "/Editbox/文本框_4b.dds" 22 12 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_SkillName" "" "" 88 51 85 18 "/Editbox/文本框_4b.dds" 23 12 255 255 255 "TEXT" 1 0 256
+LABEL "Control_137285496" "" "" 177 53 0 0 24 12 25 255 255 255 255
+EDIT "Txt_SkillLevel" "" "" 253 51 24 18 "/Editbox/文本框_4b.dds" 26 12 255 255 255 "TEXT" 1 0 256
+LIST "DEFAULT_Lst_Class" "chooseclass" "" 5 71 65 150 27 12 255 255 255 255 "/Editbox/文本框_4.dds" "/Listbox/列表框_反显.dds" "/Listbox/列表框_上移.bmp" "/Listbox/列表框_下移.bmp" "/Listbox/列表框_滚动槽1.tga" "/Listbox/列表框_拖动按钮1.bmp" 0 "0"
+LIST "Lst_Level" "chooselevel" "" 70 71 90 150 28 12 255 255 255 255 "/Editbox/文本框_4.dds" "/Listbox/列表框_反显.dds" "/Listbox/列表框_上移.bmp" "/Listbox/列表框_下移.bmp" "/Listbox/列表框_滚动槽1.tga" "/Listbox/列表框_拖动按钮1.bmp" 0 "0"
+EDIT "Txt_no1" "" "" 40 264 32 18 "/Editbox/文本框_4b.dds" 29 12 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_no2" "" "" 109 263 32 18 "/Editbox/文本框_4b.dds" 30 12 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_no3" "" "" 178 262 32 18 "/Editbox/文本框_4b.dds" 31 12 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_no4" "" "" 248 261 32 18 "/Editbox/文本框_4b.dds" 32 12 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_no5" "" "" 40 301 32 18 "/Editbox/文本框_4b.dds" 33 12 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_no6" "" "" 109 300 32 18 "/Editbox/文本框_4b.dds" 34 12 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_no7" "" "" 178 300 32 18 "/Editbox/文本框_4b.dds" 35 12 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_no8" "" "" 248 300 32 18 "/Editbox/文本框_4b.dds" 36 12 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_out" "" "" 109 349 65 18 "/Editbox/文本框_4b.dds" 37 12 255 255 255 "TEXT" 1 0 256
+TEXT "Txt_Info" "" "" 162 71 116 150 38 12 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp"
+PROGRESS "Prgs_1" "" "" 4 324 275 6 "Window\对话框_透明色.bmp" "Progress\进度条_棕2.bmp" 0 0 0 0
+LABEL "Control_69509685" "" "" 12 338 0 0 39 12 40 255 255 255 255

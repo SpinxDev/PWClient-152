@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		int gettype;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_AUCTIONATTENDLIST };
+	public:
+		AuctionAttendList() { type = PROTOCOL_AUCTIONATTENDLIST; }
+		AuctionAttendList(void*) : Protocol(PROTOCOL_AUCTIONATTENDLIST) { }
+		AuctionAttendList (int l_roleid,int l_gettype,unsigned int l_localsid)
+			 : roleid(l_roleid),gettype(l_gettype),localsid(l_localsid)
+		{
+			type = PROTOCOL_AUCTIONATTENDLIST;
+		}
+
+		AuctionAttendList(const AuctionAttendList &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),gettype(rhs.gettype),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new AuctionAttendList(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << gettype;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> gettype;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

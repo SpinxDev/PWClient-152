@@ -1,0 +1,17 @@
+DIALOG "Win_SetExp" 0 0 300 120 0 1 10 "Window\对话框_标准边框1.dds" "" "人鱼传说新界面\title.tga" 3 2 295 32 "人鱼传说新界面\面板关闭按钮.tga" 32 5 96 96 96 255 1
+STILLIMAGEBUTTON "Btn_Stop" "stop" "SFX\Interface\ClickB.wav" 60 81 80 24 0 0 0 0 2 10 255 204 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 3 1
+STILLIMAGEBUTTON "Control_196507323" "" "" 6 32 95 20 0 0 0 0 4 15 255 255 255 255 "PQ\按钮1.dds" "PQ\按钮1.dds" 5 1
+STILLIMAGEBUTTON "Control_404128950" "" "" 102 32 95 20 0 0 0 0 6 15 255 255 255 255 "PQ\按钮1.dds" "PQ\按钮1.dds" 7 1
+STILLIMAGEBUTTON "Control_940836728" "" "" 198 32 95 20 0 0 0 0 8 15 255 255 255 255 "PQ\按钮1.dds" "PQ\按钮1.dds" 9 1
+LABEL "Control_346545524" "" "" 13 34 90 20 10 10 11 255 204 74 255
+LABEL "Control_1659379" "" "" 109 34 90 20 12 10 13 255 204 74 255
+LABEL "Control_127517408" "" "" 206 34 90 20 14 10 15 255 204 74 255
+STILLIMAGEBUTTON "Control_464256672" "" "" 6 52 95 20 0 0 0 0 16 15 255 255 255 255 "PQ\按钮1.dds" "PQ\按钮1.dds" 17 1
+STILLIMAGEBUTTON "Control_179461008" "" "" 102 52 95 20 0 0 0 0 18 15 255 255 255 255 "PQ\按钮1.dds" "PQ\按钮1.dds" 19 1
+LABEL "Txt_Time" "" "" 15 54 80 0 20 10 21 255 204 74 255
+LABEL "Txt_Wait" "" "" 111 54 80 0 22 10 23 255 204 74 255
+LABEL "Txt_Over" "" "" 207 54 80 0 24 10 25 255 204 74 255
+STILLIMAGEBUTTON "Btn_Begin" "begin" "SFX\Interface\ClickB.wav" 158 81 80 24 0 0 0 0 26 10 255 204 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 27 1
+LABEL "Lab_Title" "" "" 115 4 128 22 28 16 29 255 203 74 255
+STILLIMAGEBUTTON "Control_49889645" "" "" 198 52 95 20 0 0 0 0 30 15 255 255 255 255 "PQ\按钮1.dds" "PQ\按钮1.dds" 31 1
+STILLIMAGEBUTTON "Btn_help" "help" "" 243 2 25 31 0 0 0 0 32 15 255 255 255 255 "Button\B-03.tga" "Button\B-03按下.tga" 33 1

@@ -1,0 +1,59 @@
+#ifndef __GNET_ADDFRIENDRQSTRES_RPCDATA
+#define __GNET_ADDFRIENDRQSTRES_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class AddFriendRqstRes : public GNET::Rpc::Data
+	{
+	public:
+		char retcode;
+
+	public:
+		AddFriendRqstRes (char l_retcode = 0)
+			: retcode(l_retcode)
+		{
+		}
+
+		AddFriendRqstRes(const AddFriendRqstRes &rhs)
+			: retcode(rhs.retcode) { }
+
+		Rpc::Data *Clone() const { return new AddFriendRqstRes(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const AddFriendRqstRes *r = dynamic_cast<const AddFriendRqstRes *>(&rhs);
+			if (r && r != this)
+			{
+				retcode = r->retcode;
+			}
+			return *this;
+		}
+
+		AddFriendRqstRes& operator = (const AddFriendRqstRes &rhs)
+		{
+			const AddFriendRqstRes *r = &rhs;
+			if (r && r != this)
+			{
+				retcode = r->retcode;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			return os;
+		}
+
+	};
+};
+#endif

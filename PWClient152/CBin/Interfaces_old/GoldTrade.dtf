@@ -1,0 +1,52 @@
+DIALOG "Win_GoldTrade" 0 0 640 471 0 1 10 "Window\对话框_标准边框x.dds" "" "" 0 0 -1 -1 "人鱼传说新界面\面板关闭按钮.tga" 47 30 96 96 96 255 1
+EDIT "titleimg" "" "" 17 23 610 37 "人鱼传说新界面\title.tga" 2 16 255 255 255 "TEXT" 1 0 20
+LABEL "Title" "" "" 258 31 0 0 3 16 4 255 203 74 255
+IMAGEPICTURE "Control_210081121" "" "" 4 0 634 471 1 0 "人鱼传说新界面\大.dds"
+EDIT "Shape1" "" "" 26 86 335 172 "LoginUIHintFrame.dds" 5 10 255 255 255 "TEXT" 1 0 20
+STILLIMAGEBUTTON "Btn_Buy" "buy" "" 26 63 92 24 0 0 0 0 6 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 7 1
+STILLIMAGEBUTTON "Btn_Sell" "sell" "" 119 63 92 24 0 0 0 0 8 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 9 1
+LABEL "Lab_Sell01" "" "" 87 151 0 0 10 10 11 255 203 74 255
+LABEL "Lab_Sella1" "" "" 87 151 0 0 12 10 13 255 203 74 255
+EDIT "Txt_Num" "" "" 151 149 120 20 "Editbox\文本框_4.dds" 14 10 255 255 255 "TEXT" 0 0 4
+LABEL "Lab_Sell02" "" "" 276 151 0 0 15 10 16 255 203 74 255
+LABEL "Lab_Sell03" "" "" 88 114 0 0 17 10 18 255 203 74 255
+STILLIMAGEBUTTON "Btn_Money" "choosemoney" "" 119 115 24 16 0 0 0 0 19 10 255 255 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱2.tga" 20 1
+LABEL "Lab_Sell04" "" "" 87 186 0 0 21 10 22 255 203 74 255
+LABEL "Lab_Sella4" "" "" 87 186 0 0 23 10 24 255 203 74 255
+LABEL "Lab_Sell05" "" "" 93 216 0 0 25 10 26 255 203 74 255
+LABEL "Txt_Poundage" "" "" 153 217 0 0 27 10 28 255 255 255 255
+EDIT "Shape2" "" "" 26 258 335 150 "LoginUIHintFrame.dds" 29 10 255 255 255 "TEXT" 1 0 20
+LABEL "Lab_Sell06" "" "" 101 306 0 0 30 10 31 255 203 74 255
+LABEL "Lab_Sell07" "" "" 61 278 0 0 32 10 33 255 203 74 255
+LABEL "Txt_Gold" "" "" 152 306 0 0 34 10 35 255 255 255 255
+LABEL "Lab_Sell09" "" "" 101 332 0 0 36 10 37 255 203 74 255
+STILLIMAGEBUTTON "Btn_In" "accountsave" "" 116 364 72 24 0 0 0 0 38 10 255 255 255 255 "ButtonFrameUp.bmp" "ButtonFrameDown.bmp" 39 1
+STILLIMAGEBUTTON "Btn_Out" "accountload" "" 197 364 72 24 0 0 0 0 40 10 255 255 255 255 "ButtonFrameUp.bmp" "ButtonFrameDown.bmp" 41 1
+STILLIMAGEBUTTON "Btn_Inquire" "inquire" "" 26 421 117 27 0 0 0 0 42 10 255 255 255 255 "ButtonFrameUp.bmp" "ButtonFrameDown.bmp" 43 1
+LIST "Lst_Sell" "" "" 367 86 249 150 44 10 255 255 255 255 "LoginUIHintFrame.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "+105 +54 +78"
+LIST "Lst_Buy" "" "" 367 258 249 150 45 10 255 255 255 255 "LoginUIHintFrame.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "+105 +54 +78"
+STILLIMAGEBUTTON "Btn_Refresh" "refresh" "" 146 421 45 27 0 0 0 0 46 10 255 255 255 255 "ButtonFrameUp.bmp" "ButtonFrameDown.bmp" 47 1
+LABEL "Lab_Sell16" "" "" 451 415 0 0 48 10 49 255 203 74 255
+LABEL "Lab_Sell17" "" "" 367 428 0 0 50 10 51 255 203 74 255
+LABEL "Txt_Gold1" "" "" 488 415 0 0 52 10 53 255 255 255 255
+LABEL "Lab_Sell19" "" "" 451 438 0 0 54 10 55 255 203 74 255
+STILLIMAGEBUTTON "Btn_Consign" "confirm" "" 246 213 72 24 0 0 0 0 56 10 255 255 255 255 "ButtonFrameUp.bmp" "ButtonFrameDown.bmp" 57 1
+EDIT "Txt_Money1" "" "" 151 113 120 20 "Editbox\文本框_4.dds" 58 10 255 255 255 "TEXT" 0 0 9
+EDIT "Txt_Money2" "" "" 151 185 120 20 "Window\对话框_透明色.bmp" 59 10 255 255 255 "TEXT" 1 0 20
+EDIT "Txt_Money4" "" "" 152 331 120 20 "Window\对话框_透明色.bmp" 60 10 255 255 255 "TEXT" 1 0 20
+EDIT "Txt_Money5" "" "" 488 437 100 20 "Window\对话框_透明色.bmp" 61 10 255 255 255 "TEXT" 1 0 10
+LABEL "Txt_Lock" "" "" 193 427 120 16 62 10 63 255 128 0 255
+STILLIMAGEBUTTON "Btn_Unlock" "unlock" "" 316 421 45 27 0 0 0 0 64 10 255 128 0 255 "ButtonFrameUp.bmp" "ButtonFrameDown.bmp" 65 1
+STILLIMAGEBUTTON "Btn_Pwd" "pwd" "" 236 63 125 24 0 0 0 0 66 10 0 255 255 255 "ButtonFrameUp.bmp" "ButtonFrameDown.bmp" 67 1
+EDIT "Shape_b1" "" "" 367 236 105 22 "LoginUIHintFrame.dds" 68 10 255 255 255 "TEXT" 1 0 20
+LABEL "lb_b1" "" "" 371 239 79 15 69 10 70 255 203 74 255
+EDIT "Shape_b2" "" "" 471 236 41 22 "LoginUIHintFrame.dds" 71 10 255 255 255 "TEXT" 1 0 20
+LABEL "lb_b2" "" "" 477 239 28 16 72 10 73 255 203 74 255
+EDIT "Shape_b3" "" "" 511 236 105 22 "LoginUIHintFrame.dds" 74 10 255 255 255 "TEXT" 1 0 20
+LABEL "lb_b3" "" "" 532 239 81 15 75 10 76 255 203 74 255
+EDIT "Shape_a1" "" "" 367 65 105 22 "LoginUIHintFrame.dds" 77 10 255 255 255 "TEXT" 1 0 20
+LABEL "lb_a1" "" "" 371 68 79 15 78 10 79 255 203 74 255
+EDIT "Shape_a2" "" "" 471 65 41 22 "LoginUIHintFrame.dds" 80 10 255 255 255 "TEXT" 1 0 20
+LABEL "lb_a2" "" "" 477 68 28 16 81 10 82 255 203 74 255
+EDIT "Shape_a3" "" "" 511 65 105 22 "LoginUIHintFrame.dds" 83 10 255 255 255 "TEXT" 1 0 20
+LABEL "lb_a3" "" "" 532 68 81 15 84 10 85 255 203 74 255

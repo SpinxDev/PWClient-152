@@ -1,0 +1,44 @@
+	public:
+		int retcode;
+		int gmroleid;
+		int localsid;
+		char enable;
+		enum { PROTOCOL_TYPE = PROTOCOL_GMTOGGLECHAT_RE };
+	public:
+		GMToggleChat_Re() { type = PROTOCOL_GMTOGGLECHAT_RE; }
+		GMToggleChat_Re(void*) : Protocol(PROTOCOL_GMTOGGLECHAT_RE) { }
+		GMToggleChat_Re (int l_retcode,int l_gmroleid,int l_localsid,
+			char l_enable)
+			 : retcode(l_retcode),gmroleid(l_gmroleid),localsid(l_localsid),
+			enable(l_enable)
+		{
+			type = PROTOCOL_GMTOGGLECHAT_RE;
+		}
+
+		GMToggleChat_Re(const GMToggleChat_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),gmroleid(rhs.gmroleid),localsid(rhs.localsid),
+			enable(rhs.enable) { }
+
+		GNET::Protocol *Clone() const { return new GMToggleChat_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << gmroleid;
+			os << localsid;
+			os << enable;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> gmroleid;
+			os >> localsid;
+			os >> enable;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

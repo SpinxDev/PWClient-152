@@ -1,0 +1,50 @@
+	public:
+		int roleid;
+		char goal_type;
+		char op;
+		int goal_id;
+		int retcode;
+		int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_AUTOTEAMSETGOAL_RE };
+	public:
+		AutoTeamSetGoal_Re() { type = PROTOCOL_AUTOTEAMSETGOAL_RE; }
+		AutoTeamSetGoal_Re(void*) : Protocol(PROTOCOL_AUTOTEAMSETGOAL_RE) { }
+		AutoTeamSetGoal_Re (int l_roleid,char l_goal_type,char l_op,
+			int l_goal_id,int l_retcode,int l_localsid)
+			 : roleid(l_roleid),goal_type(l_goal_type),op(l_op)
+			,goal_id(l_goal_id),retcode(l_retcode),localsid(l_localsid)
+		{
+			type = PROTOCOL_AUTOTEAMSETGOAL_RE;
+		}
+
+		AutoTeamSetGoal_Re(const AutoTeamSetGoal_Re &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),goal_type(rhs.goal_type),op(rhs.op)
+			,goal_id(rhs.goal_id),retcode(rhs.retcode),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new AutoTeamSetGoal_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << goal_type;
+			os << op;
+			os << goal_id;
+			os << retcode;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> goal_type;
+			os >> op;
+			os >> goal_id;
+			os >> retcode;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

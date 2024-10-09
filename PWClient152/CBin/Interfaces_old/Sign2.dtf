@@ -1,0 +1,2 @@
+DIALOG "Sign2" 0 0 15 15 0 1 10 "Window\对话框_透明色.bmp" "" "" 0 0 -1 -1 "" 0 0 96 96 96 255 1
+IMAGEPICTURE "Sign" "" "" 0 0 15 15 1 0 "Window\小队聊天.bmp"

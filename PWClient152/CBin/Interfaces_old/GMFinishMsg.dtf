@@ -1,0 +1,7 @@
+DIALOG "Win_GMFinishMsg" 0 0 315 371 0 1 10 "Window\对话框_标准边框.dds" "" "Window\对话框_透明色.bmp" 0 12 -1 -1 "" 28 6 255 255 128 255 1
+LIST "lbxCommand" "select_command" "" 21 148 270 149 2 10 255 255 255 255 "Editbox\文本框_4e.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LABEL "Win_GMFinishMsg" "" "" 22 130 118 18 3 10 4 255 255 255 255
+STILLIMAGEBUTTON "btnOK" "ok" "" 22 323 94 28 0 0 0 0 5 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 6 1
+STILLIMAGEBUTTON "btnCancel" "cancel" "" 197 323 94 28 0 0 0 0 7 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 8 1
+LABEL "Control_193207030" "" "" 21 30 100 16 9 10 10 255 255 255 255
+LABEL "lblMsg" "" "" 21 51 270 72 11 15 12 255 255 128 255

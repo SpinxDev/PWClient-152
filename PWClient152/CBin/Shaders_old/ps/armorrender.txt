@@ -1,0 +1,12 @@
+ps.1.1
+
+tex t0		; base texture
+tex t1		; reflect texture
+
+mul r0.rgb, t0, v0
+mul r1, v1, t0.a
+add r0.rgb, r0, r1
++mov r0.a, v0.a
+mul r1, t1, t0.a
+mul r1, r1, v0
+add r0.rgb, r0, r1

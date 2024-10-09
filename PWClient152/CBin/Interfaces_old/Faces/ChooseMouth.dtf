@@ -1,0 +1,41 @@
+DIALOG "Win_ChooseMouth" 0 0 250 480 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "Window\对话框_标准关闭.tga" 26 5 96 96 96 255 1
+LABEL "Control_620196584" "" "" 83 2 84 23 2 16 3 255 203 74 255
+STILLIMAGEBUTTON "Control_716737528" "Reset" "" 195 449 48 24 0 0 0 0 4 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 5 1
+IMAGEPICTURE "Control_40704000" "" "" 40 273 200 3 1 0 "Window\分隔线.tga"
+STILLIMAGEBUTTON "Control_69605439" "ChooseFace" "" 0 48 38 48 0 0 0 0 6 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 7 1
+STILLIMAGEBUTTON "Control_588733145" "ChooseEye" "" 0 96 38 48 0 0 0 0 8 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 9 1
+STILLIMAGEBUTTON "Control_368912370" "ChooseEyebrow" "" 0 144 38 48 0 0 0 0 10 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 11 1
+STILLIMAGEBUTTON "Control_120048474" "ChooseNose" "" 0 192 38 48 0 0 0 0 12 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 13 1
+STILLIMAGEBUTTON "Btm_ChooseMouth" "ChooseMouth" "" 0 240 38 48 0 0 0 0 14 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 15 1
+STILLIMAGEBUTTON "Control_332562581" "ChooseEar" "" 0 288 38 48 0 0 0 0 16 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 17 1
+STILLIMAGEBUTTON "Control_78047744" "ChooseHair" "" 0 336 38 48 0 0 0 0 18 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 19 1
+STILLIMAGEBUTTON "Control_193291245" "ChooseFacePainting" "" 0 384 38 48 0 0 0 0 20 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 21 1
+STILLIMAGEBUTTON "Btm_ChooseMouthUpLipLine" "ChooseBaseUpLipLine" "" 62 33 55 30 0 0 0 0 22 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 23 1
+STILLIMAGEBUTTON "Btm_ChooseMouthMidLipLine" "ChooseBaseMiddleLipLine" "" 117 33 48 30 0 0 0 0 24 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 25 1
+STILLIMAGEBUTTON "Btm_ChooseMouthDownLipLine" "ChooseBaseDownLipLine" "" 165 33 55 30 0 0 0 0 26 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 27 1
+LABEL "Control_56611132" "" "" 41 144 94 14 28 10 29 255 255 255 255
+SLIDER "Slider_ThickUpLip" "MoveSlider" "" 41 162 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Control_738259240" "" "" 42 174 101 15 30 10 31 255 255 255 255
+SLIDER "Slider_ThickDownLip" "MoveSlider" "" 41 191 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Control_31125845" "" "" 42 209 108 14 32 10 33 255 255 255 255
+SLIDER "Slider_ScaleMouthH" "MoveSlider_ScaleMouthH" "" 42 226 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Control_6390768" "" "" 42 280 120 14 34 10 35 255 255 255 255
+SLIDER "Slider_OffsetMouthV" "MoveSlider" "" 41 298 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Control_16549500" "" "" 42 309 119 14 36 10 37 255 255 255 255
+SLIDER "Slider_OffsetMouthZ" "MoveSlider" "" 41 327 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LIST "ListBox_UpLipLine" "" "" 40 68 200 65 38 10 0 0 0 255 "Editbox\文本框_4b.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LIST "ListBox_MidLipLine" "" "" 40 68 200 65 39 10 0 0 0 255 "Editbox\文本框_4b.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LIST "ListBox_DownLipLine" "" "" 40 68 200 65 40 10 0 0 0 255 "Editbox\文本框_4b.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+SLIDER "Slider_OffsetCornerOfMouthSpecial" "MoveSlider_OffsetCornerOfMouthSpecial" "" 41 366 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Control_49734531" "" "" 42 346 94 14 41 10 42 255 255 255 255
+STILLIMAGEBUTTON "Control_113658076" "ChooseStature" "" 0 432 38 48 0 0 0 0 43 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 44 1
+STILLIMAGEBUTTON "Control_466924260" "ChoosePreCustomize" "" 0 0 38 48 0 0 0 0 45 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 46 1
+SLIDER "Slider_OffsetCornerOfMouthSpecial2" "MoveSlider_OffsetCornerOfMouthSpecial2" "" 42 393 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Control_538059544" "" "" 41 377 98 14 47 10 48 255 255 255 255
+LABEL "Control_59456334" "" "" 41 239 119 14 49 10 50 255 255 255 255
+SLIDER "Slider_ScaleMouthH2" "MoveSlider_ScaleMouthH2" "" 42 255 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+CHECK "CheckBox_ScaleMouthH" "" "" 162 207 18 18 "Extra\复选框_标准.tga"
+CHECK "CheckBox_OffsetCornerOfMouthSpecial" "" "" 160 345 18 18 "Extra\复选框_标准.tga"
+LABEL "Control_12097471" "" "" 184 209 59 14 51 10 52 255 255 255 255
+LABEL "Control_47360082" "" "" 182 347 58 14 53 10 54 255 255 255 255
+IMAGEPICTURE "Control_82950052" "" "" 40 139 200 3 1 0 "Window\分隔线.tga"

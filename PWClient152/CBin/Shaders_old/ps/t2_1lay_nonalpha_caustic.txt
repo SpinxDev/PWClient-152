@@ -1,0 +1,17 @@
+; Pixel shader used by A3DTerrain2. This shader blend one terrain layer with vertex color
+
+; t0, layer's normal texture
+; t1, layer's mask texture (without alpha channel)
+; t2, layer's caustic map
+; c1, cautic brightness
+
+ps.1.1
+
+tex t0
+tex t1
+tex t2
+
+mul r1, t2_bx2, c1.a
+;mul r1, r1, r1
+add r0, r1, t0
+mov r0.a, t1.b

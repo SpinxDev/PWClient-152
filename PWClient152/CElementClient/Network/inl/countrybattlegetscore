@@ -1,0 +1,35 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_COUNTRYBATTLEGETSCORE };
+	public:
+		CountryBattleGetScore() { type = PROTOCOL_COUNTRYBATTLEGETSCORE; }
+		CountryBattleGetScore(void*) : Protocol(PROTOCOL_COUNTRYBATTLEGETSCORE) { }
+		CountryBattleGetScore (int l_roleid,unsigned int l_localsid)
+			 : roleid(l_roleid),localsid(l_localsid)
+		{
+			type = PROTOCOL_COUNTRYBATTLEGETSCORE;
+		}
+
+		CountryBattleGetScore(const CountryBattleGetScore &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new CountryBattleGetScore(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 16; }

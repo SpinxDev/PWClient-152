@@ -1,0 +1,44 @@
+	public:
+		unsigned short roomid;
+		int roleid;
+		int owner;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_CHATROOMEXPEL };
+	public:
+		ChatRoomExpel() { type = PROTOCOL_CHATROOMEXPEL; }
+		ChatRoomExpel(void*) : Protocol(PROTOCOL_CHATROOMEXPEL) { }
+		ChatRoomExpel (unsigned short l_roomid,int l_roleid,int l_owner,
+			unsigned int l_localsid)
+			 : roomid(l_roomid),roleid(l_roleid),owner(l_owner),
+			localsid(l_localsid)
+		{
+			type = PROTOCOL_CHATROOMEXPEL;
+		}
+
+		ChatRoomExpel(const ChatRoomExpel &rhs)
+			: Protocol(rhs),roomid(rhs.roomid),roleid(rhs.roleid),owner(rhs.owner),
+			localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new ChatRoomExpel(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roomid;
+			os << roleid;
+			os << owner;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roomid;
+			os >> roleid;
+			os >> owner;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

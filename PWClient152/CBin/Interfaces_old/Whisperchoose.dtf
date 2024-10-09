@@ -1,0 +1,2 @@
+DIALOG "Win_WhisperChoose" 0 0 160 90 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 400 33 "" 30 6 96 96 96 150 1
+LIST "List" "list" "SFX\Interface\ClickB.wav" 6 5 150 81 2 10 255 255 255 255 "Window\对话框_透明色.bmp" "Listbox\列表框_反显.dds" "Listbox\列表框_无.bmp" "Listbox\列表框_无.bmp" "Listbox\列表框_滚动槽1s.tga" "Listbox\列表框_拖动按钮1u.bmp" 0 "0"

@@ -1,0 +1,13 @@
+;  edge rendering used by A3DTerrainWater. 
+
+; t0, position in water surface space, t0.y is the delta height * -1.0f
+
+ps.1.4
+
+def c1, 1.0, 1.0, 1.0, 1.0
+
+texcrd	r1.xyz, t0.xyz
+
+mov r0.rgb, c1
++mov_sat r0.a, r1.y
+

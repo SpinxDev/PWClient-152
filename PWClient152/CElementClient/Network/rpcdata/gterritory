@@ -1,0 +1,100 @@
+#ifndef __GNET_GTERRITORY_RPCDATA
+#define __GNET_GTERRITORY_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GTerritory : public GNET::Rpc::Data
+	{
+	public:
+		char id;
+		char level;
+		char color;
+		unsigned int owner;
+		unsigned int challenger;
+		unsigned int battle_time;
+		int deposit;
+		int maxbonus;
+
+	public:
+		GTerritory (char l_id = 0,char l_level = 0,char l_color = 0
+			,unsigned int l_owner = 0,unsigned int l_challenger = 0,unsigned int l_battle_time = 0
+			,int l_deposit = 0,int l_maxbonus = 0)
+			: id(l_id),level(l_level),color(l_color)
+			,owner(l_owner),challenger(l_challenger),battle_time(l_battle_time)
+			,deposit(l_deposit),maxbonus(l_maxbonus)
+		{
+		}
+
+		GTerritory(const GTerritory &rhs)
+			: id(rhs.id),level(rhs.level),color(rhs.color),
+			owner(rhs.owner),challenger(rhs.challenger),battle_time(rhs.battle_time),
+			deposit(rhs.deposit),maxbonus(rhs.maxbonus) { }
+
+		Rpc::Data *Clone() const { return new GTerritory(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GTerritory *r = dynamic_cast<const GTerritory *>(&rhs);
+			if (r && r != this)
+			{
+				id = r->id;
+				level = r->level;
+				color = r->color;
+				owner = r->owner;
+				challenger = r->challenger;
+				battle_time = r->battle_time;
+				deposit = r->deposit;
+				maxbonus = r->maxbonus;
+			}
+			return *this;
+		}
+
+		GTerritory& operator = (const GTerritory &rhs)
+		{
+			const GTerritory *r = &rhs;
+			if (r && r != this)
+			{
+				id = r->id;
+				level = r->level;
+				color = r->color;
+				owner = r->owner;
+				challenger = r->challenger;
+				battle_time = r->battle_time;
+				deposit = r->deposit;
+				maxbonus = r->maxbonus;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << id;
+			os << level;
+			os << color;
+			os << owner;
+			os << challenger;
+			os << battle_time;
+			os << deposit;
+			os << maxbonus;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> id;
+			os >> level;
+			os >> color;
+			os >> owner;
+			os >> challenger;
+			os >> battle_time;
+			os >> deposit;
+			os >> maxbonus;
+			return os;
+		}
+
+	};
+};
+#endif

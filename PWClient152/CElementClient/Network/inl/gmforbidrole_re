@@ -1,0 +1,44 @@
+	public:
+		int retcode;
+		unsigned char fbd_type;
+		int dstroleid;
+		int forbid_time;
+		enum { PROTOCOL_TYPE = PROTOCOL_GMFORBIDROLE_RE };
+	public:
+		GMForbidRole_Re() { type = PROTOCOL_GMFORBIDROLE_RE; }
+		GMForbidRole_Re(void*) : Protocol(PROTOCOL_GMFORBIDROLE_RE) { }
+		GMForbidRole_Re (int l_retcode,unsigned char l_fbd_type,int l_dstroleid,
+			int l_forbid_time)
+			 : retcode(l_retcode),fbd_type(l_fbd_type),dstroleid(l_dstroleid),
+			forbid_time(l_forbid_time)
+		{
+			type = PROTOCOL_GMFORBIDROLE_RE;
+		}
+
+		GMForbidRole_Re(const GMForbidRole_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),fbd_type(rhs.fbd_type),dstroleid(rhs.dstroleid),
+			forbid_time(rhs.forbid_time) { }
+
+		GNET::Protocol *Clone() const { return new GMForbidRole_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << fbd_type;
+			os << dstroleid;
+			os << forbid_time;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> fbd_type;
+			os >> dstroleid;
+			os >> forbid_time;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		int sellid;
+		enum { PROTOCOL_TYPE = PROTOCOL_SELLCANCEL };
+	public:
+		SellCancel() { type = PROTOCOL_SELLCANCEL; }
+		SellCancel(void*) : Protocol(PROTOCOL_SELLCANCEL) { }
+		SellCancel (int l_roleid,unsigned int l_localsid = 0,int l_sellid = 0)
+			 : roleid(l_roleid),localsid(l_localsid),sellid(l_sellid)
+		{
+			type = PROTOCOL_SELLCANCEL;
+		}
+
+		SellCancel(const SellCancel &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid),sellid(rhs.sellid) { }
+
+		GNET::Protocol *Clone() const { return new SellCancel(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << sellid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> sellid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

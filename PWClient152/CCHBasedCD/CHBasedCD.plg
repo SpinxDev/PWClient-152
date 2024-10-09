@@ -1,0 +1,87 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: CHBasedCD - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\Wanmei\AppData\Local\Temp\RSPFEEA.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /I "..\..\..\SDK\3rdSDK\include" /I "..\..\..\SDK\A3DSDK\Include" /I "..\..\..\SDK\acsdk\Include" /I "..\..\..\SDK\afsdk\include" /I "..\..\..\SDK\Amsdk\include" /I "..\..\..\SDK\Apsdk\Include" /I "..\..\..\GfxCommon\Output\include" /I "..\..\..\AUInterface2" /I "..\..\..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\Foundation\include" /I "..\..\..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\Cooking\include" /I "..\..\..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\Physics\include" /I "..\..\..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\PhysXLoader\include" /I "..\include\stlport" /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /Fp"Release/CHBasedCD.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\CPW_DevLatest_ElementClientVSS\CElement\CCHBasedCD\2DGiftWrap.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\CCHBasedCD\2DObstruct.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\CCHBasedCD\aabbcd.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\CCHBasedCD\CDWithCH.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\CCHBasedCD\CombGenerator.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\CCHBasedCD\ConvexHullAlgorithm.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\CCHBasedCD\ConvexHullData.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\CCHBasedCD\ConvexPolytope.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\CCHBasedCD\EdgeStack.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\CCHBasedCD\Face.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\CCHBasedCD\GiftWrap.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\CCHBasedCD\HalfSpace.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\CCHBasedCD\LEquations.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\CCHBasedCD\Matrix.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\CCHBasedCD\Patch.cpp"
+"C:\CPW_DevLatest_ElementClientVSS\CElement\CCHBasedCD\RightPrism.cpp"
+]
+Creating command line "cl.exe @C:\Users\Wanmei\AppData\Local\Temp\RSPFEEA.tmp" 
+Creating temporary file "C:\Users\Wanmei\AppData\Local\Temp\RSPFEEB.tmp" with contents
+[
+/nologo /out:"Release\CHBasedCD.lib" 
+.\Release\2DGiftWrap.obj
+.\Release\2DObstruct.obj
+.\Release\aabbcd.obj
+.\Release\CDWithCH.obj
+.\Release\CombGenerator.obj
+.\Release\ConvexHullAlgorithm.obj
+.\Release\ConvexHullData.obj
+.\Release\ConvexPolytope.obj
+.\Release\EdgeStack.obj
+.\Release\Face.obj
+.\Release\GiftWrap.obj
+.\Release\HalfSpace.obj
+.\Release\LEquations.obj
+.\Release\Matrix.obj
+.\Release\Patch.obj
+.\Release\RightPrism.obj
+]
+Creating command line "link.exe -lib @C:\Users\Wanmei\AppData\Local\Temp\RSPFEEB.tmp"
+<h3>Output Window</h3>
+Compiling...
+2DGiftWrap.cpp
+2DObstruct.cpp
+aabbcd.cpp
+CDWithCH.cpp
+CombGenerator.cpp
+ConvexHullAlgorithm.cpp
+ConvexHullData.cpp
+ConvexPolytope.cpp
+EdgeStack.cpp
+Face.cpp
+GiftWrap.cpp
+HalfSpace.cpp
+LEquations.cpp
+Matrix.cpp
+Patch.cpp
+RightPrism.cpp
+Creating library...
+Creating temporary file "C:\Users\Wanmei\AppData\Local\Temp\RSP230F.bat" with contents
+[
+@echo off
+xcopy release\*.lib ..\lib\cd\ /R /Y /Q
+xcopy *.h ..\include\cd\ /R /Y /Q
+]
+Creating command line "C:\Users\Wanmei\AppData\Local\Temp\RSP230F.bat"
+
+复制了 1 个文件
+复制了 16 个文件
+
+
+
+<h3>Results</h3>
+CHBasedCD.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

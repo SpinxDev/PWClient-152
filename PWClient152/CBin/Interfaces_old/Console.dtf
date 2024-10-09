@@ -1,0 +1,4 @@
+DIALOG "Dlg_Console" 0 0 600 200 102 1 10 "" "" "" 65 11 -1 -1 "" 0 0 32 32 32 192 1
+
+CONSOLE "Command_Edit" "" "" 15 10 770 180 1 10
+EDIT "DEFAULT_Command" "Command_Edit" "" 92 149 210 21 "Window\对话框_透明色.bmp" 1 10 255 255 255 "TEXT" 0 0 256

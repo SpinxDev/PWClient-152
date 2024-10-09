@@ -1,0 +1,3 @@
+DIALOG "Win_AccountTime" 0 0 238 0 0 1 10 "" "" "" 0 0 -1 -1 "" 0 0 96 96 96 0 1
+LABEL "Message" "" "" 0 1 238 20 2 10 3 255 203 74 255
+IMAGEPICTURE "Back" "" "" 0 0 238 20 1 0 "Window\对话框_透明色3.tga"

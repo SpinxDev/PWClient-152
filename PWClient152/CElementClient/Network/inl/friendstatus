@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		char status;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_FRIENDSTATUS };
+	public:
+		FriendStatus() { type = PROTOCOL_FRIENDSTATUS; }
+		FriendStatus(void*) : Protocol(PROTOCOL_FRIENDSTATUS) { }
+		FriendStatus (int l_roleid,char l_status,unsigned int l_localsid)
+			 : roleid(l_roleid),status(l_status),localsid(l_localsid)
+		{
+			type = PROTOCOL_FRIENDSTATUS;
+		}
+
+		FriendStatus(const FriendStatus &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),status(rhs.status),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new FriendStatus(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << status;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> status;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

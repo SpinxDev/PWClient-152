@@ -1,0 +1,65 @@
+#ifndef __GNET_REWARDITEM_RPCDATA
+#define __GNET_REWARDITEM_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class RewardItem : public GNET::Rpc::Data
+	{
+	public:
+		int reward_time;
+		int reward_bonus;
+
+	public:
+		RewardItem (int l_reward_time = 0,int l_reward_bonus = 0)
+			: reward_time(l_reward_time),reward_bonus(l_reward_bonus)
+		{
+		}
+
+		RewardItem(const RewardItem &rhs)
+			: reward_time(rhs.reward_time),reward_bonus(rhs.reward_bonus) { }
+
+		Rpc::Data *Clone() const { return new RewardItem(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const RewardItem *r = dynamic_cast<const RewardItem *>(&rhs);
+			if (r && r != this)
+			{
+				reward_time = r->reward_time;
+				reward_bonus = r->reward_bonus;
+			}
+			return *this;
+		}
+
+		RewardItem& operator = (const RewardItem &rhs)
+		{
+			const RewardItem *r = &rhs;
+			if (r && r != this)
+			{
+				reward_time = r->reward_time;
+				reward_bonus = r->reward_bonus;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << reward_time;
+			os << reward_bonus;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> reward_time;
+			os >> reward_bonus;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<RewardItem>	RewardItemVector;
+};
+#endif

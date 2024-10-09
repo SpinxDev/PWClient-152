@@ -1,0 +1,264 @@
+完美国际命令行
+
+·d_cameramode
+格式：d_cameramode
+功能：临时相机模式，鼠标右键操纵可环视四周
+
+·d_boundbox
+格式：d_boundbox
+功能：显示包围盒
+
+·d_rtdebug
+格式：d_rtdebug p0[,p1]
+功能：显示调试信息
+参数：p0，可表示等级，取值0，1，2，此时无p1；p0为list时，表示查看当前屏蔽显示的协议列表，此时无p1；p0为show或hide时，跟随p1，p1取值协议字符名称，如OBJECT_MOVE
+例子：
+d_rtdebug 1
+d_rtdebug hide OBJECT_MOVE
+d_rtdebug show OBJECT_MOVE
+d_rtdebug list
+
+·d_npcid
+格式：d_npcid
+功能：在 NPC 头顶显示生成 id
+
+·d_runspeed
+已无效
+
+·d_goto
+格式：d_goto p0, p1 [,p2]
+功能：跳到当前地图指定位置（绝对坐标），或跳到当前地图指定地图块
+参数：无p2时p0、p1为绝对x,z坐标，p2存在且为1时p0为当前地图行数（从上往下从0递增）、p1为当前地图列数（从左往右从0递增）
+
+·d_fly
+已无效
+
+·d_c2scmd
+格式：d_c2scmd p0[, p1, ..., p8]
+功能：服务器端命令，带1~9个参数，由服务器端决定
+
+·d_viewradius
+格式：d_viewradius p0
+功能：场景加载范围
+参数：p0 为加载半径值，不小于能看到的范围半径时才有效
+
+·d_relogin
+格式：d_relogin
+功能：小退
+
+·d_skill
+格式：d_skill p0
+功能：以技能 id 调用玩家主动技能（需满足技能使用条件）
+参数：p0 为主动技能 id
+
+·d_render_water
+格式：d_render_water p0
+功能：设置水面效果等级
+参数：p0 取值0，1，2
+
+·d_render_grass
+格式：d_render_grass
+功能：切换草的显示
+
+·d_render_forest
+格式：d_render_forest
+功能：切换树木的显示
+
+·d_render_outline
+已无效
+
+·d_turnaround
+格式：d_turnaround
+功能：A、D切换转换（同游戏设置中选项）
+
+·d_testdist
+格式：d_testdist
+功能：切换显示鼠标所在位置对应游戏中的地点与相机之间距离
+
+·d_gfx
+格式：d_gfx p0[, p1, p2]
+功能：丢GFX
+参数：带1~3个参数
+p0 为GFX 文件路径
+p1 取值1或2，为1时表示玩家包围盒的中心位置，取2则表示玩家前方
+p2 为GFX缩放参数
+例子：d_gfx 策划联入\人物技能\飞行\静心咒击中.gfx 2 0.5
+
+·d_showpos
+格式：d_showpos
+功能：切换显示玩家、NPC 的坐标
+
+·d_trnlayer
+已无效
+
+·d_a3dstat
+格式：d_a3dstat
+功能：切换显示A3D调试信息
+
+·d_gamestat
+格式：d_gamestat
+功能：切换显示游戏调试信息（玩家、NPC数目等）
+
+·d_treelod
+格式：d_treelod p0
+功能：设置树木的LOD（同游戏设置中树木细节）
+参数：p0为浮点数，最大取值1.2
+
+·d_fps
+格式：d_fps
+功能：切换屏幕右上角的FPS显示（宽屏时可能看不见）
+
+·d_playerradius
+格式：d_playerradius p0
+功能：设置周围玩家的可视距离，在“周围玩家显示距离限制”标识打开时有效
+参数：p0，不小于5，不大于当前资源加载距离（同游戏设置中“显示距离”设置）
+
+·d_showid
+格式：d_showid
+功能：切换显示包裹中的物品悬浮提示（在悬浮提示中可见），GM 号还可切换显示玩家ID
+
+·d_skipframe
+格式：d_skipframe
+功能：切换渲染时间较长时（传送时可能发生），是否丢弃某段时间内渲染结果
+
+·d_modelupdate
+已无效
+
+·d_minidump
+已无效
+
+·d_settimeofday
+格式：d_settimeofday p0, p1
+功能：设置太阳时间，影响显示
+参数：p0为小时，0~23之间，p1为分钟
+
+·d_getservertime
+格式：d_getservertime
+功能：显示服务器端当前UTC时间（客户端估计值）
+
+·d_task
+格式：d_task 83284572 p0
+功能：仅在程序 DEBUG 模式有效，强制修改已完成任务
+参数：p0，任务ID
+
+·d_mipmapbias
+格式：d_mipmapbias p0
+功能：设置 mipmap 的偏移量
+参数：p0 为偏移量值
+
+·d_trncull
+格式：d_trncull p0
+功能：开启/关闭地形裁剪
+参数：p0 取0或1，对应关闭/开启
+
+·d_gscmd
+已无效
+
+·d_delcmd
+格式：d_delcmd p0, p1
+功能：delivery 命令，由GS转发
+参数：由服务器决定
+
+·d_title
+格式：d_title p0
+功能：设置窗口标题
+参数：p0为新的窗口标题
+
+·d_namepos
+格式：d_namepos p0, p1
+功能：设置骑宠时人物名称显示位置
+参数：p0，p1为水平和竖直方向的增量
+
+·d_createtime
+格式：d_createtime
+功能：查看当前角色的创建时间（本地时间）
+
+·d_lastlogintime
+格式：d_lastlogintime
+功能：查看当前角色的上次登录时间（本地时间）
+
+·d_money
+格式：d_money
+功能：查看当前角色人民币充值金额
+
+·d_go
+格式：d_go p0, p1
+功能：跳转到当前地图指定位置（变换后位置），同小地图显示坐标一致
+
+·d_query
+格式：d_query p0
+功能：根据名称在elements.data中查询 id
+参数：p0为各类本体名称（武器、宝石、NPC等）
+
+·d_querynpc
+格式：d_querynpc p0
+功能：根据npc的模板 id 在 coord_data.txt 中查找所有 NPC 位置
+参数：p0为npc的模板 id
+
+·d_theme
+格式：d_theme p0
+功能：切换界面主题
+参数：p0 取值0或1，对应主题id
+
+·d_queryrservice
+格式：d_queryrservice p0
+功能：根据 p0 字符串搜索所有带此字符串的简单服务的 npc id
+参数：p0为npc的模板 id
+
+·d_uidebug
+格式：d_uidebug p0
+功能：根据 p0 打开或关闭界面的第二个悬浮提示，内容为对应界面文件及窗口名称等
+参数：p0为0或1
+
+.d_rendernofocus
+格式：d_rendernofocus
+功能：窗口无焦点时是否渲染，此命令为切换命令
+
+·d_querymodel
+格式：d_querymodel p0
+功能：显示包含以 p0 为模型路径一部分的装备、时装、飞剑、NPC、矿等等
+参数：p0为待搜索的模型路径的一部分
+
+·d_queryskill
+格式：d_queryskill p0
+功能：以 p0 为名称查找技能ID，有技能书要求时显示技能书ID
+参数：p0为待搜索技能名称的一部分
+
+·d_ie
+格式：d_ie p0
+功能：使用内置IE浏览 p0 地址
+参数：p0为网络地址
+
+.d_enableie
+格式：d_enableie
+功能：在使用内置IE和系统默认浏览器浏览网页之间切换
+
+.d_showfortress
+格式：d_showfortress
+功能：切换挂帮派基地服务的NPC处显示帮派基地宣战界面功能（用于查看有帮派基地的帮派）
+
+.d_ignoreurl
+格式：d_ignoreurl
+功能：切换忽略访问网页功能，可用于获取只能访问一次的IE地址用于调试，典型如SSO登录地址
+
+.d_showdialog
+格式：d_showdialog p0
+功能：切换对话框（名称为 p0）的显示
+
+.d_come
+格式：d_come p0[,p1,p2...]
+功能：模拟收到服务器协议，p0为协议号，后续为协议数据，格式为i:5，表示有个整型，值为5
+
+.d_factionpvpstatus
+格式：d_factionpvpstatus
+功能：显示客户端当前的帮派PVP相关状态
+
+.d_ignoreprotocol
+格式：d_ignoreprotocol p1p2p3 p4
+功能：禁用/解禁客户端发出/收到的协议/命令
+参数：p1为字符'c'（表示client端发出）或's'（表示收到server端发来的），p2为'p'（表示后续p3为协议号）或'c'（表示后续p3为Gamedatasend中cmd值），p3为协议号或Gamedatasend中cmd值，p4为非0表示禁用或0表示解禁
+
+.d_debugfog
+格式：[d_debugfog p0 p1 p2 p3 p4 p5][d_debugfog]
+功能：开启雾调试并设置调试参数/关闭雾调试
+参数：关闭雾调试时不需参数；开启时参数依次为p0（雾开始距离）、p1（雾结束距离）、p2（雾浓度，范围为0.0到1.0）、p3（雾颜色r，0-255）、p4（雾颜色g，0-255）、p5（雾颜色b，0-255）

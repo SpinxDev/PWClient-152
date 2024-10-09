@@ -1,0 +1,38 @@
+	public:
+		int retcode;
+		int64_t sn;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_WEBTRADEPRECANCELPOST_RE };
+	public:
+		WebTradePreCancelPost_Re() { type = PROTOCOL_WEBTRADEPRECANCELPOST_RE; }
+		WebTradePreCancelPost_Re(void*) : Protocol(PROTOCOL_WEBTRADEPRECANCELPOST_RE) { }
+		WebTradePreCancelPost_Re (int l_retcode,int64_t l_sn,unsigned int l_localsid)
+			 : retcode(l_retcode),sn(l_sn),localsid(l_localsid)
+		{
+			type = PROTOCOL_WEBTRADEPRECANCELPOST_RE;
+		}
+
+		WebTradePreCancelPost_Re(const WebTradePreCancelPost_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),sn(rhs.sn),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new WebTradePreCancelPost_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << sn;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> sn;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

@@ -1,0 +1,64 @@
+#ifndef __GNET_GROUPGETINFORES_RPCDATA
+#define __GNET_GROUPGETINFORES_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GroupGetInfoRes : public GNET::Rpc::Data
+	{
+	public:
+		int retcode;
+		Octets info;
+
+	public:
+		GroupGetInfoRes (int l_retcode = -1)
+			: retcode(l_retcode)
+		{
+		}
+
+		GroupGetInfoRes(const GroupGetInfoRes &rhs)
+			: retcode(rhs.retcode),info(rhs.info) { }
+
+		Rpc::Data *Clone() const { return new GroupGetInfoRes(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GroupGetInfoRes *r = dynamic_cast<const GroupGetInfoRes *>(&rhs);
+			if (r && r != this)
+			{
+				retcode = r->retcode;
+				info = r->info;
+			}
+			return *this;
+		}
+
+		GroupGetInfoRes& operator = (const GroupGetInfoRes &rhs)
+		{
+			const GroupGetInfoRes *r = &rhs;
+			if (r && r != this)
+			{
+				retcode = r->retcode;
+				info = r->info;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << info;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> info;
+			return os;
+		}
+
+	};
+};
+#endif

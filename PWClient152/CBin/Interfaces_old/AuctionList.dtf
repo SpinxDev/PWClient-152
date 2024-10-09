@@ -1,0 +1,18 @@
+DIALOG "Win_AuctionList" 0 0 630 380 0 1 10 "Window\对话框_标准边框1.dds" "" "人鱼传说新界面\title.tga" 3 3 625 33 "人鱼传说新界面\面板关闭按钮.tga" 37 7 255 203 74 255 1
+LABEL "title" "" "" 231 6 0 0 2 16 3 255 203 74 255
+LIST "Lst_Item" "buy" "" 7 49 616 301 4 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "70 250 80 110 110"
+STILLIMAGEBUTTON "Btn_AuctionBuyList" "auctionbuylist" "" 6 352 65 24 0 0 0 0 5 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本1.dds" 6 1
+STILLIMAGEBUTTON "Btn_AuctionSellList" "auctionselllist" "" 73 352 65 24 0 0 0 0 7 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 8 1
+STILLIMAGEBUTTON "Btn_Gold" "" "" 279 355 24 16 0 0 0 0 9 15 255 255 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱2.tga" 10 1
+EDIT "Txt_Price" "buy" "" 305 353 100 20 "Editbox\文本框_4c.dds" 11 10 255 255 255 "TEXT" 0 0 256
+STILLIMAGEBUTTON "Btn_Quit" "IDCANCEL" "" 577 352 45 24 0 0 0 0 12 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 13 1
+STILLIMAGEBUTTON "Btn_Buy" "buy" "" 409 352 45 24 0 0 0 0 14 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 15 1
+STILLIMAGEBUTTON "Btn_BinBuy" "BinBuy" "" 455 352 55 24 0 0 0 0 16 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 17 1
+STILLIMAGEBUTTON "Back_拍卖号" "sortid" "" 7 32 70 19 0 0 0 0 18 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 19 1
+STILLIMAGEBUTTON "Back_名称" "sortname" "" 74 32 250 19 0 0 0 0 20 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 21 1
+STILLIMAGEBUTTON "Back_剩余时间" "sorttime" "" 322 32 80 19 0 0 0 0 22 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 23 1
+STILLIMAGEBUTTON "Back_当前价" "sortprice" "" 399 32 110 19 0 0 0 0 24 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 25 1
+STILLIMAGEBUTTON "Back_一口价" "sortbinprice" "" 507 32 116 19 0 0 0 0 26 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 27 1
+STILLIMAGEBUTTON "Btn_AuctionList" "" "" 140 352 65 24 0 0 0 0 28 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 29 1
+STILLIMAGEBUTTON "Btn_GiveUp" "giveup" "" 511 352 65 24 0 0 0 0 30 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 31 1
+STILLIMAGEBUTTON "Btn_MyAttention" "auctionmyfavor" "" 207 352 65 24 0 0 0 0 32 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 33 1

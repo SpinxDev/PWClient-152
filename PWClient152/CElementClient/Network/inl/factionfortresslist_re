@@ -1,0 +1,44 @@
+	public:
+		int status;
+		unsigned int begin;
+		std::vector<GFactionFortressBriefInfo> list;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONFORTRESSLIST_RE };
+	public:
+		FactionFortressList_Re() { type = PROTOCOL_FACTIONFORTRESSLIST_RE; }
+		FactionFortressList_Re(void*) : Protocol(PROTOCOL_FACTIONFORTRESSLIST_RE) { }
+		FactionFortressList_Re (int l_status,unsigned int l_begin,const std::vector<GFactionFortressBriefInfo>& l_list,
+			unsigned int l_localsid)
+			 : status(l_status),begin(l_begin),list(l_list)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_FACTIONFORTRESSLIST_RE;
+		}
+
+		FactionFortressList_Re(const FactionFortressList_Re &rhs)
+			: Protocol(rhs),status(rhs.status),begin(rhs.begin),list(rhs.list)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new FactionFortressList_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << status;
+			os << begin;
+			os << list;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> status;
+			os >> begin;
+			os >> list;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 4096; }

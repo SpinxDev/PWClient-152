@@ -1,0 +1,38 @@
+	public:
+		int retcode;
+		int localsid;
+		int item_pos;
+		enum { PROTOCOL_TYPE = PROTOCOL_PSHOPDRAWITEM_RE };
+	public:
+		PShopDrawItem_Re() { type = PROTOCOL_PSHOPDRAWITEM_RE; }
+		PShopDrawItem_Re(void*) : Protocol(PROTOCOL_PSHOPDRAWITEM_RE) { }
+		PShopDrawItem_Re (int l_retcode,int l_localsid,int l_item_pos = 0)
+			 : retcode(l_retcode),localsid(l_localsid),item_pos(l_item_pos)
+		{
+			type = PROTOCOL_PSHOPDRAWITEM_RE;
+		}
+
+		PShopDrawItem_Re(const PShopDrawItem_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),localsid(rhs.localsid),item_pos(rhs.item_pos) { }
+
+		GNET::Protocol *Clone() const { return new PShopDrawItem_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << localsid;
+			os << item_pos;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> localsid;
+			os >> item_pos;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

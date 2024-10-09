@@ -1,0 +1,41 @@
+
+#ifndef __GNET_FRIENDALLLIST_HPP
+#define __GNET_FRIENDALLLIST_HPP
+
+#include "rpcdefs.h"
+#include "callid.hxx"
+#include "state.hxx"
+
+#include "friendbrief"
+#include "friendalllistarg"
+#include "friendalllistres"
+
+namespace GNET
+{
+
+class FriendAllList : public Rpc
+{
+#define	RPC_BASECLASS	Rpc
+	#include "friendalllist"
+#undef	RPC_BASECLASS
+
+	void Server(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+		// FriendAllListArg *arg = (FriendAllListArg *)argument;
+		// FriendAllListRes *res = (FriendAllListRes *)result;
+	}
+	
+	void Client(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+
+	}
+
+	void OnTimeout()
+	{
+		// TODO Client Only
+	}
+
+};
+
+};
+#endif

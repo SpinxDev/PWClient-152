@@ -1,0 +1,35 @@
+	public:
+		int roleid;
+		Octets report;
+		enum { PROTOCOL_TYPE = PROTOCOL_ACREPORT };
+	public:
+		ACReport() { type = PROTOCOL_ACREPORT; }
+		ACReport(void*) : Protocol(PROTOCOL_ACREPORT) { }
+		ACReport (int l_roleid,const Octets& l_report = Octets())
+			 : roleid(l_roleid),report(l_report)
+		{
+			type = PROTOCOL_ACREPORT;
+		}
+
+		ACReport(const ACReport &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),report(rhs.report) { }
+
+		GNET::Protocol *Clone() const { return new ACReport(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << report;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> report;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 8192; }

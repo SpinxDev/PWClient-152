@@ -1,0 +1,44 @@
+	public:
+		int retcode;
+		int roleid;
+		unsigned int localsid;
+		unsigned int factionid;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONAPPLYJOIN_RE };
+	public:
+		FactionApplyJoin_Re() { type = PROTOCOL_FACTIONAPPLYJOIN_RE; }
+		FactionApplyJoin_Re(void*) : Protocol(PROTOCOL_FACTIONAPPLYJOIN_RE) { }
+		FactionApplyJoin_Re (int l_retcode,int l_roleid,unsigned int l_localsid,
+			unsigned int l_factionid)
+			 : retcode(l_retcode),roleid(l_roleid),localsid(l_localsid),
+			factionid(l_factionid)
+		{
+			type = PROTOCOL_FACTIONAPPLYJOIN_RE;
+		}
+
+		FactionApplyJoin_Re(const FactionApplyJoin_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),roleid(rhs.roleid),localsid(rhs.localsid),
+			factionid(rhs.factionid) { }
+
+		GNET::Protocol *Clone() const { return new FactionApplyJoin_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roleid;
+			os << localsid;
+			os << factionid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roleid;
+			os >> localsid;
+			os >> factionid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

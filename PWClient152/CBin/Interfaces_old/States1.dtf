@@ -1,0 +1,4 @@
+DIALOG "Win_States1" 0 0 50 18 0 1 -842150451 "Window\对话框_透明色.bmp" "" "" 0 0 -1 -1 "" 0 0 96 96 96 0 1
+IMAGEPICTURE "St_1" "" "" 1 1 16 16 1 0 "Window\对话框_透明色.bmp"
+IMAGEPICTURE "St_2" "" "" 18 1 16 16 1 0 "Window\对话框_透明色.bmp"
+IMAGEPICTURE "St_3" "" "" 35 1 16 16 1 0 "Window\对话框_透明色.bmp"

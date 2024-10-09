@@ -1,0 +1,35 @@
+DIALOG "Win_ChooseExpression" 0 0 250 480 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 -1 -1 "Window\对话框_标准关闭.tga" 26 5 96 96 96 255 1
+LABEL "Label_Expression" "" "" 83 2 84 22 2 16 3 255 203 74 255
+STILLIMAGEBUTTON "Btn_PlayExp" "PlayExpression" "" 68 211 40 24 0 0 0 0 4 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 5 1
+STILLIMAGEBUTTON "Btn_SetExp" "SetExpression" "" 143 211 40 24 0 0 0 0 6 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 7 1
+LABEL "Label_BlendExp" "" "" 7 233 58 14 8 10 9 255 203 74 255
+IMAGEPICTURE "Control_327641154" "" "" 68 240 170 3 1 0 "Window\分隔线.tga"
+STILLIMAGEBUTTON "Control_242833932" "PlayBlendExp" "" 7 449 90 24 0 0 0 0 10 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 11 1
+IMAGEPICTURE "Control_515337" "" "" 8 436 230 3 1 0 "Window\分隔线.tga"
+IMAGEPICTURE "Pic_BlendExp1" "" "" 10 254 40 40 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Pic_BlendExp2" "" "" 10 315 40 40 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Pic_BlendExp3" "" "" 10 377 40 40 1 0 "Window\图标_物品栏.dds"
+STILLIMAGEBUTTON "Btn_ClearBlendExp1" "ClearBlendExp1" "" 52 270 38 24 0 0 0 0 12 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 13 1
+STILLIMAGEBUTTON "Btn_ClearBlendExp2" "ClearBlendExp2" "" 52 331 38 24 0 0 0 0 14 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 15 1
+STILLIMAGEBUTTON "Btn_ClearBlendExp3" "ClearBlendExp3" "" 52 393 40 24 0 0 0 0 16 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 17 1
+LABEL "Control_330301881" "" "" 24 356 21 18 18 12 19 255 255 255 255
+LABEL "Control_105455561" "" "" 24 418 23 22 20 12 21 255 255 255 255
+SLIDER "Slider_BlendExpAppearTime" "MoveSlider" "" 98 261 140 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_BlendExpKeepTime" "MoveSlider" "" 98 297 140 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_BlendExpDisappearTime" "MoveSlider" "" 98 333 140 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_BlendExpRestTime" "MoveSlider" "" 98 371 140 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_BlendExpRepeat" "MoveSlider" "" 98 410 140 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 10
+LABEL "Control_2941666" "" "" 118 244 59 14 22 10 23 255 255 255 255
+LABEL "Control_95604444" "" "" 118 281 62 14 24 10 25 255 255 255 255
+LABEL "Control_50626170" "" "" 118 318 59 14 26 10 27 255 255 255 255
+LABEL "Control_425630640" "" "" 119 356 61 14 28 10 29 255 255 255 255
+LABEL "Control_122770800" "" "" 119 394 62 14 30 10 31 255 255 255 255
+LABEL "Label_BlendExpAppearTime" "" "" 180 243 41 14 32 10 33 255 255 255 255
+LABEL "Label_BlendExpKeepTime" "" "" 180 281 41 15 34 10 35 255 255 255 255
+LABEL "Label_BlendExpDisappearTime" "" "" 180 318 41 14 36 10 37 255 255 255 255
+LABEL "Label_BlendExpRestTime" "" "" 180 356 41 14 38 10 39 255 255 255 255
+LABEL "Label_BlendExpRepeat" "" "" 180 394 41 14 40 10 41 255 255 255 255
+STILLIMAGEBUTTON "Control_137906700" "PushBackCurBlendExpression" "" 153 449 90 24 0 0 0 0 42 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 43 1
+LIST "ListBox_Expression" "" "" 10 29 230 180 44 14 255 255 255 255 "Editbox\文本框_4.tga" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+STILLIMAGEBUTTON "Control_159523232" "StopBlendExp" "" 104 449 40 24 0 0 0 0 45 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 46 1
+LABEL "Control_292706704" "" "" 25 294 18 19 47 12 48 255 255 255 255

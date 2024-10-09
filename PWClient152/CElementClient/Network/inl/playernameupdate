@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		Octets newname;
+		std::vector<int> link_localsid_list;
+		enum { PROTOCOL_TYPE = PROTOCOL_PLAYERNAMEUPDATE };
+	public:
+		PlayerNameUpdate() { type = PROTOCOL_PLAYERNAMEUPDATE; }
+		PlayerNameUpdate(void*) : Protocol(PROTOCOL_PLAYERNAMEUPDATE) { }
+		PlayerNameUpdate (int l_roleid,const Octets& l_newname,const std::vector<int>& l_link_localsid_list)
+			 : roleid(l_roleid),newname(l_newname),link_localsid_list(l_link_localsid_list)
+		{
+			type = PROTOCOL_PLAYERNAMEUPDATE;
+		}
+
+		PlayerNameUpdate(const PlayerNameUpdate &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),newname(rhs.newname),link_localsid_list(rhs.link_localsid_list) { }
+
+		GNET::Protocol *Clone() const { return new PlayerNameUpdate(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << newname;
+			os << link_localsid_list;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> newname;
+			os >> link_localsid_list;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

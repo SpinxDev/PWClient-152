@@ -1,0 +1,64 @@
+#ifndef __GNET_SELLID_RPCDATA
+#define __GNET_SELLID_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class SellID : public GNET::Rpc::Data
+	{
+	public:
+		int roleid;
+		int sellid;
+
+	public:
+		SellID (int l_roleid = 0,int l_sellid = 0)
+			: roleid(l_roleid),sellid(l_sellid)
+		{
+		}
+
+		SellID(const SellID &rhs)
+			: roleid(rhs.roleid),sellid(rhs.sellid) { }
+
+		Rpc::Data *Clone() const { return new SellID(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const SellID *r = dynamic_cast<const SellID *>(&rhs);
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				sellid = r->sellid;
+			}
+			return *this;
+		}
+
+		SellID& operator = (const SellID &rhs)
+		{
+			const SellID *r = &rhs;
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				sellid = r->sellid;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << sellid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> sellid;
+			return os;
+		}
+
+	};
+};
+#endif

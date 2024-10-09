@@ -1,0 +1,35 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONRESOURCEBATTLEGETRECORD };
+	public:
+		FactionResourceBattleGetRecord() { type = PROTOCOL_FACTIONRESOURCEBATTLEGETRECORD; }
+		FactionResourceBattleGetRecord(void*) : Protocol(PROTOCOL_FACTIONRESOURCEBATTLEGETRECORD) { }
+		FactionResourceBattleGetRecord (int l_roleid,unsigned int l_localsid)
+			 : roleid(l_roleid),localsid(l_localsid)
+		{
+			type = PROTOCOL_FACTIONRESOURCEBATTLEGETRECORD;
+		}
+
+		FactionResourceBattleGetRecord(const FactionResourceBattleGetRecord &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new FactionResourceBattleGetRecord(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 16; }

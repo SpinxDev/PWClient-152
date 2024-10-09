@@ -1,0 +1,80 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		Octets rolename;
+		int zoneid;
+		Octets mapzone;
+		float posx;
+		float posy;
+		float posz;
+		Octets content;
+		int aid;
+		Octets line;
+		int com_roleid;
+		Octets com_rolename;
+		enum { PROTOCOL_TYPE = PROTOCOL_REPORT2GM };
+	public:
+		Report2GM() { type = PROTOCOL_REPORT2GM; }
+		Report2GM(void*) : Protocol(PROTOCOL_REPORT2GM) { }
+		Report2GM (int l_roleid,unsigned int l_localsid,const Octets& l_rolename,
+			int l_zoneid,const Octets& l_mapzone,float l_posx,
+			float l_posy,float l_posz,const Octets& l_content,
+			int l_aid,const Octets& l_line,int l_com_roleid,
+			const Octets& l_com_rolename)
+			 : roleid(l_roleid),localsid(l_localsid),rolename(l_rolename)
+			,zoneid(l_zoneid),mapzone(l_mapzone),posx(l_posx)
+			,posy(l_posy),posz(l_posz),content(l_content)
+			,aid(l_aid),line(l_line),com_roleid(l_com_roleid)
+			,com_rolename(l_com_rolename)
+		{
+			type = PROTOCOL_REPORT2GM;
+		}
+
+		Report2GM(const Report2GM &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid),rolename(rhs.rolename)
+			,zoneid(rhs.zoneid),mapzone(rhs.mapzone),posx(rhs.posx)
+			,posy(rhs.posy),posz(rhs.posz),content(rhs.content)
+			,aid(rhs.aid),line(rhs.line),com_roleid(rhs.com_roleid)
+			,com_rolename(rhs.com_rolename) { }
+
+		GNET::Protocol *Clone() const { return new Report2GM(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << rolename;
+			os << zoneid;
+			os << mapzone;
+			os << posx;
+			os << posy;
+			os << posz;
+			os << content;
+			os << aid;
+			os << line;
+			os << com_roleid;
+			os << com_rolename;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> rolename;
+			os >> zoneid;
+			os >> mapzone;
+			os >> posx;
+			os >> posy;
+			os >> posz;
+			os >> content;
+			os >> aid;
+			os >> line;
+			os >> com_roleid;
+			os >> com_rolename;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 512; }

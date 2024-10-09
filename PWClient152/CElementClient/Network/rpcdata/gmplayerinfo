@@ -1,0 +1,96 @@
+#ifndef __GNET_GMPLAYERINFO_RPCDATA
+#define __GNET_GMPLAYERINFO_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GMPlayerInfo : public GNET::Rpc::Data
+	{
+	public:
+		int userid;
+		int roleid;
+		int linkid;
+		unsigned int localsid;
+		int gsid;
+		char status;
+		Octets name;
+
+	public:
+		GMPlayerInfo (int l_userid = -1,int l_roleid = -1,int l_linkid = -1
+			,unsigned int l_localsid = 0,int l_gsid = -1,char l_status = 0
+			,const Octets& l_name = Octets())
+			: userid(l_userid),roleid(l_roleid),linkid(l_linkid)
+			,localsid(l_localsid),gsid(l_gsid),status(l_status)
+			,name(l_name)
+		{
+		}
+
+		GMPlayerInfo(const GMPlayerInfo &rhs)
+			: userid(rhs.userid),roleid(rhs.roleid),linkid(rhs.linkid),
+			localsid(rhs.localsid),gsid(rhs.gsid),status(rhs.status),
+			name(rhs.name) { }
+
+		Rpc::Data *Clone() const { return new GMPlayerInfo(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GMPlayerInfo *r = dynamic_cast<const GMPlayerInfo *>(&rhs);
+			if (r && r != this)
+			{
+				userid = r->userid;
+				roleid = r->roleid;
+				linkid = r->linkid;
+				localsid = r->localsid;
+				gsid = r->gsid;
+				status = r->status;
+				name = r->name;
+			}
+			return *this;
+		}
+
+		GMPlayerInfo& operator = (const GMPlayerInfo &rhs)
+		{
+			const GMPlayerInfo *r = &rhs;
+			if (r && r != this)
+			{
+				userid = r->userid;
+				roleid = r->roleid;
+				linkid = r->linkid;
+				localsid = r->localsid;
+				gsid = r->gsid;
+				status = r->status;
+				name = r->name;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << userid;
+			os << roleid;
+			os << linkid;
+			os << localsid;
+			os << gsid;
+			os << status;
+			os << name;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> userid;
+			os >> roleid;
+			os >> linkid;
+			os >> localsid;
+			os >> gsid;
+			os >> status;
+			os >> name;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<GMPlayerInfo>	GMPlayerInfoVector;
+};
+#endif

@@ -1,0 +1,16 @@
+; t0 projected shadow map
+; t1 projected shadow map texture coord's zzzw
+
+ps.1.4
+
+texld r0, t0_dw.xyw
+texcrd r1.xy, t1_dw.xyw
+
+sub r0, r0, r1.r
+
+phase
+
+texkill r0
+
+mov r0, v0
+

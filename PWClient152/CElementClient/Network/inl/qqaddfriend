@@ -1,0 +1,56 @@
+	public:
+		int srcroleid;
+		char srczoneid;
+		Octets srcrolename;
+		int dstroleid;
+		char dstzoneid;
+		Octets dstrolename;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_QQADDFRIEND };
+	public:
+		QQAddFriend() { type = PROTOCOL_QQADDFRIEND; }
+		QQAddFriend(void*) : Protocol(PROTOCOL_QQADDFRIEND) { }
+		QQAddFriend (int l_srcroleid,char l_srczoneid,const Octets& l_srcrolename,
+			int l_dstroleid,char l_dstzoneid,const Octets& l_dstrolename,
+			unsigned int l_localsid)
+			 : srcroleid(l_srcroleid),srczoneid(l_srczoneid),srcrolename(l_srcrolename),
+			dstroleid(l_dstroleid),dstzoneid(l_dstzoneid),dstrolename(l_dstrolename),
+			localsid(l_localsid)
+		{
+			type = PROTOCOL_QQADDFRIEND;
+		}
+
+		QQAddFriend(const QQAddFriend &rhs)
+			: Protocol(rhs),srcroleid(rhs.srcroleid),srczoneid(rhs.srczoneid),srcrolename(rhs.srcrolename),
+			dstroleid(rhs.dstroleid),dstzoneid(rhs.dstzoneid),dstrolename(rhs.dstrolename),
+			localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new QQAddFriend(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << srcroleid;
+			os << srczoneid;
+			os << srcrolename;
+			os << dstroleid;
+			os << dstzoneid;
+			os << dstrolename;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> srcroleid;
+			os >> srczoneid;
+			os >> srcrolename;
+			os >> dstroleid;
+			os >> dstzoneid;
+			os >> dstrolename;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

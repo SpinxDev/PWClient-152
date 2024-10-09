@@ -1,0 +1,47 @@
+	public:
+		int retcode;
+		int roleid;
+		unsigned int localsid;
+		int leaved_role;
+		char old_occup;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONLEAVE_RE };
+	public:
+		FactionLeave_Re() { type = PROTOCOL_FACTIONLEAVE_RE; }
+		FactionLeave_Re(void*) : Protocol(PROTOCOL_FACTIONLEAVE_RE) { }
+		FactionLeave_Re (int l_retcode,int l_roleid,unsigned int l_localsid,
+			int l_leaved_role,char l_old_occup)
+			 : retcode(l_retcode),roleid(l_roleid),localsid(l_localsid),
+			leaved_role(l_leaved_role),old_occup(l_old_occup)
+		{
+			type = PROTOCOL_FACTIONLEAVE_RE;
+		}
+
+		FactionLeave_Re(const FactionLeave_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),roleid(rhs.roleid),localsid(rhs.localsid),
+			leaved_role(rhs.leaved_role),old_occup(rhs.old_occup) { }
+
+		GNET::Protocol *Clone() const { return new FactionLeave_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roleid;
+			os << localsid;
+			os << leaved_role;
+			os << old_occup;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roleid;
+			os >> localsid;
+			os >> leaved_role;
+			os >> old_occup;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

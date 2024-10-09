@@ -1,0 +1,58 @@
+; armor per pixel lighting shader
+
+; t0, base texture
+; t1, reflect texture
+; t2, normal map texture
+; t3, 1D specular look up texture
+
+; ct0, base texture coords.
+; ct1, reflect texture coords, not used here
+; ct2, light direction in tangent space
+; ct3, half way vector in tangent space
+
+; v0, precalculated color
+
+; c5 is the ambient color
+; c6 is the directional color
+; c7 is the specular color
+
+ps.1.4
+
+def c7, 1.0, 1.0, 1.0, 1.0
+def c0, 0.2, 0.2, 0.2, 1.0
+
+texld r0, t0
+texld r2, t0
+texcrd	r1.xyz, t1.xyz
+texcrd	r3.xyz, t2.xyz
+texcrd	r4.xyz, t3.xyz
+
+// calculate light equation, L.N
+dp3_sat r5, -r3, r2_bx2
+
+// calcualte specular, H.N
+dp3_sat r4, r4, r2_bx2
+
+// calculate per-pixel reflect texture's coord.
+add r1.xyz, r1, r2_bias
+
+// do direct and ambient lighting
+mad r2.rgb, c6, r5, c5
+
+// modulate to get diffuse color
+mul r0.rgb, r0, r2
+
+// backup base texture's alpha channel
+mov r2.r, r2.a
+
+phase
+
+texld r1, r1
+texld r3, r4
+
+// add specular color
+mad r0.rgb, c7, r3, r0
+
+// add reflect env map
+mad_sat r0.rgb, r1, r2.r, r0
++mov r0.a, c7.a

@@ -1,0 +1,40 @@
+DIALOG "Win_GoldInquire" 0 0 640 471 0 1 10 "Window\对话框_标准边框x.dds" "" "" 0 0 -1 -1 "人鱼传说新界面\面板关闭按钮.tga" 47 30 96 96 96 255 1
+EDIT "titleimg" "" "" 17 23 610 37 "人鱼传说新界面\title.tga" 2 16 255 255 255 "TEXT" 1 0 20
+LABEL "Title" "" "" 258 31 0 0 3 16 4 255 203 74 255
+IMAGEPICTURE "Control_261291004" "" "" 4 0 634 471 1 0 "人鱼传说新界面\大.dds"
+STILLIMAGEBUTTON "Btn_11" "" "" 26 65 50 22 0 0 0 0 5 10 255 203 74 255 "LoginUIHintFrame.dds" "LoginUIHintFrame.dds" 6 1
+STILLIMAGEBUTTON "Btn_12" "" "" 75 65 20 22 0 0 0 0 7 10 255 203 74 255 "LoginUIHintFrame.dds" "LoginUIHintFrame.dds" 8 1
+STILLIMAGEBUTTON "Btn_13" "" "" 94 65 45 22 0 0 0 0 9 10 255 203 74 255 "LoginUIHintFrame.dds" "LoginUIHintFrame.dds" 10 1
+STILLIMAGEBUTTON "Btn_14" "" "" 138 65 60 22 0 0 0 0 11 10 255 203 74 255 "LoginUIHintFrame.dds" "LoginUIHintFrame.dds" 12 1
+STILLIMAGEBUTTON "Btn_15" "" "" 199 65 65 22 0 0 0 0 13 10 255 203 74 255 "LoginUIHintFrame.dds" "LoginUIHintFrame.dds" 14 1
+STILLIMAGEBUTTON "Btn_16" "" "" 264 65 97 22 0 0 0 0 15 10 255 203 74 255 "LoginUIHintFrame.dds" "LoginUIHintFrame.dds" 16 1
+LIST "Lst_Inquire" "" "" 26 86 335 290 17 10 255 255 255 255 "LoginUIHintFrame.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "46 25 45 60 65 97"
+LIST "Lst_Sell" "" "" 367 86 249 150 18 10 255 255 255 255 "LoginUIHintFrame.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "+105 +54 +78"
+LIST "Lst_Buy" "" "" 367 258 249 150 19 10 255 255 255 255 "LoginUIHintFrame.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "+105 +54 +78"
+STILLIMAGEBUTTON "Btn_Consign" "trade" "" 26 421 117 27 0 0 0 0 20 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 21 1
+STILLIMAGEBUTTON "Btn_GiveUp" "giveup" "" 26 381 46 27 0 0 0 0 22 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 23 1
+LABEL "Txt_Lock" "" "" 193 427 120 16 24 10 25 255 128 0 255
+STILLIMAGEBUTTON "Btn_Unlock" "unlock" "" 316 422 45 27 0 0 0 0 26 10 255 128 0 255 "ButtonFrameUp.bmp" "ButtonFrameDown.bmp" 27 1
+LABEL "Lab_Sell16" "" "" 451 415 0 0 28 10 29 255 203 74 255
+LABEL "Txt_Gold1" "" "" 488 415 0 0 30 10 31 255 255 255 255
+LABEL "Lab_Sell19" "" "" 451 438 0 0 32 10 33 255 203 74 255
+EDIT "Txt_Money5" "" "" 488 437 100 20 "Window\对话框_透明色.bmp" 34 10 255 255 255 "TEXT" 1 0 10
+LABEL "Control_184366000" "" "" 78 387 284 18 35 10 36 0 255 255 255
+LABEL "Control_112068099" "" "" 367 428 81 18 37 10 38 255 203 74 255
+EDIT "Shape_b1" "" "" 367 236 105 22 "LoginUIHintFrame.dds" 39 10 255 255 255 "TEXT" 1 0 20
+LABEL "lb_b1" "" "" 371 239 79 15 40 10 41 255 203 74 255
+EDIT "Shape_b2" "" "" 471 236 41 22 "LoginUIHintFrame.dds" 42 10 255 255 255 "TEXT" 1 0 20
+LABEL "lb_b2" "" "" 477 239 28 16 43 10 44 255 203 74 255
+EDIT "Shape_b3" "" "" 511 236 105 22 "LoginUIHintFrame.dds" 45 10 255 255 255 "TEXT" 1 0 20
+LABEL "lb_b3" "" "" 532 239 81 15 46 10 47 255 203 74 255
+EDIT "Shape_a1" "" "" 367 65 105 22 "LoginUIHintFrame.dds" 48 10 255 255 255 "TEXT" 1 0 20
+LABEL "lb_a1" "" "" 371 68 79 15 49 10 50 255 203 74 255
+EDIT "Shape_a2" "" "" 471 65 41 22 "LoginUIHintFrame.dds" 51 10 255 255 255 "TEXT" 1 0 20
+LABEL "lb_a2" "" "" 477 68 28 16 52 10 53 255 203 74 255
+EDIT "Shape_a3" "" "" 511 65 105 22 "LoginUIHintFrame.dds" 54 10 255 255 255 "TEXT" 1 0 20
+LABEL "lb_a3" "" "" 532 68 81 15 55 10 56 255 203 74 255
+LABEL "Control_597603456" "" "" 30 68 31 17 57 10 58 255 203 74 255
+LABEL "Control_363425456" "" "" 103 68 33 16 59 10 60 255 203 74 255
+LABEL "Control_2742432" "" "" 154 68 29 17 61 10 62 255 203 74 255
+LABEL "Control_261740160" "" "" 205 68 55 14 63 10 64 255 203 74 255
+LABEL "Control_4469740" "" "" 273 68 82 16 65 10 66 255 203 74 255

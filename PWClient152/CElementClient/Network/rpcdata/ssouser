@@ -1,0 +1,82 @@
+#ifndef __GNET_SSOUSER_RPCDATA
+#define __GNET_SSOUSER_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class SSOUser : public GNET::Rpc::Data
+	{
+	public:
+		char isagent;
+		int64_t userid;
+		Octets account;
+		Octets agentname;
+		Octets agentaccount;
+
+	public:
+		SSOUser (char l_isagent = 0,int64_t l_userid = 0,const Octets& l_account = Octets(0)
+			,const Octets& l_agentname = Octets(0),const Octets& l_agentaccount = Octets(0))
+			: isagent(l_isagent),userid(l_userid),account(l_account)
+			,agentname(l_agentname),agentaccount(l_agentaccount)
+		{
+		}
+
+		SSOUser(const SSOUser &rhs)
+			: isagent(rhs.isagent),userid(rhs.userid),account(rhs.account),
+			agentname(rhs.agentname),agentaccount(rhs.agentaccount) { }
+
+		Rpc::Data *Clone() const { return new SSOUser(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const SSOUser *r = dynamic_cast<const SSOUser *>(&rhs);
+			if (r && r != this)
+			{
+				isagent = r->isagent;
+				userid = r->userid;
+				account = r->account;
+				agentname = r->agentname;
+				agentaccount = r->agentaccount;
+			}
+			return *this;
+		}
+
+		SSOUser& operator = (const SSOUser &rhs)
+		{
+			const SSOUser *r = &rhs;
+			if (r && r != this)
+			{
+				isagent = r->isagent;
+				userid = r->userid;
+				account = r->account;
+				agentname = r->agentname;
+				agentaccount = r->agentaccount;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << isagent;
+			os << userid;
+			os << account;
+			os << agentname;
+			os << agentaccount;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> isagent;
+			os >> userid;
+			os >> account;
+			os >> agentname;
+			os >> agentaccount;
+			return os;
+		}
+
+	};
+};
+#endif

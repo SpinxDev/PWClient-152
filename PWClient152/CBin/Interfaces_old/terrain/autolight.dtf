@@ -1,0 +1,40 @@
+DIALOG "Dlg_Light" 0 0 220 400 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "" 26 5 96 96 96 255 1
+LABEL "Control_23712456" "" "" 67 4 86 20 2 16 3 255 203 74 255
+IMAGEPICTURE "Control_167872000" "" "" 65 38 150 3 1 0 "Window\分隔线.tga"
+LABEL "Control_43653600" "" "" 25 110 29 16 4 10 5 255 255 164 255
+LABEL "Control_69958830" "" "" 25 159 27 15 6 10 7 255 255 164 255
+LABEL "Control_746446542" "" "" 160 110 33 17 8 10 9 216 176 255 255
+LABEL "Control_15050541" "" "" 160 159 31 18 10 10 11 216 176 255 255
+LABEL "Control_252211690" "" "" 8 184 54 15 12 10 13 255 203 74 255
+STILLIMAGEBUTTON "Control_66944980" "LoadDaySkyBox" "" 15 207 90 28 0 0 0 0 14 10 255 255 164 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 15 1
+STILLIMAGEBUTTON "Control_243334170" "LoadNightSkyBox" "" 113 207 90 28 0 0 0 0 16 10 216 176 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 17 1
+LABEL "Control_18115846" "" "" 8 238 54 17 18 10 19 255 203 74 255
+IMAGEPICTURE "Control_47029168" "" "" 65 246 150 3 1 0 "Window\分隔线.tga"
+LABEL "Control_166832800" "" "" 10 293 56 15 20 10 21 255 255 164 255
+LABEL "Control_92454696" "" "" 11 331 53 17 22 10 23 216 176 255 255
+IMAGEPICTURE "ImagePic_DayFog" "" "" 67 289 24 24 0 0 ""
+IMAGEPICTURE "ImagePic_NightFog" "" "" 67 327 24 24 0 0 ""
+LABEL "Control_152953290" "" "" 107 324 55 17 24 10 25 255 203 74 255
+IMAGEPICTURE "ImagePic_DaySun" "" "" 55 105 24 24 1 0 "faces\color.bmp"
+IMAGEPICTURE "ImagePic_DayEnv" "" "" 55 154 23 24 1 0 "faces\color.bmp"
+IMAGEPICTURE "ImagePic_NightSun" "" "" 135 105 23 24 1 0 "faces\color.bmp"
+IMAGEPICTURE "ImagePic_NightEnv" "" "" 135 154 24 24 1 0 "faces\color.bmp"
+SLIDER "Slider_DayFogLevel" "moveSlider" "" 92 304 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+SLIDER "Slider_NightFogLevel" "moveSlider" "" 92 345 120 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+LABEL "Label_DayFogLevel" "" "" 160 286 30 14 26 10 27 255 255 255 255
+LABEL "Label_NightFogLevel" "" "" 160 324 23 17 28 10 29 255 255 255 255
+CHECK "Check_Fog" "UpdateFog" "" 116 262 18 18 "Extra\复选框_标准.tga"
+LABEL "Control_718874212" "" "" 10 262 82 16 30 10 31 255 203 74 255
+SLIDER "Slider_DayWeight" "MoveSliderDayWeight" "" 10 51 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+LABEL "Control_701832267" "" "" 25 63 28 16 32 10 33 255 255 164 255
+LABEL "Control_424032872" "" "" 160 64 30 14 34 10 35 216 176 255 255
+LABEL "Control_300035295" "" "" 107 286 53 16 36 10 37 255 203 74 255
+IMAGEPICTURE "ImagePic_WaterFog" "" "" 67 365 24 24 0 0 ""
+LABEL "Control_29431458" "" "" 11 371 56 17 38 10 39 160 160 255 255
+LABEL "Control_57209908" "" "" 8 30 55 16 40 10 41 255 203 74 255
+LABEL "Control_472822308" "" "" 8 84 55 14 42 10 43 255 203 74 255
+IMAGEPICTURE "Control_201319824" "" "" 65 92 150 3 1 0 "Window\分隔线.tga"
+LABEL "Control_170355273" "" "" 8 133 53 15 44 10 45 255 203 74 255
+IMAGEPICTURE "Control_619032728" "" "" 65 141 150 3 1 0 "Window\分隔线.tga"
+IMAGEPICTURE "Control_179231310" "" "" 65 192 150 3 1 0 "Window\分隔线.tga"
+LABEL "Control_287851040" "" "" 134 262 42 16 46 10 47 255 255 255 255

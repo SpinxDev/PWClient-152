@@ -1,0 +1,50 @@
+	public:
+		unsigned char fbd_type;
+		int gmroleid;
+		unsigned int localsid;
+		int dstroleid;
+		int forbid_time;
+		Octets reason;
+		enum { PROTOCOL_TYPE = PROTOCOL_GMFORBIDROLE };
+	public:
+		GMForbidRole() { type = PROTOCOL_GMFORBIDROLE; }
+		GMForbidRole(void*) : Protocol(PROTOCOL_GMFORBIDROLE) { }
+		GMForbidRole (unsigned char l_fbd_type,int l_gmroleid,unsigned int l_localsid,
+			int l_dstroleid,int l_forbid_time,const Octets& l_reason = Octets())
+			 : fbd_type(l_fbd_type),gmroleid(l_gmroleid),localsid(l_localsid),
+			dstroleid(l_dstroleid),forbid_time(l_forbid_time),reason(l_reason)
+		{
+			type = PROTOCOL_GMFORBIDROLE;
+		}
+
+		GMForbidRole(const GMForbidRole &rhs)
+			: Protocol(rhs),fbd_type(rhs.fbd_type),gmroleid(rhs.gmroleid),localsid(rhs.localsid),
+			dstroleid(rhs.dstroleid),forbid_time(rhs.forbid_time),reason(rhs.reason) { }
+
+		GNET::Protocol *Clone() const { return new GMForbidRole(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << fbd_type;
+			os << gmroleid;
+			os << localsid;
+			os << dstroleid;
+			os << forbid_time;
+			os << reason;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> fbd_type;
+			os >> gmroleid;
+			os >> localsid;
+			os >> dstroleid;
+			os >> forbid_time;
+			os >> reason;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 256; }

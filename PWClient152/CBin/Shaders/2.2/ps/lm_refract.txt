@@ -1,0 +1,22 @@
+;  refract rendering with edge consideration for LitModelRenderer
+
+; t0, base texture
+; t1, height difference
+; v0, diffuse color of vert interpolation
+; c0.a is alpha cmp reference value
+
+ps.1.4
+
+texld r0, t0
+
+sub r5.rgb, r0.a, c0.a
+
+phase
+
+texkill 	r5
+texld 		r0, t0
+texcrd		r1.xyz, t1.xyz
+
+mul_x2 r0.rgb, r0, v0
++mov_sat r0.a, c0.a
+

@@ -1,0 +1,320 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\FileExtract.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\FileExtract.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 63
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 完美国际资源提取器"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,21,21
+    LTEXT           "完美国际资源提取器 1.0 版",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2004-2013 Perfect World All rights reserved.",
+                    IDC_STATIC,40,36,188,20
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+    LTEXT           "本程序仅限完美世界公司内部人员使用！",IDC_STATIC,40,24,
+                    166,8
+END
+
+IDD_FILEEXTRACT_DIALOG DIALOGEX 0, 0, 240, 231
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "完美国际资源提取器"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "分析",IDC_ANALYSE,176,50,50,14,NOT WS_TABSTOP
+    DEFPUSHBUTTON   "提取",IDC_EXTRACT,176,66,50,14,NOT WS_TABSTOP
+    GROUPBOX        "参数",IDC_STATIC,7,39,226,47
+    GROUPBOX        "文件列表",IDC_STATIC,7,94,226,130
+    LISTBOX         IDC_FILELIST,14,109,211,107,LBS_DISABLENOSCROLL | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_SEARCHTEXT,13,50,155,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_ANALYSE_OPT,13,67,96,91,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "选取文件",IDC_BTN_SELECT,118,67,50,14
+    LTEXT           "本程序仅限完美世界公司内部人员使用！\nCopyright (C) 2004-2013 Perfect World All rights reserved.",
+                    IDC_COPYRIGHT,7,6,226,27
+END
+
+IDD_EXPORT_PROGRESS DIALOG DISCARDABLE  0, 0, 187, 67
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "导出"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "取消",IDCANCEL,69,46,50,14
+    CONTROL         "Progress1",IDC_CURPROGRESS,"msctls_progress32",
+                    PBS_SMOOTH,7,19,173,14
+    LTEXT           "Static",IDC_CUR_FILE,7,7,173,8
+END
+
+IDD_MODEL_OPTION DIALOG DISCARDABLE  0, 0, 170, 191
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "玩家模型导出选项"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,61,170,50,14
+    GROUPBOX        "选择要导出特效等资源的动作条",IDC_STATIC,7,22,156,117
+    LISTBOX         IDC_ACTION_LIST,15,36,140,78,LBS_MULTIPLESEL | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "全选",IDC_BTN_SELECTALL,15,117,44,14
+    PUSHBUTTON      "不选",IDC_BTN_NOSELECT,63,117,44,14
+    PUSHBUTTON      "反选",IDC_BTN_INVERTSEL,111,117,44,14
+    CONTROL         "是否导出所有时装特效",IDC_CHK_FASHIONGFX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,147,96,10
+    LTEXT           "",IDC_MODEL_NAME,7,7,156,10
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "FileExtract Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "FileExtract\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2013\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "FileExtract.EXE\0"
+            VALUE "ProductName", "FileExtract 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 56
+    END
+
+    IDD_FILEEXTRACT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 224
+    END
+
+    IDD_EXPORT_PROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 60
+    END
+
+    IDD_MODEL_OPTION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 184
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_LISTMENU MENU DISCARDABLE 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "保存结果到文件(&S)",          IDM_SAVEFILELIST
+        MENUITEM "清空结果(&C)",                IDM_CLEARLIST
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_FILEEXTRACT_DIALOG DLGINIT
+BEGIN
+    IDC_ANALYSE_OPT, 0x403, 8, 0
+0x504e, 0xc443, 0xd0a3, 0x00cd, 
+    IDC_ANALYSE_OPT, 0x403, 7, 0
+0x4955, 0xe7bd, 0xe6c3, "\000" 
+    IDC_ANALYSE_OPT, 0x403, 9, 0
+0xbcbc, 0xdcc4, 0xd8cc, 0xa7d0, "\000" 
+    IDC_ANALYSE_OPT, 0x403, 9, 0
+0xe6cd, 0xd2bc, 0xa3c4, 0xcdd0, "\000" 
+    IDC_ANALYSE_OPT, 0x403, 9, 0
+0x5542, 0x4646, 0xd8cc, 0xa7d0, "\000" 
+    IDC_ANALYSE_OPT, 0x403, 9, 0
+0xa8cd, 0xc3d3, 0xa3c4, 0xcdd0, "\000" 
+    IDC_ANALYSE_OPT, 0x403, 9, 0
+0xb0d7, 0xb8b1, 0xcad7, 0xb4d4, "\000" 
+    IDC_ANALYSE_OPT, 0x403, 22, 0
+0xf5cb, 0xc5b7, 0x504e, 0xc443, 0xd0a3, 0xb2cd, 0xb9a2, 0xd3d2, 0xccd0, 
+0xd0d8, 0x00a7, 
+    IDC_ANALYSE_OPT, 0x403, 25, 0
+0xb5d3, 0xd0d3, 0xd8cc, 0xa7d0, 0xabb5, 0xb4ce, 0xbbb1, 0xd2b9, 0xd3bd, 
+0xc4b5, 0xb0d7, 0xb8b1, "\000" 
+    IDC_ANALYSE_OPT, 0x403, 9, 0
+0xccd1, 0xa8bb, 0xcad7, 0xb4d4, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 完美国际资源提取器(&A)..."
+    IDS_NPCMODEL            "这里填入有效的NPC的模板ID，将导出NPC的模型资源、特效资源、所用的技能资源（注意：宠物NPC的技能没有被导出），多个ID用逗号隔开。"
+    IDS_UIFILE              "这里填入XML界面文件名，或者dcf文件名，将导出界面XML文件，以及所依赖的贴图和特效文件，多个文件用逗号隔开。"
+    IDS_SKILL               "这里填入有效的技能ID，将导出技能相关的SGC文件、特效文件，多个ID用逗号隔开。"
+    IDS_PLAYERMODEL         "这里填入玩家的职业，或者“全部”来提取玩家相关的模型资源，多个职业用逗号隔开。"
+    IDS_BUFFGFX             "这里填入BUFF ID，或者“全部”来导出BUFF相关特效资源，多个ID用逗号隔开。"
+    IDS_ECMODEL             "这里填入有效的模型路径，注意路径必须位于客户端目录里面，将导出指定模型的相关资源，多个路径用逗号隔开。"
+    IDS_EQUIPGFX            "这里填入有效的装备模板ID，将导出装备对应的模型，SKIN，以及特效资源，多个ID用逗号隔开。"
+    IDS_SCALEDNPC           "分析所有被缩放过的NPC模型，这里什么也不用填。"
+    IDS_NOGFXEQUIP          "分析所有武器、飞剑、翅膀等装备，拥有特效却没有挂接到挂点上的特效。"
+    IDS_FIREWORK            "这里填入有效的烟花道具ID，将导出烟花相关的特效资源，多个ID用逗号隔开。"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\FileExtract.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

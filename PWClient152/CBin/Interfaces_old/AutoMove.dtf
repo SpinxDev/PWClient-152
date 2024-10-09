@@ -1,0 +1,11 @@
+DIALOG "Win_AutoMove" 0 0 200 130 0 1 10 "小精灵新加tga\经验注入面板\边框2.tga" "" "" 0 0 -1 -1 "" 0 0 96 96 96 255 1
+LABEL "Control_484176450" "" "" 40 6 107 26 2 16 3 153 160 7 255
+SLIDER "Slider_high" "" "" 9 57 178 10 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 100
+LABEL "Control_170130450" "" "" 14 36 74 19 4 15 5 255 241 174 255
+EDIT "Edt_High" "" "" 88 35 66 19 "/Editbox/文本框_4.dds" 6 15 255 255 255 "TEXT" 0 0 20
+STILLIMAGEBUTTON "Btn_OK" "Confirm" "" 76 96 47 24 0 0 0 0 7 15 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 8 1
+CHECK "check_fly" "" "Extra\单选框_标准.tga" 10 71 18 18 "Extra\单选框_标准.tga"
+LABEL "Control_358404718" "" "" 30 74 160 21 9 15 10 153 160 7 255
+LABEL "Lab_High" "" "" -2000 -2000 54 24 11 15 12 255 255 255 255
+CHECK "Check_Min" "" "SFX\Interface\ClickA.wav" 171 101 21 21 "Extra\复选框_开关地图.tga"
+STILLIMAGEBUTTON "Btn_Close" "Stop" "" 171 8 21 21 0 0 0 0 13 15 255 255 255 255 "Window\关闭_绿.tga" "Window\关闭_白.tga" 14 1

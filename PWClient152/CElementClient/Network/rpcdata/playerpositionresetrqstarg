@@ -1,0 +1,100 @@
+#ifndef __GNET_PLAYERPOSITIONRESETRQSTARG_RPCDATA
+#define __GNET_PLAYERPOSITIONRESETRQSTARG_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class PlayerPositionResetRqstArg : public GNET::Rpc::Data
+	{
+	public:
+		int userid;
+		int roleid;
+		unsigned int localsid;
+		int worldtag;
+		int reason;
+		float pos_x;
+		float pos_y;
+		float pos_z;
+
+	public:
+		PlayerPositionResetRqstArg (int l_userid = 0,int l_roleid = 0,unsigned int l_localsid = 0
+			,int l_worldtag = 0,int l_reason = 0,float l_pos_x = 0
+			,float l_pos_y = 0,float l_pos_z = 0)
+			: userid(l_userid),roleid(l_roleid),localsid(l_localsid)
+			,worldtag(l_worldtag),reason(l_reason),pos_x(l_pos_x)
+			,pos_y(l_pos_y),pos_z(l_pos_z)
+		{
+		}
+
+		PlayerPositionResetRqstArg(const PlayerPositionResetRqstArg &rhs)
+			: userid(rhs.userid),roleid(rhs.roleid),localsid(rhs.localsid),
+			worldtag(rhs.worldtag),reason(rhs.reason),pos_x(rhs.pos_x),
+			pos_y(rhs.pos_y),pos_z(rhs.pos_z) { }
+
+		Rpc::Data *Clone() const { return new PlayerPositionResetRqstArg(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const PlayerPositionResetRqstArg *r = dynamic_cast<const PlayerPositionResetRqstArg *>(&rhs);
+			if (r && r != this)
+			{
+				userid = r->userid;
+				roleid = r->roleid;
+				localsid = r->localsid;
+				worldtag = r->worldtag;
+				reason = r->reason;
+				pos_x = r->pos_x;
+				pos_y = r->pos_y;
+				pos_z = r->pos_z;
+			}
+			return *this;
+		}
+
+		PlayerPositionResetRqstArg& operator = (const PlayerPositionResetRqstArg &rhs)
+		{
+			const PlayerPositionResetRqstArg *r = &rhs;
+			if (r && r != this)
+			{
+				userid = r->userid;
+				roleid = r->roleid;
+				localsid = r->localsid;
+				worldtag = r->worldtag;
+				reason = r->reason;
+				pos_x = r->pos_x;
+				pos_y = r->pos_y;
+				pos_z = r->pos_z;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << userid;
+			os << roleid;
+			os << localsid;
+			os << worldtag;
+			os << reason;
+			os << pos_x;
+			os << pos_y;
+			os << pos_z;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> userid;
+			os >> roleid;
+			os >> localsid;
+			os >> worldtag;
+			os >> reason;
+			os >> pos_x;
+			os >> pos_y;
+			os >> pos_z;
+			return os;
+		}
+
+	};
+};
+#endif

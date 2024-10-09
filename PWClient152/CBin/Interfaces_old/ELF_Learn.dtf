@@ -1,0 +1,32 @@
+DIALOG "Win_ELFLearn" 0 0 311 440 0 1 10 "小精灵新加tga\板子panel\完美世界精灵属性大板子1.tga" "" "" 0 0 283 33 "人鱼传说新界面\面板关闭按钮.tga" 60 30 96 96 96 255 1
+EDIT "Lst_Main" "" "" 37 110 245 277 "小精灵新加tga\小精灵面板\精灵名字按钮-1.tga" 2 15 255 255 255 "TEXT" 1 0 20
+LABEL "Txt_npc" "" "" 126 36 0 0 3 12 4 255 255 255 255
+LABEL "Control_140986164" "" "" 73 67 0 0 5 15 6 255 255 255 255
+IMAGEPICTURE "Skill_1" "" "" 53 126 32 32 1 0 "妙计锦囊.dds"
+LABEL "Skill_name_1" "" "" 90 120 90 45 7 15 8 255 255 255 255
+IMAGEPICTURE "Skill_2" "" "" 53 179 32 32 1 0 "妙计锦囊.dds"
+IMAGEPICTURE "CONTORN02123" "" "" 47 167 221 4 1 0 "Window\分隔线.tga"
+IMAGEPICTURE "Control_449444116" "" "" 45 218 226 4 1 0 "Window\分隔线.tga"
+LABEL "Skill_name_2" "" "" 90 170 90 45 9 15 10 255 255 255 255
+IMAGEPICTURE "Control_154822332" "" "" 44 271 223 5 1 0 "Window\分隔线.tga"
+IMAGEPICTURE "Control_302261058" "" "" 47 326 216 5 1 0 "Window\分隔线.tga"
+IMAGEPICTURE "Skill_3" "" "" 51 231 32 32 1 0 "妙计锦囊.dds"
+IMAGEPICTURE "Skill_4" "" "" 52 286 32 32 1 0 "妙计锦囊.dds"
+IMAGEPICTURE "Skill_5" "" "" 51 339 32 32 1 0 "妙计锦囊.dds"
+STILLIMAGEBUTTON "Btn_PageUp" "pageup" "" 37 388 51 23 0 0 0 0 11 15 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 12 1
+STILLIMAGEBUTTON "Btn_PageDown" "pagedown" "" 221 388 53 23 0 0 0 0 13 15 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 14 1
+LABEL "Skill_name_3" "" "" 90 223 90 45 15 15 16 255 255 255 255
+LABEL "Skill_name_4" "" "" 90 277 90 45 17 15 18 255 255 255 255
+LABEL "Skill_name_5" "" "" 90 333 90 45 19 15 20 255 255 255 255
+LABEL "Skill_SP_1" "" "" 183 147 0 0 21 15 22 255 255 255 255
+LABEL "Skill_SP_2" "" "" 184 198 0 0 23 15 24 255 255 255 255
+LABEL "Skill_SP_3" "" "" 184 252 0 0 25 15 26 255 255 255 255
+LABEL "Skill_SP_4" "" "" 185 308 0 0 27 15 28 255 255 255 255
+LABEL "Skill_SP_5" "" "" 184 362 0 0 29 15 30 255 255 255 255
+EDIT "Txt_ELFName" "" "" 82 85 140 22 "Editbox\文本框_4b.dds" 31 15 255 255 255 "TEXT" 1 0 20
+IMAGEPICTURE "Img_ELF" "" "" 44 74 32 32 1 0 "Window\图标_精灵.dds"
+LABEL "Txt_Xuqiu1" "" "" 183 121 0 0 32 15 33 255 255 255 255
+LABEL "Txt_Xuqiu2" "" "" 183 171 0 0 34 15 35 255 255 255 255
+LABEL "Txt_Xuqiu3" "" "" 183 221 0 0 36 15 37 255 255 255 255
+LABEL "Txt_Xuqiu4" "" "" 183 276 0 0 38 15 39 255 255 255 255
+LABEL "Txt_Xuqiu5" "" "" 183 334 0 0 40 15 41 255 255 255 255

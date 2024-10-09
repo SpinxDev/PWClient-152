@@ -1,0 +1,47 @@
+	public:
+		SSOUser user;
+		int toaid;
+		int tozoneid;
+		Octets info;
+		Octets local_context;
+		enum { PROTOCOL_TYPE = PROTOCOL_SSOGETTICKET };
+	public:
+		SSOGetTicket() { type = PROTOCOL_SSOGETTICKET; }
+		SSOGetTicket(void*) : Protocol(PROTOCOL_SSOGETTICKET) { }
+		SSOGetTicket (const SSOUser& l_user,int l_toaid,int l_tozoneid,
+			const Octets& l_info,const Octets& l_local_context)
+			 : user(l_user),toaid(l_toaid),tozoneid(l_tozoneid)
+			,info(l_info),local_context(l_local_context)
+		{
+			type = PROTOCOL_SSOGETTICKET;
+		}
+
+		SSOGetTicket(const SSOGetTicket &rhs)
+			: Protocol(rhs),user(rhs.user),toaid(rhs.toaid),tozoneid(rhs.tozoneid)
+			,info(rhs.info),local_context(rhs.local_context) { }
+
+		GNET::Protocol *Clone() const { return new SSOGetTicket(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << user;
+			os << toaid;
+			os << tozoneid;
+			os << info;
+			os << local_context;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> user;
+			os >> toaid;
+			os >> tozoneid;
+			os >> info;
+			os >> local_context;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 2048; }

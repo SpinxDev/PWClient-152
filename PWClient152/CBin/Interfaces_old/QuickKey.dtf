@@ -1,0 +1,11 @@
+DIALOG "Win_QuickKey" 0 0 341 431 0 1 10 "Window\对话框_标准边框x.dds" "" "" 0 0 0 0 "人鱼传说新界面\面板关闭按钮.tga" 47 30 96 96 96 255 1
+EDIT "Img_Title" "" "" 16 23 313 37 "人鱼传说新界面\title.tga" 2 15 255 255 255 "TEXT" 1 0 20
+LABEL "title" "" "" 117 29 0 0 3 16 4 255 203 74 255
+IMAGEPICTURE "Control_130626938" "" "" 4 0 335 431 1 0 "人鱼传说新界面\未命名-1副本.dds"
+STILLIMAGEBUTTON "Btn_Function" "" "SFX\Interface\ClickB.wav" 22 60 170 24 0 0 0 0 5 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 6 1
+STILLIMAGEBUTTON "Btn_QuickKey" "" "SFX\Interface\ClickB.wav" 192 60 129 24 0 0 0 0 7 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 8 1
+LIST "Lst_Keylist" "" "" 22 86 300 300 9 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "170 +130"
+STILLIMAGEBUTTON "Btn_Cancel" "IDCANCEL" "SFX\Interface\ClickB.wav" 269 393 50 24 0 0 0 0 10 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 11 1
+STILLIMAGEBUTTON "Btn_Confirm" "confirm" "SFX\Interface\ClickB.wav" 216 393 50 24 0 0 0 0 12 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 13 1
+STILLIMAGEBUTTON "Btn_Apply" "apply" "SFX\Interface\ClickB.wav" 163 393 50 24 0 0 0 0 14 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 15 1
+STILLIMAGEBUTTON "Btn_Default" "default" "SFX\Interface\ClickB.wav" 24 392 50 24 0 0 0 0 16 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 17 1

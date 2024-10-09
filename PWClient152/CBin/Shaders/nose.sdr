@@ -1,0 +1,20 @@
+//  ************* Angelica 3D shader ***************
+
+version 5
+
+"Nose"
+{
+	//  General properties
+	texturefactor    1.000000  1.000000  1.000000  1.000000
+	pixelshader      Shaders\2.2\ps\facerender\noserender.txt
+
+	//  Stage 0
+	{
+		colorop          TOP_MODULATE
+		colorarg1        TA_TEXTURE
+		colorarg2        TA_DIFFUSE
+		alphaop          TOP_MODULATE
+		alphaarg1        TA_TEXTURE
+		alphaarg2        TA_DIFFUSE
+	}
+}

@@ -1,0 +1,35 @@
+	public:
+		int userid;
+		Octets machineinfo;
+		enum { PROTOCOL_TYPE = PROTOCOL_COLLECTCLIENTMACHINEINFO };
+	public:
+		CollectClientMachineInfo() { type = PROTOCOL_COLLECTCLIENTMACHINEINFO; }
+		CollectClientMachineInfo(void*) : Protocol(PROTOCOL_COLLECTCLIENTMACHINEINFO) { }
+		CollectClientMachineInfo (int l_userid,const Octets& l_machineinfo)
+			 : userid(l_userid),machineinfo(l_machineinfo)
+		{
+			type = PROTOCOL_COLLECTCLIENTMACHINEINFO;
+		}
+
+		CollectClientMachineInfo(const CollectClientMachineInfo &rhs)
+			: Protocol(rhs),userid(rhs.userid),machineinfo(rhs.machineinfo) { }
+
+		GNET::Protocol *Clone() const { return new CollectClientMachineInfo(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << userid;
+			os << machineinfo;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> userid;
+			os >> machineinfo;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 2048; }

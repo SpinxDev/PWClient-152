@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		unsigned int auctionid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_AUCTIONGET };
+	public:
+		AuctionGet() { type = PROTOCOL_AUCTIONGET; }
+		AuctionGet(void*) : Protocol(PROTOCOL_AUCTIONGET) { }
+		AuctionGet (int l_roleid,unsigned int l_auctionid = 0,unsigned int l_localsid = 0)
+			 : roleid(l_roleid),auctionid(l_auctionid),localsid(l_localsid)
+		{
+			type = PROTOCOL_AUCTIONGET;
+		}
+
+		AuctionGet(const AuctionGet &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),auctionid(rhs.auctionid),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new AuctionGet(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << auctionid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> auctionid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

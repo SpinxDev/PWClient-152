@@ -1,0 +1,44 @@
+	public:
+		int roleid;
+		unsigned int auctionid;
+		unsigned char reason;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_AUCTIONCLOSE };
+	public:
+		AuctionClose() { type = PROTOCOL_AUCTIONCLOSE; }
+		AuctionClose(void*) : Protocol(PROTOCOL_AUCTIONCLOSE) { }
+		AuctionClose (int l_roleid,unsigned int l_auctionid,unsigned char l_reason,
+			unsigned int l_localsid)
+			 : roleid(l_roleid),auctionid(l_auctionid),reason(l_reason),
+			localsid(l_localsid)
+		{
+			type = PROTOCOL_AUCTIONCLOSE;
+		}
+
+		AuctionClose(const AuctionClose &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),auctionid(rhs.auctionid),reason(rhs.reason),
+			localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new AuctionClose(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << auctionid;
+			os << reason;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> auctionid;
+			os >> reason;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

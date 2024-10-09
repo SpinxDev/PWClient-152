@@ -1,0 +1,50 @@
+	public:
+		unsigned char channel;
+		unsigned char emotion;
+		int roleid;
+		Octets name;
+		Octets msg;
+		Octets data;
+		enum { PROTOCOL_TYPE = PROTOCOL_WORLDCHAT };
+	public:
+		WorldChat() { type = PROTOCOL_WORLDCHAT; }
+		WorldChat(void*) : Protocol(PROTOCOL_WORLDCHAT) { }
+		WorldChat (unsigned char l_channel,unsigned char l_emotion,int l_roleid,
+			const Octets& l_name,const Octets& l_msg,const Octets& l_data)
+			 : channel(l_channel),emotion(l_emotion),roleid(l_roleid)
+			,name(l_name),msg(l_msg),data(l_data)
+		{
+			type = PROTOCOL_WORLDCHAT;
+		}
+
+		WorldChat(const WorldChat &rhs)
+			: Protocol(rhs),channel(rhs.channel),emotion(rhs.emotion),roleid(rhs.roleid)
+			,name(rhs.name),msg(rhs.msg),data(rhs.data) { }
+
+		GNET::Protocol *Clone() const { return new WorldChat(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << channel;
+			os << emotion;
+			os << roleid;
+			os << name;
+			os << msg;
+			os << data;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> channel;
+			os >> emotion;
+			os >> roleid;
+			os >> name;
+			os >> msg;
+			os >> data;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

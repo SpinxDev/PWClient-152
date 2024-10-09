@@ -1,0 +1,15 @@
+; mini map rendering shader
+
+; t0 is the map texture
+; t1 is the mask texture
+
+ps.1.1
+
+tex t0
+tex t1
+
+mov r0.rgb, t0
++mov r0.a, t1.a
+
+
+

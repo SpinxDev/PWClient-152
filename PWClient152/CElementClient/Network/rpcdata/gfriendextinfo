@@ -1,0 +1,112 @@
+#ifndef __GNET_GFRIENDEXTINFO_RPCDATA
+#define __GNET_GFRIENDEXTINFO_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GFriendExtInfo : public GNET::Rpc::Data
+	{
+	public:
+		int uid;
+		int rid;
+		int level;
+		int last_logintime;
+		int update_time;
+		unsigned char reincarnation_times;
+		Octets remarks;
+		short reserved1;
+		int reserved2;
+		int reserved3;
+
+	public:
+		GFriendExtInfo (int l_uid = 0,int l_rid = 0,int l_level = 0
+			,int l_last_logintime = -1,int l_update_time = -1,unsigned char l_reincarnation_times = 0
+			,short l_reserved1 = 0,int l_reserved2 = 0,int l_reserved3 = 0)
+			: uid(l_uid),rid(l_rid),level(l_level)
+			,last_logintime(l_last_logintime),update_time(l_update_time),reincarnation_times(l_reincarnation_times)
+			,reserved1(l_reserved1),reserved2(l_reserved2),reserved3(l_reserved3)
+		{
+		}
+
+		GFriendExtInfo(const GFriendExtInfo &rhs)
+			: uid(rhs.uid),rid(rhs.rid),level(rhs.level),
+			last_logintime(rhs.last_logintime),update_time(rhs.update_time),reincarnation_times(rhs.reincarnation_times),
+			remarks(rhs.remarks),reserved1(rhs.reserved1),reserved2(rhs.reserved2),
+			reserved3(rhs.reserved3) { }
+
+		Rpc::Data *Clone() const { return new GFriendExtInfo(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GFriendExtInfo *r = dynamic_cast<const GFriendExtInfo *>(&rhs);
+			if (r && r != this)
+			{
+				uid = r->uid;
+				rid = r->rid;
+				level = r->level;
+				last_logintime = r->last_logintime;
+				update_time = r->update_time;
+				reincarnation_times = r->reincarnation_times;
+				remarks = r->remarks;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+			}
+			return *this;
+		}
+
+		GFriendExtInfo& operator = (const GFriendExtInfo &rhs)
+		{
+			const GFriendExtInfo *r = &rhs;
+			if (r && r != this)
+			{
+				uid = r->uid;
+				rid = r->rid;
+				level = r->level;
+				last_logintime = r->last_logintime;
+				update_time = r->update_time;
+				reincarnation_times = r->reincarnation_times;
+				remarks = r->remarks;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << uid;
+			os << rid;
+			os << level;
+			os << last_logintime;
+			os << update_time;
+			os << reincarnation_times;
+			os << remarks;
+			os << reserved1;
+			os << reserved2;
+			os << reserved3;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> uid;
+			os >> rid;
+			os >> level;
+			os >> last_logintime;
+			os >> update_time;
+			os >> reincarnation_times;
+			os >> remarks;
+			os >> reserved1;
+			os >> reserved2;
+			os >> reserved3;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<GFriendExtInfo>	GFriendExtInfoVector;
+};
+#endif

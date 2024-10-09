@@ -1,0 +1,44 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		unsigned int factionid;
+		int invited_roleid;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONACCEPTJOIN };
+	public:
+		FactionAcceptJoin() { type = PROTOCOL_FACTIONACCEPTJOIN; }
+		FactionAcceptJoin(void*) : Protocol(PROTOCOL_FACTIONACCEPTJOIN) { }
+		FactionAcceptJoin (int l_roleid,unsigned int l_localsid,unsigned int l_factionid,
+			int l_invited_roleid)
+			 : roleid(l_roleid),localsid(l_localsid),factionid(l_factionid),
+			invited_roleid(l_invited_roleid)
+		{
+			type = PROTOCOL_FACTIONACCEPTJOIN;
+		}
+
+		FactionAcceptJoin(const FactionAcceptJoin &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid),factionid(rhs.factionid),
+			invited_roleid(rhs.invited_roleid) { }
+
+		GNET::Protocol *Clone() const { return new FactionAcceptJoin(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << factionid;
+			os << invited_roleid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> factionid;
+			os >> invited_roleid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 256; }

@@ -1,0 +1,50 @@
+	public:
+		int handle;
+		int roleid;
+		unsigned int localsid;
+		Octets proclaim;
+		FMemberInfoVector member_list;
+		IntVector online_list;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONLISTMEMBER_RE };
+	public:
+		FactionListMember_Re() { type = PROTOCOL_FACTIONLISTMEMBER_RE; }
+		FactionListMember_Re(void*) : Protocol(PROTOCOL_FACTIONLISTMEMBER_RE) { }
+		FactionListMember_Re (int l_handle,int l_roleid,unsigned int l_localsid,
+			const Octets& l_proclaim,FMemberInfoVector l_member_list,IntVector l_online_list = IntVector())
+			 : handle(l_handle),roleid(l_roleid),localsid(l_localsid),
+			proclaim(l_proclaim),member_list(l_member_list),online_list(l_online_list)
+		{
+			type = PROTOCOL_FACTIONLISTMEMBER_RE;
+		}
+
+		FactionListMember_Re(const FactionListMember_Re &rhs)
+			: Protocol(rhs),handle(rhs.handle),roleid(rhs.roleid),localsid(rhs.localsid),
+			proclaim(rhs.proclaim),member_list(rhs.member_list),online_list(rhs.online_list) { }
+
+		GNET::Protocol *Clone() const { return new FactionListMember_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << handle;
+			os << roleid;
+			os << localsid;
+			os << proclaim;
+			os << member_list;
+			os << online_list;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> handle;
+			os >> roleid;
+			os >> localsid;
+			os >> proclaim;
+			os >> member_list;
+			os >> online_list;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 16384; }

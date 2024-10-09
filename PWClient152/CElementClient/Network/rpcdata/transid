@@ -1,0 +1,64 @@
+#ifndef __GNET_TRANSID_RPCDATA
+#define __GNET_TRANSID_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class TransID : public GNET::Rpc::Data
+	{
+	public:
+		int zoneid;
+		int serialno;
+
+	public:
+		TransID (int l_zoneid = 0,int l_serialno = 0)
+			: zoneid(l_zoneid),serialno(l_serialno)
+		{
+		}
+
+		TransID(const TransID &rhs)
+			: zoneid(rhs.zoneid),serialno(rhs.serialno) { }
+
+		Rpc::Data *Clone() const { return new TransID(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const TransID *r = dynamic_cast<const TransID *>(&rhs);
+			if (r && r != this)
+			{
+				zoneid = r->zoneid;
+				serialno = r->serialno;
+			}
+			return *this;
+		}
+
+		TransID& operator = (const TransID &rhs)
+		{
+			const TransID *r = &rhs;
+			if (r && r != this)
+			{
+				zoneid = r->zoneid;
+				serialno = r->serialno;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << zoneid;
+			os << serialno;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> zoneid;
+			os >> serialno;
+			return os;
+		}
+
+	};
+};
+#endif

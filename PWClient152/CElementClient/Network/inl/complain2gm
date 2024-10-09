@@ -1,0 +1,68 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		Octets rolename;
+		Octets comp_rolename;
+		int zoneid;
+		Octets mapzone;
+		float posx;
+		float posy;
+		float posz;
+		Octets content;
+		enum { PROTOCOL_TYPE = PROTOCOL_COMPLAIN2GM };
+	public:
+		Complain2GM() { type = PROTOCOL_COMPLAIN2GM; }
+		Complain2GM(void*) : Protocol(PROTOCOL_COMPLAIN2GM) { }
+		Complain2GM (int l_roleid,unsigned int l_localsid,const Octets& l_rolename,
+			const Octets& l_comp_rolename,int l_zoneid,const Octets& l_mapzone,
+			float l_posx,float l_posy,float l_posz,
+			const Octets& l_content)
+			 : roleid(l_roleid),localsid(l_localsid),rolename(l_rolename),
+			comp_rolename(l_comp_rolename),zoneid(l_zoneid),mapzone(l_mapzone),
+			posx(l_posx),posy(l_posy),posz(l_posz),
+			content(l_content)
+		{
+			type = PROTOCOL_COMPLAIN2GM;
+		}
+
+		Complain2GM(const Complain2GM &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid),rolename(rhs.rolename),
+			comp_rolename(rhs.comp_rolename),zoneid(rhs.zoneid),mapzone(rhs.mapzone),
+			posx(rhs.posx),posy(rhs.posy),posz(rhs.posz),
+			content(rhs.content) { }
+
+		GNET::Protocol *Clone() const { return new Complain2GM(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << rolename;
+			os << comp_rolename;
+			os << zoneid;
+			os << mapzone;
+			os << posx;
+			os << posy;
+			os << posz;
+			os << content;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> rolename;
+			os >> comp_rolename;
+			os >> zoneid;
+			os >> mapzone;
+			os >> posx;
+			os >> posy;
+			os >> posz;
+			os >> content;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 256; }

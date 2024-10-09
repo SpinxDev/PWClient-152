@@ -1,0 +1,65 @@
+#ifndef __GNET_GCHATMEMBER_RPCDATA
+#define __GNET_GCHATMEMBER_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GChatMember : public GNET::Rpc::Data
+	{
+	public:
+		int roleid;
+		Octets name;
+
+	public:
+		GChatMember (int l_roleid = 0,const Octets& l_name = Octets())
+			: roleid(l_roleid),name(l_name)
+		{
+		}
+
+		GChatMember(const GChatMember &rhs)
+			: roleid(rhs.roleid),name(rhs.name) { }
+
+		Rpc::Data *Clone() const { return new GChatMember(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GChatMember *r = dynamic_cast<const GChatMember *>(&rhs);
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				name = r->name;
+			}
+			return *this;
+		}
+
+		GChatMember& operator = (const GChatMember &rhs)
+		{
+			const GChatMember *r = &rhs;
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				name = r->name;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << name;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> name;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<GChatMember>	GChatMemberVector;
+};
+#endif

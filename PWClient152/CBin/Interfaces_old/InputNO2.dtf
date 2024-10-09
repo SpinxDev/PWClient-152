@@ -1,0 +1,9 @@
+DIALOG "Win_InputNO2" 0 0 185 120 0 1 10 "Window\对话框_标准边框1.dds" "" "" 0 0 185 27 "人鱼传说新界面\面板关闭按钮.tga" 31 6 96 96 96 255 1
+LABEL "Control_285650307" "" "" 5 3 0 0 2 16 3 255 203 74 255
+STILLIMAGEBUTTON "Btn_Exit" "IDCANCEL" "SFX\Interface\ClickB.wav" 97 85 40 24 0 0 0 0 4 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 5 1
+STILLIMAGEBUTTON "Btn_Decide" "confirm" "SFX\Interface\ClickB.wav" 49 85 40 24 0 0 0 0 6 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 7 1
+STILLIMAGEBUTTON "Btn_Max" "max" "SFX\Interface\ClickB.wav" 131 56 40 24 0 0 0 0 8 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 9 1
+LABEL "Control_551175315" "" "" 11 35 0 0 10 10 11 255 203 74 255
+EDIT "Txt_Price" "price" "confirm" 71 33 100 21 "Editbox\文本框_4.dds" 12 10 255 255 255 "TEXT" 0 0 10
+EDIT "Txt_Amount" "amount" "confirm" 71 58 56 21 "Editbox\文本框_4.dds" 13 10 255 255 255 "TEXT" 0 0 4
+LABEL "Control_459781638" "" "" 11 60 54 17 14 10 15 255 203 74 255

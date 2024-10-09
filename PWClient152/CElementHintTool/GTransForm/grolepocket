@@ -1,0 +1,88 @@
+#ifndef __GNET_GROLEPOCKET_RPCDATA
+#define __GNET_GROLEPOCKET_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "groleinventory"
+
+namespace GNET
+{
+	class GRolePocket : public GNET::Rpc::Data
+	{
+	public:
+		unsigned int capacity;
+		unsigned int timestamp;
+		unsigned int money;
+		GRoleInventoryVector items;
+		int reserved1;
+		int reserved2;
+
+	public:
+		GRolePocket (unsigned int l_capacity = 0,unsigned int l_timestamp = 0,unsigned int l_money = 0
+			,int l_reserved1 = 0,int l_reserved2 = 0)
+			: capacity(l_capacity),timestamp(l_timestamp),money(l_money)
+			,reserved1(l_reserved1),reserved2(l_reserved2)
+		{
+		}
+
+		GRolePocket(const GRolePocket &rhs)
+			: capacity(rhs.capacity),timestamp(rhs.timestamp),money(rhs.money),
+			items(rhs.items),reserved1(rhs.reserved1),reserved2(rhs.reserved2) { }
+
+		Rpc::Data *Clone() const { return new GRolePocket(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GRolePocket *r = dynamic_cast<const GRolePocket *>(&rhs);
+			if (r && r != this)
+			{
+				capacity = r->capacity;
+				timestamp = r->timestamp;
+				money = r->money;
+				items = r->items;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+			}
+			return *this;
+		}
+
+		GRolePocket& operator = (const GRolePocket &rhs)
+		{
+			const GRolePocket *r = &rhs;
+			if (r && r != this)
+			{
+				capacity = r->capacity;
+				timestamp = r->timestamp;
+				money = r->money;
+				items = r->items;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << capacity;
+			os << timestamp;
+			os << money;
+			os << items;
+			os << reserved1;
+			os << reserved2;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> capacity;
+			os >> timestamp;
+			os >> money;
+			os >> items;
+			os >> reserved1;
+			os >> reserved2;
+			return os;
+		}
+
+	};
+};
+#endif

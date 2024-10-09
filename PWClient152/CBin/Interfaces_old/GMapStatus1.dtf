@@ -1,0 +1,18 @@
+DIALOG "Win_GMapStatus1" 0 0 190 200 0 1 10 "Window\对话框_透明色.bmp" "" "" 0 0 -1 -1 "" 0 0 96 96 96 255 1
+LABEL "Lab_Name" "" "" 4 6 0 0 2 10 3 255 203 74 255
+LABEL "Txt_Name" "" "" 66 6 0 0 4 10 5 192 192 192 255
+LABEL "Lab_Level" "" "" 4 26 0 0 6 10 7 255 203 74 255
+LABEL "Txt_Level" "" "" 66 26 0 0 8 10 9 192 192 192 255
+LABEL "Lab_Win" "" "" 4 46 0 0 10 10 11 255 203 74 255
+LABEL "Txt_Win" "" "" 66 46 0 0 12 10 13 192 192 192 255
+LABEL "Lab_Attach" "" "" 4 66 0 0 14 10 15 255 203 74 255
+LABEL "Txt_Attach" "" "" 66 66 0 0 16 10 17 192 192 192 255
+LABEL "Lab_Attack" "" "" 4 86 0 0 18 10 19 255 203 74 255
+LABEL "Txt_Attack" "" "" 66 86 0 0 20 10 21 192 192 192 255
+LABEL "Lab_Time" "" "" 4 106 0 0 22 10 23 255 203 74 255
+LABEL "Txt_Time" "" "" 66 106 0 0 24 10 25 192 192 192 255
+STILLIMAGEBUTTON "Btn_AllBattleTime" "allbattletime" "" 0 168 117 24 0 0 0 0 26 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 27 1
+LABEL "Lab_Money" "" "" 4 126 0 0 28 10 29 255 203 74 255
+LABEL "Txt_Money" "" "" 66 127 0 0 30 10 31 192 192 192 255
+LABEL "Lab_MaxReturn" "" "" 4 146 0 0 32 10 33 255 203 74 255
+LABEL "Txt_MaxReturn" "" "" 66 146 0 0 34 10 35 192 192 192 255

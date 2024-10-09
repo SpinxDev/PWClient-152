@@ -1,0 +1,47 @@
+	public:
+		int retcode;
+		int roleid;
+		unsigned int localsid;
+		unsigned char mail_id;
+		unsigned char blPreserve;
+		enum { PROTOCOL_TYPE = PROTOCOL_PRESERVEMAIL_RE };
+	public:
+		PreserveMail_Re() { type = PROTOCOL_PRESERVEMAIL_RE; }
+		PreserveMail_Re(void*) : Protocol(PROTOCOL_PRESERVEMAIL_RE) { }
+		PreserveMail_Re (int l_retcode,int l_roleid,unsigned int l_localsid,
+			unsigned char l_mail_id,unsigned char l_blPreserve)
+			 : retcode(l_retcode),roleid(l_roleid),localsid(l_localsid),
+			mail_id(l_mail_id),blPreserve(l_blPreserve)
+		{
+			type = PROTOCOL_PRESERVEMAIL_RE;
+		}
+
+		PreserveMail_Re(const PreserveMail_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),roleid(rhs.roleid),localsid(rhs.localsid),
+			mail_id(rhs.mail_id),blPreserve(rhs.blPreserve) { }
+
+		GNET::Protocol *Clone() const { return new PreserveMail_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roleid;
+			os << localsid;
+			os << mail_id;
+			os << blPreserve;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roleid;
+			os >> localsid;
+			os >> mail_id;
+			os >> blPreserve;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

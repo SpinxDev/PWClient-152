@@ -1,0 +1,160 @@
+#ifndef __GNET_GROLEBASE_RPCDATA
+#define __GNET_GROLEBASE_RPCDATA
+
+#include "rpcdefs.h"
+#include "groleforbid"
+
+
+namespace GNET
+{
+	class GRoleBase : public GNET::Rpc::Data
+	{
+	public:
+		char version;
+		unsigned int id;
+		Octets name;
+		int race;
+		int cls;
+		unsigned char gender;
+		Octets custom_data;
+		Octets config_data;
+		unsigned int custom_stamp;
+		unsigned char status;
+		int delete_time;
+		int create_time;
+		int lastlogin_time;
+		GRoleForbidVector forbid;
+		Octets help_states;
+		int reserved1;
+		int reserved2;
+		int reserved3;
+
+	public:
+		GRoleBase (char l_version = 1,unsigned int l_id = 0,const Octets& l_name = Octets(0)
+			,int l_race = 0,int l_cls = 0,unsigned char l_gender = 0
+			,Octets l_custom_data = Octets(0),Octets l_config_data = Octets(0),unsigned int l_custom_stamp = 0
+			,unsigned char l_status = 0,int l_delete_time = 0,int l_create_time = 0
+			,int l_lastlogin_time = 0,int l_reserved1 = 0,int l_reserved2 = 0
+			,int l_reserved3 = 0)
+			: version(l_version),id(l_id),name(l_name)
+			,race(l_race),cls(l_cls),gender(l_gender)
+			,custom_data(l_custom_data),config_data(l_config_data),custom_stamp(l_custom_stamp)
+			,status(l_status),delete_time(l_delete_time),create_time(l_create_time)
+			,lastlogin_time(l_lastlogin_time),reserved1(l_reserved1),reserved2(l_reserved2)
+			,reserved3(l_reserved3)
+		{
+		}
+
+		GRoleBase(const GRoleBase &rhs)
+			: version(rhs.version),id(rhs.id),name(rhs.name),
+			race(rhs.race),cls(rhs.cls),gender(rhs.gender),
+			custom_data(rhs.custom_data),config_data(rhs.config_data),custom_stamp(rhs.custom_stamp),
+			status(rhs.status),delete_time(rhs.delete_time),create_time(rhs.create_time),
+			lastlogin_time(rhs.lastlogin_time),forbid(rhs.forbid),help_states(rhs.help_states),
+			reserved1(rhs.reserved1),reserved2(rhs.reserved2),reserved3(rhs.reserved3) { }
+
+		Rpc::Data *Clone() const { return new GRoleBase(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GRoleBase *r = dynamic_cast<const GRoleBase *>(&rhs);
+			if (r && r != this)
+			{
+				version = r->version;
+				id = r->id;
+				name = r->name;
+				race = r->race;
+				cls = r->cls;
+				gender = r->gender;
+				custom_data = r->custom_data;
+				config_data = r->config_data;
+				custom_stamp = r->custom_stamp;
+				status = r->status;
+				delete_time = r->delete_time;
+				create_time = r->create_time;
+				lastlogin_time = r->lastlogin_time;
+				forbid = r->forbid;
+				help_states = r->help_states;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+			}
+			return *this;
+		}
+
+		GRoleBase& operator = (const GRoleBase &rhs)
+		{
+			const GRoleBase *r = &rhs;
+			if (r && r != this)
+			{
+				version = r->version;
+				id = r->id;
+				name = r->name;
+				race = r->race;
+				cls = r->cls;
+				gender = r->gender;
+				custom_data = r->custom_data;
+				config_data = r->config_data;
+				custom_stamp = r->custom_stamp;
+				status = r->status;
+				delete_time = r->delete_time;
+				create_time = r->create_time;
+				lastlogin_time = r->lastlogin_time;
+				forbid = r->forbid;
+				help_states = r->help_states;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << (char)(1);
+			os << id;
+			os << name;
+			os << race;
+			os << cls;
+			os << gender;
+			os << custom_data;
+			os << config_data;
+			os << custom_stamp;
+			os << status;
+			os << delete_time;
+			os << create_time;
+			os << lastlogin_time;
+			os << forbid;
+			os << help_states;
+			os << reserved1;
+			os << reserved2;
+			os << reserved3;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> version;
+			os >> id;
+			os >> name;
+			os >> race;
+			os >> cls;
+			os >> gender;
+			os >> custom_data;
+			os >> config_data;
+			os >> custom_stamp;
+			os >> status;
+			os >> delete_time;
+			os >> create_time;
+			os >> lastlogin_time;
+			os >> forbid;
+			os >> help_states;
+			os >> reserved1;
+			os >> reserved2;
+			os >> reserved3;
+			return os;
+		}
+
+	};
+};
+#endif

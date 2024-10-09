@@ -1,0 +1,35 @@
+	public:
+		int gmroleid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_GMONLINENUM };
+	public:
+		GMOnlineNum() { type = PROTOCOL_GMONLINENUM; }
+		GMOnlineNum(void*) : Protocol(PROTOCOL_GMONLINENUM) { }
+		GMOnlineNum (int l_gmroleid,unsigned int l_localsid)
+			 : gmroleid(l_gmroleid),localsid(l_localsid)
+		{
+			type = PROTOCOL_GMONLINENUM;
+		}
+
+		GMOnlineNum(const GMOnlineNum &rhs)
+			: Protocol(rhs),gmroleid(rhs.gmroleid),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new GMOnlineNum(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << gmroleid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> gmroleid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

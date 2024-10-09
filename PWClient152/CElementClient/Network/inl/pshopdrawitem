@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		int item_pos;
+		Octets syncdata;
+		enum { PROTOCOL_TYPE = PROTOCOL_PSHOPDRAWITEM };
+	public:
+		PShopDrawItem() { type = PROTOCOL_PSHOPDRAWITEM; }
+		PShopDrawItem(void*) : Protocol(PROTOCOL_PSHOPDRAWITEM) { }
+		PShopDrawItem (int l_roleid,int l_item_pos = 0,const Octets& l_syncdata = Octets())
+			 : roleid(l_roleid),item_pos(l_item_pos),syncdata(l_syncdata)
+		{
+			type = PROTOCOL_PSHOPDRAWITEM;
+		}
+
+		PShopDrawItem(const PShopDrawItem &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),item_pos(rhs.item_pos),syncdata(rhs.syncdata) { }
+
+		GNET::Protocol *Clone() const { return new PShopDrawItem(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << item_pos;
+			os << syncdata;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> item_pos;
+			os >> syncdata;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 131072; }

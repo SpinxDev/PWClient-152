@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		std::vector<unsigned int> ids;
+		enum { PROTOCOL_TYPE = PROTOCOL_AUCTIONLISTUPDATE };
+	public:
+		AuctionListUpdate() { type = PROTOCOL_AUCTIONLISTUPDATE; }
+		AuctionListUpdate(void*) : Protocol(PROTOCOL_AUCTIONLISTUPDATE) { }
+		AuctionListUpdate (int l_roleid,unsigned int l_localsid,const std::vector<unsigned int>& l_ids = std::vector<unsigned int>())
+			 : roleid(l_roleid),localsid(l_localsid),ids(l_ids)
+		{
+			type = PROTOCOL_AUCTIONLISTUPDATE;
+		}
+
+		AuctionListUpdate(const AuctionListUpdate &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid),ids(rhs.ids) { }
+
+		GNET::Protocol *Clone() const { return new AuctionListUpdate(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << ids;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> ids;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 128; }

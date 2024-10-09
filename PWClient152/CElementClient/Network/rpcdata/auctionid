@@ -1,0 +1,59 @@
+#ifndef __GNET_AUCTIONID_RPCDATA
+#define __GNET_AUCTIONID_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class AuctionId : public GNET::Rpc::Data
+	{
+	public:
+		unsigned int id;
+
+	public:
+		AuctionId (unsigned int l_id = 0)
+			: id(l_id)
+		{
+		}
+
+		AuctionId(const AuctionId &rhs)
+			: id(rhs.id) { }
+
+		Rpc::Data *Clone() const { return new AuctionId(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const AuctionId *r = dynamic_cast<const AuctionId *>(&rhs);
+			if (r && r != this)
+			{
+				id = r->id;
+			}
+			return *this;
+		}
+
+		AuctionId& operator = (const AuctionId &rhs)
+		{
+			const AuctionId *r = &rhs;
+			if (r && r != this)
+			{
+				id = r->id;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << id;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> id;
+			return os;
+		}
+
+	};
+};
+#endif

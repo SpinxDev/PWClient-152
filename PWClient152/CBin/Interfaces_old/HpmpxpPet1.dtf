@@ -1,0 +1,7 @@
+DIALOG "Win_HpmpxpPet1" 0 0 140 64 0 1 10 "" "" "" 0 0 -1 -1 "" 0 0 96 96 96 0 1
+IMAGEPICTURE "Back1" "" "" 0 0 144 60 1 0 "Pet\战斗宠物板.tga"
+IMAGEPICTURE "Icon_Head" "" "" 11 10 32 32 0 0 ""
+PROGRESS "Pro_hp" "" "" 53 14 82 5 "Window\对话框_透明色.bmp" "Pet\宠物血条.tga" 0 0 0 0
+PROGRESS "Pro_loyalty" "" "" 53 22 82 5 "Window\对话框_透明色.bmp" "Pet\宠物忠诚度.tga" 0 0 0 0
+PROGRESS "Pro_exp" "" "" 53 30 82 5 "Window\对话框_透明色.bmp" "Pet\宠物经验值.tga" 0 0 0 0
+LABEL "Txt_Level" "" "" 44 41 0 0 2 8 3 255 255 255 255

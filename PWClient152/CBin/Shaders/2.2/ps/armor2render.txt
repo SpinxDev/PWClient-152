@@ -1,0 +1,17 @@
+ps.1.4
+
+; c0 is the fashion color
+texld r0, t0		; base texture
+texld r1, t0		; specular map and dyezone map
+texld r2, t1		; reflection map
+
+mul r3.rgb, r0, c0
+lrp r0.rgb, r1.b, r3, r0
+mul r0.rgb, r0, v0
++mul r0.a, r0.a, v0.a
+
+mad r0.rgb, r1.r, v1, r0
+mad r0.rgb, r1.g, r2, r0
+
+
+

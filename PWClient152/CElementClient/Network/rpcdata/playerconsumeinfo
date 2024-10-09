@@ -1,0 +1,88 @@
+#ifndef __GNET_PLAYERCONSUMEINFO_RPCDATA
+#define __GNET_PLAYERCONSUMEINFO_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class PlayerConsumeInfo : public GNET::Rpc::Data
+	{
+	public:
+		int roleid;
+		int level;
+		int login_ip;
+		unsigned int cash_add;
+		unsigned int mall_consumption;
+		unsigned int avg_online_time;
+
+	public:
+		PlayerConsumeInfo (int l_roleid = -1,int l_level = -1,int l_login_ip = 0
+			,unsigned int l_cash_add = 0,unsigned int l_mall_consumption = 0,unsigned int l_avg_online_time = 0)
+			: roleid(l_roleid),level(l_level),login_ip(l_login_ip)
+			,cash_add(l_cash_add),mall_consumption(l_mall_consumption),avg_online_time(l_avg_online_time)
+		{
+		}
+
+		PlayerConsumeInfo(const PlayerConsumeInfo &rhs)
+			: roleid(rhs.roleid),level(rhs.level),login_ip(rhs.login_ip),
+			cash_add(rhs.cash_add),mall_consumption(rhs.mall_consumption),avg_online_time(rhs.avg_online_time) { }
+
+		Rpc::Data *Clone() const { return new PlayerConsumeInfo(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const PlayerConsumeInfo *r = dynamic_cast<const PlayerConsumeInfo *>(&rhs);
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				level = r->level;
+				login_ip = r->login_ip;
+				cash_add = r->cash_add;
+				mall_consumption = r->mall_consumption;
+				avg_online_time = r->avg_online_time;
+			}
+			return *this;
+		}
+
+		PlayerConsumeInfo& operator = (const PlayerConsumeInfo &rhs)
+		{
+			const PlayerConsumeInfo *r = &rhs;
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				level = r->level;
+				login_ip = r->login_ip;
+				cash_add = r->cash_add;
+				mall_consumption = r->mall_consumption;
+				avg_online_time = r->avg_online_time;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << level;
+			os << login_ip;
+			os << cash_add;
+			os << mall_consumption;
+			os << avg_online_time;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> level;
+			os >> login_ip;
+			os >> cash_add;
+			os >> mall_consumption;
+			os >> avg_online_time;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<PlayerConsumeInfo>	PlayerConsumeInfoVector;
+};
+#endif

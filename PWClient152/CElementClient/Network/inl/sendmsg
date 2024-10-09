@@ -1,0 +1,56 @@
+	public:
+		int srcroleid;
+		char srczoneid;
+		int dstroleid;
+		char dstzoneid;
+		Octets msg;
+		unsigned int time;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_SENDMSG };
+	public:
+		SendMsg() { type = PROTOCOL_SENDMSG; }
+		SendMsg(void*) : Protocol(PROTOCOL_SENDMSG) { }
+		SendMsg (int l_srcroleid,char l_srczoneid,int l_dstroleid,
+			char l_dstzoneid,const Octets& l_msg,unsigned int l_time,
+			unsigned int l_localsid)
+			 : srcroleid(l_srcroleid),srczoneid(l_srczoneid),dstroleid(l_dstroleid),
+			dstzoneid(l_dstzoneid),msg(l_msg),time(l_time),
+			localsid(l_localsid)
+		{
+			type = PROTOCOL_SENDMSG;
+		}
+
+		SendMsg(const SendMsg &rhs)
+			: Protocol(rhs),srcroleid(rhs.srcroleid),srczoneid(rhs.srczoneid),dstroleid(rhs.dstroleid),
+			dstzoneid(rhs.dstzoneid),msg(rhs.msg),time(rhs.time),
+			localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new SendMsg(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << srcroleid;
+			os << srczoneid;
+			os << dstroleid;
+			os << dstzoneid;
+			os << msg;
+			os << time;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> srcroleid;
+			os >> srczoneid;
+			os >> dstroleid;
+			os >> dstzoneid;
+			os >> msg;
+			os >> time;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

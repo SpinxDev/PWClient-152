@@ -1,0 +1,22 @@
+; water bump pixel shader used by A3DTerrainWater. 
+
+; t0, t1, t2 are all wave textures only different scale and offset
+
+ps.1.1
+
+def c0, 1.0, 1.0, 1.0, 0.5
+def c1, 1.0, 1.0, 1.0, 0.6
+
+tex t0
+tex t1
+tex t2
+
+mov r1.rgb, t2
++mul r1.a, t2, c0.a 
+lrp r1, t1.a, t1, r1
+lrp r1, t0.a, t0, r1
+
+mul r1.a, r1.a, c1.a
+
+mul_x2 r0.rgb, v0, r1
++mul r0.a, v0.a, r1.a

@@ -1,0 +1,24 @@
+DIALOG "Win_ChannelChat" 0 0 393 323 0 1 10 "/Window/对话框_标准边框1.dds" "" "" 0 0 400 33 "" 28 6 96 96 96 100 1
+LABEL "Txt_ChannelName" "" "" 7 8 59 18 2 10 3 255 255 255 255
+EMOTIONEDIT "Txt_Content" "" "" 6 269 281 49 "/Editbox/文本框_4e.dds" 4 10 255 255 255 "TEXT" 0 1 100
+STILLIMAGEBUTTON "Btn_Popface" "popface" "SFX\Interface\ClickB.wav" 221 251 11 12 0 0 0 0 5 10 255 255 255 255 "Button\按钮_表情1a.tga" "Button\按钮_表情2a.tga" 6 1
+STILLIMAGEBUTTON "Btn_Send" "send" "SFX\Interface\ClickB.wav" 243 244 42 24 0 0 0 0 7 10 255 255 255 255 "Button\按钮_文本1b.dds" "Button\按钮_文本2b.dds" 8 1
+IMAGEPICTURE "Img_Item" "showitem" "" 296 274 32 32 1 0 "Window\图标_物品栏j.dds"
+TEXT "Txt_Chat" "" "" 6 28 293 213 9 10 255 255 255 255 "/Editbox/文本框_4e.dds" "Listbox\列表框_上移.tga" "Listbox\列表框_下移.tga" "Listbox\列表框_滚动槽1t.tga" "Listbox\列表框_拖动按钮1.bmp"
+LIST "List_ChatMember" "choosemember" "" 300 28 84 213 10 10 255 255 255 255 "Editbox\文本框_4e.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.tga" "Listbox\列表框_下移.tga" "Listbox\列表框_滚动槽1t.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LABEL "Control_571214518" "" "" 303 246 39 18 11 10 12 255 203 74 255
+LABEL "Control_293769292" "" "" 7 8 56 18 13 10 14 255 203 74 255
+LABEL "Txt_Capacity" "" "" 344 247 43 15 15 10 16 255 255 255 255
+LABEL "Txt_RoomID" "" "" 56 8 36 18 17 10 18 255 255 255 255
+LABEL "Control_336334085" "" "" 8 248 28 15 19 10 20 255 203 74 255
+LABEL "Control_302266750" "" "" 106 248 29 17 21 10 22 255 203 74 255
+LABEL "Txt_SpeakTo" "" "" 34 248 72 17 23 10 24 255 255 255 255
+LABEL "Control_104609454" "" "" 94 8 40 18 25 10 26 255 203 74 255
+LABEL "Txt_Subject" "" "" 129 8 125 18 27 10 28 255 255 255 255
+LABEL "Control_310616553" "" "" 257 8 40 18 29 10 30 255 203 74 255
+LABEL "Txt_Owner" "" "" 293 8 67 18 31 10 32 255 255 255 255
+STILLIMAGEBUTTON "Btn_Invite" "invite" "SFX\Interface\ClickB.wav" 335 266 42 24 0 0 0 0 33 10 255 255 255 255 "Button\按钮_文本1b.dds" "Button\按钮_文本2b.dds" 34 1
+STILLIMAGEBUTTON "Btn_Leave" "leave" "SFX\Interface\ClickB.wav" 335 293 42 24 0 0 0 0 35 10 255 255 255 255 "Button\按钮_文本1b.dds" "Button\按钮_文本2b.dds" 36 1
+CHECK "Chk_Whisper" "" "SFX\Interface\ClickA.wav" 144 248 18 18 "Extra\复选框_标准.tga"
+LABEL "Txt_Whisper" "" "" 165 248 42 18 37 10 38 255 255 255 255
+STILLIMAGEBUTTON "Btn_Minimize" "minimize" "SFX\Interface\ClickB.wav" 370 11 12 15 0 0 0 0 39 15 255 255 255 255 "Button\按钮_下移1.tga" "Button\按钮_下移2.tga" 40 1

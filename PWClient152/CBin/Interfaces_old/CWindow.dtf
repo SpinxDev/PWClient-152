@@ -1,0 +1,6 @@
+DIALOG "Win_CWindow" 0 0 700 500 0 1 10 "Window\对话框_标准边框1.dds" "" "" 0 0 -1 -1 "" 0 0 96 96 96 255 1
+IMAGEPICTURE "Img_Title" "" "" 3 0 695 15 1 0 "Window\对话框_标题.tga"
+IMAGEPICTURE "Img_ZoomIn" "" "" 670 472 20 20 0 0 ""
+WINDOWPICTURE "WPic" "" "" 3 15 664 454
+SCROLL "Scl_Vertical" "" "" 675 34 9 422 "Listbox\列表框_滚动槽1s.tga" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移u.bmp" "Listbox\列表框_拖动按钮2us.bmp"
+SCROLL "Scl_Horizon" "" "" 52 478 578 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移u.bmp" "Listbox\列表框_拖动按钮2u.bmp"

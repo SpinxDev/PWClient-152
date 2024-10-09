@@ -1,0 +1,59 @@
+; DESCRIPTION:
+; Vertex shader used to render grasses with waving manipulation 
+; this shader does below works:
+; # vertex transform
+; # output texture coordinates
+
+vs.1.1
+
+;------------------------------------------------------------------------------
+; v0 	  = position in world space
+; v1	  = normal in world space
+;------------------------------------------------------------------------------
+
+;------------------------------------------------------------------------------
+; Constants specified by the app;
+; c0      = {1.0f, 0.0f, 0.0f, 1.0f}
+; c1-c4	  = view matrix * projection matrix
+; c5-c8	  = light_view_matrix * light_projection_matrix * light_view_scale
+; c9			= light direction
+; c10			= diffuse color
+; c11			= ambient color
+;------------------------------------------------------------------------------
+
+;------------------------------------------------------------------------------
+; oPos	= Output position
+; oD0	  = Diffuse
+; oT0	  = shadow map projected texture uv
+; oT1	  = shadow map projected depth
+; oFog  = fog value
+;------------------------------------------------------------------------------
+
+; Transfrom position from world space to cuboid space and output it
+m4x4 oPos, v0, c1
+
+; Calculate projected shadow map uv
+m4x4 r1, v0, c5
+mov oT0, r1
+mov oT1, r1.zzzw
+
+; Calculate Diffuse color
+; normalize normal
+dp3 r1.w, v1, v1
+rsq r1.w, r1.w
+mul r1, v1, r1.w
+
+mov r2, c0.zzzz					; clear r2
+dp3 r2.x, r1, -c9     	; normal dot light (N * L)
+lit r2, r2
+
+mul r0.rgb, r2.y, c10.rgb  ; Multiply with diffuse, don't effect alpha value
+mov r0.a, c10.a
+add r0, r0, c11        	; Add in ambient
+min oD0, r0, c0.x     	; output diffuse, clamp if > 1
+
+; output specular
+mov oD1, c0.zzzx				; specular set to (0, 0, 0, 1)
+
+; set no fog
+mov oFog, c0.x

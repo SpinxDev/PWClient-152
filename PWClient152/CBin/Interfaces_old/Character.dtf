@@ -1,0 +1,96 @@
+DIALOG "Win_Character" 0 0 311 470 0 1 10 "Window\对话框_标准边框x.dds" "" "" 0 0 283 33 "人鱼传说新界面\面板关闭按钮.tga" 47 30 96 96 96 255 1
+EDIT "Img_Title" "" "" 20 26 276 32 "人鱼传说新界面\title.tga" 2 15 255 255 255 "TEXT" 1 0 20
+EDIT "Control_360255720" "" "" 23 207 270 66 "Editbox\文本框_4c.dds" 3 15 255 255 255 "TEXT" 1 0 20
+EDIT "Control_870651242" "" "" 23 77 270 89 "Editbox\文本框_4c.dds" 4 15 255 255 255 "TEXT" 1 0 20
+EDIT "Control_197753616" "" "" 23 169 270 22 "Editbox\文本框_4c.dds" 5 15 255 255 255 "TEXT" 1 0 20
+IMAGEPICTURE "Img_Char" "" "" 27 81 64 64 0 0 ""
+IMAGEPICTURE "Control_7599104" "" "" 4 0 305 475 1 0 "人鱼传说新界面\未命名-1副本.dds"
+IMAGEPICTURE "Control_697457850" "" "" 24 292 268 20 1 0 "人鱼传说新界面\蓝条.tga"
+IMAGEPICTURE "Control_8036615" "" "" 24 327 268 20 1 0 "人鱼传说新界面\蓝条.tga"
+IMAGEPICTURE "Control_75035500" "" "" 24 363 268 20 1 0 "人鱼传说新界面\蓝条.tga"
+IMAGEPICTURE "Control_296033811" "" "" 24 400 268 20 1 0 "人鱼传说新界面\蓝条.tga"
+IMAGEPICTURE "Control_167105970" "" "" 179 272 3 174 1 0 "人鱼传说新界面\透明竖着的分割线.tga"
+STILLIMAGEBUTTON "Btn_AddStr" "addstr" "SFX\Interface\ClickB.wav" 99 251 9 9 0 0 0 0 6 15 255 0 255 255 "Button\按钮_加1.bmp" "Button\按钮_加2.bmp" 7 1
+STILLIMAGEBUTTON "Btn_AddAgi" "addagi" "SFX\Interface\ClickB.wav" 190 251 9 9 0 0 0 0 8 15 255 0 255 255 "Button\按钮_加1.bmp" "Button\按钮_加2.bmp" 9 1
+STILLIMAGEBUTTON "Btn_AddVit" "addvit" "SFX\Interface\ClickB.wav" 99 229 9 9 0 0 0 0 10 12 255 255 255 255 "Button\按钮_加1.bmp" "Button\按钮_加2.bmp" 11 1
+STILLIMAGEBUTTON "Btn_AddInt" "addint" "SFX\Interface\ClickB.wav" 190 230 9 9 0 0 0 0 12 12 255 255 255 255 "Button\按钮_加1.bmp" "Button\按钮_加2.bmp" 13 1
+STILLIMAGEBUTTON "Btn_Auto" "addauto" "SFX\Interface\ClickB.wav" 264 212 23 17 0 0 0 0 14 16 255 203 74 255 "Window\对话框_透明色.bmp" "Window\对话框_透明色.bmp" 15 1
+STILLIMAGEBUTTON "Btn_Y" "confirm" "SFX\Interface\ClickB.wav" 203 246 75 24 0 0 0 0 16 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 17 1
+STILLIMAGEBUTTON "Btn_N" "reset" "SFX\Interface\ClickB.wav" 203 223 56 24 0 0 0 0 18 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 19 1
+LABEL "当前总经验" "" "" 93 96 196 14 20 10 21 255 203 74 255
+LABEL "下级所需经验" "" "" 93 113 196 14 22 10 23 255 203 74 255
+LABEL "帮派" "" "" 94 146 195 14 24 10 25 255 203 74 255
+LABEL "声望值" "" "" 180 81 78 14 26 10 27 255 203 74 255
+LABEL "HP" "" "" 26 172 92 14 28 10 29 255 203 74 255
+LABEL "MP" "" "" 118 172 92 14 30 10 31 255 203 74 255
+LABEL "SP" "" "" 210 172 82 14 32 10 33 255 203 74 255
+LABEL "人物信息" "" "" 115 29 0 0 34 16 35 255 203 74 255
+STILLIMAGEBUTTON "Btn_MinusVit" "minusvit" "SFX\Interface\ClickB.wav" 99 237 9 9 0 0 0 0 36 15 255 255 255 255 "Button\按钮_减1.bmp" "Button\按钮_减2.bmp" 37 1
+STILLIMAGEBUTTON "Btn_MinusStr" "minusstr" "SFX\Interface\ClickB.wav" 99 259 9 9 0 0 0 0 38 15 255 255 255 255 "Button\按钮_减1.bmp" "Button\按钮_减2.bmp" 39 1
+STILLIMAGEBUTTON "Btn_MinusInt" "minusint" "SFX\Interface\ClickB.wav" 190 238 9 9 0 0 0 0 40 15 255 255 255 255 "Button\按钮_减1.bmp" "Button\按钮_减2.bmp" 41 1
+STILLIMAGEBUTTON "Btn_MinusAgi" "minusagi" "SFX\Interface\ClickB.wav" 190 259 9 9 0 0 0 0 42 15 255 255 255 255 "Button\按钮_减1.bmp" "Button\按钮_减2.bmp" 43 1
+LABEL "Txt_CharName" "" "" 156 58 0 0 44 12 45 255 203 74 255
+LABEL "Txt_CharLevel" "" "" 25 146 0 0 46 10 47 255 255 255 255
+LABEL "Txt_Profession" "" "" 63 146 0 0 48 10 49 255 255 255 255
+LABEL "Txt_ExpCurrent" "" "" 183 98 0 0 50 8 51 255 255 255 255
+LABEL "Txt_ExpRequire" "" "" 183 116 0 0 52 8 53 255 255 255 255
+LABEL "Txt_Faction" "" "" 121 146 0 0 54 10 55 255 255 255 255
+LABEL "Txt_Distinction" "" "" 247 84 0 0 56 8 57 255 255 255 255
+LABEL "Txt_HP" "" "" 56 175 0 0 58 8 59 255 255 255 255
+LABEL "Txt_MP" "" "" 148 175 0 0 60 8 61 255 255 255 255
+LABEL "Txt_SP" "" "" 240 175 0 0 62 8 63 255 255 255 255
+LABEL "Txt_Point" "" "" 93 214 0 0 64 8 65 255 255 255 255
+LABEL "Txt_Vit" "" "" 70 233 20 14 66 8 67 255 255 255 255
+LABEL "Txt_Int" "" "" 161 233 20 14 68 8 69 255 255 255 255
+LABEL "Txt_Str" "" "" 70 253 20 14 70 8 71 255 255 255 255
+LABEL "Txt_Agi" "" "" 161 253 20 14 72 8 73 255 255 255 255
+LABEL "Txt_Attack" "" "" 105 278 0 0 74 8 75 255 255 255 255
+LABEL "Txt_AtkSpeed" "" "" 105 331 0 0 76 8 77 255 255 255 255
+LABEL "Txt_Definition" "" "" 105 349 0 0 78 8 79 255 255 255 255
+LABEL "Txt_Evade" "" "" 105 367 0 0 80 8 81 255 255 255 255
+LABEL "Txt_MoveSpeed" "" "" 105 385 0 0 82 8 83 255 255 255 255
+LABEL "Txt_MgcAttack" "" "" 105 295 0 0 84 8 85 255 255 255 255
+LABEL "Txt_PhyDefense" "" "" 258 278 0 0 86 8 87 255 255 255 255
+LABEL "Txt_MgcDefGold" "" "" 258 313 0 0 88 8 89 255 255 255 255
+LABEL "Txt_MgcDefIce" "" "" 258 349 0 0 90 8 91 255 255 255 255
+LABEL "Txt_MgcDefWood" "" "" 258 331 0 0 92 8 93 255 255 255 255
+LABEL "Txt_MgcDefFire" "" "" 258 367 0 0 94 8 95 255 255 255 255
+LABEL "Txt_MgcDefRock" "" "" 258 385 0 0 96 8 97 255 255 255 255
+LABEL "Txt_xz" "" "" 163 130 0 0 98 10 99 255 255 255 255
+LABEL "Txt_Critical" "" "" 105 313 0 0 100 8 101 255 255 255 255
+LABEL "属性加点" "" "" 125 191 20 0 102 10 103 255 203 74 255
+LABEL "修真级别" "" "" 94 130 115 14 104 10 105 255 203 74 255
+LABEL "New_Point" "" "" 29 211 85 14 106 10 107 255 203 74 255
+LABEL "New_Str" "" "" 29 250 65 14 108 10 109 255 203 74 255
+LABEL "New_Agi" "" "" 123 250 65 14 110 10 111 255 203 74 255
+LABEL "New_Vit" "" "" 29 230 65 14 112 10 113 255 203 74 255
+LABEL "New_Int" "" "" 124 230 65 14 114 10 115 255 203 74 255
+LABEL "New_Attack" "" "" 29 275 145 14 116 10 117 255 203 74 255
+LABEL "New_MgcAttack" "" "" 29 293 145 14 118 10 119 255 203 74 255
+LABEL "New_Critical" "" "" 29 311 145 14 120 10 121 255 203 74 255
+LABEL "New_Definition" "" "" 29 347 145 14 122 10 123 255 203 74 255
+LABEL "New_Evade" "" "" 29 365 145 14 124 10 125 255 203 74 255
+LABEL "New_AtkSpeed" "" "" 29 329 145 14 126 10 127 255 203 74 255
+LABEL "New_MoveSpeed" "" "" 29 383 145 14 128 10 129 255 203 74 255
+LABEL "New_PhyDefense" "" "" 185 275 105 14 130 10 131 255 203 74 255
+LABEL "New_MgcDefense" "" "" 185 293 105 14 132 10 133 255 203 74 255
+LABEL "New_MgcDefGold" "" "" 185 311 105 14 134 10 135 255 203 74 255
+LABEL "New_MgcDefWood" "" "" 185 329 105 14 136 10 137 255 203 74 255
+LABEL "New_MgcDefWater" "" "" 185 347 105 14 138 10 139 255 203 74 255
+LABEL "New_MgcDefFire" "" "" 185 364 105 14 140 10 141 255 203 74 255
+LABEL "New_MgcDefEarth" "" "" 185 383 105 14 142 10 143 255 203 74 255
+LABEL "New_Partner" "" "" 93 80 0 0 144 10 145 255 203 74 255
+LABEL "Txt_Partner" "" "" 150 80 0 0 146 10 147 255 255 255 255
+LABEL "New_AttackLevel" "" "" 29 401 145 14 148 10 149 255 203 74 255
+LABEL "New_DefenseLevel" "" "" 185 401 105 14 150 10 151 255 203 74 255
+LABEL "Txt_AttackLevel" "" "" 105 403 0 0 152 8 153 255 255 255 255
+LABEL "Txt_DefenseLevel" "" "" 258 403 0 0 154 8 155 255 255 255 255
+LABEL "New_CrtPower" "" "" 29 419 145 14 156 10 157 255 203 74 255
+LABEL "New_SoulPower" "" "" 185 419 105 14 158 10 159 255 203 74 255
+LABEL "Txt_SoulPower" "" "" 258 422 0 0 160 8 161 255 255 255 255
+LABEL "Txt_CrtPower" "" "" 105 422 0 0 162 8 163 255 255 255 255
+IMAGEPICTURE "Control_60625090" "" "" 24 434 268 20 1 0 "人鱼传说新界面\蓝条.tga"
+LABEL "New_Stealth" "" "" 29 435 145 14 164 10 165 255 203 74 255
+LABEL "New_Antistealth" "" "" 185 435 105 14 166 10 167 255 203 74 255
+LABEL "Txt_Stealth" "" "" 105 437 0 0 168 8 169 255 255 255 255
+LABEL "Txt_Antistealth" "" "" 258 437 0 0 170 8 171 255 255 255 255

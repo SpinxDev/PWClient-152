@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		int start_index;
+		int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_REFLISTREFERRALS };
+	public:
+		RefListReferrals() { type = PROTOCOL_REFLISTREFERRALS; }
+		RefListReferrals(void*) : Protocol(PROTOCOL_REFLISTREFERRALS) { }
+		RefListReferrals (int l_roleid,int l_start_index = 0,int l_localsid = 0)
+			 : roleid(l_roleid),start_index(l_start_index),localsid(l_localsid)
+		{
+			type = PROTOCOL_REFLISTREFERRALS;
+		}
+
+		RefListReferrals(const RefListReferrals &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),start_index(rhs.start_index),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new RefListReferrals(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << start_index;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> start_index;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

@@ -1,0 +1,5 @@
+DIALOG "Win_ELFZoom" 0 0 162 53 0 1 10 "" "" "" 0 0 -1 -1 "" 0 0 255 255 255 1 1
+LABEL "Lab_Energy" "" "" 24 21 115 0 2 15 3 255 255 255 255
+IMAGEPICTURE "Control_435925285" "" "" 11 7 133 44 1 0 "小精灵新加tga\新建文件夹\精灵头像3.tga"
+PROGRESS "Progress_Energy" "" "" 21 24 120 10 "Progress\进度条_背景1.bmp" "小精灵新加tga\新建文件夹\精灵黄.tga" 0 0 0 0
+STILLIMAGEBUTTON "Btn_Zoom" "max" "" 0 0 24 24 0 0 0 0 4 15 255 255 255 255 "小精灵新加tga\新建文件夹\头像关闭按钮1.tga" "小精灵新加tga\新建文件夹\头像关闭按钮2.tga" 5 1

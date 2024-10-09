@@ -1,0 +1,3 @@
+DIALOG "Win_LoginPage" 0 0 548 408 0 1 10 "人鱼传说新界面\服务器列表\公告栏底板.tga" "" "Window\对话框_透明色.bmp" 0 0 200 20 "" 0 0 96 96 96 255 1
+STILLIMAGEBUTTON "Btn_Y" "confirm" "SFX\Interface\ClickB.wav" 231 370 85 28 0 0 0 0 2 16 255 203 74 255 "人鱼传说新界面\登录板\登录板按钮(普通).tga" "人鱼传说新界面\登录板\登录板按钮(按下).tga" 3 1
+LABEL "Control_294452691" "" "" 234 7 0 0 4 16 5 255 203 74 255

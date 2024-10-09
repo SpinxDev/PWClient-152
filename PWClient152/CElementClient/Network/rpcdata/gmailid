@@ -1,0 +1,65 @@
+#ifndef __GNET_GMAILID_RPCDATA
+#define __GNET_GMAILID_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GMailID : public GNET::Rpc::Data
+	{
+	public:
+		int roleid;
+		unsigned char mail_id;
+
+	public:
+		GMailID (int l_roleid = -1,unsigned char l_mail_id = 0)
+			: roleid(l_roleid),mail_id(l_mail_id)
+		{
+		}
+
+		GMailID(const GMailID &rhs)
+			: roleid(rhs.roleid),mail_id(rhs.mail_id) { }
+
+		Rpc::Data *Clone() const { return new GMailID(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GMailID *r = dynamic_cast<const GMailID *>(&rhs);
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				mail_id = r->mail_id;
+			}
+			return *this;
+		}
+
+		GMailID& operator = (const GMailID &rhs)
+		{
+			const GMailID *r = &rhs;
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				mail_id = r->mail_id;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << mail_id;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> mail_id;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<GMailID>	GMailIDVector;
+};
+#endif

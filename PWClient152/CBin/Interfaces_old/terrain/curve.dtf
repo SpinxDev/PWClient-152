@@ -1,0 +1,5 @@
+DIALOG "Dlg_Curve" 0 0 347 422 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 -1 -1 "Window\对话框_标准关闭.tga" 30 8 96 96 96 255 1
+LABEL "lblViewStub" "" "" 22 56 300 300 2 15 3 255 255 255 255
+LABEL "Control_28373193" "" "" 142 11 63 27 4 16 5 255 203 74 255
+STILLIMAGEBUTTON "btnOK" "IDOK" "" 22 371 82 32 0 0 0 0 6 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 7 1
+STILLIMAGEBUTTON "btnCancel" "IDCANCEL" "" 240 371 82 32 0 0 0 0 8 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 9 1

@@ -1,0 +1,12 @@
+ps.1.1
+
+tex t0		; base texture
+tex t1		; high texture
+tex t2		; gloss texture
+
+; c0 is the pupil color
+mul r0, t0, c0
+lrp r0, t1.a, t1, r0
+mul r0, r0, v0
+lrp r0.rgb, t2.a, t2, r0 
++mul r0.a, t0.a, v0.a

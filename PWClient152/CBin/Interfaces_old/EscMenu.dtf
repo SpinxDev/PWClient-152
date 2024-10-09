@@ -1,0 +1,7 @@
+DIALOG "Win_EscMenu" 0 0 180 225 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 -1 -1 "" 0 0 96 96 96 255 1
+STILLIMAGEBUTTON "Btn_Help" "whelp" "SFX\Interface\ClickB.wav" 29 13 120 30 0 0 0 0 2 16 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 3 1
+STILLIMAGEBUTTON "Btn_Setting" "wsetting" "SFX\Interface\ClickB.wav" 30 50 120 30 0 0 0 0 4 16 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 5 1
+STILLIMAGEBUTTON "Btn_Repick" "repick" "SFX\Interface\ClickB.wav" 30 86 120 30 0 0 0 0 6 16 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 7 1
+STILLIMAGEBUTTON "Btn_Quit" "quitgame" "SFX\Interface\ClickB.wav" 30 125 120 30 0 0 0 0 8 16 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 9 1
+STILLIMAGEBUTTON "Cancel" "IDCANCEL" "SFX\Interface\ClickB.wav" 30 181 120 30 0 0 0 0 10 16 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 11 1
+IMAGEPICTURE "Control_403463108" "" "" 10 167 160 3 1 0 "Window\分隔线.tga"

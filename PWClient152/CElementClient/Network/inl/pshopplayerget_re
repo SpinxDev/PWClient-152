@@ -1,0 +1,38 @@
+	public:
+		int retcode;
+		int localsid;
+		PShopBase base;
+		enum { PROTOCOL_TYPE = PROTOCOL_PSHOPPLAYERGET_RE };
+	public:
+		PShopPlayerGet_Re() { type = PROTOCOL_PSHOPPLAYERGET_RE; }
+		PShopPlayerGet_Re(void*) : Protocol(PROTOCOL_PSHOPPLAYERGET_RE) { }
+		PShopPlayerGet_Re (int l_retcode,int l_localsid,const PShopBase& l_base = PShopBase())
+			 : retcode(l_retcode),localsid(l_localsid),base(l_base)
+		{
+			type = PROTOCOL_PSHOPPLAYERGET_RE;
+		}
+
+		PShopPlayerGet_Re(const PShopPlayerGet_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),localsid(rhs.localsid),base(rhs.base) { }
+
+		GNET::Protocol *Clone() const { return new PShopPlayerGet_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << localsid;
+			os << base;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> localsid;
+			os >> base;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 65535; }

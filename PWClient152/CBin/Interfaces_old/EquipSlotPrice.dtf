@@ -1,0 +1,3 @@
+DIALOG "Win_EquipSlotPrice" 0 0 548 386 0 1 10 "Window\对话框_标准边框x.dds" "" "" 0 0 -1 -1 "人鱼传说新界面\面板关闭按钮.tga" 50 35 96 96 96 255 1
+IMAGEPICTURE "Control_31345469" "" "" 23 63 504 299 1 0 "Window\EquipSlotPrice.bmp"
+LABEL "Control_823776792" "" "" 24 38 261 25 2 16 3 255 203 74 255

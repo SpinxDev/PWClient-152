@@ -1,0 +1,70 @@
+#ifndef __GNET_ZONE_RPCDATA
+#define __GNET_ZONE_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class Zone : public GNET::Rpc::Data
+	{
+	public:
+		unsigned char gameid;
+		unsigned char zoneid;
+		Octets zonename;
+
+	public:
+		Zone (unsigned char l_gameid = 0,unsigned char l_zoneid = 0,Octets l_zonename = Octets(0))
+			: gameid(l_gameid),zoneid(l_zoneid),zonename(l_zonename)
+		{
+		}
+
+		Zone(const Zone &rhs)
+			: gameid(rhs.gameid),zoneid(rhs.zoneid),zonename(rhs.zonename) { }
+
+		Rpc::Data *Clone() const { return new Zone(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const Zone *r = dynamic_cast<const Zone *>(&rhs);
+			if (r && r != this)
+			{
+				gameid = r->gameid;
+				zoneid = r->zoneid;
+				zonename = r->zonename;
+			}
+			return *this;
+		}
+
+		Zone& operator = (const Zone &rhs)
+		{
+			const Zone *r = &rhs;
+			if (r && r != this)
+			{
+				gameid = r->gameid;
+				zoneid = r->zoneid;
+				zonename = r->zonename;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << gameid;
+			os << zoneid;
+			os << zonename;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> gameid;
+			os >> zoneid;
+			os >> zonename;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<Zone>	ZoneVector;
+};
+#endif

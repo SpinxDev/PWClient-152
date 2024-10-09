@@ -1,0 +1,82 @@
+#ifndef __GNET_PROFILEMATCHRESULT_RPCDATA
+#define __GNET_PROFILEMATCHRESULT_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class ProfileMatchResult : public GNET::Rpc::Data
+	{
+	public:
+		int roleid;
+		int level;
+		int occupation;
+		unsigned char gender;
+		float similarity;
+
+	public:
+		ProfileMatchResult (int l_roleid = 0,int l_level = 0,int l_occupation = 0
+			,unsigned char l_gender = 0,float l_similarity = 0.0)
+			: roleid(l_roleid),level(l_level),occupation(l_occupation)
+			,gender(l_gender),similarity(l_similarity)
+		{
+		}
+
+		ProfileMatchResult(const ProfileMatchResult &rhs)
+			: roleid(rhs.roleid),level(rhs.level),occupation(rhs.occupation),
+			gender(rhs.gender),similarity(rhs.similarity) { }
+
+		Rpc::Data *Clone() const { return new ProfileMatchResult(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const ProfileMatchResult *r = dynamic_cast<const ProfileMatchResult *>(&rhs);
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				level = r->level;
+				occupation = r->occupation;
+				gender = r->gender;
+				similarity = r->similarity;
+			}
+			return *this;
+		}
+
+		ProfileMatchResult& operator = (const ProfileMatchResult &rhs)
+		{
+			const ProfileMatchResult *r = &rhs;
+			if (r && r != this)
+			{
+				roleid = r->roleid;
+				level = r->level;
+				occupation = r->occupation;
+				gender = r->gender;
+				similarity = r->similarity;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << level;
+			os << occupation;
+			os << gender;
+			os << similarity;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> level;
+			os >> occupation;
+			os >> gender;
+			os >> similarity;
+			return os;
+		}
+
+	};
+};
+#endif

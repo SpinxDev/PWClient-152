@@ -1,0 +1,47 @@
+	public:
+		unsigned int tid;
+		int roleid;
+		unsigned int localsid;
+		GRoleInventory goods;
+		char dst_pos;
+		enum { PROTOCOL_TYPE = PROTOCOL_TRADEMOVEOBJ };
+	public:
+		TradeMoveObj() { type = PROTOCOL_TRADEMOVEOBJ; }
+		TradeMoveObj(void*) : Protocol(PROTOCOL_TRADEMOVEOBJ) { }
+		TradeMoveObj (unsigned int l_tid,int l_roleid,unsigned int l_localsid,
+			GRoleInventory l_goods,char l_dst_pos)
+			 : tid(l_tid),roleid(l_roleid),localsid(l_localsid),
+			goods(l_goods),dst_pos(l_dst_pos)
+		{
+			type = PROTOCOL_TRADEMOVEOBJ;
+		}
+
+		TradeMoveObj(const TradeMoveObj &rhs)
+			: Protocol(rhs),tid(rhs.tid),roleid(rhs.roleid),localsid(rhs.localsid),
+			goods(rhs.goods),dst_pos(rhs.dst_pos) { }
+
+		GNET::Protocol *Clone() const { return new TradeMoveObj(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << tid;
+			os << roleid;
+			os << localsid;
+			os << goods;
+			os << dst_pos;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> tid;
+			os >> roleid;
+			os >> localsid;
+			os >> goods;
+			os >> dst_pos;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

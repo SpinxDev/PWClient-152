@@ -1,0 +1,2 @@
+DIALOG "Win_HideHP" 0 0 21 21 0 1 10 "Window\对话框_透明色.bmp" "" "" 0 0 -1 -1 "" 0 0 96 96 96 255 1
+CHECK "Chk_CloseHP" "closeHP" "SFX\Interface\ClickA.wav" 0 0 21 21 "Extra\复选框_开关血.tga"

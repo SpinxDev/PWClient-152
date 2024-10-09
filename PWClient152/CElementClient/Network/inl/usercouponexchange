@@ -1,0 +1,38 @@
+	public:
+		int userid;
+		int coupon_number;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_USERCOUPONEXCHANGE };
+	public:
+		UserCouponExchange() { type = PROTOCOL_USERCOUPONEXCHANGE; }
+		UserCouponExchange(void*) : Protocol(PROTOCOL_USERCOUPONEXCHANGE) { }
+		UserCouponExchange (int l_userid,int l_coupon_number,unsigned int l_localsid)
+			 : userid(l_userid),coupon_number(l_coupon_number),localsid(l_localsid)
+		{
+			type = PROTOCOL_USERCOUPONEXCHANGE;
+		}
+
+		UserCouponExchange(const UserCouponExchange &rhs)
+			: Protocol(rhs),userid(rhs.userid),coupon_number(rhs.coupon_number),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new UserCouponExchange(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << userid;
+			os << coupon_number;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> userid;
+			os >> coupon_number;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 16; }

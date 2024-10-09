@@ -1,0 +1,50 @@
+	public:
+		int roleid;
+		int shoptype;
+		int item_id;
+		int item_pos;
+		int item_num;
+		Octets syncdata;
+		enum { PROTOCOL_TYPE = PROTOCOL_PSHOPCREATE };
+	public:
+		PShopCreate() { type = PROTOCOL_PSHOPCREATE; }
+		PShopCreate(void*) : Protocol(PROTOCOL_PSHOPCREATE) { }
+		PShopCreate (int l_roleid,int l_shoptype = 0,int l_item_id = 0,
+			int l_item_pos = 0,int l_item_num = 0,const Octets& l_syncdata = Octets())
+			 : roleid(l_roleid),shoptype(l_shoptype),item_id(l_item_id)
+			,item_pos(l_item_pos),item_num(l_item_num),syncdata(l_syncdata)
+		{
+			type = PROTOCOL_PSHOPCREATE;
+		}
+
+		PShopCreate(const PShopCreate &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),shoptype(rhs.shoptype),item_id(rhs.item_id)
+			,item_pos(rhs.item_pos),item_num(rhs.item_num),syncdata(rhs.syncdata) { }
+
+		GNET::Protocol *Clone() const { return new PShopCreate(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << shoptype;
+			os << item_id;
+			os << item_pos;
+			os << item_num;
+			os << syncdata;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> shoptype;
+			os >> item_id;
+			os >> item_pos;
+			os >> item_num;
+			os >> syncdata;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 131072; }

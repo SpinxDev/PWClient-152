@@ -1,0 +1,19 @@
+//  ************* Angelica 3D shader ***************
+
+version 7
+
+"堂登陆界面背景山"
+{
+	//  General properties
+	blend            BLEND_SRCALPHA  BLEND_INVSRCALPHA
+	alphatexflag     1
+
+	//  Stage 0
+	{
+		texture          TEX_NORMAL  0  "Shaders\Textures\堂登陆界面背景山.tga"
+		alphaop          TOP_SELECTARG1
+		alphaarg1        TA_TEXTURE
+		alphaarg2        TA_CURRENT
+	}
+
+}

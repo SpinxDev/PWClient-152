@@ -1,0 +1,38 @@
+//  ************* Angelica 3D shader ***************
+
+lake
+{
+	//  General properties
+
+	//  Stage 0
+	{
+		texture          TEX_NORMAL  ³ØË®.tga
+		filter           TEXF_LINEAR
+		colorop          TOP_SELECTARG1
+		colorarg1        TA_TEXTURE
+		colorarg2        TA_CURRENT
+		alphaop          TOP_SELECTARG1
+		alphaarg1        TA_TEXTURE
+		alphaarg2        TA_CURRENT
+		//tcstretch        W_SIN  1.000000  0.002000  0.000000  900
+		tcscroll         0.004000  0.004000
+		//tcrotate         0.010000
+		tcscale          0.700000  0.700000
+	}
+
+	//  Stage 1
+	{
+		texture          TEX_NORMAL  ³ØË®.tga
+		filter           TEXF_LINEAR
+		colorop          TOP_ADDSIGNED
+		colorarg1        TA_TEXTURE
+		colorarg2        TA_CURRENT
+		alphaop          TOP_SELECTARG1
+		alphaarg1        TA_TEXTURE
+		alphaarg2        TA_CURRENT
+		//tcstretch        W_SIN  1.000000  0.001000  0.000000  1000
+		tcscale          0.700000  0.700000
+		tcscroll         -0.005000  -0.005000
+	}
+
+}

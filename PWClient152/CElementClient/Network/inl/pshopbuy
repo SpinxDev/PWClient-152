@@ -1,0 +1,47 @@
+	public:
+		int roleid;
+		int item_id;
+		int item_pos;
+		int item_count;
+		unsigned int item_price;
+		enum { PROTOCOL_TYPE = PROTOCOL_PSHOPBUY };
+	public:
+		PShopBuy() { type = PROTOCOL_PSHOPBUY; }
+		PShopBuy(void*) : Protocol(PROTOCOL_PSHOPBUY) { }
+		PShopBuy (int l_roleid,int l_item_id,int l_item_pos,
+			int l_item_count,unsigned int l_item_price)
+			 : roleid(l_roleid),item_id(l_item_id),item_pos(l_item_pos)
+			,item_count(l_item_count),item_price(l_item_price)
+		{
+			type = PROTOCOL_PSHOPBUY;
+		}
+
+		PShopBuy(const PShopBuy &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),item_id(rhs.item_id),item_pos(rhs.item_pos)
+			,item_count(rhs.item_count),item_price(rhs.item_price) { }
+
+		GNET::Protocol *Clone() const { return new PShopBuy(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << item_id;
+			os << item_pos;
+			os << item_count;
+			os << item_price;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> item_id;
+			os >> item_pos;
+			os >> item_count;
+			os >> item_price;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

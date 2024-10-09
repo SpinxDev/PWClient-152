@@ -1,0 +1,65 @@
+#ifndef __GNET_GAUCTIONLIST_RPCDATA
+#define __GNET_GAUCTIONLIST_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GAuctionList : public GNET::Rpc::Data
+	{
+	public:
+		unsigned short category;
+		std::vector<GAuctionItem> list;
+
+	public:
+		GAuctionList (unsigned short l_category = 0,const std::vector<GAuctionItem>& l_list = std::vector<GAuctionItem>())
+			: category(l_category),list(l_list)
+		{
+		}
+
+		GAuctionList(const GAuctionList &rhs)
+			: category(rhs.category),list(rhs.list) { }
+
+		Rpc::Data *Clone() const { return new GAuctionList(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GAuctionList *r = dynamic_cast<const GAuctionList *>(&rhs);
+			if (r && r != this)
+			{
+				category = r->category;
+				list = r->list;
+			}
+			return *this;
+		}
+
+		GAuctionList& operator = (const GAuctionList &rhs)
+		{
+			const GAuctionList *r = &rhs;
+			if (r && r != this)
+			{
+				category = r->category;
+				list = r->list;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << category;
+			os << list;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> category;
+			os >> list;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<GAuctionList>	GAuctionListVector;
+};
+#endif

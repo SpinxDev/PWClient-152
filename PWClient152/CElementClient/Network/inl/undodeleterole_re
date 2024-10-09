@@ -1,0 +1,38 @@
+	public:
+		int result;
+		int roleid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_UNDODELETEROLE_RE };
+	public:
+		UndoDeleteRole_Re() { type = PROTOCOL_UNDODELETEROLE_RE; }
+		UndoDeleteRole_Re(void*) : Protocol(PROTOCOL_UNDODELETEROLE_RE) { }
+		UndoDeleteRole_Re (int l_result,int l_roleid = -1,unsigned int l_localsid = 0)
+			 : result(l_result),roleid(l_roleid),localsid(l_localsid)
+		{
+			type = PROTOCOL_UNDODELETEROLE_RE;
+		}
+
+		UndoDeleteRole_Re(const UndoDeleteRole_Re &rhs)
+			: Protocol(rhs),result(rhs.result),roleid(rhs.roleid),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new UndoDeleteRole_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << result;
+			os << roleid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> result;
+			os >> roleid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 101; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

@@ -1,0 +1,9 @@
+		GNET::Protocol *Clone() const {  return new TradeSave(*this); }
+	public:
+		enum { PROTOCOL_TYPE = RPC_TRADESAVE };
+		TradeSave(Type type, Rpc::Data *argument, Rpc::Data *result)
+			: RPC_BASECLASS(type, argument, result ) { }
+		TradeSave(const TradeSave &rhs) : RPC_BASECLASS(rhs) { }
+		int  PriorPolicy( ) const { return 1; }
+		bool SizePolicy(size_t size) const { return size <= 16384; }
+		bool TimePolicy(int timeout) const { return timeout <= 10; }

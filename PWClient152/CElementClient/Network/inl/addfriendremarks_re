@@ -1,0 +1,47 @@
+	public:
+		char retcode;
+		int roleid;
+		int friendroleid;
+		Octets friendremarks;
+		unsigned int srclsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_ADDFRIENDREMARKS_RE };
+	public:
+		AddFriendRemarks_Re() { type = PROTOCOL_ADDFRIENDREMARKS_RE; }
+		AddFriendRemarks_Re(void*) : Protocol(PROTOCOL_ADDFRIENDREMARKS_RE) { }
+		AddFriendRemarks_Re (char l_retcode,int l_roleid,int l_friendroleid,
+			const Octets& l_friendremarks,unsigned int l_srclsid)
+			 : retcode(l_retcode),roleid(l_roleid),friendroleid(l_friendroleid)
+			,friendremarks(l_friendremarks),srclsid(l_srclsid)
+		{
+			type = PROTOCOL_ADDFRIENDREMARKS_RE;
+		}
+
+		AddFriendRemarks_Re(const AddFriendRemarks_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),roleid(rhs.roleid),friendroleid(rhs.friendroleid)
+			,friendremarks(rhs.friendremarks),srclsid(rhs.srclsid) { }
+
+		GNET::Protocol *Clone() const { return new AddFriendRemarks_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << roleid;
+			os << friendroleid;
+			os << friendremarks;
+			os << srclsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> roleid;
+			os >> friendroleid;
+			os >> friendremarks;
+			os >> srclsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

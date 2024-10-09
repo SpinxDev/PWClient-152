@@ -1,0 +1,11 @@
+DIALOG "Win_Identify" 0 0 214 170 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 214 27 "人鱼传说新界面\面板关闭按钮.tga" 32 6 96 96 96 255 1
+IMAGEPICTURE "Item" "" "" 47 49 32 32 1 0 "Window\图标_物品栏t.dds"
+EDIT "Txt_Gold" "" "" 87 111 100 21 "Editbox\文本框_4b.dds" 2 10 255 255 255 "TEXT" 1 0 256
+STILLIMAGEBUTTON "Btn_Gold(nouse)" "null" "" 56 114 24 15 0 0 0 0 3 15 255 0 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱1.tga" 4 1
+LABEL "Control_227224809" "" "" 5 3 0 0 5 16 6 255 203 74 255
+LABEL "Control_30062900" "" "" 30 32 0 0 7 10 8 255 203 74 255
+IMAGEPICTURE "Control_11396040" "" "" 5 86 204 3 1 0 "Window\分隔线.tga"
+EDIT "Txt" "" "" 87 61 100 21 "Editbox\文本框_4b.dds" 9 10 255 255 255 "TEXT" 1 0 256
+STILLIMAGEBUTTON "Btn_Confirm" "start" "SFX\Interface\ClickB.wav" 50 137 48 24 0 0 0 0 10 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 11 1
+STILLIMAGEBUTTON "Btn_Cancel" "IDCANCEL" "SFX\Interface\ClickB.wav" 116 137 48 24 0 0 0 0 12 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 13 1
+LABEL "Control_51389800" "" "" 41 94 0 0 14 10 15 255 203 74 255

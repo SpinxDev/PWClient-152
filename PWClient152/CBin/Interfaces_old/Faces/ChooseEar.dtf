@@ -1,0 +1,21 @@
+DIALOG "Win_ChooseEar" 0 0 250 480 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "Window\对话框_标准关闭.tga" 26 5 96 96 96 255 1
+LABEL "Control_237554344" "" "" 83 2 84 22 2 16 3 255 203 74 255
+IMAGEPICTURE "Control_430581780" "" "" 42 241 203 3 1 0 "Window\分隔线.tga"
+LABEL "Control_2698444" "" "" 41 246 54 15 4 10 5 255 203 74 255
+STILLIMAGEBUTTON "Control_716737528" "Reset" "" 195 449 48 24 0 0 0 0 6 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 7 1
+STILLIMAGEBUTTON "Control_69605439" "ChooseFace" "" 0 48 38 48 0 0 0 0 8 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 9 1
+STILLIMAGEBUTTON "Control_588733145" "ChooseEye" "" 0 96 38 48 0 0 0 0 10 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 11 1
+STILLIMAGEBUTTON "Control_368912370" "ChooseEyebrow" "" 0 144 38 48 0 0 0 0 12 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 13 1
+STILLIMAGEBUTTON "Control_120048474" "ChooseNose" "" 0 192 38 48 0 0 0 0 14 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 15 1
+STILLIMAGEBUTTON "Control_673114926" "ChooseMouth" "" 0 240 38 48 0 0 0 0 16 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 17 1
+STILLIMAGEBUTTON "Btm_ChooseEar" "ChooseEar" "" 0 288 38 48 0 0 0 0 18 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 19 1
+STILLIMAGEBUTTON "Control_78047744" "ChooseHair" "" 0 336 38 48 0 0 0 0 20 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 21 1
+STILLIMAGEBUTTON "Control_193291245" "ChooseFacePainting" "" 0 384 38 48 0 0 0 0 22 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 23 1
+STILLIMAGEBUTTON "Btm_ChooseBaseEar1" "ChooseBaseEar1" "" 108 30 60 36 0 0 0 0 24 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 25 1
+LABEL "Control_87761502" "" "" 41 263 155 15 26 10 27 255 255 255 255
+SLIDER "Slider_ScaleEar" "MoveSlider" "" 41 280 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Control_157080384" "" "" 41 294 98 15 28 10 29 255 255 255 255
+SLIDER "Slider_OffsetEarV" "MoveSlider" "" 41 311 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LIST "ListBox_Ear" "" "" 41 72 200 165 30 10 0 0 0 255 "Editbox\文本框_4.tga" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+STILLIMAGEBUTTON "Control_449277746" "ChooseStature" "" 0 432 38 48 0 0 0 0 31 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 32 1
+STILLIMAGEBUTTON "Control_213833452" "ChoosePreCustomize" "" 0 0 38 48 0 0 0 0 33 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 34 1

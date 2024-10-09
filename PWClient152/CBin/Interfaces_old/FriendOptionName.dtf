@@ -1,0 +1,12 @@
+POPUP "FriendOptionName" 0 0 150 60 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 0 0 "" 0 0 255 255 255 255 1
+HILIGHT "Listbox\列表框_反显.dds"
+MENUITEM 101 "Whisper"
+MENUITEM 103 "Invite"
+MENUITEM 105 "Chat"
+MENUITEM 107 "History"
+MENUITEM 109 "Update"
+MENUITEM 111 "MoveGroup"
+MENUITEM 113 "DeleteFriend"
+MENUITEM 115 "InviteChannel"
+MENUITEM 117 "JoinChannel"
+MENUITEM 119 "CopyName"

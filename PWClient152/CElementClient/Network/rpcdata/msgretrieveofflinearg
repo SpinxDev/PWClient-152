@@ -1,0 +1,64 @@
+#ifndef __GNET_MSGRETRIEVEOFFLINEARG_RPCDATA
+#define __GNET_MSGRETRIEVEOFFLINEARG_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class MsgRetrieveOfflineArg : public GNET::Rpc::Data
+	{
+	public:
+		int userid;
+		char handle;
+
+	public:
+		MsgRetrieveOfflineArg (int l_userid = -1,char l_handle = 0)
+			: userid(l_userid),handle(l_handle)
+		{
+		}
+
+		MsgRetrieveOfflineArg(const MsgRetrieveOfflineArg &rhs)
+			: userid(rhs.userid),handle(rhs.handle) { }
+
+		Rpc::Data *Clone() const { return new MsgRetrieveOfflineArg(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const MsgRetrieveOfflineArg *r = dynamic_cast<const MsgRetrieveOfflineArg *>(&rhs);
+			if (r && r != this)
+			{
+				userid = r->userid;
+				handle = r->handle;
+			}
+			return *this;
+		}
+
+		MsgRetrieveOfflineArg& operator = (const MsgRetrieveOfflineArg &rhs)
+		{
+			const MsgRetrieveOfflineArg *r = &rhs;
+			if (r && r != this)
+			{
+				userid = r->userid;
+				handle = r->handle;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << userid;
+			os << handle;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> userid;
+			os >> handle;
+			return os;
+		}
+
+	};
+};
+#endif

@@ -1,0 +1,59 @@
+	public:
+		int roleid;
+		int master;
+		int item_id;
+		int item_pos;
+		int item_count;
+		unsigned int item_price;
+		int inv_pos;
+		Octets syncdata;
+		enum { PROTOCOL_TYPE = PROTOCOL_PSHOPPLAYERSELL };
+	public:
+		PShopPlayerSell() { type = PROTOCOL_PSHOPPLAYERSELL; }
+		PShopPlayerSell(void*) : Protocol(PROTOCOL_PSHOPPLAYERSELL) { }
+		PShopPlayerSell (int l_roleid,int l_master,int l_item_id,
+			int l_item_pos,int l_item_count,unsigned int l_item_price,
+			int l_inv_pos,const Octets& l_syncdata = Octets())
+			 : roleid(l_roleid),master(l_master),item_id(l_item_id)
+			,item_pos(l_item_pos),item_count(l_item_count),item_price(l_item_price)
+			,inv_pos(l_inv_pos),syncdata(l_syncdata)
+		{
+			type = PROTOCOL_PSHOPPLAYERSELL;
+		}
+
+		PShopPlayerSell(const PShopPlayerSell &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),master(rhs.master),item_id(rhs.item_id)
+			,item_pos(rhs.item_pos),item_count(rhs.item_count),item_price(rhs.item_price)
+			,inv_pos(rhs.inv_pos),syncdata(rhs.syncdata) { }
+
+		GNET::Protocol *Clone() const { return new PShopPlayerSell(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << master;
+			os << item_id;
+			os << item_pos;
+			os << item_count;
+			os << item_price;
+			os << inv_pos;
+			os << syncdata;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> master;
+			os >> item_id;
+			os >> item_pos;
+			os >> item_count;
+			os >> item_price;
+			os >> inv_pos;
+			os >> syncdata;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 131072; }

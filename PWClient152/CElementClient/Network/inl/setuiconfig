@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		Octets ui_config;
+		enum { PROTOCOL_TYPE = PROTOCOL_SETUICONFIG };
+	public:
+		SetUIConfig() { type = PROTOCOL_SETUICONFIG; }
+		SetUIConfig(void*) : Protocol(PROTOCOL_SETUICONFIG) { }
+		SetUIConfig (int l_roleid,unsigned int l_localsid,const Octets& l_ui_config)
+			 : roleid(l_roleid),localsid(l_localsid),ui_config(l_ui_config)
+		{
+			type = PROTOCOL_SETUICONFIG;
+		}
+
+		SetUIConfig(const SetUIConfig &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid),ui_config(rhs.ui_config) { }
+
+		GNET::Protocol *Clone() const { return new SetUIConfig(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << ui_config;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> ui_config;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 4096; }

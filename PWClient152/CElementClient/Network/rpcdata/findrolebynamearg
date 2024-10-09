@@ -1,0 +1,59 @@
+#ifndef __GNET_FINDROLEBYNAMEARG_RPCDATA
+#define __GNET_FINDROLEBYNAMEARG_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class FindRoleByNameArg : public GNET::Rpc::Data
+	{
+	public:
+		Octets rolename;
+
+	public:
+		FindRoleByNameArg (Octets l_rolename = Octets(0))
+			: rolename(l_rolename)
+		{
+		}
+
+		FindRoleByNameArg(const FindRoleByNameArg &rhs)
+			: rolename(rhs.rolename) { }
+
+		Rpc::Data *Clone() const { return new FindRoleByNameArg(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const FindRoleByNameArg *r = dynamic_cast<const FindRoleByNameArg *>(&rhs);
+			if (r && r != this)
+			{
+				rolename = r->rolename;
+			}
+			return *this;
+		}
+
+		FindRoleByNameArg& operator = (const FindRoleByNameArg &rhs)
+		{
+			const FindRoleByNameArg *r = &rhs;
+			if (r && r != this)
+			{
+				rolename = r->rolename;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << rolename;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> rolename;
+			return os;
+		}
+
+	};
+};
+#endif

@@ -1,0 +1,110 @@
+DIALOG "Win_PShop2" 0 0 349 506 0 1 10 "Window\对话框_标准边框1.dds" "" "人鱼传说新界面\title.tga" 3 3 344 33 "人鱼传说新界面\面板关闭按钮.tga" 37 7 96 96 96 255 1
+IMAGEPICTURE "Img_PartitionLine5" "" "" 5 212 336 3 1 0 "Window\分隔线.tga"
+IMAGEPICTURE "Img_PartitionLine4" "" "" 174 55 3 158 1 0 "Window\分隔线2.tga"
+IMAGEPICTURE "SellItem_01" "" "" 7 78 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_02" "" "" 40 78 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_03" "" "" 245 78 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_02" "" "" 212 78 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_04" "" "" 106 78 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_05" "" "" 311 78 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_04" "" "" 278 78 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_03" "" "" 73 78 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_06" "" "" 7 111 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_07" "" "" 40 111 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_08" "" "" 245 111 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_07" "" "" 212 111 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_09" "" "" 106 111 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_10" "" "" 311 111 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_09" "" "" 278 111 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_08" "" "" 73 111 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_11" "" "" 7 144 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_12" "" "" 40 144 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_13" "" "" 245 144 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_12" "" "" 212 144 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_14" "" "" 106 144 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_15" "" "" 311 144 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_14" "" "" 278 144 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_13" "" "" 73 144 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_01" "" "" 7 234 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_02" "" "" 40 234 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Sell_02" "" "" 212 234 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Sell_01" "" "" 179 234 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Buy_04" "" "" 106 234 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Sell_04" "" "" 278 234 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Sell_03" "" "" 245 234 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Buy_03" "" "" 73 234 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_06" "" "" 7 267 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_07" "" "" 40 267 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Sell_07" "" "" 212 267 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Sell_06" "" "" 179 267 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Buy_14" "" "" 106 300 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Sell_09" "" "" 278 267 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Sell_08" "" "" 245 267 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Buy_08" "" "" 73 267 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_11" "" "" 7 300 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_12" "" "" 40 300 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Sell_12" "" "" 212 300 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Sell_11" "" "" 179 300 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Buy_09" "" "" 106 267 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Sell_14" "" "" 278 300 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Sell_13" "" "" 245 300 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Buy_13" "" "" 73 300 32 32 1 0 "Window\图标_物品栏t.dds"
+EDIT "Txt_GoldAll" "" "" 95 424 186 21 "Editbox\文本框_4b.dds" 2 10 255 255 255 "TEXT" 1 0 256
+EDIT "Txt_SilversAll" "" "" 94 449 186 21 "Editbox\文本框_4b.dds" 3 10 255 255 255 "TEXT" 1 0 256
+STILLIMAGEBUTTON "Btn_Sell" "sell" "SFX\Interface\ClickB.wav" 293 390 48 24 0 0 0 0 4 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 5 1
+STILLIMAGEBUTTON "Btn_Buy" "buy" "SFX\Interface\ClickB.wav" 90 390 48 24 0 0 0 0 6 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 7 1
+LABEL "Txt_Worth1" "" "" 37 370 0 0 8 10 9 255 255 255 255
+LABEL "Txt_Worth2" "" "" 209 370 0 0 10 10 11 255 255 255 255
+LABEL "Txt_Gold" "" "" 96 426 0 0 12 10 13 255 255 255 255
+IMAGEPICTURE "Img_PartitionLine3" "" "" 174 190 3 229 1 0 "Window\分隔线2.tga"
+IMAGEPICTURE "Img_PartitionLine2" "" "" 5 53 339 3 1 0 "Window\分隔线.tga"
+IMAGEPICTURE "Img_PartitionLine1" "" "" 5 418 339 3 1 0 "Window\分隔线.tga"
+STILLIMAGEBUTTON "Btn_Cancel" "IDCANCEL" "SFX\Interface\ClickB.wav" 293 449 48 24 0 0 0 0 14 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 15 1
+LABEL "Lab_MyShop" "" "" 133 6 0 0 16 16 17 255 203 74 255
+LABEL "Lab_WaitSell2" "" "" 6 216 134 14 18 10 19 255 203 74 255
+LABEL "Lab_GoldAll" "" "" 5 427 0 0 20 10 21 255 203 74 255
+LABEL "Lab_WaitBuy2" "" "" 220 216 85 14 22 10 23 255 203 74 255
+STILLIMAGEBUTTON "Img_Coin3" "" "" 9 370 24 16 0 0 0 0 24 15 255 0 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱1.tga" 25 1
+STILLIMAGEBUTTON "Img_Coin2" "" "" 181 370 24 16 0 0 0 0 26 15 255 255 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱1.tga" 27 1
+STILLIMAGEBUTTON "Img_Coin1" "" "" 64 428 24 15 0 0 0 0 28 15 255 0 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱1.tga" 29 1
+LABEL "Lab_WaitSell1" "" "" 50 59 0 0 30 10 31 255 203 74 255
+LABEL "Lab_WaitBuy1" "" "" 220 59 0 0 32 10 33 255 203 74 255
+LABEL "Txt_Name" "" "" 7 34 332 17 34 10 35 255 255 255 255
+EDIT "Txt_Msg" "sendmsg" "" 7 477 282 22 "Editbox\文本框_4.dds" 36 10 255 255 255 "TEXT" 0 0 24
+STILLIMAGEBUTTON "Btn_SendMsg" "sendmsg" "" 293 475 48 24 0 0 0 0 37 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 38 1
+STILLIMAGEBUTTON "Btn_Try" "try" "" 8 390 70 24 0 0 0 0 39 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 40 1
+IMAGEPICTURE "Img_Silvers1" "" "" 64 453 24 16 1 0 "图标\完美银票2.dds"
+LABEL "Lab_AllSilvers" "" "" 5 452 0 0 41 10 42 255 203 74 255
+LABEL "Txt_Silvers" "" "" 95 451 0 0 43 10 44 255 255 255 255
+IMAGEPICTURE "SellItem_16" "" "" 7 177 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_17" "" "" 40 177 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_18" "" "" 73 177 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_19" "" "" 106 177 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_05" "" "" 139 78 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_10" "" "" 139 111 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_15" "" "" 139 144 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "SellItem_20" "" "" 139 177 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_17" "" "" 212 177 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_18" "" "" 245 177 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_19" "" "" 278 177 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_20" "" "" 311 177 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_01" "" "" 179 78 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_06" "" "" 179 111 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_11" "" "" 179 144 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "BuyItem_16" "" "" 179 177 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Sell_05" "" "" 311 234 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Sell_10" "" "" 311 267 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Sell_15" "" "" 311 300 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Sell_16" "" "" 179 333 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Sell_17" "" "" 212 333 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Sell_18" "" "" 245 333 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Sell_19" "" "" 278 333 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Sell_20" "" "" 311 333 32 32 1 0 "Window\图标_物品栏j.dds"
+IMAGEPICTURE "Buy_05" "" "" 139 234 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_10" "" "" 139 267 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_15" "" "" 139 300 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_20" "" "" 139 333 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_16" "" "" 7 333 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_17" "" "" 40 333 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_18" "" "" 73 333 32 32 1 0 "Window\图标_物品栏t.dds"
+IMAGEPICTURE "Buy_19" "" "" 106 333 32 32 1 0 "Window\图标_物品栏t.dds"

@@ -1,0 +1,21 @@
+DIALOG "Win_PKSetting" 0 0 378 272 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 -1 -1 "" 25 2 96 96 96 255 1
+STILLIMAGEBUTTON "Btn_Cancel" "IDCANCEL" "SFX\Interface\ClickB.wav" 252 235 65 25 0 0 0 0 2 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 3 1
+LABEL "Control_26063226" "" "" 6 5 123 18 4 14 5 255 203 74 255
+STILLIMAGEBUTTON "Btn_Confirm" "confirm" "" 37 235 65 25 0 0 0 0 6 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 7 1
+CHECK "Chk_Gprotect" "gprotect" "" 8 31 18 18 "Extra\复选框_标准.tga"
+CHECK "Chk_Wprotect" "wprotect" "" 8 50 18 18 "Extra\复选框_标准.tga"
+CHECK "Chk_Aprotect" "aprotect" "" 8 69 18 18 "Extra\复选框_标准.tga"
+LABEL "Control_108234567" "" "" 27 30 154 15 8 10 9 255 255 255 255
+LABEL "Control_531820415" "" "" 27 50 160 13 10 10 11 255 255 255 255
+LABEL "Control_261480180" "" "" 28 69 350 16 12 10 13 255 255 255 255
+IMAGEPICTURE "Control_337953090" "" "" 12 108 354 4 1 0 "Window\分隔线.tga"
+CHECK "Chk_Buff1" "" "" 10 137 18 18 "Extra\复选框_标准.tga"
+LABEL "Control_304669223" "" "" 8 113 170 24 14 14 15 255 203 74 255
+LABEL "Control_263414440" "" "" 34 137 312 16 16 10 17 255 255 255 255
+CHECK "Chk_Buff2" "" "" 10 161 18 18 "Extra\复选框_标准.tga"
+CHECK "Chk_Buff3" "" "" 10 185 17 18 "Extra\复选框_标准.tga"
+LABEL "Control_405066018" "" "" 33 161 336 19 18 10 19 255 255 255 255
+LABEL "Control_13679900" "" "" 32 185 335 22 20 10 21 255 255 255 255
+LABEL "Control_194554000" "" "" 10 88 360 16 22 10 23 255 255 255 255
+LABEL "Control_292159842" "" "" 32 208 340 22 24 10 25 255 255 255 255
+CHECK "Chk_Buff4" "" "" 10 208 17 18 "Extra\复选框_标准.tga"

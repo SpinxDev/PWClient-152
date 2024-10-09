@@ -1,0 +1,48 @@
+;  cheap water pixel shader used by A3DTerrainWater. 
+
+; t0, bump map, not used
+; t1, normal map for water surface
+; t2, reflect map, alpha channel of which is the edge alpha value
+; t3, reflect vector in world space, packed to [0.0, 1.0]
+
+ps.1.4
+
+def c1, 0.25, 0.2, 0.0, 0.6
+def c2, 0.0, 0.0, 0.0, 1.0
+def c3, 0.85, 0.85, 0.85, 1.0
+def c4, 1.0, 1.0, 1.0, 1.0
+def c5, 0.5, 0.5, 0.5, 1.0
+
+texld	r1, t1
+texcrd	r2.xy, t2_dw.xyw
+
+mov r1, r1_bx2
+
+mov r0.r, r1.r			// we use r=x, g=y, b=z in normal map
+mov r0.g, r1.b
+
+mad r2.rg, r0, c1.x, r2				// perturb coords by the normal
+mov r2.b, c3.a
+
+phase
+
+texld 	r2, r2
+texld	r0, t3			// camera space reflect vector transformed into world space, with normalization (packed)
+texld	r5, t2_dw.xyw		// alpha channel of reflect map contains edge alpha
+
+// calculate fresnel effects : R0 + (1-R0) (1-cos(q))^5
+dp3_sat r1.rgba, r0_bx2, r1
+
+lrp r1.rgb, 1-r1.a, c4, c5			// facing affected water color
++mul r0.a, 1-r1.a, 1-r1.a			// squared
+mul r0.a, r0.a, r0.a				// quartic
+mul r0.rgb, r2, c3				// apply a water surface color
++mul_sat r0.a, r0.a, 1-r1.a			// quintic
+
+mul r0.rgb, r0, r1				// apply water color to gain water lines effects
+
+mul_x4 r1.rgb, v1, r0.a				// specular color
++lrp r0.a, r0.a, c2.a, c1.a
+
+add r0.rgb, r1, r0				// apply specular
++mul r0.a, r0.a, r5.a				// consider edge alpha

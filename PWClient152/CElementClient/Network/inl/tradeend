@@ -1,0 +1,44 @@
+	public:
+		unsigned int tid;
+		char cause;
+		int roleid;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_TRADEEND };
+	public:
+		TradeEnd() { type = PROTOCOL_TRADEEND; }
+		TradeEnd(void*) : Protocol(PROTOCOL_TRADEEND) { }
+		TradeEnd (unsigned int l_tid,char l_cause,int l_roleid,
+			unsigned int l_localsid)
+			 : tid(l_tid),cause(l_cause),roleid(l_roleid),
+			localsid(l_localsid)
+		{
+			type = PROTOCOL_TRADEEND;
+		}
+
+		TradeEnd(const TradeEnd &rhs)
+			: Protocol(rhs),tid(rhs.tid),cause(rhs.cause),roleid(rhs.roleid),
+			localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new TradeEnd(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << tid;
+			os << cause;
+			os << roleid;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> tid;
+			os >> cause;
+			os >> roleid;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

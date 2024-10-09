@@ -1,0 +1,38 @@
+	public:
+		int retcode;
+		int dstroleid;
+		int forbid_time;
+		enum { PROTOCOL_TYPE = PROTOCOL_GMSHUTUPROLE_RE };
+	public:
+		GMShutupRole_Re() { type = PROTOCOL_GMSHUTUPROLE_RE; }
+		GMShutupRole_Re(void*) : Protocol(PROTOCOL_GMSHUTUPROLE_RE) { }
+		GMShutupRole_Re (int l_retcode,int l_dstroleid,int l_forbid_time)
+			 : retcode(l_retcode),dstroleid(l_dstroleid),forbid_time(l_forbid_time)
+		{
+			type = PROTOCOL_GMSHUTUPROLE_RE;
+		}
+
+		GMShutupRole_Re(const GMShutupRole_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),dstroleid(rhs.dstroleid),forbid_time(rhs.forbid_time) { }
+
+		GNET::Protocol *Clone() const { return new GMShutupRole_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << dstroleid;
+			os << forbid_time;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> dstroleid;
+			os >> forbid_time;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }

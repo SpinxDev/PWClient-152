@@ -1,0 +1,3 @@
+DIALOG "Win_LoginAccountTime" 0 0 0 0 0 1 10 "" "" "" 0 0 -1 -1 "" 0 0 96 96 96 0 1
+LABEL "Txt_Month" "" "" 0 0 0 0 2 10 3 0 255 0 255
+LABEL "Txt_Point" "" "" 0 20 0 0 4 10 5 0 255 0 255

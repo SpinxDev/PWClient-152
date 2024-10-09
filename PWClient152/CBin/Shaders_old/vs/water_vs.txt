@@ -1,0 +1,65 @@
+; DESCRIPTION:
+; Vertex shader used to render water surface
+; this shader does below works:
+; # vertex transform
+
+vs.1.1
+
+;------------------------------------------------------------------------------
+; v0 	  = position in world space
+; v1	  = normal
+; v2	  = texture coordinates for base layer
+;------------------------------------------------------------------------------
+
+;------------------------------------------------------------------------------
+; Constants specified by the app;
+; c0-c3	  = view matrix * projection matrix
+; c4      = eye pos in world space
+; c5      = (1.0, 0.0, 0.0, 0.0)
+; c6-c9   = texture layer 0 transform matrix
+; c10-c13 = texture layer 1 transform matrix
+; c14-c17 = texture layer 2 transform matrix
+; c18-c21 = texture layer 3 transform matrix
+; c22-c25 = texture layer 4 transform matrix
+; c26-c29 = texture layer 5 transform matrix
+; c30~c33 = view matrix only
+;------------------------------------------------------------------------------
+
+;------------------------------------------------------------------------------
+; oPos	  = Output position
+; oD0	  = Diffuse
+; oFog    = fog value consider water depth
+;------------------------------------------------------------------------------
+
+; Transform position on the water surface from world space to cuboid space and output it
+mov r0, v0
+m4x4 oPos, r0, c0
+
+mov oD0, c5.xxxx
+mov oD1, c5.wwww
+
+; we have to supply the input tex coord's z value to be 1.0f, for in some software vertex shader
+; implementation, this expand will not be done by driver
+mov r0, v2
+mov r0.z, c5.x
+
+; Calculate texture coordinates
+; first layer 0
+m3x2 oT0, r0, c6
+
+; then layer 1
+m3x2 oT1, r0, c10
+
+; then layer 2, it's a projected texture coord.
+m4x4 r0, v0, c30
+m4x4 oT2, r0, c14
+
+; then layer 3, it's a vertex to eye direction
+sub oT3, c4, v0
+
+; then layer 4, not used
+mov oT4, c5.wwww
+
+; then layer 5, not used
+mov oT5, c5.wwww
+

@@ -1,0 +1,38 @@
+	public:
+		int retcode;
+		std::vector<int> domains;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONRESOURCEBATTLEGETMAP_RE };
+	public:
+		FactionResourceBattleGetMap_Re() { type = PROTOCOL_FACTIONRESOURCEBATTLEGETMAP_RE; }
+		FactionResourceBattleGetMap_Re(void*) : Protocol(PROTOCOL_FACTIONRESOURCEBATTLEGETMAP_RE) { }
+		FactionResourceBattleGetMap_Re (int l_retcode,const std::vector<int>& l_domains,unsigned int l_localsid)
+			 : retcode(l_retcode),domains(l_domains),localsid(l_localsid)
+		{
+			type = PROTOCOL_FACTIONRESOURCEBATTLEGETMAP_RE;
+		}
+
+		FactionResourceBattleGetMap_Re(const FactionResourceBattleGetMap_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),domains(rhs.domains),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new FactionResourceBattleGetMap_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << domains;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> domains;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 4096; }

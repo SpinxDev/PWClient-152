@@ -1,0 +1,44 @@
+	public:
+		char event_type;
+		int roleid;
+		int score;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONRESOURCEBATTLENOTIFYPLAYEREVENT };
+	public:
+		FactionResourceBattleNotifyPlayerEvent() { type = PROTOCOL_FACTIONRESOURCEBATTLENOTIFYPLAYEREVENT; }
+		FactionResourceBattleNotifyPlayerEvent(void*) : Protocol(PROTOCOL_FACTIONRESOURCEBATTLENOTIFYPLAYEREVENT) { }
+		FactionResourceBattleNotifyPlayerEvent (char l_event_type,int l_roleid,int l_score,
+			unsigned int l_localsid)
+			 : event_type(l_event_type),roleid(l_roleid),score(l_score)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_FACTIONRESOURCEBATTLENOTIFYPLAYEREVENT;
+		}
+
+		FactionResourceBattleNotifyPlayerEvent(const FactionResourceBattleNotifyPlayerEvent &rhs)
+			: Protocol(rhs),event_type(rhs.event_type),roleid(rhs.roleid),score(rhs.score)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new FactionResourceBattleNotifyPlayerEvent(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << event_type;
+			os << roleid;
+			os << score;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> event_type;
+			os >> roleid;
+			os >> score;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 256; }

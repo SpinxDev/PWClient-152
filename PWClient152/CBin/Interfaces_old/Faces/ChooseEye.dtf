@@ -1,0 +1,45 @@
+DIALOG "Win_ChooseEye" 0 0 250 480 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "Window\对话框_标准关闭.tga" 26 5 96 96 96 255 1
+STILLIMAGEBUTTON "Control_716737528" "Reset" "" 195 449 48 24 0 0 0 0 2 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 3 1
+LABEL "Label_Eye1" "" "" 41 270 111 14 4 10 5 255 255 255 255
+SLIDER "Slider_ScaleEyeH" "MoveSlider_ScaleEyeH" "" 40 286 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Label_Eye2" "" "" 42 295 108 14 6 10 7 255 255 255 255
+SLIDER "Slider_ScaleEyeV" "MoveSlider_ScaleEyeV" "" 40 311 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Label_Eye3" "" "" 41 320 81 14 8 10 9 255 255 255 255
+SLIDER "Slider_RotateEye" "MoveSlider_RotateEye" "" 40 336 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Label_Eye4" "" "" 41 345 85 14 10 10 11 255 255 255 255
+SLIDER "Slider_OffsetEyeH" "MoveSlider_OffsetEyeH" "" 40 362 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Label_Eye5" "" "" 41 370 88 14 12 10 13 255 255 255 255
+SLIDER "Slider_OffsetEyeV" "MoveSlider_OffsetEyeV" "" 40 386 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Label_Eye6" "" "" 41 394 90 14 14 10 15 255 255 255 255
+SLIDER "Slider_OffsetEyeZ" "MoveSlider_OffsetEyeZ" "" 40 411 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Label_Eye7" "" "" 41 420 80 14 16 10 17 255 255 255 255
+SLIDER "Slider_ScaleEyeBall" "MoveSlider_ScaleEyeBall" "" 40 436 200 9 "Listbox\列表框_滚动槽2.tga" "Listbox\列表框_拖动按钮2.bmp" 255
+LABEL "Control_620196584" "" "" 42 127 56 14 18 10 19 255 203 74 255
+LABEL "Control_237554344" "" "" 62 2 126 22 20 16 21 255 203 74 255
+IMAGEPICTURE "Control_82950052" "" "" 100 132 145 3 1 0 "Window\分隔线.tga"
+STILLIMAGEBUTTON "Btm_ChooseBaseEye3" "ChooseBaseEye3" "" 167 144 48 30 0 0 0 0 22 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 23 1
+STILLIMAGEBUTTON "Btm_ChooseBaseEye2" "ChooseBaseEye2" "" 118 144 48 30 0 0 0 0 24 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 25 1
+STILLIMAGEBUTTON "Btm_ChooseBaseEye1" "ChooseBaseEye1" "" 69 144 48 30 0 0 0 0 26 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 27 1
+STILLIMAGEBUTTON "Control_193291245" "ChooseFacePainting" "" 0 384 38 48 0 0 0 0 28 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 29 1
+STILLIMAGEBUTTON "Control_78047744" "ChooseHair" "" 0 336 38 48 0 0 0 0 30 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 31 1
+STILLIMAGEBUTTON "Control_332562581" "ChooseEar" "" 0 288 38 48 0 0 0 0 32 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 33 1
+STILLIMAGEBUTTON "Control_673114926" "ChooseMouth" "" 0 240 38 48 0 0 0 0 34 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 35 1
+STILLIMAGEBUTTON "Control_120048474" "ChooseNose" "" 0 192 38 48 0 0 0 0 36 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 37 1
+STILLIMAGEBUTTON "Control_368912370" "ChooseEyebrow" "" 0 144 38 48 0 0 0 0 38 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 39 1
+STILLIMAGEBUTTON "Btm_ChooseEye" "ChooseEye" "" 0 96 38 48 0 0 0 0 40 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 41 1
+STILLIMAGEBUTTON "Control_69605439" "ChooseFace" "" 0 48 38 48 0 0 0 0 42 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 43 1
+LIST "ListBox_EyeShape1" "" "" 41 180 200 64 44 10 0 0 0 255 "Editbox\文本框_4b.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LIST "ListBox_EyeShape2" "" "" 41 180 200 64 45 10 0 0 0 255 "Editbox\文本框_4b.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LIST "ListBox_EyeShape3" "" "" 41 180 200 64 46 10 0 0 0 255 "Editbox\文本框_4b.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LIST "ListBox_EyeBaseTex1" "" "" 41 61 200 65 47 10 0 0 0 255 "Editbox\文本框_4b.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+STILLIMAGEBUTTON "Control_249789056" "ChooseStature" "" 0 432 38 48 0 0 0 0 48 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 49 1
+STILLIMAGEBUTTON "Control_605418894" "ChoosePreCustomize" "" 0 0 38 48 0 0 0 0 50 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 51 1
+STILLIMAGEBUTTON "Btn_ChooseEyeBaseTex1" "ChooseBaseEyeTex1" "" 69 28 48 30 0 0 0 0 52 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 53 1
+STILLIMAGEBUTTON "Btn_ChooseEyeBaseTex2" "ChooseBaseEyeTex2" "" 118 28 48 30 0 0 0 0 54 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 55 1
+STILLIMAGEBUTTON "Btn_ChooseEyeBaseTex3" "ChooseBaseEyeTex3" "" 167 28 48 30 0 0 0 0 56 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 57 1
+LIST "ListBox_EyeBaseTex2" "" "" 41 61 200 65 58 10 0 0 0 255 "Editbox\文本框_4b.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+LIST "ListBox_EyeBaseTex3" "" "" 41 61 200 65 59 10 0 0 0 255 "Editbox\文本框_4b.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+CHECK "CheckBox_EyeAdjust" "Check" "" 42 252 18 18 "Extra\复选框_标准.tga"
+LABEL "Control_186207129" "" "" 64 253 86 14 60 10 61 255 203 74 255
+STILLIMAGEBUTTON "Btn_LeftEye" "OnBtnLeftEye" "" 158 249 40 24 0 0 0 0 62 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 63 1
+STILLIMAGEBUTTON "Btn_RightEye" "OnBtnRightEye" "" 200 249 40 24 0 0 0 0 64 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 65 1

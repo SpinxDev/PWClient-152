@@ -1,0 +1,31 @@
+; water bump pixel shader used by A3DTerrainWater. 
+
+; t0, first layer bump map
+; t1, reflection map
+
+ps.1.1
+
+def c1, 1.0, 1.0, 1.0, 0.7
+def c2, 0.0, 0.0, 0.0, 1.0
+
+tex t0
+texbem t1, t0
+texbem t2, t0
+texcoord t3
+
+; dot eye-vector with per-pixel normal from t1
+dp3_sat	r1.rgba, t3, t1_bx2
+
+; specular map
+dp3_sat r1.rgb, c0, t3
++mul r0.a, r1.a, r1.a
+
+; below is the hard specular mode
+mul r1, r1, r1
+mad_sat r1, r1, t2_bx2, r1_bias
+mul r1, r1, r1
+
+mul r0.rgb, t2, v0
+mad r0.rgb, r1, t1.a, r0
++lrp r0.a, r0.a, c2.a, c1.a
+lrp r0.rgb, r0.a, r0, v0

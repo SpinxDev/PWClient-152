@@ -1,0 +1,41 @@
+
+#ifndef __GNET_GAMEZONELIST_HPP
+#define __GNET_GAMEZONELIST_HPP
+
+#include "rpcdefs.h"
+#include "callid.hxx"
+#include "state.hxx"
+
+#include "zone"
+#include "gamezonelistarg"
+#include "gamezonelistres"
+
+namespace GNET
+{
+
+class GameZoneList : public Rpc
+{
+#define	RPC_BASECLASS	Rpc
+	#include "gamezonelist"
+#undef	RPC_BASECLASS
+
+	void Server(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+		// GameZoneListArg *arg = (GameZoneListArg *)argument;
+		// GameZoneListRes *res = (GameZoneListRes *)result;
+	}
+
+	void Client(Rpc::Data *argument, Rpc::Data *result, Manager *manager, Manager::Session::ID sid)
+	{
+
+	}
+
+	void OnTimeout()
+	{
+		// TODO Client Only
+	}
+
+};
+
+};
+#endif

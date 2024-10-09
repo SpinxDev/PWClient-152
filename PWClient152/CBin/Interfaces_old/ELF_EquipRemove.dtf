@@ -1,0 +1,35 @@
+DIALOG "Win_ELFEquipRemove" 0 0 311 440 0 1 10 "小精灵新加tga\板子panel\完美世界精灵属性大板子无标题.tga" "" "" 0 0 185 27 "人鱼传说新界面\面板关闭按钮.tga" 60 30 96 96 96 255 1
+LABEL "Control_49354896" "" "" 58 124 58 65 2 10 3 255 203 74 255
+LABEL "Control_588679546" "" "" 77 194 63 20 4 10 5 255 203 74 255
+LABEL "Control_469088256" "" "" 76 233 80 23 6 10 7 255 203 74 255
+LABEL "Control_353750698" "" "" 77 270 82 27 8 10 9 255 203 74 255
+LABEL "Control_35127162" "" "" 77 306 68 26 10 10 11 255 203 74 255
+STILLIMAGEBUTTON "Btn_AG" "confirm" "" 100 380 121 35 0 0 0 0 12 15 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 13 1
+LABEL "Txt_TotalCount" "" "" 63 335 200 47 14 15 15 255 0 0 255
+CHECK "Check_1" "" "Extra\复选按钮.tga" 51 191 20 20 "Extra\单选框_标准.tga"
+CHECK "Check_2" "" "Extra\复选按钮.tga" 51 232 20 20 "Extra\单选框_标准.tga"
+CHECK "Check_3" "" "Extra\复选按钮.tga" 51 268 20 20 "Extra\单选框_标准.tga"
+CHECK "Check_4" "" "Extra\复选按钮.tga" 51 303 20 20 "Extra\单选框_标准.tga"
+IMAGEPICTURE "Img_ELF" "" "" 52 89 32 32 1 0 "Window\图标_精灵.dds"
+IMAGEPICTURE "Control_8732712" "" "" -4000 -4000 23 26 1 0 "Button\按钮_右移1.tga"
+LABEL "Control_156655839" "" "" 25 68 126 26 16 12 17 255 203 74 255
+EDIT "Txt_ELF" "" "" 101 96 90 20 "Editbox\文本框_4b.dds" 18 15 255 255 255 "TEXT" 1 0 20
+IMAGEPICTURE "Olditem_1" "" "" 144 190 32 32 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Img_Arrow1" "" "" 204 194 20 22 1 0 "Button\按钮_右移1.tga"
+IMAGEPICTURE "Newitem_1" "" "" 250 189 32 32 1 0 "Window\图标_物品栏.dds"
+LABEL "Control_378528228" "" "" 134 156 69 22 19 10 20 255 203 74 255
+LABEL "Control_226730412" "" "" 239 156 55 23 21 10 22 255 203 74 255
+LABEL "Txt_Noitem1" "" "" 136 195 61 21 23 15 24 255 0 0 255
+IMAGEPICTURE "Olditem_2" "" "" 144 226 32 32 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Newitem_2" "" "" 250 225 32 32 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Olditem_3" "" "" 144 263 32 32 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Newitem_3" "" "" 250 262 32 32 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Olditem_4" "" "" 144 298 32 32 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Newitem_4" "" "" 250 297 32 32 1 0 "Window\图标_物品栏.dds"
+IMAGEPICTURE "Img_Arrow2" "" "" 202 230 22 22 1 0 "Button\按钮_右移1.tga"
+IMAGEPICTURE "Img_Arrow3" "" "" 202 265 22 22 1 0 "Button\按钮_右移1.tga"
+IMAGEPICTURE "Img_Arrow4" "" "" 201 302 22 22 1 0 "Button\按钮_右移1.tga"
+LABEL "Txt_Noitem2" "" "" 137 231 64 22 25 15 26 255 0 0 255
+LABEL "Txt_Noitem3" "" "" 134 265 58 22 27 15 28 255 0 0 255
+LABEL "Txt_Noitem4" "" "" 135 302 54 19 29 15 30 255 0 0 255
+LABEL "Control_20191275" "" "" 72 33 0 0 31 16 32 254 203 74 255

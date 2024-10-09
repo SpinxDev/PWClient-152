@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		int battle_id;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_BATTLEENTER };
+	public:
+		BattleEnter() { type = PROTOCOL_BATTLEENTER; }
+		BattleEnter(void*) : Protocol(PROTOCOL_BATTLEENTER) { }
+		BattleEnter (int l_roleid,int l_battle_id,unsigned int l_localsid)
+			 : roleid(l_roleid),battle_id(l_battle_id),localsid(l_localsid)
+		{
+			type = PROTOCOL_BATTLEENTER;
+		}
+
+		BattleEnter(const BattleEnter &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),battle_id(rhs.battle_id),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new BattleEnter(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << battle_id;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> battle_id;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32; }

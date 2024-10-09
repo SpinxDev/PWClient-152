@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		int result;
+		int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_SENDAUMAIL_RE };
+	public:
+		SendAUMail_Re() { type = PROTOCOL_SENDAUMAIL_RE; }
+		SendAUMail_Re(void*) : Protocol(PROTOCOL_SENDAUMAIL_RE) { }
+		SendAUMail_Re (int l_roleid,int l_result,int l_localsid)
+			 : roleid(l_roleid),result(l_result),localsid(l_localsid)
+		{
+			type = PROTOCOL_SENDAUMAIL_RE;
+		}
+
+		SendAUMail_Re(const SendAUMail_Re &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),result(rhs.result),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new SendAUMail_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << result;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> result;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

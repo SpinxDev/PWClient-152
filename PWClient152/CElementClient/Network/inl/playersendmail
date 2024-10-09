@@ -1,0 +1,71 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		int receiver;
+		Octets title;
+		Octets context;
+		int attach_obj_id;
+		int attach_obj_num;
+		int attach_obj_pos;
+		unsigned int attach_money;
+		Octets sender_name;
+		Octets syncdata;
+		enum { PROTOCOL_TYPE = PROTOCOL_PLAYERSENDMAIL };
+	public:
+		PlayerSendMail() { type = PROTOCOL_PLAYERSENDMAIL; }
+		PlayerSendMail(void*) : Protocol(PROTOCOL_PLAYERSENDMAIL) { }
+		PlayerSendMail (int l_roleid,unsigned int l_localsid,int l_receiver,
+			Octets l_title,Octets l_context,int l_attach_obj_id = -1,
+			int l_attach_obj_num = 0,int l_attach_obj_pos = -1,unsigned int l_attach_money = 0,
+			const Octets& l_sender_name = Octets(),const Octets& l_syncdata = Octets())
+			 : roleid(l_roleid),localsid(l_localsid),receiver(l_receiver),
+			title(l_title),context(l_context),attach_obj_id(l_attach_obj_id),
+			attach_obj_num(l_attach_obj_num),attach_obj_pos(l_attach_obj_pos),attach_money(l_attach_money),
+			sender_name(l_sender_name),syncdata(l_syncdata)
+		{
+			type = PROTOCOL_PLAYERSENDMAIL;
+		}
+
+		PlayerSendMail(const PlayerSendMail &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid),receiver(rhs.receiver),
+			title(rhs.title),context(rhs.context),attach_obj_id(rhs.attach_obj_id),
+			attach_obj_num(rhs.attach_obj_num),attach_obj_pos(rhs.attach_obj_pos),attach_money(rhs.attach_money),
+			sender_name(rhs.sender_name),syncdata(rhs.syncdata) { }
+
+		GNET::Protocol *Clone() const { return new PlayerSendMail(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << receiver;
+			os << title;
+			os << context;
+			os << attach_obj_id;
+			os << attach_obj_num;
+			os << attach_obj_pos;
+			os << attach_money;
+			os << sender_name;
+			os << syncdata;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> receiver;
+			os >> title;
+			os >> context;
+			os >> attach_obj_id;
+			os >> attach_obj_num;
+			os >> attach_obj_pos;
+			os >> attach_money;
+			os >> sender_name;
+			os >> syncdata;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 102400; }

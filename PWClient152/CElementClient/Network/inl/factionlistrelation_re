@@ -1,0 +1,47 @@
+	public:
+		int last_op_time;
+		GFactionAllianceVector alliance;
+		GFactionHostileVector hostile;
+		GFactionRelationApplyVector apply;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_FACTIONLISTRELATION_RE };
+	public:
+		FactionListRelation_Re() { type = PROTOCOL_FACTIONLISTRELATION_RE; }
+		FactionListRelation_Re(void*) : Protocol(PROTOCOL_FACTIONLISTRELATION_RE) { }
+		FactionListRelation_Re (int l_last_op_time,const GFactionAllianceVector& l_alliance,const GFactionHostileVector& l_hostile,
+			const GFactionRelationApplyVector& l_apply,unsigned int l_localsid)
+			 : last_op_time(l_last_op_time),alliance(l_alliance),hostile(l_hostile)
+			,apply(l_apply),localsid(l_localsid)
+		{
+			type = PROTOCOL_FACTIONLISTRELATION_RE;
+		}
+
+		FactionListRelation_Re(const FactionListRelation_Re &rhs)
+			: Protocol(rhs),last_op_time(rhs.last_op_time),alliance(rhs.alliance),hostile(rhs.hostile)
+			,apply(rhs.apply),localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new FactionListRelation_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << last_op_time;
+			os << alliance;
+			os << hostile;
+			os << apply;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> last_op_time;
+			os >> alliance;
+			os >> hostile;
+			os >> apply;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

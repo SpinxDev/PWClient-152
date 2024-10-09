@@ -1,0 +1,44 @@
+	public:
+		unsigned int category;
+		unsigned int end;
+		std::vector<GWebTradeItem> items;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_WEBTRADELIST_RE };
+	public:
+		WebTradeList_Re() { type = PROTOCOL_WEBTRADELIST_RE; }
+		WebTradeList_Re(void*) : Protocol(PROTOCOL_WEBTRADELIST_RE) { }
+		WebTradeList_Re (unsigned int l_category,unsigned int l_end = 0,const std::vector<GWebTradeItem>& l_items = std::vector<GWebTradeItem>(),
+			unsigned int l_localsid = 0)
+			 : category(l_category),end(l_end),items(l_items)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_WEBTRADELIST_RE;
+		}
+
+		WebTradeList_Re(const WebTradeList_Re &rhs)
+			: Protocol(rhs),category(rhs.category),end(rhs.end),items(rhs.items)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new WebTradeList_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << category;
+			os << end;
+			os << items;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> category;
+			os >> end;
+			os >> items;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 4096; }

@@ -1,0 +1,95 @@
+#ifndef __GNET_SELLPOINTINFO_RPCDATA
+#define __GNET_SELLPOINTINFO_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class SellPointInfo : public GNET::Rpc::Data
+	{
+	public:
+		int sellid;
+		int roleid;
+		int point;
+		int price;
+		int ctime;
+		int etime;
+		char status;
+
+	public:
+		SellPointInfo (int l_sellid = 0,int l_roleid = 0,int l_point = 0
+			,int l_price = 0,int l_ctime = 0,int l_etime = 0
+			,char l_status = 0)
+			: sellid(l_sellid),roleid(l_roleid),point(l_point)
+			,price(l_price),ctime(l_ctime),etime(l_etime)
+			,status(l_status)
+		{
+		}
+
+		SellPointInfo(const SellPointInfo &rhs)
+			: sellid(rhs.sellid),roleid(rhs.roleid),point(rhs.point),
+			price(rhs.price),ctime(rhs.ctime),etime(rhs.etime),
+			status(rhs.status) { }
+
+		Rpc::Data *Clone() const { return new SellPointInfo(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const SellPointInfo *r = dynamic_cast<const SellPointInfo *>(&rhs);
+			if (r && r != this)
+			{
+				sellid = r->sellid;
+				roleid = r->roleid;
+				point = r->point;
+				price = r->price;
+				ctime = r->ctime;
+				etime = r->etime;
+				status = r->status;
+			}
+			return *this;
+		}
+
+		SellPointInfo& operator = (const SellPointInfo &rhs)
+		{
+			const SellPointInfo *r = &rhs;
+			if (r && r != this)
+			{
+				sellid = r->sellid;
+				roleid = r->roleid;
+				point = r->point;
+				price = r->price;
+				ctime = r->ctime;
+				etime = r->etime;
+				status = r->status;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << sellid;
+			os << roleid;
+			os << point;
+			os << price;
+			os << ctime;
+			os << etime;
+			os << status;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> sellid;
+			os >> roleid;
+			os >> point;
+			os >> price;
+			os >> ctime;
+			os >> etime;
+			os >> status;
+			return os;
+		}
+
+	};
+};
+#endif

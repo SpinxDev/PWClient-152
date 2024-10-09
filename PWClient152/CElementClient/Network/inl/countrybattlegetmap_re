@@ -1,0 +1,44 @@
+	public:
+		int retcode;
+		std::vector<GCountryBattleDomain> domains;
+		std::vector<int> kings;
+		unsigned int localsid;
+		enum { PROTOCOL_TYPE = PROTOCOL_COUNTRYBATTLEGETMAP_RE };
+	public:
+		CountryBattleGetMap_Re() { type = PROTOCOL_COUNTRYBATTLEGETMAP_RE; }
+		CountryBattleGetMap_Re(void*) : Protocol(PROTOCOL_COUNTRYBATTLEGETMAP_RE) { }
+		CountryBattleGetMap_Re (int l_retcode,const std::vector<GCountryBattleDomain>& l_domains,const std::vector<int>& l_kings,
+			unsigned int l_localsid)
+			 : retcode(l_retcode),domains(l_domains),kings(l_kings)
+			,localsid(l_localsid)
+		{
+			type = PROTOCOL_COUNTRYBATTLEGETMAP_RE;
+		}
+
+		CountryBattleGetMap_Re(const CountryBattleGetMap_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),domains(rhs.domains),kings(rhs.kings)
+			,localsid(rhs.localsid) { }
+
+		GNET::Protocol *Clone() const { return new CountryBattleGetMap_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << domains;
+			os << kings;
+			os << localsid;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> domains;
+			os >> kings;
+			os >> localsid;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 32768; }

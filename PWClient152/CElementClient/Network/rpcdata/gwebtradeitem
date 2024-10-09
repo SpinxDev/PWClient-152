@@ -1,0 +1,154 @@
+#ifndef __GNET_GWEBTRADEITEM_RPCDATA
+#define __GNET_GWEBTRADEITEM_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GWebTradeItem : public GNET::Rpc::Data
+	{
+	public:
+		int64_t sn;
+		int seller_roleid;
+		int seller_userid;
+		Octets seller_name;
+		int posttype;
+		unsigned int money;
+		unsigned int item_id;
+		int item_count;
+		int state;
+		int post_endtime;
+		int show_endtime;
+		int price;
+		int sell_endtime;
+		int buyer_roleid;
+		int buyer_userid;
+		Octets buyer_name;
+		int commodity_id;
+
+	public:
+		GWebTradeItem (int64_t l_sn = 0,int l_seller_roleid = 0,int l_seller_userid = 0
+			,const Octets& l_seller_name = Octets(),int l_posttype = 0,unsigned int l_money = 0
+			,unsigned int l_item_id = 0,int l_item_count = 0,int l_state = 0
+			,int l_post_endtime = 0,int l_show_endtime = 0,int l_price = 0
+			,int l_sell_endtime = 0,int l_buyer_roleid = 0,int l_buyer_userid = 0
+			,const Octets& l_buyer_name = Octets(),int l_commodity_id = 0)
+			: sn(l_sn),seller_roleid(l_seller_roleid),seller_userid(l_seller_userid)
+			,seller_name(l_seller_name),posttype(l_posttype),money(l_money)
+			,item_id(l_item_id),item_count(l_item_count),state(l_state)
+			,post_endtime(l_post_endtime),show_endtime(l_show_endtime),price(l_price)
+			,sell_endtime(l_sell_endtime),buyer_roleid(l_buyer_roleid),buyer_userid(l_buyer_userid)
+			,buyer_name(l_buyer_name),commodity_id(l_commodity_id)
+		{
+		}
+
+		GWebTradeItem(const GWebTradeItem &rhs)
+			: sn(rhs.sn),seller_roleid(rhs.seller_roleid),seller_userid(rhs.seller_userid),
+			seller_name(rhs.seller_name),posttype(rhs.posttype),money(rhs.money),
+			item_id(rhs.item_id),item_count(rhs.item_count),state(rhs.state),
+			post_endtime(rhs.post_endtime),show_endtime(rhs.show_endtime),price(rhs.price),
+			sell_endtime(rhs.sell_endtime),buyer_roleid(rhs.buyer_roleid),buyer_userid(rhs.buyer_userid),
+			buyer_name(rhs.buyer_name),commodity_id(rhs.commodity_id) { }
+
+		Rpc::Data *Clone() const { return new GWebTradeItem(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GWebTradeItem *r = dynamic_cast<const GWebTradeItem *>(&rhs);
+			if (r && r != this)
+			{
+				sn = r->sn;
+				seller_roleid = r->seller_roleid;
+				seller_userid = r->seller_userid;
+				seller_name = r->seller_name;
+				posttype = r->posttype;
+				money = r->money;
+				item_id = r->item_id;
+				item_count = r->item_count;
+				state = r->state;
+				post_endtime = r->post_endtime;
+				show_endtime = r->show_endtime;
+				price = r->price;
+				sell_endtime = r->sell_endtime;
+				buyer_roleid = r->buyer_roleid;
+				buyer_userid = r->buyer_userid;
+				buyer_name = r->buyer_name;
+				commodity_id = r->commodity_id;
+			}
+			return *this;
+		}
+
+		GWebTradeItem& operator = (const GWebTradeItem &rhs)
+		{
+			const GWebTradeItem *r = &rhs;
+			if (r && r != this)
+			{
+				sn = r->sn;
+				seller_roleid = r->seller_roleid;
+				seller_userid = r->seller_userid;
+				seller_name = r->seller_name;
+				posttype = r->posttype;
+				money = r->money;
+				item_id = r->item_id;
+				item_count = r->item_count;
+				state = r->state;
+				post_endtime = r->post_endtime;
+				show_endtime = r->show_endtime;
+				price = r->price;
+				sell_endtime = r->sell_endtime;
+				buyer_roleid = r->buyer_roleid;
+				buyer_userid = r->buyer_userid;
+				buyer_name = r->buyer_name;
+				commodity_id = r->commodity_id;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << sn;
+			os << seller_roleid;
+			os << seller_userid;
+			os << seller_name;
+			os << posttype;
+			os << money;
+			os << item_id;
+			os << item_count;
+			os << state;
+			os << post_endtime;
+			os << show_endtime;
+			os << price;
+			os << sell_endtime;
+			os << buyer_roleid;
+			os << buyer_userid;
+			os << buyer_name;
+			os << commodity_id;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> sn;
+			os >> seller_roleid;
+			os >> seller_userid;
+			os >> seller_name;
+			os >> posttype;
+			os >> money;
+			os >> item_id;
+			os >> item_count;
+			os >> state;
+			os >> post_endtime;
+			os >> show_endtime;
+			os >> price;
+			os >> sell_endtime;
+			os >> buyer_roleid;
+			os >> buyer_userid;
+			os >> buyer_name;
+			os >> commodity_id;
+			return os;
+		}
+
+	};
+};
+#endif

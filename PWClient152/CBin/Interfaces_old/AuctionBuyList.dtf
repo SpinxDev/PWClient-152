@@ -1,0 +1,31 @@
+DIALOG "Win_AuctionBuyList" 0 0 630 380 0 1 10 "Window\对话框_标准边框1.dds" "" "人鱼传说新界面\title.tga" 3 3 625 33 "人鱼传说新界面\面板关闭按钮.tga" 37 7 255 203 74 255 1
+LABEL "title" "" "" 232 6 0 0 2 16 3 255 203 74 255
+LABEL "Lab_按拍卖号" "" "" 7 38 41 16 4 10 5 255 203 74 255
+EDIT "Txt_AuctionID" "searchid" "" 51 37 63 20 "Editbox\文本框_4c.dds" 6 10 255 255 255 "TEXT" 0 0 9
+STILLIMAGEBUTTON "Btn_SearchID" "searchid" "SFX\Interface\ClickA.wav" 116 35 48 24 0 0 0 0 7 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 8 1
+EDIT "Txt_PackGold" "" "" 61 330 116 20 "Editbox\文本框_4c.dds" 9 15 255 255 255 "TEXT" 1 0 20
+LIST "Lst_Item" "buy" "" 7 78 616 253 10 10 255 255 255 255 "Editbox\文本框_4.dds" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "70 250 80 110 110"
+STILLIMAGEBUTTON "Btn_AuctionList" "auctionlist" "" 140 352 65 24 0 0 0 0 11 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本1.dds" 12 1
+STILLIMAGEBUTTON "Btn_AuctionSellList" "auctionselllist" "" 73 352 65 24 0 0 0 0 13 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 14 1
+STILLIMAGEBUTTON "Btn_Gold2" "" "" 343 355 24 16 0 0 0 0 15 15 255 255 255 255 "Button\按钮_金钱1.tga" "Button\按钮_金钱2.tga" 16 1
+EDIT "Txt_Price" "buy" "" 370 353 100 20 "Editbox\文本框_4c.dds" 17 10 255 255 255 "TEXT" 0 0 9
+STILLIMAGEBUTTON "Btn_Quit" "IDCANCEL" "" 577 352 45 24 0 0 0 0 18 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 19 1
+STILLIMAGEBUTTON "Btn_Buy" "buy" "" 475 352 45 24 0 0 0 0 20 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 21 1
+STILLIMAGEBUTTON "Btn_BinBuy" "binbuy" "" 521 352 55 24 0 0 0 0 22 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 23 1
+STILLIMAGEBUTTON "Back_拍卖号" "sortid" "" 7 60 70 19 0 0 0 0 24 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 25 1
+STILLIMAGEBUTTON "Back_名称" "sortname" "" 74 60 250 19 0 0 0 0 26 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 27 1
+STILLIMAGEBUTTON "Back_剩余时间" "sorttime" "" 322 60 80 19 0 0 0 0 28 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 29 1
+STILLIMAGEBUTTON "Back_当前价" "sortprice" "" 399 60 110 19 0 0 0 0 30 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 31 1
+STILLIMAGEBUTTON "Back_一口价" "sortbinprice" "" 507 60 116 19 0 0 0 0 32 10 255 203 74 255 "Editbox\文本框_4.dds" "Editbox\文本框_4.dds" 33 1
+STILLIMAGEBUTTON "Btn_AuctionBuyList" "" "" 6 352 65 24 0 0 0 0 34 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 35 1
+LABEL "Control_193362624" "" "" 6 332 0 0 36 10 37 255 203 74 255
+STILLIMAGEBUTTON "Btn_LastPage" "last" "" 567 333 12 15 0 0 0 0 38 15 255 255 255 255 "Button\按钮_左移1.tga" "Button\按钮_左移2.tga" 39 1
+STILLIMAGEBUTTON "Btn_NextPage" "next" "" 606 333 12 15 0 0 0 0 40 15 255 255 255 255 "Button\按钮_右移1.tga" "Button\按钮_右移2.tga" 41 1
+STILLIMAGEBUTTON "Btn_Refresh" "refresh" "" 587 332 12 15 0 0 0 0 42 15 255 255 255 255 "Button\刷新_1.tga" "Button\刷新_2.tga" 43 1
+LABEL "Txt_RefreshStatus" "" "" 180 332 0 0 44 10 45 255 255 255 255
+LABEL "Control_457065549" "" "" 173 38 0 0 46 10 47 255 203 74 255
+STILLIMAGEBUTTON "Btn_SearchMode" "searchmode" "SFX\Interface\ClickA.wav" 390 35 92 24 0 0 0 0 48 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 49 1
+LABEL "Txt_Search" "" "" 265 38 120 15 50 10 51 255 255 255 255
+STILLIMAGEBUTTON "Btn_MyAttention" "auctionmyfavor" "" 207 352 65 24 0 0 0 0 52 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 53 1
+STILLIMAGEBUTTON "Btn_AddMyAttention" "addtomyfavor" "" 483 35 89 24 0 0 0 0 54 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 55 1
+STILLIMAGEBUTTON "Btn_TrySkirt" "fit" "" 275 352 60 24 0 0 0 0 56 10 255 203 74 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 57 1

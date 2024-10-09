@@ -1,0 +1,5 @@
+DIALOG "Win_ChoosePreCustomize1" 0 0 250 271 0 1 10 "Window\对话框_标准边框.dds" "" "" 0 0 250 27 "Window\对话框_标准关闭.tga" 26 5 96 96 96 255 1
+LABEL "Control_237554344" "" "" 45 7 152 22 2 16 3 255 203 74 255
+LIST "ListBox_PreCustomize" "" "" 23 33 200 200 4 10 255 255 255 255 "Editbox\文本框_4.tga" "Listbox\列表框_反显.dds" "Listbox\列表框_上移.bmp" "Listbox\列表框_下移.bmp" "Listbox\列表框_滚动槽1.tga" "Listbox\列表框_拖动按钮1.bmp" 0 "0"
+STILLIMAGEBUTTON "Control_258135665" "SaveCustomizeData" "" 18 240 102 24 0 0 0 0 5 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 6 1
+STILLIMAGEBUTTON "Btn_DeleteCustomizeData" "DeleteCustomizeData" "" 125 240 108 24 0 0 0 0 7 10 255 255 255 255 "Button\按钮_文本1.dds" "Button\按钮_文本2.dds" 8 1

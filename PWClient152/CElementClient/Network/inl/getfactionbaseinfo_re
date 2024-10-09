@@ -1,0 +1,38 @@
+	public:
+		int roleid;
+		unsigned int localsid;
+		GFactionBaseInfo faction_info;
+		enum { PROTOCOL_TYPE = PROTOCOL_GETFACTIONBASEINFO_RE };
+	public:
+		GetFactionBaseInfo_Re() { type = PROTOCOL_GETFACTIONBASEINFO_RE; }
+		GetFactionBaseInfo_Re(void*) : Protocol(PROTOCOL_GETFACTIONBASEINFO_RE) { }
+		GetFactionBaseInfo_Re (int l_roleid,unsigned int l_localsid,GFactionBaseInfo l_faction_info)
+			 : roleid(l_roleid),localsid(l_localsid),faction_info(l_faction_info)
+		{
+			type = PROTOCOL_GETFACTIONBASEINFO_RE;
+		}
+
+		GetFactionBaseInfo_Re(const GetFactionBaseInfo_Re &rhs)
+			: Protocol(rhs),roleid(rhs.roleid),localsid(rhs.localsid),faction_info(rhs.faction_info) { }
+
+		GNET::Protocol *Clone() const { return new GetFactionBaseInfo_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << roleid;
+			os << localsid;
+			os << faction_info;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> roleid;
+			os >> localsid;
+			os >> faction_info;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 16384; }

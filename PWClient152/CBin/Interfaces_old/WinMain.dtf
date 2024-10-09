@@ -1,0 +1,10 @@
+DIALOG "Win_Main" 0 0 169 38 0 1 10 "" "" "" 0 0 -1 -1 "" 0 0 96 96 96 0 1
+EDIT "Frame_System1" "" "" 145 0 25 39 "Window\对话框_标准边框.dds" 2 15 255 255 255 "TEXT" 1 0 20
+EDIT "Frame_System2" "" "" 0 0 169 39 "Window\对话框_标准边框.dds" 3 15 255 255 255 "TEXT" 1 0 20
+STILLIMAGEBUTTON "Btn_Inventory" "winventory" "SFX\Interface\ClickB.wav" 5 5 24 30 0 0 0 0 4 18 255 255 255 255 "Window\图片_菜单装备包裹.bmp" "Window\图片_菜单装备包裹1.bmp" 5 1
+STILLIMAGEBUTTON "Btn_Character" "wcharacter" "SFX\Interface\ClickB.wav" 29 5 24 30 0 0 0 0 6 18 255 255 255 255 "Window\图片_菜单人物属性.bmp" "Window\图片_菜单人物属性1.bmp" 7 1
+STILLIMAGEBUTTON "Btn_Skill" "wskill" "SFX\Interface\ClickB.wav" 53 5 24 30 0 0 0 0 8 18 255 255 255 255 "Window\图片_菜单技能.bmp" "Window\图片_菜单技能1.bmp" 9 1
+STILLIMAGEBUTTON "Btn_Quest" "wquest" "SFX\Interface\ClickB.wav" 77 5 24 30 0 0 0 0 10 18 255 255 255 255 "Window\图片_菜单任务.bmp" "Window\图片_菜单任务1.bmp" 11 1
+STILLIMAGEBUTTON "Btn_Connection" "wmain2" "SFX\Interface\ClickB.wav" 101 5 24 30 0 0 0 0 12 15 255 255 255 255 "Window\图片_菜单社会关系相关.bmp" "Window\图片_菜单社会关系相关1.bmp" 13 1
+STILLIMAGEBUTTON "Btn_System" "wmain3" "SFX\Interface\ClickB.wav" 125 5 24 30 0 0 0 0 14 15 255 255 255 255 "Window\图片_菜单系统设置相关.bmp" "Window\图片_菜单系统设置相关1.bmp" 15 1
+CHECK "Chk_temp" "mini" "SFX\Interface\ClickA.wav" 151 4 13 30 "Extra\复选框_展开2.bmp"

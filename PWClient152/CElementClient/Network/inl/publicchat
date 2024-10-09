@@ -1,0 +1,50 @@
+	public:
+		unsigned char channel;
+		unsigned char emotion;
+		int roleid;
+		unsigned int localsid;
+		Octets msg;
+		Octets data;
+		enum { PROTOCOL_TYPE = PROTOCOL_PUBLICCHAT };
+	public:
+		PublicChat() { type = PROTOCOL_PUBLICCHAT; }
+		PublicChat(void*) : Protocol(PROTOCOL_PUBLICCHAT) { }
+		PublicChat (unsigned char l_channel,unsigned char l_emotion,int l_roleid,
+			unsigned int l_localsid,const Octets& l_msg,const Octets& l_data)
+			 : channel(l_channel),emotion(l_emotion),roleid(l_roleid)
+			,localsid(l_localsid),msg(l_msg),data(l_data)
+		{
+			type = PROTOCOL_PUBLICCHAT;
+		}
+
+		PublicChat(const PublicChat &rhs)
+			: Protocol(rhs),channel(rhs.channel),emotion(rhs.emotion),roleid(rhs.roleid)
+			,localsid(rhs.localsid),msg(rhs.msg),data(rhs.data) { }
+
+		GNET::Protocol *Clone() const { return new PublicChat(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << channel;
+			os << emotion;
+			os << roleid;
+			os << localsid;
+			os << msg;
+			os << data;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> channel;
+			os >> emotion;
+			os >> roleid;
+			os >> localsid;
+			os >> msg;
+			os >> data;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

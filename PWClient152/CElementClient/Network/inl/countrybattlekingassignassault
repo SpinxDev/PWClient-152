@@ -1,0 +1,38 @@
+	public:
+		int king_roleid;
+		int domain_id;
+		char assault_type;
+		enum { PROTOCOL_TYPE = PROTOCOL_COUNTRYBATTLEKINGASSIGNASSAULT };
+	public:
+		CountryBattleKingAssignAssault() { type = PROTOCOL_COUNTRYBATTLEKINGASSIGNASSAULT; }
+		CountryBattleKingAssignAssault(void*) : Protocol(PROTOCOL_COUNTRYBATTLEKINGASSIGNASSAULT) { }
+		CountryBattleKingAssignAssault (int l_king_roleid,int l_domain_id,char l_assault_type)
+			 : king_roleid(l_king_roleid),domain_id(l_domain_id),assault_type(l_assault_type)
+		{
+			type = PROTOCOL_COUNTRYBATTLEKINGASSIGNASSAULT;
+		}
+
+		CountryBattleKingAssignAssault(const CountryBattleKingAssignAssault &rhs)
+			: Protocol(rhs),king_roleid(rhs.king_roleid),domain_id(rhs.domain_id),assault_type(rhs.assault_type) { }
+
+		GNET::Protocol *Clone() const { return new CountryBattleKingAssignAssault(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << king_roleid;
+			os << domain_id;
+			os << assault_type;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> king_roleid;
+			os >> domain_id;
+			os >> assault_type;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 64; }
