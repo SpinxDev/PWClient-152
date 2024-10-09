@@ -3,9 +3,32 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ElementClient", "ElementClient\ElementClient.vcxproj", "{78F984FA-C1E2-4EB3-95BD-9CED56F18D7C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElementCore", "ElementCore", "{49FC43C0-4390-45A0-AFDD-F3529D1DDA99}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		DbgRelease|x86 = DbgRelease|x86
+		Debug|x86 = Debug|x86
+		DebugCRTAllocator|x86 = DebugCRTAllocator|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78F984FA-C1E2-4EB3-95BD-9CED56F18D7C}.DbgRelease|x86.ActiveCfg = DbgRelease|Win32
+		{78F984FA-C1E2-4EB3-95BD-9CED56F18D7C}.DbgRelease|x86.Build.0 = DbgRelease|Win32
+		{78F984FA-C1E2-4EB3-95BD-9CED56F18D7C}.Debug|x86.ActiveCfg = Debug|Win32
+		{78F984FA-C1E2-4EB3-95BD-9CED56F18D7C}.Debug|x86.Build.0 = Debug|Win32
+		{78F984FA-C1E2-4EB3-95BD-9CED56F18D7C}.DebugCRTAllocator|x86.ActiveCfg = DebugCRTAllocator|Win32
+		{78F984FA-C1E2-4EB3-95BD-9CED56F18D7C}.DebugCRTAllocator|x86.Build.0 = DebugCRTAllocator|Win32
+		{78F984FA-C1E2-4EB3-95BD-9CED56F18D7C}.Release|x86.ActiveCfg = Release|Win32
+		{78F984FA-C1E2-4EB3-95BD-9CED56F18D7C}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{78F984FA-C1E2-4EB3-95BD-9CED56F18D7C} = {49FC43C0-4390-45A0-AFDD-F3529D1DDA99}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E521D096-8C5E-4311-982C-8F8B8C389333}

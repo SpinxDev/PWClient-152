@@ -264,9 +264,6 @@
     <ClInclude Include="EC_World.h">
       <Filter>Main Files\World</Filter>
     </ClInclude>
-    <ClInclude Include="..\CCommon\EC_WorldFile.h">
-      <Filter>Main Files\World</Filter>
-    </ClInclude>
     <ClInclude Include="EC_Decal.h">
       <Filter>Object Files</Filter>
     </ClInclude>
@@ -392,9 +389,6 @@
     </ClInclude>
     <ClInclude Include="EC_PolicyAction.h">
       <Filter>Object Files\NPCs</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\EC_Bezier.h">
-      <Filter>Object Files\Scene Objects</Filter>
     </ClInclude>
     <ClInclude Include="EC_CritterGroup.h">
       <Filter>Object Files\Scene Objects</Filter>
@@ -2415,132 +2409,6 @@
     <ClInclude Include="EC_Algorithm.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\CCommon\EC_BrushMan.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\EC_BrushManUtil.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\EC_TriangleMan.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\EL_Archive.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\EL_BackMusic.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\EL_BrushBuilding.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\EL_Building.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\EL_BuildingWithBrush.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\EL_Forest.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\EL_Grassland.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\EL_GrassType.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\EL_Precinct.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\EL_Region.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\EL_Tree.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\elementdataman.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\elementpckdir.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\ELOutlineQuadTree.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\ELOutlineTexture.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\ELTerrainOutline2.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\generate_item_temp.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\globaldataman.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\itemdataman.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\smartlocale.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\Gfx\A3DSkillGfxComposer2.h">
-      <Filter>Common\GFX</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\Gfx\A3DSkillGfxEvent2.h">
-      <Filter>Common\GFX</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\AUTOCA\A3DAutoButterfly.h">
-      <Filter>Common\AutoCa</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\AUTOCA\A3DAutoCrow.h">
-      <Filter>Common\AutoCa</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\AUTOCA\A3DAutoEagle.h">
-      <Filter>Common\AutoCa</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\AUTOCA\A3DAutoFirefly.h">
-      <Filter>Common\AutoCa</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\AUTOCA\A3DAutoFish.h">
-      <Filter>Common\AutoCa</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\AUTOCA\A3DAutonomousAgent.h">
-      <Filter>Common\AutoCa</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\AUTOCA\A3DAutonomousBehaviour.h">
-      <Filter>Common\AutoCa</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\AUTOCA\A3DAutonomousGroup.h">
-      <Filter>Common\AutoCa</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\AUTOCA\Utilities.h">
-      <Filter>Common\AutoCa</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\Face\Expression.h">
-      <Filter>Common\Face</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\Face\FaceAnimation.h">
-      <Filter>Common\Face</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\Face\FaceBone.h">
-      <Filter>Common\Face</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\Face\FaceBoneController.h">
-      <Filter>Common\Face</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\Face\FaceCommon.h">
-      <Filter>Common\Face</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\EL_Cloud.h">
-      <Filter>Common\Cloud</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\EL_CloudManager.h">
-      <Filter>Common\Cloud</Filter>
-    </ClInclude>
-    <ClInclude Include="..\CCommon\EL_CloudSprite.h">
-      <Filter>Common\Cloud</Filter>
-    </ClInclude>
     <ClInclude Include="Task\EC_TaskInterface.h">
       <Filter>Task</Filter>
     </ClInclude>
@@ -2802,6 +2670,780 @@
     <ClInclude Include="LuaBind.h">
       <Filter>Lua</Filter>
     </ClInclude>
+    <ClInclude Include="CCommon\AUTOCA\A3DAutoButterfly.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\AUTOCA\A3DAutoCrow.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\AUTOCA\A3DAutoEagle.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\AUTOCA\A3DAutoFirefly.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\AUTOCA\A3DAutoFish.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\AUTOCA\A3DAutonomousAgent.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\AUTOCA\A3DAutonomousBehaviour.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\AUTOCA\A3DAutonomousGroup.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\AUTOCA\Utilities.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\Face\Expression.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\Face\FaceAnimation.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\Face\FaceBone.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\Face\FaceBoneController.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\Face\FaceCommon.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\Gfx\A3DSkillGfxComposer2.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\Gfx\A3DSkillGfxEvent2.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\Memory\ClientMemoryLog.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\Memory\EC_HookMemory.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\AObject.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\AProperty.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\AVariant.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EC_Bezier.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EC_BrushMan.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EC_BrushManUtil.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EC_MD5Hash.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EC_SceneObject.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EC_SceneThreadObj.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EC_TriangleMan.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EC_WorldFile.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EL_Archive.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EL_BackMusic.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EL_BrushBuilding.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EL_Building.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EL_BuildingWithBrush.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EL_Cloud.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EL_CloudManager.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EL_CloudSprite.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EL_Forest.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EL_Grassland.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EL_GrassType.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EL_Precinct.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EL_Region.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EL_TerrainOutline.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\EL_Tree.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\elementdataman.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\elementpckdir.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\ELOutlineQuadTree.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\ELOutlineTexture.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\ELTerrainOutline2.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\ExpTypes.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\generate_item_temp.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\globaldataman.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\itemdataman.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\PolygonFunc.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommon\SmartLocale.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgAutoPolicy.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgAskHelpToGM2.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgAutoHelp.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgAutoHPMP.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgBlackList.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgBlackScreen.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgBuyConfirm.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgCardBuy.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgCardSell.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgChangeStoragePW.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgChariot.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgComboSkillShortCut.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgComplexTitle.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgCountryMap.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgCountryMapSub.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgCountryReward.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgCountryScore.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgCountryWarMap.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgCurrentServer.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgDomainCondition.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgDownloadSpeed.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgEquipMark.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgEquipUpEnsure.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgExclusiveAward.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgFactionPVPRank.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgFactionPVPStatus.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgFashionShop.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgFashionShopItem.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgFashionSplit.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgFlySwordImprove.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgFortressTechnology.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgGeneralCard.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgGeneralCardBuy.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgGeneralCardCollection.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgGeneralCardRespawn.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgGiftCard.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgGivingFor.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgGMConsoleForbid.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgHistoryStage.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgIceThunderBall.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgKingAuction.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgKingCommand.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgKingElection.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgLevel2UpgradeShow.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgLoginButton.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgLoginOther.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgLoginQueue.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgLoginVersion.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgMatchProfile.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgMatchResult.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgMeridians.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgMeridiansImpact.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgMessageBox.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgMonsterSpirit.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgOfflineShopCreate.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgOfflineShopItemsList.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgOfflineShopList.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgOfflineShopSelfSetting.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgOfflineShopStore.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgOnlineAward.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgOptimizeBase.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgOptimizeFunc.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgOptimizeGfx.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgOptimizeMem.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgOptimizeOS.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgPalette2.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgPaletteBase.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgPetEvolution.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgPetEvolutionAnim.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgPetNature.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgPlayerRename.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgPopMsg.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgPreviewPetRebuild.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgPreviewProduce.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgPureColorFashionTip.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgQShopBuy.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgQuestionTask.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgQuickBuyBase.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgQuickBuyPop.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgQuickPay.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgRandomMap.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgRedSpark.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgReincarnation.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgReincarnationBook.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgReincarnationRewrite.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgReincarnationShow.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgScriptTip.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSettingQuickKey.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgShopCart.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgShopCartSub.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgShopCartSubList.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSignIn.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSimpleCostItemService.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSkillAction.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSkillSubAction.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSkillSubList.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSkillSubListItem.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSkillSubListRankItem.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSkillSubOther.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSkillSubPool.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSkillSubTree.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgStoneChange.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgStoneReplace.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgStoneTransfer.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSysModuleQuickBar.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTargetItem.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTaskConfirm.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTitleBubble.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTitleChallenge.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTitleList.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTokenShop.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTouchShop.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgViewModel.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgWebList.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ActionSwitcher.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_AsynLoadHelper.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_AutoPolicy.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_AutoTeam.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_AutoTeamConfig.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_BaseColor.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_BBSDlg.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_CastSkillWhenMove.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ComboSkillState.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ComputerAid.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ContinueLoad.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ControlLoopAnimation.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_CountryConfig.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_CustomizePolicy.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_DomainBase.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_DomainCountry.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_DomainGuild.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_DragDropHelper.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_Ease.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ElementDataHelper.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_EPWork.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_FactionPVP.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_FashionModel.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_FashionShop.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_GetHostByName.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_Handler.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_HostSkillModel.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_HPWorkForceNavigate.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ImageDrawing.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_InstanceReenter.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_IntelligentRoute.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_IntelligentRouteUtil.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_IvtrMoneyConvertible.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_LogicHelper.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_LoginQueue.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_LoginSwitch.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_MCDownload.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_MemSimplify.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_Meridians.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ModelAsynLoadHelper.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_MsgDataDef.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_NativeAPI.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_NPCModel.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_Observer.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_OfflineShopCtrl.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_Optimize.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_PlayerActionController.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_PlayerBodyController.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_PlayerClone.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_PlayerLevelRankRealmChangeCheck.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_PlayerWrapper.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ProfConfigs.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ProfDisplay.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_Profile.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ProtocolDebug.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_QuickBuyActivity.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_QuickBuyPopMan.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_QuickBuyPopPolicy.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_QuickBuySaveLife.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_RandMallShopping.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_RandomMapPreProcessor.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_RecordAccount.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_RewuShader.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ScreenEffect.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ServerList.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ShakeCamera.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_Shop.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ShoppingCart.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ShoppingCartChecker.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ShoppingController.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ShoppingItemsMover.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ShoppingManager.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ShopSearch.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_SkillConvert.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_SkinCache.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_Split.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_StubbornNetSender.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_TaoistRank.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_Time.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_TimeSafeChecker.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_UIConfigs.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_UIHelper.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_UniversalTokenVisitHTTPCommand.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_URLOSNavigator.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_UseUniversalToken.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_WinAPI.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ECScriptTipWork.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ECScriptTipWorkMan.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EL_RandomMapInfo.h">
+      <Filter>Object Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EC_Game.cpp">
@@ -3055,9 +3697,6 @@
     </ClCompile>
     <ClCompile Include="EC_PolicyAction.cpp">
       <Filter>Object Files\NPCs</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\EC_Bezier.cpp">
-      <Filter>Object Files\Scene Objects</Filter>
     </ClCompile>
     <ClCompile Include="EC_CritterGroup.cpp">
       <Filter>Object Files\Scene Objects</Filter>
@@ -4175,114 +4814,6 @@
     <ClCompile Include="Network\IOLib\sha256.cpp">
       <Filter>Network\IOLib</Filter>
     </ClCompile>
-    <ClCompile Include="..\CCommon\EC_BrushMan.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\EC_TriangleMan.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\EL_Archive.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\EL_BackMusic.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\EL_BrushBuilding.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\EL_Building.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\EL_BuildingWithBrush.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\EL_Forest.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\EL_Grassland.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\EL_GrassType.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\EL_Precinct.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\EL_Region.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\EL_Tree.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\elementdataman.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\ELOutlineQuadTree.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\ELOutlineTexture.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\ELTerrainOutline2.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\globaldataman.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\itemdataman.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\Gfx\A3DSkillGfxComposer2.cpp">
-      <Filter>Common\GFX</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\Gfx\A3DSkillGfxEvent2.cpp">
-      <Filter>Common\GFX</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\AUTOCA\A3DAutoButterfly.cpp">
-      <Filter>Common\AutoCa</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\AUTOCA\A3DAutoCrow.cpp">
-      <Filter>Common\AutoCa</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\AUTOCA\A3DAutoEagle.cpp">
-      <Filter>Common\AutoCa</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\AUTOCA\A3DAutoFirefly.cpp">
-      <Filter>Common\AutoCa</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\AUTOCA\A3DAutoFish.cpp">
-      <Filter>Common\AutoCa</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\AUTOCA\A3DAutonomousAgent.cpp">
-      <Filter>Common\AutoCa</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\AUTOCA\A3DAutonomousBehaviour.cpp">
-      <Filter>Common\AutoCa</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\AUTOCA\A3DAutonomousGroup.cpp">
-      <Filter>Common\AutoCa</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\Face\Expression.cpp">
-      <Filter>Common\Face</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\Face\FaceAnimation.cpp">
-      <Filter>Common\Face</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\Face\FaceBone.cpp">
-      <Filter>Common\Face</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\Face\FaceBoneController.cpp">
-      <Filter>Common\Face</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\EL_Cloud.cpp">
-      <Filter>Common\Cloud</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\EL_CloudManager.cpp">
-      <Filter>Common\Cloud</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CCommon\EL_CloudSprite.cpp">
-      <Filter>Common\Cloud</Filter>
-    </ClCompile>
     <ClCompile Include="Task\EC_TaskInterface.cpp">
       <Filter>Task</Filter>
     </ClCompile>
@@ -4522,6 +5053,750 @@
     </ClCompile>
     <ClCompile Include="LuaBind.cpp">
       <Filter>Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\AUTOCA\A3DAutoButterfly.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\AUTOCA\A3DAutoCrow.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\AUTOCA\A3DAutoEagle.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\AUTOCA\A3DAutoFirefly.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\AUTOCA\A3DAutoFish.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\AUTOCA\A3DAutonomousAgent.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\AUTOCA\A3DAutonomousBehaviour.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\AUTOCA\A3DAutonomousGroup.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\Face\Expression.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\Face\FaceAnimation.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\Face\FaceBone.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\Face\FaceBoneController.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\Gfx\A3DSkillGfxComposer2.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\Gfx\A3DSkillGfxEvent2.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\Memory\ClientMemoryLog.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\Memory\EC_HookMemory.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\AObject.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\AProperty.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\AVariant.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\EC_Bezier.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\EC_BrushMan.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\EC_MD5Hash.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\EC_TriangleMan.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\EL_Archive.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\EL_BackMusic.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\EL_BrushBuilding.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\EL_Building.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\EL_BuildingWithBrush.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\EL_Cloud.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\EL_CloudManager.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\EL_CloudSprite.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\EL_Forest.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\EL_Grassland.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\EL_GrassType.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\EL_Precinct.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\EL_Region.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\EL_TerrainOutline.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\EL_Tree.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\elementdataman.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\ELOutlineQuadTree.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\ELOutlineTexture.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\ELTerrainOutline2.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\globaldataman.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\itemdataman.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommon\PolygonFunc.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgAutoPolicy.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgAskHelpToGM2.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgAutoHelp.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgAutoHPMP.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgBlackList.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgBlackScreen.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgBuyConfirm.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgCardBuy.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgCardSell.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgChangeStoragePW.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgChariot.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgComboSkillShortCut.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgComplexTitle.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgCountryMap.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgCountryMapSub.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgCountryReward.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgCountryScore.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgCountryWarMap.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgCurrentServer.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgDomainCondition.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgDownloadSpeed.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgEquipMark.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgEquipUpEnsure.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgExclusiveAward.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgFactionPVPRank.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgFactionPVPStatus.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgFashionShop.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgFashionShopItem.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgFashionSplit.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgFlySwordImprove.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgFortressTechnology.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgGeneralCard.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgGeneralCardBuy.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgGeneralCardCollection.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgGeneralCardRespawn.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgGiftCard.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgGivingFor.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgGMConsoleForbid.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgHistoryStage.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgIceThunderBall.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgKingAuction.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgKingCommand.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgKingElection.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgLevel2UpgradeShow.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgLoginButton.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgLoginOther.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgLoginQueue.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgLoginVersion.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgMatchProfile.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgMatchResult.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgMeridians.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgMeridiansImpact.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgMessageBox.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgMonsterSpirit.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgOfflineShopCreate.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgOfflineShopItemsList.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgOfflineShopList.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgOfflineShopSelfSetting.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgOfflineShopStore.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgOnlineAward.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgOptimizeBase.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgOptimizeFunc.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgOptimizeGfx.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgOptimizeMem.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgOptimizeOS.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgPalette2.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgPaletteBase.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgPetEvolution.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgPetEvolutionAnim.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgPetNature.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgPlayerRename.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgPopMsg.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgPreviewPetRebuild.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgPreviewProduce.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgPureColorFashionTip.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgQShopBuy.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgQuestionTask.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgQuickBuyBase.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgQuickBuyPop.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgQuickPay.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgRandomMap.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgRedSpark.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgReincarnation.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgReincarnationBook.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgReincarnationRewrite.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgReincarnationShow.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgScriptTip.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSettingQuickKey.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgShopCart.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgShopCartSub.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgShopCartSubList.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSignIn.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSimpleCostItemService.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSkillAction.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSkillSubAction.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSkillSubList.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSkillSubListItem.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSkillSubListRankItem.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSkillSubOther.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSkillSubPool.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSkillSubTree.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgStoneChange.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgStoneReplace.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgStoneTransfer.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSysModuleQuickBar.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTargetItem.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTaskConfirm.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTitleBubble.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTitleChallenge.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTitleList.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTokenShop.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTouchShop.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgViewModel.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgWebList.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ActionSwitcher.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_AsynLoadHelper.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_AutoPolicy.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_AutoTeam.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_AutoTeamConfig.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_BaseColor.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_BBSDlg.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_CastSkillWhenMove.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ComboSkillState.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ComputerAid.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ContinueLoad.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ControlLoopAnimation.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_CountryConfig.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_CustomizePolicy.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_DomainBase.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_DomainCountry.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_DomainGuild.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_DragDropHelper.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_Ease.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ElementDataHelper.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_EPWork.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_FactionPVP.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_FashionModel.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_FashionShop.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_GameUICommand.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_GameUIEvent.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_GetHostByName.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_HostSkillModel.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_HPWorkForceNavigate.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ImageDrawing.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_InstanceReenter.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_IntelligentRoute.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_IntelligentRouteUtil.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_IvtrMoneyConvertible.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_LogicHelper.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_LoginQueue.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_LoginSwitch.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_MCDownload.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_MemSimplify.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_Meridians.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ModelAsynLoadHelper.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_MsgDef.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_NPCModel.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_OfflineShopCtrl.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_Optimize.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_PlayerActionController.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_PlayerAPI.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_PlayerBodyController.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_PlayerClone.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_PlayerLevelRankRealmChangeCheck.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_PlayerWrapper.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ProfConfigs.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ProfDisplay.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_Profile.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ProtocolDebug.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_QuickBuyActivity.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_QuickBuyPopMan.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_QuickBuyPopPolicy.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_QuickBuySaveLife.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_RandMallShopping.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_RandomMapPreProcessor.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_RecordAccount.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_RewuShader.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ScreenEffect.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ServerList.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ShakeCamera.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_Shop.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ShoppingCart.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ShoppingCartChecker.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ShoppingController.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ShoppingItemsMover.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ShoppingManager.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ShopSearch.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_SkillConvert.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_SkinCache.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_Split.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_StubbornNetSender.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_TaoistRank.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_Time.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_TimeSafeChecker.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_UIConfigs.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_UIHelper.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_UniversalTokenVisitHTTPCommand.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_URLOSNavigator.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_UseUniversalToken.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_WinAPI.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ECScriptTipWork.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ECScriptTipWorkMan.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EL_RandomMapInfo.cpp">
+      <Filter>Main Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -5675,5 +6950,8 @@
     <None Include="Task\TaskTempl.inl">
       <Filter>Task</Filter>
     </None>
+    <None Include="AutoAllRes.dtf" />
+    <None Include="AutoAllRes.stf" />
+    <None Include="ElementClient.dsp" />
   </ItemGroup>
 </Project>
