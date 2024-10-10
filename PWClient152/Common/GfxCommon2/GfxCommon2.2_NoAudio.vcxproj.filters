@@ -1,0 +1,557 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{59866542-9b8c-47a0-b8db-b85db13e011d}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{4018a541-a8c1-4485-b932-3aea23700dc9}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="A3DAreaEmitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DBoxEmitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DCombActDynData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DCombActMan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DCombinedAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DCurveEmitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DCylinderEmitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DDecalEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DEllipsoidEmitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXECMLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXECModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXEditorInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXElement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXExMan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXFuncs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXGridAnimation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXKeyPoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXLightning.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXLightningEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXModelMan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGfxPhysDataMan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXPIFuncs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXRenderSlot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXRing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXShakeCamera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXSound.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXSoundImp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXStreamMan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXSurfaceRender.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXTexMan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGridDecalEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DLtnBolt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DLtnTrail.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DModelPhysics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DModelPhysSync.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DModelPhysSyncData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DMultiPlaneEmitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DParaboloid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DParticleEmitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DParticleSystemEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DPhysActor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DPhysElement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DPhysEmitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DPhysFluidEmitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DPhysFluidSyncData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DPhysPointEmitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DPhysRBCreator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DPointEmitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DSkillGfxComposer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DSkillGfxEvent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DSkinPhysSync.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DSkinPhysSyncData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DTrail.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_CameraKeyPoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_Model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ModelHook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ModelLua.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ModelMan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ModelShell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FX_BINDING.CPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GfxEditorUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RandStringContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TrailList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DAnimatable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DAnimatable_ApplyNone.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DAnimatable_PSConst.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DAnimationTrack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXAnimable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXFloatValueTrans.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DGFXModelProxy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DHLPixelShader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DModelSoftKeyFrame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DRibbon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DSkeletonEmitter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A3DTrailEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base64.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CriticalSectionWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ModelBlur.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ModelLuaApi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EC_ModelPhys.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GfxRequestQueue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="A3DAreaEmitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DBoxEmitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DCombActDynData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DCombActMan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DCombinedAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DCurveEmitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DCylinderEmitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DDecalEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DEllipsoidEmitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXCachedItemMan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXECMInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXECMLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXECModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXEditorInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXElement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXExMan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXFuncs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXGridAnimation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXKeyPoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXLightning.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXLightningEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXModelMan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXPhysDataMan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXPIFuncs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXRenderSlot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXRing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXShakeCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXSound.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXSoundImp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXStreamMan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXSurfaceRender.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXTexMan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGridDecalEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DLtnBolt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DLtnTrail.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DModelPhysics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DModelPhysSync.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DModelPhysSyncData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DMultiPlaneEmitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DParaboloid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DParticle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DParticleEmitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DParticleSystemEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DPhysActor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DPhysElement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DPhysEmitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DPhysFluidEmitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DPhysFluidSyncData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DPhysPointEmitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DPhysRBCreator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DPointEmitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DSkillGfxComposer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DSkillGfxEvent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DSkinPhysSync.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DSkinPhysSyncData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DTrail.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_CameraKeyPoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_Model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ModelHook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ModelLua.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ModelMan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ModelShell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FX_BINDING.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GfxCommonHeaders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GfxCommonTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GfxEditorUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RandStringContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RotList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TrailList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DAnimatable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DAnimatable_ApplyNone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DAnimatable_PSConst.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DAnimationTrack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXAnimable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXFloatValueTrans.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DGFXModelProxy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DHLPixelShader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DModelSoftKeyFrame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DRibbon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DSkeletonEmitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DTrailEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base64.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CriticalSectionWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ModelBlur.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EC_ModelPhys.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GfxRequestQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="A3DAnimatable_def.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

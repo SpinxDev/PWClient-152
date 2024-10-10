@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DbgRelease|Win32">
+      <Configuration>DbgRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="EditorDebug|Win32">
+      <Configuration>EditorDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="EditorRelease|Win32">
+      <Configuration>EditorRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PhyDebugRelease|Win32">
+      <Configuration>PhyDebugRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PhyDebug|Win32">
+      <Configuration>PhyDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="PhyRelease|Win32">
+      <Configuration>PhyRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="UnicodeEditorDebug|Win32">
+      <Configuration>UnicodeEditorDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="UnicodeEditorRelease|Win32">
+      <Configuration>UnicodeEditorRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectName>GfxCommon</ProjectName>
+    <ProjectGuid>{F269CB2A-43E8-4C03-A04C-EDC752E8B0B8}</ProjectGuid>
+    <RootNamespace>GfxCommon</RootNamespace>
+    <SccProjectName>"$/Common/GfxCommon2", UHCCAAAA</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccProvider>MSSCCI:Microsoft Visual SourceSafe</SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='EditorDebug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UnicodeEditorRelease|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PhyDebug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PhyDebugRelease|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UnicodeEditorDebug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PhyRelease|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='EditorRelease|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='EditorDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='UnicodeEditorRelease|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='PhyDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='PhyDebugRelease|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='UnicodeEditorDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='PhyRelease|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='EditorRelease|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.35219.272</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='EditorRelease|Win32'">
+    <OutDir>$(Platform)\2.2\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\2.2\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PhyRelease|Win32'">
+    <OutDir>$(Platform)\2.2\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\2.2\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UnicodeEditorDebug|Win32'">
+    <OutDir>$(Platform)\2.2\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\2.2\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(Platform)\2.2\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\2.2\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PhyDebugRelease|Win32'">
+    <OutDir>$(Platform)\2.2\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\2.2\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'">
+    <OutDir>$(Platform)\2.2\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\2.2\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PhyDebug|Win32'">
+    <OutDir>$(Platform)\2.2\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\2.2\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UnicodeEditorRelease|Win32'">
+    <OutDir>$(Platform)\2.2\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\2.2\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='EditorDebug|Win32'">
+    <OutDir>$(Platform)\2.2\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\2.2\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(Platform)\2.2\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\2.2\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='EditorRelease|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\LuaWrapperExport\Include;..\LuaWrapper\Include;.\Include;..\..\Projects2.2\Angelica2.2\output\3rdSDK\Include;..\..\Projects2.2\Angelica2.2\output\a3dSDK\Include;..\..\Projects2.2\Angelica2.2\output\acSDK\Include;..\..\Projects2.2\Angelica2.2\output\afSDK\Include;..\..\Projects2.2\Angelica2.2\output\amSDK\Include;..\..\Projects2.2\Angelica2.2\output\apSDK\Include;..\..\Projects2.2\Angelica2.2\output\AAudio\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Foundation\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Cooking\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Physics\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\PhysXLoader\include;$(ANGELICA2.2)\3rdSDK\Include;$(ANGELICA2.2)\a3dSDK\Include;$(ANGELICA2.2)\acSDK\Include;$(ANGELICA2.2)\afSDK\Include;$(ANGELICA2.2)\amSDK\Include;$(ANGELICA2.2)\apSDK\Include;$(ANGELICA2.2)\aaudio\include;$(ANGELICA2.2)\3rdSDK\Include\luaWrapper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='PhyRelease|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\LuaWrapperExport\Include;..\LuaWrapper\Include;.\Include;..\..\Projects2.2\Angelica2.2\output\3rdSDK\Include;..\..\Projects2.2\Angelica2.2\output\a3dSDK\Include;..\..\Projects2.2\Angelica2.2\output\acSDK\Include;..\..\Projects2.2\Angelica2.2\output\afSDK\Include;..\..\Projects2.2\Angelica2.2\output\amSDK\Include;..\..\Projects2.2\Angelica2.2\output\apSDK\Include;..\..\Projects2.2\Angelica2.2\output\AAudio\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Foundation\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Cooking\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Physics\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\PhysXLoader\include;$(ANGELICA2.2)\3rdSDK\Include;$(ANGELICA2.2)\a3dSDK\Include;$(ANGELICA2.2)\acSDK\Include;$(ANGELICA2.2)\afSDK\Include;$(ANGELICA2.2)\amSDK\Include;$(ANGELICA2.2)\apSDK\Include;$(ANGELICA2.2)\aaudio\include;$(ANGELICA2.2)\3rdSDK\Include\luaWrapper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='UnicodeEditorDebug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\LuaWrapperExport\Include;..\LuaWrapper\Include;.\Include;..\..\Projects2.2\Angelica2.2\output\3rdSDK\Include;..\..\Projects2.2\Angelica2.2\output\a3dSDK\Include;..\..\Projects2.2\Angelica2.2\output\acSDK\Include;..\..\Projects2.2\Angelica2.2\output\afSDK\Include;..\..\Projects2.2\Angelica2.2\output\amSDK\Include;..\..\Projects2.2\Angelica2.2\output\apSDK\Include;..\..\Projects2.2\Angelica2.2\output\AAudio\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Foundation\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Cooking\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Physics\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\PhysXLoader\include;$(ANGELICA2.2)\3rdSDK\Include;$(ANGELICA2.2)\a3dSDK\Include;$(ANGELICA2.2)\acSDK\Include;$(ANGELICA2.2)\afSDK\Include;$(ANGELICA2.2)\amSDK\Include;$(ANGELICA2.2)\apSDK\Include;$(ANGELICA2.2)\aaudio\include;$(ANGELICA2.2)\3rdSDK\Include\luaWrapper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\LuaWrapperExport\Include;..\LuaWrapper\Include;.\Include;..\..\Projects2.2\Angelica2.2\output\3rdSDK\Include;..\..\Projects2.2\Angelica2.2\output\a3dSDK\Include;..\..\Projects2.2\Angelica2.2\output\acSDK\Include;..\..\Projects2.2\Angelica2.2\output\afSDK\Include;..\..\Projects2.2\Angelica2.2\output\amSDK\Include;..\..\Projects2.2\Angelica2.2\output\apSDK\Include;..\..\Projects2.2\Angelica2.2\output\AAudio\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Foundation\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Cooking\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Physics\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\PhysXLoader\include;$(ANGELICA2.2)\3rdSDK\Include;$(ANGELICA2.2)\a3dSDK\Include;$(ANGELICA2.2)\acSDK\Include;$(ANGELICA2.2)\afSDK\Include;$(ANGELICA2.2)\amSDK\Include;$(ANGELICA2.2)\apSDK\Include;$(ANGELICA2.2)\aaudio\include;$(ANGELICA2.2)\3rdSDK\Include\luaWrapper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='PhyDebugRelease|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\LuaWrapperExport\Include;..\LuaWrapper\Include;.\Include;..\..\Projects2.2\Angelica2.2\output\3rdSDK\Include;..\..\Projects2.2\Angelica2.2\output\a3dSDK\Include;..\..\Projects2.2\Angelica2.2\output\acSDK\Include;..\..\Projects2.2\Angelica2.2\output\afSDK\Include;..\..\Projects2.2\Angelica2.2\output\amSDK\Include;..\..\Projects2.2\Angelica2.2\output\apSDK\Include;..\..\Projects2.2\Angelica2.2\output\AAudio\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Foundation\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Cooking\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Physics\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\PhysXLoader\include;$(ANGELICA2.2)\3rdSDK\Include;$(ANGELICA2.2)\a3dSDK\Include;$(ANGELICA2.2)\acSDK\Include;$(ANGELICA2.2)\afSDK\Include;$(ANGELICA2.2)\amSDK\Include;$(ANGELICA2.2)\apSDK\Include;$(ANGELICA2.2)\aaudio\include;$(ANGELICA2.2)\3rdSDK\Include\luaWrapper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\LuaWrapperExport\Include;..\LuaWrapper\Include;.\Include;..\..\Projects2.2\Angelica2.2\output\3rdSDK\Include;..\..\Projects2.2\Angelica2.2\output\a3dSDK\Include;..\..\Projects2.2\Angelica2.2\output\acSDK\Include;..\..\Projects2.2\Angelica2.2\output\afSDK\Include;..\..\Projects2.2\Angelica2.2\output\amSDK\Include;..\..\Projects2.2\Angelica2.2\output\apSDK\Include;..\..\Projects2.2\Angelica2.2\output\AAudio\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Foundation\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Cooking\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Physics\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\PhysXLoader\include;$(ANGELICA2.2)\3rdSDK\Include;$(ANGELICA2.2)\a3dSDK\Include;$(ANGELICA2.2)\acSDK\Include;$(ANGELICA2.2)\afSDK\Include;$(ANGELICA2.2)\amSDK\Include;$(ANGELICA2.2)\apSDK\Include;$(ANGELICA2.2)\aaudio\include;$(ANGELICA2.2)\3rdSDK\Include\luaWrapper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='PhyDebug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\LuaWrapperExport\Include;..\LuaWrapper\Include;.\Include;..\..\Projects2.2\Angelica2.2\output\3rdSDK\Include;..\..\Projects2.2\Angelica2.2\output\a3dSDK\Include;..\..\Projects2.2\Angelica2.2\output\acSDK\Include;..\..\Projects2.2\Angelica2.2\output\afSDK\Include;..\..\Projects2.2\Angelica2.2\output\amSDK\Include;..\..\Projects2.2\Angelica2.2\output\apSDK\Include;..\..\Projects2.2\Angelica2.2\output\AAudio\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Foundation\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Cooking\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Physics\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\PhysXLoader\include;$(ANGELICA2.2)\3rdSDK\Include;$(ANGELICA2.2)\a3dSDK\Include;$(ANGELICA2.2)\acSDK\Include;$(ANGELICA2.2)\afSDK\Include;$(ANGELICA2.2)\amSDK\Include;$(ANGELICA2.2)\apSDK\Include;$(ANGELICA2.2)\aaudio\include;$(ANGELICA2.2)\3rdSDK\Include\luaWrapper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='UnicodeEditorRelease|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\LuaWrapperExport\Include;..\LuaWrapper\Include;.\Include;..\..\Projects2.2\Angelica2.2\output\3rdSDK\Include;..\..\Projects2.2\Angelica2.2\output\a3dSDK\Include;..\..\Projects2.2\Angelica2.2\output\acSDK\Include;..\..\Projects2.2\Angelica2.2\output\afSDK\Include;..\..\Projects2.2\Angelica2.2\output\amSDK\Include;..\..\Projects2.2\Angelica2.2\output\apSDK\Include;..\..\Projects2.2\Angelica2.2\output\AAudio\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Foundation\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Cooking\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Physics\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\PhysXLoader\include;$(ANGELICA2.2)\3rdSDK\Include;$(ANGELICA2.2)\a3dSDK\Include;$(ANGELICA2.2)\acSDK\Include;$(ANGELICA2.2)\afSDK\Include;$(ANGELICA2.2)\amSDK\Include;$(ANGELICA2.2)\apSDK\Include;$(ANGELICA2.2)\aaudio\include;$(ANGELICA2.2)\3rdSDK\Include\luaWrapper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='EditorDebug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\LuaWrapperExport\Include;..\LuaWrapper\Include;.\Include;..\..\Projects2.2\Angelica2.2\output\3rdSDK\Include;..\..\Projects2.2\Angelica2.2\output\a3dSDK\Include;..\..\Projects2.2\Angelica2.2\output\acSDK\Include;..\..\Projects2.2\Angelica2.2\output\afSDK\Include;..\..\Projects2.2\Angelica2.2\output\amSDK\Include;..\..\Projects2.2\Angelica2.2\output\apSDK\Include;..\..\Projects2.2\Angelica2.2\output\AAudio\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Foundation\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Cooking\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Physics\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\PhysXLoader\include;$(ANGELICA2.2)\3rdSDK\Include;$(ANGELICA2.2)\a3dSDK\Include;$(ANGELICA2.2)\acSDK\Include;$(ANGELICA2.2)\afSDK\Include;$(ANGELICA2.2)\amSDK\Include;$(ANGELICA2.2)\apSDK\Include;$(ANGELICA2.2)\aaudio\include;$(ANGELICA2.2)\3rdSDK\Include\luaWrapper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\LuaWrapperExport\Include;..\LuaWrapper\Include;.\Include;..\..\Projects2.2\Angelica2.2\output\3rdSDK\Include;..\..\Projects2.2\Angelica2.2\output\a3dSDK\Include;..\..\Projects2.2\Angelica2.2\output\acSDK\Include;..\..\Projects2.2\Angelica2.2\output\afSDK\Include;..\..\Projects2.2\Angelica2.2\output\amSDK\Include;..\..\Projects2.2\Angelica2.2\output\apSDK\Include;..\..\Projects2.2\Angelica2.2\output\AAudio\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Foundation\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Cooking\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\Physics\include;..\APhysXIntegration\PhysX_SDK\v2.8.4_win\SDKs\PhysXLoader\include;$(ANGELICA2.2)\3rdSDK\Include;$(ANGELICA2.2)\a3dSDK\Include;$(ANGELICA2.2)\acSDK\Include;$(ANGELICA2.2)\afSDK\Include;$(ANGELICA2.2)\amSDK\Include;$(ANGELICA2.2)\apSDK\Include;$(ANGELICA2.2)\aaudio\include;$(ANGELICA2.2)\3rdSDK\Include\luaWrapper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="A3DAnimatable.cpp" />
+    <ClCompile Include="A3DAnimatable_ApplyNone.cpp" />
+    <ClCompile Include="A3DAnimatable_PSConst.cpp" />
+    <ClCompile Include="A3DAnimationTrack.cpp" />
+    <ClCompile Include="A3DAreaEmitter.cpp" />
+    <ClCompile Include="A3DBoxEmitter.cpp" />
+    <ClCompile Include="A3DCombActDynData.cpp" />
+    <ClCompile Include="A3DCombActMan.cpp" />
+    <ClCompile Include="A3DCombinedAction.cpp" />
+    <ClCompile Include="A3DCurveEmitter.cpp" />
+    <ClCompile Include="A3DCylinderEmitter.cpp" />
+    <ClCompile Include="A3DDecalEx.cpp" />
+    <ClCompile Include="A3DEllipsoidEmitter.cpp" />
+    <ClCompile Include="A3DGFXAnimable.cpp" />
+    <ClCompile Include="A3DGFXContainer.cpp" />
+    <ClCompile Include="A3DGFXECMLoader.cpp" />
+    <ClCompile Include="A3DGFXECModel.cpp" />
+    <ClCompile Include="A3DGFXEditorInterface.cpp" />
+    <ClCompile Include="A3DGFXElement.cpp" />
+    <ClCompile Include="A3DGFXEx.cpp" />
+    <ClCompile Include="A3DGFXExMan.cpp" />
+    <ClCompile Include="A3DGFXFloatValueTrans.cpp" />
+    <ClCompile Include="A3DGFXFuncs.cpp" />
+    <ClCompile Include="A3DGFXGridAnimation.cpp" />
+    <ClCompile Include="A3DGFXInterface.cpp" />
+    <ClCompile Include="A3DGFXKeyPoint.cpp" />
+    <ClCompile Include="A3DGFXLight.cpp" />
+    <ClCompile Include="A3DGFXLightning.cpp" />
+    <ClCompile Include="A3DGFXLightningEx.cpp" />
+    <ClCompile Include="A3DGFXModel.cpp" />
+    <ClCompile Include="A3DGFXModelMan.cpp" />
+    <ClCompile Include="A3DGFXModelProxy.cpp" />
+    <ClCompile Include="A3DGfxPhysDataMan.cpp" />
+    <ClCompile Include="A3DGFXPIFuncs.cpp" />
+    <ClCompile Include="A3DGFXRenderSlot.cpp" />
+    <ClCompile Include="A3DGFXRing.cpp" />
+    <ClCompile Include="A3DGFXShakeCamera.cpp" />
+    <ClCompile Include="A3DGFXSound.cpp" />
+    <ClCompile Include="A3DGFXSoundImp.cpp" />
+    <ClCompile Include="A3DGFXStreamMan.cpp" />
+    <ClCompile Include="A3DGFXSurfaceRender.cpp" />
+    <ClCompile Include="A3DGFXTexMan.cpp" />
+    <ClCompile Include="A3DGridDecalEx.cpp" />
+    <ClCompile Include="A3DHLPixelShader.cpp" />
+    <ClCompile Include="A3DLtnBolt.cpp" />
+    <ClCompile Include="A3DLtnTrail.cpp" />
+    <ClCompile Include="A3DModelPhysics.cpp" />
+    <ClCompile Include="A3DModelPhysSync.cpp" />
+    <ClCompile Include="A3DModelPhysSyncData.cpp" />
+    <ClCompile Include="A3DMultiPlaneEmitter.cpp" />
+    <ClCompile Include="A3DParaboloid.cpp" />
+    <ClCompile Include="A3DParticleEmitter.cpp" />
+    <ClCompile Include="A3DParticleSystemEx.cpp" />
+    <ClCompile Include="A3DPhysActor.cpp" />
+    <ClCompile Include="A3DPhysElement.cpp" />
+    <ClCompile Include="A3DPhysEmitter.cpp" />
+    <ClCompile Include="A3DPhysFluidEmitter.cpp" />
+    <ClCompile Include="A3DPhysFluidSyncData.cpp" />
+    <ClCompile Include="A3DPhysPointEmitter.cpp" />
+    <ClCompile Include="A3DPhysRBCreator.cpp" />
+    <ClCompile Include="A3DPointEmitter.cpp" />
+    <ClCompile Include="A3DRibbon.cpp" />
+    <ClCompile Include="A3DSkeletonEmitter.cpp" />
+    <ClCompile Include="A3DSkillGfxComposer.cpp" />
+    <ClCompile Include="A3DSkillGfxEvent.cpp" />
+    <ClCompile Include="A3DSkinPhysSync.cpp" />
+    <ClCompile Include="A3DSkinPhysSyncData.cpp" />
+    <ClCompile Include="A3DTrail.cpp" />
+    <ClCompile Include="A3DTrailEx.cpp" />
+    <ClCompile Include="base64.cpp" />
+    <ClCompile Include="CriticalSectionWrapper.cpp" />
+    <ClCompile Include="EC_CameraKeyPoint.cpp" />
+    <ClCompile Include="EC_Model.cpp" />
+    <ClCompile Include="EC_ModelBlur.cpp" />
+    <ClCompile Include="EC_ModelHook.cpp" />
+    <ClCompile Include="EC_ModelLua.cpp" />
+    <ClCompile Include="EC_ModelLuaApi.cpp" />
+    <ClCompile Include="EC_ModelMan.cpp" />
+    <ClCompile Include="EC_ModelPhys.cpp" />
+    <ClCompile Include="EC_ModelShell.cpp" />
+    <ClCompile Include="FX_BINDING.CPP" />
+    <ClCompile Include="GfxEditorUtil.cpp" />
+    <ClCompile Include="GfxRequestQueue.cpp" />
+    <ClCompile Include="RandStringContainer.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+    <ClCompile Include="TrailList.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="A3DAnimatable.h" />
+    <ClInclude Include="A3DAnimatable_ApplyNone.h" />
+    <ClInclude Include="A3DAnimatable_def.hpp" />
+    <ClInclude Include="A3DAnimatable_PSConst.h" />
+    <ClInclude Include="A3DAnimationTrack.h" />
+    <ClInclude Include="A3DAreaEmitter.h" />
+    <ClInclude Include="A3DBoxEmitter.h" />
+    <ClInclude Include="A3DCombActDynData.h" />
+    <ClInclude Include="A3DCombActMan.h" />
+    <ClInclude Include="A3DCombinedAction.h" />
+    <ClInclude Include="A3DCurveEmitter.h" />
+    <ClInclude Include="A3DCylinderEmitter.h" />
+    <ClInclude Include="A3DDecalEx.h" />
+    <ClInclude Include="A3DEllipsoidEmitter.h" />
+    <ClInclude Include="A3DGFXAnimable.h" />
+    <ClInclude Include="A3DGFXCachedItemMan.h" />
+    <ClInclude Include="A3DGFXContainer.h" />
+    <ClInclude Include="A3DGFXECMInterface.h" />
+    <ClInclude Include="A3DGFXECMLoader.h" />
+    <ClInclude Include="A3DGFXECModel.h" />
+    <ClInclude Include="A3DGFXEditorInterface.h" />
+    <ClInclude Include="A3DGFXElement.h" />
+    <ClInclude Include="A3DGFXEx.h" />
+    <ClInclude Include="A3DGFXExMan.h" />
+    <ClInclude Include="A3DGFXFloatValueTrans.h" />
+    <ClInclude Include="A3DGFXFuncs.h" />
+    <ClInclude Include="A3DGFXGridAnimation.h" />
+    <ClInclude Include="A3DGFXInterface.h" />
+    <ClInclude Include="A3DGFXKeyPoint.h" />
+    <ClInclude Include="A3DGFXLight.h" />
+    <ClInclude Include="A3DGFXLightning.h" />
+    <ClInclude Include="A3DGFXLightningEx.h" />
+    <ClInclude Include="A3DGFXModel.h" />
+    <ClInclude Include="A3DGFXModelMan.h" />
+    <ClInclude Include="A3DGFXModelProxy.h" />
+    <ClInclude Include="A3DGFXPhysDataMan.h" />
+    <ClInclude Include="A3DGFXPIFuncs.h" />
+    <ClInclude Include="A3DGFXRenderSlot.h" />
+    <ClInclude Include="A3DGFXRing.h" />
+    <ClInclude Include="A3DGFXShakeCamera.h" />
+    <ClInclude Include="A3DGFXSound.h" />
+    <ClInclude Include="A3DGFXSoundImp.h" />
+    <ClInclude Include="A3DGFXStreamMan.h" />
+    <ClInclude Include="A3DGFXSurfaceRender.h" />
+    <ClInclude Include="A3DGFXTexMan.h" />
+    <ClInclude Include="A3DGridDecalEx.h" />
+    <ClInclude Include="A3DHLPixelShader.h" />
+    <ClInclude Include="A3DLtnBolt.h" />
+    <ClInclude Include="A3DLtnTrail.h" />
+    <ClInclude Include="A3DModelPhysics.h" />
+    <ClInclude Include="A3DModelPhysSync.h" />
+    <ClInclude Include="A3DModelPhysSyncData.h" />
+    <ClInclude Include="A3DMultiPlaneEmitter.h" />
+    <ClInclude Include="A3DParaboloid.h" />
+    <ClInclude Include="A3DParticle.h" />
+    <ClInclude Include="A3DParticleEmitter.h" />
+    <ClInclude Include="A3DParticleSystemEx.h" />
+    <ClInclude Include="A3DPhysActor.h" />
+    <ClInclude Include="A3DPhysElement.h" />
+    <ClInclude Include="A3DPhysEmitter.h" />
+    <ClInclude Include="A3DPhysFluidEmitter.h" />
+    <ClInclude Include="A3DPhysFluidSyncData.h" />
+    <ClInclude Include="A3DPhysPointEmitter.h" />
+    <ClInclude Include="A3DPhysRBCreator.h" />
+    <ClInclude Include="A3DPointEmitter.h" />
+    <ClInclude Include="A3DRibbon.h" />
+    <ClInclude Include="A3DSkeletonEmitter.h" />
+    <ClInclude Include="A3DSkillGfxComposer.h" />
+    <ClInclude Include="A3DSkillGfxEvent.h" />
+    <ClInclude Include="A3DSkinPhysSync.h" />
+    <ClInclude Include="A3DSkinPhysSyncData.h" />
+    <ClInclude Include="A3DTrail.h" />
+    <ClInclude Include="A3DTrailEx.h" />
+    <ClInclude Include="base64.h" />
+    <ClInclude Include="CriticalSectionWrapper.h" />
+    <ClInclude Include="EC_CameraKeyPoint.h" />
+    <ClInclude Include="EC_Model.h" />
+    <ClInclude Include="EC_ModelBlur.h" />
+    <ClInclude Include="EC_ModelHook.h" />
+    <ClInclude Include="EC_ModelLua.h" />
+    <ClInclude Include="EC_ModelMan.h" />
+    <ClInclude Include="EC_ModelPhys.h" />
+    <ClInclude Include="EC_ModelShell.h" />
+    <ClInclude Include="FX_BINDING.H" />
+    <ClInclude Include="GfxCommonHeaders.h" />
+    <ClInclude Include="GfxCommonTypes.h" />
+    <ClInclude Include="GfxEditorUtil.h" />
+    <ClInclude Include="GfxRequestQueue.h" />
+    <ClInclude Include="RandStringContainer.h" />
+    <ClInclude Include="RotList.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="TrailList.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

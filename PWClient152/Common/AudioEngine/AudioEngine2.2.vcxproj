@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DbgRelease|Win32">
+      <Configuration>DbgRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{7DD76C4A-D24D-4053-978A-3A807584D01F}</ProjectGuid>
+    <RootNamespace>AudioEngine</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.35004.147</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\..\Build\PCEngine\AudioEngine\$(ProjectName)\</OutDir>
+    <IntDir>..\..\..\Build\PCEngine\Intermediate\AudioEngine\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\..\Build\PCEngine\AudioEngine\$(ProjectName)\</OutDir>
+    <IntDir>..\..\..\Build\PCEngine\Intermediate\AudioEngine\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'">
+    <OutDir>..\..\..\Build\PCEngine\AudioEngine\$(ProjectName)\</OutDir>
+    <IntDir>..\..\..\Build\PCEngine\Intermediate\AudioEngine\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\Angelica2.2\Output\afsdk\Include;..\..\..\Angelica2.2\Output\acsdk\Include;..\..\..\Angelica2.2\Output\3rdsdk\Include;..\fmod\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)_lib_d.lib</OutputFile>
+    </Lib>
+    <PostBuildEvent>
+      <Command>xcopy "$(TargetDir)*.lib" "..\..\..\Angelica2.2\Output\aaudio\lib\" /R /Y /Q /D
+xcopy "*.h" "..\..\..\Angelica2.2\Output\aaudio\include\" /R /Y /Q /D
+
+xcopy ..\fmod\lib\*.lib  ..\..\..\Angelica2.2\Output\3rdsdk\lib\ /R /Y /Q /D
+xcopy ..\fmod\bin\*.dll  ..\..\..\Angelica2.2\Output\3rdsdk\bin\ /R /Y /Q /D
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\Angelica2.2\Output\afsdk\Include;..\..\..\Angelica2.2\Output\acsdk\Include;..\..\..\Angelica2.2\Output\3rdsdk\Include;..\fmod\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)_lib.lib</OutputFile>
+    </Lib>
+    <PostBuildEvent>
+      <Command>xcopy "$(TargetDir)*.lib" "..\..\..\Angelica2.2\Output\aaudio\lib\" /R /Y /Q /D
+xcopy "*.h" "..\..\..\Angelica2.2\Output\aaudio\include\" /R /Y /Q /D
+
+xcopy ..\fmod\lib\*.lib  ..\..\..\Angelica2.2\Output\3rdsdk\lib\ /R /Y /Q /D
+xcopy ..\fmod\bin\*.dll  ..\..\..\Angelica2.2\Output\3rdsdk\bin\ /R /Y /Q /D
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\Angelica2.2\Output\afsdk\Include;..\..\..\Angelica2.2\Output\acsdk\Include;..\..\..\Angelica2.2\Output\3rdsdk\Include;..\fmod\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_DBGRELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)_lib_dr.lib</OutputFile>
+    </Lib>
+    <PostBuildEvent>
+      <Command>xcopy "$(TargetDir)*.lib" "..\..\..\Angelica2.2\Output\aaudio\lib\" /R /Y /Q /D
+xcopy "*.h" "..\..\..\Angelica2.2\Output\aaudio\include\" /R /Y /Q /D
+
+xcopy ..\fmod\lib\*.lib  ..\..\..\Angelica2.2\Output\3rdsdk\lib\ /R /Y /Q /D
+xcopy ..\fmod\bin\*.dll  ..\..\..\Angelica2.2\Output\3rdsdk\bin\ /R /Y /Q /D
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="FAudio.cpp" />
+    <ClCompile Include="FAudioBank.cpp" />
+    <ClCompile Include="FAudioBankArchive.cpp" />
+    <ClCompile Include="FAudioContainer.cpp" />
+    <ClCompile Include="FAudioEngine.cpp" />
+    <ClCompile Include="FAudioGroup.cpp" />
+    <ClCompile Include="FAudioInstance.cpp" />
+    <ClCompile Include="FAudioInstanceManager.cpp" />
+    <ClCompile Include="FAudioManager.cpp" />
+    <ClCompile Include="FAudioTemplate.cpp" />
+    <ClCompile Include="FCriticalSectionWrapper.cpp" />
+    <ClCompile Include="FCurve.cpp" />
+    <ClCompile Include="FEffect.cpp" />
+    <ClCompile Include="FEffectFactory.cpp" />
+    <ClCompile Include="FEvent.cpp" />
+    <ClCompile Include="FEventGroup.cpp" />
+    <ClCompile Include="FEventInstance.cpp" />
+    <ClCompile Include="FEventLayer.cpp" />
+    <ClCompile Include="FEventLayerInstance.cpp" />
+    <ClCompile Include="FEventManager.cpp" />
+    <ClCompile Include="FEventParameter.cpp" />
+    <ClCompile Include="FEventProject.cpp" />
+    <ClCompile Include="FEventSystem.cpp" />
+    <ClCompile Include="FGuid.cpp" />
+    <ClCompile Include="FIntervalManager.cpp" />
+    <ClCompile Include="FLog.cpp" />
+    <ClCompile Include="FLogManager.cpp" />
+    <ClCompile Include="FPropCurves.cpp" />
+    <ClCompile Include="FReverb.cpp" />
+    <ClCompile Include="FReverbDataManager.cpp" />
+    <ClCompile Include="FSoundDef.cpp" />
+    <ClCompile Include="FSoundDefArchive.cpp" />
+    <ClCompile Include="FSoundDefManager.cpp" />
+    <ClCompile Include="FSoundInstance.cpp" />
+    <ClCompile Include="FSoundInstanceTemplate.cpp" />
+    <ClCompile Include="FSoundPlayList.cpp" />
+    <ClCompile Include="XML\tinystr.cpp" />
+    <ClCompile Include="XML\tinyxml.cpp" />
+    <ClCompile Include="XML\tinyxmlerror.cpp" />
+    <ClCompile Include="XML\tinyxmlparser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FAudio.h" />
+    <ClInclude Include="FAudioBank.h" />
+    <ClInclude Include="FAudioBankArchive.h" />
+    <ClInclude Include="FAudioContainer.h" />
+    <ClInclude Include="FAudioEngine.h" />
+    <ClInclude Include="FAudioEngineHeaders.h" />
+    <ClInclude Include="FAudioGroup.h" />
+    <ClInclude Include="FAudioInstance.h" />
+    <ClInclude Include="FAudioInstanceManager.h" />
+    <ClInclude Include="FAudioManager.h" />
+    <ClInclude Include="FAudioTemplate.h" />
+    <ClInclude Include="FCriticalSectionWrapper.h" />
+    <ClInclude Include="FCurve.h" />
+    <ClInclude Include="FEffect.h" />
+    <ClInclude Include="FEffectFactory.h" />
+    <ClInclude Include="FEvent.h" />
+    <ClInclude Include="FEventGroup.h" />
+    <ClInclude Include="FEventInstance.h" />
+    <ClInclude Include="FEventLayer.h" />
+    <ClInclude Include="FEventLayerInstance.h" />
+    <ClInclude Include="FEventManager.h" />
+    <ClInclude Include="FEventParameter.h" />
+    <ClInclude Include="FEventProject.h" />
+    <ClInclude Include="FEventSystem.h" />
+    <ClInclude Include="FExportDecl.h" />
+    <ClInclude Include="FGuid.h" />
+    <ClInclude Include="FIntervalManager.h" />
+    <ClInclude Include="FLog.h" />
+    <ClInclude Include="FLogManager.h" />
+    <ClInclude Include="FPropCurves.h" />
+    <ClInclude Include="FReverb.h" />
+    <ClInclude Include="FReverbDataManager.h" />
+    <ClInclude Include="FSoundDef.h" />
+    <ClInclude Include="FSoundDefArchive.h" />
+    <ClInclude Include="FSoundDefManager.h" />
+    <ClInclude Include="FSoundInstance.h" />
+    <ClInclude Include="FSoundInstanceTemplate.h" />
+    <ClInclude Include="FSoundPlayList.h" />
+    <ClInclude Include="XML\tinystr.h" />
+    <ClInclude Include="XML\tinyxml.h" />
+    <ClInclude Include="XML\xmlcommon.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="\Projects\VC8\AudioEngine\AudioAssistDll\AudioAssistDll.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

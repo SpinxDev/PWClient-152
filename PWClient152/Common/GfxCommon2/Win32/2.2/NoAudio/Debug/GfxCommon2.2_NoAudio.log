@@ -1,0 +1,5 @@
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  StdAfx.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\GfxCommon2\GfxCommonHeaders.h(6,10): error C1083: Cannot open include file: 'AC.h': No such file or directory
+  (compiling source file 'StdAfx.cpp')
+  

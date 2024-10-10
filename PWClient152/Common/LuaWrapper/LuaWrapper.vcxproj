@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DbgRelease|Win32">
+      <Configuration>DbgRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="StdNewDebug|Win32">
+      <Configuration>StdNewDebug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="StdNewRelease|Win32">
+      <Configuration>StdNewRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Unicode Debug|Win32">
+      <Configuration>Unicode Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Unicode Release|Win32">
+      <Configuration>Unicode Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{58E06326-B5E3-4721-A1AE-5A1B73D80B93}</ProjectGuid>
+    <RootNamespace>LuaWrapper</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StdNewDebug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StdNewRelease|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StdNewDebug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StdNewRelease|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.35004.147</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StdNewRelease|Win32'">
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'">
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StdNewDebug|Win32'">
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(Platform)\2.2\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\2.2\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">
+    <OutDir>$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StdNewRelease|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\..\Angelica2.2\3rdSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_LIB;WIN32;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)LuaWrapper_s.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\LuaWrapper___Win32_S_Release/LuaWrapper.bsc</OutputFile>
+    </Bscmake>
+    <PostBuildEvent>
+      <Command>xcopy "$(TargetDir)" lib\2.2\ /R /Y /Q
+xcopy LuaApi.h include\ /R /Y /Q
+xcopy LuaMemTbl.h include\ /R /Y /Q
+xcopy LuaScript.h include\ /R /Y /Q
+xcopy LuaState.h include\ /R /Y /Q
+xcopy LuaUtil.h include\ /R /Y /Q
+xcopy ScriptValue.h include\ /R /Y /Q
+
+set DST_PATH="..\..\Angelica2.2\Output\3rdSDK"
+xcopy "$(TargetDir)*.lib" %25DST_PATH%25\Lib\ /R /Y /Q
+xcopy LuaApi.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaMemTbl.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaScript.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaState.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaUtil.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy ScriptValue.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\Angelica2.2\3rdSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_LIB;WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)LuaWrapper_d.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug/LuaWrapper.bsc</OutputFile>
+    </Bscmake>
+    <PostBuildEvent>
+      <Command>xcopy "$(TargetDir)" lib\2.2\ /R /Y /Q
+xcopy LuaApi.h include\ /R /Y /Q
+xcopy LuaMemTbl.h include\ /R /Y /Q
+xcopy LuaScript.h include\ /R /Y /Q
+xcopy LuaState.h include\ /R /Y /Q
+xcopy LuaUtil.h include\ /R /Y /Q
+xcopy ScriptValue.h include\ /R /Y /Q
+
+set DST_PATH="..\..\Angelica2.2\Output\3rdSDK"
+xcopy "$(TargetDir)*.lib" %25DST_PATH%25\Lib\ /R /Y /Q
+xcopy LuaApi.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaMemTbl.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaScript.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaState.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaUtil.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy ScriptValue.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\..\Angelica2.2\3rdSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_LIB;WIN32;UNICODE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)LuaWrapper_dr.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\DbgRelease/LuaWrapper.bsc</OutputFile>
+    </Bscmake>
+    <PostBuildEvent>
+      <Command>xcopy "$(TargetDir)" lib\2.2\ /R /Y /Q
+xcopy LuaApi.h include\ /R /Y /Q
+xcopy LuaMemTbl.h include\ /R /Y /Q
+xcopy LuaScript.h include\ /R /Y /Q
+xcopy LuaState.h include\ /R /Y /Q
+xcopy LuaUtil.h include\ /R /Y /Q
+xcopy ScriptValue.h include\ /R /Y /Q
+
+set DST_PATH="..\..\Angelica2.2\Output\3rdSDK"
+xcopy "$(TargetDir)*.lib" %25DST_PATH%25\Lib\ /R /Y /Q
+xcopy LuaApi.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaMemTbl.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaScript.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaState.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaUtil.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy ScriptValue.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StdNewDebug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\Angelica2.2\3rdSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_LIB;WIN32;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)LuaWrapper_sd.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\LuaWrapper___Win32_S_Debug/LuaWrapper.bsc</OutputFile>
+    </Bscmake>
+    <PostBuildEvent>
+      <Command>xcopy "$(TargetDir)" lib\2.2\ /R /Y /Q
+xcopy LuaApi.h include\ /R /Y /Q
+xcopy LuaMemTbl.h include\ /R /Y /Q
+xcopy LuaScript.h include\ /R /Y /Q
+xcopy LuaState.h include\ /R /Y /Q
+xcopy LuaUtil.h include\ /R /Y /Q
+xcopy ScriptValue.h include\ /R /Y /Q
+
+set DST_PATH="..\..\Angelica2.2\Output\3rdSDK"
+xcopy "$(TargetDir)*.lib" %25DST_PATH%25\Lib\ /R /Y /Q
+xcopy LuaApi.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaMemTbl.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaScript.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaState.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaUtil.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy ScriptValue.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\Angelica2.2\3rdSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_LIB;WIN32;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)LuaWrapper_du.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug_Unicode/LuaWrapper.bsc</OutputFile>
+    </Bscmake>
+    <PostBuildEvent>
+      <Command>xcopy "$(TargetDir)" lib\2.2\ /R /Y /Q
+xcopy LuaApi.h include\ /R /Y /Q
+xcopy LuaMemTbl.h include\ /R /Y /Q
+xcopy LuaScript.h include\ /R /Y /Q
+xcopy LuaState.h include\ /R /Y /Q
+xcopy LuaUtil.h include\ /R /Y /Q
+xcopy ScriptValue.h include\ /R /Y /Q
+
+set DST_PATH="..\..\Angelica2.2\Output\3rdSDK"
+xcopy "$(TargetDir)*.lib" %25DST_PATH%25\Lib\ /R /Y /Q
+xcopy LuaApi.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaMemTbl.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaScript.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaState.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaUtil.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy ScriptValue.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\..\Angelica2.2\3rdSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_LIB;WIN32;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)LuaWrapper.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release/LuaWrapper.bsc</OutputFile>
+    </Bscmake>
+    <PostBuildEvent>
+      <Command>xcopy "$(TargetDir)" lib\2.2\ /R /Y /Q
+xcopy LuaApi.h include\ /R /Y /Q
+xcopy LuaMemTbl.h include\ /R /Y /Q
+xcopy LuaScript.h include\ /R /Y /Q
+xcopy LuaState.h include\ /R /Y /Q
+xcopy LuaUtil.h include\ /R /Y /Q
+xcopy ScriptValue.h include\ /R /Y /Q
+
+set DST_PATH="..\..\Angelica2.2\Output\3rdSDK"
+xcopy "$(TargetDir)*.lib" %25DST_PATH%25\Lib\ /R /Y /Q
+xcopy LuaApi.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaMemTbl.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaScript.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaState.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaUtil.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy ScriptValue.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\..\Angelica2.2\3rdSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_LIB;WIN32;UNICODE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)LuaWrapper_u.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release_Unicode/LuaWrapper.bsc</OutputFile>
+    </Bscmake>
+    <PostBuildEvent>
+      <Command>xcopy "$(TargetDir)" lib\2.2\ /R /Y /Q
+xcopy LuaApi.h include\ /R /Y /Q
+xcopy LuaMemTbl.h include\ /R /Y /Q
+xcopy LuaScript.h include\ /R /Y /Q
+xcopy LuaState.h include\ /R /Y /Q
+xcopy LuaUtil.h include\ /R /Y /Q
+xcopy ScriptValue.h include\ /R /Y /Q
+
+set DST_PATH="..\..\Angelica2.2\Output\3rdSDK"
+xcopy "$(TargetDir)*.lib" %25DST_PATH%25\Lib\ /R /Y /Q
+xcopy LuaApi.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaMemTbl.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaScript.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaState.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy LuaUtil.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+xcopy ScriptValue.h %25DST_PATH%25\include\LuaWrapper\ /R /Y /Q
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Debugger.cpp" />
+    <ClCompile Include="LD_NameValue.cpp" />
+    <ClCompile Include="LuaAPI.cpp" />
+    <ClCompile Include="LuaDebug.cpp" />
+    <ClCompile Include="LuaDebugHelper.cpp" />
+    <ClCompile Include="LuaDebugIPC.cpp" />
+    <ClCompile Include="LuaDebugMsg.cpp" />
+    <ClCompile Include="LuaMemTbl.cpp" />
+    <ClCompile Include="LuaScript.cpp" />
+    <ClCompile Include="LuaState.cpp" />
+    <ClCompile Include="LuaUtil.cpp" />
+    <ClCompile Include="ScriptValue.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ATString.h" />
+    <ClInclude Include="Debugger.h" />
+    <ClInclude Include="LD_NameValue.h" />
+    <ClInclude Include="LuaAPI.h" />
+    <ClInclude Include="LuaDebug.h" />
+    <ClInclude Include="LuaDebugHelper.h" />
+    <ClInclude Include="LuaDebugIPC.h" />
+    <ClInclude Include="LuaDebugMsg.h" />
+    <ClInclude Include="LuaMemTbl.h" />
+    <ClInclude Include="LuaScript.h" />
+    <ClInclude Include="LuaState.h" />
+    <ClInclude Include="LuaUtil.h" />
+    <ClInclude Include="ScriptValue.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

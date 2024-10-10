@@ -1,0 +1,37 @@
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  ScriptValue.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\LuaWrapper\ScriptValue.cpp(10,10): error C1083: Cannot open include file: 'AWString.h': No such file or directory
+  LuaUtil.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\LuaWrapper\LuaUtil.h(10,10): error C1083: Cannot open include file: 'lua.hpp': No such file or directory
+  (compiling source file '../../Common/LuaWrapper/LuaUtil.cpp')
+  
+  LuaState.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\LuaWrapper\LuaState.h(14,10): error C1083: Cannot open include file: 'vector.h': No such file or directory
+  (compiling source file '../../Common/LuaWrapper/LuaState.cpp')
+  
+  LuaScript.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\LuaWrapper\LuaScript.h(11,10): error C1083: Cannot open include file: 'hashmap.h': No such file or directory
+  (compiling source file '../../Common/LuaWrapper/LuaScript.cpp')
+  
+  LuaMemTbl.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\LuaWrapper\LuaMemTbl.h(10,10): error C1083: Cannot open include file: 'vector.h': No such file or directory
+  (compiling source file '../../Common/LuaWrapper/LuaMemTbl.cpp')
+  
+  LuaDebugMsg.cpp
+  LuaDebugIPC.cpp
+  LuaDebugHelper.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\LuaWrapper\LuaDebugHelper.h(12,10): error C1083: Cannot open include file: 'AString.h': No such file or directory
+  (compiling source file '../../Common/LuaWrapper/LuaDebugHelper.cpp')
+  
+  LuaDebug.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\LuaWrapper\LuaDebugHelper.h(12,10): error C1083: Cannot open include file: 'AString.h': No such file or directory
+  (compiling source file '../../Common/LuaWrapper/LuaDebug.cpp')
+  
+  LuaAPI.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\LuaWrapper\LuaAPI.cpp(9,10): error C1083: Cannot open include file: 'ABaseDef.h': No such file or directory
+  LD_NameValue.cpp
+  Debugger.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\LuaWrapper\LuaDebugHelper.h(12,10): error C1083: Cannot open include file: 'AString.h': No such file or directory
+  (compiling source file '../../Common/LuaWrapper/Debugger.cpp')
+  
+  Generating Code...

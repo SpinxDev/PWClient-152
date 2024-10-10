@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DbgRelease|Win32">
+      <Configuration>DbgRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName>"$/AutoPFImp/AutoMoveImp", XQQAAAAA</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <ProjectGuid>{5E312718-12B7-40B8-B183-984B3F3423D0}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'">
+    <OutDir>.\DbgRelease\</OutDir>
+    <IntDir>.\DbgRelease\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>..\..\..\Angelica2.2\Output\3rdSDK\Include;..\..\..\Angelica2.2\Output\a3dsdk\Include;..\..\..\Angelica2.2\Output\acsdk\Include;..\..\..\Angelica2.2\Output\afsdk\Include;..\..\..\Angelica2.2\Output\amsdk\Include;..\GfxCommon;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_USE_32BIT_TIME_T;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\DbgRelease\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\DbgRelease\AutoMoveImp.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\DbgRelease\</ObjectFileName>
+      <ProgramDataBaseFileName>.\DbgRelease\</ProgramDataBaseFileName>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>xcopy  bitimage.h  ..\..\include\autopfimp\ /R/Y/Q
+xcopy  blockimage.h  ..\..\include\autopfimp\ /R/Y/Q
+xcopy  PfConstant.h  ..\..\include\autopfimp /R/Y/Q
+xcopy  MoveAgent.h  ..\..\include\autopfimp\ /R/Y/Q
+xcopy  ..\lib\AutoMoveImp_su.lib  ..\..\lib\autopfimp\ /R/Y/Q</Command>
+    </PostBuildEvent>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\DbgRelease\AutoMoveImp.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>../lib\AutoMoveImp_su.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>
+      </FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\..\..\Angelica2.2\Output\3rdSDK\Include;..\..\..\Angelica2.2\Output\a3dsdk\Include;..\..\..\Angelica2.2\Output\acsdk\Include;..\..\..\Angelica2.2\Output\afsdk\Include;..\..\..\Angelica2.2\Output\amsdk\Include;..\GfxCommon;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_USE_32BIT_TIME_T;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Debug\AutoMoveImp.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>xcopy  bitimage.h  ..\..\include\autopfimp\ /R/Y/Q
+xcopy  blockimage.h  ..\..\include\autopfimp\ /R/Y/Q
+xcopy  PfConstant.h  ..\..\include\autopfimp /R/Y/Q
+xcopy  MoveAgent.h  ..\..\include\autopfimp\ /R/Y/Q
+xcopy  ..\lib\AutoMoveImp_d.lib  ..\..\lib\autopfimp\ /R/Y/Q</Command>
+    </PostBuildEvent>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug\AutoMoveImp.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>..\lib\AutoMoveImp_d.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>..\..\..\Angelica2.2\Output\3rdSDK\Include;..\..\..\Angelica2.2\Output\a3dsdk\Include;..\..\..\Angelica2.2\Output\acsdk\Include;..\..\..\Angelica2.2\Output\afsdk\Include;..\..\..\Angelica2.2\Output\amsdk\Include;..\GfxCommon;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_USE_32BIT_TIME_T;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\Release\</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>.\Release\AutoMoveImp.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+      <AdditionalOptions>/source-charset:gb2312 /execution-charset:gb2312 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>xcopy  bitimage.h  ..\..\include\autopfimp\ /R/Y/Q
+xcopy  blockimage.h  ..\..\include\autopfimp\ /R/Y/Q
+xcopy  PfConstant.h  ..\..\include\autopfimp /R/Y/Q
+xcopy  MoveAgent.h  ..\..\include\autopfimp\ /R/Y/Q
+xcopy  ..\lib\AutoMoveImp.lib  ..\..\lib\autopfimp\ /R/Y/Q</Command>
+    </PostBuildEvent>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\AutoMoveImp.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>../lib\AutoMoveImp.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CluCommon.cpp" />
+    <ClCompile Include="CluGraph.cpp" />
+    <ClCompile Include="CluGraphConnector.cpp" />
+    <ClCompile Include="ClusterAbstraction.cpp" />
+    <ClCompile Include="GAStar.cpp" />
+    <ClCompile Include="GHeap.cpp" />
+    <ClCompile Include="Graph.cpp" />
+    <ClCompile Include="Island.cpp" />
+    <ClCompile Include="LayerMap.cpp" />
+    <ClCompile Include="MapGraph.cpp" />
+    <ClCompile Include="MapNode.cpp" />
+    <ClCompile Include="MAStar.cpp" />
+    <ClCompile Include="MoveAgent.cpp" />
+    <ClCompile Include="MoveMap.cpp" />
+    <ClCompile Include="MultiCluGraph.cpp" />
+    <ClCompile Include="OptimizePath.cpp" />
+    <ClCompile Include="PfClu.cpp" />
+    <ClCompile Include="PfConstant.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bitimage.h" />
+    <ClInclude Include="blockimage.h" />
+    <ClInclude Include="CluCommon.h" />
+    <ClInclude Include="CluGraph.h" />
+    <ClInclude Include="CluGraphConnector.h" />
+    <ClInclude Include="ClusterAbstraction.h" />
+    <ClInclude Include="GAStar.h" />
+    <ClInclude Include="GHeap.h" />
+    <ClInclude Include="Graph.h" />
+    <ClInclude Include="Island.h" />
+    <ClInclude Include="JointList.h" />
+    <ClInclude Include="LayerMap.h" />
+    <ClInclude Include="MapGraph.h" />
+    <ClInclude Include="MapNode.h" />
+    <ClInclude Include="MAStar.h" />
+    <ClInclude Include="MoveAgent.h" />
+    <ClInclude Include="MoveMap.h" />
+    <ClInclude Include="MultiCluGraph.h" />
+    <ClInclude Include="OptimizePath.h" />
+    <ClInclude Include="PfClu.h" />
+    <ClInclude Include="PfConstant.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,54 @@
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  PfConstant.cpp
+  PfClu.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\AutoMoveImp\PfConstant.h(13,10): error C1083: Cannot open include file: 'A3DTypes.h': No such file or directory
+  (compiling source file 'PfConstant.cpp')
+  
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\AutoMoveImp\PfClu.h(10,10): error C1083: Cannot open include file: 'A3DTypes.h': No such file or directory
+  (compiling source file 'PfClu.cpp')
+  
+  OptimizePath.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\AutoMoveImp\OptimizePath.h(12,10): error C1083: Cannot open include file: 'vector.h': No such file or directory
+  (compiling source file 'OptimizePath.cpp')
+  
+  MultiCluGraph.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\AutoMoveImp\MultiCluGraph.cpp(8,10): error C1083: Cannot open include file: 'A3DMacros.h': No such file or directory
+  MoveMap.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\AutoMoveImp\MoveMap.cpp(9,10): error C1083: Cannot open include file: 'A3DMacros.h': No such file or directory
+  MoveAgent.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\AutoMoveImp\MoveAgent.cpp(8,10): error C1083: Cannot open include file: 'A3DMacros.h': No such file or directory
+  MAStar.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\AutoMoveImp\MAStar.h(4,1): error C1083: Cannot open include file: 'A3DTypes.h': No such file or directory
+  (compiling source file 'MAStar.cpp')
+  
+  MapNode.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\AutoMoveImp\MapNode.h(10,10): error C1083: Cannot open include file: 'vector.h': No such file or directory
+  (compiling source file 'MapNode.cpp')
+  
+  MapGraph.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\AutoMoveImp\MapGraph.cpp(9,10): error C1083: Cannot open include file: 'A3DMacros.h': No such file or directory
+  LayerMap.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\AutoMoveImp\LayerMap.cpp(9,10): error C1083: Cannot open include file: 'A3DMacros.h': No such file or directory
+  Island.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\AutoMoveImp\Island.cpp(9,10): error C1083: Cannot open include file: 'A3DGDI.h': No such file or directory
+  Graph.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\AutoMoveImp\Graph.h(11,10): error C1083: Cannot open include file: 'vector.h': No such file or directory
+  (compiling source file 'Graph.cpp')
+  
+  GHeap.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\AutoMoveImp\GHeap.h(12,10): error C1083: Cannot open include file: 'vector.h': No such file or directory
+  (compiling source file 'GHeap.cpp')
+  
+  GAStar.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\AutoMoveImp\GAStar.h(11,10): error C1083: Cannot open include file: 'A3DTypes.h': No such file or directory
+  (compiling source file 'GAStar.cpp')
+  
+  ClusterAbstraction.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\AutoMoveImp\ClusterAbstraction.cpp(9,10): error C1083: Cannot open include file: 'AFile.h': No such file or directory
+  CluGraphConnector.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\AutoMoveImp\CluGraphConnector.cpp(9,10): error C1083: Cannot open include file: 'A3DMacros.h': No such file or directory
+  CluGraph.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\AutoMoveImp\CluGraph.cpp(8,10): error C1083: Cannot open include file: 'A3DMacros.h': No such file or directory
+  CluCommon.cpp
+D:\GitHub\SpinxDeveloper\PWClient-152\PWClient152\Common\AutoMoveImp\CluCommon.cpp(8,10): error C1083: Cannot open include file: 'AFile.h': No such file or directory
+  Generating Code...
