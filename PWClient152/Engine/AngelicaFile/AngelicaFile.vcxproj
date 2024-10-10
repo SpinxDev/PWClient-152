@@ -206,7 +206,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\3rdSDK\Include;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdSDK\Include;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine;$(SolutionDir)Libraries\ZLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -224,7 +224,7 @@
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>StdNew_Release\AngelicaFile_s.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -249,7 +249,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\3rdSDK\Include;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdSDK\Include;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine;$(SolutionDir)Libraries\ZLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -267,7 +267,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>.\Release\AngelicaFile.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -291,7 +291,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
     </CustomBuildStep>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\3rdSDK\Include;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdSDK\Include;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine;$(SolutionDir)Libraries\ZLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -309,7 +309,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>StdNew_Debug\AngelicaFile_sd.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -333,7 +333,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
     </CustomBuildStep>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\3rdSDK\Include;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdSDK\Include;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine;$(SolutionDir)Libraries\ZLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -351,7 +351,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>Debug\AngelicaFile_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -376,7 +376,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\3rdSDK\Include;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdSDK\Include;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine;$(SolutionDir)Libraries\ZLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -394,7 +394,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>DBGRelease\AngelicaFile_drsb.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -418,7 +418,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
     </CustomBuildStep>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\3rdSDK\Include;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdSDK\Include;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine;$(SolutionDir)Libraries\ZLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -436,7 +436,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>Unicode_Debug\AngelicaFile_ud.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -461,7 +461,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\3rdSDK\Include;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdSDK\Include;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine;$(SolutionDir)Libraries\ZLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -478,7 +478,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>StdNew_Unicode_Release\AngelicaFile_su.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -503,7 +503,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\3rdSDK\Include;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdSDK\Include;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine;$(SolutionDir)Libraries\ZLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -521,7 +521,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>DBGRelease\AngelicaFile_dr.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -546,7 +546,7 @@ dbgrelease.bat</Command>
     </CustomBuildStep>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\3rdSDK\Include;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdSDK\Include;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine;$(SolutionDir)Libraries\ZLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;UNICODE;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -564,7 +564,7 @@ dbgrelease.bat</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>StdNew_Unicode_Debug\AngelicaFile_sud.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -589,7 +589,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\3rdSDK\Include;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdSDK\Include;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine;$(SolutionDir)Libraries\ZLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -606,7 +606,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>Unicode_Release\AngelicaFile_u.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>

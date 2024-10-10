@@ -132,7 +132,7 @@ xcopy ".\include\*.h" "..\include\dshow\" /QDRY
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\DShow_BaseClasses\;Filter;Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\DShow_BaseClasses\;$(SolutionDir)Libraries\Async\Include;$(SolutionDir)Libraries\Async\Filter;$(SolutionDir)Libraries\Strmbase\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;ASYNC_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -143,7 +143,7 @@ xcopy ".\include\*.h" "..\include\dshow\" /QDRY
       <CallingConvention>StdCall</CallingConvention>
     </ClCompile>
     <Lib>
-      <OutputFile>$(OutDir)$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d.lib</OutputFile>
     </Lib>
     <PostBuildEvent>
       <Command>xcopy "$(TargetDir)*.lib" "..\lib\" /QDRY

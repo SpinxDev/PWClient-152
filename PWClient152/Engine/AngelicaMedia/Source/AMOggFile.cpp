@@ -12,7 +12,7 @@
 
 #include "AMOggFile.h"
 #include "AMPI.h"
-#include "vorbis/vorbisfile.h"
+#include "vorbisfile.h"
 #include "AFile.h"
 #include "AFileImage.h"
 #include "AFileUnicode.h"

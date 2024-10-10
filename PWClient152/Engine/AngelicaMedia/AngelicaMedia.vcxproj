@@ -188,7 +188,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\Mpg123\;$(SolutionDir)Libraries\Async\Include;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Libraries\Strmbase\;$(SolutionDir)Libraries\Vorbis\;$(SolutionDir)Libraries\Ogg\</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -205,7 +205,7 @@
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>StdNew_Unicode_Release\AngelicaMedia_su.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -230,7 +230,7 @@ xcopy ".\header\*.h" "..\Output\amsdk\include\" /Y /D /R</Command>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;C:\dx81sdk\include;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\Mpg123\;$(SolutionDir)Libraries\Async\Include;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Libraries\Strmbase\;$(SolutionDir)Libraries\Vorbis\;$(SolutionDir)Libraries\Ogg\</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -247,7 +247,7 @@ xcopy ".\header\*.h" "..\Output\amsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>.\Release\AngelicaMedia.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -272,7 +272,7 @@ xcopy ".\header\*.h" "..\Output\amsdk\include\" /Y /D /R</Command>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\Mpg123\;$(SolutionDir)Libraries\Async\Include;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Libraries\Strmbase\;$(SolutionDir)Libraries\Vorbis\;$(SolutionDir)Libraries\Ogg\</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -290,7 +290,7 @@ xcopy ".\header\*.h" "..\Output\amsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>DBGRelease\AngelicaMedia_dr.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -316,7 +316,7 @@ dbgrelease.bat</Command>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\Mpg123\;$(SolutionDir)Libraries\Async\Include;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Libraries\Strmbase\;$(SolutionDir)Libraries\Vorbis\;$(SolutionDir)Libraries\Ogg\</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -333,7 +333,7 @@ dbgrelease.bat</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>StdNew_Release\AngelicaMedia_s.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -357,7 +357,7 @@ xcopy ".\header\*.h" "..\Output\amsdk\include\" /Y /D /R</Command>
     </CustomBuildStep>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\Mpg123\;$(SolutionDir)Libraries\Async\Include;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Libraries\Strmbase\;$(SolutionDir)Libraries\Vorbis\;$(SolutionDir)Libraries\Ogg\</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;UNICODE;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -375,7 +375,7 @@ xcopy ".\header\*.h" "..\Output\amsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>StdNew_Unicode_Debug\AngelicaMedia_sud.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -399,7 +399,7 @@ xcopy ".\header\*.h" "..\Output\amsdk\include\" /Y /D /R</Command>
     </CustomBuildStep>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\Mpg123\;$(SolutionDir)Libraries\Async\Include;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Libraries\Strmbase\;$(SolutionDir)Libraries\Vorbis\;$(SolutionDir)Libraries\Ogg\</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -417,7 +417,7 @@ xcopy ".\header\*.h" "..\Output\amsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>StdNew_Debug\AngelicaMedia_sd.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -442,7 +442,7 @@ xcopy ".\header\*.h" "..\Output\amsdk\include\" /Y /D /R</Command>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\Mpg123\;$(SolutionDir)Libraries\Async\Include;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Libraries\Strmbase\;$(SolutionDir)Libraries\Vorbis\;$(SolutionDir)Libraries\Ogg\</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -459,7 +459,7 @@ xcopy ".\header\*.h" "..\Output\amsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>Unicode_Release\AngelicaMedia_u.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -483,7 +483,7 @@ xcopy ".\header\*.h" "..\Output\amsdk\include\" /Y /D /R</Command>
     </CustomBuildStep>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\Mpg123\;$(SolutionDir)Libraries\Async\Include;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Libraries\Strmbase\;$(SolutionDir)Libraries\Vorbis\;$(SolutionDir)Libraries\Ogg\</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;DEBUG;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -501,7 +501,7 @@ xcopy ".\header\*.h" "..\Output\amsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>Debug\AngelicaMedia_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -525,7 +525,7 @@ xcopy ".\header\*.h" "..\Output\amsdk\include\" /Y /D /R</Command>
     </CustomBuildStep>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\Mpg123\;$(SolutionDir)Libraries\Async\Include;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Libraries\Strmbase\;$(SolutionDir)Libraries\Vorbis\;$(SolutionDir)Libraries\Ogg\</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -543,7 +543,7 @@ xcopy ".\header\*.h" "..\Output\amsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>Unicode_Debug\AngelicaMedia_ud.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
