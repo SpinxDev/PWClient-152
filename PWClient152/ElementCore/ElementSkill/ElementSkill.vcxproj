@@ -129,7 +129,7 @@
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Link>
-      <OutputFile>$(IntDir)ElementSkill_d.dll</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\ElementCore\$(ProjectName)_d.dll</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <ManifestFile>$(IntDir)$(TargetFileName).intermediate.manifest</ManifestFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>

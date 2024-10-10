@@ -1,0 +1,966 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\AudioEditor.rc2""  // ·? Microsoft Visual C++ ±à?-μ?×ê?′\r\n"
+    "#include ""afxres.rc""         // ±ê×?×é?t\r\n"
+    "#include ""afxprint.rc""       // ′òó?/′òó??¤àà×ê?′\r\n"
+    "#include ""BCGCBPro.rc""       // BCGP\r\n"
+    "#endif\r\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\AudioEditor.ico"
+IDR_AudioEditorTYPE     ICON                    "res\\AudioEditorDoc.ico"
+IDI_ICON_BANK           ICON                    "res\\bank.ico"
+IDI_ICON_BANK_ARCHIVE   ICON                    "res\\bank_archive.ico"
+IDI_ICON_AUDIO          ICON                    "res\\audio.ico"
+IDI_ICON_SOUNDDEF       ICON                    "res\\sounddef.ico"
+IDI_ICON_SOUNDDEF_ARCHIVE ICON                    "res\\sounddef_archive.ico"
+IDI_ICON_EVENT_GROUP    ICON                    "res\\event_group.ico"
+IDI_ICON_EVENT          ICON                    "res\\event.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+IDB_WORKSPACE           BITMAP                  "res\\workspace.bmp"
+IDB_TOOLBAR256          BITMAP                  "res\\Toolbar256.bmp"
+IDB_BTN_PLAY_UP         BITMAP                  "res\\playup.bmp"
+IDB_BTN_PLAY_DOWN       BITMAP                  "res\\playdown.bmp"
+IDB_BTN_STOP            BITMAP                  "res\\stop.bmp"
+IDB_BTN_UNCHECKED       BITMAP                  "res\\unchecked_btn.bmp"
+IDB_BTN_CHECKED         BITMAP                  "res\\checked_btn.bmp"
+IDB_BTN_PAUSE_UP        BITMAP                  "res\\pauseup.bmp"
+IDB_BTN_PAUSE_DOWN      BITMAP                  "res\\pausedown.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_MY_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "新建(&N)\tCtrl+N",              ID_FILE_NEW
+        MENUITEM "打开(&O)...\tCtrl+O",           ID_FILE_OPEN
+        MENUITEM "保存(&S)\tCtrl+S",              ID_MY_FILE_SAVE
+        MENUITEM "另存为(&A)...",                  ID_MY_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "打印(&P)...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "打印预览(&V)",                    ID_FILE_PRINT_PREVIEW
+        MENUITEM "打印设置(&R)...",                 ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "最近的文件",                       ID_FILE_MRU_FILE1
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                      ID_APP_EXIT
+    END
+    POPUP "编辑(&E)"
+    BEGIN
+        MENUITEM "撤消(&U)\tCtrl+Z",              ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "剪切(&T)\tCtrl+X",              ID_EDIT_CUT
+        MENUITEM "复制(&C)\tCtrl+C",              ID_EDIT_COPY
+        MENUITEM "粘贴(&P)\tCtrl+V",              ID_EDIT_PASTE
+    END
+    POPUP "视图(&V)"
+    BEGIN
+        POPUP "工具栏(&T)"
+        BEGIN
+            MENUITEM "",                            ID_VIEW_TOOLBARS
+        END
+        MENUITEM "状态栏(&S)",                     ID_VIEW_STATUS_BAR
+        POPUP "显示风格(&S)"
+        BEGIN
+            MENUITEM "Office &2000",                ID_VIEW_APPLOOK_2000
+            MENUITEM "Office &XP",                  ID_VIEW_APPLOOK_XP
+            MENUITEM "Office 200&3",                ID_VIEW_APPLOOK_2003
+            MENUITEM "Visual Studio.NET 200&5",     ID_VIEW_APPLOOK_VS2005
+            MENUITEM "&Windows XP",                 ID_VIEW_APPLOOK_WIN_XP
+            POPUP "Office 200&7"
+            BEGIN
+                MENUITEM "&Blue Style",                 ID_VIEW_APPLOOK_2007
+                MENUITEM "B&lack Style",                ID_VIEW_APPLOOK_2007_1
+                MENUITEM "&Silver Style",               ID_VIEW_APPLOOK_2007_2
+                MENUITEM "&Aqua Style",                 ID_VIEW_APPLOOK_2007_3
+            END
+            MENUITEM "Visual Studio 200&8",         ID_VIEW_APPLOOK_VS2008
+        END
+    END
+    POPUP "工具(&K)"
+    BEGIN
+        MENUITEM "混响(&R)",                      ID_REVERB_EDITOR
+        MENUITEM "上传资源",                        ID_UPLOAD_RES
+        MENUITEM "更新资源",                        ID_DOWNLOAD_RES
+        MENUITEM "导出文本",                        ID_EXPORT_TEXT
+        MENUITEM "导出工程",                        ID_EXPORT_BINARY_PROJECT
+        MENUITEM SEPARATOR
+        MENUITEM "设置",                          ID_SETTINGS
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于 AudioEditor(&A)...",       ID_APP_ABOUT
+    END
+END
+
+IDR_CONTEXT_MENU MENU 
+BEGIN
+    POPUP "_POPUP_"
+    BEGIN
+        MENUITEM "Cu&t",                        ID_EDIT_CUT
+        MENUITEM "&Copy",                       ID_EDIT_COPY
+        MENUITEM "&Paste",                      ID_EDIT_PASTE
+    END
+END
+
+IDR_POPUP_TOOLBAR MENU 
+BEGIN
+    POPUP "DUMMY"
+    BEGIN
+        MENUITEM "Standard Toolbar",            ID_VIEW_TOOLBAR
+        MENUITEM "&Event",                      ID_VIEW_EVENT
+        MENUITEM "&Sound Def",                  ID_VIEW_SOUNDDEF
+        MENUITEM "&Bank",                       ID_VIEW_BANK
+        MENUITEM "&Output",                     ID_VIEW_OUTPUT
+        MENUITEM "&Property",                   ID_VIEW_PROPERTY
+        MENUITEM "<User Toolbar>",              ID_VIEW_USER_TOOLBAR1
+        MENUITEM "<User Toolbar>",              ID_VIEW_USER_TOOLBAR2
+        MENUITEM "<User Toolbar>",              ID_VIEW_USER_TOOLBAR3
+        MENUITEM "<User Toolbar>",              ID_VIEW_USER_TOOLBAR4
+        MENUITEM "<User Toolbar>",              ID_VIEW_USER_TOOLBAR5
+        MENUITEM "<User Toolbar>",              ID_VIEW_USER_TOOLBAR6
+        MENUITEM "<User Toolbar>",              ID_VIEW_USER_TOOLBAR7
+        MENUITEM "<User Toolbar>",              ID_VIEW_USER_TOOLBAR8
+        MENUITEM "<User Toolbar>",              ID_VIEW_USER_TOOLBAR9
+        MENUITEM "<User Toolbar>",              ID_VIEW_USER_TOOLBAR10
+        MENUITEM SEPARATOR
+        MENUITEM "&Customize...",               ID_VIEW_CUSTOMIZE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_MY_FILE_SAVE,        VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 AudioEditor"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "AudioEditor 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2011",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,16,WS_GROUP
+    PUSHBUTTON      "http://www.<MyCompany>.com",IDC_COMPANY_URL,40,36,119,14
+END
+
+IDD_CREATE_PROJECT DIALOGEX 0, 0, 163, 66
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "创建工程"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,45,50,14
+    PUSHBUTTON      "取消",IDCANCEL,106,45,50,14
+    EDITTEXT        IDC_EDIT_PROJ_NAME,62,14,83,14,ES_AUTOHSCROLL
+    LTEXT           "工程名：",IDC_STATIC,19,17,37,14
+END
+
+IDD_OPEN_PROJECT DIALOGEX 0, 0, 206, 238
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择工程"
+FONT 9, "宋体", 400, 0, 0x86
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,217,50,14
+    PUSHBUTTON      "取消",IDCANCEL,149,217,50,14
+    LISTBOX         IDC_LIST_PROJ_NAMES,7,7,192,210,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "删除",IDC_DEL_PROJECT,78,217,50,14
+END
+
+IDD_EDIT_NAME DIALOGEX 0, 0, 161, 59
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "命名"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,38,50,14
+    PUSHBUTTON      "取消",IDCANCEL,104,38,50,14
+    EDITTEXT        IDC_EDIT_NAME,43,12,95,17,ES_AUTOHSCROLL
+    LTEXT           "名字",IDC_STATIC,17,16,23,14
+END
+
+IDD_PROP_SLIDER DIALOGEX 0, 0, 317, 90
+STYLE DS_SETFONT | DS_MODALFRAME | WS_CAPTION
+CAPTION "滑块对话框"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,205,69,50,14
+    PUSHBUTTON      "取消",IDCANCEL,260,69,50,14
+    CONTROL         "",IDC_SLIDER,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,23,30,266,15
+    LTEXT           "静态",IDC_MIN,15,52,58,8
+    RTEXT           "静态",IDC_MAX,247,52,55,8
+    CTEXT           "静态",IDC_STEP,123,52,70,8
+    CTEXT           "静态",IDC_VAL,120,17,55,8
+    CTEXT           "静态",IDC_TIP,200,17,55,8
+END
+
+IDD_SELECT_AUDIO DIALOGEX 0, 0, 210, 261
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "选择音频文件"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,240,50,14
+    PUSHBUTTON      "取消",IDCANCEL,153,240,50,14
+    CONTROL         "",IDC_TREE_BANK,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_HSCROLL | WS_TABSTOP,7,7,196,227
+END
+
+IDD_SELECT_SOUNDDEF DIALOGEX 0, 0, 240, 293
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "选择声音定义"
+FONT 9, "宋体", 400, 0, 0x86
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,272,50,14
+    PUSHBUTTON      "取消",IDCANCEL,183,272,50,14
+    CONTROL         "",IDC_TREE_SOUNDDEF,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_HSCROLL | WS_TABSTOP,7,7,226,263
+END
+
+IDD_LAYER_PROP DIALOGEX 0, 0, 164, 102
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "层属性"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,81,50,14
+    PUSHBUTTON      "取消",IDCANCEL,107,81,50,14
+    LTEXT           "名称：",IDC_STATIC,22,24,54,8
+    EDITTEXT        IDC_LAYER_NAME,74,22,59,14,ES_AUTOHSCROLL
+    LTEXT           "关联参数：",IDC_STATIC,22,60,54,8
+    COMBOBOX        IDC_PARAM_COMBO,74,57,59,88,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_ADD_EFFECT DIALOGEX 0, 0, 151, 189
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "添加效果"
+FONT 9, "宋体", 400, 0, 0x86
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,168,50,14
+    PUSHBUTTON      "取消",IDCANCEL,94,168,50,14
+    LISTBOX         IDC_LIST_EFFECT,7,7,137,149,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_EFFECT_PROP DIALOGEX 0, 0, 197, 250
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "效果属性"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,229,50,14
+    PUSHBUTTON      "取消",IDCANCEL,140,229,50,14
+    CONTROL         "",IDC_PROP_FRAME,"Static",SS_BLACKFRAME,7,18,183,204
+    LTEXT           "静态",IDC_EFFECT_TYPE,7,7,47,8
+END
+
+IDD_SET_PARAM_VALUE DIALOGEX 0, 0, 142, 71
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置参数值"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,50,50,14
+    PUSHBUTTON      "取消",IDCANCEL,85,50,50,14
+    EDITTEXT        IDC_PARAM_VALUE,56,19,71,18,ES_AUTOHSCROLL
+    LTEXT           "参数值：",IDC_STATIC,15,23,33,8
+END
+
+IDD_PARAM_PROP DIALOGEX 0, 0, 182, 187
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "参数属性"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,165,50,14
+    PUSHBUTTON      "取消",IDCANCEL,125,165,50,14
+    EDITTEXT        IDC_PARAM_NAME,67,16,67,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MIN_VALUE,67,41,67,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_VALUE,67,66,67,14,ES_AUTOHSCROLL
+    LTEXT           "参数名：",IDC_STATIC,17,19,33,8
+    LTEXT           "最小值：",IDC_STATIC,17,43,33,8
+    LTEXT           "最大值：",IDC_STATIC,17,67,33,8
+    COMBOBOX        IDC_COMBO_PARAM_LOOP_TYPE,67,112,67,38,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_PARAM_VEL,67,89,67,14,ES_AUTOHSCROLL
+    LTEXT           "速度：",IDC_STATIC,17,91,34,8
+    LTEXT           "循环：",IDC_STATIC,17,113,34,8
+    LTEXT           "寻找速度：",IDC_STATIC,16,137,41,8
+    EDITTEXT        IDC_PARAM_SEEKSPEED,67,135,67,14,ES_AUTOHSCROLL
+END
+
+IDD_SOUND_INS_PROP DIALOGEX 0, 0, 227, 268
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "声音定义实例属性"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,247,50,14
+    PUSHBUTTON      "取消",IDCANCEL,170,247,50,14
+    CONTROL         "",IDC_PROP_FRM,"Static",SS_BLACKFRAME,7,7,213,237
+END
+
+IDD_REVERB DIALOGEX 0, 0, 340, 309
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "混响"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,288,50,14
+    PUSHBUTTON      "取消",IDCANCEL,283,288,50,14
+    LISTBOX         IDC_LIST_REVERB,7,7,171,252,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_FRM_REVERB_PROP,"Static",SS_BLACKFRAME,182,7,151,252
+    PUSHBUTTON      "新建",IDC_NEW_REVERB,7,267,50,14
+    PUSHBUTTON      "删除",IDC_DEL_REBERB,145,268,50,14
+    PUSHBUTTON      "保存",IDC_REVERB_SAVE,283,269,50,14
+END
+
+IDD_NEW_REVERB DIALOGEX 0, 0, 158, 111
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "新建Reverb"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "创建",IDOK,7,90,50,14
+    PUSHBUTTON      "取消",IDCANCEL,101,90,50,14
+    COMBOBOX        IDC_COMBO_REVERBS,57,51,74,117,CBS_DROPDOWNLIST | CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_NAME,57,23,74,14,ES_AUTOHSCROLL
+    LTEXT           "名称：",IDC_STATIC,21,26,35,8
+    LTEXT           "模板：",IDC_STATIC,21,56,35,8
+END
+
+IDD_SET_VALUE DIALOGEX 0, 0, 142, 119
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设值"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,98,50,14
+    PUSHBUTTON      "取消",IDCANCEL,85,98,50,14
+    EDITTEXT        IDC_EDIT_VALUE,50,53,57,14,ES_AUTOHSCROLL
+    LTEXT           "最小值:",IDC_STATIC,22,15,29,8
+    LTEXT           "最大值：",IDC_STATIC,22,35,33,8
+    LTEXT           "Static",IDC_MIN_VALUE,75,15,46,8
+    LTEXT           "Static",IDC_MAX_VALUE,75,35,46,8
+    LTEXT           "取值",IDC_STATIC,24,57,17,8
+    EDITTEXT        IDC_EDIT_PARAM,50,78,57,14,ES_AUTOHSCROLL
+    LTEXT           "参数",IDC_STATIC,24,82,17,8
+END
+
+IDD_CUR_PLAYING DIALOGEX 0, 0, 330, 293
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "正在播放"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_LIST_PLAYING,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,316,279
+END
+
+IDD_UPLOAD_RES DIALOGEX 0, 0, 410, 340
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "上传音频文件"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "上传",IDOK,178,319,50,14
+    PUSHBUTTON      "取消",IDCANCEL,349,319,50,14
+    CONTROL         "",IDC_LIST_UPLOAD,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,396,272
+    LTEXT           "上传路径：",IDC_STATIC,19,295,41,8
+    EDITTEXT        IDC_EDIT_UPLOAD_PATH,87,292,307,13,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "添加",IDC_BTN_ADD_FILE,7,319,50,14
+END
+
+IDD_DOWNLOAD_RES DIALOGEX 0, 0, 207, 212
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "更新资源"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "下载",ID_BTN_DOWNLOAD,150,191,50,14
+    LISTBOX         IDC_LIST_DOWNLOAD_FOLDERS,7,7,193,174,LBS_SORT | LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_EVENT_PROP DIALOGEX 0, 0, 256, 302
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Event属性设置"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,199,280,50,14
+    CONTROL         "",IDC_EVENT_PROP_FRM,"Static",SS_BLACKFRAME,7,7,242,265
+END
+
+IDD_SOUNDDEF_PROP_FRM DIALOGEX 0, 0, 271, 316
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "声音定义属性设置"
+FONT 9, "宋体", 400, 0, 0x86
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,214,295,50,14
+    CONTROL         "",IDC_SOUNDDEF_PROP_FRM,"Static",SS_BLACKFRAME,7,7,257,275
+END
+
+IDD_SLIDER DIALOGEX 0, 0, 284, 74
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_SLIDER_CTRL,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,21,23,243,15
+    LTEXT           "",IDC_STATIC_SLIDER_CTRL_MIN,9,46,43,8
+    LTEXT           "",IDC_STATIC_SLIDER_CTRL_MAX,235,46,39,8,0,WS_EX_RIGHT
+    LTEXT           "",IDC_STATIC_SLIDER_CTRL_CUR,121,15,48,8
+    LTEXT           "",IDC_STATIC_SLIDER_CTRL_TIP,181,15,57,8
+    LTEXT           "",IDC_STATIC_SLIDER_CTRL_STEP,115,46,59,8
+END
+
+IDD_SETTINGS DIALOGEX 0, 0, 198, 230
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_FRM_SETTING_PROP,"Static",SS_BLACKFRAME,7,7,184,216
+END
+
+IDD_SELECT_EVENT DIALOGEX 0, 0, 232, 293
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "批量删除Event"
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,272,50,14
+    PUSHBUTTON      "取消",IDCANCEL,175,272,50,14
+    CONTROL         "",IDC_TREE_EVENT,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_TABSTOP,7,7,218,245
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "TODO: <公司名>"
+            VALUE "FileDescription", "TODO: <文件说明>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "AudioEditor.exe"
+            VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。"
+            VALUE "OriginalFilename", "AudioEditor.exe"
+            VALUE "ProductName", "TODO: <产品名>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_CREATE_PROJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 156
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_OPEN_PROJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 199
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 231
+    END
+
+    IDD_EDIT_NAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 154
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 52
+    END
+
+    IDD_PROP_SLIDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 310
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_SELECT_AUDIO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 203
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 254
+    END
+
+    IDD_SELECT_SOUNDDEF, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 286
+    END
+
+    IDD_LAYER_PROP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 157
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 95
+    END
+
+    IDD_ADD_EFFECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 144
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 182
+    END
+
+    IDD_EFFECT_PROP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 190
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 243
+    END
+
+    IDD_SET_PARAM_VALUE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 135
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 64
+    END
+
+    IDD_PARAM_PROP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 179
+    END
+
+    IDD_SOUND_INS_PROP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 220
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 261
+    END
+
+    IDD_REVERB, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 333
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 302
+    END
+
+    IDD_NEW_REVERB, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 151
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 104
+    END
+
+    IDD_SET_VALUE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 135
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 112
+    END
+
+    IDD_CUR_PLAYING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 323
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 286
+    END
+
+    IDD_UPLOAD_RES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 403
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 333
+    END
+
+    IDD_DOWNLOAD_RES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 200
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 205
+    END
+
+    IDD_EVENT_PROP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 249
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 294
+    END
+
+    IDD_SOUNDDEF_PROP_FRM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 264
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 309
+    END
+
+    IDD_SLIDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 277
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 67
+    END
+
+    IDD_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 191
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 223
+    END
+
+    IDD_SELECT_EVENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 225
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 286
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_HAND_CURSOR         CURSOR                  "res\\hand.cur"
+IDC_MOVE_CURSOR         CURSOR                  "res\\move.cur"
+IDC_RESIZE_CURSOR       CURSOR                  "res\\resize.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE 初始化失败。请确保 OLE 库是正确的版本。"
+    IDS_MAIN_TOOLBAR        "Standard"
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "AudioEditor\n\nAudioEditor\n\n\nAudioEditor.Document\nAudioEditor.Document"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "AudioEditor"
+    AFX_IDS_IDLEMESSAGE     "就绪"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "创建新文档\n新建"
+    ID_FILE_OPEN            "打开现有文档\n打开"
+    ID_FILE_CLOSE           "关闭活动文档\n关闭"
+    ID_FILE_SAVE            "保存活动文档\n保存"
+    ID_FILE_SAVE_AS         "用新名称保存活动文档\n另存为"
+    ID_FILE_PAGE_SETUP      "更改打印选项\n页面设置"
+    ID_FILE_PRINT_SETUP     "更改打印机选项和打印选项\n打印设置"
+    ID_FILE_PRINT           "打印活动文档\n打印"
+    ID_FILE_PRINT_PREVIEW   "显示整页\n打印预览"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "显示程序信息、版本号和版权\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "打开此文档"
+    ID_FILE_MRU_FILE2       "打开此文档"
+    ID_FILE_MRU_FILE3       "打开此文档"
+    ID_FILE_MRU_FILE4       "打开此文档"
+    ID_FILE_MRU_FILE5       "打开此文档"
+    ID_FILE_MRU_FILE6       "打开此文档"
+    ID_FILE_MRU_FILE7       "打开此文档"
+    ID_FILE_MRU_FILE8       "打开此文档"
+    ID_FILE_MRU_FILE9       "打开此文档"
+    ID_FILE_MRU_FILE10      "打开此文档"
+    ID_FILE_MRU_FILE11      "打开此文档"
+    ID_FILE_MRU_FILE12      "打开此文档"
+    ID_FILE_MRU_FILE13      "打开此文档"
+    ID_FILE_MRU_FILE14      "打开此文档"
+    ID_FILE_MRU_FILE15      "打开此文档"
+    ID_FILE_MRU_FILE16      "打开此文档"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回上一个窗格\n上一窗格"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "将活动窗口拆分为多个窗格\n拆分"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "清除选定内容\n清除"
+    ID_EDIT_CLEAR_ALL       "清除全部内容\n全部清除"
+    ID_EDIT_COPY            "复制选定内容并将其放到剪贴板上\n复制"
+    ID_EDIT_CUT             "剪切选定内容并将其放到剪贴板上\n剪切"
+    ID_EDIT_FIND            "查找指定的文本\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_REPEAT          "重复上一操作\n重复"
+    ID_EDIT_REPLACE         "用其他文本替换特定的文本\n替换"
+    ID_EDIT_SELECT_ALL      "选定整个文档\n全选"
+    ID_EDIT_UNDO            "撤消上一操作\n撤消"
+    ID_EDIT_REDO            "恢复上次撤消的操作\n重做"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n切换工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n切换状态栏"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "更改窗口大小"
+    AFX_IDS_SCMOVE          "更改窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小为图标"
+    AFX_IDS_SCMAXIMIZE      "使窗口最大化显示"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到前一个文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动窗口并提示保存文档"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "将窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务列表"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "关闭打印预览模式\n取消预览"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_CUSTOMIZE       "Customize toolbars and menus.\nCustomize"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_USER_TOOLBAR1   "Show or hide the user toolbar\nToggle User ToolBar"
+    ID_VIEW_USER_TOOLBAR2   "Show or hide the user toolbar\nToggle User ToolBar"
+    ID_VIEW_USER_TOOLBAR3   "Show or hide the user toolbar\nToggle User ToolBar"
+    ID_VIEW_USER_TOOLBAR4   "Show or hide the user toolbar\nToggle User ToolBar"
+    ID_VIEW_USER_TOOLBAR5   "Show or hide the user toolbar\nToggle User ToolBar"
+    ID_VIEW_USER_TOOLBAR6   "Show or hide the user toolbar\nToggle User ToolBar"
+    ID_VIEW_USER_TOOLBAR7   "Show or hide the user toolbar\nToggle User ToolBar"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_USER_TOOLBAR8   "Show or hide the user toolbar\nToggle User ToolBar"
+    ID_VIEW_USER_TOOLBAR9   "Show or hide the user toolbar\nToggle User ToolBar"
+    ID_VIEW_USER_TOOLBAR10  "Show or hide the user toolbar\nToggle User ToolBar"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_APPLOOK_2000    "Activate Office 2000 application look\nOffice 2000 Look"
+    ID_VIEW_APPLOOK_XP      "Activate Office XP application look\nOffice XP Look"
+    ID_VIEW_APPLOOK_2003    "Activate Office 2003 application look\nOffice 2003 Look"
+    ID_VIEW_APPLOOK_WIN_XP  "Activate Windows XP application look\nWindows XP Look"
+    ID_VIEW_APPLOOK_VS2005  "Activate Visual Studio 2005 application look\nVS 2005 Look"
+    ID_VIEW_APPLOOK_2007    "Activate Office 2007 application look\nOffice 2007 Look (Blue)"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_APPLOOK_2007_1  "Activate Office 2007 application look\nOffice 2007 Look (Black)"
+    ID_VIEW_APPLOOK_2007_2  "Activate Office 2007 application look\nOffice 2007 Look (Silver)"
+    ID_VIEW_APPLOOK_2007_3  "Activate Office 2007 application look\nOffice 2007 Look (Aqua)"
+    ID_VIEW_APPLOOK_VS2008  "Activate Visual Studio 2008 application look\nVS 2008 Look"
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\AudioEditor.rc2"  // 非 Microsoft Visual C++ 编辑的资源
+#include "afxres.rc"         // 标准组件
+#include "afxprint.rc"       // 打印/打印预览资源
+#include "BCGCBPro.rc"       // BCGP
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

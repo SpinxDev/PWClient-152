@@ -3,3 +3,6 @@
 /PWClient152/bin
 /PWClient152/bin-int
 /PWClient152/Engine/Angelica3D/Debug
+*.idb
+*.pdb
+*.obj

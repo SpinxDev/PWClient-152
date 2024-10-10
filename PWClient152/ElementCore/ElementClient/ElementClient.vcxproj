@@ -111,7 +111,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>.\Home;..\CCommon\Autoca;..\CCommon\Face;.\;.\Network\rpcdata;.\Network\inl;.\Network\IOLib;.\Network;.\Task;..\include\CD;..\Include;..\CCommon;..\CCommon\Gfx;..\include\LuaWrapper;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Libraries\DXSDK\Include\</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;UNICODE;_ELEMENTCLIENT;ANGELICA_2_2;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -161,7 +161,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\Home;..\CCommon\Autoca;..\CCommon\Face;.\;.\Network\rpcdata;.\Network\inl;.\Network\IOLib;.\Network;.\Task;..\include\CD;..\Include;..\CCommon;..\CCommon\Gfx;..\include\LuaWrapper;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include\PropDlg;..\..\Angelica2.2\output\3rdSDK\Include\luaWrapper;..\..\Angelica2.2\output\3rdSDK\Include\dshow;..\..\..\Common\GfxCommon;$(SolutionDir)ElementClient\CCommon\;..\..\..\Common\AUInterface2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Libraries\DXSDK\Include\</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;UNICODE;_ELEMENTCLIENT;ANGELICA_2_2;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -185,9 +185,9 @@
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>zlibwapi.lib;GfxCommon_d_na.lib;CHBasedCD_d.lib;ElementSkill_d.lib;AUInterface_d.lib;AngelicaCommon_ud.lib;AngelicaMedia_ud.lib;AngelicaFile_ud.lib;Angelica3D_ud.lib;ws2_32.lib;Imm32.lib;dxguid.lib;d3d9.lib;d3dx9.lib;glu32.lib;ddraw.lib;odbc32.lib;odbccp32.lib;speedtreert_d.lib;FTDriver_D.lib;FWEditorLib_d.lib;shlwapi.lib;wininet.lib;lua5.1.mtd.lib;LuaWrapper_du.lib;winmm.lib;Async_ud.lib;strmbase_ud.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>..\CBin\ElementClient_d_2_2.exe</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\ElementCore\$(ProjectName)_d.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>..\lib2.2\CD;..\Lib2.2;..\Lib2.2\AUI;..\..\Angelica2.2\Output\A3DSDK\Lib;..\..\Angelica2.2\Output\AFSDK\Lib;..\..\Angelica2.2\Output\ACSDK\Lib;..\..\Angelica2.2\Output\APSDK\Lib;..\..\Angelica2.2\Output\AMSDK\Lib;..\..\Angelica2.2\Output\3rdSDK\Lib;..\..\Angelica2.2\Output\aui\Lib;..\..\Angelica2.2\Output\A3DPlatform\Lib;..\..\Angelica2.2\output\DbgRelease\Angelica3D\DBGRelease;..\..\Angelica2.2\output\DbgRelease\AngelicaCommon\DBGRelease;..\..\Angelica2.2\output\DbgRelease\AngelicaFile\DBGRelease;..\..\Angelica2.2\output\DbgRelease\AngelicaMedia\DBGRelease;..\..\Angelica2.2\output\DbgRelease\GfxCommon\dbgrelease;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\lib2.2\CD;..\Lib2.2;..\Lib2.2\AUI;..\..\Angelica2.2\Output\A3DSDK\Lib;..\..\Angelica2.2\Output\AFSDK\Lib;..\..\Angelica2.2\Output\ACSDK\Lib;..\..\Angelica2.2\Output\APSDK\Lib;..\..\Angelica2.2\Output\AMSDK\Lib;..\..\Angelica2.2\Output\3rdSDK\Lib;..\..\Angelica2.2\Output\aui\Lib;..\..\Angelica2.2\Output\A3DPlatform\Lib;..\..\Angelica2.2\output\DbgRelease\Angelica3D\DBGRelease;..\..\Angelica2.2\output\DbgRelease\AngelicaCommon\DBGRelease;..\..\Angelica2.2\output\DbgRelease\AngelicaFile\DBGRelease;..\..\Angelica2.2\output\DbgRelease\AngelicaMedia\DBGRelease;..\..\Angelica2.2\output\DbgRelease\GfxCommon\dbgrelease;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ManifestFile>$(IntDir)$(TargetFileName).intermediate.manifest</ManifestFile>
       <IgnoreSpecificDefaultLibraries>MSVCRT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -216,7 +216,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>.\Home;..\CCommon\Autoca;..\CCommon\Face;.\;.\Network\rpcdata;.\Network\inl;.\Network\IOLib;.\Network;.\Task;..\include\CD;..\Include;..\CCommon;..\CCommon\Gfx;..\include\LuaWrapper;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include\PropDlg;..\..\Angelica2.2\output\3rdSDK\Include\luaWrapper;..\..\Angelica2.2\output\3rdSDK\Include\dshow;..\..\..\Common\GfxCommon;..\..\..\Common\AUInterface2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Libraries\DXSDK\Include\</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;UNICODE;_ELEMENTCLIENT;ANGELICA_2_2;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -269,7 +269,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\Home;..\CCommon\Autoca;..\CCommon\Face;.\;.\Network\rpcdata;.\Network\inl;.\Network\IOLib;.\Network;.\Task;..\include\CD;..\Include;..\CCommon;..\CCommon\Gfx;..\include\LuaWrapper;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include\PropDlg;..\..\Angelica2.2\output\3rdSDK\Include\luaWrapper;..\..\Angelica2.2\output\3rdSDK\Include\dshow;..\..\..\Common\GfxCommon;..\..\..\Common\AUInterface2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Libraries\DXSDK\Include\</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;UNICODE;_ELEMENTCLIENT;ANGELICA_2_2;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>

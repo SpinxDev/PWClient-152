@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{F604F23A-9182-4BDB-8F75-8F18D9D2FB11}</ProjectGuid>
+    <RootNamespace>AudioEditor</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.35004.147</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\..\Build\PCEngine\AudioEngine\$(ProjectName)\</OutDir>
+    <IntDir>..\..\..\Build\PCEngine\Intermediate\AudioEngine\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\..\Build\PCEngine\AudioEngine\$(ProjectName)\</OutDir>
+    <IntDir>..\..\..\Build\PCEngine\Intermediate\AudioEngine\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>false</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\PCEngineSDK\a3dsdk\Include;..\..\..\PCEngineSDK\acsdk\Include;..\..\..\PCEngineSDK\afsdk\Include;..\..\..\PCEngineSDK\3rdsdk\Include;..\..\..\PCEngineSDK\aaudio\Include;..\fmod\include;..\BCG10\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>..\BCG10\include;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>AudioEngine2.2_lib_d.lib;fmodex_vc.lib;Angelica3D_d.lib;AFileDialog2_2_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName)_d.exe</OutputFile>
+      <AdditionalLibraryDirectories>..\..\..\PCEngineSDK\3rdsdk\lib;..\..\..\PCEngineSDK\a3dsdk\lib;..\..\..\PCEngineSDK\aaudio\lib;..\fmod\lib;..\BCG10\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(TargetPath)" ..\..\..\PCEngineSDK\bin\ /Y /D /Q /R
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>false</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\PCEngineSDK\a3dsdk\Include;..\..\..\PCEngineSDK\acsdk\Include;..\..\..\PCEngineSDK\afsdk\Include;..\..\..\PCEngineSDK\3rdsdk\Include;..\..\..\PCEngineSDK\aaudio\Include;..\fmod\include;..\BCG10\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>..\BCG10\include;$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>AudioEngine2.2_lib.lib;fmodex_vc.lib;Angelica3D.lib;AFileDialog2_2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\PCEngineSDK\3rdsdk\lib;..\..\..\PCEngineSDK\a3dsdk\lib;..\..\..\PCEngineSDK\aaudio\lib;..\fmod\lib;..\BCG10\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(TargetPath)" ..\..\..\PCEngineSDK\bin\ /Y /D /Q /R
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\AudioEngine\XML\tinystr.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\AudioEngine\XML\tinyxml.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\AudioEngine\XML\tinyxmlerror.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\AudioEngine\XML\tinyxmlparser.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="AudioEditor.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="AudioEditorDoc.cpp" />
+    <ClCompile Include="AudioEditorView.cpp" />
+    <ClCompile Include="BankBar.cpp" />
+    <ClCompile Include="BankDisplay.cpp" />
+    <ClCompile Include="BankView.cpp" />
+    <ClCompile Include="BounceButton.cpp" />
+    <ClCompile Include="CheckSoundInsProp.cpp" />
+    <ClCompile Include="DlgAddEffect.cpp" />
+    <ClCompile Include="DlgCreateProject.cpp" />
+    <ClCompile Include="DlgCurPlaying.cpp" />
+    <ClCompile Include="DlgDownloadRes.cpp" />
+    <ClCompile Include="DlgEditName.cpp" />
+    <ClCompile Include="DlgEffectProp.cpp" />
+    <ClCompile Include="DlgEventPropSet.cpp" />
+    <ClCompile Include="DlgLayerProp.cpp" />
+    <ClCompile Include="DlgNewReverb.cpp" />
+    <ClCompile Include="DlgOpenProject.cpp" />
+    <ClCompile Include="DlgParamProp.cpp" />
+    <ClCompile Include="DlgReverb.cpp" />
+    <ClCompile Include="DlgSelectAudio.cpp" />
+    <ClCompile Include="DlgSelectEvent.cpp" />
+    <ClCompile Include="DlgSelectSoundDef.cpp" />
+    <ClCompile Include="DlgSetParamValue.cpp" />
+    <ClCompile Include="DlgSettings.cpp" />
+    <ClCompile Include="DlgSetValue.cpp" />
+    <ClCompile Include="DlgSoundDefPropSet.cpp" />
+    <ClCompile Include="DlgSoundInsProp.cpp" />
+    <ClCompile Include="DlgUploadRes.cpp" />
+    <ClCompile Include="DownloadResources.cpp" />
+    <ClCompile Include="DynSizeCtrl.cpp" />
+    <ClCompile Include="EffectProp.cpp" />
+    <ClCompile Include="EffectValueChanger.cpp" />
+    <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="EventBar.cpp" />
+    <ClCompile Include="EventDisplay.cpp" />
+    <ClCompile Include="EventPropList.cpp" />
+    <ClCompile Include="EventView.cpp" />
+    <ClCompile Include="Global.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="OutputBar.cpp" />
+    <ClCompile Include="Project.cpp" />
+    <ClCompile Include="ProjectList.cpp" />
+    <ClCompile Include="PropertyBar.cpp" />
+    <ClCompile Include="PropListCtrl\AnyType.cpp" />
+    <ClCompile Include="PropListCtrl\BCGPAFileProp.cpp" />
+    <ClCompile Include="PropListCtrl\BCGPCustomProp.cpp" />
+    <ClCompile Include="PropListCtrl\BCGPPropertyListWrapper.cpp" />
+    <ClCompile Include="PropListCtrl\BCGPPropertyObject.cpp" />
+    <ClCompile Include="PropListCtrl\BCGPPropListEx.cpp" />
+    <ClCompile Include="PropListCtrl\BCGPPropNoRedraw.cpp" />
+    <ClCompile Include="PropListCtrl\BCGPRangeProp.cpp" />
+    <ClCompile Include="PropListCtrl\DlgSlider.cpp" />
+    <ClCompile Include="Render.cpp" />
+    <ClCompile Include="SoundDefBar.cpp" />
+    <ClCompile Include="SoundDefDisplay.cpp" />
+    <ClCompile Include="SoundDefPropList.cpp" />
+    <ClCompile Include="SoundDefView.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TreeBar.cpp" />
+    <ClCompile Include="TreeCtrlEx.cpp" />
+    <ClCompile Include="WndBase.cpp" />
+    <ClCompile Include="WndCurve.cpp" />
+    <ClCompile Include="WndDot.cpp" />
+    <ClCompile Include="WndEffect.cpp" />
+    <ClCompile Include="WndEvent.cpp" />
+    <ClCompile Include="WndLabel.cpp" />
+    <ClCompile Include="WndLabelNoPic.cpp" />
+    <ClCompile Include="WndLayerLeft.cpp" />
+    <ClCompile Include="WndLayerRight.cpp" />
+    <ClCompile Include="WndLayers.cpp" />
+    <ClCompile Include="WndParam.cpp" />
+    <ClCompile Include="WndPlay.cpp" />
+    <ClCompile Include="WndScale.cpp" />
+    <ClCompile Include="WndSoundInstance.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\AudioEngine\XML\tinystr.h" />
+    <ClInclude Include="..\AudioEngine\XML\tinyxml.h" />
+    <ClInclude Include="..\AudioEngine\XML\xmlcommon.h" />
+    <ClInclude Include="AudioEditor.h" />
+    <ClInclude Include="AudioEditorDoc.h" />
+    <ClInclude Include="AudioEditorView.h" />
+    <ClInclude Include="BankBar.h" />
+    <ClInclude Include="BankDisplay.h" />
+    <ClInclude Include="BankView.h" />
+    <ClInclude Include="BounceButton.h" />
+    <ClInclude Include="CheckSoundInsProp.h" />
+    <ClInclude Include="DlgAddEffect.h" />
+    <ClInclude Include="DlgCreateProject.h" />
+    <ClInclude Include="DlgCurPlaying.h" />
+    <ClInclude Include="DlgDownloadRes.h" />
+    <ClInclude Include="DlgEditName.h" />
+    <ClInclude Include="DlgEffectProp.h" />
+    <ClInclude Include="DlgEventPropSet.h" />
+    <ClInclude Include="DlgLayerProp.h" />
+    <ClInclude Include="DlgNewReverb.h" />
+    <ClInclude Include="DlgOpenProject.h" />
+    <ClInclude Include="DlgParamProp.h" />
+    <ClInclude Include="DlgReverb.h" />
+    <ClInclude Include="DlgSelectAudio.h" />
+    <ClInclude Include="DlgSelectEvent.h" />
+    <ClInclude Include="DlgSelectSoundDef.h" />
+    <ClInclude Include="DlgSetParamValue.h" />
+    <ClInclude Include="DlgSettings.h" />
+    <ClInclude Include="DlgSetValue.h" />
+    <ClInclude Include="DlgSoundDefPropSet.h" />
+    <ClInclude Include="DlgSoundInsProp.h" />
+    <ClInclude Include="DlgUploadRes.h" />
+    <ClInclude Include="DownloadResources.h" />
+    <ClInclude Include="DynSizeCtrl.h" />
+    <ClInclude Include="EffectProp.h" />
+    <ClInclude Include="EffectValueChanger.h" />
+    <ClInclude Include="Engine.h" />
+    <ClInclude Include="EventBar.h" />
+    <ClInclude Include="EventDisplay.h" />
+    <ClInclude Include="EventPropList.h" />
+    <ClInclude Include="EventView.h" />
+    <ClInclude Include="Global.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="OutputBar.h" />
+    <ClInclude Include="Project.h" />
+    <ClInclude Include="ProjectList.h" />
+    <ClInclude Include="PropertyBar.h" />
+    <ClInclude Include="PropListCtrl\AnyType.h" />
+    <ClInclude Include="PropListCtrl\BCGPAFileProp.h" />
+    <ClInclude Include="PropListCtrl\BCGPCustomProp.h" />
+    <ClInclude Include="PropListCtrl\BCGPPropertyListWrapper.h" />
+    <ClInclude Include="PropListCtrl\BCGPPropertyObject.h" />
+    <ClInclude Include="PropListCtrl\BCGPPropListEx.h" />
+    <ClInclude Include="PropListCtrl\BCGPPropNoRedraw.h" />
+    <ClInclude Include="PropListCtrl\BCGPRangeProp.h" />
+    <ClInclude Include="PropListCtrl\BoostAny.h" />
+    <ClInclude Include="PropListCtrl\DlgSlider.h" />
+    <ClInclude Include="PropListCtrl\PropertyInterface.h" />
+    <ClInclude Include="PropListCtrl\prop_custom_funcs.h" />
+    <ClInclude Include="Render.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SoundDefBar.h" />
+    <ClInclude Include="SoundDefDisplay.h" />
+    <ClInclude Include="SoundDefPropList.h" />
+    <ClInclude Include="SoundDefView.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TreeBar.h" />
+    <ClInclude Include="TreeCtrlEx.h" />
+    <ClInclude Include="WndBase.h" />
+    <ClInclude Include="WndCurve.h" />
+    <ClInclude Include="WndDefine.h" />
+    <ClInclude Include="WndDot.h" />
+    <ClInclude Include="WndEffect.h" />
+    <ClInclude Include="WndEvent.h" />
+    <ClInclude Include="WndLabel.h" />
+    <ClInclude Include="WndLabelNoPic.h" />
+    <ClInclude Include="WndLayerLeft.h" />
+    <ClInclude Include="WndLayerRight.h" />
+    <ClInclude Include="WndLayers.h" />
+    <ClInclude Include="WndParam.h" />
+    <ClInclude Include="WndPlay.h" />
+    <ClInclude Include="WndScale.h" />
+    <ClInclude Include="WndSoundInstance.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\audio.ico" />
+    <Image Include="res\AudioEditor.ico" />
+    <Image Include="res\AudioEditorDoc.ico" />
+    <Image Include="res\bank.ico" />
+    <Image Include="res\bank_archive.ico" />
+    <Image Include="res\checked_btn.bmp" />
+    <Image Include="res\event.ico" />
+    <Image Include="res\event_group.ico" />
+    <Image Include="res\pausedown.bmp" />
+    <Image Include="res\pauseup.bmp" />
+    <Image Include="res\playdown.bmp" />
+    <Image Include="res\playup.bmp" />
+    <Image Include="res\sounddef.ico" />
+    <Image Include="res\sounddef_archive.ico" />
+    <Image Include="res\stop.bmp" />
+    <Image Include="res\Toolbar.bmp" />
+    <Image Include="res\Toolbar256.bmp" />
+    <Image Include="res\unchecked_btn.bmp" />
+    <Image Include="res\Workspace.bmp" />
+    <Image Include="UserImages.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="AudioEditor.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\AudioEditor.rc2" />
+    <None Include="res\hand.cur" />
+    <None Include="res\move.cur" />
+    <None Include="res\resize.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AudioEngine\AudioEngine2.2.vcxproj">
+      <Project>{7dd76c4a-d24d-4053-978a-3a807584d01f}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="AudioEditor.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

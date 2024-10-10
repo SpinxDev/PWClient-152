@@ -70,7 +70,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\..\Angelica2.2\Output\afsdk\Include;..\..\..\Angelica2.2\Output\acsdk\Include;..\..\..\Angelica2.2\Output\3rdsdk\Include;..\fmod\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\Angelica2.2\Output\afsdk\Include;..\..\..\Angelica2.2\Output\acsdk\Include;..\..\..\Angelica2.2\Output\3rdsdk\Include;..\fmod\include;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Include\fmod\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -80,20 +80,16 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Lib>
-      <OutputFile>$(OutDir)$(ProjectName)_lib_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d.lib</OutputFile>
     </Lib>
     <PostBuildEvent>
-      <Command>xcopy "$(TargetDir)*.lib" "..\..\..\Angelica2.2\Output\aaudio\lib\" /R /Y /Q /D
-xcopy "*.h" "..\..\..\Angelica2.2\Output\aaudio\include\" /R /Y /Q /D
-
-xcopy ..\fmod\lib\*.lib  ..\..\..\Angelica2.2\Output\3rdsdk\lib\ /R /Y /Q /D
-xcopy ..\fmod\bin\*.dll  ..\..\..\Angelica2.2\Output\3rdsdk\bin\ /R /Y /Q /D
-</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\..\Angelica2.2\Output\afsdk\Include;..\..\..\Angelica2.2\Output\acsdk\Include;..\..\..\Angelica2.2\Output\3rdsdk\Include;..\fmod\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\Angelica2.2\Output\afsdk\Include;..\..\..\Angelica2.2\Output\acsdk\Include;..\..\..\Angelica2.2\Output\3rdsdk\Include;..\fmod\include;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Include\fmod\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader />
@@ -104,17 +100,13 @@ xcopy ..\fmod\bin\*.dll  ..\..\..\Angelica2.2\Output\3rdsdk\bin\ /R /Y /Q /D
       <OutputFile>$(OutDir)$(ProjectName)_lib.lib</OutputFile>
     </Lib>
     <PostBuildEvent>
-      <Command>xcopy "$(TargetDir)*.lib" "..\..\..\Angelica2.2\Output\aaudio\lib\" /R /Y /Q /D
-xcopy "*.h" "..\..\..\Angelica2.2\Output\aaudio\include\" /R /Y /Q /D
-
-xcopy ..\fmod\lib\*.lib  ..\..\..\Angelica2.2\Output\3rdsdk\lib\ /R /Y /Q /D
-xcopy ..\fmod\bin\*.dll  ..\..\..\Angelica2.2\Output\3rdsdk\bin\ /R /Y /Q /D
-</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\..\Angelica2.2\Output\afsdk\Include;..\..\..\Angelica2.2\Output\acsdk\Include;..\..\..\Angelica2.2\Output\3rdsdk\Include;..\fmod\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\Angelica2.2\Output\afsdk\Include;..\..\..\Angelica2.2\Output\acsdk\Include;..\..\..\Angelica2.2\Output\3rdsdk\Include;..\fmod\include;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Include\fmod\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_DBGRELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader />
@@ -125,12 +117,8 @@ xcopy ..\fmod\bin\*.dll  ..\..\..\Angelica2.2\Output\3rdsdk\bin\ /R /Y /Q /D
       <OutputFile>$(OutDir)$(ProjectName)_lib_dr.lib</OutputFile>
     </Lib>
     <PostBuildEvent>
-      <Command>xcopy "$(TargetDir)*.lib" "..\..\..\Angelica2.2\Output\aaudio\lib\" /R /Y /Q /D
-xcopy "*.h" "..\..\..\Angelica2.2\Output\aaudio\include\" /R /Y /Q /D
-
-xcopy ..\fmod\lib\*.lib  ..\..\..\Angelica2.2\Output\3rdsdk\lib\ /R /Y /Q /D
-xcopy ..\fmod\bin\*.dll  ..\..\..\Angelica2.2\Output\3rdsdk\bin\ /R /Y /Q /D
-</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

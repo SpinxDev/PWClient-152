@@ -61,7 +61,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\..\Angelica2.2\Output\acsdk\Include;..\..\..\Angelica2.2\Output\aaudio\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Tools\AudioEditor\;$(SolutionDir)Common\AudioEngine\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_USRDLL;_ASSIST_DLL_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -76,9 +76,9 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>AudioEngine2.2_lib_d.lib;fmodex_vc.lib;angelica3d_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)$(ProjectName)_d.dll</OutputFile>
-      <AdditionalLibraryDirectories>..\..\..\Angelica2.2\Output\a3dsdk\lib;..\fmod\lib;..\..\..\Angelica2.2\Output\aaudio\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>AudioEngine2.2_d.lib;angelica3d_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d.lib</OutputFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile />
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -87,13 +87,8 @@
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(TargetDir)*.dll" ..\..\..\Angelica2.2\Output\3rdsdk\Bin\ /Y /D /Q /R
-xcopy "$(TargetDir)*.lib" "..\..\..\Angelica2.2\Output\3rdsdk\Lib\" /Y /D /Q /R
-xcopy EventSelector.h ..\..\..\Angelica2.2\Output\3rdsdk\include\ /Y /D /Q /R
-xcopy ReverbSelector.h ..\..\..\Angelica2.2\Output\3rdsdk\include\ /Y /D /Q /R
-
-
-</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -102,7 +97,7 @@ xcopy ReverbSelector.h ..\..\..\Angelica2.2\Output\3rdsdk\include\ /Y /D /Q /R
       <MkTypLibCompatible>false</MkTypLibCompatible>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\..\Angelica2.2\Output\acsdk\Include;..\..\..\Angelica2.2\Output\aaudio\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Tools\AudioEditor\;$(SolutionDir)Common\AudioEngine\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USRDLL;_ASSIST_DLL_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -127,19 +122,14 @@ xcopy ReverbSelector.h ..\..\..\Angelica2.2\Output\3rdsdk\include\ /Y /D /Q /R
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(TargetDir)*.dll" ..\..\..\Angelica2.2\Output\3rdsdk\Bin\ /Y /D /Q /R
-xcopy "$(TargetDir)*.lib" "..\..\..\Angelica2.2\Output\3rdsdk\Lib\" /Y /D /Q /R
-xcopy EventSelector.h ..\..\..\Angelica2.2\Output\3rdsdk\include\ /Y /D /Q /R
-xcopy ReverbSelector.h ..\..\..\Angelica2.2\Output\3rdsdk\include\ /Y /D /Q /R
-
-
-</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\AudioEditor\DynSizeCtrl.cpp" />
-    <ClCompile Include="..\AudioEditor\EventDisplay.cpp" />
-    <ClCompile Include="..\AudioEditor\TreeCtrlEx.cpp" />
+    <ClCompile Include="..\..\Tools\AudioEditor\DynSizeCtrl.cpp" />
+    <ClCompile Include="..\..\Tools\AudioEditor\EventDisplay.cpp" />
+    <ClCompile Include="..\..\Tools\AudioEditor\TreeCtrlEx.cpp" />
     <ClCompile Include="AudioAssistDll.cpp" />
     <ClCompile Include="DlgSelectEvent.cpp" />
     <ClCompile Include="DlgSelectReverb.cpp" />

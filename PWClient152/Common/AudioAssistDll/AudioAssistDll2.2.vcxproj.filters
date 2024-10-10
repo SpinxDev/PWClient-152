@@ -24,10 +24,10 @@
     <ClCompile Include="DlgSelectReverb.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\AudioEditor\DynSizeCtrl.cpp">
+    <ClCompile Include="..\..\Tools\AudioEditor\DynSizeCtrl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\AudioEditor\EventDisplay.cpp">
+    <ClCompile Include="..\..\Tools\AudioEditor\EventDisplay.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EventSelector.cpp">
@@ -39,7 +39,7 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\AudioEditor\TreeCtrlEx.cpp">
+    <ClCompile Include="..\..\Tools\AudioEditor\TreeCtrlEx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

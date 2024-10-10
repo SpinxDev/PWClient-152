@@ -1,0 +1,609 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Dialog">
+      <UniqueIdentifier>{80c0270f-b99a-4acf-a8d1-914ecaab2c18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Wnd">
+      <UniqueIdentifier>{eda405eb-e841-4564-9ab3-f21218f5bc8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View">
+      <UniqueIdentifier>{16a895a8-19e3-40a1-ab74-74ae60ceb9aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bar">
+      <UniqueIdentifier>{8d9d4173-11d5-4ed4-867a-fc7cc61d2fc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="XML">
+      <UniqueIdentifier>{7d00444d-6f92-4656-a640-456aee5cd545}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PropListCtrl">
+      <UniqueIdentifier>{0b427cfd-03e9-490d-8bf5-1caafb6a4460}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AudioEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioEditorDoc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioEditorView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BankDisplay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckSoundInsProp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgCurPlaying.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgDownloadRes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgEventPropSet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSelectEvent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSoundDefPropSet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgUploadRes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DownloadResources.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DynSizeCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectProp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectValueChanger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EventDisplay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EventPropList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Global.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Project.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundDefDisplay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundDefPropList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeCtrlEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WndLabelNoPic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgAddEffect.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgCreateProject.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgEditName.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgEffectProp.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgLayerProp.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgNewReverb.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgOpenProject.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgParamProp.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgReverb.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSelectAudio.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSelectSoundDef.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSetParamValue.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSetValue.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSoundInsProp.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="BounceButton.cpp">
+      <Filter>Wnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WndBase.cpp">
+      <Filter>Wnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WndCurve.cpp">
+      <Filter>Wnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WndDot.cpp">
+      <Filter>Wnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WndEffect.cpp">
+      <Filter>Wnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WndEvent.cpp">
+      <Filter>Wnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WndLabel.cpp">
+      <Filter>Wnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WndLayerLeft.cpp">
+      <Filter>Wnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WndLayerRight.cpp">
+      <Filter>Wnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WndLayers.cpp">
+      <Filter>Wnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WndParam.cpp">
+      <Filter>Wnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WndPlay.cpp">
+      <Filter>Wnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WndScale.cpp">
+      <Filter>Wnd</Filter>
+    </ClCompile>
+    <ClCompile Include="WndSoundInstance.cpp">
+      <Filter>Wnd</Filter>
+    </ClCompile>
+    <ClCompile Include="BankView.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="EventView.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundDefView.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="BankBar.cpp">
+      <Filter>Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="EventBar.cpp">
+      <Filter>Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="OutputBar.cpp">
+      <Filter>Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="PropertyBar.cpp">
+      <Filter>Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundDefBar.cpp">
+      <Filter>Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeBar.cpp">
+      <Filter>Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\AudioEngine\XML\tinystr.cpp">
+      <Filter>XML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\AudioEngine\XML\tinyxml.cpp">
+      <Filter>XML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\AudioEngine\XML\tinyxmlerror.cpp">
+      <Filter>XML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\AudioEngine\XML\tinyxmlparser.cpp">
+      <Filter>XML</Filter>
+    </ClCompile>
+    <ClCompile Include="PropListCtrl\AnyType.cpp">
+      <Filter>PropListCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="PropListCtrl\BCGPAFileProp.cpp">
+      <Filter>PropListCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="PropListCtrl\BCGPCustomProp.cpp">
+      <Filter>PropListCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="PropListCtrl\BCGPPropertyListWrapper.cpp">
+      <Filter>PropListCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="PropListCtrl\BCGPPropertyObject.cpp">
+      <Filter>PropListCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="PropListCtrl\BCGPPropListEx.cpp">
+      <Filter>PropListCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="PropListCtrl\BCGPPropNoRedraw.cpp">
+      <Filter>PropListCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="PropListCtrl\BCGPRangeProp.cpp">
+      <Filter>PropListCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="PropListCtrl\DlgSlider.cpp">
+      <Filter>PropListCtrl</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AudioEditor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioEditorDoc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioEditorView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BankDisplay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckSoundInsProp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgCurPlaying.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgDownloadRes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgEventPropSet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSelectEvent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSoundDefPropSet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgUploadRes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DownloadResources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DynSizeCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectProp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectValueChanger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EventDisplay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EventPropList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Project.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundDefDisplay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundDefPropList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeCtrlEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WndLabelNoPic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgAddEffect.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgCreateProject.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgEditName.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgEffectProp.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgLayerProp.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgNewReverb.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgOpenProject.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgParamProp.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgReverb.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSelectAudio.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSelectSoundDef.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSetParamValue.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSetValue.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSoundInsProp.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="BounceButton.h">
+      <Filter>Wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WndBase.h">
+      <Filter>Wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WndCurve.h">
+      <Filter>Wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WndDefine.h">
+      <Filter>Wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WndDot.h">
+      <Filter>Wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WndEffect.h">
+      <Filter>Wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WndEvent.h">
+      <Filter>Wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WndLabel.h">
+      <Filter>Wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WndLayerLeft.h">
+      <Filter>Wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WndLayerRight.h">
+      <Filter>Wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WndLayers.h">
+      <Filter>Wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WndParam.h">
+      <Filter>Wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WndPlay.h">
+      <Filter>Wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WndScale.h">
+      <Filter>Wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="WndSoundInstance.h">
+      <Filter>Wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="BankView.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="EventView.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundDefView.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="BankBar.h">
+      <Filter>Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="EventBar.h">
+      <Filter>Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="OutputBar.h">
+      <Filter>Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="PropertyBar.h">
+      <Filter>Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundDefBar.h">
+      <Filter>Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeBar.h">
+      <Filter>Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AudioEngine\XML\tinystr.h">
+      <Filter>XML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AudioEngine\XML\tinyxml.h">
+      <Filter>XML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AudioEngine\XML\xmlcommon.h">
+      <Filter>XML</Filter>
+    </ClInclude>
+    <ClInclude Include="PropListCtrl\AnyType.h">
+      <Filter>PropListCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="PropListCtrl\BCGPAFileProp.h">
+      <Filter>PropListCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="PropListCtrl\BCGPCustomProp.h">
+      <Filter>PropListCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="PropListCtrl\BCGPPropertyListWrapper.h">
+      <Filter>PropListCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="PropListCtrl\BCGPPropertyObject.h">
+      <Filter>PropListCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="PropListCtrl\BCGPPropListEx.h">
+      <Filter>PropListCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="PropListCtrl\BCGPPropNoRedraw.h">
+      <Filter>PropListCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="PropListCtrl\BCGPRangeProp.h">
+      <Filter>PropListCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="PropListCtrl\BoostAny.h">
+      <Filter>PropListCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="PropListCtrl\DlgSlider.h">
+      <Filter>PropListCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="PropListCtrl\prop_custom_funcs.h">
+      <Filter>PropListCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="PropListCtrl\PropertyInterface.h">
+      <Filter>PropListCtrl</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\audio.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\AudioEditor.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\AudioEditorDoc.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bank.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bank_archive.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\checked_btn.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\event.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\event_group.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\pausedown.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\pauseup.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\playdown.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\playup.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\sounddef.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\sounddef_archive.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\stop.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Toolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Toolbar256.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\unchecked_btn.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="UserImages.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Workspace.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="AudioEditor.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\AudioEditor.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\hand.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\move.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\resize.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>
