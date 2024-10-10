@@ -1,0 +1,925 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DBG Release|Win32">
+      <Configuration>DBG Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="StdNew Debug|Win32">
+      <Configuration>StdNew Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="StdNew Release|Win32">
+      <Configuration>StdNew Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="StdNew Unicode Debug|Win32">
+      <Configuration>StdNew Unicode Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="StdNew Unicode Release|Win32">
+      <Configuration>StdNew Unicode Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Unicode Debug|Win32">
+      <Configuration>Unicode Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Unicode Release|Win32">
+      <Configuration>Unicode Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{A8D24CB3-5717-44D6-8758-4C29D10AAA6C}</ProjectGuid>
+    <RootNamespace>Angelica3D</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StdNew Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DBG Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StdNew Unicode Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StdNew Unicode Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StdNew Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StdNew Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DBG Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StdNew Unicode Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StdNew Unicode Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='StdNew Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.35219.272</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StdNew Release|Win32'">
+    <OutDir>.\StdNew_Release\</OutDir>
+    <IntDir>.\StdNew_Release\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StdNew Unicode Release|Win32'">
+    <OutDir>.\StdNew_Unicode_Release\</OutDir>
+    <IntDir>.\StdNew_Unicode_Release\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StdNew Unicode Debug|Win32'">
+    <OutDir>.\StdNew_Unicode_Debug\</OutDir>
+    <IntDir>.\StdNew_Unicode_Debug\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DBG Release|Win32'">
+    <OutDir>.\DBGRelease\</OutDir>
+    <IntDir>.\DBGRelease\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StdNew Debug|Win32'">
+    <OutDir>.\StdNew_Debug\</OutDir>
+    <IntDir>.\StdNew_Debug\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">
+    <OutDir>.\Unicode_Release\</OutDir>
+    <IntDir>.\Unicode_Release\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">
+    <OutDir>.\Unicode_Debug\</OutDir>
+    <IntDir>.\Unicode_Debug\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StdNew Release|Win32'">
+    <CustomBuildStep>
+      <Command>echo copy libary into sdk folder
+xcopy $(TargetPath) ..\Output\a3dsdk\lib\ /Y /D /R
+echo copy headers into sdk folder
+xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
+</Command>
+      <Outputs>..\Output\a3dsdk\lib\$(TargetName).lib;%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>.\header;..\AngelicaMedia\Header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>.\StdNew_Release/Angelica3D.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\StdNew_Release/</AssemblerListingLocation>
+      <ObjectFileName>.\StdNew_Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\StdNew_Release/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+    </ResourceCompile>
+    <Lib>
+      <AdditionalDependencies>AngelicaCommon_s.lib;AngelicaFile_s.lib;AngelicaMedia_s.lib;Async.lib;ogg_static.lib;strmbase.lib;vorbis_static.lib;vorbisfile_static.lib;ZLibLib.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dsound.lib;dinput8.lib;DxErr.lib;winmm.lib;mpg123lib.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>StdNew_Release\Angelica3D_s.lib</OutputFile>
+      <AdditionalLibraryDirectories>..\TempOutput;..\3rdSDK\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\StdNew_Release/Angelica3D.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <CustomBuildStep>
+      <Command>echo copy libary into sdk folder
+xcopy $(TargetPath) ..\Output\a3dsdk\lib\ /Y /D /R
+echo copy headers into sdk folder
+xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
+</Command>
+      <Outputs>..\Output\a3dsdk\lib\$(TargetName).lib;%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>.\header;..\AngelicaMedia\Header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>.\Release/Angelica3D.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
+      <ObjectFileName>.\Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+    </ResourceCompile>
+    <Lib>
+      <AdditionalDependencies>AngelicaCommon.lib;AngelicaFile.lib;AngelicaMedia.lib;Async.lib;ogg_static.lib;strmbase.lib;vorbis_static.lib;vorbisfile_static.lib;ZLibLib.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dsound.lib;dinput8.lib;DxErr.lib;winmm.lib;mpg123lib.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Release\Angelica3D.lib</OutputFile>
+      <AdditionalLibraryDirectories>..\TempOutput;..\3rdSDK\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release/Angelica3D.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StdNew Unicode Release|Win32'">
+    <CustomBuildStep>
+      <Command>echo copy libary into sdk folder
+xcopy $(TargetPath) ..\Output\a3dsdk\lib\ /Y /D /R
+echo copy headers into sdk folder
+xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
+</Command>
+      <Outputs>..\Output\a3dsdk\lib\$(TargetName).lib;%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>.\header;..\AngelicaMedia\Header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>.\StdNew_Unicode_Release/Angelica3D.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\StdNew_Unicode_Release/</AssemblerListingLocation>
+      <ObjectFileName>.\StdNew_Unicode_Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\StdNew_Unicode_Release/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+    </ResourceCompile>
+    <Lib>
+      <AdditionalDependencies>AngelicaCommon_su.lib;AngelicaFile_su.lib;AngelicaMedia_su.lib;Async_u.lib;ogg_static.lib;strmbase_u.lib;vorbis_static.lib;vorbisfile_static.lib;ZLibLib.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dsound.lib;dinput8.lib;DxErr.lib;winmm.lib;mpg123lib.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>StdNew_Unicode_Release\Angelica3D_su.lib</OutputFile>
+      <AdditionalLibraryDirectories>..\TempOutput;..\3rdSDK\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\StdNew_Unicode_Release/Angelica3D.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <CustomBuildStep>
+      <Command>echo copy libary into sdk folder
+xcopy $(TargetPath) ..\Output\a3dsdk\lib\ /Y /D /R
+echo copy headers into sdk folder
+xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
+</Command>
+      <Outputs>..\Output\a3dsdk\lib\$(TargetName).lib;%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\header;..\AngelicaMedia\Header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>.\Debug/Angelica3D.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+    </ResourceCompile>
+    <Lib>
+      <AdditionalDependencies>AngelicaCommon_d.lib;AngelicaFile_d.lib;AngelicaMedia_d.lib;Async_d.lib;ogg_static_d.lib;strmbase_d.lib;vorbis_static_d.lib;vorbisfile_static_d.lib;ZLibLib_d.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dsound.lib;dinput8.lib;DxErr.lib;winmm.lib;mpg123lib_d.lib;shlwapi.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>Debug\Angelica3D_d.lib</OutputFile>
+      <AdditionalLibraryDirectories>..\TempOutput;..\3rdSDK\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug/Angelica3D.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StdNew Unicode Debug|Win32'">
+    <CustomBuildStep>
+      <Command>echo copy libary into sdk folder
+xcopy $(TargetPath) ..\Output\a3dsdk\lib\ /Y /D /R
+echo copy headers into sdk folder
+xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
+</Command>
+      <Outputs>..\Output\a3dsdk\lib\$(TargetName).lib;%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\header;..\AngelicaMedia\Header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;UNICODE;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>.\StdNew_Unicode_Debug/Angelica3D.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\StdNew_Unicode_Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\StdNew_Unicode_Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\StdNew_Unicode_Debug/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+    </ResourceCompile>
+    <Lib>
+      <AdditionalDependencies>AngelicaCommon_sud.lib;AngelicaFile_sud.lib;AngelicaMedia_sud.lib;Async_ud.lib;ogg_static_d.lib;strmbase_ud.lib;vorbis_static_d.lib;vorbisfile_static_d.lib;ZLibLib_d.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dsound.lib;dinput8.lib;DxErr.lib;winmm.lib;mpg123lib_d.lib;shlwapi.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>StdNew_Unicode_Debug\Angelica3D_sud.lib</OutputFile>
+      <AdditionalLibraryDirectories>..\TempOutput;..\3rdSDK\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\StdNew_Unicode_Debug/Angelica3D.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DBG Release|Win32'">
+    <CustomBuildStep>
+      <Command>echo copy libary into sdk folder
+xcopy $(TargetPath) ..\Output\a3dsdk\lib\ /Y /D /R
+echo copy headers into sdk folder
+xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
+dbgrelease.bat
+</Command>
+      <Outputs>..\Output\a3dsdk\lib\$(TargetName).lib;%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>.\header;..\AngelicaMedia\Header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;..\Output\3rdSDK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_DBGRELEASE;_ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>.\DBGRelease/Angelica3D.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\DBGRelease/</AssemblerListingLocation>
+      <ObjectFileName>.\DBGRelease/</ObjectFileName>
+      <ProgramDataBaseFileName>.\DBGRelease/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+    </ResourceCompile>
+    <Lib>
+      <AdditionalDependencies>AngelicaCommon_dr.lib;AngelicaFile_dr.lib;AngelicaMedia_dr.lib;Async_u.lib;ogg_static.lib;strmbase_u.lib;vorbis_static.lib;vorbisfile_static.lib;ZLibLib.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dsound.lib;dinput8.lib;DxErr.lib;winmm.lib;mpg123lib.lib;gpasdk_s.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>DBGRelease\Angelica3D_dr.lib</OutputFile>
+      <AdditionalLibraryDirectories>..\TempOutput;..\3rdSDK\Lib;..\Output\3rdSDK\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\DBGRelease/Angelica3D.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StdNew Debug|Win32'">
+    <CustomBuildStep>
+      <Command>echo copy libary into sdk folder
+xcopy $(TargetPath) ..\Output\a3dsdk\lib\ /Y /D /R
+echo copy headers into sdk folder
+xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
+</Command>
+      <Outputs>..\Output\a3dsdk\lib\$(TargetName).lib;%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\header;..\AngelicaMedia\Header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>.\StdNew_Debug/Angelica3D.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\StdNew_Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\StdNew_Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\StdNew_Debug/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+    </ResourceCompile>
+    <Lib>
+      <AdditionalDependencies>AngelicaCommon_sd.lib;AngelicaFile_sd.lib;AngelicaMedia_sd.lib;Async_d.lib;ogg_static_d.lib;strmbase_d.lib;vorbis_static_d.lib;vorbisfile_static_d.lib;ZLibLib_d.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dsound.lib;dinput8.lib;DxErr.lib;winmm.lib;mpg123lib_d.lib;shlwapi.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>StdNew_Debug\Angelica3D_sd.lib</OutputFile>
+      <AdditionalLibraryDirectories>..\TempOutput;..\3rdSDK\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\StdNew_Debug/Angelica3D.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">
+    <CustomBuildStep>
+      <Command>echo copy libary into sdk folder
+xcopy $(TargetPath) ..\Output\a3dsdk\lib\ /Y /D /R
+echo copy headers into sdk folder
+xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
+</Command>
+      <Outputs>..\Output\a3dsdk\lib\$(TargetName).lib;%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>.\header;..\AngelicaMedia\Header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>.\Unicode_Release/Angelica3D.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Unicode_Release/</AssemblerListingLocation>
+      <ObjectFileName>.\Unicode_Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Unicode_Release/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+    </ResourceCompile>
+    <Lib>
+      <AdditionalDependencies>AngelicaCommon_u.lib;AngelicaFile_u.lib;AngelicaMedia_u.lib;Async_u.lib;ogg_static.lib;strmbase_u.lib;vorbis_static.lib;vorbisfile_static.lib;ZLibLib.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dsound.lib;dinput8.lib;DxErr.lib;winmm.lib;mpg123lib.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>Unicode_Release\Angelica3D_u.lib</OutputFile>
+      <AdditionalLibraryDirectories>..\TempOutput;..\3rdSDK\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Unicode_Release/Angelica3D.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">
+    <CustomBuildStep>
+      <Command>echo copy libary into sdk folder
+xcopy $(TargetPath) ..\Output\a3dsdk\lib\ /Y /D /R
+echo copy headers into sdk folder
+xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
+</Command>
+      <Outputs>..\Output\a3dsdk\lib\$(TargetName).lib;%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\header;..\AngelicaMedia\Header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>.\Unicode_Debug/Angelica3D.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Unicode_Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Unicode_Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Unicode_Debug/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+    </ResourceCompile>
+    <Lib>
+      <AdditionalDependencies>AngelicaCommon_ud.lib;AngelicaFile_ud.lib;AngelicaMedia_ud.lib;Async_ud.lib;ogg_static_d.lib;strmbase_ud.lib;vorbis_static_d.lib;vorbisfile_static_d.lib;ZLibLib_d.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dsound.lib;dinput8.lib;DxErr.lib;winmm.lib;mpg123lib_d.lib;shlwapi.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>Unicode_Debug\Angelica3D_ud.lib</OutputFile>
+      <AdditionalLibraryDirectories>..\TempOutput;..\3rdSDK\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Unicode_Debug/Angelica3D.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\A2DSprite.cpp" />
+    <ClCompile Include="Source\A2DSpriteBuffer.cpp" />
+    <ClCompile Include="Source\A2DSpriteItem.cpp" />
+    <ClCompile Include="Source\A2DSpriteTexMan.cpp" />
+    <ClCompile Include="Source\A2DSpriteTextures.cpp" />
+    <ClCompile Include="Source\A3DAbsTrackMaker.cpp" />
+    <ClCompile Include="Source\A3DAdditionalView.cpp" />
+    <ClCompile Include="Source\A3DBezierPoint.cpp" />
+    <ClCompile Include="Source\A3DBezierSegment.cpp" />
+    <ClCompile Include="Source\A3DBillBoard.cpp" />
+    <ClCompile Include="Source\A3DBone.cpp" />
+    <ClCompile Include="Source\A3DBoneController.cpp" />
+    <ClCompile Include="Source\A3DBSP.cpp" />
+    <ClCompile Include="Source\A3DCamera.cpp" />
+    <ClCompile Include="Source\A3DCameraBase.cpp" />
+    <ClCompile Include="Source\a3dcbplayer.cpp" />
+    <ClCompile Include="Source\A3DCBRecorder.cpp" />
+    <ClCompile Include="Source\A3DCBRecorderBase.cpp" />
+    <ClCompile Include="Source\A3DCBReleaseResRecorder.cpp" />
+    <ClCompile Include="Source\A3DClothMesh.cpp" />
+    <ClCompile Include="Source\A3DCollision.cpp" />
+    <ClCompile Include="Source\A3DCommandBuffer.cpp" />
+    <ClCompile Include="Source\A3DConfig.cpp" />
+    <ClCompile Include="Source\A3DControl.cpp" />
+    <ClCompile Include="Source\A3DController.cpp" />
+    <ClCompile Include="Source\A3DCoordinate.cpp" />
+    <ClCompile Include="Source\A3DCoverageMap.cpp" />
+    <ClCompile Include="Source\A3DCubeRenderTarget.cpp" />
+    <ClCompile Include="Source\A3DCubeTexture.cpp" />
+    <ClCompile Include="Source\A3DCursor.cpp" />
+    <ClCompile Include="Source\A3DDDSFile.cpp" />
+    <ClCompile Include="Source\A3DDecal.cpp" />
+    <ClCompile Include="Source\A3DDevice.cpp" />
+    <ClCompile Include="Source\A3DDeviceCaps.cpp" />
+    <ClCompile Include="Source\A3DDeviceRSCache.cpp" />
+    <ClCompile Include="Source\A3DEffect.cpp" />
+    <ClCompile Include="Source\A3DEngine.cpp" />
+    <ClCompile Include="Source\A3DEnvironment.cpp" />
+    <ClCompile Include="Source\A3DESP.cpp" />
+    <ClCompile Include="Source\A3DESPMove.cpp" />
+    <ClCompile Include="Source\A3DFlash.cpp" />
+    <ClCompile Include="Source\A3DFlatCollector.cpp" />
+    <ClCompile Include="Source\A3DFont.cpp" />
+    <ClCompile Include="Source\A3DFontMan.cpp" />
+    <ClCompile Include="Source\A3DFrame.cpp" />
+    <ClCompile Include="Source\A3DFrustum.cpp" />
+    <ClCompile Include="Source\A3DFuncs.cpp" />
+    <ClCompile Include="Source\A3DGDI.cpp" />
+    <ClCompile Include="Source\A3DGeometry.cpp" />
+    <ClCompile Include="Source\A3DGFXCollector.cpp" />
+    <ClCompile Include="Source\A3DGFXMan.cpp" />
+    <ClCompile Include="Source\A3DGraphicsFX.cpp" />
+    <ClCompile Include="Source\A3DHermiteSpline.cpp" />
+    <ClCompile Include="Source\A3DHLSL.cpp" />
+    <ClCompile Include="Source\A3DHLSLDataSrc.cpp" />
+    <ClCompile Include="Source\A3DHLSLUtil.cpp" />
+    <ClCompile Include="Source\A3DHorizonCull.cpp" />
+    <ClCompile Include="Source\A3DIBLMesh.cpp" />
+    <ClCompile Include="Source\A3DIBLScene.cpp" />
+    <ClCompile Include="Source\A3DIKData.cpp" />
+    <ClCompile Include="Source\A3DIKSolver.cpp" />
+    <ClCompile Include="Source\A3DImgModel.cpp" />
+    <ClCompile Include="Source\A3DImgModelMan.cpp" />
+    <ClCompile Include="Source\A3DJoint.cpp" />
+    <ClCompile Include="Source\A3DKDTree.cpp" />
+    <ClCompile Include="Source\A3DLamp.cpp" />
+    <ClCompile Include="Source\A3DLensFlare.cpp" />
+    <ClCompile Include="Source\A3DLight.cpp" />
+    <ClCompile Include="Source\A3DLightingEngine.cpp" />
+    <ClCompile Include="Source\A3DLightMan.cpp" />
+    <ClCompile Include="Source\A3DLightning.cpp" />
+    <ClCompile Include="Source\A3DLitModel.cpp" />
+    <ClCompile Include="Source\A3DLitModelRender.cpp" />
+    <ClCompile Include="Source\A3DLitModelSharedData.cpp" />
+    <ClCompile Include="Source\A3DLitModelSharedDataMan.cpp" />
+    <ClCompile Include="Source\A3DMaterial.cpp" />
+    <ClCompile Include="Source\A3DMathUtility.cpp" />
+    <ClCompile Include="Source\A3DMatrix.cpp" />
+    <ClCompile Include="Source\A3DMesh.cpp" />
+    <ClCompile Include="Source\A3DMeshBase.cpp" />
+    <ClCompile Include="Source\A3DMeshCollector.cpp" />
+    <ClCompile Include="Source\A3DMeshMan.cpp" />
+    <ClCompile Include="Source\A3DMeshSorter.cpp" />
+    <ClCompile Include="Source\A3DMirrorRender.cpp" />
+    <ClCompile Include="Source\A3DModel.cpp" />
+    <ClCompile Include="Source\A3DModelCollector.cpp" />
+    <ClCompile Include="Source\A3DModelMan.cpp" />
+    <ClCompile Include="Source\A3DMorphMesh.cpp" />
+    <ClCompile Include="Source\A3DMorphRigidMesh.cpp" />
+    <ClCompile Include="Source\A3DMorphSkinMesh.cpp" />
+    <ClCompile Include="Source\A3DMoxMan.cpp" />
+    <ClCompile Include="Source\A3DMultiThreadRender.cpp" />
+    <ClCompile Include="Source\A3DMuscleMesh.cpp" />
+    <ClCompile Include="Source\A3DMuscleOrgan.cpp" />
+    <ClCompile Include="Source\A3DOcclusionManHW.cpp" />
+    <ClCompile Include="Source\A3DOcclusionManSW.cpp" />
+    <ClCompile Include="Source\A3DOccQuery.cpp" />
+    <ClCompile Include="Source\A3DOrthoCamera.cpp" />
+    <ClCompile Include="Source\A3DPArray.cpp" />
+    <ClCompile Include="Source\A3DParticleSystem.cpp" />
+    <ClCompile Include="Source\A3DPerlinNormalMap.cpp" />
+    <ClCompile Include="Source\A3DPI.cpp" />
+    <ClCompile Include="Source\A3DPixelShader.cpp" />
+    <ClCompile Include="Source\A3DPlants.cpp" />
+    <ClCompile Include="Source\A3DPortal.cpp" />
+    <ClCompile Include="Source\A3DQuaternion.cpp" />
+    <ClCompile Include="Source\A3DRain.cpp" />
+    <ClCompile Include="Source\A3DRenderTarget.cpp" />
+    <ClCompile Include="Source\A3DRenderTargetMan.cpp" />
+    <ClCompile Include="Source\A3DRigidMesh.cpp" />
+    <ClCompile Include="Source\A3DRouteVSS.cpp" />
+    <ClCompile Include="Source\A3DScene.cpp" />
+    <ClCompile Include="Source\A3DSceneHull.cpp" />
+    <ClCompile Include="Source\A3DShader.cpp" />
+    <ClCompile Include="Source\A3DShaderMan.cpp" />
+    <ClCompile Include="Source\A3DShadowMap.cpp" />
+    <ClCompile Include="Source\A3DSimpleQuad.cpp" />
+    <ClCompile Include="Source\A3DSkeleton.cpp" />
+    <ClCompile Include="Source\A3DSkin.cpp" />
+    <ClCompile Include="Source\A3DSkinMan.cpp" />
+    <ClCompile Include="Source\A3DSkinMesh.cpp" />
+    <ClCompile Include="Source\A3DSkinMeshMan.cpp" />
+    <ClCompile Include="Source\A3DSkinModel.cpp" />
+    <ClCompile Include="Source\A3DSkinModelAct.cpp" />
+    <ClCompile Include="Source\A3DSkinModelAux.cpp" />
+    <ClCompile Include="Source\A3DSkinModelMan.cpp" />
+    <ClCompile Include="Source\A3DSkinRender.cpp" />
+    <ClCompile Include="Source\A3DSkinRenderWithEffect.cpp" />
+    <ClCompile Include="Source\A3DSky.cpp" />
+    <ClCompile Include="Source\A3DSkyBox.cpp" />
+    <ClCompile Include="Source\A3DSkyGradient.cpp" />
+    <ClCompile Include="Source\A3DSkySphere.cpp" />
+    <ClCompile Include="Source\A3DSnow.cpp" />
+    <ClCompile Include="Source\A3DStars.cpp" />
+    <ClCompile Include="Source\A3DStream.cpp" />
+    <ClCompile Include="Source\A3DString.cpp" />
+    <ClCompile Include="Source\A3DStringSet.cpp" />
+    <ClCompile Include="Source\A3DSuperDecal.cpp" />
+    <ClCompile Include="Source\A3DSuperSpray.cpp" />
+    <ClCompile Include="Source\A3DSuppleMesh.cpp" />
+    <ClCompile Include="Source\A3DSurface.cpp" />
+    <ClCompile Include="Source\A3DSurfaceMan.cpp" />
+    <ClCompile Include="Source\A3DTerrain.cpp" />
+    <ClCompile Include="Source\A3DTerrain2.cpp" />
+    <ClCompile Include="Source\A3DTerrain2Blk.cpp" />
+    <ClCompile Include="Source\A3DTerrain2CullHC.cpp" />
+    <ClCompile Include="Source\A3DTerrain2Env.cpp" />
+    <ClCompile Include="Source\A3DTerrain2Loader.cpp" />
+    <ClCompile Include="Source\A3DTerrain2LoaderA.cpp" />
+    <ClCompile Include="Source\A3DTerrain2LoaderB.cpp" />
+    <ClCompile Include="Source\A3DTerrain2LOD.cpp" />
+    <ClCompile Include="Source\A3DTerrain2Render.cpp" />
+    <ClCompile Include="Source\A3DTerrain2RenderAux.cpp" />
+    <ClCompile Include="Source\A3DTerrain2RenderHLSL.cpp" />
+    <ClCompile Include="Source\A3DTerrain2Trace.cpp" />
+    <ClCompile Include="Source\A3DTerrainMark.cpp" />
+    <ClCompile Include="Source\A3DTerrainOutline.cpp" />
+    <ClCompile Include="Source\A3DTerrainWater.cpp" />
+    <ClCompile Include="Source\A3DTerrainWater2.cpp" />
+    <ClCompile Include="Source\A3DTerrainWater2NormalRender.cpp" />
+    <ClCompile Include="Source\A3DTerrainWater2SimpleRender.cpp" />
+    <ClCompile Include="Source\A3DTerrainWaterFFT.cpp" />
+    <ClCompile Include="Source\A3DTerrainWaterRender.cpp" />
+    <ClCompile Include="Source\A3DTerrainWaterSimpleAlphaRender.cpp" />
+    <ClCompile Include="Source\A3DTexCoordCtrl.cpp" />
+    <ClCompile Include="Source\A3DTexture.cpp" />
+    <ClCompile Include="Source\A3DTextureMan.cpp" />
+    <ClCompile Include="Source\A3DTrace.cpp" />
+    <ClCompile Include="Source\A3DTrackData.cpp" />
+    <ClCompile Include="Source\A3DTrackMan.cpp" />
+    <ClCompile Include="Source\A3DVectorComp.cpp" />
+    <ClCompile Include="Source\A3DVertexCollector.cpp" />
+    <ClCompile Include="Source\A3DVertexShader.cpp" />
+    <ClCompile Include="Source\A3DViewport.cpp" />
+    <ClCompile Include="Source\A3DVolumeTexture.cpp" />
+    <ClCompile Include="Source\A3DVSSRouteLoader.cpp" />
+    <ClCompile Include="Source\A3DWaterArea.cpp" />
+    <ClCompile Include="Source\A3DWaterArea2.cpp" />
+    <ClCompile Include="Source\A3DWaterFFT.cpp" />
+    <ClCompile Include="Source\A3DWaterWave.cpp" />
+    <ClCompile Include="Source\A3DWaterWave2.cpp" />
+    <ClCompile Include="Source\A3DWireCollector.cpp" />
+    <ClCompile Include="Source\A3DWorld.cpp" />
+    <ClCompile Include="Source\A3DWorldCDS.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Header\A2DSprite.h" />
+    <ClInclude Include="Header\A2DSpriteBuffer.h" />
+    <ClInclude Include="Header\A2DSpriteItem.h" />
+    <ClInclude Include="Header\A2DSpriteTexMan.h" />
+    <ClInclude Include="Header\A2DSpriteTextures.h" />
+    <ClInclude Include="Header\A3D.h" />
+    <ClInclude Include="Header\A3DAbsTrackMaker.h" />
+    <ClInclude Include="Header\A3DAdditionalView.h" />
+    <ClInclude Include="Header\A3DBezierPoint.h" />
+    <ClInclude Include="Header\A3DBezierSegment.h" />
+    <ClInclude Include="Header\A3DBillBoard.h" />
+    <ClInclude Include="Header\A3DBone.h" />
+    <ClInclude Include="Header\A3DBoneController.h" />
+    <ClInclude Include="Header\A3DBSP.h" />
+    <ClInclude Include="Header\A3DBSPFile.h" />
+    <ClInclude Include="Header\A3DCamera.h" />
+    <ClInclude Include="Header\A3DCameraBase.h" />
+    <ClInclude Include="Header\A3DCBPlayer.h" />
+    <ClInclude Include="Header\a3dcbrecorder.h" />
+    <ClInclude Include="Header\A3DCBRecorderBase.h" />
+    <ClInclude Include="Header\a3dcbreleaseresrecorder.h" />
+    <ClInclude Include="Header\A3DCDS.h" />
+    <ClInclude Include="Header\A3DClassID.h" />
+    <ClInclude Include="Header\A3DClothMesh.h" />
+    <ClInclude Include="Header\A3DCollision.h" />
+    <ClInclude Include="Header\A3DCommandBuffer.h" />
+    <ClInclude Include="Header\A3DConfig.h" />
+    <ClInclude Include="Header\A3DControl.h" />
+    <ClInclude Include="Header\A3DController.h" />
+    <ClInclude Include="Header\A3DCoordinate.h" />
+    <ClInclude Include="Header\A3DCoverageMap.h" />
+    <ClInclude Include="Header\A3DCubeRenderTarget.h" />
+    <ClInclude Include="Header\A3DCubeTexture.h" />
+    <ClInclude Include="Header\A3DCursor.h" />
+    <ClInclude Include="Header\A3DDDSFile.h" />
+    <ClInclude Include="Header\A3DDecal.h" />
+    <ClInclude Include="Header\A3DDevice.h" />
+    <ClInclude Include="Header\A3DDeviceCaps.h" />
+    <ClInclude Include="Header\A3DDeviceRSCache.h" />
+    <ClInclude Include="Header\A3DDevObject.h" />
+    <ClInclude Include="Header\A3DEffect.h" />
+    <ClInclude Include="Header\A3DEngine.h" />
+    <ClInclude Include="Header\A3DEnvironment.h" />
+    <ClInclude Include="Header\A3DESP.h" />
+    <ClInclude Include="Header\A3DESPFile.h" />
+    <ClInclude Include="Header\A3DFlash.h" />
+    <ClInclude Include="Header\A3DFlatCollector.h" />
+    <ClInclude Include="Header\A3DFont.h" />
+    <ClInclude Include="Header\A3DFontMan.h" />
+    <ClInclude Include="Header\A3DFrame.h" />
+    <ClInclude Include="Header\A3DFrustum.h" />
+    <ClInclude Include="Header\A3DFuncs.h" />
+    <ClInclude Include="Header\A3DGDI.h" />
+    <ClInclude Include="Header\A3DGeometry.h" />
+    <ClInclude Include="Header\A3DGFXCollector.h" />
+    <ClInclude Include="Header\A3DGFXMan.h" />
+    <ClInclude Include="Header\A3DGraphicsFX.h" />
+    <ClInclude Include="Header\A3DHermiteSpline.h" />
+    <ClInclude Include="Header\A3DHLSL.h" />
+    <ClInclude Include="Header\A3DHLSLDataSrc.H" />
+    <ClInclude Include="Header\A3DHLSLUtil.h" />
+    <ClInclude Include="Header\A3DHorizonCull.h" />
+    <ClInclude Include="Header\A3DIBLMesh.h" />
+    <ClInclude Include="Header\A3DIBLScene.h" />
+    <ClInclude Include="Header\A3DIKData.h" />
+    <ClInclude Include="Header\A3DIKSolver.h" />
+    <ClInclude Include="Header\A3DImgModel.h" />
+    <ClInclude Include="Header\A3DImgModelMan.h" />
+    <ClInclude Include="Header\A3DJoint.h" />
+    <ClInclude Include="Header\A3DKDTree.h" />
+    <ClInclude Include="Header\A3DKDTreeFile.h" />
+    <ClInclude Include="Header\A3DLamp.h" />
+    <ClInclude Include="Header\A3DLensFlare.h" />
+    <ClInclude Include="Header\A3DLight.h" />
+    <ClInclude Include="Header\A3DLightingEngine.h" />
+    <ClInclude Include="Header\A3DLightMan.h" />
+    <ClInclude Include="Header\A3DLightning.h" />
+    <ClInclude Include="Header\A3DLitModel.h" />
+    <ClInclude Include="Header\A3DLitModelRender.h" />
+    <ClInclude Include="Header\A3DLitModelSharedData.h" />
+    <ClInclude Include="Header\A3DLitModelSharedDataMan.h" />
+    <ClInclude Include="Header\A3DMacros.h" />
+    <ClInclude Include="Header\A3DMaterial.h" />
+    <ClInclude Include="Header\A3DMathUtility.h" />
+    <ClInclude Include="Header\A3DMatrix.h" />
+    <ClInclude Include="Header\A3DMesh.h" />
+    <ClInclude Include="Header\A3DMeshBase.h" />
+    <ClInclude Include="Header\A3DMeshCollector.h" />
+    <ClInclude Include="Header\A3DMeshMan.h" />
+    <ClInclude Include="Header\A3DMeshSorter.h" />
+    <ClInclude Include="Header\A3DMirrorRender.h" />
+    <ClInclude Include="Header\A3DModel.h" />
+    <ClInclude Include="Header\A3DModelCollector.h" />
+    <ClInclude Include="Header\A3DModelMan.h" />
+    <ClInclude Include="Header\A3DMorphMesh.h" />
+    <ClInclude Include="Header\A3DMorphRigidMesh.h" />
+    <ClInclude Include="Header\A3DMorphSkinMesh.h" />
+    <ClInclude Include="Header\A3DMoxMan.h" />
+    <ClInclude Include="Header\A3DMultiThreadRender.h" />
+    <ClInclude Include="Header\A3DMuscleMesh.h" />
+    <ClInclude Include="Header\A3DMuscleOrgan.h" />
+    <ClInclude Include="Header\A3DObject.h" />
+    <ClInclude Include="Header\A3DOcclusionMan.h" />
+    <ClInclude Include="Header\A3DOcclusionManHW.h" />
+    <ClInclude Include="Header\A3DOcclusionManSW.h" />
+    <ClInclude Include="Header\A3DOccQuery.h" />
+    <ClInclude Include="Header\A3DOrthoCamera.h" />
+    <ClInclude Include="Header\A3DPArray.h" />
+    <ClInclude Include="Header\A3DParticleSystem.h" />
+    <ClInclude Include="Header\A3DPerlinNormalMap.h" />
+    <ClInclude Include="Header\A3DPI.h" />
+    <ClInclude Include="Header\A3DPixelShader.h" />
+    <ClInclude Include="Header\A3DPlants.h" />
+    <ClInclude Include="Header\A3DPlatform.h" />
+    <ClInclude Include="Header\A3DPortal.h" />
+    <ClInclude Include="Header\A3DPortalFile.h" />
+    <ClInclude Include="Header\A3DQuaternion.h" />
+    <ClInclude Include="Header\A3DRain.h" />
+    <ClInclude Include="Header\A3DRenderTarget.h" />
+    <ClInclude Include="Header\a3drendertargetman.h" />
+    <ClInclude Include="Header\A3DRigidMesh.h" />
+    <ClInclude Include="Header\A3DRouteVSS.h" />
+    <ClInclude Include="Header\A3DScene.h" />
+    <ClInclude Include="Header\A3DSceneHull.h" />
+    <ClInclude Include="Header\A3DSceneVisible.h" />
+    <ClInclude Include="Header\A3DShader.h" />
+    <ClInclude Include="Header\A3DShaderMan.h" />
+    <ClInclude Include="Header\A3DShadowMap.h" />
+    <ClInclude Include="Header\A3DSimpleQuad.h" />
+    <ClInclude Include="Header\A3DSkeleton.h" />
+    <ClInclude Include="Header\A3DSkin.h" />
+    <ClInclude Include="Header\A3DSkinMan.h" />
+    <ClInclude Include="Header\A3DSkinMesh.h" />
+    <ClInclude Include="Header\A3DSkinMeshMan.h" />
+    <ClInclude Include="Header\A3DSkinModel.h" />
+    <ClInclude Include="Header\A3DSkinModelAct.h" />
+    <ClInclude Include="Header\A3DSkinModelAux.h" />
+    <ClInclude Include="Header\A3DSkinModelMan.h" />
+    <ClInclude Include="Header\A3DSkinRender.h" />
+    <ClInclude Include="Header\A3DSkinRenderBase.h" />
+    <ClInclude Include="Header\A3DSkinRenderWithEffect.h" />
+    <ClInclude Include="Header\A3DSky.h" />
+    <ClInclude Include="Header\A3DSkyBox.h" />
+    <ClInclude Include="Header\A3DSkyGradient.h" />
+    <ClInclude Include="Header\A3DSkySphere.h" />
+    <ClInclude Include="Header\A3DSnow.h" />
+    <ClInclude Include="Header\A3DStars.h" />
+    <ClInclude Include="Header\A3DStream.h" />
+    <ClInclude Include="Header\A3DString.h" />
+    <ClInclude Include="Header\A3DStringSet.h" />
+    <ClInclude Include="Header\A3DSuperDecal.h" />
+    <ClInclude Include="Header\A3DSuperSpray.h" />
+    <ClInclude Include="Header\A3DSuppleMesh.h" />
+    <ClInclude Include="Header\A3DSurface.h" />
+    <ClInclude Include="Header\A3DSurfaceMan.h" />
+    <ClInclude Include="Header\A3DTerrain.h" />
+    <ClInclude Include="Header\A3DTerrain2.h" />
+    <ClInclude Include="Header\A3DTerrain2Blk.h" />
+    <ClInclude Include="Header\A3DTerrain2Cull.h" />
+    <ClInclude Include="Header\A3DTerrain2CullHC.h" />
+    <ClInclude Include="Header\A3DTerrain2Env.h" />
+    <ClInclude Include="Header\A3DTerrain2File.h" />
+    <ClInclude Include="Header\A3DTerrain2Loader.h" />
+    <ClInclude Include="Header\A3DTerrain2LoaderA.h" />
+    <ClInclude Include="Header\A3DTerrain2LoaderB.h" />
+    <ClInclude Include="Header\A3DTerrain2LOD.h" />
+    <ClInclude Include="Header\A3DTerrain2Render.h" />
+    <ClInclude Include="Header\A3DTerrainMark.h" />
+    <ClInclude Include="Header\A3DTerrainOutline.h" />
+    <ClInclude Include="Header\A3DTerrainWater.h" />
+    <ClInclude Include="Header\A3DTerrainWater2.h" />
+    <ClInclude Include="Header\A3DTerrainWater2NormalRender.h" />
+    <ClInclude Include="Header\A3DTerrainWater2Render.h" />
+    <ClInclude Include="Header\A3DTerrainWater2SimpleRender.h" />
+    <ClInclude Include="Header\A3DTerrainWaterFFT.h" />
+    <ClInclude Include="Header\A3DTerrainWaterRender.h" />
+    <ClInclude Include="Header\A3DTerrainWaterSimpleAlphaRender.h" />
+    <ClInclude Include="Header\A3DTexCoordCtrl.h" />
+    <ClInclude Include="Header\A3DTexture.h" />
+    <ClInclude Include="Header\A3DTextureMan.h" />
+    <ClInclude Include="Header\A3DTrace.h" />
+    <ClInclude Include="Header\A3DTrackData.h" />
+    <ClInclude Include="Header\A3DTrackMan.h" />
+    <ClInclude Include="Header\A3DTypes.h" />
+    <ClInclude Include="Header\A3DVector.h" />
+    <ClInclude Include="Header\A3DVertex.h" />
+    <ClInclude Include="Header\A3DVertexCollector.h" />
+    <ClInclude Include="Header\A3DVertexShader.h" />
+    <ClInclude Include="Header\A3DViewport.h" />
+    <ClInclude Include="Header\A3DVolumeTexture.h" />
+    <ClInclude Include="Header\A3DVSDef.h" />
+    <ClInclude Include="Header\A3DVSSCommon.h" />
+    <ClInclude Include="Header\A3DVSSRouteLoader.h" />
+    <ClInclude Include="Header\A3DWaterArea.h" />
+    <ClInclude Include="Header\A3DWaterArea2.h" />
+    <ClInclude Include="Header\A3DWaterFFT.h" />
+    <ClInclude Include="Header\A3DWaterWave.h" />
+    <ClInclude Include="Header\A3DWaterWave2.h" />
+    <ClInclude Include="Header\A3DWireCollector.h" />
+    <ClInclude Include="Header\A3DWorld.h" />
+    <ClInclude Include="Header\A3DWorldCDS.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

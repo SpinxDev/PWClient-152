@@ -1,0 +1,72 @@
+/*
+ * FILE: A3DObject.h
+ *
+ * DESCRIPTION: Base Class of any class in A3D Engine
+ *
+ * CREATED BY: Hedi, 2001/7/7
+ *
+ * HISTORY:
+ *
+ * Copyright (c) 2001 Archosaur Studio, All Rights Reserved.	
+ */
+
+#ifndef _A3DOBJECT_H_
+#define _A3DOBJECT_H_
+
+#include "ABaseDef.h"
+#include "AString.h"
+#include "A3DClassID.h"
+
+///////////////////////////////////////////////////////////////////////////
+//
+//	Define and Macro
+//
+///////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////
+//
+//	Types and Global variables
+//
+///////////////////////////////////////////////////////////////////////////
+
+class AFile;
+
+///////////////////////////////////////////////////////////////////////////
+//
+//	Declare of Global functions
+//
+///////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////
+//
+//	Class A3DObject
+//
+///////////////////////////////////////////////////////////////////////////
+
+class A3DObject
+{
+public:
+
+	A3DObject() : m_dwClassID(A3D_CID_UNKNOWN) {}
+	virtual ~A3DObject() {}
+
+	//	Set / Get name
+	virtual void SetName(const char* szName) { m_strName = szName; }
+	const char* GetName() { return m_strName; }
+
+	//	Get class ID
+	DWORD GetClassID() { return m_dwClassID; }
+
+//	virtual bool Save(AFile* pFileToSave) { return true; }
+//	virtual bool Load(AFile* pFileToLoad) { return true; }
+
+protected:
+
+	DWORD		m_dwClassID;	
+	AString		m_strName;
+};
+
+
+#endif	//	_A3DOBJECT_H_

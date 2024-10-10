@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Base Files">
+      <UniqueIdentifier>{03bd7d1a-0eeb-4401-95c0-2cf2064e92fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assist Files">
+      <UniqueIdentifier>{0183f06a-6077-4e4d-adab-ffadf4a57b13}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Header\AArray.h">
+      <Filter>Base Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\ABaseDef.h">
+      <Filter>Base Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\AChar.h">
+      <Filter>Base Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\AList.h">
+      <Filter>Base Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\AList2.h">
+      <Filter>Base Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\AMemory.h">
+      <Filter>Base Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\APoint.h">
+      <Filter>Base Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\ARect.h">
+      <Filter>Base Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\AStack.h">
+      <Filter>Base Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\AString.h">
+      <Filter>Base Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\ATempMemMan.h">
+      <Filter>Base Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\AWString.h">
+      <Filter>Base Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\deque.h">
+      <Filter>Base Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\hashmap.h">
+      <Filter>Base Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\hashtab.h">
+      <Filter>Base Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\vector.h">
+      <Filter>Base Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\AAssist.h">
+      <Filter>Assist Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\ACounter.h">
+      <Filter>Assist Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\ACPlatform.h">
+      <Filter>Assist Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\ACSWrapper.h">
+      <Filter>Assist Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\AGPAPerfIntegration.h">
+      <Filter>Assist Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\ALog.h">
+      <Filter>Assist Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\APerlinNoise1D.h">
+      <Filter>Assist Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\APerlinNoise2D.h">
+      <Filter>Assist Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\APerlinNoise3D.h">
+      <Filter>Assist Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\APerlinNoiseBase.h">
+      <Filter>Assist Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\ARandomGen.h">
+      <Filter>Assist Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\ATime.h">
+      <Filter>Assist Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\base64.h">
+      <Filter>Assist Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\AC.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\AList.cpp">
+      <Filter>Base Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\AMemory.cpp">
+      <Filter>Base Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\AString.cpp">
+      <Filter>Base Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ATempMemMan.cpp">
+      <Filter>Base Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\AWString.cpp">
+      <Filter>Base Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\AAssist.cpp">
+      <Filter>Assist Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ACounter.cpp">
+      <Filter>Assist Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\AGPAPerfIntegration.cpp">
+      <Filter>Assist Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ALog.cpp">
+      <Filter>Assist Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\APerlinNoise1D.cpp">
+      <Filter>Assist Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\APerlinNoise2D.cpp">
+      <Filter>Assist Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\APerlinNoise3D.cpp">
+      <Filter>Assist Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\APerlinNoiseBase.cpp">
+      <Filter>Assist Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ARandomGen.cpp">
+      <Filter>Assist Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ATime.cpp">
+      <Filter>Assist Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\base64.cpp">
+      <Filter>Assist Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
