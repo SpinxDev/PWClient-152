@@ -190,7 +190,7 @@ xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>.\header;..\AngelicaMedia\Header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Libraries\DXSDK\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -229,7 +229,7 @@ xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>.\header;..\AngelicaMedia\Header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Libraries\DXSDK\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -268,7 +268,7 @@ xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>.\header;..\AngelicaMedia\Header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Libraries\DXSDK\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -306,7 +306,7 @@ xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
     </CustomBuildStep>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\header;..\AngelicaMedia\Header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Libraries\DXSDK\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -345,7 +345,7 @@ xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
     </CustomBuildStep>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\header;..\AngelicaMedia\Header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Libraries\DXSDK\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;UNICODE;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -386,7 +386,7 @@ dbgrelease.bat
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>.\header;..\AngelicaMedia\Header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;..\Output\3rdSDK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Libraries\DXSDK\Include\;..\Output\3rdSDK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_DBGRELEASE;_ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -425,7 +425,7 @@ xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
     </CustomBuildStep>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\header;..\AngelicaMedia\Header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Libraries\DXSDK\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -465,7 +465,7 @@ xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>.\header;..\AngelicaMedia\Header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Libraries\DXSDK\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -503,7 +503,7 @@ xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
     </CustomBuildStep>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\header;..\AngelicaMedia\Header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Libraries\DXSDK\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;_ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>

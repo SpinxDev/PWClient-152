@@ -31,6 +31,7 @@
     <ProjectName>AUInterface</ProjectName>
     <ProjectGuid>{65B587D0-E310-4550-8E58-77EAF9501E92}</ProjectGuid>
     <RootNamespace>AUInterface</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease_NoAudio|Win32'" Label="Configuration">
@@ -101,28 +102,28 @@
     <_ProjectFileVersion>17.0.35004.147</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'">
-    <OutDir>.\DbgRelease_2.2\</OutDir>
-    <IntDir>.\DbgRelease_2.2\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\Common</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>.\Debug_2.2\</OutDir>
-    <IntDir>.\Debug_2.2\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\Common</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>.\Release_2.2\</OutDir>
-    <IntDir>.\Release_2.2\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\Common</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_NoAudio|Win32'">
-    <OutDir>.\Debug_NoAudio_2.2\</OutDir>
-    <IntDir>.\Debug_NoAudio_2.2\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\Common</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_NoAudio|Win32'">
-    <OutDir>.\Release_NoAudio_2.2\</OutDir>
-    <IntDir>.\Release_NoAudio_2.2\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\Common</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease_NoAudio|Win32'">
-    <OutDir>.\DbgRelease_2.2_NoAudio\</OutDir>
-    <IntDir>.\DbgRelease_2.2_NoAudio\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\Common</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'">
     <ClCompile>

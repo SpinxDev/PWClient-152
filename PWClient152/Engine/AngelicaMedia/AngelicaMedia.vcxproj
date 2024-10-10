@@ -188,7 +188,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>.\header;..\angelica3d\header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -230,7 +230,7 @@ xcopy ".\header\*.h" "..\Output\amsdk\include\" /Y /D /R</Command>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>.\header;..\angelica3d\header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;C:\dx81sdk\include;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;C:\dx81sdk\include;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -272,7 +272,7 @@ xcopy ".\header\*.h" "..\Output\amsdk\include\" /Y /D /R</Command>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>.\header;..\angelica3d\header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -316,7 +316,7 @@ dbgrelease.bat</Command>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>.\header;..\angelica3d\header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -357,7 +357,7 @@ xcopy ".\header\*.h" "..\Output\amsdk\include\" /Y /D /R</Command>
     </CustomBuildStep>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\header;..\angelica3d\header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;UNICODE;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -399,7 +399,7 @@ xcopy ".\header\*.h" "..\Output\amsdk\include\" /Y /D /R</Command>
     </CustomBuildStep>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\header;..\angelica3d\header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_A_FORBID_NEWDELETE;_A_FORBID_MALLOC;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -442,7 +442,7 @@ xcopy ".\header\*.h" "..\Output\amsdk\include\" /Y /D /R</Command>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>.\header;..\angelica3d\header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -483,7 +483,7 @@ xcopy ".\header\*.h" "..\Output\amsdk\include\" /Y /D /R</Command>
     </CustomBuildStep>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\header;..\angelica3d\header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;DEBUG;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -525,7 +525,7 @@ xcopy ".\header\*.h" "..\Output\amsdk\include\" /Y /D /R</Command>
     </CustomBuildStep>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.\header;..\angelica3d\header;..\3rdsdk\include;..\3rdsdk\include\dshow;..\AngelicaFile\Header;..\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdsdk\include;..\3rdsdk\include\dshow;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;%(AdditionalIncludeDirectories);C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;UNICODE;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>

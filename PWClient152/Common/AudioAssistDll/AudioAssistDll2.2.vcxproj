@@ -15,6 +15,7 @@
     <ProjectGuid>{F274FE63-5081-4661-81F1-61A7D3A84C6F}</ProjectGuid>
     <RootNamespace>AudioAssistDll</RootNamespace>
     <Keyword>MFCDLLProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -44,13 +45,13 @@
     <_ProjectFileVersion>17.0.35004.147</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>..\..\..\Build\PCEngine\AudioEngine\$(ProjectName)\</OutDir>
-    <IntDir>..\..\..\Build\PCEngine\Intermediate\AudioEngine\$(ProjectName)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\Common</IntDir>
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>..\..\..\Build\PCEngine\AudioEngine\$(ProjectName)\</OutDir>
-    <IntDir>..\..\..\Build\PCEngine\Intermediate\AudioEngine\$(ProjectName)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\Common</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
