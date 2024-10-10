@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DbgRelease|Win32">
+      <Configuration>DbgRelease</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugCRTAllocator|Win32">
+      <Configuration>DebugCRTAllocator</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{310705E1-4286-4F2E-9AF3-5B0C64A1D1B9}</ProjectGuid>
+    <RootNamespace>FWEditorLib</RootNamespace>
+    <SccProjectName>"$/CElement/CFWEditorLib", JCJAAAAA</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccProvider>MSSCCI:Microsoft Visual SourceSafe</SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugCRTAllocator|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugCRTAllocator|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.35219.272</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release2.2\</OutDir>
+    <IntDir>.\Release2.2\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'">
+    <OutDir>.\DbgRelease2.2\</OutDir>
+    <IntDir>.\DbgRelease2.2\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug2.2\</OutDir>
+    <IntDir>.\Debug2.2\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugCRTAllocator|Win32'">
+    <OutDir>.\Debug2.2CRT\</OutDir>
+    <IntDir>.\Debug2.2CRT\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>./;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;WIN32;NDEBUG;_WINDOWS;_FW_EDITOR;UNICODE;ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>$(IntDir)FWEditorLib.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>lib2.2\FWEditorLib.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(IntDir)FWEditorLib.bsc</OutputFile>
+    </Bscmake>
+    <PostBuildEvent>
+      <Command>attrib -r lib2.2\FWAssemblySet.h
+attrib -r lib2.2\FWTemplate.h
+copy FWAssemblySet.h lib2.2\FWAssemblySet.h /Y
+copy FWTemplate.h lib2.2\FWTemplate.h /Y
+copy FWAssemblySet.h ..\include\FWAssemblySet.h /Y
+copy FWTemplate.h ..\include\FWTemplate.h /Y
+copy lib2.2\FWEditorLib.lib ..\lib2.2 /Y
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>./;.\;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include\PropDlg;..\..\Angelica2.2\output\3rdSDK\Include\luaWrapper;..\..\Angelica2.2\output\3rdSDK\Include\dshow;..\..\..\Common\GfxCommon;..\..\..\Common\AUInterface2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;WIN32;NDEBUG;_WINDOWS;_FW_EDITOR;UNICODE;ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>$(IntDir)FWEditorLib.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>lib2.2\FWEditorLib.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(IntDir)FWEditorLib.bsc</OutputFile>
+    </Bscmake>
+    <PostBuildEvent>
+      <Command>attrib -r lib2.2\FWAssemblySet.h
+attrib -r lib2.2\FWTemplate.h
+copy FWAssemblySet.h lib2.2\FWAssemblySet.h /Y
+copy FWTemplate.h lib2.2\FWTemplate.h /Y
+copy FWAssemblySet.h ..\include\FWAssemblySet.h /Y
+copy FWTemplate.h ..\include\FWTemplate.h /Y
+copy lib2.2\FWEditorLib.lib ..\lib2.2 /Y
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./;.\;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include\PropDlg;..\..\Angelica2.2\output\3rdSDK\Include\luaWrapper;..\..\Angelica2.2\output\3rdSDK\Include\dshow;..\..\..\Common\GfxCommon;..\..\..\Common\AUInterface2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;WIN32;_WINDOWS;_DEBUG;_FW_EDITOR;UNICODE;ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>$(IntDir)FWEditorLib.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>lib2.2\FWEditorLib_d.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(IntDir)FWEditorLib.bsc</OutputFile>
+    </Bscmake>
+    <PostBuildEvent>
+      <Command>attrib -r lib2.2\FWAssemblySet.h
+attrib -r lib2.2\FWTemplate.h
+copy FWAssemblySet.h lib2.2\FWAssemblySet.h /Y
+copy FWTemplate.h lib2.2\FWTemplate.h /Y
+copy FWAssemblySet.h ..\include\FWAssemblySet.h /Y
+copy FWTemplate.h ..\include\FWTemplate.h /Y
+copy lib2.2\FWEditorLib_d.lib ..\lib2.2 /Y
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugCRTAllocator|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./;.\;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include\PropDlg;..\..\Angelica2.2\output\3rdSDK\Include\luaWrapper;..\..\Angelica2.2\output\3rdSDK\Include\dshow;..\..\..\Common\GfxCommon;..\..\..\Common\AUInterface2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;WIN32;_WINDOWS;_DEBUG;_FW_EDITOR;UNICODE;ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>$(IntDir)FWEditorLib.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>lib2.2CRT\FWEditorLib_d.lib</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(IntDir)FWEditorLib.bsc</OutputFile>
+    </Bscmake>
+    <PostBuildEvent>
+      <Command>attrib -r lib2.2CRT\FWAssemblySet.h
+attrib -r lib2.2CRT\FWTemplate.h
+copy FWAssemblySet.h lib2.2CRT\FWAssemblySet.h /Y
+copy FWTemplate.h lib2.2CRT\FWTemplate.h /Y
+copy FWAssemblySet.h ..\include\FWAssemblySet.h /Y
+copy FWTemplate.h ..\include\FWTemplate.h /Y
+copy lib2.2CRT\FWEditorLib_d.lib ..\lib2.2CRT /Y
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CharContour.cpp" />
+    <ClCompile Include="CharCurve.cpp" />
+    <ClCompile Include="CharOutline.cpp" />
+    <ClCompile Include="CharVerticesBuffer.cpp" />
+    <ClCompile Include="CodeTemplate.cpp" />
+    <ClCompile Include="FWAlgorithm.cpp" />
+    <ClCompile Include="FWArchive.cpp" />
+    <ClCompile Include="FWArt.cpp" />
+    <ClCompile Include="FWArtArc.cpp" />
+    <ClCompile Include="FWArtCreator.cpp" />
+    <ClCompile Include="FWArtDoubleArc.cpp" />
+    <ClCompile Include="FWArtNoChange.cpp" />
+    <ClCompile Include="FWArtStepScale.cpp" />
+    <ClCompile Include="FWArtTilt.cpp" />
+    <ClCompile Include="FWArtWave.cpp" />
+    <ClCompile Include="FWAssemblyCache.cpp" />
+    <ClCompile Include="FWAssemblyProfile.cpp" />
+    <ClCompile Include="FWAssemblySet.cpp" />
+    <ClCompile Include="FWAUIManager.cpp" />
+    <ClCompile Include="FWCommand.cpp" />
+    <ClCompile Include="FWCommandCombine.cpp" />
+    <ClCompile Include="FWCommandCreate.cpp" />
+    <ClCompile Include="FWCommandDelete.cpp" />
+    <ClCompile Include="FWCommandDuplicateHandle.cpp" />
+    <ClCompile Include="FWCommandList.cpp" />
+    <ClCompile Include="FWCommandMove.cpp" />
+    <ClCompile Include="FWCommandMoveHandle.cpp" />
+    <ClCompile Include="FWCommandRemoveHandle.cpp" />
+    <ClCompile Include="FWCommandResize.cpp" />
+    <ClCompile Include="FWCommandRotate.cpp" />
+    <ClCompile Include="FWCommandSetBezierMode.cpp" />
+    <ClCompile Include="FWCommandSetGlyphProp.cpp" />
+    <ClCompile Include="FWCommandUnCombine.cpp" />
+    <ClCompile Include="FWDialogBase.cpp" />
+    <ClCompile Include="FWDialogBezierMenu.cpp" />
+    <ClCompile Include="FWDialogBoard.cpp" />
+    <ClCompile Include="FWDialogCustom.cpp" />
+    <ClCompile Include="FWDialogEdit.cpp" />
+    <ClCompile Include="FWDialogGraph.cpp" />
+    <ClCompile Include="FWDialogGraphMenu.cpp" />
+    <ClCompile Include="FWDialogLanch.cpp" />
+    <ClCompile Include="FWDialogMain.cpp" />
+    <ClCompile Include="FWDialogParam.cpp" />
+    <ClCompile Include="FWDialogPlay.cpp" />
+    <ClCompile Include="FWDialogPolygonMenu.cpp" />
+    <ClCompile Include="FWDialogPropBase.cpp" />
+    <ClCompile Include="FWDialogScale.cpp" />
+    <ClCompile Include="FWDialogSimple.cpp" />
+    <ClCompile Include="FWDialogText.cpp" />
+    <ClCompile Include="FWDialogTool.cpp" />
+    <ClCompile Include="FWDoc.cpp" />
+    <ClCompile Include="FWFirework.cpp" />
+    <ClCompile Include="FWFireworkCustom.cpp" />
+    <ClCompile Include="FWFireworkElement.cpp" />
+    <ClCompile Include="FWFireworkGraph.cpp" />
+    <ClCompile Include="FWFireworkLanch.cpp" />
+    <ClCompile Include="FWFireworkLeaf.cpp" />
+    <ClCompile Include="FWFireworkSimple.cpp" />
+    <ClCompile Include="FWFlatCollector.cpp" />
+    <ClCompile Include="FWFontEnum.cpp" />
+    <ClCompile Include="FWFormula.cpp" />
+    <ClCompile Include="FWFormulaElement.cpp" />
+    <ClCompile Include="FWFormulaList.cpp" />
+    <ClCompile Include="FWGfxWithModifier.cpp" />
+    <ClCompile Include="FWGlyph.cpp" />
+    <ClCompile Include="FWGlyphBezier.cpp" />
+    <ClCompile Include="FWGlyphComposite.cpp" />
+    <ClCompile Include="FWGlyphEllipse.cpp" />
+    <ClCompile Include="FWGlyphFirework.cpp" />
+    <ClCompile Include="FWGlyphGraphBase.cpp" />
+    <ClCompile Include="FWGlyphList.cpp" />
+    <ClCompile Include="FWGlyphPolygon.cpp" />
+    <ClCompile Include="FWGlyphRectangle.cpp" />
+    <ClCompile Include="FWGlyphRectBase.cpp" />
+    <ClCompile Include="FWGlyphText.cpp" />
+    <ClCompile Include="FWInnerProperty.cpp" />
+    <ClCompile Include="FWLog.cpp" />
+    <ClCompile Include="FWManager.cpp" />
+    <ClCompile Include="FWModifier.cpp" />
+    <ClCompile Include="FWModifierCreator.cpp" />
+    <ClCompile Include="FWModifierParabola.cpp" />
+    <ClCompile Include="FWModifierRing.cpp" />
+    <ClCompile Include="FWObject.cpp" />
+    <ClCompile Include="FWOperand.cpp" />
+    <ClCompile Include="FWOperator.cpp" />
+    <ClCompile Include="FWOutterProperty.cpp" />
+    <ClCompile Include="FWParam.cpp" />
+    <ClCompile Include="FWParticalQuota.cpp" />
+    <ClCompile Include="FWParticalQuotaList.cpp" />
+    <ClCompile Include="FWPlayer.cpp" />
+    <ClCompile Include="FWRuntimeClass.cpp" />
+    <ClCompile Include="FWSharedFile.cpp" />
+    <ClCompile Include="FWState.cpp" />
+    <ClCompile Include="FWStateCreateBezier.cpp" />
+    <ClCompile Include="FWStateCreateFirework.cpp" />
+    <ClCompile Include="FWStateCreatePolygon.cpp" />
+    <ClCompile Include="FWStateCreateRect.cpp" />
+    <ClCompile Include="FWStateCreateText.cpp" />
+    <ClCompile Include="FWStateMove.cpp" />
+    <ClCompile Include="FWStateMoveHandle.cpp" />
+    <ClCompile Include="FWStateMoveWindow.cpp" />
+    <ClCompile Include="FWStateNetSelect.cpp" />
+    <ClCompile Include="FWStateResize.cpp" />
+    <ClCompile Include="FWStateRotate.cpp" />
+    <ClCompile Include="FWStateSelect.cpp" />
+    <ClCompile Include="FWStream.cpp" />
+    <ClCompile Include="FWTemplate.cpp" />
+    <ClCompile Include="FWTextMesh.cpp" />
+    <ClCompile Include="FWView.cpp" />
+    <ClCompile Include="GLUContour.cpp" />
+    <ClCompile Include="GLUPolygon.cpp" />
+    <ClCompile Include="GLUTess.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="Triangle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CharContour.h" />
+    <ClInclude Include="CharCurve.h" />
+    <ClInclude Include="CharOutline.h" />
+    <ClInclude Include="CharVerticesBuffer.h" />
+    <ClInclude Include="CodeTemplate.h" />
+    <ClInclude Include="FWAlgorithm.h" />
+    <ClInclude Include="FWArchive.h" />
+    <ClInclude Include="FWArray.h" />
+    <ClInclude Include="FWArt.h" />
+    <ClInclude Include="FWArtArc.h" />
+    <ClInclude Include="FWArtCreator.h" />
+    <ClInclude Include="FWArtDoubleArc.h" />
+    <ClInclude Include="FWArtNoChange.h" />
+    <ClInclude Include="FWArtStepScale.h" />
+    <ClInclude Include="FWArtTilt.h" />
+    <ClInclude Include="FWArtWave.h" />
+    <ClInclude Include="FWAssemblyCache.h" />
+    <ClInclude Include="FWAssemblyProfile.h" />
+    <ClInclude Include="FWAssemblySet.h" />
+    <ClInclude Include="FWAUIManager.h" />
+    <ClInclude Include="FWCommand.h" />
+    <ClInclude Include="FWCommandCombine.h" />
+    <ClInclude Include="FWCommandCreate.h" />
+    <ClInclude Include="FWCommandDelete.h" />
+    <ClInclude Include="FWCommandDuplicateHandle.h" />
+    <ClInclude Include="FWCommandList.h" />
+    <ClInclude Include="FWCommandMove.h" />
+    <ClInclude Include="FWCommandMoveHandle.h" />
+    <ClInclude Include="FWCommandRemoveHandle.h" />
+    <ClInclude Include="FWCommandResize.h" />
+    <ClInclude Include="FWCommandRotate.h" />
+    <ClInclude Include="FWCommandSetBezierMode.h" />
+    <ClInclude Include="FWCommandSetGlyphProp.h" />
+    <ClInclude Include="FWCommandUnCombine.h" />
+    <ClInclude Include="FWConfig.h" />
+    <ClInclude Include="FWDefinedMsg.h" />
+    <ClInclude Include="FWDialogBase.h" />
+    <ClInclude Include="FWDialogBezierMenu.h" />
+    <ClInclude Include="FWDialogBoard.h" />
+    <ClInclude Include="FWDialogCustom.h" />
+    <ClInclude Include="FWDialogEdit.h" />
+    <ClInclude Include="FWDialogGraph.h" />
+    <ClInclude Include="FWDialogGraphMenu.h" />
+    <ClInclude Include="FWDialogLanch.h" />
+    <ClInclude Include="FWDialogMain.h" />
+    <ClInclude Include="FWDialogParam.h" />
+    <ClInclude Include="FWDialogPlay.h" />
+    <ClInclude Include="FWDialogPolygonMenu.h" />
+    <ClInclude Include="FWDialogPropBase.h" />
+    <ClInclude Include="FWDialogScale.h" />
+    <ClInclude Include="FWDialogSimple.h" />
+    <ClInclude Include="FWDialogText.h" />
+    <ClInclude Include="FWDialogTool.h" />
+    <ClInclude Include="FWDoc.h" />
+    <ClInclude Include="FWFirework.h" />
+    <ClInclude Include="FWFireworkCustom.h" />
+    <ClInclude Include="FWFireworkElement.h" />
+    <ClInclude Include="FWFireworkGraph.h" />
+    <ClInclude Include="FWFireworkLanch.h" />
+    <ClInclude Include="FWFireworkLeaf.h" />
+    <ClInclude Include="FWFireworkSimple.h" />
+    <ClInclude Include="FWFlatCollector.h" />
+    <ClInclude Include="FWFontEnum.h" />
+    <ClInclude Include="FWFormula.h" />
+    <ClInclude Include="FWFormulaElement.h" />
+    <ClInclude Include="FWFormulaList.h" />
+    <ClInclude Include="FWGfxWithModifier.h" />
+    <ClInclude Include="FWGlyph.h" />
+    <ClInclude Include="FWGlyphBezier.h" />
+    <ClInclude Include="FWGlyphComposite.h" />
+    <ClInclude Include="FWGlyphEllipse.h" />
+    <ClInclude Include="FWGlyphFirework.h" />
+    <ClInclude Include="FWGlyphGraphBase.h" />
+    <ClInclude Include="FWGlyphList.h" />
+    <ClInclude Include="FWGlyphPolygon.h" />
+    <ClInclude Include="FWGlyphRectangle.h" />
+    <ClInclude Include="FWGlyphRectBase.h" />
+    <ClInclude Include="FWGlyphText.h" />
+    <ClInclude Include="FWInfoSet.h" />
+    <ClInclude Include="FWInnerProperty.h" />
+    <ClInclude Include="FWLog.h" />
+    <ClInclude Include="FWManager.h" />
+    <ClInclude Include="FWModifier.h" />
+    <ClInclude Include="FWModifierCreator.h" />
+    <ClInclude Include="FWModifierParabola.h" />
+    <ClInclude Include="FWModifierRing.h" />
+    <ClInclude Include="FWObject.h" />
+    <ClInclude Include="FWObPtrList.h" />
+    <ClInclude Include="FWOperand.h" />
+    <ClInclude Include="FWOperator.h" />
+    <ClInclude Include="FWOutterProperty.h" />
+    <ClInclude Include="FWParam.h" />
+    <ClInclude Include="FWParticalQuota.h" />
+    <ClInclude Include="FWParticalQuotaList.h" />
+    <ClInclude Include="FWPlayer.h" />
+    <ClInclude Include="FWRuntimeClass.h" />
+    <ClInclude Include="FWSharedFile.h" />
+    <ClInclude Include="FWState.h" />
+    <ClInclude Include="FWStateCreateBezier.h" />
+    <ClInclude Include="FWStateCreateFirework.h" />
+    <ClInclude Include="FWStateCreatePolygon.h" />
+    <ClInclude Include="FWStateCreateRect.h" />
+    <ClInclude Include="FWStateCreateText.h" />
+    <ClInclude Include="FWStateMove.h" />
+    <ClInclude Include="FWStateMoveHandle.h" />
+    <ClInclude Include="FWStateMoveWindow.h" />
+    <ClInclude Include="FWStateNetSelect.h" />
+    <ClInclude Include="FWStateResize.h" />
+    <ClInclude Include="FWStateRotate.h" />
+    <ClInclude Include="FWStateSelect.h" />
+    <ClInclude Include="FWStream.h" />
+    <ClInclude Include="FWTemplate.h" />
+    <ClInclude Include="FWTextMesh.h" />
+    <ClInclude Include="FWView.h" />
+    <ClInclude Include="Global.h" />
+    <ClInclude Include="GLUContour.h" />
+    <ClInclude Include="GLUPolygon.h" />
+    <ClInclude Include="GLUTess.h" />
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="Triangle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Readme.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
