@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
-    <ProjectGuid>{78F984FA-C1E2-4EB3-95BD-9CED56F18D7C}</ProjectGuid>
+    <ProjectGuid>{6DD6C1AD-1E07-458F-A27E-558B5D963528}</ProjectGuid>
     <RootNamespace>ElementClient</RootNamespace>
     <SccProjectName>"$/CElement", RIDAAAAA</SccProjectName>
     <SccLocalPath>..</SccLocalPath>
@@ -76,26 +76,26 @@
     <_ProjectFileVersion>17.0.35219.272</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\ElementCore</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\ElementCore</IntDir>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>true</GenerateManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\ElementCore</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\ElementCore</IntDir>
     <LinkIncremental>true</LinkIncremental>
     <GenerateManifest>true</GenerateManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'">
-    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\ElementCore</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\ElementCore</IntDir>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>true</GenerateManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugCRTAllocator|Win32'">
-    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\ElementCore</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\ElementCore</IntDir>
     <LinkIncremental>true</LinkIncremental>
     <GenerateManifest>true</GenerateManifest>
   </PropertyGroup>

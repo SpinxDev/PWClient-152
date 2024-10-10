@@ -14,6 +14,7 @@
     <VCProjectVersion>17.0</VCProjectVersion>
     <ProjectGuid>{7987D847-682E-4A5E-B699-6C0D2885DB8C}</ProjectGuid>
     <RootNamespace>mpg123lib</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -44,12 +45,12 @@
     <_ProjectFileVersion>17.0.35004.147</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>.\Release\</OutDir>
-    <IntDir>.\Release\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\Libraries</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>.\Debug\</OutDir>
-    <IntDir>.\Debug\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\Libraries</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>

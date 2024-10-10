@@ -25,6 +25,7 @@
     <SccProjectName>"$/CElement/CElementSkill", CBHAAAAA</SccProjectName>
     <SccLocalPath>.</SccLocalPath>
     <SccProvider>MSSCCI:Microsoft Visual SourceSafe</SccProvider>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugCRTAllocator|Win32'" Label="Configuration">
@@ -75,26 +76,26 @@
     <_ProjectFileVersion>17.0.35219.272</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>.\Debug2.2\</OutDir>
-    <IntDir>.\Debug2.2\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\ElementCore</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
     <GenerateManifest>true</GenerateManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'">
-    <OutDir>.\DbgRelease2.2\</OutDir>
-    <IntDir>.\DbgRelease2.2\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\ElementCore</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>true</GenerateManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>.\Release2.2\</OutDir>
-    <IntDir>.\Release2.2\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\ElementCore</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>true</GenerateManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugCRTAllocator|Win32'">
-    <OutDir>.\Debug2.2CRT\</OutDir>
-    <IntDir>.\Debug2.2CRT\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\ElementCore</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
     <GenerateManifest>true</GenerateManifest>
   </PropertyGroup>

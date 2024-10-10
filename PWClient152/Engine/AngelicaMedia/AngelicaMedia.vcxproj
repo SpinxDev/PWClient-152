@@ -42,6 +42,7 @@
     <VCProjectVersion>17.0</VCProjectVersion>
     <ProjectGuid>{E6EC1B4D-D9DB-4FF2-B2B5-3C801CD9F48E}</ProjectGuid>
     <RootNamespace>AngelicaMedia</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'" Label="Configuration">
@@ -142,40 +143,40 @@
     <_ProjectFileVersion>17.0.35004.147</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StdNew Unicode Release|Win32'">
-    <OutDir>.\StdNew_Unicode_Release\</OutDir>
-    <IntDir>.\StdNew_Unicode_Release\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\AngelicaEngine</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>.\Release\</OutDir>
-    <IntDir>.\Release\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\AngelicaEngine</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DBG Release|Win32'">
-    <OutDir>.\DBGRelease\</OutDir>
-    <IntDir>.\DBGRelease\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\AngelicaEngine</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StdNew Release|Win32'">
-    <OutDir>.\StdNew_Release\</OutDir>
-    <IntDir>.\StdNew_Release\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\AngelicaEngine</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StdNew Unicode Debug|Win32'">
-    <OutDir>.\StdNew_Unicode_Debug\</OutDir>
-    <IntDir>.\StdNew_Unicode_Debug\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\AngelicaEngine</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='StdNew Debug|Win32'">
-    <OutDir>.\StdNew_Debug\</OutDir>
-    <IntDir>.\StdNew_Debug\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\AngelicaEngine</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">
-    <OutDir>.\Unicode_Release\</OutDir>
-    <IntDir>.\Unicode_Release\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\AngelicaEngine</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>.\Debug\</OutDir>
-    <IntDir>.\Debug\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\AngelicaEngine</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">
-    <OutDir>.\Unicode_Debug\</OutDir>
-    <IntDir>.\Unicode_Debug\</IntDir>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\AngelicaEngine</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='StdNew Unicode Release|Win32'">
     <CustomBuildStep>
