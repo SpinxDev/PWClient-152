@@ -6,3 +6,4 @@
 *.idb
 *.pdb
 *.obj
+/PWClient152/Common/AUInterface2/Lib

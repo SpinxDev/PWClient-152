@@ -129,7 +129,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\..\Angelica2.2\3rdSDK\include;..\..\Angelica2.2\output\3rdSDK\include\PropDlg;..\..\Angelica2.2\output\3rdSDK\include\Gfx;..\..\Angelica2.2\output\3rdSDK\include\LuaWrapper;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;..\..\Angelica2.2\output\aaudio\include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;..\..\CElement - 1.5.3\CCommon;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Angelica2.2\3rdSDK\include;..\..\Angelica2.2\output\3rdSDK\include\PropDlg;..\..\Angelica2.2\output\3rdSDK\include\Gfx;..\..\Angelica2.2\output\3rdSDK\include\LuaWrapper;$(SolutionDir)Common\AudioEngine\;$(SolutionDir)Common\GfxCommon2\;$(SolutionDir)Libraries\Lua5.1\;$(SolutionDir)Common\LuaWrapper\Include\;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)ElementCore\ElementClient\CCommon\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;_ANGELICA22;_ANGELICA_AUDIO;_DBGRELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -169,7 +169,7 @@ copy *.h "..\..\Angelica2.2\output\aui\include\"
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\Angelica2.2\3rdSDK\include;..\..\Angelica2.2\output\3rdSDK\include\PropDlg;..\..\Angelica2.2\output\3rdSDK\include\Gfx;..\..\Angelica2.2\output\3rdSDK\include\LuaWrapper;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;..\..\Angelica2.2\output\aaudio\include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;..\..\CElement - 1.5.3\CCommon;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Angelica2.2\3rdSDK\include;..\..\Angelica2.2\output\3rdSDK\include\PropDlg;..\..\Angelica2.2\output\3rdSDK\include\Gfx;..\..\Angelica2.2\output\3rdSDK\include\LuaWrapper;$(SolutionDir)Common\AudioEngine\;$(SolutionDir)Common\GfxCommon2\;$(SolutionDir)Libraries\Lua5.1\;$(SolutionDir)Common\LuaWrapper\Include\;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)ElementCore\ElementClient\CCommon\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;UNICODE;_ANGELICA22;_ANGELICA_AUDIO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -212,7 +212,7 @@ copy *.h "..\..\Angelica2.2\output\aui\include\"
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\..\Angelica2.2\3rdSDK\include;..\..\Angelica2.2\output\3rdSDK\include\PropDlg;..\..\Angelica2.2\output\3rdSDK\include\Gfx;..\..\Angelica2.2\output\3rdSDK\include\LuaWrapper;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;..\..\Angelica2.2\output\aaudio\include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;..\..\CElement - 1.5.3\CCommon;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Angelica2.2\3rdSDK\include;..\..\Angelica2.2\output\3rdSDK\include\PropDlg;..\..\Angelica2.2\output\3rdSDK\include\Gfx;..\..\Angelica2.2\output\3rdSDK\include\LuaWrapper;$(SolutionDir)Common\AudioEngine\;$(SolutionDir)Common\GfxCommon2\;$(SolutionDir)Libraries\Lua5.1\;$(SolutionDir)Common\LuaWrapper\Include\;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)ElementCore\ElementClient\CCommon\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;_ANGELICA22;_ANGELICA_AUDIO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -251,7 +251,7 @@ copy *.h "..\..\Angelica2.2\output\aui\include\"
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_NoAudio|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\Angelica2.2\3rdSDK\include;..\..\Angelica2.2\output\3rdSDK\include\PropDlg;..\..\Angelica2.2\output\3rdSDK\include\Gfx;..\..\Angelica2.2\output\3rdSDK\include\LuaWrapper;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;..\..\Angelica2.2\output\aaudio\include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;..\..\CElement - 1.5.3\CCommon;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Angelica2.2\3rdSDK\include;..\..\Angelica2.2\output\3rdSDK\include\PropDlg;..\..\Angelica2.2\output\3rdSDK\include\Gfx;..\..\Angelica2.2\output\3rdSDK\include\LuaWrapper;$(SolutionDir)Common\AudioEngine\;$(SolutionDir)Common\GfxCommon2\;$(SolutionDir)Libraries\Lua5.1\;$(SolutionDir)Common\LuaWrapper\Include\;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)ElementCore\ElementClient\CCommon\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;UNICODE;_ANGELICA22;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -293,7 +293,7 @@ copy *.h "..\..\Angelica2.2\output\aui\include\"</Command>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\..\Angelica2.2\3rdSDK\include;..\..\Angelica2.2\output\3rdSDK\include\PropDlg;..\..\Angelica2.2\output\3rdSDK\include\Gfx;..\..\Angelica2.2\output\3rdSDK\include\LuaWrapper;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;..\..\Angelica2.2\output\aaudio\include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;..\..\CElement - 1.5.3\CCommon;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Angelica2.2\3rdSDK\include;..\..\Angelica2.2\output\3rdSDK\include\PropDlg;..\..\Angelica2.2\output\3rdSDK\include\Gfx;..\..\Angelica2.2\output\3rdSDK\include\LuaWrapper;$(SolutionDir)Common\AudioEngine\;$(SolutionDir)Common\GfxCommon2\;$(SolutionDir)Libraries\Lua5.1\;$(SolutionDir)Common\LuaWrapper\Include\;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)ElementCore\ElementClient\CCommon\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;_ANGELICA22;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -333,7 +333,7 @@ copy *.h "..\..\Angelica2.2\output\aui\include\"
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\..\Angelica2.2\3rdSDK\include;..\..\Angelica2.2\output\3rdSDK\include\PropDlg;..\..\Angelica2.2\output\3rdSDK\include\Gfx;..\..\Angelica2.2\output\3rdSDK\include\LuaWrapper;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;..\..\Angelica2.2\output\aaudio\include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;..\..\CElement - 1.5.3\CCommon;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\Angelica2.2\3rdSDK\include;..\..\Angelica2.2\output\3rdSDK\include\PropDlg;..\..\Angelica2.2\output\3rdSDK\include\Gfx;..\..\Angelica2.2\output\3rdSDK\include\LuaWrapper;$(SolutionDir)Common\AudioEngine\;$(SolutionDir)Common\GfxCommon2\;$(SolutionDir)Libraries\Lua5.1\;$(SolutionDir)Common\LuaWrapper\Include\;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)ElementCore\ElementClient\CCommon\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;_ANGELICA22;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
