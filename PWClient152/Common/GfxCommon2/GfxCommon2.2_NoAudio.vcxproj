@@ -132,7 +132,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\LuaWrapperExport\Include;..\LuaWrapper\Include;.\Include;..\..\Angelica2.2\3rdSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;..\AudioEngine\AudioEngine;..\..\Angelica2.2\output\AAudio\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\Foundation\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\Cooking\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\Physics\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\PhysXLoader\include;..\APhysXIntegration\APhysXEngine\Include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Common\AudioEngine\;$(SolutionDir)Common\LuaWrapper\;$(SolutionDir)Libraries\Lua5.1\;$(SolutionDir)Common\GfxCommon2\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;A3D_PHYSX;_CRT_SECURE_NO_WARNINGS;_ANGELICA22;%(PreprocessorDefinitions);_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -151,7 +151,7 @@
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(OutDir)GfxCommonPhy_na.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>..\..\Angelica2.2\output\3rdsdk\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -160,18 +160,15 @@
       <OutputFile>.\PhyRelease/GfxCommon.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
-      <Command>xcopy "$(TargetDir)*.lib" .\Output\lib\2.2\ /R /Y /D /Q
-copy *.h .\Output\include
-xcopy "$(TargetDir)*.lib" "..\..\Angelica2.2\Output\3rdSDK\lib\" /Y /D /R /Q
-xcopy "*.h" "..\..\Angelica2.2\Output\3rdSDK\Include\Gfx\" /Y /D /R /Q
-</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\LuaWrapperExport\Include;..\LuaWrapper\Include;.\Include;..\..\Angelica2.2\3rdSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;..\AudioEngine\AudioEngine;..\..\Angelica2.2\output\AAudio\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\Foundation\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\Cooking\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\Physics\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\PhysXLoader\include;..\APhysXIntegration\APhysXEngine\Include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Common\AudioEngine\;$(SolutionDir)Common\LuaWrapper\;$(SolutionDir)Libraries\Lua5.1\;$(SolutionDir)Common\GfxCommon2\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;_CRT_SECURE_NO_WARNINGS;_ANGELICA22;%(PreprocessorDefinitions);_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -190,7 +187,7 @@ xcopy "*.h" "..\..\Angelica2.2\Output\3rdSDK\Include\Gfx\" /Y /D /R /Q
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(OutDir)GfxCommon_na.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>..\..\Angelica2.2\output\3rdsdk\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -199,18 +196,15 @@ xcopy "*.h" "..\..\Angelica2.2\Output\3rdSDK\Include\Gfx\" /Y /D /R /Q
       <OutputFile>.\Release/GfxCommon.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
-      <Command>xcopy "$(TargetDir)*.lib" .\Output\lib\2.2\ /R /Y /D /Q
-copy *.h .\Output\include
-xcopy "$(TargetDir)*.lib" "..\..\Angelica2.2\Output\3rdSDK\lib\" /Y /D /R /Q
-xcopy "*.h" "..\..\Angelica2.2\Output\3rdSDK\Include\Gfx\" /Y /D /R /Q
-</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='PhyDebugRelease|Win32'">
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\LuaWrapperExport\Include;..\LuaWrapper\Include;.\Include;..\..\Angelica2.2\3rdSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;..\AudioEngine\AudioEngine;..\..\Angelica2.2\output\AAudio\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\Foundation\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\Cooking\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\Physics\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\PhysXLoader\include;..\APhysXIntegration\APhysXEngine\Include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Common\AudioEngine\;$(SolutionDir)Common\LuaWrapper\;$(SolutionDir)Libraries\Lua5.1\;$(SolutionDir)Common\GfxCommon2\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;A3D_PHYSX;_CRT_SECURE_NO_WARNINGS;_ANGELICA22;%(PreprocessorDefinitions);_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -230,7 +224,7 @@ xcopy "*.h" "..\..\Angelica2.2\Output\3rdSDK\Include\Gfx\" /Y /D /R /Q
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(OutDir)GfxCommonPhy_s_na.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>..\..\Angelica2.2\output\3rdsdk\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -239,18 +233,15 @@ xcopy "*.h" "..\..\Angelica2.2\Output\3rdSDK\Include\Gfx\" /Y /D /R /Q
       <OutputFile>.\PhyDebugRelease/GfxCommon.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
-      <Command>xcopy "$(TargetDir)*.lib" .\Output\lib\2.2\ /R /Y /D /Q
-copy *.h .\Output\include
-xcopy "$(TargetDir)*.lib" "..\..\Angelica2.2\Output\3rdSDK\lib\" /Y /D /R /Q
-xcopy "*.h" "..\..\Angelica2.2\Output\3rdSDK\Include\Gfx\" /Y /D /R /Q
-</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'">
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\LuaWrapperExport\Include;..\LuaWrapper\Include;.\Include;..\..\Angelica2.2\3rdSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;..\AudioEngine\AudioEngine;..\..\Angelica2.2\output\AAudio\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\Foundation\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\Cooking\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\Physics\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\PhysXLoader\include;..\APhysXIntegration\APhysXEngine\Include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Common\AudioEngine\;$(SolutionDir)Common\LuaWrapper\;$(SolutionDir)Libraries\Lua5.1\;$(SolutionDir)Common\GfxCommon2\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;_CRT_SECURE_NO_WARNINGS;_ANGELICA22;%(PreprocessorDefinitions);_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -270,7 +261,7 @@ xcopy "*.h" "..\..\Angelica2.2\Output\3rdSDK\Include\Gfx\" /Y /D /R /Q
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(OutDir)GfxCommon_su_na.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>..\..\Angelica2.2\output\3rdsdk\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -279,17 +270,14 @@ xcopy "*.h" "..\..\Angelica2.2\Output\3rdSDK\Include\Gfx\" /Y /D /R /Q
       <OutputFile>.\DbgRelease/GfxCommon.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
-      <Command>xcopy "$(TargetDir)*.lib" .\Output\lib\2.2\ /R /Y /D /Q
-copy *.h .\Output\include
-xcopy "$(TargetDir)*.lib" "..\..\Angelica2.2\Output\3rdSDK\lib\" /Y /D /R /Q
-xcopy "*.h" "..\..\Angelica2.2\Output\3rdSDK\Include\Gfx\" /Y /D /R /Q
-</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='PhyDebug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\LuaWrapperExport\Include;..\LuaWrapper\Include;.\Include;..\..\Angelica2.2\3rdSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;..\AudioEngine\AudioEngine;..\..\Angelica2.2\output\AAudio\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\Foundation\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\Cooking\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\Physics\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\PhysXLoader\include;..\APhysXIntegration\APhysXEngine\Include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Common\AudioEngine\;$(SolutionDir)Common\LuaWrapper\;$(SolutionDir)Libraries\Lua5.1\;$(SolutionDir)Common\GfxCommon2\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;UNICODE;A3D_PHYSX;_CRT_SECURE_NO_WARNINGS;_ANGELICA22;%(PreprocessorDefinitions);_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -310,7 +298,7 @@ xcopy "*.h" "..\..\Angelica2.2\Output\3rdSDK\Include\Gfx\" /Y /D /R /Q
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(OutDir)GfxCommonPhy_d_na.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>..\..\Angelica2.2\output\3rdsdk\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -319,17 +307,14 @@ xcopy "*.h" "..\..\Angelica2.2\Output\3rdSDK\Include\Gfx\" /Y /D /R /Q
       <OutputFile>.\PhyDebug/GfxCommon.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
-      <Command>xcopy "$(TargetDir)*.lib" .\Output\lib\2.2\ /R /Y /D /Q
-copy *.h .\Output\include
-xcopy "$(TargetDir)*.lib" "..\..\Angelica2.2\Output\3rdSDK\lib\" /Y /D /R /Q
-xcopy "*.h" "..\..\Angelica2.2\Output\3rdSDK\Include\Gfx\" /Y /D /R /Q
-</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\LuaWrapperExport\Include;..\LuaWrapper\Include;.\Include;..\..\Angelica2.2\3rdSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;..\AudioEngine\AudioEngine;..\..\Angelica2.2\output\AAudio\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\Foundation\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\Cooking\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\Physics\include;..\APhysXIntegration\PhysX_SDK\v2.8.1\SDKs\PhysXLoader\include;..\APhysXIntegration\APhysXEngine\Include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Common\AudioEngine\;$(SolutionDir)Common\LuaWrapper\;$(SolutionDir)Libraries\Lua5.1\;$(SolutionDir)Common\GfxCommon2\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;UNICODE;_CRT_SECURE_NO_WARNINGS;_ANGELICA22;%(PreprocessorDefinitions);_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -350,7 +335,7 @@ xcopy "*.h" "..\..\Angelica2.2\Output\3rdSDK\Include\Gfx\" /Y /D /R /Q
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(OutDir)GfxCommon_d_na.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>..\..\Angelica2.2\output\3rdsdk\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -359,11 +344,8 @@ xcopy "*.h" "..\..\Angelica2.2\Output\3rdSDK\Include\Gfx\" /Y /D /R /Q
       <OutputFile>.\Debug/GfxCommon.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
-      <Command>xcopy "$(TargetDir)*.lib" .\Output\lib\2.2\ /R /Y /D /Q
-copy *.h .\Output\include
-xcopy "$(TargetDir)*.lib" "..\..\Angelica2.2\Output\3rdSDK\lib\" /Y /D /R /Q
-xcopy "*.h" "..\..\Angelica2.2\Output\3rdSDK\Include\Gfx\" /Y /D /R /Q
-</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

@@ -95,7 +95,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>./;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Common\GfxCommon2\;$(SolutionDir)Common\AUInterface2\;$(SolutionDir)ElementCore\ElementClient\CCommon</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;WIN32;NDEBUG;_WINDOWS;_FW_EDITOR;UNICODE;ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -113,7 +113,7 @@
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>lib2.2\FWEditorLib.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
@@ -121,21 +121,15 @@
       <OutputFile>$(IntDir)FWEditorLib.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
-      <Command>attrib -r lib2.2\FWAssemblySet.h
-attrib -r lib2.2\FWTemplate.h
-copy FWAssemblySet.h lib2.2\FWAssemblySet.h /Y
-copy FWTemplate.h lib2.2\FWTemplate.h /Y
-copy FWAssemblySet.h ..\include\FWAssemblySet.h /Y
-copy FWTemplate.h ..\include\FWTemplate.h /Y
-copy lib2.2\FWEditorLib.lib ..\lib2.2 /Y
-</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'">
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>./;.\;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include\PropDlg;..\..\Angelica2.2\output\3rdSDK\Include\luaWrapper;..\..\Angelica2.2\output\3rdSDK\Include\dshow;..\..\..\Common\GfxCommon;..\..\..\Common\AUInterface2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Common\GfxCommon2\;$(SolutionDir)Common\AUInterface2\;$(SolutionDir)ElementCore\ElementClient\CCommon</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;WIN32;NDEBUG;_WINDOWS;_FW_EDITOR;UNICODE;ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -154,7 +148,7 @@ copy lib2.2\FWEditorLib.lib ..\lib2.2 /Y
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>lib2.2\FWEditorLib.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
@@ -162,20 +156,14 @@ copy lib2.2\FWEditorLib.lib ..\lib2.2 /Y
       <OutputFile>$(IntDir)FWEditorLib.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
-      <Command>attrib -r lib2.2\FWAssemblySet.h
-attrib -r lib2.2\FWTemplate.h
-copy FWAssemblySet.h lib2.2\FWAssemblySet.h /Y
-copy FWTemplate.h lib2.2\FWTemplate.h /Y
-copy FWAssemblySet.h ..\include\FWAssemblySet.h /Y
-copy FWTemplate.h ..\include\FWTemplate.h /Y
-copy lib2.2\FWEditorLib.lib ..\lib2.2 /Y
-</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>./;.\;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include\PropDlg;..\..\Angelica2.2\output\3rdSDK\Include\luaWrapper;..\..\Angelica2.2\output\3rdSDK\Include\dshow;..\..\..\Common\GfxCommon;..\..\..\Common\AUInterface2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Common\GfxCommon2\;$(SolutionDir)Common\AUInterface2\;$(SolutionDir)ElementCore\ElementClient\CCommon</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;WIN32;_WINDOWS;_DEBUG;_FW_EDITOR;UNICODE;ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -195,7 +183,7 @@ copy lib2.2\FWEditorLib.lib ..\lib2.2 /Y
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>lib2.2\FWEditorLib_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
@@ -203,20 +191,14 @@ copy lib2.2\FWEditorLib.lib ..\lib2.2 /Y
       <OutputFile>$(IntDir)FWEditorLib.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
-      <Command>attrib -r lib2.2\FWAssemblySet.h
-attrib -r lib2.2\FWTemplate.h
-copy FWAssemblySet.h lib2.2\FWAssemblySet.h /Y
-copy FWTemplate.h lib2.2\FWTemplate.h /Y
-copy FWAssemblySet.h ..\include\FWAssemblySet.h /Y
-copy FWTemplate.h ..\include\FWTemplate.h /Y
-copy lib2.2\FWEditorLib_d.lib ..\lib2.2 /Y
-</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugCRTAllocator|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>./;.\;..\..\Angelica2.2\output\3rdSDK\Include;..\..\Angelica2.2\output\a3dSDK\Include;..\..\Angelica2.2\output\acSDK\Include;..\..\Angelica2.2\output\afSDK\Include;..\..\Angelica2.2\output\amSDK\Include;..\..\Angelica2.2\output\apSDK\Include;..\..\Angelica2.2\output\3rdSDK\Include\PropDlg;..\..\Angelica2.2\output\3rdSDK\Include\luaWrapper;..\..\Angelica2.2\output\3rdSDK\Include\dshow;..\..\..\Common\GfxCommon;..\..\..\Common\AUInterface2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Common\GfxCommon2\;$(SolutionDir)Common\AUInterface2\;$(SolutionDir)ElementCore\ElementClient\CCommon</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;WIN32;_WINDOWS;_DEBUG;_FW_EDITOR;UNICODE;ANGELICA_2_2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -236,7 +218,7 @@ copy lib2.2\FWEditorLib_d.lib ..\lib2.2 /Y
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>lib2.2CRT\FWEditorLib_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
@@ -244,14 +226,8 @@ copy lib2.2\FWEditorLib_d.lib ..\lib2.2 /Y
       <OutputFile>$(IntDir)FWEditorLib.bsc</OutputFile>
     </Bscmake>
     <PostBuildEvent>
-      <Command>attrib -r lib2.2CRT\FWAssemblySet.h
-attrib -r lib2.2CRT\FWTemplate.h
-copy FWAssemblySet.h lib2.2CRT\FWAssemblySet.h /Y
-copy FWTemplate.h lib2.2CRT\FWTemplate.h /Y
-copy FWAssemblySet.h ..\include\FWAssemblySet.h /Y
-copy FWTemplate.h ..\include\FWTemplate.h /Y
-copy lib2.2CRT\FWEditorLib_d.lib ..\lib2.2CRT /Y
-</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

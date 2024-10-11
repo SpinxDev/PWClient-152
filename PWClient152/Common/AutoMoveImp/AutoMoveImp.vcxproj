@@ -118,7 +118,7 @@ xcopy  ..\lib\AutoMoveImp_su.lib  ..\..\lib\autopfimp\ /R/Y/Q</Command>
       <WarningLevel>Level3</WarningLevel>
       <MinimalRebuild>true</MinimalRebuild>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
-      <AdditionalIncludeDirectories>..\..\..\Angelica2.2\Output\3rdSDK\Include;..\..\..\Angelica2.2\Output\a3dsdk\Include;..\..\..\Angelica2.2\Output\acsdk\Include;..\..\..\Angelica2.2\Output\afsdk\Include;..\..\..\Angelica2.2\Output\amsdk\Include;..\GfxCommon;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Libraries\DXSDK\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_USE_32BIT_TIME_T;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
       <PrecompiledHeaderOutputFile>.\Debug\AutoMoveImp.pch</PrecompiledHeaderOutputFile>

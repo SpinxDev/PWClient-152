@@ -214,7 +214,7 @@ bool CMesh::CreateAsContrary(const CMesh *pMesh, float fThickness)
 	return true;
 }
 
-void CMesh::ShrinkVertices(ATriangleArray &aryTriangles, AVertexArray &aryVertices)
+void CMesh::ShrinkVertices(ATriangleArray& aryTriangles, AVertexArray& aryVertices)
 {
 	AVertexArray destVertices;
 	//destVertices.SetSize(m_aryVertices.GetSize(), 1);
@@ -224,10 +224,10 @@ void CMesh::ShrinkVertices(ATriangleArray &aryTriangles, AVertexArray &aryVertic
 	int nIndexTriangle, i, nCurrentVertexIndex = 0;
 	for (nIndexTriangle = 0; nIndexTriangle < nCountTriangle; nIndexTriangle++)
 	{
-		CTriangle &triangle = aryTriangles[nIndexTriangle];
+		CTriangle& triangle = aryTriangles[nIndexTriangle];
 		for (i = 0; i < 3; i++)
 		{
-			A3DVECTOR3 &vertex = aryVertices[triangle.Index[i]];
+			A3DVECTOR3& vertex = aryVertices[triangle.Index[i]];
 			int nFoundIndex;
 			if ((nFoundIndex = FindInVertices(destVertices, vertex)) == -1)
 			{
@@ -240,7 +240,9 @@ void CMesh::ShrinkVertices(ATriangleArray &aryTriangles, AVertexArray &aryVertic
 			}
 		}
 	}
-	aryVertices = destVertices;
+	aryVertices.RemoveAll(false);
+	for (i = 0; i < destVertices.GetSize(); ++i)
+		aryVertices.Add(destVertices[i]);
 }
 
 
