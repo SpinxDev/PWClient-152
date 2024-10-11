@@ -19,8 +19,11 @@ Este reposit¨®rio cont¨¦m o c¨®digo-fonte da parte client do jogo Perfect World.
  - [Dev Docs IO (CPP)](https://devdocs.io/cpp/)
  - [Instalando VS2022](https://youtu.be/s5bi_8y6bLQ)
 
- 
+### Junte-se a nos
+- [Comunidade no Discord]()
+
 ### Creditos
 
-- [@Mistgri (RageZone)](https://drive.google.com/file/d/12fAHx8_YezstdpmSdKEYksdoDw1qnoNz/view?usp=sharing) --> Por postar a base de codigo
 - [@SpinxDev](https://github.com/SpinxDev) --> Realizando a montagem e fixs para VS22
+- [@Mistgri (RageZone)](https://drive.google.com/file/d/12fAHx8_YezstdpmSdKEYksdoDw1qnoNz/view?usp=sharing) --> Por postar a base de codigo
+- [@CerejoDev](https://github.com/CerejoDev) --> Base de codigo ja mais avancada na organizacao em relacao ao do Mist

@@ -19,7 +19,11 @@ This repository contains the client-side source code for the Perfect World game.
 - [Dev Docs IO (CPP)](https://devdocs.io/cpp/)
 - [Installing VS2022](https://youtu.be/s5bi_8y6bLQ)
 
+### Join us
+- [Community Discord]()
+
 ### Credits
 
-- [@Mistgri (RageZone)](https://drive.google.com/file/d/12fAHx8_YezstdpmSdKEYksdoDw1qnoNz/view?usp=sharing) --> For posting the base code
 - [@SpinxDev](https://github.com/SpinxDev) --> For assembling and fixing for VS22
+- [@Mistgri (RageZone)](https://drive.google.com/file/d/12fAHx8_YezstdpmSdKEYksdoDw1qnoNz/view?usp=sharing) --> For posting the base code
+- [@CerejoDev](https://github.com/CerejoDev) --> A more advanced codebase in the organization compared to Mist's.
