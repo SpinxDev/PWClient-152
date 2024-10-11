@@ -20,7 +20,7 @@ This repository contains the client-side source code for the Perfect World game.
 - [Installing VS2022](https://youtu.be/s5bi_8y6bLQ)
 
 ### Join us
-- [Community Discord]()
+- [Community Discord](https://discord.gg/gaC7ysqWYx)
 
 ### Credits
 

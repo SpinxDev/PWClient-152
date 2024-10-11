@@ -1,7 +1,7 @@
 # Perfect World - Fonte lado do Cliente
 
 ## Resumo
-Este reposit¨®rio cont¨¦m o c¨®digo-fonte da parte client do jogo Perfect World. O objetivo ¨¦ fornecer uma vis?o clara de como o cliente do jogo foi implementado e permitir que outros desenvolvedores possam explorar e contribuir com o c¨®digo.
+Este repositï¿½ï¿½rio contï¿½ï¿½m o cï¿½ï¿½digo-fonte da parte client do jogo Perfect World. O objetivo ï¿½ï¿½ fornecer uma vis?o clara de como o cliente do jogo foi implementado e permitir que outros desenvolvedores possam explorar e contribuir com o cï¿½ï¿½digo.
 
 ### Stack utilizada
 
@@ -20,7 +20,7 @@ Este reposit¨®rio cont¨¦m o c¨®digo-fonte da parte client do jogo Perfect World.
  - [Instalando VS2022](https://youtu.be/s5bi_8y6bLQ)
 
 ### Junte-se a nos
-- [Comunidade no Discord]()
+- [Comunidade no Discord](https://discord.gg/gaC7ysqWYx)
 
 ### Creditos
 
