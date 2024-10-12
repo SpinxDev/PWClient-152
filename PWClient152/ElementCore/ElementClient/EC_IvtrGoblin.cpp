@@ -9,15 +9,10 @@
 #include "EC_Global.h"
 #include "EC_IvtrGoblin.h"
 #include "EC_Game.h"
-#include "EC_FixedMsg.h"
-#include "EC_GameRun.h"
-#include "EC_HostPlayer.h"
 #include "EC_RTDebug.h"
-#include "elementdataman.h"
-#include "ElementSkill.h"
-#include "EC_Inventory.h"
-#include "EC_Skill.h"
-#include "EC_Configs.h"
+#include "../CElementClient/EC_FixedMsg.h"
+#include "../CCommon/elementdataman.h"
+#include "../CElementClient/EC_Skill.h"
 
 #define new A_DEBUG_NEW
 #define INITIAL_MAX_VIGOR	100  // initial max vigor of goblin
@@ -336,6 +331,11 @@ const wchar_t* CECIvtrGoblin::GetName()
 	return m_pDBEssence->name;
 }
 
+int CECIvtrGoblin::GetItemLevel()const
+{
+	return m_Essence.data.level;
+}
+
 //	Get item description text
 const wchar_t* CECIvtrGoblin::GetNormalDesc(bool bRepair)
 {
@@ -346,7 +346,6 @@ const wchar_t* CECIvtrGoblin::GetNormalDesc(bool bRepair)
 	
 	//	Try to build item description
 	CECStringTab* pDescTab = g_pGame->GetItemDesc();
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
 
 	int white = ITEMDESC_COL_WHITE;
 	int yellow = ITEMDESC_COL_YELLOW;
@@ -491,24 +490,24 @@ const wchar_t* CECIvtrGoblin::GetNormalDesc(bool bRepair)
 	return m_strDesc;
 }
 //  Get the experience when destroy the goblin
-unsigned int CECIvtrGoblin::GetDestroyExp()
-{
-	double dRetExp = 0;	
-	int iLevel = m_Essence.data.level;
-	unsigned int iCurrExp = m_Essence.data.exp;
-	double factor = 0.0f;
-
-	for(int i=1;i<iLevel;i++)
-	{
-		unsigned int iPlayerLvlUpExp = (unsigned int)(g_pGame->GetGameRun()->GetHostPlayer()->GetLevelUpExp(i) * m_pDBEssence->exp_factor);
-		factor = (double)elf_exp_loss_constant[i]/(double)elf_exp_loss_constant[m_Essence.data.level];
-		ASSERT(factor <= 1 && factor > 0);
-		dRetExp += (((double)iPlayerLvlUpExp * 0.1) / factor);
-	}
-	
-	dRetExp += ((double)iCurrExp * 0.1);
-	return (dRetExp>4200000000.0) ? 4200000000 : (unsigned int)dRetExp;
-}
+//unsigned int CECIvtrGoblin::GetDestroyExp()
+//{
+//	double dRetExp = 0;	
+//	int iLevel = m_Essence.data.level;
+//	unsigned int iCurrExp = m_Essence.data.exp;
+//	double factor = 0.0f;
+//
+//	for(int i=1;i<iLevel;i++)
+//	{
+//		unsigned int iPlayerLvlUpExp = (unsigned int)(g_pGame->GetGameRun()->GetHostPlayer()->GetLevelUpExp(i) * m_pDBEssence->exp_factor);
+//		factor = (double)elf_exp_loss_constant[i]/(double)elf_exp_loss_constant[m_Essence.data.level];
+//		ASSERT(factor <= 1 && factor > 0);
+//		dRetExp += (((double)iPlayerLvlUpExp * 0.1) / factor);
+//	}
+//	
+//	dRetExp += ((double)iCurrExp * 0.1);
+//	return (dRetExp>4200000000.0) ? 4200000000 : (unsigned int)dRetExp;
+// }
 //  Check whether goblin can trade
 bool CECIvtrGoblin::IsTradeable() const
 {
@@ -519,6 +518,7 @@ const char* CECIvtrGoblin::GetDropModel()
 {
 	return m_pDBEssence->file_matter;
 }
+
 //  Get Equipment id
 unsigned int CECIvtrGoblin::GetEquip(int id)
 {
@@ -579,82 +579,79 @@ int CECIvtrGoblin::GetMaxStautsPt()
 // 6:金钱不足		 7:非小精灵技能		 8:没有技能书
 // 9:等级不足       10:能量上限不足      11:职业不匹配
 // 12:能量上限不足，且职业不匹配
-int CECIvtrGoblin::CheckSkillLearnCondition(int idSkill, bool bCheckBook)
-{
-	int iLevel = 1, i;
-	for(i=0;i<m_aSkills.GetSize();i++)
-	{
-		if(m_aSkills[i].skill == idSkill)
-		{
-			iLevel = m_aSkills[i].level + 1;
-			break;
-		}
-	}
-
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
-	if (iLevel == 1 && bCheckBook)
-	{
-		//	Do we have the skill book ?
-		int idBook = GNET::ElementSkill::GetRequiredBook(idSkill, iLevel);
-		if (idBook && pHost->GetPack()->FindItem(idBook) < 0)
-			return 8;
-	}
-
-	//	Build player information
-	GNET::GoblinRequirement Info;
-	memset(&Info, 0, sizeof (Info));
-
-	for(i=0;i<5;i++)
-	{
-		Info.genius[i] = GetGenius(i);
-	}
-	Info.profession	= pHost->GetProfession();
-	Info.sp			= pHost->GetBasicProps().iSP;
-	Info.money		= pHost->GetMoneyAmount();
-	Info.level		= m_Essence.data.level;
-	Info.mp			= INITIAL_MAX_VIGOR + GetBasicProp(2);
-
-	int iRet = GNET::ElementSkill::GoblinLearn(idSkill, Info, iLevel);
-
-	if(iRet == 0) // success
-	{
-		if((GetSkillNum() > GetCurrMaxSkillNum()) ||
-		   (GetSkillNum() == GetCurrMaxSkillNum() && iLevel == 1))
-			return 4;
-	}
-
-	return iRet;
-}
+//int CECIvtrGoblin::CheckSkillLearnCondition(int idSkill, bool bCheckBook)
+//{
+//	int iLevel = 1, i;
+//	for(i=0;i<m_aSkills.GetSize();i++)
+//	{
+//		if(m_aSkills[i].skill == idSkill)
+//		{
+//			iLevel = m_aSkills[i].level + 1;
+//			break;
+//		}
+//	}
+//
+//	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
+//	if (iLevel == 1 && bCheckBook)
+//	{
+//		//	Do we have the skill book ?
+//		int idBook = GNET::ElementSkill::GetRequiredBook(idSkill, iLevel);
+//		if (idBook && pHost->GetPack()->FindItem(idBook) < 0)
+//			return 8;
+//	}
+//
+//	//	Build player information
+//	GNET::GoblinRequirement Info;
+//	memset(&Info, 0, sizeof (Info));
+//
+//	for(i=0;i<5;i++)
+//	{
+//		Info.genius[i] = GetGenius(i);
+//	}
+//	Info.profession	= pHost->GetProfession();
+//	Info.sp			= pHost->GetBasicProps().iSP;
+//	Info.money		= pHost->GetMoneyAmount();
+//	Info.level		= m_Essence.data.level;
+//	Info.mp			= INITIAL_MAX_VIGOR + GetBasicProp(2);
+//
+//	int iRet = GNET::ElementSkill::GoblinLearn(idSkill, Info, iLevel);
+//
+//	if(iRet == 0) // success
+//	{
+//		if((GetSkillNum() > GetCurrMaxSkillNum()) ||
+//		   (GetSkillNum() == GetCurrMaxSkillNum() && iLevel == 1))
+//			return 4;
+//	}
+//
+//	return iRet;
+// }
 //	Check whether goblin can cast specified skill
-bool CECIvtrGoblin::CheckSkillCastCondition(int index)
-{
-	if(index<0 || index >= m_aSkills.GetSize())
-	{
-		ASSERT(0);
-		return false;
-	}
-	if (g_pGame->GetGameRun()->GetHostPlayer()->GetBattleInfo().IsChariotWar())
-		return false;  // 战场战车 禁止精灵技能
-		
-
-	GNET::GoblinUseRequirement Info;
-	memset(&Info, 0, sizeof(Info));
-
-	for(int i=0;i<5;i++)
-	{
-		Info.genius[i] = GetGenius(i);
-	}
-	
-	Info.level = m_Essence.data.level;
-	Info.move_env = g_pGame->GetGameRun()->GetHostPlayer()->GetMoveEnv();
-
-	GOBLINSKILL pSkill = GetSkill(index);
-	int ret = GNET::ElementSkill::GoblinCondition(pSkill.skill, Info, pSkill.level);
-
-	if(ret == 4)
-		return false;
-	return true;
-}
+//bool CECIvtrGoblin::CheckSkillCastCondition(int index)
+//{
+//	if(index<0 || index >= m_aSkills.GetSize())
+//	{
+//		ASSERT(0);
+//		return false;
+//	}
+//
+//	GNET::GoblinUseRequirement Info;
+//	memset(&Info, 0, sizeof(Info));
+//
+//	for(int i=0;i<5;i++)
+//	{
+//		Info.genius[i] = GetGenius(i);
+//	}
+//	
+//	Info.level = m_Essence.data.level;
+//	Info.move_env = g_pGame->GetGameRun()->GetHostPlayer()->GetMoveEnv();
+//
+//	GOBLINSKILL pSkill = GetSkill(index);
+//	int ret = GNET::ElementSkill::GoblinCondition(pSkill.skill, Info, pSkill.level);
+//
+//	if(ret == 4)
+//		return false;
+//	return true;
+//}
 
 //  Get basic property
 int CECIvtrGoblin::GetBasicProp(int iIndex)
@@ -823,7 +820,6 @@ const wchar_t* CECIvtrGoblinEquip::GetNormalDesc(bool bRepair)
 
 	//	Try to build item description
 	CECStringTab* pDescTab = g_pGame->GetItemDesc();
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
 
 	int white = ITEMDESC_COL_WHITE;
 	int color = white;
@@ -906,7 +902,7 @@ CECIvtrGoblinExpPill::CECIvtrGoblinExpPill(int tid, int expire_date) : CECIvtrIt
 	m_iPrice		= m_pDBEssence->price;
 	m_iShopPrice	= m_pDBEssence->shop_price;
 	m_iProcType		= m_pDBEssence->proc_type;
-	m_bNeedUpdate	= true;
+	m_bNeedUpdate	= false;
 }
 
 CECIvtrGoblinExpPill::CECIvtrGoblinExpPill(const CECIvtrGoblinExpPill& s) : CECIvtrItem(s)
@@ -970,7 +966,6 @@ const wchar_t* CECIvtrGoblinExpPill::GetNormalDesc(bool bRepair)
 
 	//	Try to build item description
 	CECStringTab* pDescTab = g_pGame->GetItemDesc();
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
 
 	int white = ITEMDESC_COL_WHITE;
 	int namecol = DecideNameCol();
@@ -989,9 +984,4 @@ const wchar_t* CECIvtrGoblinExpPill::GetNormalDesc(bool bRepair)
 	AddExtDescText();
 	
 	return m_strDesc;
-}
-
-bool CECIvtrGoblinExpPill::IsRare() const
-{ 
-	return CECIvtrItem::IsRare() || m_iLevel >= 6;
 }

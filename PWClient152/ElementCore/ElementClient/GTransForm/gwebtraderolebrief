@@ -1,0 +1,162 @@
+#ifndef __GNET_GWEBTRADEROLEBRIEF_RPCDATA
+#define __GNET_GWEBTRADEROLEBRIEF_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "grolepocket"
+#include "groleequipment"
+#include "grolestorehouse"
+
+namespace GNET
+{
+	class GWebTradeRoleBrief : public GNET::Rpc::Data
+	{
+	public:
+		int cls;
+		unsigned char gender;
+		int level;
+		int level2;
+		int exp;
+		int sp;
+		int pp;
+		int reputation;
+		Octets petcorral;
+		Octets property;
+		Octets skills;
+		GRolePocket inventory;
+		GRoleEquipment equipment;
+		GRoleStorehouse storehouse;
+		Octets force_data;
+		Octets reincarnation_data;
+		Octets realm_data;
+		Octets extend_data;
+
+	public:
+		GWebTradeRoleBrief (int l_cls = 0,unsigned char l_gender = 0,int l_level = 0
+			,int l_level2 = 0,int l_exp = 0,int l_sp = 0
+			,int l_pp = 0,int l_reputation = 0,const Octets& l_petcorral = Octets()
+			,const Octets& l_property = Octets(),const Octets& l_skills = Octets(),const GRolePocket& l_inventory = GRolePocket()
+			,const GRoleEquipment& l_equipment = GRoleEquipment(),const GRoleStorehouse& l_storehouse = GRoleStorehouse(),const Octets& l_force_data = Octets()
+			,const Octets& l_reincarnation_data = Octets(),const Octets& l_realm_data = Octets(),const Octets& l_extend_data = Octets())
+			: cls(l_cls),gender(l_gender),level(l_level)
+			,level2(l_level2),exp(l_exp),sp(l_sp)
+			,pp(l_pp),reputation(l_reputation),petcorral(l_petcorral)
+			,property(l_property),skills(l_skills),inventory(l_inventory)
+			,equipment(l_equipment),storehouse(l_storehouse),force_data(l_force_data)
+			,reincarnation_data(l_reincarnation_data),realm_data(l_realm_data),extend_data(l_extend_data)
+		{
+		}
+
+		GWebTradeRoleBrief(const GWebTradeRoleBrief &rhs)
+			: cls(rhs.cls),gender(rhs.gender),level(rhs.level),
+			level2(rhs.level2),exp(rhs.exp),sp(rhs.sp),
+			pp(rhs.pp),reputation(rhs.reputation),petcorral(rhs.petcorral),
+			property(rhs.property),skills(rhs.skills),inventory(rhs.inventory),
+			equipment(rhs.equipment),storehouse(rhs.storehouse),force_data(rhs.force_data),
+			reincarnation_data(rhs.reincarnation_data),realm_data(rhs.realm_data),extend_data(rhs.extend_data) { }
+
+		Rpc::Data *Clone() const { return new GWebTradeRoleBrief(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GWebTradeRoleBrief *r = dynamic_cast<const GWebTradeRoleBrief *>(&rhs);
+			if (r && r != this)
+			{
+				cls = r->cls;
+				gender = r->gender;
+				level = r->level;
+				level2 = r->level2;
+				exp = r->exp;
+				sp = r->sp;
+				pp = r->pp;
+				reputation = r->reputation;
+				petcorral = r->petcorral;
+				property = r->property;
+				skills = r->skills;
+				inventory = r->inventory;
+				equipment = r->equipment;
+				storehouse = r->storehouse;
+				force_data = r->force_data;
+				reincarnation_data = r->reincarnation_data;
+				realm_data = r->realm_data;
+				extend_data = r->extend_data;
+			}
+			return *this;
+		}
+
+		GWebTradeRoleBrief& operator = (const GWebTradeRoleBrief &rhs)
+		{
+			const GWebTradeRoleBrief *r = &rhs;
+			if (r && r != this)
+			{
+				cls = r->cls;
+				gender = r->gender;
+				level = r->level;
+				level2 = r->level2;
+				exp = r->exp;
+				sp = r->sp;
+				pp = r->pp;
+				reputation = r->reputation;
+				petcorral = r->petcorral;
+				property = r->property;
+				skills = r->skills;
+				inventory = r->inventory;
+				equipment = r->equipment;
+				storehouse = r->storehouse;
+				force_data = r->force_data;
+				reincarnation_data = r->reincarnation_data;
+				realm_data = r->realm_data;
+				extend_data = r->extend_data;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << cls;
+			os << gender;
+			os << level;
+			os << level2;
+			os << exp;
+			os << sp;
+			os << pp;
+			os << reputation;
+			os << petcorral;
+			os << property;
+			os << skills;
+			os << inventory;
+			os << equipment;
+			os << storehouse;
+			os << force_data;
+			os << reincarnation_data;
+			os << realm_data;
+			os << extend_data;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> cls;
+			os >> gender;
+			os >> level;
+			os >> level2;
+			os >> exp;
+			os >> sp;
+			os >> pp;
+			os >> reputation;
+			os >> petcorral;
+			os >> property;
+			os >> skills;
+			os >> inventory;
+			os >> equipment;
+			os >> storehouse;
+			os >> force_data;
+			os >> reincarnation_data;
+			os >> realm_data;
+			os >> extend_data;
+			return os;
+		}
+
+	};
+};
+#endif

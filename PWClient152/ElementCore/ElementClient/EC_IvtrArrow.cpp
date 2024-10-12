@@ -13,10 +13,9 @@
 #include "EC_Global.h"
 #include "EC_IvtrArrow.h"
 #include "EC_Game.h"
-#include "EC_FixedMsg.h"
+#include "../CElementClient/EC_FixedMsg.h"
 #include "EC_RTDebug.h"
-#include "elementdataman.h"
-#include "EC_Configs.h"
+#include "../CCommon/elementdataman.h"
 
 #define new A_DEBUG_NEW
 

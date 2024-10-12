@@ -13,7 +13,7 @@
 #pragma once
 
 #include "EC_IvtrItem.h"
-#include "EC_IvtrTypes.h"
+#include "../CElementClient/EC_IvtrTypes.h"
 
 ///////////////////////////////////////////////////////////////////////////
 //	

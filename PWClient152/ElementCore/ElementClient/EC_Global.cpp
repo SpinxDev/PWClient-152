@@ -13,11 +13,13 @@
 #define _WIN32_WINDOWS 0x0410 
 
 #include "EC_Global.h"
+#include "MyLog.h"
 #include "AF.h"
-#include "Network/IOLib/gnoctets.h"
-#include "Network/IOLib/gnsecure.h"
-#include "EC_Game.h"
-#include "EC_RTDebug.h"
+#include "../CElementClient/AMiniDump.h"
+#include <gnoctets.h>
+#include <gnsecure.h>
+
+#define new A_DEBUG_NEW
 
 ///////////////////////////////////////////////////////////////////////////
 //	
@@ -39,21 +41,17 @@
 //	
 ///////////////////////////////////////////////////////////////////////////
 
-ALog	g_Log;
+//ALog	g_Log;
 char	g_szWorkDir[MAX_PATH];
 char	g_szIniFile[MAX_PATH];
-bool	g_bRenderNoFocus = false;
-bool	g_bEnableFortressDeclareWar = false;
-bool	g_bIgnoreURLNavigate = false;
 
 A3DVECTOR3	g_vOrigin(0.0f);
 A3DVECTOR3	g_vAxisX(1.0f, 0.0f, 0.0f);
 A3DVECTOR3	g_vAxisY(0.0f, 1.0f, 0.0f);
 A3DVECTOR3	g_vAxisZ(0.0f, 0.0f, 1.0f);
 
+CRITICAL_SECTION	g_csLog;
 CRITICAL_SECTION	g_csException;
-CRITICAL_SECTION	g_csSession;
-CRITICAL_SECTION	g_csRTDebug;
 
 bool				g_bTrojanDumpLastTime = false;
 
@@ -76,7 +74,8 @@ static char* l_aErrorMsgs[] =
 
 static void _LogOutput(const char* szMsg)
 {
-	g_Log.Log(szMsg);
+	MyLog::GetInstance().Log(szMsg);
+	//g_Log.Log(szMsg);
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -88,7 +87,7 @@ static void _LogOutput(const char* szMsg)
 //	Initialize log system
 bool glb_InitLogSystem(const char* szFile)
 {
-	if (!g_Log.Init(szFile, "Element client log file"))
+	if (!MyLog::GetInstance().Init(szFile, "wmgj Element Hint Tool log file create(or open)"))
 		return false;
 
 	a_RedirectDefLogOutput(_LogOutput);
@@ -98,7 +97,8 @@ bool glb_InitLogSystem(const char* szFile)
 //	Close log system
 void glb_CloseLogSystem()
 {
-	g_Log.Release();
+	MyLog::GetInstance().Close();
+	//g_Log.Release();
 	a_RedirectDefLogOutput(NULL);
 }
 
@@ -125,6 +125,42 @@ bool glb_CalcFileMD5(const char * szFile, BYTE md5[16])
 	memcpy(md5, output.begin(), min(16, output.size()));
 
 	return true;
+}
+
+//	将HSV颜色系统转换为RGB某种压缩格式
+int hsv2rgb( float h, float s, float v)
+{
+	float aa, bb, cc,f;
+	int r, g, b;
+	v *= 255;
+	
+	if( s == 0 )
+		r = g = b = (int)v;
+	else
+	{
+		if( h >= 1.0f ) h = 0.0f;
+		if( h < 0.f) h = 0.0f;
+		h *= 6.0f;
+		int i = int(floor(h));
+		f = h - i;
+		aa = v * (1 - s);
+		bb = v * (1 - s * f);
+		cc = v * (1 - s * (1 - f));
+		switch(i)
+		{
+		case 0: r = (int)v;	 g = (int)cc; b = (int)aa; break;
+		case 1: r = (int)bb; g = (int)v;  b = (int)aa; break;
+		case 2: r = (int)aa; g = (int)v;  b = (int)cc; break;
+		case 3:	r = (int)aa; g = (int)bb; b = (int)v;  break;
+		case 4: r = (int)cc; g = (int)aa; b = (int)v;  break;
+		case 6:
+		case 5: r = (int)v;  g = (int)aa; b = (int)bb; break;
+		default:
+			//不可能再有了 
+			r = 0; g = 0; b = 0; break;
+		}
+	}
+	return  (r << 16) | (g << 8) | b;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -299,113 +335,93 @@ void glb_RepairExeInMemory()
 	}
 }
 
-void glb_LogURL(const AString &strURL)
+unsigned long glb_HandleException(LPEXCEPTION_POINTERS pExceptionPointers)
 {
-	//	输出 URL 到日志
-	//	原 URL 中 % 直接传到 a_LogOutput 日志有问题（输出为乱码），需要转换成 %%
-
-	//	转换原URL
-	AString strURL2;
-	int nLen = strURL.GetLength();
-	for (int i = 0; i < nLen; ++ i)
-	{
-		char c = strURL[i];
-		if (c == '%')
-			strURL2 += "%%";
-		else strURL2 += c;
-	}
-
-	a_LogOutput(1, "%s", strURL2);
-}
-
-AString glb_FormatOctets(const GNET::Octets &o)
-{
-	AString str;
-
-	if (o.size() > 0)
-	{
-		str = "0x";
-		char buf[8] = {0};
-		for (const byte *p = (const byte *)o.begin(); p != o.end(); ++ p)
-		{
-			sprintf(buf, "%02x", *p);
-			str += buf;
-		}
-	}
-	return str;
-}
-
-AString glb_ConverToUTF8(const ACString &str)
-{
-	AString strRet;
-	int len = WideCharToMultiByte(CP_UTF8, 0, str, -1, NULL, 0, NULL, NULL);
-	WideCharToMultiByte(CP_UTF8, 0 , str, -1, strRet.GetBuffer(len), len, NULL, NULL);
-	strRet.ReleaseBuffer();
-	return strRet;
-}
-
-AString glb_ConverToHex(const AString &str)
-{
-	AString strRet;
-
-	int len = str.GetLength();
-
-	char *p = strRet.GetBuffer(len*2+1);
-	p[len*2] = '\0';
-	for (int i(0), j(0); i < len; i+=1, j+=2)
-	{
-		byte c = str[i];
-		p[j] = ((c>>4) >= 10) ? ((c>>4)-10+'a') : ('0'+(c>>4));
-		p[j+1] = ((c&0x0f) >= 10) ? ((c&0x0f)-10+'a') : ('0'+(c&0x0f));
-	}
-	strRet.ReleaseBuffer();
-
-	return strRet;
-}
-
-int	glb_Random(int iMin, int iMax)
-{
-	return (iMin == iMax)
-		? iMin : (iMin + (rand()%(1+iMax-iMin)));
-}
-
-//	将HSV颜色系统转换为RGB某种压缩格式
-int hsv2rgb( float h, float s, float v)
-{
-	float aa, bb, cc,f;
-	int r, g, b;
-	v *= 255;
+	if( IsDebuggerPresent() )
+		return EXCEPTION_CONTINUE_SEARCH;
 	
-	if( s == 0 )
-		r = g = b = (int)v;
-	else
+	TCHAR szFile[MAX_PATH];
+	wsprintf(szFile, _AL("%S\\wmgj_HintTool.dmp"), g_szWorkDir);
+
+	if( GetVersion() < 0x80000000 )
 	{
-		if( h >= 1.0f ) h = 0.0f;
-		if( h < 0.f) h = 0.0f;
-		h *= 6.0f;
-		int i = int(floor(h));
-		f = h - i;
-		aa = v * (1 - s);
-		bb = v * (1 - s * f);
-		cc = v * (1 - s * (1 - f));
-		switch(i)
-		{
-		case 0: r = (int)v;	 g = (int)cc; b = (int)aa; break;
-		case 1: r = (int)bb; g = (int)v;  b = (int)aa; break;
-		case 2: r = (int)aa; g = (int)v;  b = (int)cc; break;
-		case 3:	r = (int)aa; g = (int)bb; b = (int)v;  break;
-		case 4: r = (int)cc; g = (int)aa; b = (int)v;  break;
-		case 6:
-		case 5: r = (int)v;  g = (int)aa; b = (int)bb; break;
-		default:
-			//不可能再有了 
-			r = 0; g = 0; b = 0; break;
-		}
+		// WinNT or Win2000
+		AMiniDump::Create(NULL, pExceptionPointers, szFile, &g_csException);
 	}
-	return  (r << 16) | (g << 8) | b;
+
+	return EXCEPTION_EXECUTE_HANDLER;
 }
 
-void glb_LogDebugInfo(const AString &str){
-	DWORD t = timeGetTime();
-	g_pGame->RuntimeDebugInfo(RTDCOL_WARNING, _AL("%d:%d:%d:%d %s"), t/1000/60/60, t/1000/60%60, t/1000%60, t%1000, AS2AC(str));;
+void Log_Info(const char *szFormat, ...)
+{
+	MyCriticalSection cs(g_csLog);
+
+	char buffer[1024] = {0};
+	
+	va_list args;
+	va_start(args, szFormat);
+	_vsnprintf(buffer, sizeof(buffer)/sizeof(buffer[0]), szFormat, args);
+	va_end(args);
+	
+	//	输出到日志
+	a_LogOutput(1, buffer);
+
+#ifdef HINT_TOOL_DEBUG
+	//	输出到控制台
+	printf(buffer);
+	printf("\n");
+#endif
 }
+
+#if defined(HINT_TOOL_DEBUG) || defined(_DEBUG)
+#include "gnoctets.h"
+#include <fstream>
+void openOctet(const GNET::Octets &o)
+{
+	//	生成随机文件名
+	AString strFileName;
+	strFileName.Format("%02d_%02d.xml", rand()%100, rand() % 100);		//	随机生成文件显示
+	
+	//	创建并输出Octets到文件
+	if (!putOctetToFile(o, strFileName))
+		return;
+	
+	//	打开文件
+	_SHELLEXECUTEINFOA si;
+	::ZeroMemory(&si, sizeof(si));
+	si.cbSize = sizeof(si);
+	si.fMask = SEE_MASK_NOCLOSEPROCESS | SEE_MASK_FLAG_DDEWAIT;
+	si.lpVerb = "open";
+	si.lpFile = strFileName;
+	si.nShow = SW_SHOWNORMAL;
+	ShellExecuteExA(&si);
+	
+	::WaitForSingleObject(si.hProcess, INFINITE);
+	::CloseHandle(si.hProcess);
+}
+
+bool putOctetToFile(const GNET::Octets &o, const AString &strFileName, bool binary)
+{
+	//	保存Octets到文件
+	std::ofstream file;
+	file.open(strFileName, std::ios_base::out | std::ios_base::trunc | (binary ? std::ios_base::binary : 0));
+	if (!file.is_open())
+	{
+		printf("create file failed.\n");
+		return false;
+	}
+	
+	//	输出到文件
+	if (!file.write((const char *)o.begin(), o.size()))
+	{
+		printf("write file error .\n");
+		file.close();
+		::DeleteFileA(strFileName);
+		return false;
+	}
+	
+	file.flush();
+	file.close();
+	return true;
+}
+#endif

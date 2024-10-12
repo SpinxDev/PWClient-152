@@ -114,7 +114,7 @@
     </ResourceCompile>
     <Lib>
       <AdditionalDependencies>zlib.lib;jpeg.lib;png.lib;tiff.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)cximage.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>..\Output\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -149,7 +149,7 @@ xcopy *.h ..\..\Include\cximage\ /QDRY</Command>
     </ResourceCompile>
     <Lib>
       <AdditionalDependencies>zlib_ud.lib;jpeg_ud.lib;png_ud.lib;tiff_ud.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)cximage_ud.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>..\Output\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -184,7 +184,7 @@ xcopy *.h ..\..\Include\cximage\ /QDRY</Command>
     </ResourceCompile>
     <Lib>
       <AdditionalDependencies>zlib_u.lib;jpeg_u.lib;png_u.lib;tiff_u.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)cximage_u.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>..\Output\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -219,7 +219,7 @@ xcopy *.h ..\..\Include\cximage\ /QDRY</Command>
     </ResourceCompile>
     <Lib>
       <AdditionalDependencies>zliblib_d.lib;jpeg_d.lib;png_d.lib;tiff_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>

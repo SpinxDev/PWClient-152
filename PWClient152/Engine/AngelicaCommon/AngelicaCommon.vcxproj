@@ -205,7 +205,7 @@
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
@@ -247,7 +247,7 @@ xcopy ".\header\*.h" "..\Output\acsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
@@ -288,7 +288,7 @@ xcopy ".\header\*.h" "..\Output\acsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
@@ -330,7 +330,7 @@ xcopy ".\header\*.h" "..\Output\acsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
@@ -372,7 +372,7 @@ dbgrelease.bat</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
@@ -413,7 +413,7 @@ xcopy ".\header\*.h" "..\Output\acsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
@@ -454,7 +454,7 @@ xcopy ".\header\*.h" "..\Output\acsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
@@ -495,7 +495,7 @@ xcopy ".\header\*.h" "..\Output\acsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
@@ -536,7 +536,7 @@ xcopy ".\header\*.h" "..\Output\acsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>

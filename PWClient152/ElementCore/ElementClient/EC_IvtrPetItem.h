@@ -13,7 +13,7 @@
 #pragma once
 
 #include "EC_IvtrItem.h"
-#include "EC_IvtrTypes.h"
+#include "../CElementClient/EC_IvtrTypes.h"
 #include "AArray.h"
 #include "AWString.h"
 #include "EC_GPDataType.h"
@@ -80,6 +80,7 @@ public:		//	Operations
 	virtual const wchar_t* GetBoothBuyDesc();
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
+	virtual int GetItemLevel()const;
 
 	//	Get skill number
 	int GetSkillNum() { return m_aSkills.GetSize(); }
@@ -154,9 +155,9 @@ public:		//	Operations
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrPetFood(*this); }
 	//	Get item cool time
-	virtual int GetCoolTime(int* piMax=NULL);
+// 	virtual int GetCoolTime(int* piMax=NULL);
 	//	Check item use condition
-	virtual bool CheckUseCondition();
+// 	virtual bool CheckUseCondition();
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
 

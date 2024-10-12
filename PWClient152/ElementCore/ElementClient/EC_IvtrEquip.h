@@ -15,7 +15,7 @@
 #include "EC_IvtrItem.h"
 #include "AArray.h"
 #include "AAssist.h"
-#include <vector.h>
+#include <A3DTypes.h>
 
 ///////////////////////////////////////////////////////////////////////////
 //	
@@ -169,8 +169,6 @@ public:		//	Operations
 	virtual bool HasViewProp(){ return false; }
 	//	Get number of material needed to refine equipment
 	virtual int GetRefineMaterialNum() { return 0; } 
-	virtual int GetRefineAddOn() { return 0; }
-	bool GetRefineEffect(abase::vector<ACString> &strEffects, const ACString &clrAttribute, const ACString &clrEffect);	//	当前基础上再精炼的效果提示
 
 	//	Get equip requirement
 	int GetLevelRequirement() const { return m_iLevelReq; }
@@ -187,7 +185,7 @@ public:		//	Operations
 	//	Add current endurance
 	int AddCurEndurance(int iValue);
 	//	Add deadly strike rate provided by this equipment
-	virtual int GetDeadlyStrikeRate(bool bSuiteGen);
+	//virtual int GetDeadlyStrikeRate(bool bSuiteGen);
 	//	Check whether this equipment belongs to a suite
 	int GetSuiteID();
 	//	Get refine level
@@ -209,8 +207,6 @@ public:		//	Operations
 	bool IsDecoration() const { return GetEquipmentType() == EQUIP_DECORATION; }
 	bool IsFashion() const { return GetEquipmentType() == EQUIP_FASHION; }
 	bool IsDestroying() const { return (m_iProcType & PROC_DESTROYING) ? true : false; }
-	//	Whether a rare item
-	virtual bool IsRare() const;
 
 	//	Get hole number
 	int GetHoleNum() { return m_aHoles.GetSize(); }
@@ -220,10 +216,6 @@ public:		//	Operations
 	int GetHoleItem(int n) { return m_aHoles[n]; }
 	//	Get property number
 	int GetPropertyNum() { return m_aProps.GetSize(); }
-	//	Get Engraved property number
-	int GetEngravedPropertyNum();
-
-
 	//	Get property
 	const PROPERTY& GetProperty(int n) { return m_aProps[n]; }
 	//	Get made from flag
@@ -234,29 +226,8 @@ public:		//	Operations
 	void SetNewMark(const ACString &strMark, A3DCOLOR clr);
 	//	Get stone mask
 	WORD GetStoneMask() { return m_wStoneMask; }
-
-	// Format refine data into a string
-	// (hack function, do NOT use it in multi-thread environment)
-	ACString& FormatRefineData(unsigned int addon_id, ACString& szTxt);
-	// Format prop desc into a string
-	// (hack function, do NOT use it in multi-thread environment)
-	ACString& FormatPropDesc(const PROPERTY& prop, ACString& szTxt);
-
-	// Check whether a prop's value was set as a range
-	bool CheckPropRangeValue(const PROPERTY& prop);
-
-	bool CheckSpecialRefineType(const int* aRefines, const int* types, int type_count);
-
-	// get a mask to identify whether the property effect equipment's essence
-	virtual DWORD PropEffectMask(const PROPERTY& prop, DWORD dwCurFlags);
 	
 	int	GetSoulPowerAdded();
-
-	//	Get preview info text
-	virtual const wchar_t* GetPreviewInfo();
-	
-	virtual const wchar_t* GetAddOnPropDesc(int num, int* addons);
-	virtual const wchar_t* GetEngraveDesc();
 
 protected:	//	Attributes
 
@@ -317,43 +288,6 @@ protected:	//	Operations
 	
 	//	Does eqiupment has extend properties which effect equipment's essence ?
 	DWORD PropEffectEssence();
-	
-	//	获取精炼效果子方法
-	struct RefineEffect
-	{
-		int			m_refineIndex;
-		int			m_incEffect;
-
-		const int *	m_aPEEVals;
-		const int *	m_aRefines;
-
-		ACString	m_clrAttribute;
-		ACString	m_clrEffect;
-
-		RefineEffect(const int *aPEEVals, const int *aRefines, const ACString &clrAttribute, const ACString &clrEffect)
-			: m_refineIndex(-1)
-			, m_incEffect(0)
-			, m_aPEEVals(aPEEVals)
-			, m_aRefines(aRefines)
-			, m_clrAttribute(clrAttribute)
-			, m_clrEffect(clrEffect)
-		{
-		}
-
-		void Set(int refineIndex, int incEffect);
-
-		int GetIncEffect()const{
-			return m_incEffect;
-		}
-		const ACString & GetClrAttribute()const{
-			return m_clrAttribute;
-		}
-		const ACString & GetClrEffect()const{
-			return m_clrEffect;
-		}
-	};
-	virtual bool GetRefineEffectFor(ACString & strEffect, const RefineEffect &rhs){ return false; }
-	static int CalcRefineEffect(int refineLevel, int baseEffect);
 };
 
 ///////////////////////////////////////////////////////////////////////////

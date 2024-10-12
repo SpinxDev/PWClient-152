@@ -1,0 +1,38 @@
+	public:
+		__int64 sn;
+		__int64 timestamp;
+		Octets detail;
+		enum { PROTOCOL_TYPE = PROTOCOL_GETITEMDESC };
+	public:
+		GetItemDesc() { type = PROTOCOL_GETITEMDESC; }
+		GetItemDesc(void*) : Protocol(PROTOCOL_GETITEMDESC) { }
+		GetItemDesc (__int64 l_sn,__int64 l_timestamp,const Octets& l_detail)
+			 : sn(l_sn),timestamp(l_timestamp),detail(l_detail)
+		{
+			type = PROTOCOL_GETITEMDESC;
+		}
+
+		GetItemDesc(const GetItemDesc &rhs)
+			: Protocol(rhs),sn(rhs.sn),timestamp(rhs.timestamp),detail(rhs.detail) { }
+
+		GNET::Protocol *Clone() const { return new GetItemDesc(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << sn;
+			os << timestamp;
+			os << detail;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> sn;
+			os >> timestamp;
+			os >> detail;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1024; }

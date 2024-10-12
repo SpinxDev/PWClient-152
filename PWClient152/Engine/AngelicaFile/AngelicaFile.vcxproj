@@ -224,7 +224,7 @@
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -267,7 +267,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -309,7 +309,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -351,7 +351,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -394,7 +394,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -436,7 +436,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -478,7 +478,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -521,7 +521,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -564,7 +564,7 @@ dbgrelease.bat</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -606,7 +606,7 @@ xcopy ".\header\*.h" "..\Output\afsdk\include\" /Y /D /R</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories> ;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>

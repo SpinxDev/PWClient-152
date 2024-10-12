@@ -13,7 +13,7 @@
 #pragma once
 
 #include "EC_IvtrEquip.h"
-#include "EC_IvtrTypes.h"
+#include "../CElementClient/EC_IvtrTypes.h"
 
 ///////////////////////////////////////////////////////////////////////////
 //	
@@ -91,10 +91,9 @@ public:		//	Operations
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrArmorRune(*this); }
 	//	Get item cool time
-	virtual int GetCoolTime(int* piMax=NULL);
+	//virtual int GetCoolTime(int* piMax=NULL);
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
-	virtual bool CheckUseCondition();
 
 	const ARMORRUNE_ESSENCE* GetDBEssence() { return m_pDBEssence; }
 	const ARMORRUNE_SUB_TYPE* GetDBSubType() { return m_pDBSubType; }
@@ -186,9 +185,9 @@ public:		//	Operations
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrMedicine(*this); }
 	//	Get item cool time
-	virtual int GetCoolTime(int* piMax=NULL);
+	//virtual int GetCoolTime(int* piMax=NULL);
 	//	Check item use condition
-	virtual bool CheckUseCondition();
+// 	virtual bool CheckUseCondition();
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
 
@@ -246,8 +245,6 @@ public:		//	Operations
 	virtual CECIvtrItem* Clone() { return new CECIvtrElement(*this); }
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
-	//	Whether a rare item
-	virtual bool IsRare() const;
 
 	const ELEMENT_ESSENCE* GetDBEssence() const { return m_pDBEssence; }
 
@@ -335,7 +332,7 @@ public:		//	Operations
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrFirework(*this); }
 	//	Get item cool time
-	virtual int GetCoolTime(int* piMax=NULL);
+	//virtual int GetCoolTime(int* piMax=NULL);
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
 
@@ -381,9 +378,9 @@ public:		//	Operations
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrSkillMat(*this); }
 	//	Get item cool time
-	virtual int GetCoolTime(int* piMax=NULL);
+	//virtual int GetCoolTime(int* piMax=NULL);
 	//	Check item use condition
-	virtual bool CheckUseCondition();
+// 	virtual bool CheckUseCondition();
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
 
@@ -430,9 +427,9 @@ public:		//	Operations
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrIncSkillAbility(*this); }
 	//	Get item cool time
-	virtual int GetCoolTime(int* piMax=NULL);
+// 	virtual int GetCoolTime(int* piMax=NULL);
 	//	Check item use condition
-	virtual bool CheckUseCondition();
+// 	virtual bool CheckUseCondition();
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
 	
@@ -478,9 +475,9 @@ public:		//	Operations
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrDoubleExp(*this); }
 	//	Get item cool time
-	virtual int GetCoolTime(int* piMax=NULL);
+// 	virtual int GetCoolTime(int* piMax=NULL);
 	//	Check item use condition
-	virtual bool CheckUseCondition();
+// 	virtual bool CheckUseCondition();
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
 
@@ -526,16 +523,13 @@ public:		//	Operations
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrDyeTicket(*this); }
 	//	Get item cool time
-	virtual int GetCoolTime(int* piMax=NULL);
+// 	virtual int GetCoolTime(int* piMax=NULL);
 	//	Check item use condition
-	virtual bool CheckUseCondition();
+// 	virtual bool CheckUseCondition();
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
 
 	const DYE_TICKET_ESSENCE* GetDBEssence() { return m_pDBEssence; }
-
-	//	生成临时颜色，用于显示
-	A3DCOLOR GenerateColor();
 
 protected:	//	Attributes
 
@@ -579,9 +573,9 @@ public:		//	Operations
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
 	//	Get item cool time
-	virtual int GetCoolTime(int* piMax=NULL);
+// 	virtual int GetCoolTime(int* piMax=NULL);
 	//	Check item use condition
-	virtual bool CheckUseCondition();
+// 	virtual bool CheckUseCondition();
 
 	const TRANSMITSCROLL_ESSENCE* GetDBEssence() { return m_pDBEssence; }
 
@@ -627,16 +621,13 @@ public:		//	Operations
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
 	//	Get item cool time
-	virtual int GetCoolTime(int* piMax=NULL);
+// 	virtual int GetCoolTime(int* piMax=NULL);
 	//	Check item use condition
-	virtual bool CheckUseCondition();
+// 	virtual bool CheckUseCondition();
 
 	const TARGET_ITEM_ESSENCE* GetDBEssence() { return m_pDBEssence; }
 
 	CECSkill* GetTargetSkill() { return m_pTargetSkill; }
-
-	bool FindTargetIDForPop(int id)const;
-	bool HasTargetIDForPop()const;
 
 protected:	//	Attributes
 
@@ -682,7 +673,7 @@ public:		//	Operations
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
 	//	Get item cool time
-	virtual int GetCoolTime(int* piMax=NULL);
+// 	virtual int GetCoolTime(int* piMax=NULL);
 
 	const LOOK_INFO_ESSENCE* GetDBEssence() { return m_pDBEssence; }
 
@@ -696,6 +687,7 @@ protected:	//	Operations
 	//	Get item description text
 	virtual const wchar_t* GetNormalDesc(bool bRepair);
 };
+
 
 ///////////////////////////////////////////////////////////////////////////
 //	
@@ -777,7 +769,7 @@ public:		//	Operations
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
 	//	请柬当前是否可使用
-	virtual bool CheckUseCondition();
+	//virtual bool CheckUseCondition();
 
 	const WEDDING_INVITECARD_ESSENCE* GetDBEssence() { return m_pDBEssence; }
 
@@ -824,8 +816,6 @@ public:		//	Operations
 	virtual CECIvtrItem* Clone() { return new CECIvtrShapener(*this); }
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
-	//	Whether a rare item
-	virtual bool IsRare() const;
 	
 	bool CanSharpenSlot(int iSlot) const;
 	
@@ -833,6 +823,7 @@ public:		//	Operations
 	
 	int GetLevel()const;
 	
+	virtual int GetItemLevel()const;
 protected:	//	Attributes
 
 	//	Data in database
@@ -917,13 +908,13 @@ public:		//	Operations
 	//	Get item name
 	virtual const wchar_t* GetName();
 	//	Get item cool time
-	virtual int GetCoolTime(int* piMax=NULL);
+	//virtual int GetCoolTime(int* piMax=NULL);
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrCongregate(*this); }
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
 	//	Check item use condition
-	virtual bool CheckUseCondition();
+	//virtual bool CheckUseCondition();
 
 	const CONGREGATE_ESSENCE* GetDBEssence() { return m_pDBEssence; }	
 	

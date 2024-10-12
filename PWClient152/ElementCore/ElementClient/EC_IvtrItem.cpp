@@ -29,22 +29,17 @@
 #include "EC_IvtrGoblin.h"
 #include "EC_IvtrMoneyConvertible.h"
 #include "EC_Game.h"
-#include "EC_GameRun.h"
-#include "EC_GameSession.h"
-#include "EC_Resource.h"
-#include "EC_FixedMsg.h"
-#include "EC_HostPlayer.h"
-#include "EC_Configs.h"
-#include "EC_Utility.h"
-#include "EC_ProfConfigs.h"
+#include "../CElementClient/EC_FixedMsg.h"
 
 #include "AAssist.h"
 #include "ATime.h"
 #include "AChar.h"
 
-#include "elementdataman.h"
-#include "itemdataman.h"
-#include <A3DMacros.h>
+#include "../CCommon/elementdataman.h"
+#include "../CCommon/itemdataman.h"
+#include "../CElementClient/EC_RoleTypes.h"
+
+#include <time.h>
 
 #define new A_DEBUG_NEW
 
@@ -204,26 +199,13 @@ CECIvtrItem* CECIvtrItem::CreateItem(int tid, int expire_date, int iCount, int i
 	case DT_POKER_DICE_ESSENCE:		pItem = new CECIvtrGeneralCardDice(tid, expire_date); break;
 	case DT_SHOP_TOKEN_ESSENCE:		pItem = new CECIvtrShopToken(tid, expire_date); break;
 	case DT_UNIVERSAL_TOKEN_ESSENCE:pItem = new CECIvtrUniversalToken(tid, expire_date); break;
-	default:
-	{
-	//	ASSERT(0);
-		pItem = new CECIvtrUnknown(tid);
-	}
+	default: break;
 	}
 
-	pItem->SetCount(iCount);
+	if (pItem)
+		pItem->SetCount(iCount);
 
 	return pItem;
-}
-
-int CECIvtrItem::GetPileLimit(int tid){
-	int pileLimit(0);
-	if (tid > 0){
-		CECIvtrItem* pItem = CreateItem(tid, 0, 1);
-		pileLimit = pItem->GetPileLimit();
-		delete pItem;
-	}
-	return pileLimit;
 }
 
 //	Check whether item2 is item1's candidate
@@ -361,60 +343,26 @@ const wchar_t* CECIvtrItem::GetName()
 	return pDescTab->GetWideString(ITEMDESC_ERRORITEM);
 }
 
-//	Get item name color
-A3DCOLOR CECIvtrItem::GetNameColor()
-{
-	A3DCOLOR clr = A3DCOLORRGB(255, 255, 255);
-
-	int iCol = DecideNameCol();
-	if ((iCol >= ITEMDESC_COL_LIGHTBLUE && iCol <= ITEMDESC_COL_CYANINE) ||
-		(iCol > ITEMDESC_COL2_START && iCol <= ITEMDESC_COL2_NULL07))
-	{
-		CECStringTab* pDescTab = g_pGame->GetItemDesc();
-		ACString strColor = pDescTab->GetWideString(iCol);
-		if( strColor.GetLength() >= 7 && strColor[0] == '^' )
-		{
-			clr = 0;
-			for( int j = 0; j < 6; j++ )
-			{
-				ACHAR nValue = strColor[j + 1];
-				if( nValue >= '0' && nValue <= '9' )
-					nValue -= '0';
-				else if( nValue >= 'a' && nValue <= 'z' )
-					nValue = nValue - 'a' + 0xA;
-				else if( nValue >= 'A' && nValue <= 'Z' )
-					nValue = nValue - 'A' + 0xA;
-				else
-					nValue = 0;
-				clr = clr * 0x10 + nValue;
-			}
-			clr |= 0xFF000000;
-		}
-	}
-
-	return clr;
-}
-
 //	Get item's detail data from server
-void CECIvtrItem::GetDetailDataFromSev(int iPack, int iSlot)
-{
-	if (!m_bNeedUpdate)
-		return;
-
-	if (m_bUpdating)
-	{
-		//	Update request has been sent
-		if (a_GetTime() < m_dwUptTime + 5000)
-			return;
-
-		//	So long time has passed, update response hasn't arrived, ask again
-	}
-
-	m_dwUptTime = a_GetTime();
-	m_bUpdating = true;
-
-	g_pGame->GetGameSession()->c2s_CmdGetItemInfo((BYTE)iPack, (BYTE)iSlot);
-}
+//void CECIvtrItem::GetDetailDataFromSev(int iPack, int iSlot)
+//{
+//	if (!m_bNeedUpdate)
+//		return;
+//
+//	if (m_bUpdating)
+//	{
+//		//	Update request has been sent
+//		if (a_GetTime() < m_dwUptTime + 5000)
+//			return;
+//
+//		//	So long time has passed, update response hasn't arrived, ask again
+//	}
+//
+//	m_dwUptTime = a_GetTime();
+//	m_bUpdating = true;
+//
+//	g_pGame->GetGameSession()->c2s_CmdGetItemInfo((BYTE)iPack, (BYTE)iSlot);
+//}
 
 //	Get item's detail data from local database
 void CECIvtrItem::GetDetailDataFromLocal()
@@ -459,7 +407,11 @@ void CECIvtrItem::AddDescText(int iCol, bool bRet, const ACHAR* szText, ...)
 
 	va_list argList;
 	va_start(argList, szText);
-	glb_vsnprintf(szLine, sizeof(szLine)/sizeof(szLine[0]), szText, argList);
+#ifdef UNICODE
+	_vsnwprintf(szLine, sizeof(szLine)/sizeof(szLine[0]), szText, argList);
+#elif
+	_vsnprintf(szLine, sizeof(szLine)/sizeof(szLine[0]), szText, argList);
+#endif
 	va_end(argList);
 	
 	m_strDesc += szLine;
@@ -637,14 +589,13 @@ void CECIvtrItem::AddPriceDesc(int col, bool bRepair)
 //	Add profession requirment description
 void CECIvtrItem::AddProfReqDesc(int iProfReq)
 {
-	if (CECProfConfig::Instance().ContainsAllProfession(iProfReq))
+	static int iAllProf = (1 << NUM_PROFESSION) - 1;
+	if ((iProfReq & iAllProf) == iAllProf)
 		return;	//	All profession permit equirement
 
 	CECStringTab* pDescTab = g_pGame->GetItemDesc();
-	CECGameRun *pGameRun = g_pGame->GetGameRun();
-	CECHostPlayer* pHost = pGameRun->GetHostPlayer();
 
-	int col = (iProfReq & (1 << pHost->GetProfession())) ? ITEMDESC_COL_WHITE : ITEMDESC_COL_RED;
+	int col = ITEMDESC_COL_WHITE;
 	AddDescText(col, false, pDescTab->GetWideString(ITEMDESC_PROFESSIONREQ));
 
 	for (int i=0; i < NUM_PROFESSION; i++)
@@ -652,7 +603,7 @@ void CECIvtrItem::AddProfReqDesc(int iProfReq)
 		if (iProfReq & (1 << i))
 		{
 			m_strDesc += _AL(" ");
-			AddDescText(col, false, pGameRun->GetProfName(i));
+			AddDescText(col, false, g_pGame->GetProfName(i));
 		}
 	}
 
@@ -684,24 +635,16 @@ void CECIvtrItem::AddExpireTimeDesc()
 	int yellow = ITEMDESC_COL_YELLOW;
 	int gold = ITEMDESC_COL_DARKGOLD;
 	int red = ITEMDESC_COL_RED;
-	CECStringTab* pDescTab = g_pGame->GetItemDesc();
-	time_t timeLeft = m_expire_date - g_pGame->GetServerGMTTime();
-	if( timeLeft < 0 ) timeLeft = 0;
+	tm t = *localtime((time_t*)&m_expire_date);
 
-	if( timeLeft > 24 * 3600 )
-		AddDescText(green, true, pDescTab->GetWideString(ITEMDESC_EXPIRETIME_DAY), timeLeft / (24 * 3600), (timeLeft % (24 * 3600)) / 3600);
-	else if( timeLeft > 3600 )
-	{
-		AddDescText(yellow, true, pDescTab->GetWideString(ITEMDESC_EXPIRETIME_HOUR_MIN), timeLeft / 3600, (timeLeft % 3600) / 60);
-	}
-	else if( timeLeft > 60 )
-	{
-		AddDescText(gold, true, pDescTab->GetWideString(ITEMDESC_EXPIRETIME_MIN_SEC), timeLeft / 60, timeLeft % 60);
-	}
-	else
-	{
-		AddDescText(red, true, pDescTab->GetWideString(ITEMDESC_EXPIRETIME_SECOND), timeLeft);
-	}
+	// 过期时间：*年*月*日*时*分*秒
+	AddDescText(ITEMDESC_COL_WHITE, true, g_pGame->GetStringFromTable(10),
+		t.tm_year+1900,
+		t.tm_mon+1,
+		t.tm_mday,
+		t.tm_hour,
+		t.tm_min,
+		t.tm_sec);
 }
 
 void CECIvtrItem::AddExpireTimeDesc(int expire_date)
@@ -712,14 +655,15 @@ void CECIvtrItem::AddExpireTimeDesc(int expire_date)
 	m_expire_date = temp;
 }
 
+
 //  Add item id desc
 void CECIvtrItem::AddIDDescText()
 {
 	//  Show item id
-	if (g_pGame->GetConfigs()->GetShowIDFlag())
-	{
-		AddDescText(ITEMDESC_COL_GREEN, true, _AL("ID: %d"), m_tid);
-	}
+//	if (g_pGame->GetConfigs()->GetShowIDFlag())
+//	{
+//		AddDescText(ITEMDESC_COL_GREEN, true, _AL("ID: %d"), m_tid);
+// 	}
 }
 
 void CECIvtrItem::AddBindDescText()
@@ -799,11 +743,6 @@ bool CECIvtrItem::CanPutIntoAccBox() const
 
 }
 
-bool CECIvtrItem::IsRare() const
-{
-	return GetUnitPrice() >= 10000 || m_iCID == ICID_MONEYCONVERTIBLE;
-}
-
 void CECIvtrItem::AddActionTypeDescText(int action_type)
 {
 	CECStringTab* pDescTab = g_pGame->GetItemDesc();
@@ -828,18 +767,6 @@ void CECIvtrItem::AddActionTypeDescText(int action_type)
 	};
 	AddDescText(ITEMDESC_COL_WHITE, false, pDescTab->GetWideString(WEAPON_TYPE_NAME_INDEX[action_type]));	
 	m_strDesc += _AL("\\r");
-}
-
-int CECIvtrItem::GetEquippedSlot(int iStartSlot)const{
-	if (!IsEquipment()){
-		return -1;
-	}
-	for (int i = iStartSlot; i < SIZE_EQUIPIVTR; ++ i){
-		if (CanEquippedTo(i)){
-			return i;
-		}
-	}
-	return -1;
 }
 ///////////////////////////////////////////////////////////////////////////
 //	

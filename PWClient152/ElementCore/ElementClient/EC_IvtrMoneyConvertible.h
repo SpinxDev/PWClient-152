@@ -14,7 +14,7 @@
 #pragma once
 
 #include "EC_IvtrItem.h"
-#include "EC_IvtrTypes.h"
+#include "../CElementClient/EC_IvtrTypes.h"
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -68,9 +68,6 @@ public:		//	Operations
 	virtual const wchar_t* GetName();
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrMoneyConvertible(*this); }
-
-	//  Get the RMB value
-	__int64 GetRealPrice() const;
 
 	const MONEY_CONVERTIBLE_ESSENCE* GetDBEssence() { return m_pDBEssence; }
 

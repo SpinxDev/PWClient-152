@@ -10,7 +10,7 @@
 #pragma once
 
 #include "EC_IvtrEquip.h"
-#include "EC_IvtrTypes.h"
+#include "../CElementClient/EC_IvtrTypes.h"
 
 ///////////////////////////////////////////////////////////////////////////
 //	
@@ -106,6 +106,8 @@ public:		//	Operations
 	virtual const wchar_t* GetName();
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
+
+	virtual int GetItemLevel()const;
 	
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrGoblin(*this); }
@@ -266,10 +268,6 @@ public:		//	Operations
 
 	//	Get database data
 	const GOBLIN_EXPPILL_ESSENCE* GetDBEssence() { return m_pDBEssence; }
-
-	//	Whether a rare item
-	virtual bool IsRare() const;
-
 protected:	//	Attributes
 
 	// Experiences in pill

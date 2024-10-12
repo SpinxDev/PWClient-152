@@ -13,7 +13,7 @@
 #pragma once
 
 #include "EC_IvtrEquip.h"
-#include "EC_IvtrTypes.h"
+#include "../CElementClient/EC_IvtrTypes.h"
 
 ///////////////////////////////////////////////////////////////////////////
 //	
@@ -71,18 +71,15 @@ public:		//	Operations
 	virtual CECIvtrItem* Clone() { return new CECIvtrDecoration(*this); }
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
-	//	Whether a rare item
-	virtual bool IsRare() const;
 
 	//	Does this equipment has random property ?
 	virtual bool HasRandomProp();
 	virtual bool HasViewProp();
 	//	Get number of material needed to refine equipment
 	virtual int GetRefineMaterialNum();
-	virtual int GetRefineAddOn();
 
 	virtual int GetEquipmentType() const { return EQUIP_DECORATION; }
-	
+
 	virtual int GetItemLevel() const;
 
 	//	Get essence data
@@ -92,9 +89,6 @@ public:		//	Operations
 	const DECORATION_MAJOR_TYPE* GetDBMajorType() { return m_pDBMajorType; }
 	const DECORATION_SUB_TYPE* GetDBSubType() { return m_pDBSubType; }
 	const DECORATION_ESSENCE* GetDBEssence() { return m_pDBEssence; }
-
-	//	Get preview info text
-	virtual const wchar_t* GetPreviewInfo();
 
 protected:	//	Attributes
 
@@ -109,8 +103,6 @@ protected:	//	Operations
 
 	//	Get item description text
 	virtual const wchar_t* GetNormalDesc(bool bRepair);
-	
-	virtual bool GetRefineEffectFor(ACString & strEffect, const RefineEffect &rhs);
 };
 
 ///////////////////////////////////////////////////////////////////////////

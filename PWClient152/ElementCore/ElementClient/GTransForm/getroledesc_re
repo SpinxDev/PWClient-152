@@ -1,0 +1,68 @@
+	public:
+		char retcode;
+		__int64 sn;
+		__int64 timestamp;
+		int cls;
+		unsigned char gender;
+		int level;
+		Octets name;
+		Octets icon;
+		Octets basic_desc;
+		Octets detail_desc;
+		enum { PROTOCOL_TYPE = PROTOCOL_GETROLEDESC_RE };
+	public:
+		GetRoleDesc_Re() { type = PROTOCOL_GETROLEDESC_RE; }
+		GetRoleDesc_Re(void*) : Protocol(PROTOCOL_GETROLEDESC_RE) { }
+		GetRoleDesc_Re (char l_retcode,__int64 l_sn,__int64 l_timestamp,
+			int l_cls,unsigned char l_gender,int l_level,
+			const Octets& l_name,const Octets& l_icon,const Octets& l_basic_desc,
+			const Octets& l_detail_desc)
+			 : retcode(l_retcode),sn(l_sn),timestamp(l_timestamp)
+			,cls(l_cls),gender(l_gender),level(l_level)
+			,name(l_name),icon(l_icon),basic_desc(l_basic_desc)
+			,detail_desc(l_detail_desc)
+		{
+			type = PROTOCOL_GETROLEDESC_RE;
+		}
+
+		GetRoleDesc_Re(const GetRoleDesc_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),sn(rhs.sn),timestamp(rhs.timestamp)
+			,cls(rhs.cls),gender(rhs.gender),level(rhs.level)
+			,name(rhs.name),icon(rhs.icon),basic_desc(rhs.basic_desc)
+			,detail_desc(rhs.detail_desc) { }
+
+		GNET::Protocol *Clone() const { return new GetRoleDesc_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << sn;
+			os << timestamp;
+			os << cls;
+			os << gender;
+			os << level;
+			os << name;
+			os << icon;
+			os << basic_desc;
+			os << detail_desc;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> sn;
+			os >> timestamp;
+			os >> cls;
+			os >> gender;
+			os >> level;
+			os >> name;
+			os >> icon;
+			os >> basic_desc;
+			os >> detail_desc;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 1310720; }

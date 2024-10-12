@@ -6,7 +6,8 @@
 #include "gnthread.h"
 #include "gncompress.h"
 #include "streamcompress.h"
-#include "EC_Global.h"
+#include "..\..\EC_Global.h"
+#include "gnmppc.h"
 
 extern unsigned long glb_HandleException(LPEXCEPTION_POINTERS pExceptionPointers);
 
@@ -51,8 +52,7 @@ namespace Thread{
 		}
 		__except (glb_HandleException(GetExceptionInformation()))
 		{
-			::OutputDebugString(_AL("Exception occurred in gnet...\n"));
-			a_LogOutput(1, "Exception occurred gnet... mini dumped!");
+			Log_Info("Exception occurred in gnet! The process is to exit!");
 			::ExitProcess(-1);
 		}
 	}

@@ -3,8 +3,7 @@
 // Date		: 2014/8/20
 
 #include "EC_BaseColor.h"
-#include "EC_UIHelper.h"
-#include "EC_GameUIMan.h"
+#include "EC_Game.h"
 #include <A3DMacros.h>
 #include <AF.h>
 
@@ -28,7 +27,7 @@ CECBaseColor::CECBaseColor() {
 		m_colorArray[i] = BaseColor(id, _AL(""), A3DCOLORRGB(r, g, b));
 	}
 	for (i = 0; i < MAX_BASE_COLOR_COUNT; i++) {
-		m_colorArray[i].m_name = CECUIHelper::GetGameUIMan()->GetStringFromTable(i + 11360);
+		m_colorArray[i].m_name = g_pGame->GetStringFromTable(i + 11360);
 	}
 }
 

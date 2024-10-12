@@ -15,7 +15,7 @@
 #include <A3DTypes.h>
 
 #include "EC_IvtrEquip.h"
-#include "EC_IvtrTypes.h"
+#include "../CElementClient/EC_IvtrTypes.h"
 
 ///////////////////////////////////////////////////////////////////////////
 //	
@@ -95,7 +95,6 @@ public:		//	Operations
 	WORD GetWordColor() { return m_wColor; }
 	A3DCOLOR GetColor() { return m_color; }
 	int GetGenderRequirement() { return m_iGender; }
-	int GetFashionSuiteID()const;
 
 protected:	//	Attributes
 	

@@ -14,8 +14,6 @@
 
 #include "AList2.h"
 #include "AAssist.h"
-#include <hashmap.h>
-#include <set>
 
 ///////////////////////////////////////////////////////////////////////////
 //	
@@ -40,11 +38,6 @@ enum
 
 class CECViewport;
 class A3DFont;
-
-namespace GNET
-{
-	class Protocol;
-}
 
 ///////////////////////////////////////////////////////////////////////////
 //	
@@ -72,8 +65,6 @@ public:		//	Types
 		int			iLevel;		//	Message level
 	};
 
-	typedef std::set<AString> HideProtoList;
-
 public:		//	Constructor and Destructor
 
 	CECRTDebug();
@@ -84,7 +75,7 @@ public:		//	Attributes
 public:		//	Operations
 
 	//	Initialize object
-	bool Init();
+	bool Init(int iMaxVisStr);
 	//	Release object
 	void Release();
 
@@ -98,17 +89,6 @@ public:		//	Operations
 	//	Output a notify message
 	void OutputNotifyMessage(DWORD dwCol, const ACHAR* szMsg);
 
-	AString GetProtocolName(int iProtocol);
-	AString GetGamedataSendName(int iCmd, bool bFromServer);
-	AString GetProtocolName(const GNET::Protocol &p, bool bFromServer);
-
-	//  Hide or show some protocols
-	void HideProtocol(const AString& str);
-	void ShowProtocol(const AString& str);
-	bool IsProtocolHide(const GNET::Protocol& p, bool bFromServer);
-	bool IsGameDataHide(int iCmd, bool bFromServer);
-	const HideProtoList& GetHideProtos() const { return m_HideProtos; }
-
 protected:	//	Attributes
 
 	A3DFont*	m_pA3DFont;			//	A3D font object
@@ -119,18 +99,6 @@ protected:	//	Attributes
 	DWORD		m_dwRTimeInter;		//	Time between two roll
 
 	APtrList<DBGSTR*>	m_DbgStrList;	//	Debug strings
-
-	typedef abase::hash_map<int, AString>	NameMap;
-	NameMap mProtocol;
-	NameMap mCGamedata;
-	NameMap mSGamedata;
-
-	HideProtoList m_HideProtos;		//  Some protocols do not need to show, such as 'OBJECT_MOVE'
-
-	void InitPNameMap();
-	void InitCGNameMap();
-	void InitSGNameMap();
-	void InitHideProto();
 
 protected:	//	Operations
 

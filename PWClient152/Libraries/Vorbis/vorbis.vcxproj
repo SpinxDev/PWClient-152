@@ -177,7 +177,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugClient|Win32'">
@@ -196,6 +196,9 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release SSE2|Win32'">
     <ClCompile>
@@ -218,6 +221,9 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDev|Win32'">
     <ClCompile>
@@ -242,6 +248,9 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>

@@ -13,24 +13,11 @@
 #include "EC_Global.h"
 #include "EC_IvtrConsume.h"
 #include "EC_Game.h"
-#include "EC_FixedMsg.h"
-#include "EC_GameRun.h"
-#include "EC_HostPlayer.h"
-#include "itemdataman.h"
-#include "EC_Skill.h"
-#include "EC_Instance.h"
-#include "EC_Configs.h"
+#include "../CElementClient/EC_FixedMsg.h"
+#include "../CCommon/elementdataman.h"
+#include "../CElementClient/EC_Skill.h"
 #include "EC_RTDebug.h"
-#include "EC_GameSession.h"
-#include "elementdataman.h"
-#include "EC_ManPlayer.h"
-#include "ids.hxx"
-#include "EC_World.h"
-#include "EC_CrossServer.h"
-#include "EC_ManNPC.h"
-#include "EC_NPC.h"
-
-#include <time.h>
+#include "EC_Instance.h"
 
 #define new A_DEBUG_NEW
 
@@ -118,11 +105,11 @@ const wchar_t* CECIvtrArmorRune::GetName()
 }
 
 //	Get item cool time
-int CECIvtrArmorRune::GetCoolTime(int* piMax/* NULL */)
-{
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
-	return pHost ? pHost->GetCoolTime(GP_CT_ARMORRUNE, piMax) : 0;
-}
+//int CECIvtrArmorRune::GetCoolTime(int* piMax/* NULL */)
+//{
+//	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
+//	return pHost ? pHost->GetCoolTime(GP_CT_ARMORRUNE, piMax) : 0;
+// }
 
 //	Get item description text
 const wchar_t* CECIvtrArmorRune::GetNormalDesc(bool bRepair)
@@ -163,7 +150,7 @@ const wchar_t* CECIvtrArmorRune::GetNormalDesc(bool bRepair)
 	}
 
 	//	Price
-	AddPriceDesc(white, bRepair);	
+	AddPriceDesc(white, bRepair);
 
 	//	Extend description
 	AddExtDescText();
@@ -175,12 +162,6 @@ const wchar_t* CECIvtrArmorRune::GetNormalDesc(bool bRepair)
 const char * CECIvtrArmorRune::GetDropModel()
 {
 	return m_pDBEssence->file_matter;
-}
-
-bool CECIvtrArmorRune::CheckUseCondition()
-{
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
-	return !pHost->GetDefenseRuneEnable(m_pDBEssence->damage_type);
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -281,7 +262,7 @@ const wchar_t* CECIvtrDmgRune::GetNormalDesc(bool bRepair)
 	}
 
 	//	Price
-	AddPriceDesc(white, bRepair);	
+	AddPriceDesc(white, bRepair);
 
 	//	Extend description
 	AddExtDescText();
@@ -355,25 +336,25 @@ const wchar_t* CECIvtrMedicine::GetName()
 }
 
 //	Get item cool time
-int CECIvtrMedicine::GetCoolTime(int* piMax/* NULL */)
-{
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
-	if (!pHost)
-		return 0;
-
-	int iTime = 0;
-
-	switch (m_pDBMajorType->id)
-	{
-	case 1810:	iTime = pHost->GetCoolTime(GP_CT_REJUVENATION_POTION, piMax);	break;
-	case 1794:	iTime = pHost->GetCoolTime(GP_CT_HP_POTION, piMax);				break;
-	case 1802:	iTime = pHost->GetCoolTime(GP_CT_MP_POTION, piMax);				break;
-	case 1815:
-	case 2038:	iTime = pHost->GetCoolTime(GP_CT_ANTIDOTE_POTION, piMax);		break;
-	}
-
-	return iTime;
-}
+//int CECIvtrMedicine::GetCoolTime(int* piMax/* NULL */)
+//{
+//	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
+//	if (!pHost)
+//		return 0;
+//
+//	int iTime = 0;
+//
+//	switch (m_pDBMajorType->id)
+//	{
+//	case 1810:	iTime = pHost->GetCoolTime(GP_CT_REJUVENATION_POTION, piMax);	break;
+//	case 1794:	iTime = pHost->GetCoolTime(GP_CT_HP_POTION, piMax);				break;
+//	case 1802:	iTime = pHost->GetCoolTime(GP_CT_MP_POTION, piMax);				break;
+//	case 1815:
+//	case 2038:	iTime = pHost->GetCoolTime(GP_CT_ANTIDOTE_POTION, piMax);		break;
+//	}
+//
+//	return iTime;
+// }
 
 //	Get item description text
 const wchar_t* CECIvtrMedicine::GetNormalDesc(bool bRepair)
@@ -398,9 +379,12 @@ const wchar_t* CECIvtrMedicine::GetNormalDesc(bool bRepair)
 	//	Level requirement
 	if (m_iLevelReq)
 	{
-		int col = g_pGame->GetGameRun()->GetHostPlayer()->GetMaxLevelSofar() >= m_iLevelReq ? white : red;
+		int col = white;
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_LEVELREQ), m_iLevelReq);
 	}
+
+	//  Show item id
+	AddIDDescText();
 
 	//	Build effect description
 	BuildEffectDesc();
@@ -471,15 +455,15 @@ void CECIvtrMedicine::BuildEffectDesc()
 }
 
 //	Check item use condition
-bool CECIvtrMedicine::CheckUseCondition()
-{
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
-
-	if (pHost->GetMaxLevelSofar() < GetLevelRequirement())
-		return false;
-
-	return true;
-}
+//bool CECIvtrMedicine::CheckUseCondition()
+//{
+//	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
+//
+//	if (pHost->GetBasicProps().iLevel < GetLevelRequirement())
+//		return false;
+//
+//	return true;
+//}
 
 //	Get drop model for shown
 const char * CECIvtrMedicine::GetDropModel()
@@ -576,11 +560,6 @@ const char * CECIvtrElement::GetDropModel()
 	return m_pDBEssence->file_matter;
 }
 
-bool CECIvtrElement::IsRare() const
-{ 
-	return CECIvtrItem::IsRare() || GetDBEssence()->level >= 6;
-}
-
 ///////////////////////////////////////////////////////////////////////////
 //	
 //	Implement CECIvtrTossMat
@@ -641,7 +620,6 @@ const wchar_t* CECIvtrTossMat::GetNormalDesc(bool bRepair)
 	m_strDesc = _AL("");
 
 	CECStringTab* pDescTab = g_pGame->GetItemDesc();
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
 
 	int white = ITEMDESC_COL_WHITE;
 	int red = ITEMDESC_COL_RED;
@@ -663,21 +641,21 @@ const wchar_t* CECIvtrTossMat::GetNormalDesc(bool bRepair)
 	//	Level requirment
 	if (m_pDBEssence->require_level)
 	{
-		col = pHost->GetMaxLevelSofar() >= m_pDBEssence->require_level ? white : red;
+		col = white;
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_LEVELREQ), m_pDBEssence->require_level);
 	}
 
 	//	Strength requirment
 	if (m_pDBEssence->require_strength)
 	{
-		col = pHost->GetExtendProps().bs.strength >= m_pDBEssence->require_strength ? white : red;
+		col = white;
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_STRENGTHREQ), m_pDBEssence->require_strength);
 	}
 	
 	//	Agility requirment
 	if (m_pDBEssence->require_agility)
 	{
-		col = pHost->GetExtendProps().bs.agility >= m_pDBEssence->require_agility ? white : red;
+		col = white;
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_AGILITYREQ), m_pDBEssence->require_agility);
 	}
 	
@@ -752,11 +730,11 @@ const wchar_t* CECIvtrFirework::GetName()
 }
 
 //	Get item cool time
-int CECIvtrFirework::GetCoolTime(int* piMax/* NULL */)
-{
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
-	return pHost ? pHost->GetCoolTime(GP_CT_FIREWORKS, piMax) : 0;
-}
+//int CECIvtrFirework::GetCoolTime(int* piMax/* NULL */)
+//{
+//	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
+//	return pHost ? pHost->GetCoolTime(GP_CT_FIREWORKS, piMax) : 0;
+//}
 
 //	Get item description text
 const wchar_t* CECIvtrFirework::GetNormalDesc(bool bRepair)
@@ -855,11 +833,11 @@ const wchar_t* CECIvtrSkillMat::GetName()
 }
 
 //	Get item cool time
-int CECIvtrSkillMat::GetCoolTime(int* piMax/* NULL */)
-{
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
-	return pHost ? pHost->GetCoolTime(GP_CT_SKILLMATTER, piMax) : 0;
-}
+//int CECIvtrSkillMat::GetCoolTime(int* piMax/* NULL */)
+//{
+//	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
+//	return pHost ? pHost->GetCoolTime(GP_CT_SKILLMATTER, piMax) : 0;
+//}
 
 //	Get item description text
 const wchar_t* CECIvtrSkillMat::GetNormalDesc(bool bRepair)
@@ -884,7 +862,7 @@ const wchar_t* CECIvtrSkillMat::GetNormalDesc(bool bRepair)
 	//	Level requirement
 	if (m_pDBEssence->level_required)
 	{
-		int col = g_pGame->GetGameRun()->GetHostPlayer()->GetMaxLevelSofar() >= m_pDBEssence->level_required ? white : red;
+		int col = white;
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_LEVELREQ), m_pDBEssence->level_required);
 	}
 
@@ -898,17 +876,17 @@ const wchar_t* CECIvtrSkillMat::GetNormalDesc(bool bRepair)
 }
 
 //	Check item use condition
-bool CECIvtrSkillMat::CheckUseCondition()
-{
-	if (!m_pDBEssence)
-		return false;
-
-	//	Check level requirement
-	if (g_pGame->GetGameRun()->GetHostPlayer()->GetMaxLevelSofar() < m_pDBEssence->level_required)
-		return false;
-
-	return true;
-}
+//bool CECIvtrSkillMat::CheckUseCondition()
+//{
+//	if (!m_pDBEssence)
+//		return false;
+//
+//	//	Check level requirement
+//	if (g_pGame->GetGameRun()->GetHostPlayer()->GetBasicProps().iLevel < m_pDBEssence->level_required)
+//		return false;
+//
+//	return true;
+//}
 
 //	Get drop model for shown
 const char * CECIvtrSkillMat::GetDropModel()
@@ -970,10 +948,10 @@ const wchar_t* CECIvtrIncSkillAbility::GetName()
 }
 
 //	Get item cool time
-int CECIvtrIncSkillAbility::GetCoolTime(int* piMax/* NULL */)
-{
-	return CECIvtrItem::GetCoolTime(piMax);
-}
+//int CECIvtrIncSkillAbility::GetCoolTime(int* piMax/* NULL */)
+//{
+//	return CECIvtrItem::GetCoolTime(piMax);
+// }
 
 //	Get item description text
 const wchar_t* CECIvtrIncSkillAbility::GetNormalDesc(bool bRepair)
@@ -999,9 +977,6 @@ const wchar_t* CECIvtrIncSkillAbility::GetNormalDesc(bool bRepair)
 	if (m_pDBEssence->level_required)
 	{
 		int col = white;
-		CECSkill *pSkill = g_pGame->GetGameRun()->GetHostPlayer()->GetNormalSkill(m_pDBEssence->id_skill);
-		if (!pSkill || pSkill->GetSkillLevel() != m_pDBEssence->level_required)
-			col = red;
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_INC_SKILL_ABILITY_REQUIRE_LEVEL), m_pDBEssence->level_required);
 	}
 
@@ -1018,17 +993,17 @@ const wchar_t* CECIvtrIncSkillAbility::GetNormalDesc(bool bRepair)
 }
 
 //	Check item use condition
-bool CECIvtrIncSkillAbility::CheckUseCondition()
-{
-	if (!m_pDBEssence)
-		return false;
-	
-	CECSkill *pSkill = g_pGame->GetGameRun()->GetHostPlayer()->GetNormalSkill(m_pDBEssence->id_skill);
-	if (!pSkill)
-		return false;
-
-	return true;
-}
+//bool CECIvtrIncSkillAbility::CheckUseCondition()
+//{
+//	if (!m_pDBEssence)
+//		return false;
+//	
+//	CECSkill *pSkill = g_pGame->GetGameRun()->GetHostPlayer()->GetSkill(m_pDBEssence->id_skill);
+//	if (!pSkill)
+//		return false;
+//
+//	return true;
+//}
 
 //	Get drop model for shown
 const char * CECIvtrIncSkillAbility::GetDropModel()
@@ -1091,11 +1066,11 @@ const wchar_t* CECIvtrDoubleExp::GetName()
 }
 
 //	Get item cool time
-int CECIvtrDoubleExp::GetCoolTime(int* piMax/* NULL */)
-{
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
-	return pHost ? pHost->GetCoolTime(GP_CT_DOUBLEEXP, piMax) : 0;
-}
+//int CECIvtrDoubleExp::GetCoolTime(int* piMax/* NULL */)
+//{
+//	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
+//	return pHost ? pHost->GetCoolTime(GP_CT_DOUBLEEXP, piMax) : 0;
+//}
 
 //	Get item description text
 const wchar_t* CECIvtrDoubleExp::GetNormalDesc(bool bRepair)
@@ -1129,13 +1104,13 @@ const wchar_t* CECIvtrDoubleExp::GetNormalDesc(bool bRepair)
 }
 
 //	Check item use condition
-bool CECIvtrDoubleExp::CheckUseCondition()
-{
-	if (!m_pDBEssence)
-		return false;
-
-	return true;
-}
+//bool CECIvtrDoubleExp::CheckUseCondition()
+//{
+//	if (!m_pDBEssence)
+//		return false;
+//
+//	return true;
+// }
 
 //	Get drop model for shown
 const char * CECIvtrDoubleExp::GetDropModel()
@@ -1198,11 +1173,11 @@ const wchar_t* CECIvtrTransmitScroll::GetName()
 }
 
 //	Get item cool time
-int CECIvtrTransmitScroll::GetCoolTime(int* piMax/* NULL */)
-{
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
-	return pHost ? pHost->GetCoolTime(GP_CT_TOWNSCROLL, piMax) : 0;
-}
+//int CECIvtrTransmitScroll::GetCoolTime(int* piMax/* NULL */)
+//{
+//	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
+//	return pHost ? pHost->GetCoolTime(GP_CT_TOWNSCROLL, piMax) : 0;
+//}
 
 //	Get item description text
 const wchar_t* CECIvtrTransmitScroll::GetNormalDesc(bool bRepair)
@@ -1239,13 +1214,13 @@ const char * CECIvtrTransmitScroll::GetDropModel()
 }
 
 //	Check item use condition
-bool CECIvtrTransmitScroll::CheckUseCondition()
-{
-	if( g_pGame->GetGameRun()->GetHostPlayer()->IsFighting() )
-		return false;
-
-	return true;
-}
+//bool CECIvtrTransmitScroll::CheckUseCondition()
+//{
+//	if( g_pGame->GetGameRun()->GetHostPlayer()->IsFighting() )
+//		return false;
+//
+//	return true;
+//}
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -1302,11 +1277,11 @@ const wchar_t* CECIvtrDyeTicket::GetName()
 }
 
 //	Get item cool time
-int CECIvtrDyeTicket::GetCoolTime(int* piMax/* NULL */)
-{
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
-	return pHost ? pHost->GetCoolTime(GP_CT_DYETICKET, piMax) : 0;
-}
+//int CECIvtrDyeTicket::GetCoolTime(int* piMax/* NULL */)
+//{
+//	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
+//	return pHost ? pHost->GetCoolTime(GP_CT_DYETICKET, piMax) : 0;
+//}
 
 //	Get item description text
 const wchar_t* CECIvtrDyeTicket::GetNormalDesc(bool bRepair)
@@ -1338,34 +1313,18 @@ const wchar_t* CECIvtrDyeTicket::GetNormalDesc(bool bRepair)
 }
 
 //	Check item use condition
-bool CECIvtrDyeTicket::CheckUseCondition()
-{
-	if (!m_pDBEssence)
-		return false;
-
-	return true;
-}
+//bool CECIvtrDyeTicket::CheckUseCondition()
+//{
+//	if (!m_pDBEssence)
+//		return false;
+//
+//	return true;
+// }
 
 //	Get drop model for shown
 const char * CECIvtrDyeTicket::GetDropModel()
 {
 	return m_pDBEssence->file_matter;
-}
-
-A3DCOLOR CECIvtrDyeTicket::GenerateColor()
-{
-	float h,s,v;
-    h = abase::Rand(m_pDBEssence->h_min, m_pDBEssence->h_max);
-    s = abase::Rand(m_pDBEssence->s_min, m_pDBEssence->s_max);
-    v = abase::Rand(m_pDBEssence->v_min, m_pDBEssence->v_max);
-    int color = hsv2rgb(h,s,v);
-	
-    unsigned short r = ((color >> 16) >> 3) & 0x1F; 
-    unsigned short g = ((color >> 8) >> 3) & 0x1F; 
-    unsigned short b = (color >> 3) & 0x1F; 
-    unsigned short rgb_color = ((r << 10) | (g << 5) | b) & 0x7FFF; 
-
-	return FASHION_WORDCOLOR_TO_A3DCOLOR(rgb_color);
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -1443,69 +1402,65 @@ const wchar_t* CECIvtrTargetItem::GetName()
 }
 
 //	Get item cool time
-int CECIvtrTargetItem::GetCoolTime(int* piMax/* NULL */)
-{
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
-	if(!pHost)
-	{
-		ASSERT(0);
-		return 0;
-	}
-
-	int i,aCoolTimes[10], iMaxTime = 0, index = -1;
-	for(i=0;i<10;i++)
-			aCoolTimes[i] = 0;
-
-	if(m_pTargetSkill)
-	{
-		CECSkill* pSkill = pHost->GetNormalSkill(m_pTargetSkill->GetSkillID());
-		if (!pSkill) pSkill = pHost->GetEquipSkillByID(m_pTargetSkill->GetSkillID());
-		if(pSkill)
-		{
-			iMaxTime = pSkill->GetCoolingCnt();
-			if(piMax)
-				*piMax = pSkill->GetCoolingTime();
-		}
-
-		for(i=0;i<10;i++)
-		{
-			if(m_pTargetSkill->GetCommonCoolDown() & (1<<i))
-			{
-				aCoolTimes[i] = pHost->GetCoolTime(GP_CT_SKILLCOMMONCOOLDOWN0+i);
-
-				if( aCoolTimes[i] > iMaxTime)
-				{
-					iMaxTime = aCoolTimes[i];
-					index = i;
-				}
-			}
-		}
-	}
-
-	if(index == -1)
-	{
-		if(m_pTargetSkill && piMax)
-		{
-			*piMax = m_pTargetSkill->GetCoolingTime();
-		}
-
-		return iMaxTime;
-	}
-
-	return pHost->GetCoolTime(GP_CT_SKILLCOMMONCOOLDOWN0+index, piMax);
-}
+//int CECIvtrTargetItem::GetCoolTime(int* piMax/* NULL */)
+//{
+//	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
+//	if(!pHost)
+//	{
+//		ASSERT(0);
+//		return 0;
+//	}
+//
+//	int i,aCoolTimes[10], iMaxTime = 0, index = -1;
+//	for(i=0;i<10;i++)
+//			aCoolTimes[i] = 0;
+//
+//	if(m_pTargetSkill)
+//	{
+//		CECSkill* pSkill = pHost->GetSkill(m_pTargetSkill->GetSkillID());
+//		if(pSkill)
+//		{
+//			iMaxTime = pSkill->GetCoolingCnt();
+//			if(piMax)
+//				*piMax = pSkill->GetCoolingTime();
+//		}
+//
+//		for(i=0;i<10;i++)
+//		{
+//			if(m_pTargetSkill->GetCommonCoolDown() & (1<<i))
+//			{
+//				aCoolTimes[i] = pHost->GetCoolTime(GP_CT_SKILLCOMMONCOOLDOWN0+i);
+//
+//				if( aCoolTimes[i] > iMaxTime)
+//				{
+//					iMaxTime = aCoolTimes[i];
+//					index = i;
+//				}
+//			}
+//		}
+//	}
+//
+//	if(index == -1)
+//	{
+//		if(m_pTargetSkill && piMax)
+//		{
+//			*piMax = m_pTargetSkill->GetCoolingTime();
+//		}
+//
+//		return iMaxTime;
+//	}
+//
+//	return pHost->GetCoolTime(GP_CT_SKILLCOMMONCOOLDOWN0+index, piMax);
+//}
 
 //	Get item description text
 const wchar_t* CECIvtrTargetItem::GetNormalDesc(bool bRepair)
 {
 	m_strDesc = _AL("");
 
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
-
 	//	Try to build item description
 	CECStringTab* pDescTab = g_pGame->GetItemDesc();
 	int white = ITEMDESC_COL_WHITE;
-	int red = ITEMDESC_COL_RED;
 	int namecol = DecideNameCol();
 
 	if (m_iCount > 1)
@@ -1519,7 +1474,7 @@ const wchar_t* CECIvtrTargetItem::GetNormalDesc(bool bRepair)
 	
 	//	Level requirment
 	if (int iLevelReq = m_pDBEssence->require_level){
-		int col = pHost->GetMaxLevelSofar() >= iLevelReq ? white : red;
+		int col = white;
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_LEVELREQ), iLevelReq);
 	}
 
@@ -1546,7 +1501,7 @@ const wchar_t* CECIvtrTargetItem::GetNormalDesc(bool bRepair)
 		CECInstance* pInstance;
 		for(int i=0;i<m_pDBEssence->num_area;i++)
 		{
-			pInstance = g_pGame->GetGameRun()->GetInstance(m_pDBEssence->area_id[i]);
+			pInstance = g_pGame->GetInstance(m_pDBEssence->area_id[i]);
 			if (pInstance)
 			{
 				m_strDesc += _AL(" ");
@@ -1597,53 +1552,13 @@ const char * CECIvtrTargetItem::GetDropModel()
 }
 
 //	Check item use condition
-bool CECIvtrTargetItem::CheckUseCondition()
-{
-	if( !m_pTargetSkill )
-		return false;	
-	
- 	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
-	if (m_pDBEssence->require_level && m_pDBEssence->require_level > pHost->GetMaxLevelSofar()){
-		return false;
-	}
-
-	if (m_pDBEssence->target_faction || (m_pDBEssence->combined_switch & TICS_TARGET_MY_FACTION_OBJECT)){
-		CECNPC* pNPC = g_pGame->GetGameRun()->GetWorld()->GetNPCMan()->GetNPC(pHost->GetSelectedTarget());		
-		if (!pNPC){
-			return false;
-		}
-		if (m_pDBEssence->target_faction){
-			//	阵营匹配才可使用
-			const MONSTER_ESSENCE *pMonsterEssence = pNPC->GetMonsterEssence();
-			if (!pMonsterEssence || !(m_pDBEssence->target_faction & pMonsterEssence->faction)){
-				return false;
-			}
-		}//	m_pDBEssence->faction 为 0 时不限制
-		if (m_pDBEssence->combined_switch & TICS_TARGET_MY_FACTION_OBJECT){
-			if (!pNPC->GetOwnerFaction() || pNPC->GetOwnerFaction() != pHost->GetFactionID()){
-				return false;
-			}
-		}
-	}
-
-	return true;
-}
-
-bool CECIvtrTargetItem::FindTargetIDForPop(int id)const{
-	const int *begin = &m_pDBEssence->target_id_for_pop[0];
-	const int *end = begin + ARRAY_SIZE(m_pDBEssence->target_id_for_pop);
-	return std::find(begin, end, id) != end;
-}
-
-bool CECIvtrTargetItem::HasTargetIDForPop()const{
-	for (int i(0); i < ARRAY_SIZE(m_pDBEssence->target_id_for_pop); ++ i){
-		if (m_pDBEssence->target_id_for_pop[i] > 0){
-			return true;
-		}
-	}
-	return false;
-}
-
+//bool CECIvtrTargetItem::CheckUseCondition()
+//{
+//	if( !m_pTargetSkill )
+//		return false;
+//
+//	return true;
+// }
 ///////////////////////////////////////////////////////////////////////////
 //	
 //	Implement CECIvtrLookInfoItem
@@ -1699,11 +1614,11 @@ const wchar_t* CECIvtrLookInfoItem::GetName()
 }
 
 //	Get item cool time
-int CECIvtrLookInfoItem::GetCoolTime(int* piMax/* NULL */)
-{
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
-	return pHost ? pHost->GetCoolTime(GP_CT_QUERY_OTHER_PROPERTY, piMax) : 0;
-}
+//int CECIvtrLookInfoItem::GetCoolTime(int* piMax/* NULL */)
+//{
+//	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
+//	return pHost ? pHost->GetCoolTime(GP_CT_QUERY_OTHER_PROPERTY, piMax) : 0;
+//}
 
 //	Get item description text
 const wchar_t* CECIvtrLookInfoItem::GetNormalDesc(bool bRepair)
@@ -1738,6 +1653,7 @@ const char * CECIvtrLookInfoItem::GetDropModel()
 {
 	return m_pDBEssence->file_matter;
 }
+
 
 ///////////////////////////////////////////////////////////////////////////
 //	
@@ -1904,29 +1820,29 @@ bool CECIvtrWeddingInviteCard::SetItemInfo(BYTE* pInfoData, int iDataLen)
 		m_Essence = *(IVTR_ESSENCE_WEDDING_INVITECARD *)dr.Read_Data(sizeof(m_Essence));
 
 		// 查找玩家名称
-		abase::vector<int> UnknownIDs;
-
-		CECGameRun *pGameRun = g_pGame->GetGameRun();
-		CECHostPlayer *pHost = pGameRun->GetHostPlayer();
-		int id = 0;
-
-		id = m_Essence.groom;
-		if (id>0 && id!=pHost->GetCharacterID() && !pGameRun->GetPlayerName(id, false))
-			UnknownIDs.push_back(id);
-
-		id = m_Essence.bride;
-		if (id>0 && id!=pHost->GetCharacterID() && !pGameRun->GetPlayerName(id, false))
-			UnknownIDs.push_back(id);
-
-		id = m_Essence.invitee;
-		if (id>0 && id!=pHost->GetCharacterID() && !pGameRun->GetPlayerName(id, false))
-			UnknownIDs.push_back(id);
-
-		if (!UnknownIDs.empty())
-		{
-			// 查询未知玩家名称
-			g_pGame->GetGameSession()->CacheGetPlayerBriefInfo((int)UnknownIDs.size(), &UnknownIDs[0], 2);
-		}
+// 		abase::vector<int> UnknownIDs;
+// 
+// 		CECGameRun *pGameRun = g_pGame->GetGameRun();
+// 		CECHostPlayer *pHost = pGameRun->GetHostPlayer();
+// 		int id = 0;
+// 
+// 		id = m_Essence.groom;
+// 		if (id>0 && id!=pHost->GetCharacterID() && !pGameRun->GetPlayerName(id, false))
+// 			UnknownIDs.push_back(id);
+// 
+// 		id = m_Essence.bride;
+// 		if (id>0 && id!=pHost->GetCharacterID() && !pGameRun->GetPlayerName(id, false))
+// 			UnknownIDs.push_back(id);
+// 
+// 		id = m_Essence.invitee;
+// 		if (id>0 && id!=pHost->GetCharacterID() && !pGameRun->GetPlayerName(id, false))
+// 			UnknownIDs.push_back(id);
+// 
+// 		if (!UnknownIDs.empty())
+// 		{
+// 			// 查询未知玩家名称
+// 			g_pGame->GetGameSession()->GetPlayerBriefInfo((int)UnknownIDs.size(), &UnknownIDs[0], 2);
+// 		}
 	}
 	catch (CECException& e)
 	{
@@ -1973,65 +1889,57 @@ const wchar_t* CECIvtrWeddingInviteCard::GetNormalDesc(bool bRepair)
 	AddExpireTimeDesc();
 
 	// 填写请柬内容
-	while (true)
-	{
-		//
-		CECGameRun *pGameRun = g_pGame->GetGameRun();
-		
-		// 请柬中的玩家名称
-		ACString strGroomName = pGameRun->GetPlayerName(m_Essence.groom, false);
-		ACString strBrideName = pGameRun->GetPlayerName(m_Essence.bride, false);
-		if (strGroomName.IsEmpty() ||
-			strBrideName.IsEmpty())
-			break;
-		
-		ACString strInviteeName;
-		if (m_Essence.invitee > 0)
-		{
-			strInviteeName = pGameRun->GetPlayerName(m_Essence.invitee, false);
-			if (strInviteeName.IsEmpty())
-				break;
-		}
-		
-		// 婚礼地点
-		elementdataman* pDB = g_pGame->GetElementDataMan();
-		DATA_TYPE DataType;
-		WEDDING_CONFIG *pWeddingConfig = (WEDDING_CONFIG*)pDB->get_data_ptr(WEDDING_CONFIG_ID, ID_SPACE_CONFIG, DataType);
-		if (!pWeddingConfig || DataType!=DT_WEDDING_CONFIG)
-			break;
-
-		if (m_Essence.scene<0 ||
-			m_Essence.scene>=sizeof(pWeddingConfig->wedding_scene)/sizeof(pWeddingConfig->wedding_scene[0]) ||
-			!pWeddingConfig->wedding_scene[m_Essence.scene].name[0])
-			break;
-
-		if (CECCrossServer::Instance().IsOnSpecialServer())
-		{
-			const ACHAR *szRemind = pDescTab->GetWideString(ITEMDESC_CROSSSERVER_ERROR);
-			strGroomName += szRemind;
-			strBrideName += szRemind;
-			strInviteeName += szRemind;
-		}
-
-		// 婚礼时间
-		int timeBias = g_pGame->GetTimeZoneBias() * 60;
-		int localTime = m_Essence.start_time - timeBias;
-		tm t = *gmtime((time_t*)&localTime);
-		
-		// 添加请柬内容
-		int id = g_pGame->GetGameRun()->GetHostPlayer()->GetCharacterID();
-		AddDescText(ITEMDESC_COL_RED, true,
-			pDescTab->GetWideString(ITEMDESC_WEDDING_INVITECARD),
-			t.tm_year + 1900,
-			t.tm_mon + 1,
-			t.tm_mday,
-			t.tm_hour,
-			t.tm_min,
-			pWeddingConfig->wedding_scene[m_Essence.scene].name,
-			strGroomName, strBrideName, strInviteeName);
-
-		break;
-	}
+// 	while (true)
+// 	{
+// 		//
+// 		CECGameRun *pGameRun = g_pGame->GetGameRun();
+// 		
+// 		// 请柬中的玩家名称
+// 		ACString strGroomName = pGameRun->GetPlayerName(m_Essence.groom, false);
+// 		ACString strBrideName = pGameRun->GetPlayerName(m_Essence.bride, false);
+// 		if (strGroomName.IsEmpty() ||
+// 			strBrideName.IsEmpty())
+// 			break;
+// 		
+// 		ACString strInviteeName;
+// 		if (m_Essence.invitee > 0)
+// 		{
+// 			strInviteeName = pGameRun->GetPlayerName(m_Essence.invitee, false);
+// 			if (strInviteeName.IsEmpty())
+// 				break;
+// 		}
+// 		
+// 		// 婚礼地点
+// 		elementdataman* pDB = g_pGame->GetElementDataMan();
+// 		DATA_TYPE DataType;
+// 		WEDDING_CONFIG *pWeddingConfig = (WEDDING_CONFIG*)pDB->get_data_ptr(WEDDING_CONFIG_ID, ID_SPACE_CONFIG, DataType);
+// 		if (!pWeddingConfig || DataType!=DT_WEDDING_CONFIG)
+// 			break;
+// 
+// 		if (m_Essence.scene<0 ||
+// 			m_Essence.scene>=sizeof(pWeddingConfig->wedding_scene)/sizeof(pWeddingConfig->wedding_scene[0]) ||
+// 			!pWeddingConfig->wedding_scene[m_Essence.scene].name[0])
+// 			break;
+// 
+// 		// 婚礼时间
+// 		int timeBias = g_pGame->GetTimeZoneBias() * 60;
+// 		int localTime = m_Essence.start_time - timeBias;
+// 		tm t = *gmtime((time_t*)&localTime);
+// 		
+// 		// 添加请柬内容
+// 		int id = g_pGame->GetGameRun()->GetHostPlayer()->GetCharacterID();
+// 		AddDescText(ITEMDESC_COL_RED, true,
+// 			pDescTab->GetWideString(ITEMDESC_WEDDING_INVITECARD),
+// 			t.tm_year + 1900,
+// 			t.tm_mon + 1,
+// 			t.tm_mday,
+// 			t.tm_hour,
+// 			t.tm_min,
+// 			pWeddingConfig->wedding_scene[m_Essence.scene].name,
+// 			strGroomName, strBrideName, strInviteeName);
+// 
+// 		break;
+// 	}
 
 	//	Price
 	AddPriceDesc(white, bRepair);
@@ -2049,14 +1957,15 @@ const char * CECIvtrWeddingInviteCard::GetDropModel()
 }
 
 //	请柬当前是否可使用
-bool CECIvtrWeddingInviteCard::CheckUseCondition()
-{
-	// 请柬只能由新郎新娘指定的玩家使用
-	return !m_bNeedUpdate				//	数据已经从服务器得到更新
-		&& IsUseable()
-		&& (m_Essence.invitee == 0
-		|| m_Essence.invitee == g_pGame->GetGameRun()->GetHostPlayer()->GetCharacterID());
-}
+// bool CECIvtrWeddingInviteCard::CheckUseCondition()
+// {
+// 	// 请柬只能由新郎新娘指定的玩家使用
+// 	return !m_bNeedUpdate				//	数据已经从服务器得到更新
+// 		&& IsUseable()
+// 		&& (m_Essence.invitee == 0
+// 		|| m_Essence.invitee == g_pGame->GetGameRun()->GetHostPlayer()->GetCharacterID());
+// }
+
 
 ///////////////////////////////////////////////////////////////////////////
 //	
@@ -2115,15 +2024,16 @@ const char * CECIvtrShapener::GetDropModel()
 	return m_pDBEssence->file_matter;
 }
 
-bool CECIvtrShapener::CanSharpenSlot(int iSlot) const
-{
-	return (__int64(m_pDBEssence->equip_mask) & (1 << (__int64)iSlot)) ? true : false;
-}
-
 int CECIvtrShapener::GetLevel()const
 {
 	return m_pDBEssence ? m_pDBEssence->level : 0;
 }
+
+int CECIvtrShapener::GetItemLevel()const
+{
+	return GetLevel();
+}
+
 
 //	Get item description text
 const wchar_t* CECIvtrShapener::GetNormalDesc(bool bRepair)
@@ -2274,10 +2184,6 @@ void CECIvtrShapener::AddSharpenerDesc()
 			AddDescText(color, false, pDescTab->GetWideString(ITEMDESC_ALLMAGICDEF));
 			AddDescText(color, true, _AL(" %+d"), p0);
 			break;
-			
-		case 115:	//	磨刀石骑乘加速
-			AddDescText(color, true, pDescTab->GetWideString(ITEMDESC_ADDRIDEONPETSPEED), *(float*)&p0);
-			break;
 
 		default:
 			ASSERT(false);
@@ -2300,10 +2206,7 @@ void CECIvtrShapener::AddSharpenerDesc()
 	}
 }
 
-bool CECIvtrShapener::IsRare() const
-{ 
-	return CECIvtrItem::IsRare() || GetDBEssence()->level >= 6;
-}
+
 
 ///////////////////////////////////////////////////////////////////////////
 //	
@@ -2451,63 +2354,53 @@ const char * CECIvtrCongregate::GetDropModel()
 }
 
 //	Get item cool time
-int CECIvtrCongregate::GetCoolTime(int* piMax/* NULL */)
-{
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
-
-	switch(m_pDBEssence->congregate_type)
-	{
-	case CONGREGATE_TYPE_TEAM:
-		return pHost ? pHost->GetCoolTime(GP_CT_TEAM_CONGREGATE, piMax) : 0;
-		
-	case CONGREGATE_TYPE_FACTION:
-		return pHost ? pHost->GetCoolTime(GP_CT_FACTION_CONGREGATE, piMax) : 0;
-		
-	default:
-		ASSERT(FALSE);
-		return 0;
-	}
-}
+// int CECIvtrCongregate::GetCoolTime(int* piMax/* NULL */)
+// {
+// 	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
+// 
+// 	switch(m_pDBEssence->congregate_type)
+// 	{
+// 	case CONGREGATE_TYPE_TEAM:
+// 		return pHost ? pHost->GetCoolTime(GP_CT_TEAM_CONGREGATE, piMax) : 0;
+// 		
+// 	case CONGREGATE_TYPE_FACTION:
+// 		return pHost ? pHost->GetCoolTime(GP_CT_FACTION_CONGREGATE, piMax) : 0;
+// 		
+// 	default:
+// 		ASSERT(FALSE);
+// 		return 0;
+// 	}
+// }
 
 //	Check item use condition
-bool CECIvtrCongregate::CheckUseCondition()
-{
-	CECGameRun *pGameRun = g_pGame->GetGameRun();
-	CECHostPlayer* pHost = pGameRun->GetHostPlayer();
-
-	switch(m_pDBEssence->congregate_type)
-	{
-	case CONGREGATE_TYPE_TEAM:
-		if( !pHost->GetTeam() )
-		{
-			return false;
-		}
-		break;
-
-	case CONGREGATE_TYPE_FACTION:
-		if( pHost->GetFRoleID() < GNET::_R_MASTER || 
-			pHost->GetFRoleID() > GNET::_R_BODYGUARD )
-		{
-			return false;
-		}
-		break;
-
-	default:
-		ASSERT(FALSE);
-		return false;
-	}
-
-	int idInst = pGameRun->GetWorld()->GetInstanceID();
-	int iLevel = pGameRun->GetHostPlayer()->GetBasicProps().iLevel;
-	for (int i(0); i < sizeof(m_pDBEssence->area)/sizeof(m_pDBEssence->area[0]); i++)
-	{
-		if (m_pDBEssence->area[i].id == idInst &&
-			m_pDBEssence->area[i].require_level <= iLevel)
-			return true;
-	}
-
-	return false;
-}
+// bool CECIvtrCongregate::CheckUseCondition()
+// {
+// 	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
+// 
+// 	switch(m_pDBEssence->congregate_type)
+// 	{
+// 	case CONGREGATE_TYPE_TEAM:
+// 		if( !pHost->GetTeam() )
+// 		{
+// 			return false;
+// 		}
+// 		break;
+// 
+// 	case CONGREGATE_TYPE_FACTION:
+// 		if( pHost->GetFRoleID() < GNET::_R_MASTER || 
+// 			pHost->GetFRoleID() > GNET::_R_BODYGUARD )
+// 		{
+// 			return false;
+// 		}
+// 		break;
+// 
+// 	default:
+// 		ASSERT(FALSE);
+// 		return false;
+// 	}
+// 
+// 	return true;
+// }
 
 //	Get item description text
 const wchar_t* CECIvtrCongregate::GetNormalDesc(bool bRepair)
@@ -2539,7 +2432,7 @@ const wchar_t* CECIvtrCongregate::GetNormalDesc(bool bRepair)
 	AddDescText(white, false, pDescTab->GetWideString(ITEMDESC_USE_REGION));
 	for(int i=0; i<sizeof(m_pDBEssence->area)/sizeof(m_pDBEssence->area[0]); i++)
 	{
-		CECInstance* pInstance = g_pGame->GetGameRun()->GetInstance(m_pDBEssence->area[i].id);
+		CECInstance* pInstance = g_pGame->GetInstance(m_pDBEssence->area[i].id);
 		if (pInstance)
 		{
 			m_strDesc += _AL(" ");

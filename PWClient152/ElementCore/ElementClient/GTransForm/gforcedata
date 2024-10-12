@@ -1,0 +1,113 @@
+#ifndef __GNET_GFORCEDATA_RPCDATA
+#define __GNET_GFORCEDATA_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GForceData : public GNET::Rpc::Data
+	{
+	public:
+		int force_id;
+		int reputation;
+		int contribution;
+		int reserved1;
+		int reserved2;
+		int reserved3;
+		int reserved4;
+		int reserved5;
+		int reserved6;
+		int reserved7;
+
+	public:
+		GForceData (int l_force_id = 0,int l_reputation = 0,int l_contribution = 0
+			,int l_reserved1 = 0,int l_reserved2 = 0,int l_reserved3 = 0
+			,int l_reserved4 = 0,int l_reserved5 = 0,int l_reserved6 = 0
+			,int l_reserved7 = 0)
+			: force_id(l_force_id),reputation(l_reputation),contribution(l_contribution)
+			,reserved1(l_reserved1),reserved2(l_reserved2),reserved3(l_reserved3)
+			,reserved4(l_reserved4),reserved5(l_reserved5),reserved6(l_reserved6)
+			,reserved7(l_reserved7)
+		{
+		}
+
+		GForceData(const GForceData &rhs)
+			: force_id(rhs.force_id),reputation(rhs.reputation),contribution(rhs.contribution),
+			reserved1(rhs.reserved1),reserved2(rhs.reserved2),reserved3(rhs.reserved3),
+			reserved4(rhs.reserved4),reserved5(rhs.reserved5),reserved6(rhs.reserved6),
+			reserved7(rhs.reserved7) { }
+
+		Rpc::Data *Clone() const { return new GForceData(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GForceData *r = dynamic_cast<const GForceData *>(&rhs);
+			if (r && r != this)
+			{
+				force_id = r->force_id;
+				reputation = r->reputation;
+				contribution = r->contribution;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+				reserved4 = r->reserved4;
+				reserved5 = r->reserved5;
+				reserved6 = r->reserved6;
+				reserved7 = r->reserved7;
+			}
+			return *this;
+		}
+
+		GForceData& operator = (const GForceData &rhs)
+		{
+			const GForceData *r = &rhs;
+			if (r && r != this)
+			{
+				force_id = r->force_id;
+				reputation = r->reputation;
+				contribution = r->contribution;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+				reserved4 = r->reserved4;
+				reserved5 = r->reserved5;
+				reserved6 = r->reserved6;
+				reserved7 = r->reserved7;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << force_id;
+			os << reputation;
+			os << contribution;
+			os << reserved1;
+			os << reserved2;
+			os << reserved3;
+			os << reserved4;
+			os << reserved5;
+			os << reserved6;
+			os << reserved7;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> force_id;
+			os >> reputation;
+			os >> contribution;
+			os >> reserved1;
+			os >> reserved2;
+			os >> reserved3;
+			os >> reserved4;
+			os >> reserved5;
+			os >> reserved6;
+			os >> reserved7;
+			return os;
+		}
+
+	};
+};
+#endif

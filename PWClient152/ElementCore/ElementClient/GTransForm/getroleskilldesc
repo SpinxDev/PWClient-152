@@ -1,0 +1,38 @@
+	public:
+		int zoneid;
+		__int64 id;
+		Octets detail;
+		enum { PROTOCOL_TYPE = PROTOCOL_GETROLESKILLDESC };
+	public:
+		GetRoleSkillDesc() { type = PROTOCOL_GETROLESKILLDESC; }
+		GetRoleSkillDesc(void*) : Protocol(PROTOCOL_GETROLESKILLDESC) { }
+		GetRoleSkillDesc (int l_zoneid,__int64 l_id,const Octets& l_detail)
+			 : zoneid(l_zoneid),id(l_id),detail(l_detail)
+		{
+			type = PROTOCOL_GETROLESKILLDESC;
+		}
+
+		GetRoleSkillDesc(const GetRoleSkillDesc &rhs)
+			: Protocol(rhs),zoneid(rhs.zoneid),id(rhs.id),detail(rhs.detail) { }
+
+		GNET::Protocol *Clone() const { return new GetRoleSkillDesc(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << zoneid;
+			os << id;
+			os << detail;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> zoneid;
+			os >> id;
+			os >> detail;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 2048; }

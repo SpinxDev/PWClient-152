@@ -1,0 +1,78 @@
+#ifndef __GNET_GREINCARNATIONRECORD_RPCDATA
+#define __GNET_GREINCARNATIONRECORD_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GReincarnationRecord : public GNET::Rpc::Data
+	{
+	public:
+		int level;
+		int timestamp;
+		int exp;
+		int reserved;
+
+	public:
+		GReincarnationRecord (int l_level = 0,int l_timestamp = 0,int l_exp = 0
+			,int l_reserved = 0)
+			: level(l_level),timestamp(l_timestamp),exp(l_exp)
+			,reserved(l_reserved)
+		{
+		}
+
+		GReincarnationRecord(const GReincarnationRecord &rhs)
+			: level(rhs.level),timestamp(rhs.timestamp),exp(rhs.exp),
+			reserved(rhs.reserved) { }
+
+		Rpc::Data *Clone() const { return new GReincarnationRecord(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GReincarnationRecord *r = dynamic_cast<const GReincarnationRecord *>(&rhs);
+			if (r && r != this)
+			{
+				level = r->level;
+				timestamp = r->timestamp;
+				exp = r->exp;
+				reserved = r->reserved;
+			}
+			return *this;
+		}
+
+		GReincarnationRecord& operator = (const GReincarnationRecord &rhs)
+		{
+			const GReincarnationRecord *r = &rhs;
+			if (r && r != this)
+			{
+				level = r->level;
+				timestamp = r->timestamp;
+				exp = r->exp;
+				reserved = r->reserved;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << level;
+			os << timestamp;
+			os << exp;
+			os << reserved;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> level;
+			os >> timestamp;
+			os >> exp;
+			os >> reserved;
+			return os;
+		}
+
+	};
+	typedef GNET::RpcDataVector<GReincarnationRecord>	GReincarnationRecordVector;
+};
+#endif

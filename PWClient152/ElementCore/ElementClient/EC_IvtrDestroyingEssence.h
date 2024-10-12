@@ -2,7 +2,7 @@
 #define _EC_IVTRDESTROYINGESSENCE_H
 
 #include "EC_IvtrItem.h"
-#include "EC_IvtrTypes.h"
+#include "../CElementClient/EC_IvtrTypes.h"
 
 struct DESTROYING_ESSENCE;
 

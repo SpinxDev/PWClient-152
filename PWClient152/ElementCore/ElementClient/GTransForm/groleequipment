@@ -1,0 +1,59 @@
+#ifndef __GNET_GROLEEQUIPMENT_RPCDATA
+#define __GNET_GROLEEQUIPMENT_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "groleinventory"
+
+namespace GNET
+{
+	class GRoleEquipment : public GNET::Rpc::Data
+	{
+	public:
+		GRoleInventoryVector inv;
+
+	public:
+		GRoleEquipment ()
+		{
+		}
+
+		GRoleEquipment(const GRoleEquipment &rhs)
+			: inv(rhs.inv) { }
+
+		Rpc::Data *Clone() const { return new GRoleEquipment(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GRoleEquipment *r = dynamic_cast<const GRoleEquipment *>(&rhs);
+			if (r && r != this)
+			{
+				inv = r->inv;
+			}
+			return *this;
+		}
+
+		GRoleEquipment& operator = (const GRoleEquipment &rhs)
+		{
+			const GRoleEquipment *r = &rhs;
+			if (r && r != this)
+			{
+				inv = r->inv;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << inv;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> inv;
+			return os;
+		}
+
+	};
+};
+#endif

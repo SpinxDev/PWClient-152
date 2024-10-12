@@ -13,7 +13,7 @@
 #pragma once
 
 #include "EC_IvtrEquip.h"
-#include "EC_IvtrTypes.h"
+#include "../CElementClient/EC_IvtrTypes.h"
 
 ///////////////////////////////////////////////////////////////////////////
 //	
@@ -71,17 +71,14 @@ public:		//	Operations
 	virtual CECIvtrItem* Clone() { return new CECIvtrWeapon(*this); }
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
-	//	Whether a rare item
-	virtual bool IsRare() const;
 
 	//	Does this equipment has random property ?
 	virtual bool HasRandomProp();
 	//	Get number of material needed to refine equipment
 	virtual int GetRefineMaterialNum();
-	virtual int GetRefineAddOn();
 
 	virtual int GetEquipmentType() const { return EQUIP_WEAPON; }
-
+	
 	virtual int GetItemLevel()const;
 
 	//	The weapon is range weapon ?
@@ -94,9 +91,6 @@ public:		//	Operations
 	const WEAPON_MAJOR_TYPE* GetDBMajorType() { return m_pDBMajorType; }
 	const WEAPON_SUB_TYPE* GetDBSubType() { return m_pDBSubType; }
 	const WEAPON_ESSENCE* GetDBEssence() { return m_pDBEssence; }
-
-	//	Get preview info text
-	virtual const wchar_t* GetPreviewInfo();
 
 protected:	//	Attributes
 
@@ -114,8 +108,6 @@ protected:	//	Operations
 
 	//	Get weapon attack speed index
 	int GetAttackSpeedIndex();
-
-	virtual bool GetRefineEffectFor(ACString & strEffect, const RefineEffect &rhs);
 };
 
 ///////////////////////////////////////////////////////////////////////////

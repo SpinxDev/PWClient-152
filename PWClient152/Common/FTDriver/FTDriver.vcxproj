@@ -184,7 +184,7 @@
       <AdditionalLibraryDirectories>..\freetype-2.1.10\objs;$(SolutionDir)Libraries\Released\</AdditionalLibraryDirectories>
       <AdditionalOptions>/SAFESEH:NO  %(AdditionalOptions)</AdditionalOptions>
       <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d$(TargetExt)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugClient|Win32'">
@@ -209,7 +209,7 @@
       <AdditionalLibraryDirectories>..\freetype-2.1.10\objs;$(SolutionDir)Libraries\Released\</AdditionalLibraryDirectories>
       <AdditionalOptions>/SAFESEH:NO  %(AdditionalOptions)</AdditionalOptions>
       <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d$(TargetExt)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release SSE2|Win32'">
@@ -239,7 +239,7 @@
       <AdditionalLibraryDirectories>..\freetype-2.1.10\objs;$(SolutionDir)Libraries\Released\</AdditionalLibraryDirectories>
       <AdditionalOptions>/SAFESEH:NO  %(AdditionalOptions)</AdditionalOptions>
       <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d$(TargetExt)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDev|Win32'">
@@ -271,7 +271,7 @@
       <AdditionalLibraryDirectories>..\freetype-2.1.10\objs;$(SolutionDir)Libraries\Released\</AdditionalLibraryDirectories>
       <AdditionalOptions>/SAFESEH:NO  %(AdditionalOptions)</AdditionalOptions>
       <IgnoreSpecificDefaultLibraries>libcmt</IgnoreSpecificDefaultLibraries>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d$(TargetExt)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

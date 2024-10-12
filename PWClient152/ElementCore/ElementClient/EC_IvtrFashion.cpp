@@ -15,14 +15,12 @@
 #include "EC_Global.h"
 #include "EC_IvtrFashion.h"
 #include "EC_Game.h"
-#include "EC_RoleTypes.h"
-#include "EC_FixedMsg.h"
-#include "EC_GameRun.h"
-#include "EC_HostPlayer.h"
-#include "elementdataman.h"
-#include "EC_ManPlayer.h"
+#include "../CElementClient/EC_RoleTypes.h"
+#include "../CElementClient/EC_FixedMsg.h"
+#include "../CCommon/elementdataman.h"
 #include "EC_RTDebug.h"
-#include "EC_Configs.h"
+#include "EC_BaseColor.h"
+#include <AChar.h>
 
 #define new A_DEBUG_NEW
 
@@ -146,6 +144,7 @@ void CECIvtrFashion::DefaultInfo()
 	m_Essence.color = m_wColor;
 	m_Essence.gender = m_iGender;
 }
+
 //	Get item icon file name
 const char* CECIvtrFashion::GetIconFile()
 {
@@ -168,7 +167,6 @@ const wchar_t* CECIvtrFashion::GetNormalDesc(bool bRepair)
 
 	//	Try to build item description
 	CECStringTab* pDescTab = g_pGame->GetItemDesc();
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
 	int white = ITEMDESC_COL_WHITE;
 	int red = ITEMDESC_COL_RED;
 	int namecol = DecideNameCol();
@@ -203,13 +201,16 @@ const wchar_t* CECIvtrFashion::GetNormalDesc(bool bRepair)
 			AddDescText(white, false, pDescTab->GetWideString(ITEMDESC_COLOR));
 			m_strDesc += _AL(" ");
 			AddDescText(-1, true, pDescTab->GetWideString(ITEMDESC_COLORRECT), szCol);
+			if (const CECBaseColor::BaseColor* baseColor = CECBaseColor::Instance().GetBaseColorFromColor(m_color)){
+				AddDescText(white, false, _AL("(%s)"), baseColor->m_name);
+			}
 		}
-
 	}
+
 	//	Level requirment
 	if (m_iLevelReq)
 	{
-		int col = pHost->GetMaxLevelSofar() >= m_iLevelReq ? white : red;
+		int col = white;
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_LEVELREQ), m_iLevelReq);
 	}
 	//  fashion weapon profession requirment and weapon action type
@@ -222,10 +223,10 @@ const wchar_t* CECIvtrFashion::GetNormalDesc(bool bRepair)
 
 	//	Gender requirement
 	CECStringTab* pFixMsg = g_pGame->GetFixedMsgTab();
-	int col = (pHost->GetGender() == m_iGender) ? white : red;
+	int col = white;
 	AddDescText(col, false, pDescTab->GetWideString(ITEMDESC_GENDERREQ));
 	m_strDesc += _AL(" ");
-	if (m_iGender == GENDER_MALE)
+	if (m_iGender == 0)
 		AddDescText(col, true, pFixMsg->GetWideString(FIXMSG_GENDER_MALE));
 	else
 		AddDescText(col, true, pFixMsg->GetWideString(FIXMSG_GENDER_FEMALE));
@@ -260,9 +261,3 @@ const char * CECIvtrFashion::GetDropModel()
 	return m_pDBEssence->file_matter;
 }
 
-int CECIvtrFashion::GetFashionSuiteID()const
-{
-	CECGame::SuiteEquipTable& SuiteTab = g_pGame->GetSuiteFashionTable();
-	CECGame::SuiteEquipTable::pair_type pair = SuiteTab.get(m_tid);
-	return pair.second ? *pair.first : 0;
-}

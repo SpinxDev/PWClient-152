@@ -13,7 +13,7 @@
 #pragma once
 
 #include "EC_IvtrEquip.h"
-#include "EC_IvtrTypes.h"
+#include "../CElementClient/EC_IvtrTypes.h"
 #include <vector.h>
 
 ///////////////////////////////////////////////////////////////////////////
@@ -86,7 +86,7 @@ public:		//	Operations
 
 	//	Add deadly strike rate provided by this equipment 
 	//  By Sunxuewei 2008/9/3
-	virtual int GetDeadlyStrikeRate(bool bSuiteGen);
+	//virtual int GetDeadlyStrikeRate(bool bSuiteGen);
 
 	//	Get database data
 	const BIBLE_ESSENCE* GetDBEssence() { return m_pDBEssence; }
@@ -179,7 +179,7 @@ public:		//	Operations
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrAutoHP(*this); }
 	//	Get item cool time
-	virtual int GetCoolTime(int* piMax=NULL);
+// 	virtual int GetCoolTime(int* piMax=NULL);
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
 
@@ -234,7 +234,7 @@ public:		//	Operations
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrAutoMP(*this); }
 	//	Get item cool time
-	virtual int GetCoolTime(int* piMax=NULL);
+// 	virtual int GetCoolTime(int* piMax=NULL);
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
 
@@ -290,10 +290,9 @@ public:		//	Operations
 	virtual const char * GetDropModel();
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrCertificate(*this); }
+
 	//  Get booth model id
 	const char * GetBoothModelID();
-	//	»ñÈ¡°ÚÌ¯ÕÐÅÆÍ¼Æ¬
-	const char* GetBoothBarFile();
 
 	int GetSellColNum()			{ return m_iSellColNum; }
 	int GetBuyColNum()			{ return m_iBuyColNum; }
@@ -450,17 +449,14 @@ public:		//	Operations
 
 	virtual int GetEquipmentType() const { return EQUIP_GENERALCARD; }
 
+	virtual int GetItemLevel() const;
+
 	const IVTR_ESSENCE_GENERALCARD& GetEssence() { return m_Essence; }
 	
 	//	Get database data
 	const POKER_ESSENCE* GetDBEssence() { return m_pDBEssence; }
 
-	int	CalcGeneralCardProp(int prop_base, int prop_grow);
-	float GetProfessionRatio();
-	float GetSuiteRatio();
-	float GetRebirthRatio();
-	float GetRankRatio();
-
+	//int	CalcGeneralCardProp(int prop_base, int prop_grow);
 	int GetSwallowExp();
 	int GetLevelUpExp(int level);
 	

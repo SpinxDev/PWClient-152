@@ -14,11 +14,8 @@
 #include "EC_Global.h"
 #include "EC_IvtrMoneyConvertible.h"
 #include "EC_Game.h"
-#include "EC_GameRun.h"
-#include "EC_FixedMsg.h"
-#include "elementdataman.h"
-#include "EC_Configs.h"
-#include "EC_HostPlayer.h"
+#include "../CElementClient/EC_FixedMsg.h"
+#include "../CCommon/elementdataman.h"
 
 #define new A_DEBUG_NEW
 
@@ -88,12 +85,6 @@ const char* CECIvtrMoneyConvertible::GetIconFile()
 const wchar_t* CECIvtrMoneyConvertible::GetName()
 {
 	return m_pDBEssence->name;
-}
-
-//  Get the RMB price
-__int64 CECIvtrMoneyConvertible::GetRealPrice() const
-{
-	return (__int64)m_pDBEssence->price * m_iCount * g_pGame->GetGameRun()->GetHostPlayer()->GetCashMoneyRate();
 }
 
 //	Get item description text

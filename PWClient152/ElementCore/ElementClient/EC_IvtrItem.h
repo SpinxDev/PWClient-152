@@ -13,7 +13,6 @@
 #pragma once
 
 #include "AWString.h"
-#include <A3DTypes.h>
 
 ///////////////////////////////////////////////////////////////////////////
 //	
@@ -179,7 +178,6 @@ public:		//	Operations
 
 	//	Create an inventory item
 	static CECIvtrItem* CreateItem(int tid, int expire_date, int iCount, int idSpace=0);
-	static int GetPileLimit(int tid);
 	//	Check whether item2 is item1's candidate
 	static bool IsCandidate(int tid1, int tid2);
 	static bool IsCandidate(int tid1, CECIvtrItem* pItem2);
@@ -195,8 +193,6 @@ public:		//	Operations
 	virtual const char* GetIconFile();
 	//	Get item name
 	virtual const wchar_t* GetName();
-	//	Get item name color
-	virtual A3DCOLOR GetNameColor();
 	//	Use item
 	virtual bool Use() { return true; }
 	//	Get scaled price of one item
@@ -204,12 +200,12 @@ public:		//	Operations
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrItem(*this); }
 	//	Get item cool time
-	virtual int GetCoolTime(int* piMax=NULL) { return 0; }
+// 	virtual int GetCoolTime(int* piMax=NULL) { return 0; }
 	//	Check item use condition
-	virtual bool CheckUseCondition() { return IsUseable(); }
+// 	virtual bool CheckUseCondition() { return IsUseable(); }
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
-	//	获取物品品阶
+	// Get Item Level
 	virtual int GetItemLevel() const {return -1;}
 
 	//	Get item description text
@@ -236,7 +232,6 @@ public:		//	Operations
 
 	//	Can this item be equipped to specified position ?
 	bool CanEquippedTo(int iSlot) const { return (m_i64EquipMask & (1 << (__int64)iSlot)) ? true : false; }
-	int  GetEquippedSlot(int iStartSlot=0)const;
 	
 	//  Can this item be put to account box ?
 	bool CanPutIntoAccBox() const;
@@ -268,10 +263,8 @@ public:		//	Operations
 		return ((m_iProcType & PROC_TRADEABLE) || 
 			(m_iProcType & PROC_BINDING))  ? false : true; }
 	virtual bool IsWebTradeable()const{ return IsTradeable() || (m_iProcType & PROC_CAN_WEBTRADE); }
-	bool IsBinding()const{ return (m_iProcType & CECIvtrItem::PROC_BINDING) && !(m_iProcType & CECIvtrItem::PROC_CAN_WEBTRADE); }
 	bool IsSellable() const { return (m_iProcType & PROC_SELLABLE) ? false : true; }
 	bool IsRepairable() const { return (m_iProcType & PROC_UNREPAIRABLE) ? false : true; }
-	virtual bool IsRare() const;
 
 	//	Does item data needs to be updated ?
 	bool NeedUpdate() { return m_bNeedUpdate; }

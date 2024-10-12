@@ -13,13 +13,9 @@
 #include "EC_Global.h"
 #include "EC_IvtrFlySword.h"
 #include "EC_Game.h"
-#include "EC_FixedMsg.h"
-#include "EC_GameRun.h"
-#include "EC_HostPlayer.h"
+#include "../CElementClient/EC_FixedMsg.h"
 #include "EC_RTDebug.h"
-#include "elementdataman.h"
-#include "EC_Configs.h"
-#include "EC_UIConfigs.h"
+#include "../CCommon/elementdataman.h"
 
 #define new A_DEBUG_NEW
 
@@ -143,7 +139,6 @@ const wchar_t* CECIvtrFlySword::GetNormalDesc(bool bRepair)
 
 	//	Try to build item description
 	CECStringTab* pDescTab = g_pGame->GetItemDesc();
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
 	
 	int white = ITEMDESC_COL_WHITE;
 	int red = ITEMDESC_COL_RED;
@@ -190,7 +185,7 @@ const wchar_t* CECIvtrFlySword::GetNormalDesc(bool bRepair)
 	//	Level requirement
 	if (m_iLevelReq)
 	{
-		int col = pHost->GetMaxLevelSofar() >= m_iLevelReq ? white : red;
+		int col = white;
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_LEVELREQ), m_iLevelReq);
 	}
 	
@@ -242,10 +237,11 @@ const char * CECIvtrFlySword::GetDropModel()
 	return m_pDBEssence->file_matter;
 }
 
-bool CECIvtrFlySword::IsRare() const
-{ 
-	return CECIvtrEquip::IsRare() || m_Essence.level >= 6;
+int CECIvtrFlySword::GetItemLevel()const
+{
+	return m_Essence.level;
 }
+
 bool CECIvtrFlySword::IsImprovable()
 {
 	return GetDBEssence()->max_improve_level>0 && GetDBEssence()->improve_config[0].require_item_num>0;
@@ -253,9 +249,9 @@ bool CECIvtrFlySword::IsImprovable()
 bool CECIvtrFlySword::CanBeImproved()
 {
 	if(GetDBEssence()->max_improve_level <=0) return false;
-
+	
 	if(m_Essence.improve_level>= GetMaxImproveLevel()) return false;
-
+	
 	return GetDBEssence()->improve_config[m_Essence.improve_level].require_item_num > 0;
 }
 int CECIvtrFlySword::GetMaxImproveLevel()
@@ -267,9 +263,10 @@ int CECIvtrFlySword::GetMaxImproveLevel()
 		if(GetDBEssence()->improve_config[i].require_item_num==0)
 			break;
 	}
-
+	
 	return min(GetDBEssence()->max_improve_level,i);
 }
+
 ///////////////////////////////////////////////////////////////////////////
 //	
 //	Implement CECIvtrWing
@@ -358,7 +355,6 @@ const wchar_t* CECIvtrWing::GetNormalDesc(bool bRepair)
 
 	//	Try to build item description
 	CECStringTab* pDescTab = g_pGame->GetItemDesc();
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
 	
 	int white = ITEMDESC_COL_WHITE;
 	int red = ITEMDESC_COL_RED;
@@ -380,18 +376,18 @@ const wchar_t* CECIvtrWing::GetNormalDesc(bool bRepair)
 	if (1)
 	{
 		CECStringTab* pFixMsg = g_pGame->GetFixedMsgTab();
-		int col = (pHost->GetProfession() == PROF_ARCHOR || pHost->GetProfession() == PROF_ANGEL) ? white : red;
+		int col = white;
 		AddDescText(col, false, pDescTab->GetWideString(ITEMDESC_PROFESSIONREQ));
 		m_strDesc += _AL(" ");
-		AddDescText(col, false, g_pGame->GetGameRun()->GetProfName(PROF_ARCHOR));
+		AddDescText(col, false, pFixMsg->GetWideString(FIXMSG_PROF_ARCHOR));
 		m_strDesc += _AL(" ");
-		AddDescText(col, true, g_pGame->GetGameRun()->GetProfName(PROF_ANGEL));
+		AddDescText(col, true, pFixMsg->GetWideString(FIXMSG_PROF_ANGEL));
 	}
 
 	//	Level requirment
 	if (m_iLevelReq)
 	{
-		int col = pHost->GetMaxLevelSofar() >= m_iLevelReq ? white : red;
+		int col = white;
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_LEVELREQ), m_iLevelReq);
 	}
 
@@ -429,3 +425,4 @@ const char * CECIvtrWing::GetDropModel()
 {
 	return m_pDBEssence->file_matter;
 }
+

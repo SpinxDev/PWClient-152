@@ -13,12 +13,9 @@
 #include "EC_Global.h"
 #include "EC_IvtrWeapon.h"
 #include "EC_Game.h"
-#include "EC_FixedMsg.h"
-#include "EC_GameRun.h"
-#include "EC_HostPlayer.h"
+#include "../CElementClient/EC_FixedMsg.h"
+#include "../CCommon/elementdataman.h"
 #include "EC_RTDebug.h"
-#include "elementdataman.h"
-#include "EC_Configs.h"
 
 #define new A_DEBUG_NEW
 
@@ -206,65 +203,6 @@ const wchar_t* CECIvtrWeapon::GetName()
 	return m_pDBEssence->name;
 }
 
-const wchar_t* CECIvtrWeapon::GetPreviewInfo()
-{
-	int aPEEVals[MAX_PEEINDEX];
-	int aRefines[MAX_REFINEINDEX];
-	memset(aPEEVals, 0, sizeof (aPEEVals));
-	memset(aRefines, 0, sizeof (aRefines));
-	m_strDesc = _AL("");
-	BuildAddOnPropDesc(aPEEVals, aRefines);
-	CECStringTab* pDescTab = g_pGame->GetItemDesc();
-	//	Physical damage
-	if (m_Essence.damage_low || m_Essence.damage_high || aRefines[REFINE_PHYDAMAGE])
-	{
-		AddDescText(ITEMDESC_COL_WHITE, false, pDescTab->GetWideString(ITEMDESC_PHYDAMAGE));
-		AddDescText(ITEMDESC_COL_WHITE, true, _AL(" %d-%d"), m_Essence.damage_low - aPEEVals[PEEI_PHYDAMAGE] + aRefines[REFINE_PHYDAMAGE], 
-			m_Essence.damage_high - aPEEVals[PEEI_PHYDAMAGE] - aPEEVals[PEEI_MAX_PHYDAMAGE] + aRefines[REFINE_PHYDAMAGE]);
-	}
-	
-	//	Magic damage
-	if (m_Essence.magic_damage_low || m_Essence.magic_damage_high || aRefines[REFINE_MAGICDAMAGE])
-	{
-		AddDescText(ITEMDESC_COL_WHITE, false, pDescTab->GetWideString(ITEMDESC_MAGICDAMAGE));
-		AddDescText(ITEMDESC_COL_WHITE, true, _AL(" %d-%d"), m_Essence.magic_damage_low - aPEEVals[PEEI_MAGICDAMAGE] + aRefines[REFINE_MAGICDAMAGE], 
-			m_Essence.magic_damage_high - aPEEVals[PEEI_MAGICDAMAGE] - aPEEVals[PEEI_MAX_MAGICDAMAGE] + aRefines[REFINE_MAGICDAMAGE]);
-	}
-
-	return m_strDesc;
-}
-
-bool CECIvtrWeapon::GetRefineEffectFor(ACString & strEffect, const RefineEffect &rhs)
-{
-	strEffect.Empty();
-	if (!m_bNeedUpdate){
-		CECStringTab* pDescTab = g_pGame->GetItemDesc();
-		switch (rhs.m_refineIndex)
-		{
-		case REFINE_PHYDAMAGE:
-			strEffect.Format(_AL("%s%s %d-%d %s(+%d)")
-				, rhs.GetClrAttribute()
-				, pDescTab->GetWideString(ITEMDESC_PHYDAMAGE)
-				, m_Essence.damage_low - rhs.m_aPEEVals[PEEI_PHYDAMAGE] + rhs.m_aRefines[REFINE_PHYDAMAGE] + rhs.GetIncEffect()
-				, m_Essence.damage_high - rhs.m_aPEEVals[PEEI_PHYDAMAGE] - rhs.m_aPEEVals[PEEI_MAX_PHYDAMAGE] + rhs.m_aRefines[REFINE_PHYDAMAGE] + rhs.GetIncEffect()
-				, rhs.GetClrEffect()
-				, rhs.GetIncEffect());
-			break;
-			
-		case REFINE_MAGICDAMAGE:
-			strEffect.Format(_AL("%s%s %d-%d %s(+%d)")
-				, rhs.GetClrAttribute()
-				, pDescTab->GetWideString(ITEMDESC_MAGICDAMAGE)
-				, m_Essence.magic_damage_low - rhs.m_aPEEVals[PEEI_MAGICDAMAGE] + rhs.m_aRefines[REFINE_MAGICDAMAGE] + rhs.GetIncEffect()
-				, m_Essence.magic_damage_high - rhs.m_aPEEVals[PEEI_MAGICDAMAGE] - rhs.m_aPEEVals[PEEI_MAX_MAGICDAMAGE] + rhs.m_aRefines[REFINE_MAGICDAMAGE] + rhs.GetIncEffect()
-				, rhs.GetClrEffect()
-				, rhs.GetIncEffect());
-			break;
-		}
-	}
-	return !strEffect.IsEmpty();
-}
-
 //	Get item description text
 const wchar_t* CECIvtrWeapon::GetNormalDesc(bool bRepair)
 {
@@ -284,7 +222,6 @@ const wchar_t* CECIvtrWeapon::GetNormalDesc(bool bRepair)
 	m_strDesc = _AL("");
 
 	CECStringTab* pDescTab = g_pGame->GetItemDesc();
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
 	
 	int lblue = ITEMDESC_COL_LIGHTBLUE;
 	int white = ITEMDESC_COL_WHITE;
@@ -375,17 +312,14 @@ const wchar_t* CECIvtrWeapon::GetNormalDesc(bool bRepair)
 	//	Level requirment
 	if (m_iLevelReq)
 	{
-		col = pHost->GetMaxLevelSofar() >= m_iLevelReq ? white : red;
+		col = white;
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_LEVELREQ), m_iLevelReq);
 	}
 	
 	//	Strength requirment
 	if (m_iStrengthReq)
 	{
-		if (pHost->GetExtendProps().bs.strength < m_iStrengthReq)
-			col = red;
-		else
-			col = (dwPEE & PEE_STRENGTHREQ) ? lblue : white;
+		col = (dwPEE & PEE_STRENGTHREQ) ? lblue : white;
 		
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_STRENGTHREQ), m_iStrengthReq);
 	}
@@ -393,10 +327,7 @@ const wchar_t* CECIvtrWeapon::GetNormalDesc(bool bRepair)
 	//	Agility requirment
 	if (m_iAgilityReq)
 	{
-		if (pHost->GetExtendProps().bs.agility < m_iAgilityReq)
-			col = red;
-		else
-			col = (dwPEE & PEE_AGILITYREQ) ? lblue : white;
+		col = (dwPEE & PEE_AGILITYREQ) ? lblue : white;
 
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_AGILITYREQ), m_iAgilityReq);
 	}
@@ -404,10 +335,7 @@ const wchar_t* CECIvtrWeapon::GetNormalDesc(bool bRepair)
 	//	Vitality requirment
 	if (m_iVitalityReq)
 	{
-		if (pHost->GetExtendProps().bs.vitality < m_iVitalityReq)
-			col = red;
-		else
-			col = (dwPEE & PEE_VITALITYREQ) ? lblue : white;
+		col = (dwPEE & PEE_VITALITYREQ) ? lblue : white;
 
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_VITALITYREQ), m_iVitalityReq);
 	}
@@ -415,10 +343,7 @@ const wchar_t* CECIvtrWeapon::GetNormalDesc(bool bRepair)
 	//	Energy requirment
 	if (m_iEnergyReq)
 	{
-		if (pHost->GetExtendProps().bs.energy < m_iEnergyReq)
-			col = red;
-		else
-			col = (dwPEE & PEE_ENERGYREQ) ? lblue : white;
+		col = (dwPEE & PEE_ENERGYREQ) ? lblue : white;
 
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_ENERGYREQ), m_iEnergyReq);
 	}
@@ -494,19 +419,10 @@ int CECIvtrWeapon::GetRefineMaterialNum()
 	return m_pDBEssence->material_need;
 }
 
-int CECIvtrWeapon::GetRefineAddOn()
-{
-	return m_pDBEssence->levelup_addon;
-}
 //	Get drop model for shown
 const char * CECIvtrWeapon::GetDropModel()
 {
 	return m_pDBEssence->file_matter;
-}
-
-bool CECIvtrWeapon::IsRare() const
-{ 
-	return CECIvtrEquip::IsRare() || m_Essence.weapon_level >= 6;
 }
 
 int CECIvtrWeapon::GetItemLevel() const

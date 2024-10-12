@@ -76,7 +76,7 @@
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
@@ -109,7 +109,7 @@ xcopy ".\*.h" "..\include\zlib\" /Y/D/Q/R
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>.\Release\ZLibLib.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>

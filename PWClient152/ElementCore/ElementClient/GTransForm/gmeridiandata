@@ -1,0 +1,136 @@
+#ifndef __GNET_GMERIDIANDATA_RPCDATA
+#define __GNET_GMERIDIANDATA_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GMeridianData : public GNET::Rpc::Data
+	{
+	public:
+		int meridian_level;
+		int lifegate_times;
+		int deathgate_times;
+		int free_refine_times;
+		int paid_refine_times;
+		int player_login_time;
+		int continu_login_days;
+		int trigrams_map1;
+		int trigrams_map2;
+		int trigrams_map3;
+		int reserved1;
+		int reserved2;
+		int reserved3;
+		int reserved4;
+
+	public:
+		GMeridianData (int l_meridian_level = 0,int l_lifegate_times = 0,int l_deathgate_times = 0
+			,int l_free_refine_times = 0,int l_paid_refine_times = 0,int l_player_login_time = 0
+			,int l_continu_login_days = 0,int l_trigrams_map1 = 0,int l_trigrams_map2 = 0
+			,int l_trigrams_map3 = 0,int l_reserved1 = 0,int l_reserved2 = 0
+			,int l_reserved3 = 0,int l_reserved4 = 0)
+			: meridian_level(l_meridian_level),lifegate_times(l_lifegate_times),deathgate_times(l_deathgate_times)
+			,free_refine_times(l_free_refine_times),paid_refine_times(l_paid_refine_times),player_login_time(l_player_login_time)
+			,continu_login_days(l_continu_login_days),trigrams_map1(l_trigrams_map1),trigrams_map2(l_trigrams_map2)
+			,trigrams_map3(l_trigrams_map3),reserved1(l_reserved1),reserved2(l_reserved2)
+			,reserved3(l_reserved3),reserved4(l_reserved4)
+		{
+		}
+
+		GMeridianData(const GMeridianData &rhs)
+			: meridian_level(rhs.meridian_level),lifegate_times(rhs.lifegate_times),deathgate_times(rhs.deathgate_times),
+			free_refine_times(rhs.free_refine_times),paid_refine_times(rhs.paid_refine_times),player_login_time(rhs.player_login_time),
+			continu_login_days(rhs.continu_login_days),trigrams_map1(rhs.trigrams_map1),trigrams_map2(rhs.trigrams_map2),
+			trigrams_map3(rhs.trigrams_map3),reserved1(rhs.reserved1),reserved2(rhs.reserved2),
+			reserved3(rhs.reserved3),reserved4(rhs.reserved4) { }
+
+		Rpc::Data *Clone() const { return new GMeridianData(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GMeridianData *r = dynamic_cast<const GMeridianData *>(&rhs);
+			if (r && r != this)
+			{
+				meridian_level = r->meridian_level;
+				lifegate_times = r->lifegate_times;
+				deathgate_times = r->deathgate_times;
+				free_refine_times = r->free_refine_times;
+				paid_refine_times = r->paid_refine_times;
+				player_login_time = r->player_login_time;
+				continu_login_days = r->continu_login_days;
+				trigrams_map1 = r->trigrams_map1;
+				trigrams_map2 = r->trigrams_map2;
+				trigrams_map3 = r->trigrams_map3;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+				reserved4 = r->reserved4;
+			}
+			return *this;
+		}
+
+		GMeridianData& operator = (const GMeridianData &rhs)
+		{
+			const GMeridianData *r = &rhs;
+			if (r && r != this)
+			{
+				meridian_level = r->meridian_level;
+				lifegate_times = r->lifegate_times;
+				deathgate_times = r->deathgate_times;
+				free_refine_times = r->free_refine_times;
+				paid_refine_times = r->paid_refine_times;
+				player_login_time = r->player_login_time;
+				continu_login_days = r->continu_login_days;
+				trigrams_map1 = r->trigrams_map1;
+				trigrams_map2 = r->trigrams_map2;
+				trigrams_map3 = r->trigrams_map3;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+				reserved4 = r->reserved4;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << meridian_level;
+			os << lifegate_times;
+			os << deathgate_times;
+			os << free_refine_times;
+			os << paid_refine_times;
+			os << player_login_time;
+			os << continu_login_days;
+			os << trigrams_map1;
+			os << trigrams_map2;
+			os << trigrams_map3;
+			os << reserved1;
+			os << reserved2;
+			os << reserved3;
+			os << reserved4;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> meridian_level;
+			os >> lifegate_times;
+			os >> deathgate_times;
+			os >> free_refine_times;
+			os >> paid_refine_times;
+			os >> player_login_time;
+			os >> continu_login_days;
+			os >> trigrams_map1;
+			os >> trigrams_map2;
+			os >> trigrams_map3;
+			os >> reserved1;
+			os >> reserved2;
+			os >> reserved3;
+			os >> reserved4;
+			return os;
+		}
+
+	};
+};
+#endif

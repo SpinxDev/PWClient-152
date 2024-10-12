@@ -109,7 +109,7 @@
       <Culture>0x0809</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
@@ -140,7 +140,7 @@
       <Culture>0x0809</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(OutDir)png_u.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
@@ -171,7 +171,7 @@
       <Culture>0x0809</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(OutDir)png.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>
@@ -200,7 +200,7 @@
       <Culture>0x0809</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(OutDir)png_ud.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <Bscmake>

@@ -208,7 +208,7 @@ xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
     </ResourceCompile>
     <Lib>
       <AdditionalDependencies>AngelicaCommon_s.lib;AngelicaFile_s.lib;AngelicaMedia_s.lib;Async.lib;ogg_static.lib;strmbase.lib;vorbis_static.lib;vorbisfile_static.lib;ZLibLib.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dsound.lib;dinput8.lib;DxErr.lib;winmm.lib;mpg123lib.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>..\TempOutput;..\3rdSDK\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -247,7 +247,7 @@ xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
     </ResourceCompile>
     <Lib>
       <AdditionalDependencies>AngelicaCommon.lib;AngelicaFile.lib;AngelicaMedia.lib;Async.lib;ogg_static.lib;strmbase.lib;vorbis_static.lib;vorbisfile_static.lib;ZLibLib.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dsound.lib;dinput8.lib;DxErr.lib;winmm.lib;mpg123lib.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>..\TempOutput;..\3rdSDK\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -286,7 +286,7 @@ xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
     </ResourceCompile>
     <Lib>
       <AdditionalDependencies>AngelicaCommon_su.lib;AngelicaFile_su.lib;AngelicaMedia_su.lib;Async_u.lib;ogg_static.lib;strmbase_u.lib;vorbis_static.lib;vorbisfile_static.lib;ZLibLib.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dsound.lib;dinput8.lib;DxErr.lib;winmm.lib;mpg123lib.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>..\TempOutput;..\3rdSDK\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -325,7 +325,7 @@ xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
     </ResourceCompile>
     <Lib>
       <AdditionalDependencies>AngelicaCommon_d.lib;AngelicaFile_d.lib;AngelicaMedia_d.lib;Async_d.lib;ogg_d.lib;strmbase_d.lib;vorbis_d.lib;ZLibLib_d.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dsound.lib;dinput8.lib;DxErr.lib;winmm.lib;mpg123lib_d.lib;shlwapi.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>..\TempOutput;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\;$(SolutionDir)Libraries\DXSDK\Lib\Win32\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -364,7 +364,7 @@ xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
     </ResourceCompile>
     <Lib>
       <AdditionalDependencies>AngelicaCommon_sud.lib;AngelicaFile_sud.lib;AngelicaMedia_sud.lib;Async_ud.lib;ogg_static_d.lib;strmbase_ud.lib;vorbis_static_d.lib;vorbisfile_static_d.lib;ZLibLib_d.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dsound.lib;dinput8.lib;DxErr.lib;winmm.lib;mpg123lib_d.lib;shlwapi.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>..\TempOutput;..\3rdSDK\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -405,7 +405,7 @@ dbgrelease.bat
     </ResourceCompile>
     <Lib>
       <AdditionalDependencies>AngelicaCommon_dr.lib;AngelicaFile_dr.lib;AngelicaMedia_dr.lib;Async_u.lib;ogg_static.lib;strmbase_u.lib;vorbis_static.lib;vorbisfile_static.lib;ZLibLib.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dsound.lib;dinput8.lib;DxErr.lib;winmm.lib;mpg123lib.lib;gpasdk_s.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>..\TempOutput;..\3rdSDK\Lib;..\Output\3rdSDK\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -444,7 +444,7 @@ xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
     </ResourceCompile>
     <Lib>
       <AdditionalDependencies>AngelicaCommon_sd.lib;AngelicaFile_sd.lib;AngelicaMedia_sd.lib;Async_d.lib;ogg_static_d.lib;strmbase_d.lib;vorbis_static_d.lib;vorbisfile_static_d.lib;ZLibLib_d.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dsound.lib;dinput8.lib;DxErr.lib;winmm.lib;mpg123lib_d.lib;shlwapi.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>..\TempOutput;..\3rdSDK\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -483,7 +483,7 @@ xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
     </ResourceCompile>
     <Lib>
       <AdditionalDependencies>AngelicaCommon_u.lib;AngelicaFile_u.lib;AngelicaMedia_u.lib;Async_u.lib;ogg_static.lib;strmbase_u.lib;vorbis_static.lib;vorbisfile_static.lib;ZLibLib.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dsound.lib;dinput8.lib;DxErr.lib;winmm.lib;mpg123lib.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>..\TempOutput;..\3rdSDK\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
@@ -522,7 +522,7 @@ xcopy .\header\*.h ..\Output\a3dsdk\include\ /Y /D /R
     </ResourceCompile>
     <Lib>
       <AdditionalDependencies>AngelicaCommon_ud.lib;AngelicaFile_ud.lib;AngelicaMedia_ud.lib;Async_ud.lib;ogg_static_d.lib;strmbase_ud.lib;vorbis_static_d.lib;vorbisfile_static_d.lib;ZLibLib_d.lib;dxguid.lib;d3d9.lib;d3dx9.lib;dsound.lib;dinput8.lib;DxErr.lib;winmm.lib;mpg123lib_d.lib;shlwapi.lib;dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\$(ProjectName)_d$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>..\TempOutput;..\3rdSDK\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>

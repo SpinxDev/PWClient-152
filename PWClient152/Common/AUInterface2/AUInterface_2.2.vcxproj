@@ -149,7 +149,7 @@
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalDependencies>Version.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
@@ -191,7 +191,7 @@ copy *.h "..\..\Angelica2.2\output\aui\include\"
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalDependencies>Version.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
@@ -231,7 +231,7 @@ copy *.h "..\..\Angelica2.2\output\aui\include\"
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalDependencies>Version.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
@@ -273,7 +273,7 @@ copy *.h "..\..\Angelica2.2\output\aui\include\"
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalDependencies>Version.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
@@ -312,7 +312,7 @@ copy *.h "..\..\Angelica2.2\output\aui\include\"</Command>
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalDependencies>Version.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
@@ -353,7 +353,7 @@ copy *.h "..\..\Angelica2.2\output\aui\include\"
       <Culture>0x0804</Culture>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d$(TargetExt)</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalDependencies>Version.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>

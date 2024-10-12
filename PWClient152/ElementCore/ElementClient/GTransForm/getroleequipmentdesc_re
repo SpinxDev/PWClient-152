@@ -1,0 +1,47 @@
+	public:
+		char retcode;
+		int zoneid;
+		__int64 id;
+		unsigned int crc;
+		Octets desc;
+		enum { PROTOCOL_TYPE = PROTOCOL_GETROLEEQUIPMENTDESC_RE };
+	public:
+		GetRoleEquipmentDesc_Re() { type = PROTOCOL_GETROLEEQUIPMENTDESC_RE; }
+		GetRoleEquipmentDesc_Re(void*) : Protocol(PROTOCOL_GETROLEEQUIPMENTDESC_RE) { }
+		GetRoleEquipmentDesc_Re (char l_retcode,int l_zoneid,__int64 l_id,
+			unsigned int l_crc,const Octets& l_desc)
+			 : retcode(l_retcode),zoneid(l_zoneid),id(l_id)
+			,crc(l_crc),desc(l_desc)
+		{
+			type = PROTOCOL_GETROLEEQUIPMENTDESC_RE;
+		}
+
+		GetRoleEquipmentDesc_Re(const GetRoleEquipmentDesc_Re &rhs)
+			: Protocol(rhs),retcode(rhs.retcode),zoneid(rhs.zoneid),id(rhs.id)
+			,crc(rhs.crc),desc(rhs.desc) { }
+
+		GNET::Protocol *Clone() const { return new GetRoleEquipmentDesc_Re(*this); }
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << retcode;
+			os << zoneid;
+			os << id;
+			os << crc;
+			os << desc;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> retcode;
+			os >> zoneid;
+			os >> id;
+			os >> crc;
+			os >> desc;
+			return os;
+		}
+
+		int PriorPolicy( ) const { return 1; }
+
+		bool SizePolicy(size_t size) const { return size <= 204800; }

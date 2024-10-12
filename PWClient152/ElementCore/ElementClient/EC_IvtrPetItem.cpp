@@ -13,15 +13,10 @@
 #include "EC_Global.h"
 #include "EC_IvtrPetItem.h"
 #include "EC_Game.h"
-#include "EC_FixedMsg.h"
+#include "../CElementClient/EC_FixedMsg.h"
 #include "EC_RTDebug.h"
-#include "EC_GameRun.h"
-#include "EC_PetCorral.h"
-#include "EC_HostPlayer.h"
-#include "EC_UIManager.h"
-#include "elementdataman.h"
-#include "ElementSkill.h"
-#include "EC_Configs.h"
+#include "../CCommon/elementdataman.h"
+#include "EC_GPDataType.h"
 
 #define new A_DEBUG_NEW
 
@@ -79,7 +74,6 @@ CECIvtrPetEgg::CECIvtrPetEgg(int tid, int expire_date) : CECIvtrItem(tid, expire
 			m_pEvoPetEssence = (PET_ESSENCE*)pDB->get_data_ptr(pTempDBEssence->id_pet, ID_SPACE_ESSENCE, DataType);		
 	}
 
-
 	m_iPileLimit	= m_pDBEssence->pile_num_max;
 	m_iPrice		= m_pDBEssence->price;
 	m_iShopPrice	= m_pDBEssence->shop_price;
@@ -134,7 +128,7 @@ bool CECIvtrPetEgg::SetItemInfo(BYTE* pInfoData, int iDataLen)
 		if (m_Essence.name_len)
 		{
 			m_strName = AWString(m_Essence.name, m_Essence.name_len / sizeof (wchar_t));
-			g_pGame->GetGameRun()->GetUIManager()->FilterBadWords(m_strName);
+			g_pGame->FilterBadWords(m_strName);
 		}
 
 		m_aSkills.SetSize(m_Essence.skill_count, 4);
@@ -186,6 +180,11 @@ const wchar_t* CECIvtrPetEgg::GetName()
 		return m_pDBEssence->name;
 }
 
+int CECIvtrPetEgg::GetItemLevel()const
+{
+	return m_Essence.level;
+}
+
 //	Get item description text
 const wchar_t* CECIvtrPetEgg::GetNormalDesc(bool bRepair)
 {
@@ -212,7 +211,6 @@ const wchar_t* CECIvtrPetEgg::GetRidingPetDesc(bool bRepair)
 
 	//	Try to build item description
 	CECStringTab* pDescTab = g_pGame->GetItemDesc();
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
 	
 	int white = ITEMDESC_COL_WHITE;
 	int red = ITEMDESC_COL_RED;
@@ -241,8 +239,8 @@ const wchar_t* CECIvtrPetEgg::GetRidingPetDesc(bool bRepair)
 		else
 		{
 			A3DCOLOR clr;
-			if (!CECPlayer::RIDINGPET::GetColor(m_Essence.color, clr))
-				clr = CECPlayer::RIDINGPET::GetDefaultColor();
+			if (!CECGame::GetColor(m_Essence.color, clr))
+				clr = CECGame::GetDefaultColor();
 			ACString strColor;
 			strColor.Format(_AL("^%02x%02x%02x"), A3DCOLOR_GETRED(clr), A3DCOLOR_GETGREEN(clr), A3DCOLOR_GETBLUE(clr));
 			
@@ -272,7 +270,7 @@ const wchar_t* CECIvtrPetEgg::GetRidingPetDesc(bool bRepair)
 	int iLevelReq = a_Max((int)m_Essence.level, m_Essence.req_level);
 	if (iLevelReq)
 	{
-		int col = pHost->GetMaxLevelSofar() >= iLevelReq ? white : red;
+		int col = white;
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_LEVELREQ), iLevelReq);
 	}
 
@@ -295,7 +293,6 @@ const wchar_t* CECIvtrPetEgg::GetCombatPetDesc(bool bRepair)
 
 	//	Try to build item description
 	CECStringTab* pDescTab = g_pGame->GetItemDesc();
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
 	
 	int white = ITEMDESC_COL_WHITE;
 	int red = ITEMDESC_COL_RED;
@@ -361,7 +358,7 @@ const wchar_t* CECIvtrPetEgg::GetCombatPetDesc(bool bRepair)
 	int iLevelReq = a_Max((int)m_Essence.level, m_Essence.req_level);
 	if (iLevelReq)
 	{
-		int col = pHost->GetMaxLevelSofar() >= iLevelReq ? white : red;
+		int col = white;
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_LEVELREQ), iLevelReq);
 	}
 
@@ -378,7 +375,6 @@ const wchar_t* CECIvtrPetEgg::GetCombatPetDesc(bool bRepair)
 	{
 		AddDescText(ITEMDESC_COL_WHITE, true, pDescTab->GetWideString(ITEMDESC_PET_EVO_NAME), m_pEvoPetEssence->name);
 	}
-
 	//	Price
 	AddPriceDesc(white, bRepair);
 
@@ -413,7 +409,6 @@ const wchar_t* CECIvtrPetEgg::GetEvolutionPetDesc(bool bRepair)
 	AddDescText(ITEMDESC_COL_WHITE, true, pDescTab->GetWideString(ITEMDESC_PET_HP_INHERIT), m_EvoProp.r_hp);
 	AddDescText(ITEMDESC_COL_WHITE, true, pDescTab->GetWideString(ITEMDESC_PET_ATKLVL_INHERIT), m_EvoProp.r_atk_lvl);
 	AddDescText(ITEMDESC_COL_WHITE, true, pDescTab->GetWideString(ITEMDESC_PET_DEFLVL_INHERIT), m_EvoProp.r_def_lvl);
-
 	return m_strDesc;
 }
 
@@ -519,30 +514,30 @@ const wchar_t* CECIvtrPetFood::GetName()
 }
 
 //	Get item cool time
-int CECIvtrPetFood::GetCoolTime(int* piMax/* NULL */)
-{
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
-	if (!pHost)
-		return 0;
-
-	int iTime = pHost->GetCoolTime(GP_CT_FEED_PET, piMax);
-	return iTime;
-}
+//int CECIvtrPetFood::GetCoolTime(int* piMax/* NULL */)
+//{
+//	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
+//	if (!pHost)
+//		return 0;
+//
+//	int iTime = pHost->GetCoolTime(GP_CT_FEED_PET, piMax);
+//	return iTime;
+//}
 
 //	Check item use condition
-bool CECIvtrPetFood::CheckUseCondition()
-{
-	CECPetData* pPet = g_pGame->GetGameRun()->GetHostPlayer()->GetPetCorral()->GetActivePet();
-	if (!pPet)
-		return false;
-
-	DATA_TYPE DataType;
-	const PET_ESSENCE* pPetEssence = (const PET_ESSENCE*)g_pGame->GetElementDataMan()->get_data_ptr(pPet->GetTemplateID(), ID_SPACE_ESSENCE, DataType);
-	if (!pPetEssence)
-		return false;
-
-	return (m_pDBEssence->food_type & pPetEssence->food_mask) ? true : false;
-}
+//bool CECIvtrPetFood::CheckUseCondition()
+//{
+//	CECPetData* pPet = g_pGame->GetGameRun()->GetHostPlayer()->GetPetCorral()->GetActivePet();
+//	if (!pPet)
+//		return false;
+//
+//	DATA_TYPE DataType;
+//	const PET_ESSENCE* pPetEssence = (const PET_ESSENCE*)g_pGame->GetElementDataMan()->get_data_ptr(pPet->GetTemplateID(), ID_SPACE_ESSENCE, DataType);
+//	if (!pPetEssence)
+//		return false;
+//
+//	return (m_pDBEssence->food_type & pPetEssence->food_mask) ? true : false;
+//}
 
 //	Get item description text
 const wchar_t* CECIvtrPetFood::GetNormalDesc(bool bRepair)

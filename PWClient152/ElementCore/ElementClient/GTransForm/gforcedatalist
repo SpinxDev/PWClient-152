@@ -1,0 +1,83 @@
+#ifndef __GNET_GFORCEDATALIST_RPCDATA
+#define __GNET_GFORCEDATALIST_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "gforcedata"
+
+namespace GNET
+{
+	class GForceDataList : public GNET::Rpc::Data
+	{
+	public:
+		int cur_force_id;
+		std::vector<GForceData> list;
+		int reserved1;
+		int reserved2;
+		int reserved3;
+
+	public:
+		GForceDataList (int l_cur_force_id = 0,const std::vector<GForceData>& l_list = std::vector<GForceData>(),int l_reserved1 = 0
+			,int l_reserved2 = 0,int l_reserved3 = 0)
+			: cur_force_id(l_cur_force_id),list(l_list),reserved1(l_reserved1)
+			,reserved2(l_reserved2),reserved3(l_reserved3)
+		{
+		}
+
+		GForceDataList(const GForceDataList &rhs)
+			: cur_force_id(rhs.cur_force_id),list(rhs.list),reserved1(rhs.reserved1),
+			reserved2(rhs.reserved2),reserved3(rhs.reserved3) { }
+
+		Rpc::Data *Clone() const { return new GForceDataList(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GForceDataList *r = dynamic_cast<const GForceDataList *>(&rhs);
+			if (r && r != this)
+			{
+				cur_force_id = r->cur_force_id;
+				list = r->list;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+			}
+			return *this;
+		}
+
+		GForceDataList& operator = (const GForceDataList &rhs)
+		{
+			const GForceDataList *r = &rhs;
+			if (r && r != this)
+			{
+				cur_force_id = r->cur_force_id;
+				list = r->list;
+				reserved1 = r->reserved1;
+				reserved2 = r->reserved2;
+				reserved3 = r->reserved3;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << cur_force_id;
+			os << list;
+			os << reserved1;
+			os << reserved2;
+			os << reserved3;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> cur_force_id;
+			os >> list;
+			os >> reserved1;
+			os >> reserved2;
+			os >> reserved3;
+			return os;
+		}
+
+	};
+};
+#endif

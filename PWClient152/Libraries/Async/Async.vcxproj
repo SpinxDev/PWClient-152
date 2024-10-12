@@ -99,7 +99,7 @@
       <CallingConvention>StdCall</CallingConvention>
     </ClCompile>
     <Lib>
-      <OutputFile>$(OutDir)$(ProjectName)_ud.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
     </Lib>
     <PostBuildEvent>
       <Command>xcopy "$(TargetDir)*.lib" "..\lib\" /QDRY
@@ -120,7 +120,7 @@ xcopy ".\include\*.h" "..\include\dshow\" /QDRY
       <CallingConvention>StdCall</CallingConvention>
     </ClCompile>
     <Lib>
-      <OutputFile>$(OutDir)$(ProjectName)_u.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
     </Lib>
     <PostBuildEvent>
       <Command>xcopy "$(TargetDir)*.lib" "..\lib\" /QDRY
@@ -143,7 +143,7 @@ xcopy ".\include\*.h" "..\include\dshow\" /QDRY
       <CallingConvention>StdCall</CallingConvention>
     </ClCompile>
     <Lib>
-      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d.lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
     </Lib>
     <PostBuildEvent>
       <Command>xcopy "$(TargetDir)*.lib" "..\lib\" /QDRY
@@ -164,7 +164,7 @@ xcopy ".\include\*.h" "..\include\dshow\" /QDRY
       <CallingConvention>StdCall</CallingConvention>
     </ClCompile>
     <Lib>
-      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+      <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\$(ProjectName)_d$(TargetExt)</OutputFile>
     </Lib>
     <PostBuildEvent>
       <Command>xcopy "$(TargetDir)*.lib" "..\lib\" /QDRY

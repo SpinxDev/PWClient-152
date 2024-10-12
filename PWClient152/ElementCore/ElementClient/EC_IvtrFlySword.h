@@ -13,7 +13,7 @@
 #pragma once
 
 #include "EC_IvtrEquip.h"
-#include "EC_IvtrTypes.h"
+#include "../CElementClient/EC_IvtrTypes.h"
 
 ///////////////////////////////////////////////////////////////////////////
 //	
@@ -68,13 +68,13 @@ public:		//	Operations
 	virtual CECIvtrItem* Clone() { return new CECIvtrFlySword(*this); }
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
-	//	Whether a rare item
-	virtual bool IsRare() const;
 
 	//	Get raw repair cost
 	virtual float GetRawRepairCost() { return 0.0f; }
 	//	Get repair cost
 	virtual int GetRepairCost() { return 0; }
+
+	virtual int GetItemLevel() const;
 
 	//	Get current time
 	int GetCurTime() { return m_Essence.cur_time; }

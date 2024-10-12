@@ -1,0 +1,64 @@
+#ifndef __GNET_GPET_RPCDATA
+#define __GNET_GPET_RPCDATA
+
+#include "rpcdefs.h"
+
+
+namespace GNET
+{
+	class GPet : public GNET::Rpc::Data
+	{
+	public:
+		int index;
+		Octets data;
+
+	public:
+		GPet (int l_index = 0)
+			: index(l_index)
+		{
+		}
+
+		GPet(const GPet &rhs)
+			: index(rhs.index),data(rhs.data) { }
+
+		Rpc::Data *Clone() const { return new GPet(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GPet *r = dynamic_cast<const GPet *>(&rhs);
+			if (r && r != this)
+			{
+				index = r->index;
+				data = r->data;
+			}
+			return *this;
+		}
+
+		GPet& operator = (const GPet &rhs)
+		{
+			const GPet *r = &rhs;
+			if (r && r != this)
+			{
+				index = r->index;
+				data = r->data;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << index;
+			os << data;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> index;
+			os >> data;
+			return os;
+		}
+
+	};
+};
+#endif

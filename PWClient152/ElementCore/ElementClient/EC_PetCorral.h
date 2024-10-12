@@ -13,10 +13,8 @@
 #pragma once
 
 #include "AAssist.h"
-#include "EC_RoleTypes.h"
+#include "../CElementClient/EC_RoleTypes.h"
 #include "EC_GPDataType.h"
-#include "EC_Counter.h"
-
 #include <vector.h>
 
 ///////////////////////////////////////////////////////////////////////////
@@ -35,7 +33,6 @@
 namespace S2C
 {
 	struct info_pet;
-	struct cmd_pet_room;
 }
 
 struct PET_ESSENCE;
@@ -156,17 +153,8 @@ public:		//	Operations
 	int GetMP() const { return m_iMP; }
 	void SetMP(int iMP) { m_iMP = iMP; }
 
-	//	Set skill cool time
-	void SetSkillCoolTime(int iCoolIdx, int iTime);
-
-	//	Get skill cool time
-	int GetSkillCoolTime(CECPetData::SKILLTYPE iType,int iSkillIdx, int* piMax=NULL);
-
 	//	Check whether pet is dead
 	bool IsDead() { return m_fHPFactor ? false : true; }
-
-	//	Calculate max hp of pet
-	int CalcMaxHP();
 	
 	//	Get skill by index
 	const PETSKILL* GetSkill(SKILLTYPE iType,int n);	
@@ -188,26 +176,37 @@ public:		//	Operations
 	bool IsEvolutionPet() const;
 
 	int	 GetAtkRation() const	{return		m_iAtkRation;}
+	int	 GetMaxAtkRation() const;
 	int	 GetDefRation() const	{ return	m_iDefRation;}
+	int	 GetMaxDefRation() const;
 	int	 GetHpRation() const	{ return	m_iHpRation;}
+	int	 GetMaxHpRation() const;
 	int	 GetAtkLvlRation() const { return	m_iAtkLvlRation;}
+	int	 GetMaxAtkLvlRation() const;
 	int	 GetDefLvlRation() const { return	m_iDefLvlRation;}
+	int	 GetMaxDefLvlRation() const;
 	int	 GetNatureID() const		{ return	m_iNature;}
-	ACString GetNature();
+	AWString GetNature();
 
-	//  添加自动释放技能
-	void AddAutoSkill(int skill_id);
-	void CastAutoSkill();
-	void OnAutoCastOver(int skill_id);
-	void OnPetDead();
+	const PET_ESSENCE *GetDBEssence()const{return m_pDBEssence;}
 
-	bool CanEvolution()const ;
-	int GetEvolutionID() const ;
-	static int GetEvolutionID(int pet_tid);
+	AWString GetFoodStr()const;
+	AWString GetMoveSpeedStr()const;
+	AWString GetHungerStr()const;
 
-	PET_ESSENCE* GetPetEssence() { return m_pDBEssence;}
+	int	GetLoyalty()const;
+	AWString GetLoyaltyStr()const;
 
-	int GetMaxExp();
+	int GetLevelRequirement()const;
+	int GetMaxHP()const;
+	int GetAttack()const;
+	int GetPhyicDefence()const;
+	int GetMagicDefence()const;
+	int GetDefiniton()const;
+	int GetEvade()const;
+
+	AWString GetAttackSpeedStr()const;
+	AWString GetInhabitTypeStr()const;
 
 protected:	//	Attributes
 
@@ -234,10 +233,6 @@ protected:	//	Attributes
 	abase::vector<int> m_vecNorSkillIndex; // 防止性格技能和普通技能顺序混乱的情况，保存技能在 m_aSkills里的序号
 	abase::vector<int> m_vecDynSkillIndex;
 	int			m_iSpecialSkillIndex; // 保存专属技能在m_aSkills里的序号，只有进化宠有一个此技能
-
-	CECCounter	m_cntAutoSkill;
-	abase::vector<int> m_aAutoSkills;
-
 	ROLEEXTPROP m_ExtProps;
 	PET_ESSENCE*	m_pDBEssence;
 
@@ -247,177 +242,11 @@ protected:	//	Attributes
 	int			m_iAtkLvlRation;
 	int			m_iDefLvlRation;
 	int			m_iNature;
-
 protected:	//	Operations
 
 	//	Tick routine
 	bool Tick(DWORD dwDeltaTime);
 };
-
-//	植物宠数据
-//
-struct CECPlantPetData
-{
-	CECPlantPetData();
-	
-	void Init(const S2C::cmd_summon_plant_pet &rhs);
-	void Info(const S2C::cmd_plant_pet_hp_notify &rhs);
-	void Tick(DWORD dwDeltaTime);
-
-	int	GetLifeTime()const {return m_lifeTime * 1000;}		//	总存活时间（毫秒）
-	int GetLifeTimeLeft()const{ return m_lifeTimeLeft; }	//	剩余存活时间（毫秒）
-
-	int	m_tid;			//	宠物的模板ID
-	int	m_nid;			//	宠物的世界ID
-	int m_lifeTime;		//	存活时间（秒数），0为永久
-	int	m_lifeTimeLeft;	//	存活时间倒计时（毫秒数）
-	float m_HPFactor;	//	当前 HP 占总 HP 的比例
-	int	m_HP;			//	当前 HP
-	float m_MPFactor;	//	当前 MP 占总 MP 的比例
-	int m_MP;			//	当前 MP
-};
-
-///////////////////////////////////////////////////////////////////////////
-//	
-//	Class CECPetCorral
-//	
-///////////////////////////////////////////////////////////////////////////
-
-class CECPetCorral
-{
-public:		//	Types
-
-	enum
-	{
-		MAX_SLOTNUM	= 20,	//	普通宠物栏个数
-		MAX_SLOTNUM2 = 21,	//	所有宠物栏个数
-	};
-
-	//	Moving mode
-	enum
-	{
-		MOVE_FOLLOW = 0,
-		MOVE_STAND,
-	};
-
-	//	Attacking mode
-	enum
-	{
-		ATK_DEFENSE = 0,
-		ATK_POSITIVE,
-		ATK_PASSIVE,
-	};
-
-public:		//	Constructor and Destructor
-
-	CECPetCorral();
-	virtual ~CECPetCorral();
-
-public:		//	Attributes
-
-public:		//	Operations
-
-	//	Tick routine
-	bool Tick(DWORD dwDeltaTime);
-
-	//	Add a pet
-	bool AddPet(int iSlot, const S2C::info_pet& Info);
-	//	Free a pet
-	void FreePet(int iSlot, int idPet);
-	//	Remove all pets
-	void RemoveAll();
-	//	Update pets data in corral
-	void UpdatePets(const S2C::cmd_pet_room& cmd);
-
-	//	Magnify pet slots
-	void MagnifyPetSlots(int iNewNum);
-	//	Check whether corral has empty slots
-	int GetEmptySlotNum();
-	//	Get number of current active pet slots
-	int GetPetSlotNum() { return m_iPetSlotNum; }
-	//	Get pet data of specified slot
-	CECPetData* GetPetData(int iSlot)
-	{
-		if (iSlot < 0 || iSlot >= MAX_SLOTNUM2)
-		{
-			ASSERT(iSlot >= 0 && iSlot < MAX_SLOTNUM2);
-			return NULL;
-		}
-
-		return m_aPetSlots[iSlot];
-	}
-
-	//	Get current active pet's index
-	int GetActivePetIndex() { return m_iActivePet; }
-	//	Set current active pet's index
-	void SetActivePetIndex(int iIndex) { m_iActivePet = iIndex; }
-	//	Get current active pet's data
-	CECPetData* GetActivePet()
-	{
-		if (m_iActivePet >= 0 && m_iActivePet < MAX_SLOTNUM2)
-			return m_aPetSlots[m_iActivePet];
-		else
-			return NULL;
-	}
-
-	//	Get / Set ID of active pet as a NPC in world
-	int GetActivePetNPCID() { return m_nidPet; }
-	void SetActivePetNPCID(int nid) { m_nidPet = nid; }
-
-	//	查询、设置当前宠物的生存时长
-	int GetActivePetLifeTime(){ return m_iPetLifeTime; }
-	void SetActivePetLifetime(int lifetime) { m_iPetLifeTime = lifetime; }
-
-	//	Get / Set moving mode
-	int GetMoveMode() { return m_iMoveMode; }
-	void SetMoveMode(int iMode) { m_iMoveMode = iMode; }
-	//	Get / Set attacking mode
-	int GetAttackMode() { return m_iAttackMode; }
-	void SetAttackMode(int iMode) { m_iAttackMode = iMode; }
-	//	Get / Set init flag
-	bool HasInit() { return m_bHasInit; }
-	void SetHasInit(bool bFlag) { m_bHasInit = bFlag; }
-
-	void PlantPetEnter(const S2C::cmd_summon_plant_pet &rhs);
-	void PlantPetDisappear(const S2C::cmd_plant_pet_disapper &rhs);
-	void PlantPetInfo(const S2C::cmd_plant_pet_hp_notify &rhs);
-
-	int  GetPlantCount()const;
-	const CECPlantPetData * GetPlant(int index)const;
-	int  GetPlantIndexByID(int nid)const;
-	const CECPlantPetData * GetPlantByID(int nid)const;
-
-	PET_EVOLVE_CONFIG* GetPetEvoConfig() { return m_pDBEvoConfig;}
-
-	bool CheckRebuildPetItemCond(int iPetIndex,int iSel, int type); // 宠物索引，选择的物品序号，type：0(进化),1(性格技能),2(洗髓系数)
-
-protected:	//	Attributes
-	bool		m_bHasInit;					//	Flag indicates whether we have init the data by calling MagnifyPetSlots
-
-	int			m_iActivePet;				//	Index of current active pet
-	int			m_iPetSlotNum;				//	Number of current active pet slots
-	CECPetData*	m_aPetSlots[MAX_SLOTNUM2];	//	Pet slots
-
-	int			m_nidPet;			//	ID of Pet as a NPC in world
-	int			m_iMoveMode;		//	Current moving mode of pet
-	int			m_iAttackMode;		//	Current attacking mode of pet
-
-	int			m_iPetLifeTime;		//	当前宠物的存活期（0表示永久）
-	
-	typedef abase::vector<CECPlantPetData> PlantVec;
-	PlantVec	m_Plants;
-
-	PET_EVOLVE_CONFIG* m_pDBEvoConfig;
-		
-protected:	//	Operations
-	CECPlantPetData * GetPlant(int index);
-	CECPlantPetData * GetPlantByID(int nid);
-	
-	const CECPlantPetData * GetPlantImpl(int index)const;
-	const CECPlantPetData * GetPlantByIDImpl(int nid)const;
-
-};
-
 ///////////////////////////////////////////////////////////////////////////
 //	
 //	Inline functions

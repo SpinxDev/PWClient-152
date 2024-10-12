@@ -1,0 +1,65 @@
+#ifndef __GNET_GPETCORRAL_RPCDATA
+#define __GNET_GPETCORRAL_RPCDATA
+
+#include "rpcdefs.h"
+
+#include "gpet"
+
+namespace GNET
+{
+	class GPetCorral : public GNET::Rpc::Data
+	{
+	public:
+		int capacity;
+		std::vector<GPet> pets;
+
+	public:
+		GPetCorral (int l_capacity = 0,std::vector<GPet> l_pets = std::vector<GPet>())
+			: capacity(l_capacity),pets(l_pets)
+		{
+		}
+
+		GPetCorral(const GPetCorral &rhs)
+			: capacity(rhs.capacity),pets(rhs.pets) { }
+
+		Rpc::Data *Clone() const { return new GPetCorral(*this); }
+
+		Rpc::Data& operator = (const Rpc::Data &rhs)
+		{
+			const GPetCorral *r = dynamic_cast<const GPetCorral *>(&rhs);
+			if (r && r != this)
+			{
+				capacity = r->capacity;
+				pets = r->pets;
+			}
+			return *this;
+		}
+
+		GPetCorral& operator = (const GPetCorral &rhs)
+		{
+			const GPetCorral *r = &rhs;
+			if (r && r != this)
+			{
+				capacity = r->capacity;
+				pets = r->pets;
+			}
+			return *this;
+		}
+
+		OctetsStream& marshal(OctetsStream & os) const
+		{
+			os << capacity;
+			os << pets;
+			return os;
+		}
+
+		const OctetsStream& unmarshal(const OctetsStream &os)
+		{
+			os >> capacity;
+			os >> pets;
+			return os;
+		}
+
+	};
+};
+#endif

@@ -18,7 +18,6 @@
 #include "ALog.h"
 #include "AMemory.h"
 #include "A3DVector.h"
-#include "AAssist.h"
 
 ///////////////////////////////////////////////////////////////////////////
 //
@@ -36,12 +35,6 @@
 //	Define virtual key of `
 #define	VK_CONSOLE			0xC0
 
-#ifdef ANGELICA_2_2
-#define SHADER_DIR		"Shaders\\2.2\\"
-#else
-#define SHADER_DIR		"Shaders\\"
-#endif // ANGELICA_2_2
-
 //	Error code
 enum
 {
@@ -55,13 +48,6 @@ enum
 
 class ALog;
 class CECGame;
-class AString;
-class AWString;
-
-namespace GNET
-{
-	class Octets;
-}
 
 ///////////////////////////////////////////////////////////////////////////
 //
@@ -73,18 +59,14 @@ extern ALog				g_Log;
 extern char				g_szWorkDir[];
 extern char				g_szIniFile[];
 extern CECGame*			g_pGame;
-extern bool				g_bRenderNoFocus;
-extern bool				g_bEnableFortressDeclareWar;
-extern bool				g_bIgnoreURLNavigate;
 
 extern A3DVECTOR3		g_vOrigin;
 extern A3DVECTOR3		g_vAxisX;
 extern A3DVECTOR3		g_vAxisY;
 extern A3DVECTOR3		g_vAxisZ;
 
+extern CRITICAL_SECTION	g_csLog;
 extern CRITICAL_SECTION	g_csException;
-extern CRITICAL_SECTION	g_csSession;
-extern CRITICAL_SECTION	g_csRTDebug;
 
 extern bool				g_bTrojanDumpLastTime;
 
@@ -104,62 +86,61 @@ void glb_ErrorOutput(int iErrCode, const char* szFunc, int iLine);
 bool glb_CalcFileMD5(const char * szFile, BYTE md5[16]);
 //	RepairExe
 void glb_RepairExeInMemory();
+unsigned long glb_HandleException(LPEXCEPTION_POINTERS pExceptionPointers);
+//	Log info and print it to console at debug
+void Log_Info(const char *szFormat, ...);
 
-void glb_LogURL(const AString &strURL);
-AString glb_FormatOctets(const GNET::Octets &o);
-AString glb_ConverToUTF8(const AWString &str);
-AString glb_ConverToHex(const AString &str);
-int		glb_Random(int iMin, int iMax);
 int		hsv2rgb( float h, float s, float v);
 
-void	glb_LogDebugInfo(const AString &str);
-#ifdef LOG_PROTOCOL
-#define LOG_DEBUG_INFO(s) glb_LogDebugInfo(s)
-#else
-#define LOG_DEBUG_INFO(s)
+#if defined(HINT_TOOL_DEBUG) || defined(_DEBUG)
+namespace GNET
+{
+	class Octets;
+}
+class AString;
+bool putOctetToFile(const GNET::Octets &data, const AString &strFileName, bool binary = false);
+void openOctet(const GNET::Octets &data);
 #endif
-
 ///////////////////////////////////////////////////////////////////////////
 //
 //	Inline functions
-
-inline void _cp_str(ACString& str, const void* s, int len)
-{
-	len /= sizeof(ACHAR);
-	ACHAR* p = str.GetBuffer(len + 1);
-	memcpy(p, s, len * sizeof(ACHAR));
-	p[len] = _AL('\0');
-	str.ReleaseBuffer();
-}
 
 #define FASHION_WORDCOLOR_TO_A3DCOLOR(c) A3DCOLORRGB(((c) & (0x1f << 10)) >> 7, ((c) & (0x1f << 5)) >> 2, ((c) & 0x1f) << 3)
 #define FASHION_A3DCOLOR_TO_WORDCOLOR(c) ((((c) & 0x00f80000) >> 9) | (((c) & 0x0000f800) >> 6) | (((c) & 0x000000f8) >> 3));
 #define ARRAY_SIZE(array) (sizeof(array)/sizeof((array)[0]))
 
-//	ÉùÃ÷ Singleton
-#define ELEMENTCLIENT_DECLARE_SINGLETON(CLASS_NAME)	\
-private:\
-CLASS_NAME();\
-CLASS_NAME(const CLASS_NAME &);\
-CLASS_NAME & operator = (const CLASS_NAME &);\
-public:\
-static CLASS_NAME &Instance()
-
-//	¶¨Òå Singleton
-#define ELEMENTCLIENT_DEFINE_SINGLETON(CLASS_NAME)\
-CLASS_NAME::CLASS_NAME(){}\
-CLASS_NAME & CLASS_NAME::Instance(){\
-	static CLASS_NAME s_instance;\
-	return s_instance;\
-}
-
-#define ELEMENTCLIENT_DEFINE_SINGLETON_NO_CTOR(CLASS_NAME)\
-	CLASS_NAME & CLASS_NAME::Instance(){\
-	static CLASS_NAME s_instance;\
-	return s_instance;\
-}
-
 //
 ///////////////////////////////////////////////////////////////////////////
 
 
+class MyCriticalSection
+{
+public:
+	MyCriticalSection(CRITICAL_SECTION &cs) : m_cs(&cs)
+	{
+		::EnterCriticalSection(m_cs);
+	}
+	
+	~MyCriticalSection()
+	{
+		::LeaveCriticalSection(m_cs);
+	}
+	
+private:
+	CRITICAL_SECTION *m_cs;
+};
+
+enum
+{
+	enumSkinShowNone = 0,
+	enumSkinShowUpperBody,
+	enumSkinShowWrist,
+	enumSkinShowLowerBody,
+	enumSkinShowFoot,
+	enumSkinShowUpperAndLower,
+	enumSkinShowUpperAndWrist,
+	enumSkinShowLowerAndFoot,
+	enumSkinShowUpperLowerAndWrist,
+	enumSkinShowArmet,
+	enumSkinShowHand,
+};

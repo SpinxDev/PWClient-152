@@ -13,13 +13,10 @@
 #include "EC_Global.h"
 #include "EC_IvtrDecoration.h"
 #include "EC_Game.h"
-#include "EC_RoleTypes.h"
-#include "EC_FixedMsg.h"
-#include "EC_GameRun.h"
-#include "EC_HostPlayer.h"
+#include "../CElementClient/EC_RoleTypes.h"
+#include "../CElementClient/EC_FixedMsg.h"
 #include "EC_RTDebug.h"
-#include "elementdataman.h"
-#include "EC_Configs.h"
+#include "../CCommon/elementdataman.h"
 
 #define new A_DEBUG_NEW
 
@@ -208,167 +205,6 @@ const wchar_t* CECIvtrDecoration::GetName()
 	return m_pDBEssence->name;
 }
 
-const wchar_t* CECIvtrDecoration::GetPreviewInfo()
-{
-	int aPEEVals[MAX_PEEINDEX];
-	int aRefines[MAX_REFINEINDEX];
-	memset(aPEEVals, 0, sizeof (aPEEVals));
-	memset(aRefines, 0, sizeof (aRefines));
-	m_strDesc = _AL("");
-	BuildAddOnPropDesc(aPEEVals, aRefines);
-	CECStringTab* pDescTab = g_pGame->GetItemDesc();
-	//	Add physical damage
-	if (m_Essence.damage - aPEEVals[PEEI_PHYDAMAGE] + aRefines[REFINE_PHYDAMAGE])
-	{
-		AddDescText(ITEMDESC_COL_WHITE, false, pDescTab->GetWideString(ITEMDESC_ADDPHYDAMAGE));
-		AddDescText(ITEMDESC_COL_WHITE, true, _AL(" %+d"), m_Essence.damage - aPEEVals[PEEI_PHYDAMAGE] + aRefines[REFINE_PHYDAMAGE]);
-	}
-	
-	//	Add magic damage
-	if (m_Essence.magic_damage - aPEEVals[PEEI_MAGICDAMAGE] + aRefines[REFINE_MAGICDAMAGE])
-	{
-		AddDescText(ITEMDESC_COL_WHITE, false, pDescTab->GetWideString(ITEMDESC_ADDMAGICDAMAGE));
-		AddDescText(ITEMDESC_COL_WHITE, true, _AL(" %+d"), m_Essence.magic_damage - aPEEVals[PEEI_MAGICDAMAGE] + aRefines[REFINE_MAGICDAMAGE]);
-	}
-	
-	//	Add physical defence
-	if (m_Essence.defense - aPEEVals[PEEI_PHYDEF] + aRefines[REFINE_PHYDEF])
-	{
-		AddDescText(ITEMDESC_COL_WHITE, false, pDescTab->GetWideString(ITEMDESC_PHYDEFENCE));
-		AddDescText(ITEMDESC_COL_WHITE, true, _AL(" %+d"), m_Essence.defense - aPEEVals[PEEI_PHYDEF] + aRefines[REFINE_PHYDEF]);
-	}
-	//	Dodge
-	if (m_Essence.armor - aPEEVals[PEEI_DODGE] + aRefines[REFINE_DODGE])
-	{
-		AddDescText(ITEMDESC_COL_WHITE, false, pDescTab->GetWideString(ITEMDESC_DODGE));
-		AddDescText(ITEMDESC_COL_WHITE, true, _AL(" %+d"), m_Essence.armor - aPEEVals[PEEI_DODGE] + aRefines[REFINE_DODGE]);
-	}
-	
-	if (m_Essence.resistance[MAGICCLASS_GOLD] - aPEEVals[PEEI_GOLDDEF] + aRefines[REFINE_GOLDDEF])
-	{
-		AddDescText(ITEMDESC_COL_WHITE, false, pDescTab->GetWideString(ITEMDESC_GOLDDEFENCE));
-		AddDescText(ITEMDESC_COL_WHITE, true, _AL(" %+d"), m_Essence.resistance[MAGICCLASS_GOLD] - aPEEVals[PEEI_GOLDDEF] + aRefines[REFINE_GOLDDEF]);
-	}
-	
-	if (m_Essence.resistance[MAGICCLASS_WOOD] - aPEEVals[PEEI_WOODDEF] + aRefines[REFINE_WOODDEF])
-	{
-		AddDescText(ITEMDESC_COL_WHITE, false, pDescTab->GetWideString(ITEMDESC_WOODDEFENCE));
-		AddDescText(ITEMDESC_COL_WHITE, true, _AL(" %+d"), m_Essence.resistance[MAGICCLASS_WOOD] - aPEEVals[PEEI_WOODDEF] + aRefines[REFINE_WOODDEF]);
-	}
-	
-	if (m_Essence.resistance[MAGICCLASS_WATER] - aPEEVals[PEEI_WATERDEF] + aRefines[REFINE_WATERDEF])
-	{
-		AddDescText(ITEMDESC_COL_WHITE, false, pDescTab->GetWideString(ITEMDESC_WATERDEFENCE));
-		AddDescText(ITEMDESC_COL_WHITE, true, _AL(" %+d"), m_Essence.resistance[MAGICCLASS_WATER] - aPEEVals[PEEI_WATERDEF] + aRefines[REFINE_WATERDEF]);
-	}
-	
-	if (m_Essence.resistance[MAGICCLASS_FIRE] - aPEEVals[PEEI_FIREDEF] + aRefines[REFINE_FIREDEF])
-	{
-		AddDescText(ITEMDESC_COL_WHITE, false, pDescTab->GetWideString(ITEMDESC_FIREDEFENCE));
-		AddDescText(ITEMDESC_COL_WHITE, true, _AL(" %+d"), m_Essence.resistance[MAGICCLASS_FIRE] - aPEEVals[PEEI_FIREDEF] + aRefines[REFINE_FIREDEF]);
-	}
-	
-	if (m_Essence.resistance[MAGICCLASS_EARTH] - aPEEVals[PEEI_EARTHDEF] + aRefines[REFINE_EARTHDEF])
-	{
-		AddDescText(ITEMDESC_COL_WHITE, false, pDescTab->GetWideString(ITEMDESC_EARTHDEFENCE));
-		AddDescText(ITEMDESC_COL_WHITE, true, _AL(" %+d"), m_Essence.resistance[MAGICCLASS_EARTH] - aPEEVals[PEEI_EARTHDEF] + aRefines[REFINE_EARTHDEF]);
-	}
-
-	return m_strDesc;
-}
-
-bool CECIvtrDecoration::GetRefineEffectFor(ACString & strEffect, const RefineEffect &rhs)
-{
-	strEffect.Empty();
-	if (!m_bNeedUpdate){
-		CECStringTab* pDescTab = g_pGame->GetItemDesc();
-		switch (rhs.m_refineIndex)
-		{
-		case REFINE_PHYDAMAGE:
-			strEffect.Format(_AL("%s%s %d %s(+%d)")
-				, rhs.GetClrAttribute()
-				, pDescTab->GetWideString(ITEMDESC_ADDPHYDAMAGE)
-				, m_Essence.damage - rhs.m_aPEEVals[PEEI_PHYDAMAGE] + rhs.m_aRefines[REFINE_PHYDAMAGE] + rhs.GetIncEffect()
-				, rhs.GetClrEffect()
-				, rhs.GetIncEffect());
-			break;
-			
-		case REFINE_MAGICDAMAGE:
-			strEffect.Format(_AL("%s%s %d %s(+%d)")
-				, rhs.GetClrAttribute()
-				, pDescTab->GetWideString(ITEMDESC_ADDMAGICDAMAGE)
-				, m_Essence.magic_damage - rhs.m_aPEEVals[PEEI_MAGICDAMAGE] + rhs.m_aRefines[REFINE_MAGICDAMAGE] + rhs.GetIncEffect()
-				, rhs.GetClrEffect()
-				, rhs.GetIncEffect());
-			break;
-			
-		case REFINE_PHYDEF:
-			strEffect.Format(_AL("%s%s %d %s(+%d)")
-				, rhs.GetClrAttribute()
-				, pDescTab->GetWideString(ITEMDESC_PHYDEFENCE)
-				, m_Essence.defense - rhs.m_aPEEVals[PEEI_PHYDEF] + rhs.m_aRefines[REFINE_PHYDEF] + rhs.GetIncEffect()
-				, rhs.GetClrEffect()
-				, rhs.GetIncEffect());		
-			break;
-			
-		case REFINE_DODGE:
-			strEffect.Format(_AL("%s%s %d %s(+%d)")
-				, rhs.GetClrAttribute()
-				, pDescTab->GetWideString(ITEMDESC_DODGE)
-				, m_Essence.armor - rhs.m_aPEEVals[PEEI_DODGE] + rhs.m_aRefines[REFINE_DODGE] + rhs.GetIncEffect()
-				, rhs.GetClrEffect()
-				, rhs.GetIncEffect());
-			break;
-			
-		case REFINE_GOLDDEF:
-			strEffect.Format(_AL("%s%s %d %s(+%d)")
-				, rhs.GetClrAttribute()
-				, pDescTab->GetWideString(ITEMDESC_GOLDDEFENCE)
-				, m_Essence.resistance[MAGICCLASS_GOLD] - rhs.m_aPEEVals[PEEI_GOLDDEF] + rhs.m_aRefines[REFINE_GOLDDEF] + rhs.GetIncEffect()
-				, rhs.GetClrEffect()
-				, rhs.GetIncEffect());
-			break;
-			
-		case REFINE_WOODDEF:
-			strEffect.Format(_AL("%s%s %d %s(+%d)")
-				, rhs.GetClrAttribute()
-				, pDescTab->GetWideString(ITEMDESC_WOODDEFENCE)
-				, m_Essence.resistance[MAGICCLASS_WOOD] - rhs.m_aPEEVals[PEEI_WOODDEF] + rhs.m_aRefines[REFINE_WOODDEF] + rhs.GetIncEffect()
-				, rhs.GetClrEffect()
-				, rhs.GetIncEffect());
-			break;
-			
-		case REFINE_WATERDEF:
-			strEffect.Format(_AL("%s%s %d %s(+%d)")
-				, rhs.GetClrAttribute()
-				, pDescTab->GetWideString(ITEMDESC_WATERDEFENCE)
-				, m_Essence.resistance[MAGICCLASS_WATER] - rhs.m_aPEEVals[PEEI_WATERDEF] + rhs.m_aRefines[REFINE_WATERDEF] + rhs.GetIncEffect()
-				, rhs.GetClrEffect()
-				, rhs.GetIncEffect());
-			break;
-			
-		case REFINE_FIREDEF:
-			strEffect.Format(_AL("%s%s %d %s(+%d)")
-				, rhs.GetClrAttribute()
-				, pDescTab->GetWideString(ITEMDESC_FIREDEFENCE)
-				, m_Essence.resistance[MAGICCLASS_FIRE] - rhs.m_aPEEVals[PEEI_FIREDEF] + rhs.m_aRefines[REFINE_FIREDEF] + rhs.GetIncEffect()
-				, rhs.GetClrEffect()
-				, rhs.GetIncEffect());
-			break;
-			
-		case REFINE_EARTHDEF:
-			strEffect.Format(_AL("%s%s %d %s(+%d)")
-				, rhs.GetClrAttribute()
-				, pDescTab->GetWideString(ITEMDESC_EARTHDEFENCE)
-				, m_Essence.resistance[MAGICCLASS_EARTH] - rhs.m_aPEEVals[PEEI_EARTHDEF] + rhs.m_aRefines[REFINE_EARTHDEF] + rhs.GetIncEffect()
-				, rhs.GetClrEffect()
-				, rhs.GetIncEffect());
-			break;
-		}
-	}
-	return !strEffect.IsEmpty();
-}
-
 //	Get item description text
 const wchar_t* CECIvtrDecoration::GetNormalDesc(bool bRepair)
 {
@@ -388,7 +224,6 @@ const wchar_t* CECIvtrDecoration::GetNormalDesc(bool bRepair)
 	m_strDesc = _AL("");
 
 	CECStringTab* pDescTab = g_pGame->GetItemDesc();
-	CECHostPlayer* pHost = g_pGame->GetGameRun()->GetHostPlayer();
 
 	int lblue = ITEMDESC_COL_LIGHTBLUE;
 	int white = ITEMDESC_COL_WHITE;
@@ -496,17 +331,14 @@ const wchar_t* CECIvtrDecoration::GetNormalDesc(bool bRepair)
 	//	Level requirment
 	if (m_iLevelReq)
 	{
-		col = pHost->GetMaxLevelSofar() >= m_iLevelReq ? white : red;
+		col = white;
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_LEVELREQ), m_iLevelReq);
 	}
 	
 	//	Strength requirment
 	if (m_iStrengthReq)
 	{
-		if (pHost->GetExtendProps().bs.strength < m_iStrengthReq)
-			col = red;
-		else
-			col = (dwPEE & PEE_STRENGTHREQ) ? lblue : white;
+		col = (dwPEE & PEE_STRENGTHREQ) ? lblue : white;
 		
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_STRENGTHREQ), m_iStrengthReq);
 	}
@@ -514,10 +346,7 @@ const wchar_t* CECIvtrDecoration::GetNormalDesc(bool bRepair)
 	//	Agility requirment
 	if (m_iAgilityReq)
 	{
-		if (pHost->GetExtendProps().bs.agility < m_iAgilityReq)
-			col = red;
-		else
-			col = (dwPEE & PEE_AGILITYREQ) ? lblue : white;
+		col = (dwPEE & PEE_AGILITYREQ) ? lblue : white;
 
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_AGILITYREQ), m_iAgilityReq);
 	}
@@ -525,10 +354,7 @@ const wchar_t* CECIvtrDecoration::GetNormalDesc(bool bRepair)
 	//	Vitality requirment
 	if (m_iVitalityReq)
 	{
-		if (pHost->GetExtendProps().bs.vitality < m_iVitalityReq)
-			col = red;
-		else
-			col = (dwPEE & PEE_VITALITYREQ) ? lblue : white;
+		col = (dwPEE & PEE_VITALITYREQ) ? lblue : white;
 
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_VITALITYREQ), m_iVitalityReq);
 	}
@@ -536,10 +362,7 @@ const wchar_t* CECIvtrDecoration::GetNormalDesc(bool bRepair)
 	//	Energy requirment
 	if (m_iEnergyReq)
 	{
-		if (pHost->GetExtendProps().bs.energy < m_iEnergyReq)
-			col = red;
-		else
-			col = (dwPEE & PEE_ENERGYREQ) ? lblue : white;
+		col = (dwPEE & PEE_ENERGYREQ) ? lblue : white;
 
 		AddDescText(col, true, pDescTab->GetWideString(ITEMDESC_ENERGYREQ), m_iEnergyReq);
 	}
@@ -559,7 +382,7 @@ const wchar_t* CECIvtrDecoration::GetNormalDesc(bool bRepair)
 
 	//	Price
 	AddPriceDesc(white, bRepair);
-
+	
 	//	磨刀石增加属性
 	AddSharpenerDesc();
 
@@ -620,19 +443,10 @@ int CECIvtrDecoration::GetRefineMaterialNum()
 	return m_pDBEssence->material_need;
 }
 
-int CECIvtrDecoration::GetRefineAddOn()
-{
-	return m_pDBEssence->levelup_addon;
-}
 //	Get drop model for shown
 const char * CECIvtrDecoration::GetDropModel()
 {
 	return m_pDBEssence->file_matter;
-}
-
-bool CECIvtrDecoration::IsRare() const
-{ 
-	return CECIvtrEquip::IsRare() || m_pDBEssence->level >= 6;
 }
 
 int CECIvtrDecoration::GetItemLevel() const

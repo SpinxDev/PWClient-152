@@ -13,7 +13,7 @@
 #include "EC_Global.h"
 #include "EC_Skill.h"
 #include "EC_Game.h"
-#include "EC_RoleTypes.h"
+#include "../CElementClient/EC_RoleTypes.h"
 
 #include "AChar.h"
 

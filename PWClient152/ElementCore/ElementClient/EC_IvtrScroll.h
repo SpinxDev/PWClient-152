@@ -13,7 +13,7 @@
 #pragma once
 
 #include "EC_IvtrItem.h"
-#include "EC_IvtrTypes.h"
+#include "../CElementClient/EC_IvtrTypes.h"
 
 ///////////////////////////////////////////////////////////////////////////
 //	
@@ -126,7 +126,7 @@ public:		//	Operations
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrTownScroll(*this); }
 	//	Get item cool time
-	virtual int GetCoolTime(int* piMax=NULL);
+// 	virtual int GetCoolTime(int* piMax=NULL);
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
 
@@ -172,7 +172,7 @@ public:		//	Operations
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrRevScroll(*this); }
 	//	Get item cool time
-	virtual int GetCoolTime(int* piMax=NULL);
+// 	virtual int GetCoolTime(int* piMax=NULL);
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
 
@@ -262,9 +262,9 @@ public:		//	Operations
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrFaceTicket(*this); }
 	//	Get item cool time
-	virtual int GetCoolTime(int* piMax=NULL);
+// 	virtual int GetCoolTime(int* piMax=NULL);
 	//	Check item use condition
-	virtual bool CheckUseCondition();
+// 	virtual bool CheckUseCondition();
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
 
@@ -318,9 +318,9 @@ public:		//	Operations
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrFacePill(*this); }
 	//	Get item cool time
-	virtual int GetCoolTime(int* piMax=NULL);
+// 	virtual int GetCoolTime(int* piMax=NULL);
 	//	Check item use condition
-	virtual bool CheckUseCondition();
+// 	virtual bool CheckUseCondition();
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
 
@@ -374,9 +374,9 @@ public:		//	Operations
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrGMGenerator(*this); }
 	//	Get item cool time
-	virtual int GetCoolTime(int* piMax=NULL);
+// 	virtual int GetCoolTime(int* piMax=NULL);
 	//	Check item use condition
-	virtual bool CheckUseCondition();
+// 	virtual bool CheckUseCondition();
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
 
@@ -425,7 +425,7 @@ public:		//	Operations
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrTankCallin(*this); }
 	//	Check item use condition
-	virtual bool CheckUseCondition();
+// 	virtual bool CheckUseCondition();
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
 
@@ -471,7 +471,7 @@ public:		//	Operations
 	//	Clone item
 	virtual CECIvtrItem* Clone() { return new CECIvtrShopToken(*this); }
 	//	Check item use condition
-	virtual bool CheckUseCondition();
+	//virtual bool CheckUseCondition();
 	//	Get drop model for shown
 	virtual const char * GetDropModel();
 	
