@@ -127,11 +127,8 @@ xcopy  ..\lib\AutoMoveImp_su.lib  ..\..\lib\autopfimp\ /R/Y/Q</Command>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
     </ClCompile>
     <PostBuildEvent>
-      <Command>xcopy  bitimage.h  ..\..\include\autopfimp\ /R/Y/Q
-xcopy  blockimage.h  ..\..\include\autopfimp\ /R/Y/Q
-xcopy  PfConstant.h  ..\..\include\autopfimp /R/Y/Q
-xcopy  MoveAgent.h  ..\..\include\autopfimp\ /R/Y/Q
-xcopy  ..\lib\AutoMoveImp_d.lib  ..\..\lib\autopfimp\ /R/Y/Q</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
     <ResourceCompile>
       <Culture>0x0804</Culture>

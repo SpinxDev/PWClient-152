@@ -78,7 +78,7 @@
     <Link>
       <AdditionalDependencies>AudioEngine2.2_d.lib;angelica3d_d.lib;fmodex_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\$(ProjectName)_d$(TargetExt)</OutputFile>
-      <AdditionalLibraryDirectories>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\;$(SolutionDir)\Libraries\Released\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries\;$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine\;$(SolutionDir)\Libraries\Released\;$(SolutionDir)bin\$(Configuration)-$(Platform)\Common\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile />
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>

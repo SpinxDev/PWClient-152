@@ -44,7 +44,8 @@
     <ConfigurationType>Application</ConfigurationType>
     <PlatformToolset>v143</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -86,6 +87,7 @@
     <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\ElementCore</IntDir>
     <LinkIncremental>true</LinkIncremental>
     <GenerateManifest>true</GenerateManifest>
+    <TargetName>$(ProjectName)_d</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DbgRelease|Win32'">
     <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\ElementCore</OutDir>
@@ -111,7 +113,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Common\FileExtract\;$(SolutionDir)Common\AUInterface2\;$(SolutionDir)ElementCore\ElementClient;$(SolutionDir)Common\CHBasedCD\;$(SolutionDir)ElementCore\ElementClient\Network\IOLib;$(SolutionDir)Libraries\ZLib\;$(SolutionDir)ElementCore\ElementClient\Network\;$(SolutionDir)ElementCore\ElementClient\Home;$(SolutionDir)ElementCore\ElementClient\Arc;$(SolutionDir)ElementCore\ElementClient\CCommon;$(SolutionDir)ElementCore\ElementClient\CrossServer;$(SolutionDir)ElementCore\ElementClient\Defence</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Common\FileExtract\;$(SolutionDir)Common\AUInterface2\;$(SolutionDir)ElementCore\ElementClient;$(SolutionDir)Common\CHBasedCD\;$(SolutionDir)ElementCore\ElementClient\Network\IOLib;$(SolutionDir)Libraries\ZLib\;$(SolutionDir)ElementCore\ElementClient\Network\;$(SolutionDir)ElementCore\ElementClient\Home;$(SolutionDir)ElementCore\ElementClient\Arc;$(SolutionDir)ElementCore\ElementClient\CCommon;$(SolutionDir)ElementCore\ElementClient\CrossServer;$(SolutionDir)ElementCore\ElementClient\Defence;$(SolutionDir)Common\GfxCommon2\</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;UNICODE;_ELEMENTCLIENT;ANGELICA_2_2;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -161,27 +163,31 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Common\FileExtract\;$(SolutionDir)Common\AUInterface2\;$(SolutionDir)ElementCore\ElementClient;$(SolutionDir)Common\CHBasedCD\;$(SolutionDir)ElementCore\ElementClient\Network\IOLib;$(SolutionDir)Libraries\ZLib\;$(SolutionDir)ElementCore\ElementClient\Network\;$(SolutionDir)ElementCore\ElementClient\Home;$(SolutionDir)ElementCore\ElementClient\Arc;$(SolutionDir)ElementCore\ElementClient\CCommon;$(SolutionDir)ElementCore\ElementClient\CrossServer;$(SolutionDir)ElementCore\ElementClient\Defence</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Common\FileExtract\;$(SolutionDir)Common\AUInterface2\;$(SolutionDir)ElementCore\ElementClient;$(SolutionDir)Common\CHBasedCD\;$(SolutionDir)ElementCore\ElementClient\Network\IOLib;$(SolutionDir)Libraries\ZLib\;$(SolutionDir)ElementCore\ElementClient\Network\;$(SolutionDir)ElementCore\ElementClient\Home;$(SolutionDir)ElementCore\ElementClient\Arc;$(SolutionDir)ElementCore\ElementClient\CCommon;$(SolutionDir)ElementCore\ElementClient\CrossServer;$(SolutionDir)ElementCore\ElementClient\Defence;$(SolutionDir)Common\GfxCommon2\</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;UNICODE;_ELEMENTCLIENT;ANGELICA_2_2;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <MinimalRebuild>true</MinimalRebuild>
+      <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <PrecompiledHeaderOutputFile>$(IntDir)ElementClient.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
-      <BrowseInformation>true</BrowseInformation>
+      <BrowseInformation>false</BrowseInformation>
       <BrowseInformationFile>$(IntDir)</BrowseInformationFile>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <SDLCheck>false</SDLCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ForceConformanceInForLoopScope>false</ForceConformanceInForLoopScope>
+      <ConformanceMode>false</ConformanceMode>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_UNICODE;UNICODE;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>zlibwapi.lib;GfxCommon_d_na.lib;CHBasedCD_d.lib;ElementSkill_d.lib;AUInterface_d.lib;AngelicaCommon_ud.lib;AngelicaMedia_ud.lib;AngelicaFile_ud.lib;Angelica3D_ud.lib;ws2_32.lib;Imm32.lib;dxguid.lib;d3d9.lib;d3dx9.lib;glu32.lib;ddraw.lib;odbc32.lib;odbccp32.lib;speedtreert_d.lib;FTDriver_D.lib;FWEditorLib_d.lib;shlwapi.lib;wininet.lib;lua5.1.mtd.lib;LuaWrapper_du.lib;winmm.lib;Async_ud.lib;strmbase_ud.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -189,15 +195,19 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>$(SolutionDir)bin\$(Configuration)-$(Platform)\AngelicaEngine;$(SolutionDir)bin\$(Configuration)-$(Platform)\Libraries</AdditionalLibraryDirectories>
       <ManifestFile>$(IntDir)$(TargetFileName).intermediate.manifest</ManifestFile>
-      <IgnoreSpecificDefaultLibraries>MSVCRT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>$(IntDir)ElementClient_d.pdb</ProgramDatabaseFile>
-      <GenerateMapFile>true</GenerateMapFile>
-      <MapFileName>$(IntDir)ElementClient_d_2_2.map</MapFileName>
-      <MapExports>true</MapExports>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <GenerateMapFile>false</GenerateMapFile>
+      <MapFileName>
+      </MapFileName>
+      <MapExports>false</MapExports>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>wWinMainCRTStartup</EntryPointSymbol>
       <TargetMachine>MachineX86</TargetMachine>
+      <LargeAddressAware>true</LargeAddressAware>
+      <ImageHasSafeExceptionHandlers />
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -216,7 +226,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Common\FileExtract\;$(SolutionDir)Common\AUInterface2\;$(SolutionDir)ElementCore\ElementClient;$(SolutionDir)Common\CHBasedCD\;$(SolutionDir)ElementCore\ElementClient\Network\IOLib;$(SolutionDir)Libraries\ZLib\;$(SolutionDir)ElementCore\ElementClient\Network\;$(SolutionDir)ElementCore\ElementClient\Home;$(SolutionDir)ElementCore\ElementClient\Arc;$(SolutionDir)ElementCore\ElementClient\CCommon;$(SolutionDir)ElementCore\ElementClient\CrossServer;$(SolutionDir)ElementCore\ElementClient\Defence</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Common\FileExtract\;$(SolutionDir)Common\AUInterface2\;$(SolutionDir)ElementCore\ElementClient;$(SolutionDir)Common\CHBasedCD\;$(SolutionDir)ElementCore\ElementClient\Network\IOLib;$(SolutionDir)Libraries\ZLib\;$(SolutionDir)ElementCore\ElementClient\Network\;$(SolutionDir)ElementCore\ElementClient\Home;$(SolutionDir)ElementCore\ElementClient\Arc;$(SolutionDir)ElementCore\ElementClient\CCommon;$(SolutionDir)ElementCore\ElementClient\CrossServer;$(SolutionDir)ElementCore\ElementClient\Defence;$(SolutionDir)Common\GfxCommon2\</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;UNICODE;_ELEMENTCLIENT;ANGELICA_2_2;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -269,7 +279,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Common\FileExtract\;$(SolutionDir)Common\AUInterface2\;$(SolutionDir)ElementCore\ElementClient;$(SolutionDir)Common\CHBasedCD\;$(SolutionDir)ElementCore\ElementClient\Network\IOLib;$(SolutionDir)Libraries\ZLib\;$(SolutionDir)ElementCore\ElementClient\Network\;$(SolutionDir)ElementCore\ElementClient\Home;$(SolutionDir)ElementCore\ElementClient\Arc;$(SolutionDir)ElementCore\ElementClient\CCommon;$(SolutionDir)ElementCore\ElementClient\CrossServer;$(SolutionDir)ElementCore\ElementClient\Defence</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Angelica3D\Header;$(SolutionDir)Engine\AngelicaMedia\Header;$(SolutionDir)Engine\AngelicaFile\Header;$(SolutionDir)Engine\AngelicaCommon\Header;$(SolutionDir)Libraries\DXSDK\Include\;$(SolutionDir)Common\FileExtract\;$(SolutionDir)Common\AUInterface2\;$(SolutionDir)ElementCore\ElementClient;$(SolutionDir)Common\CHBasedCD\;$(SolutionDir)ElementCore\ElementClient\Network\IOLib;$(SolutionDir)Libraries\ZLib\;$(SolutionDir)ElementCore\ElementClient\Network\;$(SolutionDir)ElementCore\ElementClient\Home;$(SolutionDir)ElementCore\ElementClient\Arc;$(SolutionDir)ElementCore\ElementClient\CCommon;$(SolutionDir)ElementCore\ElementClient\CrossServer;$(SolutionDir)ElementCore\ElementClient\Defence;$(SolutionDir)Common\GfxCommon2\</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;UNICODE;_ELEMENTCLIENT;ANGELICA_2_2;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
